@@ -360,7 +360,7 @@ export default function App() {
   return (
     <>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,'PingFang TC',sans-serif;background:#f0ebe4}::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:${T.beige};border-radius:3px}`}</style>
-      <div style={{ maxWidth: 400, margin: "0 auto", height: "100vh", display: "flex", flexDirection: "column", background: T.cream, overflow: "hidden", boxShadow: "0 0 40px rgba(0,0,0,0.15)" }}>
+      <div style={{ maxWidth: 430, margin: "0 auto", width: "100%", height: "100dvh", display: "flex", flexDirection: "column", background: T.cream, overflow: "hidden", boxShadow: "0 0 40px rgba(0,0,0,0.15)" }}>
         {!selected && <Header />}
         {renderPage()}
         {!selected && <BottomNav active={tab} onChange={t => { setTab(t); }} />}
