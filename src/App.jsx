@@ -9,22 +9,29 @@ async function getCrowdReport(cafeId) {
     `${SUPABASE_URL}/rest/v1/crowd_reports?cafe_id=eq.${cafeId}&reported_at=gte.${since}&order=reported_at.desc&limit=1`,
     { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` } }
   );
+  if (!res.ok) return null;
   const data = await res.json();
-  return data[0] || null;
+  const report = data[0] || null;
+  // Handle case-sensitivity mismatch if the column is Capitalized in the DB
+  if (report && report.Reported_at && !report.reported_at) {
+    report.reported_at = report.Reported_at;
+  }
+  return report;
 }
 
-async function fetchAllCrowdReports() {
+async function fetchEmptyCafeIds() {
   const since = new Date(Date.now() - 3 * 60 * 60 * 1000).toISOString();
   const res = await fetch(
     `${SUPABASE_URL}/rest/v1/crowd_reports?reported_at=gte.${since}&order=reported_at.desc`,
     { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` } }
   );
+  if (!res.ok) return [];
   const data = await res.json();
   const map = {};
   for (const r of data) {
     if (!map[r.cafe_id]) map[r.cafe_id] = r;
   }
-  return map;
+  return Object.keys(map).filter(id => map[id].status === "empty");
 }
 
 async function submitCrowdReport(cafeId, status) {
@@ -97,13 +104,11 @@ const socketTag = (v) => {
 };
 
 // ── Crowd helpers ──
-const CROWD_SHORT = { empty: "🟢 很空", normal: "🟡 普通", crowded: "🔴 很擠" };
-const CROWD_TYPE = { empty: "green", normal: "amber", crowded: "red" };
-
-const crowdTagFromMap = (cafeId, crowdMap) => {
-  const r = crowdMap && crowdMap[cafeId];
-  if (!r) return null;
-  return <Tag label={CROWD_SHORT[r.status]} type={CROWD_TYPE[r.status]} />;
+const crowdTagFromIds = (cafeId, emptyCafeIds) => {
+  if (emptyCafeIds && emptyCafeIds.includes(cafeId)) {
+    return <Tag label="🟢 很空" type="green" />;
+  }
+  return null;
 };
 
 const timeAgo = (ts) => {
@@ -183,7 +188,7 @@ const CafeCard = ({ cafe, onClick, fav, onFav, crowdMap }) => (
       <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
         {limitedTag(cafe.limited_time)}
         {socketTag(cafe.socket)}
-        {crowdTagFromMap(cafe.id, crowdMap)}
+        {crowdTagFromIds(cafe.id, emptyCafeIds)}
         {cafe.open_time && <Tag label={`🕐 ${cafe.open_time.slice(0, 20)}${cafe.open_time.length > 20 ? "..." : ""}`} type="gray" />}
       </div>
     </div>
@@ -191,7 +196,7 @@ const CafeCard = ({ cafe, onClick, fav, onFav, crowdMap }) => (
 );
 
 // ── Page: Home ──
-const HomePage = ({ cafes, loading, city, setCity, onSelect, favs, onFav, crowdMap }) => {
+const HomePage = ({ cafes, loading, city, setCity, onSelect, favs, onFav, emptyCafeIds }) => {
   const [q, setQ] = useState("");
   const [filterNoLimit, setFilterNoLimit] = useState(false);
   const [filterSocket, setFilterSocket] = useState(false);
@@ -203,7 +208,7 @@ const HomePage = ({ cafes, loading, city, setCity, onSelect, favs, onFav, crowdM
     .filter(c => !filterNoLimit || c.limited_time === "no")
     .filter(c => !filterSocket || c.socket === "yes" || c.socket === "maybe")
     .filter(c => !filterWifi || c.wifi >= 4)
-    .filter(c => !filterEmpty || (crowdMap[c.id] && crowdMap[c.id].status === "empty"))
+    .filter(c => !filterEmpty || (emptyCafeIds && emptyCafeIds.includes(c.id)))
     .slice(0, 30);
 
   return (
@@ -248,7 +253,7 @@ const HomePage = ({ cafes, loading, city, setCity, onSelect, favs, onFav, crowdM
       ) : (
         <>
           <div style={{ fontSize: 12, color: T.sub, marginBottom: 10 }}>共 {filtered.length} 間咖啡廳</div>
-          {filtered.map(c => <CafeCard key={c.id} cafe={c} onClick={() => onSelect(c)} fav={favs.has(c.id)} onFav={onFav} crowdMap={crowdMap} />)}
+          {filtered.map(c => <CafeCard key={c.id} cafe={c} onClick={() => onSelect(c)} fav={favs.has(c.id)} onFav={onFav} emptyCafeIds={emptyCafeIds} />)}
           {filtered.length === 0 && <div style={{ textAlign: "center", padding: "40px 0", color: T.sub }}>找不到符合條件的咖啡廳</div>}
         </>
       )}
@@ -334,19 +339,27 @@ const MapPage = ({ cafes, onSelect }) => {
 const CrowdReport = ({ cafeId, onReport }) => {
   const [report, setReport] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [submitted, setSubmitted] = useState(false);
   const [editing, setEditing] = useState(false);
 
   useEffect(() => {
-    getCrowdReport(cafeId).then(r => { setReport(r); setLoading(false); });
+    let active = true;
+    setLoading(true);
+    getCrowdReport(cafeId).then(r => {
+      if (active) {
+        setReport(r);
+        setLoading(false);
+      }
+    });
+    return () => { active = false; };
   }, [cafeId]);
 
   const handleReport = async (status) => {
-    await submitCrowdReport(cafeId, status);
+    // 立即更新畫面狀態
     setReport({ status, reported_at: new Date().toISOString() });
-    setSubmitted(true);
     setEditing(false);
     if (onReport) onReport(cafeId, status);
+    // 背景發送 API
+    await submitCrowdReport(cafeId, status);
   };
 
   const statusLabel = {
@@ -371,25 +384,17 @@ const CrowdReport = ({ cafeId, onReport }) => {
       <div style={{ fontWeight: 700, fontSize: 14, color: T.text, marginBottom: 10 }}>現在人多嗎？</div>
       {loading ? (
         <div style={{ fontSize: 12, color: T.sub }}>載入中...</div>
-      ) : submitted && !editing ? (
+      ) : editing || !report ? (
         <>
-          <div style={{ fontSize: 13, color: T.green, marginBottom: 4 }}>✅ 感謝你的回報！</div>
-          <div style={{ fontSize: 13, color: T.text, marginBottom: 8 }}>{statusLabel[report.status]}</div>
-          <button onClick={() => setEditing(true)} style={{ fontSize: 12, color: T.brown, background: "none", border: "none", cursor: "pointer", textDecoration: "underline" }}>更新回報</button>
-        </>
-      ) : editing ? (
-        <>
-          <div style={{ fontSize: 12, color: T.sub, marginBottom: 8 }}>選擇目前狀況：</div>
+          {editing && <div style={{ fontSize: 12, color: T.sub, marginBottom: 8 }}>選擇目前狀況：</div>}
           {buttons}
         </>
-      ) : report ? (
+      ) : (
         <>
           <div style={{ fontSize: 14, color: T.text, marginBottom: 6 }}>{statusLabel[report.status]}</div>
           <div style={{ fontSize: 11, color: T.sub, marginBottom: 10 }}>{timeAgo(report.reported_at)}</div>
           <button onClick={() => setEditing(true)} style={{ fontSize: 12, color: T.brown, background: "none", border: "none", cursor: "pointer", textDecoration: "underline" }}>更新回報</button>
         </>
-      ) : (
-        buttons
       )}
     </div>
   );
@@ -459,7 +464,7 @@ export default function App() {
   const [loading, setLoading] = useState(true);
   const [selected, setSelected] = useState(null);
   const [favs, setFavs] = useState(new Set());
-  const [crowdMap, setCrowdMap] = useState({});
+  const [emptyCafeIds, setEmptyCafeIds] = useState([]);
 
   const fetchCafes = useCallback(async (c) => {
     setLoading(true);
@@ -475,23 +480,28 @@ export default function App() {
   }, []);
 
   useEffect(() => { fetchCafes(city); }, [city, fetchCafes]);
-  useEffect(() => { fetchAllCrowdReports().then(setCrowdMap).catch(() => {}); }, [city]);
+  
+  // App 啟動時 / 切換城市時抓取 emptyCafeIds
+  useEffect(() => { 
+    fetchEmptyCafeIds().then(setEmptyCafeIds).catch(() => {}); 
+  }, [city]);
 
   const toggleFav = (id) => setFavs(prev => { const s = new Set(prev); s.has(id) ? s.delete(id) : s.add(id); return s; });
 
   const handleCityChange = (c) => { setCity(c); setSelected(null); };
 
   const handleReportAndUpdateMap = (cafeId, status) => {
-    setCrowdMap(prev => ({
-      ...prev,
-      [cafeId]: { status, reported_at: new Date().toISOString() }
-    }));
+    if (status === "empty") {
+      setEmptyCafeIds(prev => [...new Set([...prev, cafeId])]);
+    } else {
+      setEmptyCafeIds(prev => prev.filter(id => id !== cafeId));
+    }
   };
 
   const renderPage = () => {
     if (selected) return <DetailPage cafe={selected} onBack={() => setSelected(null)} fav={favs.has(selected.id)} onFav={toggleFav} onReport={handleReportAndUpdateMap} />;
     switch (tab) {
-      case "home": return <HomePage cafes={cafes} loading={loading} city={city} setCity={handleCityChange} onSelect={setSelected} favs={favs} onFav={toggleFav} crowdMap={crowdMap} />;
+      case "home": return <HomePage cafes={cafes} loading={loading} city={city} setCity={handleCityChange} onSelect={setSelected} favs={favs} onFav={toggleFav} emptyCafeIds={emptyCafeIds} />;
       case "search": return <SearchPage cafes={cafes} loading={loading} onSelect={setSelected} favs={favs} onFav={toggleFav} />;
       case "map": return <MapPage cafes={cafes} onSelect={setSelected} />;
       case "favorites": return <FavoritesPage cafes={cafes} favs={favs} onSelect={setSelected} onFav={toggleFav} />;
