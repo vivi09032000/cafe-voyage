@@ -6,7 +6,7 @@ const SUPABASE_KEY = "sb_publishable_2mlstxr8qtRrybaIyBIB8Q_oS_Im60Q";
 async function getCrowdReport(cafeId) {
   const since = new Date(Date.now() - 3 * 60 * 60 * 1000).toISOString();
   const res = await fetch(
-    `${SUPABASE_URL}/rest/v1/crowd_reports?cafe_id=eq.${cafeId}&reported_at=gte.${since}&order=reported_at.desc&limit=1`,
+    `${SUPABASE_URL}/rest/v1/crowd_reports?cafe_id=eq.${cafeId}&Reported_at=gte.${since}&order=Reported_at.desc&limit=1`,
     { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` } }
   );
   if (!res.ok) return null;
@@ -22,7 +22,7 @@ async function getCrowdReport(cafeId) {
 async function fetchEmptyCafeIds() {
   const since = new Date(Date.now() - 3 * 60 * 60 * 1000).toISOString();
   const res = await fetch(
-    `${SUPABASE_URL}/rest/v1/crowd_reports?reported_at=gte.${since}&order=reported_at.desc`,
+    `${SUPABASE_URL}/rest/v1/crowd_reports?Reported_at=gte.${since}&order=Reported_at.desc`,
     { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` } }
   );
   if (!res.ok) return [];
