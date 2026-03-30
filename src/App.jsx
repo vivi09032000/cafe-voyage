@@ -57,6 +57,38 @@ const socketTag = (v) => {
   return null;
 };
 
+// ── Crowd helpers ──
+const CROWD_OPTIONS = [
+  { status: "empty",   emoji: "🟢", label: "很空，快來", short: "🟢 很空" },
+  { status: "normal",  emoji: "🟡", label: "普通",     short: "🟡 普通" },
+  { status: "crowded", emoji: "🔴", label: "很擠，慎入", short: "🔴 很擠" },
+];
+
+const getCrowdData = (cafeId) => {
+  try {
+    const d = JSON.parse(localStorage.getItem(`crowd_${cafeId}`));
+    if (d && d.lastReport && (Date.now() - d.lastReport) < 3 * 3600000) return d;
+  } catch {}
+  return null;
+};
+
+const crowdTag = (cafeId) => {
+  const d = getCrowdData(cafeId);
+  if (!d) return null;
+  const o = CROWD_OPTIONS.find(x => x.status === d.status);
+  if (!o) return null;
+  const type = d.status === "empty" ? "green" : d.status === "normal" ? "amber" : "red";
+  return <Tag label={o.short} type={type} />;
+};
+
+const timeAgo = (ts) => {
+  const mins = Math.floor((Date.now() - ts) / 60000);
+  if (mins < 1) return "剛剛";
+  if (mins < 60) return `${mins} 分鐘前`;
+  const hrs = Math.floor(mins / 60);
+  return `${hrs} 小時前`;
+};
+
 // ── Header ──
 const Header = () => (
   <div style={{ background: T.brown, padding: "13px 18px", display: "flex", justifyContent: "space-between", alignItems: "center", flexShrink: 0 }}>
@@ -126,6 +158,7 @@ const CafeCard = ({ cafe, onClick, fav, onFav }) => (
       <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
         {limitedTag(cafe.limited_time)}
         {socketTag(cafe.socket)}
+        {crowdTag(cafe.id)}
         {cafe.open_time && <Tag label={`🕐 ${cafe.open_time.slice(0, 20)}${cafe.open_time.length > 20 ? "..." : ""}`} type="gray" />}
       </div>
     </div>
@@ -138,12 +171,14 @@ const HomePage = ({ cafes, loading, city, setCity, onSelect, favs, onFav }) => {
   const [filterNoLimit, setFilterNoLimit] = useState(false);
   const [filterSocket, setFilterSocket] = useState(false);
   const [filterWifi, setFilterWifi] = useState(false);
+  const [filterEmpty, setFilterEmpty] = useState(false);
 
   const filtered = cafes
     .filter(c => !q || c.name.toLowerCase().includes(q.toLowerCase()) || c.address.includes(q) || (c.mrt && c.mrt.includes(q)))
     .filter(c => !filterNoLimit || c.limited_time === "no")
     .filter(c => !filterSocket || c.socket === "yes" || c.socket === "maybe")
     .filter(c => !filterWifi || c.wifi >= 4)
+    .filter(c => !filterEmpty || (getCrowdData(c.id) && getCrowdData(c.id).status === "empty"))
     .slice(0, 30);
 
   return (
@@ -172,7 +207,7 @@ const HomePage = ({ cafes, loading, city, setCity, onSelect, favs, onFav }) => {
 
       {/* Quick Filters */}
       <div style={{ display: "flex", gap: 7, marginBottom: 14, flexWrap: "wrap" }}>
-        {[["不限時", filterNoLimit, setFilterNoLimit], ["插座多", filterSocket, setFilterSocket], ["WiFi 穩", filterWifi, setFilterWifi]].map(([label, active, set]) => (
+        {[["不限時", filterNoLimit, setFilterNoLimit], ["插座多", filterSocket, setFilterSocket], ["WiFi 穩", filterWifi, setFilterWifi], ["人少", filterEmpty, setFilterEmpty]].map(([label, active, set]) => (
           <button key={label} onClick={() => set(!active)} style={{
             background: active ? T.green : T.beige, color: active ? "#fff" : T.sub,
             border: "none", borderRadius: 16, padding: "5px 12px", fontSize: 12, cursor: "pointer", fontWeight: active ? 700 : 400,
@@ -271,26 +306,13 @@ const MapPage = ({ cafes, onSelect }) => {
 };
 
 // ── CrowdReport ──
-const CROWD_OPTIONS = [
-  { status: "empty",   emoji: "🟢", label: "很空，快來" },
-  { status: "normal",  emoji: "🟡", label: "普通" },
-  { status: "crowded", emoji: "🔴", label: "很擠，慎入" },
-];
-
-const timeAgo = (ts) => {
-  const mins = Math.floor((Date.now() - ts) / 60000);
-  if (mins < 1) return "剛剛";
-  if (mins < 60) return `${mins} 分鐘前`;
-  const hrs = Math.floor(mins / 60);
-  return `${hrs} 小時前`;
-};
-
 const CrowdReport = ({ cafeId }) => {
   const key = `crowd_${cafeId}`;
   const load = () => {
     try { return JSON.parse(localStorage.getItem(key)) || {}; } catch { return {}; }
   };
   const [data, setData] = useState(load);
+  const [cooldown, setCooldown] = useState(false);
   const [, tick] = useState(0);
 
   useEffect(() => {
@@ -301,11 +323,10 @@ const CrowdReport = ({ cafeId }) => {
 
   const now = Date.now();
   const hasRecent = data.lastReport && (now - data.lastReport) < 3 * 3600000;
-  const userReported = data.userReported && (now - data.userReported) < 3600000;
   const opt = CROWD_OPTIONS.find(o => o.status === data.status);
 
   const report = (status) => {
-    if (userReported) return;
+    if (cooldown) return;
     const next = {
       status,
       count: (data.count || 0) + 1,
@@ -314,12 +335,8 @@ const CrowdReport = ({ cafeId }) => {
     };
     localStorage.setItem(key, JSON.stringify(next));
     setData(next);
-  };
-
-  const reset = () => {
-    const next = { ...data, userReported: null };
-    localStorage.setItem(key, JSON.stringify(next));
-    setData(next);
+    setCooldown(true);
+    setTimeout(() => setCooldown(false), 10000);
   };
 
   const cardStyle = { background: "#fff", borderRadius: 12, border: `1px solid ${T.beige}`, padding: 16, marginBottom: 16 };
@@ -329,38 +346,34 @@ const CrowdReport = ({ cafeId }) => {
     <div style={cardStyle}>
       <div style={titleStyle}>現在人多嗎？</div>
 
-      {userReported ? (
-        // 已回報過
-        <div>
-          <div style={{ fontSize: 13, color: T.green, fontWeight: 700, marginBottom: 6 }}>✅ 感謝你的回報！</div>
-          {opt && <div style={{ fontSize: 13, color: T.text }}>{opt.emoji} {opt.label}・{data.count} 人回報</div>}
-        </div>
-      ) : hasRecent && opt ? (
-        // 有回報，顯示結果 + 更新按鈕
-        <div>
+      {/* 顯示目前狀態 */}
+      {hasRecent && opt ? (
+        <div style={{ marginBottom: 12 }}>
           <div style={{ fontSize: 15, fontWeight: 700, color: T.text, marginBottom: 4 }}>{opt.emoji} {opt.label}</div>
-          <div style={{ fontSize: 12, color: T.sub, marginBottom: 12 }}>{data.count} 人回報・{timeAgo(data.lastReport)}</div>
-          <div style={{ display: "flex", gap: 7 }}>
-            {CROWD_OPTIONS.map(o => (
-              <button key={o.status} onClick={() => report(o.status)} style={{
-                flex: 1, padding: "7px 4px", borderRadius: 10, border: `1px solid ${T.beige}`,
-                background: T.cream, cursor: "pointer", fontSize: 12, color: T.text,
-              }}>{o.emoji} {o.label}</button>
-            ))}
-          </div>
+          <div style={{ fontSize: 12, color: T.sub }}>{data.count} 人回報・{timeAgo(data.lastReport)}</div>
         </div>
       ) : (
-        // 未回報 / 已過期
-        <div style={{ display: "flex", gap: 7 }}>
-          {CROWD_OPTIONS.map(o => (
-            <button key={o.status} onClick={() => report(o.status)} style={{
-              flex: 1, padding: "9px 4px", borderRadius: 10, border: `1px solid ${T.beige}`,
-              background: T.cream, cursor: "pointer", fontSize: 12, fontWeight: 500, color: T.text,
-              transition: "background 0.15s",
-            }}>{o.emoji}<br />{o.label}</button>
-          ))}
-        </div>
+        <div style={{ fontSize: 12, color: T.sub, marginBottom: 12 }}>目前無回報</div>
       )}
+
+      {/* 回報按鈕（永遠顯示） */}
+      {cooldown && <div style={{ fontSize: 12, color: T.green, fontWeight: 700, marginBottom: 8 }}>✅ 感謝你的回報！</div>}
+      <div style={{ display: "flex", gap: 7 }}>
+        {CROWD_OPTIONS.map(o => {
+          const isActive = hasRecent && data.status === o.status;
+          return (
+            <button key={o.status} onClick={() => report(o.status)} disabled={cooldown} style={{
+              flex: 1, padding: "9px 4px", borderRadius: 10,
+              border: isActive ? `2px solid ${T.brown}` : `1px solid ${T.beige}`,
+              background: isActive ? T.beige : T.cream,
+              cursor: cooldown ? "not-allowed" : "pointer",
+              opacity: cooldown ? 0.6 : 1,
+              fontSize: 12, fontWeight: isActive ? 700 : 500, color: T.text,
+              transition: "all 0.15s",
+            }}>{o.emoji}<br />{o.label}</button>
+          );
+        })}
+      </div>
     </div>
   );
 };
@@ -380,6 +393,9 @@ const DetailPage = ({ cafe, onBack, fav, onFav }) => (
       {cafe.mrt && <div style={{ fontSize: 13, color: T.sub, marginBottom: 3 }}>🚇 {cafe.mrt}</div>}
       <div style={{ fontSize: 13, color: T.sub, marginBottom: 12 }}>📍 {cafe.address}</div>
       {cafe.open_time && <div style={{ fontSize: 13, color: T.text, marginBottom: 8 }}>🕐 {cafe.open_time}</div>}
+
+      {/* Crowd Report — 放在最前面，一進來就看到 */}
+      <CrowdReport cafeId={cafe.id} />
 
       {/* Tags */}
       <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 20 }}>
@@ -402,9 +418,6 @@ const DetailPage = ({ cafe, onBack, fav, onFav }) => (
           )}
         </div>
       )}
-
-      {/* Crowd Report */}
-      <CrowdReport cafeId={cafe.id} />
 
       {/* Links */}
       {cafe.url && (
