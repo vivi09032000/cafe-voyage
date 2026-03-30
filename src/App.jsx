@@ -315,7 +315,7 @@ const DetailPage = ({ cafe, onBack, fav, onFav }) => (
         </a>
       )}
       {cafe.latitude && (
-        <a href={`https://www.google.com/maps/dir/?api=1&destination=${cafe.latitude},${cafe.longitude}`} target="_blank" rel="noreferrer" style={{ display: "block", background: T.brown, color: "#fff", borderRadius: 10, padding: "12px", textAlign: "center", textDecoration: "none", fontSize: 14, fontWeight: 700 }}>
+        <a href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(cafe.address)}`} target="_blank" rel="noreferrer" style={{ display: "block", background: T.brown, color: "#fff", borderRadius: 10, padding: "12px", textAlign: "center", textDecoration: "none", fontSize: 14, fontWeight: 700 }}>
           🧭 導航到這裡
         </a>
       )}
