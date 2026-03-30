@@ -335,7 +335,7 @@ export default function App() {
   const fetchCafes = useCallback(async (c) => {
     setLoading(true);
     try {
-      const res = await fetch(`https://cafenomad.tw/api/v1.2/cafes/${c}`);
+      const res = await fetch(`/api/cafes?city=${c}`);
       const data = await res.json();
       setCafes(data);
     } catch (e) {
