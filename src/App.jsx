@@ -331,7 +331,7 @@ const MapPage = ({ cafes, onSelect }) => {
 };
 
 // ── CrowdReport ──
-const CrowdReport = ({ cafeId }) => {
+const CrowdReport = ({ cafeId, onReport }) => {
   const [report, setReport] = useState(null);
   const [loading, setLoading] = useState(true);
   const [submitted, setSubmitted] = useState(false);
@@ -346,6 +346,7 @@ const CrowdReport = ({ cafeId }) => {
     setReport({ status, reported_at: new Date().toISOString() });
     setSubmitted(true);
     setEditing(false);
+    if (onReport) onReport(cafeId, status);
   };
 
   const statusLabel = {
@@ -395,7 +396,7 @@ const CrowdReport = ({ cafeId }) => {
 };
 
 // ── Page: Detail ──
-const DetailPage = ({ cafe, onBack, fav, onFav }) => (
+const DetailPage = ({ cafe, onBack, fav, onFav, onReport }) => (
   <div style={{ flex: 1, overflow: "auto" }}>
     <div style={{ background: T.brown, padding: "13px 18px", display: "flex", alignItems: "center", gap: 10 }}>
       <button onClick={onBack} style={{ background: "none", border: "none", cursor: "pointer" }}>
@@ -411,7 +412,7 @@ const DetailPage = ({ cafe, onBack, fav, onFav }) => (
       {cafe.open_time && <div style={{ fontSize: 13, color: T.text, marginBottom: 8 }}>🕐 {cafe.open_time}</div>}
 
       {/* Crowd Report — 放在最前面，一進來就看到 */}
-      <CrowdReport cafeId={cafe.id} />
+      <CrowdReport cafeId={cafe.id} onReport={onReport} />
 
       {/* Tags */}
       <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 20 }}>
@@ -480,8 +481,15 @@ export default function App() {
 
   const handleCityChange = (c) => { setCity(c); setSelected(null); };
 
+  const handleReportAndUpdateMap = (cafeId, status) => {
+    setCrowdMap(prev => ({
+      ...prev,
+      [cafeId]: { status, reported_at: new Date().toISOString() }
+    }));
+  };
+
   const renderPage = () => {
-    if (selected) return <DetailPage cafe={selected} onBack={() => setSelected(null)} fav={favs.has(selected.id)} onFav={toggleFav} />;
+    if (selected) return <DetailPage cafe={selected} onBack={() => setSelected(null)} fav={favs.has(selected.id)} onFav={toggleFav} onReport={handleReportAndUpdateMap} />;
     switch (tab) {
       case "home": return <HomePage cafes={cafes} loading={loading} city={city} setCity={handleCityChange} onSelect={setSelected} favs={favs} onFav={toggleFav} crowdMap={crowdMap} />;
       case "search": return <SearchPage cafes={cafes} loading={loading} onSelect={setSelected} favs={favs} onFav={toggleFav} />;
