@@ -157,7 +157,7 @@ const BottomNav = ({ active, onChange }) => (
 );
 
 // ── Cafe Card ──
-const CafeCard = ({ cafe, onClick, fav, onFav, crowdMap }) => (
+const CafeCard = ({ cafe, onClick, fav, onFav, emptyCafeIds }) => (
   <div style={{ background: "#fff", borderRadius: 12, border: `1px solid ${T.beige}`, marginBottom: 12, overflow: "hidden", cursor: "pointer" }} onClick={onClick}>
     <div style={{ padding: "13px 14px" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 6 }}>
@@ -284,7 +284,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
       ) : sorted.map((c, i) => (
         <div key={c.id} style={{ display: "flex", alignItems: "flex-start", gap: 8 }}>
           <div style={{ width: 24, height: 24, borderRadius: "50%", background: i < 3 ? T.brown : T.beige, color: i < 3 ? "#fff" : T.sub, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontWeight: 700, flexShrink: 0, marginTop: 14 }}>{i + 1}</div>
-          <div style={{ flex: 1 }}><CafeCard cafe={c} onClick={() => onSelect(c)} fav={favs.has(c.id)} onFav={onFav} /></div>
+          <div style={{ flex: 1 }}><CafeCard cafe={c} onClick={() => onSelect(c)} fav={favs.has(c.id)} onFav={onFav} emptyCafeIds={[]} /></div>
         </div>
       ))}
     </div>
@@ -307,7 +307,7 @@ const FavoritesPage = ({ cafes, favs, onSelect, onFav }) => {
           <div>還沒有收藏</div>
           <div style={{ fontSize: 12, marginTop: 4 }}>點擊 ☆ 加入收藏</div>
         </div>
-      ) : list.map(c => <CafeCard key={c.id} cafe={c} onClick={() => onSelect(c)} fav={true} onFav={onFav} />)}
+      ) : list.map(c => <CafeCard key={c.id} cafe={c} onClick={() => onSelect(c)} fav={true} onFav={onFav} emptyCafeIds={[]} />)}
     </div>
   );
 };
@@ -330,7 +330,7 @@ const MapPage = ({ cafes, onSelect }) => {
         </div>
       </div>
       <div style={{ fontSize: 13, color: T.sub, marginBottom: 10 }}>附近高評分咖啡廳</div>
-      {top.map(c => <CafeCard key={c.id} cafe={c} onClick={() => onSelect(c)} fav={false} onFav={() => {}} />)}
+      {top.map(c => <CafeCard key={c.id} cafe={c} onClick={() => onSelect(c)} fav={false} onFav={() => {}} emptyCafeIds={[]} />)}
     </div>
   );
 };
