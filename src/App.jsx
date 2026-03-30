@@ -112,11 +112,12 @@ const crowdTagFromIds = (cafeId, emptyCafeIds) => {
 };
 
 const timeAgo = (ts) => {
-  const mins = Math.floor((Date.now() - new Date(ts)) / 60000);
-  if (mins < 1) return "剛剛";
-  if (mins < 60) return `${mins} 分鐘前`;
-  const hrs = Math.floor(mins / 60);
-  return `${hrs} 小時前`;
+  const date = new Date(ts);
+  const mins = Math.floor((Date.now() - date) / 60000);
+  const timeStr = date.toLocaleTimeString('zh-TW', { hour: '2-digit', minute: '2-digit', hour12: false });
+  if (mins < 1) return `今天 ${timeStr}・剛剛`;
+  if (mins < 60) return `今天 ${timeStr}・${mins} 分鐘前`;
+  return `今天 ${timeStr}・${Math.floor(mins / 60)} 小時前`;
 };
 
 // ── Header ──
@@ -339,6 +340,7 @@ const MapPage = ({ cafes, onSelect }) => {
 const CrowdReport = ({ cafeId, onReport }) => {
   const [report, setReport] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [submitted, setSubmitted] = useState(false);
   const [editing, setEditing] = useState(false);
 
   useEffect(() => {
@@ -348,18 +350,22 @@ const CrowdReport = ({ cafeId, onReport }) => {
       if (active) {
         setReport(r);
         setLoading(false);
+        setSubmitted(false);
+        setEditing(false);
       }
     });
     return () => { active = false; };
   }, [cafeId]);
 
   const handleReport = async (status) => {
-    // 立即更新畫面狀態
-    setReport({ status, reported_at: new Date().toISOString() });
-    setEditing(false);
-    if (onReport) onReport(cafeId, status);
-    // 背景發送 API
     await submitCrowdReport(cafeId, status);
+    const latest = await getCrowdReport(cafeId);
+    if (latest) {
+      setReport(latest);
+      if (onReport) onReport(cafeId, status);
+    }
+    setSubmitted(true);
+    setEditing(false);
   };
 
   const statusLabel = {
@@ -384,6 +390,12 @@ const CrowdReport = ({ cafeId, onReport }) => {
       <div style={{ fontWeight: 700, fontSize: 14, color: T.text, marginBottom: 10 }}>現在人多嗎？</div>
       {loading ? (
         <div style={{ fontSize: 12, color: T.sub }}>載入中...</div>
+      ) : submitted && !editing ? (
+        <>
+          <div style={{ fontSize: 13, color: T.green, marginBottom: 4 }}>✅ 感謝你的回報！</div>
+          <div style={{ fontSize: 13, color: T.text, marginBottom: 8 }}>{statusLabel[report?.status]}</div>
+          <button onClick={() => setEditing(true)} style={{ fontSize: 12, color: T.brown, background: "none", border: "none", cursor: "pointer", textDecoration: "underline" }}>更新回報</button>
+        </>
       ) : editing || !report ? (
         <>
           {editing && <div style={{ fontSize: 12, color: T.sub, marginBottom: 8 }}>選擇目前狀況：</div>}
