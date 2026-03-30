@@ -310,8 +310,13 @@ const DetailPage = ({ cafe, onBack, fav, onFav }) => (
 
       {/* Links */}
       {cafe.url && (
-        <a href={cafe.url} target="_blank" rel="noreferrer" style={{ display: "block", background: T.green, color: "#fff", borderRadius: 10, padding: "12px", textAlign: "center", textDecoration: "none", fontSize: 14, fontWeight: 700 }}>
+        <a href={cafe.url} target="_blank" rel="noreferrer" style={{ display: "block", background: T.green, color: "#fff", borderRadius: 10, padding: "12px", textAlign: "center", textDecoration: "none", fontSize: 14, fontWeight: 700, marginBottom: 10 }}>
           🔗 前往官網
+        </a>
+      )}
+      {cafe.latitude && (
+        <a href={`https://www.google.com/maps/dir/?api=1&destination=${cafe.latitude},${cafe.longitude}`} target="_blank" rel="noreferrer" style={{ display: "block", background: T.brown, color: "#fff", borderRadius: 10, padding: "12px", textAlign: "center", textDecoration: "none", fontSize: 14, fontWeight: 700 }}>
+          🧭 導航到這裡
         </a>
       )}
     </div>
@@ -330,7 +335,7 @@ export default function App() {
   const fetchCafes = useCallback(async (c) => {
     setLoading(true);
     try {
-      const res = await fetch(`/api/cafes?city=${c}`);
+      const res = await fetch(`https://cafenomad.tw/api/v1.2/cafes/${c}`);
       const data = await res.json();
       setCafes(data);
     } catch (e) {
@@ -360,7 +365,7 @@ export default function App() {
   return (
     <>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,'PingFang TC',sans-serif;background:#f0ebe4}::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:${T.beige};border-radius:3px}`}</style>
-      <div style={{ maxWidth: 430, margin: "0 auto", width: "100%", height: "100dvh", display: "flex", flexDirection: "column", background: T.cream, overflow: "hidden", boxShadow: "0 0 40px rgba(0,0,0,0.15)" }}>
+      <div style={{ maxWidth: 400, margin: "0 auto", height: "100vh", display: "flex", flexDirection: "column", background: T.cream, overflow: "hidden", boxShadow: "0 0 40px rgba(0,0,0,0.15)" }}>
         {!selected && <Header />}
         {renderPage()}
         {!selected && <BottomNav active={tab} onChange={t => { setTab(t); }} />}
