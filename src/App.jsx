@@ -270,6 +270,101 @@ const MapPage = ({ cafes, onSelect }) => {
   );
 };
 
+// ── CrowdReport ──
+const CROWD_OPTIONS = [
+  { status: "empty",   emoji: "🟢", label: "很空，快來" },
+  { status: "normal",  emoji: "🟡", label: "普通" },
+  { status: "crowded", emoji: "🔴", label: "很擠，慎入" },
+];
+
+const timeAgo = (ts) => {
+  const mins = Math.floor((Date.now() - ts) / 60000);
+  if (mins < 1) return "剛剛";
+  if (mins < 60) return `${mins} 分鐘前`;
+  const hrs = Math.floor(mins / 60);
+  return `${hrs} 小時前`;
+};
+
+const CrowdReport = ({ cafeId }) => {
+  const key = `crowd_${cafeId}`;
+  const load = () => {
+    try { return JSON.parse(localStorage.getItem(key)) || {}; } catch { return {}; }
+  };
+  const [data, setData] = useState(load);
+  const [, tick] = useState(0);
+
+  useEffect(() => {
+    setData(load());
+    const id = setInterval(() => tick(n => n + 1), 30000);
+    return () => clearInterval(id);
+  }, [cafeId]);
+
+  const now = Date.now();
+  const hasRecent = data.lastReport && (now - data.lastReport) < 3 * 3600000;
+  const userReported = data.userReported && (now - data.userReported) < 3600000;
+  const opt = CROWD_OPTIONS.find(o => o.status === data.status);
+
+  const report = (status) => {
+    if (userReported) return;
+    const next = {
+      status,
+      count: (data.count || 0) + 1,
+      lastReport: Date.now(),
+      userReported: Date.now(),
+    };
+    localStorage.setItem(key, JSON.stringify(next));
+    setData(next);
+  };
+
+  const reset = () => {
+    const next = { ...data, userReported: null };
+    localStorage.setItem(key, JSON.stringify(next));
+    setData(next);
+  };
+
+  const cardStyle = { background: "#fff", borderRadius: 12, border: `1px solid ${T.beige}`, padding: 16, marginBottom: 16 };
+  const titleStyle = { fontFamily: "'Playfair Display', serif", fontSize: 16, fontWeight: 700, color: T.text, marginBottom: 12 };
+
+  return (
+    <div style={cardStyle}>
+      <div style={titleStyle}>現在人多嗎？</div>
+
+      {userReported ? (
+        // 已回報過
+        <div>
+          <div style={{ fontSize: 13, color: T.green, fontWeight: 700, marginBottom: 6 }}>✅ 感謝你的回報！</div>
+          {opt && <div style={{ fontSize: 13, color: T.text }}>{opt.emoji} {opt.label}・{data.count} 人回報</div>}
+        </div>
+      ) : hasRecent && opt ? (
+        // 有回報，顯示結果 + 更新按鈕
+        <div>
+          <div style={{ fontSize: 15, fontWeight: 700, color: T.text, marginBottom: 4 }}>{opt.emoji} {opt.label}</div>
+          <div style={{ fontSize: 12, color: T.sub, marginBottom: 12 }}>{data.count} 人回報・{timeAgo(data.lastReport)}</div>
+          <div style={{ display: "flex", gap: 7 }}>
+            {CROWD_OPTIONS.map(o => (
+              <button key={o.status} onClick={() => report(o.status)} style={{
+                flex: 1, padding: "7px 4px", borderRadius: 10, border: `1px solid ${T.beige}`,
+                background: T.cream, cursor: "pointer", fontSize: 12, color: T.text,
+              }}>{o.emoji} {o.label}</button>
+            ))}
+          </div>
+        </div>
+      ) : (
+        // 未回報 / 已過期
+        <div style={{ display: "flex", gap: 7 }}>
+          {CROWD_OPTIONS.map(o => (
+            <button key={o.status} onClick={() => report(o.status)} style={{
+              flex: 1, padding: "9px 4px", borderRadius: 10, border: `1px solid ${T.beige}`,
+              background: T.cream, cursor: "pointer", fontSize: 12, fontWeight: 500, color: T.text,
+              transition: "background 0.15s",
+            }}>{o.emoji}<br />{o.label}</button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
 // ── Page: Detail ──
 const DetailPage = ({ cafe, onBack, fav, onFav }) => (
   <div style={{ flex: 1, overflow: "auto" }}>
@@ -308,13 +403,16 @@ const DetailPage = ({ cafe, onBack, fav, onFav }) => (
         </div>
       )}
 
+      {/* Crowd Report */}
+      <CrowdReport cafeId={cafe.id} />
+
       {/* Links */}
       {cafe.url && (
         <a href={cafe.url} target="_blank" rel="noreferrer" style={{ display: "block", background: T.green, color: "#fff", borderRadius: 10, padding: "12px", textAlign: "center", textDecoration: "none", fontSize: 14, fontWeight: 700, marginBottom: 10 }}>
           🔗 前往官網
         </a>
       )}
-      {cafe.latitude && (
+      {cafe.address && (
         <a href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(cafe.address)}`} target="_blank" rel="noreferrer" style={{ display: "block", background: T.brown, color: "#fff", borderRadius: 10, padding: "12px", textAlign: "center", textDecoration: "none", fontSize: 14, fontWeight: 700 }}>
           🧭 導航到這裡
         </a>
