@@ -13,6 +13,20 @@ async function getCrowdReport(cafeId) {
   return data[0] || null;
 }
 
+async function fetchAllCrowdReports() {
+  const since = new Date(Date.now() - 3 * 60 * 60 * 1000).toISOString();
+  const res = await fetch(
+    `${SUPABASE_URL}/rest/v1/crowd_reports?reported_at=gte.${since}&order=reported_at.desc`,
+    { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` } }
+  );
+  const data = await res.json();
+  const map = {};
+  for (const r of data) {
+    if (!map[r.cafe_id]) map[r.cafe_id] = r;
+  }
+  return map;
+}
+
 async function submitCrowdReport(cafeId, status) {
   await fetch(`${SUPABASE_URL}/rest/v1/crowd_reports`, {
     method: "POST",
@@ -83,31 +97,17 @@ const socketTag = (v) => {
 };
 
 // ── Crowd helpers ──
-const CROWD_OPTIONS = [
-  { status: "empty",   emoji: "🟢", label: "很空，快來", short: "🟢 很空" },
-  { status: "normal",  emoji: "🟡", label: "普通",     short: "🟡 普通" },
-  { status: "crowded", emoji: "🔴", label: "很擠，慎入", short: "🔴 很擠" },
-];
+const CROWD_SHORT = { empty: "🟢 很空", normal: "🟡 普通", crowded: "🔴 很擠" };
+const CROWD_TYPE = { empty: "green", normal: "amber", crowded: "red" };
 
-const getCrowdData = (cafeId) => {
-  try {
-    const d = JSON.parse(localStorage.getItem(`crowd_${cafeId}`));
-    if (d && d.lastReport && (Date.now() - d.lastReport) < 3 * 3600000) return d;
-  } catch {}
-  return null;
-};
-
-const crowdTag = (cafeId) => {
-  const d = getCrowdData(cafeId);
-  if (!d) return null;
-  const o = CROWD_OPTIONS.find(x => x.status === d.status);
-  if (!o) return null;
-  const type = d.status === "empty" ? "green" : d.status === "normal" ? "amber" : "red";
-  return <Tag label={o.short} type={type} />;
+const crowdTagFromMap = (cafeId, crowdMap) => {
+  const r = crowdMap && crowdMap[cafeId];
+  if (!r) return null;
+  return <Tag label={CROWD_SHORT[r.status]} type={CROWD_TYPE[r.status]} />;
 };
 
 const timeAgo = (ts) => {
-  const mins = Math.floor((Date.now() - ts) / 60000);
+  const mins = Math.floor((Date.now() - new Date(ts)) / 60000);
   if (mins < 1) return "剛剛";
   if (mins < 60) return `${mins} 分鐘前`;
   const hrs = Math.floor(mins / 60);
@@ -152,7 +152,7 @@ const BottomNav = ({ active, onChange }) => (
 );
 
 // ── Cafe Card ──
-const CafeCard = ({ cafe, onClick, fav, onFav }) => (
+const CafeCard = ({ cafe, onClick, fav, onFav, crowdMap }) => (
   <div style={{ background: "#fff", borderRadius: 12, border: `1px solid ${T.beige}`, marginBottom: 12, overflow: "hidden", cursor: "pointer" }} onClick={onClick}>
     <div style={{ padding: "13px 14px" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 6 }}>
@@ -183,7 +183,7 @@ const CafeCard = ({ cafe, onClick, fav, onFav }) => (
       <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
         {limitedTag(cafe.limited_time)}
         {socketTag(cafe.socket)}
-        {crowdTag(cafe.id)}
+        {crowdTagFromMap(cafe.id, crowdMap)}
         {cafe.open_time && <Tag label={`🕐 ${cafe.open_time.slice(0, 20)}${cafe.open_time.length > 20 ? "..." : ""}`} type="gray" />}
       </div>
     </div>
@@ -191,7 +191,7 @@ const CafeCard = ({ cafe, onClick, fav, onFav }) => (
 );
 
 // ── Page: Home ──
-const HomePage = ({ cafes, loading, city, setCity, onSelect, favs, onFav }) => {
+const HomePage = ({ cafes, loading, city, setCity, onSelect, favs, onFav, crowdMap }) => {
   const [q, setQ] = useState("");
   const [filterNoLimit, setFilterNoLimit] = useState(false);
   const [filterSocket, setFilterSocket] = useState(false);
@@ -203,7 +203,7 @@ const HomePage = ({ cafes, loading, city, setCity, onSelect, favs, onFav }) => {
     .filter(c => !filterNoLimit || c.limited_time === "no")
     .filter(c => !filterSocket || c.socket === "yes" || c.socket === "maybe")
     .filter(c => !filterWifi || c.wifi >= 4)
-    .filter(c => !filterEmpty || (getCrowdData(c.id) && getCrowdData(c.id).status === "empty"))
+    .filter(c => !filterEmpty || (crowdMap[c.id] && crowdMap[c.id].status === "empty"))
     .slice(0, 30);
 
   return (
@@ -248,7 +248,7 @@ const HomePage = ({ cafes, loading, city, setCity, onSelect, favs, onFav }) => {
       ) : (
         <>
           <div style={{ fontSize: 12, color: T.sub, marginBottom: 10 }}>共 {filtered.length} 間咖啡廳</div>
-          {filtered.map(c => <CafeCard key={c.id} cafe={c} onClick={() => onSelect(c)} fav={favs.has(c.id)} onFav={onFav} />)}
+          {filtered.map(c => <CafeCard key={c.id} cafe={c} onClick={() => onSelect(c)} fav={favs.has(c.id)} onFav={onFav} crowdMap={crowdMap} />)}
           {filtered.length === 0 && <div style={{ textAlign: "center", padding: "40px 0", color: T.sub }}>找不到符合條件的咖啡廳</div>}
         </>
       )}
@@ -335,6 +335,7 @@ const CrowdReport = ({ cafeId }) => {
   const [report, setReport] = useState(null);
   const [loading, setLoading] = useState(true);
   const [submitted, setSubmitted] = useState(false);
+  const [editing, setEditing] = useState(false);
 
   useEffect(() => {
     getCrowdReport(cafeId).then(r => { setReport(r); setLoading(false); });
@@ -344,6 +345,7 @@ const CrowdReport = ({ cafeId }) => {
     await submitCrowdReport(cafeId, status);
     setReport({ status, reported_at: new Date().toISOString() });
     setSubmitted(true);
+    setEditing(false);
   };
 
   const statusLabel = {
@@ -352,38 +354,41 @@ const CrowdReport = ({ cafeId }) => {
     crowded: "🔴 很擠，慎入",
   };
 
-  const timeAgoFn = (ts) => {
-    const mins = Math.floor((Date.now() - new Date(ts)) / 60000);
-    if (mins < 1) return "剛剛";
-    if (mins < 60) return `${mins} 分鐘前`;
-    return `${Math.floor(mins / 60)} 小時前`;
-  };
+  const buttons = (
+    <div style={{ display: "flex", gap: 8 }}>
+      {[["empty","🟢 很空"],["normal","🟡 普通"],["crowded","🔴 很擠"]].map(([val, label]) => (
+        <button key={val} onClick={() => handleReport(val)} style={{
+          flex: 1, padding: "10px 4px", borderRadius: 10, border: `1px solid ${T.beige}`,
+          background: T.cream, fontSize: 12, cursor: "pointer", fontFamily: "inherit"
+        }}>{label}</button>
+      ))}
+    </div>
+  );
 
   return (
     <div style={{ background: "#fff", borderRadius: 12, border: `1px solid ${T.beige}`, padding: 16, marginBottom: 14 }}>
       <div style={{ fontWeight: 700, fontSize: 14, color: T.text, marginBottom: 10 }}>現在人多嗎？</div>
       {loading ? (
         <div style={{ fontSize: 12, color: T.sub }}>載入中...</div>
-      ) : report && !submitted ? (
-        <>
-          <div style={{ fontSize: 14, color: T.text, marginBottom: 6 }}>{statusLabel[report.status]}</div>
-          <div style={{ fontSize: 11, color: T.sub, marginBottom: 10 }}>{timeAgoFn(report.reported_at)}</div>
-          <button onClick={() => setSubmitted(false)} style={{ fontSize: 12, color: T.brown, background: "none", border: "none", cursor: "pointer", textDecoration: "underline" }}>更新回報</button>
-        </>
-      ) : submitted ? (
+      ) : submitted && !editing ? (
         <>
           <div style={{ fontSize: 13, color: T.green, marginBottom: 4 }}>✅ 感謝你的回報！</div>
-          <div style={{ fontSize: 13, color: T.text }}>{statusLabel[report.status]}</div>
+          <div style={{ fontSize: 13, color: T.text, marginBottom: 8 }}>{statusLabel[report.status]}</div>
+          <button onClick={() => setEditing(true)} style={{ fontSize: 12, color: T.brown, background: "none", border: "none", cursor: "pointer", textDecoration: "underline" }}>更新回報</button>
+        </>
+      ) : editing ? (
+        <>
+          <div style={{ fontSize: 12, color: T.sub, marginBottom: 8 }}>選擇目前狀況：</div>
+          {buttons}
+        </>
+      ) : report ? (
+        <>
+          <div style={{ fontSize: 14, color: T.text, marginBottom: 6 }}>{statusLabel[report.status]}</div>
+          <div style={{ fontSize: 11, color: T.sub, marginBottom: 10 }}>{timeAgo(report.reported_at)}</div>
+          <button onClick={() => setEditing(true)} style={{ fontSize: 12, color: T.brown, background: "none", border: "none", cursor: "pointer", textDecoration: "underline" }}>更新回報</button>
         </>
       ) : (
-        <div style={{ display: "flex", gap: 8 }}>
-          {[["empty","🟢 很空"],["normal","🟡 普通"],["crowded","🔴 很擠"]].map(([val, label]) => (
-            <button key={val} onClick={() => handleReport(val)} style={{
-              flex: 1, padding: "10px 4px", borderRadius: 10, border: `1px solid ${T.beige}`,
-              background: T.cream, fontSize: 12, cursor: "pointer", fontFamily: "inherit"
-            }}>{label}</button>
-          ))}
-        </div>
+        buttons
       )}
     </div>
   );
@@ -453,6 +458,7 @@ export default function App() {
   const [loading, setLoading] = useState(true);
   const [selected, setSelected] = useState(null);
   const [favs, setFavs] = useState(new Set());
+  const [crowdMap, setCrowdMap] = useState({});
 
   const fetchCafes = useCallback(async (c) => {
     setLoading(true);
@@ -468,6 +474,7 @@ export default function App() {
   }, []);
 
   useEffect(() => { fetchCafes(city); }, [city, fetchCafes]);
+  useEffect(() => { fetchAllCrowdReports().then(setCrowdMap).catch(() => {}); }, [city]);
 
   const toggleFav = (id) => setFavs(prev => { const s = new Set(prev); s.has(id) ? s.delete(id) : s.add(id); return s; });
 
@@ -476,7 +483,7 @@ export default function App() {
   const renderPage = () => {
     if (selected) return <DetailPage cafe={selected} onBack={() => setSelected(null)} fav={favs.has(selected.id)} onFav={toggleFav} />;
     switch (tab) {
-      case "home": return <HomePage cafes={cafes} loading={loading} city={city} setCity={handleCityChange} onSelect={setSelected} favs={favs} onFav={toggleFav} />;
+      case "home": return <HomePage cafes={cafes} loading={loading} city={city} setCity={handleCityChange} onSelect={setSelected} favs={favs} onFav={toggleFav} crowdMap={crowdMap} />;
       case "search": return <SearchPage cafes={cafes} loading={loading} onSelect={setSelected} favs={favs} onFav={toggleFav} />;
       case "map": return <MapPage cafes={cafes} onSelect={setSelected} />;
       case "favorites": return <FavoritesPage cafes={cafes} favs={favs} onSelect={setSelected} onFav={toggleFav} />;
