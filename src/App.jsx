@@ -1,5 +1,30 @@
 import { useState, useEffect, useCallback } from "react";
 
+const SUPABASE_URL = "https://dmymcnmsyhppwstpwmal.supabase.co";
+const SUPABASE_KEY = "sb_publishable_2mlstxr8qtRrybaIyBIB8Q_oS_Im60Q";
+
+async function getCrowdReport(cafeId) {
+  const since = new Date(Date.now() - 3 * 60 * 60 * 1000).toISOString();
+  const res = await fetch(
+    `${SUPABASE_URL}/rest/v1/crowd_reports?cafe_id=eq.${cafeId}&reported_at=gte.${since}&order=reported_at.desc&limit=1`,
+    { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` } }
+  );
+  const data = await res.json();
+  return data[0] || null;
+}
+
+async function submitCrowdReport(cafeId, status) {
+  await fetch(`${SUPABASE_URL}/rest/v1/crowd_reports`, {
+    method: "POST",
+    headers: {
+      apikey: SUPABASE_KEY,
+      Authorization: `Bearer ${SUPABASE_KEY}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ cafe_id: cafeId, status }),
+  });
+}
+
 const T = {
   brown: "#5C3D2E", darkBrown: "#3E2723", cream: "#FAF6F0",
   beige: "#E8DDD0", green: "#2D4A3E", gold: "#C9A84C",
@@ -307,73 +332,59 @@ const MapPage = ({ cafes, onSelect }) => {
 
 // ── CrowdReport ──
 const CrowdReport = ({ cafeId }) => {
-  const key = `crowd_${cafeId}`;
-  const load = () => {
-    try { return JSON.parse(localStorage.getItem(key)) || {}; } catch { return {}; }
-  };
-  const [data, setData] = useState(load);
-  const [cooldown, setCooldown] = useState(false);
-  const [, tick] = useState(0);
+  const [report, setReport] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    setData(load());
-    const id = setInterval(() => tick(n => n + 1), 30000);
-    return () => clearInterval(id);
+    getCrowdReport(cafeId).then(r => { setReport(r); setLoading(false); });
   }, [cafeId]);
 
-  const now = Date.now();
-  const hasRecent = data.lastReport && (now - data.lastReport) < 3 * 3600000;
-  const opt = CROWD_OPTIONS.find(o => o.status === data.status);
-
-  const report = (status) => {
-    if (cooldown) return;
-    const next = {
-      status,
-      count: (data.count || 0) + 1,
-      lastReport: Date.now(),
-      userReported: Date.now(),
-    };
-    localStorage.setItem(key, JSON.stringify(next));
-    setData(next);
-    setCooldown(true);
-    setTimeout(() => setCooldown(false), 10000);
+  const handleReport = async (status) => {
+    await submitCrowdReport(cafeId, status);
+    setReport({ status, reported_at: new Date().toISOString() });
+    setSubmitted(true);
   };
 
-  const cardStyle = { background: "#fff", borderRadius: 12, border: `1px solid ${T.beige}`, padding: 16, marginBottom: 16 };
-  const titleStyle = { fontFamily: "'Playfair Display', serif", fontSize: 16, fontWeight: 700, color: T.text, marginBottom: 12 };
+  const statusLabel = {
+    empty: "🟢 很空，快來",
+    normal: "🟡 普通",
+    crowded: "🔴 很擠，慎入",
+  };
+
+  const timeAgoFn = (ts) => {
+    const mins = Math.floor((Date.now() - new Date(ts)) / 60000);
+    if (mins < 1) return "剛剛";
+    if (mins < 60) return `${mins} 分鐘前`;
+    return `${Math.floor(mins / 60)} 小時前`;
+  };
 
   return (
-    <div style={cardStyle}>
-      <div style={titleStyle}>現在人多嗎？</div>
-
-      {/* 顯示目前狀態 */}
-      {hasRecent && opt ? (
-        <div style={{ marginBottom: 12 }}>
-          <div style={{ fontSize: 15, fontWeight: 700, color: T.text, marginBottom: 4 }}>{opt.emoji} {opt.label}</div>
-          <div style={{ fontSize: 12, color: T.sub }}>{data.count} 人回報・{timeAgo(data.lastReport)}</div>
-        </div>
+    <div style={{ background: "#fff", borderRadius: 12, border: `1px solid ${T.beige}`, padding: 16, marginBottom: 14 }}>
+      <div style={{ fontWeight: 700, fontSize: 14, color: T.text, marginBottom: 10 }}>現在人多嗎？</div>
+      {loading ? (
+        <div style={{ fontSize: 12, color: T.sub }}>載入中...</div>
+      ) : report && !submitted ? (
+        <>
+          <div style={{ fontSize: 14, color: T.text, marginBottom: 6 }}>{statusLabel[report.status]}</div>
+          <div style={{ fontSize: 11, color: T.sub, marginBottom: 10 }}>{timeAgoFn(report.reported_at)}</div>
+          <button onClick={() => setSubmitted(false)} style={{ fontSize: 12, color: T.brown, background: "none", border: "none", cursor: "pointer", textDecoration: "underline" }}>更新回報</button>
+        </>
+      ) : submitted ? (
+        <>
+          <div style={{ fontSize: 13, color: T.green, marginBottom: 4 }}>✅ 感謝你的回報！</div>
+          <div style={{ fontSize: 13, color: T.text }}>{statusLabel[report.status]}</div>
+        </>
       ) : (
-        <div style={{ fontSize: 12, color: T.sub, marginBottom: 12 }}>目前無回報</div>
+        <div style={{ display: "flex", gap: 8 }}>
+          {[["empty","🟢 很空"],["normal","🟡 普通"],["crowded","🔴 很擠"]].map(([val, label]) => (
+            <button key={val} onClick={() => handleReport(val)} style={{
+              flex: 1, padding: "10px 4px", borderRadius: 10, border: `1px solid ${T.beige}`,
+              background: T.cream, fontSize: 12, cursor: "pointer", fontFamily: "inherit"
+            }}>{label}</button>
+          ))}
+        </div>
       )}
-
-      {/* 回報按鈕（永遠顯示） */}
-      {cooldown && <div style={{ fontSize: 12, color: T.green, fontWeight: 700, marginBottom: 8 }}>✅ 感謝你的回報！</div>}
-      <div style={{ display: "flex", gap: 7 }}>
-        {CROWD_OPTIONS.map(o => {
-          const isActive = hasRecent && data.status === o.status;
-          return (
-            <button key={o.status} onClick={() => report(o.status)} disabled={cooldown} style={{
-              flex: 1, padding: "9px 4px", borderRadius: 10,
-              border: isActive ? `2px solid ${T.brown}` : `1px solid ${T.beige}`,
-              background: isActive ? T.beige : T.cream,
-              cursor: cooldown ? "not-allowed" : "pointer",
-              opacity: cooldown ? 0.6 : 1,
-              fontSize: 12, fontWeight: isActive ? 700 : 500, color: T.text,
-              transition: "all 0.15s",
-            }}>{o.emoji}<br />{o.label}</button>
-          );
-        })}
-      </div>
     </div>
   );
 };
