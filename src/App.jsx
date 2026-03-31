@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef, useMemo } from "react";
-import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, useMap, useMapEvents } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
@@ -485,18 +485,40 @@ const BindMapRef = ({ mapRef }) => {
   return null;
 };
 
+const LocateController = ({ request, onStart, onSuccess, onError }) => {
+  const map = useMapEvents({
+    locationfound(event) {
+      const pos = [event.latlng.lat, event.latlng.lng];
+      onSuccess(pos);
+    },
+    locationerror(event) {
+      onError(event);
+    },
+  });
+
+  useEffect(() => {
+    if (!request.seq) return;
+    onStart();
+    map.locate({
+      setView: true,
+      maxZoom: request.zoom,
+      enableHighAccuracy: false,
+      timeout: 12000,
+      maximumAge: 300000,
+    });
+  }, [map, onStart, onSuccess, onError, request]);
+
+  return null;
+};
+
 const MapPage = ({ cafes, onSelect, mapView, setMapView, mapQuery, setMapQuery }) => {
   const [userPos, setUserPos] = useState(null);
   const [geoTarget, setGeoTarget] = useState(null);
-  const [locateSeq, setLocateSeq] = useState(0);
+  const [locateRequest, setLocateRequest] = useState({ seq: 0, zoom: 15 });
   const [locating, setLocating] = useState(false);
   const [locateError, setLocateError] = useState("");
   const mapRef = useRef(null);
   const allMapCafes = useMemo(() => cafes.filter(isOpen).filter(c => c.latitude && c.longitude), [cafes]);
-
-  const getPosition = useCallback((options) => new Promise((resolve, reject) => {
-    navigator.geolocation.getCurrentPosition(resolve, reject, options);
-  }), []);
 
   const requestUserLocation = useCallback(async ({ silent = false, zoom = 15 } = {}) => {
     if (!navigator.geolocation) {
@@ -510,33 +532,30 @@ const MapPage = ({ cafes, onSelect, mapView, setMapView, mapQuery, setMapQuery }
 
     setLocating(true);
     if (!silent) setLocateError("");
+    setLocateRequest(prev => ({ seq: prev.seq + 1, zoom }));
+  }, []);
 
-    try {
-      let result;
-      try {
-        result = await getPosition({ enableHighAccuracy: true, timeout: 8000, maximumAge: 0 });
-      } catch {
-        // Retry with lower accuracy to reduce failures on some devices/networks.
-        result = await getPosition({ enableHighAccuracy: false, timeout: 12000, maximumAge: 300000 });
-      }
+  const handleLocateStart = useCallback(() => {
+    if (mapRef.current) mapRef.current.invalidateSize();
+  }, []);
 
-      const pos = [result.coords.latitude, result.coords.longitude];
-      setUserPos(pos);
-      setLocateSeq(prev => prev + 1);
-    } catch (err) {
-      if (silent) return;
-      const code = err?.code;
-      if (code === 1) {
-        setLocateError("定位權限被拒絕，請在瀏覽器允許位置權限後再試一次。");
-      } else if (code === 3) {
-        setLocateError("定位逾時，請移動到訊號較好的地方再試一次。");
-      } else {
-        setLocateError("目前無法取得位置，請稍後再試。");
-      }
-    } finally {
-      setLocating(false);
+  const handleLocateSuccess = useCallback((pos) => {
+    setUserPos(pos);
+    setLocating(false);
+    setLocateError("");
+  }, []);
+
+  const handleLocateError = useCallback((err) => {
+    const code = err?.code;
+    if (code === 1) {
+      setLocateError("定位權限被拒絕，請在瀏覽器允許位置權限後再試一次。");
+    } else if (code === 3) {
+      setLocateError("定位逾時，請移動到訊號較好的地方再試一次。");
+    } else {
+      setLocateError("目前無法取得位置，請稍後再試。");
     }
-  }, [getPosition]);
+    setLocating(false);
+  }, []);
 
   const mapCafes = useMemo(() => {
     if (!mapQuery) return allMapCafes;
@@ -604,9 +623,15 @@ const MapPage = ({ cafes, onSelect, mapView, setMapView, mapQuery, setMapQuery }
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           <BindMapRef mapRef={mapRef} />
+          <LocateController
+            request={locateRequest}
+            onStart={handleLocateStart}
+            onSuccess={handleLocateSuccess}
+            onError={handleLocateError}
+          />
           <SaveMapView onMove={setMapView} />
           {flyTarget && <FlyTo center={flyTarget} />}
-          <FlyToBySignal center={userPos} seq={locateSeq} zoom={15} />
+          <FlyToBySignal center={userPos} seq={locateRequest.seq} zoom={locateRequest.zoom} />
           {userPos && <Marker position={userPos} icon={userIcon}>
             <Popup><span style={{ fontSize: 13, fontWeight: 700 }}>📍 你的位置</span></Popup>
           </Marker>}
@@ -640,7 +665,6 @@ const MapPage = ({ cafes, onSelect, mapView, setMapView, mapQuery, setMapQuery }
         <button
           onClick={() => {
             setLocateError("");
-            if (userPos) setLocateSeq(prev => prev + 1);
             requestUserLocation({ silent: false, zoom: 15 });
           }}
           disabled={locating}
