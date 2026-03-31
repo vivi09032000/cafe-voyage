@@ -31,7 +31,7 @@ async function fetchEmptyCafeIds() {
   for (const r of data) {
     if (!map[r.cafe_id]) map[r.cafe_id] = r;
   }
-  return Object.keys(map).filter(id => map[id].status === "empty");
+  return new Set(Object.keys(map).filter(id => map[id].status === "empty"));
 }
 
 async function submitCrowdReport(cafeId, status) {
@@ -105,11 +105,66 @@ const socketTag = (v) => {
 
 // ── Crowd helpers ──
 const crowdTagFromIds = (cafeId, emptyCafeIds) => {
-  if (emptyCafeIds && emptyCafeIds.includes(cafeId)) {
+  if (emptyCafeIds && emptyCafeIds.has && emptyCafeIds.has(cafeId)) {
     return <Tag label="🟢 很空" type="green" />;
   }
   return null;
 };
+
+// ── Filter Section ──
+const FilterSection = ({ filters, toggle }) => (
+  <div style={{ marginBottom: 14 }}>
+    <div style={{ fontSize: 11, color: T.sub, marginBottom: 6 }}>工作環境</div>
+    <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 10 }}>
+      {[
+        { key: "noLimit", label: "不限時" },
+        { key: "socket", label: "插座多" },
+        { key: "standing", label: "站立桌" },
+      ].map(({ key, label }) => (
+        <button key={key} onClick={() => toggle(key)} style={{
+          background: filters[key] ? T.green : T.beige,
+          color: filters[key] ? "#fff" : T.sub,
+          border: "none", borderRadius: 20, padding: "5px 12px",
+          fontSize: 12, cursor: "pointer", fontWeight: filters[key] ? 700 : 400,
+          fontFamily: "inherit",
+        }}>{filters[key] ? "✓ " : ""}{label}</button>
+      ))}
+    </div>
+
+    <div style={{ fontSize: 11, color: T.sub, marginBottom: 6 }}>網路 & 環境</div>
+    <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 10 }}>
+      {[
+        { key: "wifi", label: "WiFi 穩" },
+        { key: "quiet", label: "超安靜" },
+        { key: "tasty", label: "咖啡好喝" },
+        { key: "cheap", label: "價格實惠" },
+      ].map(({ key, label }) => (
+        <button key={key} onClick={() => toggle(key)} style={{
+          background: filters[key] ? T.green : T.beige,
+          color: filters[key] ? "#fff" : T.sub,
+          border: "none", borderRadius: 20, padding: "5px 12px",
+          fontSize: 12, cursor: "pointer", fontWeight: filters[key] ? 700 : 400,
+          fontFamily: "inherit",
+        }}>{filters[key] ? "✓ " : ""}{label}</button>
+      ))}
+    </div>
+
+    <div style={{ fontSize: 11, color: T.sub, marginBottom: 6 }}>即時狀態</div>
+    <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+      {[
+        { key: "empty", label: "🟢 目前人少" },
+      ].map(({ key, label }) => (
+        <button key={key} onClick={() => toggle(key)} style={{
+          background: filters[key] ? T.green : T.beige,
+          color: filters[key] ? "#fff" : T.sub,
+          border: "none", borderRadius: 20, padding: "5px 12px",
+          fontSize: 12, cursor: "pointer", fontWeight: filters[key] ? 700 : 400,
+          fontFamily: "inherit",
+        }}>{filters[key] ? "✓ " : ""}{label}</button>
+      ))}
+    </div>
+  </div>
+);
 
 const timeAgo = (ts) => {
   const date = new Date(ts);
@@ -199,17 +254,24 @@ const CafeCard = ({ cafe, onClick, fav, onFav, emptyCafeIds }) => (
 // ── Page: Home ──
 const HomePage = ({ cafes, loading, city, setCity, onSelect, favs, onFav, emptyCafeIds }) => {
   const [q, setQ] = useState("");
-  const [filterNoLimit, setFilterNoLimit] = useState(false);
-  const [filterSocket, setFilterSocket] = useState(false);
-  const [filterWifi, setFilterWifi] = useState(false);
-  const [filterEmpty, setFilterEmpty] = useState(false);
+  const [filters, setFilters] = useState({
+    noLimit: false, socket: false, standing: false,
+    wifi: false, quiet: false, tasty: false, cheap: false,
+    empty: false,
+  });
+
+  const toggle = (key) => setFilters(prev => ({ ...prev, [key]: !prev[key] }));
 
   const filtered = cafes
-    .filter(c => !q || c.name.toLowerCase().includes(q.toLowerCase()) || c.address.includes(q) || (c.mrt && c.mrt.includes(q)))
-    .filter(c => !filterNoLimit || c.limited_time === "no")
-    .filter(c => !filterSocket || c.socket === "yes" || c.socket === "maybe")
-    .filter(c => !filterWifi || c.wifi >= 4)
-    .filter(c => !filterEmpty || (emptyCafeIds && emptyCafeIds.includes(c.id)))
+    .filter(c => !q || c.name.includes(q) || c.address.includes(q) || (c.mrt && c.mrt.includes(q)))
+    .filter(c => !filters.noLimit || c.limited_time === "no")
+    .filter(c => !filters.socket || c.socket === "yes" || c.socket === "maybe")
+    .filter(c => !filters.standing || c.standing_desk === "yes")
+    .filter(c => !filters.wifi || c.wifi >= 4)
+    .filter(c => !filters.quiet || c.quiet >= 4)
+    .filter(c => !filters.tasty || c.tasty >= 4)
+    .filter(c => !filters.cheap || c.cheap >= 4)
+    .filter(c => !filters.empty || emptyCafeIds.has(c.id))
     .slice(0, 30);
 
   return (
@@ -236,15 +298,8 @@ const HomePage = ({ cafes, loading, city, setCity, onSelect, favs, onFav, emptyC
           style={{ width: "100%", padding: "9px 14px 9px 34px", borderRadius: 22, border: `1px solid ${T.beige}`, background: "#fff", fontSize: 13, outline: "none", boxSizing: "border-box", color: T.text }} />
       </div>
 
-      {/* Quick Filters */}
-      <div style={{ display: "flex", gap: 7, marginBottom: 14, flexWrap: "wrap" }}>
-        {[["不限時", filterNoLimit, setFilterNoLimit], ["插座多", filterSocket, setFilterSocket], ["WiFi 穩", filterWifi, setFilterWifi], ["人少", filterEmpty, setFilterEmpty]].map(([label, active, set]) => (
-          <button key={label} onClick={() => set(!active)} style={{
-            background: active ? T.green : T.beige, color: active ? "#fff" : T.sub,
-            border: "none", borderRadius: 16, padding: "5px 12px", fontSize: 12, cursor: "pointer", fontWeight: active ? 700 : 400,
-          }}>{active ? "✓ " : ""}{label}</button>
-        ))}
-      </div>
+      {/* Grouped Filters */}
+      <FilterSection filters={filters} toggle={toggle} />
 
       {loading ? (
         <div style={{ textAlign: "center", padding: "60px 0", color: T.sub }}>
@@ -285,7 +340,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
       ) : sorted.map((c, i) => (
         <div key={c.id} style={{ display: "flex", alignItems: "flex-start", gap: 8 }}>
           <div style={{ width: 24, height: 24, borderRadius: "50%", background: i < 3 ? T.brown : T.beige, color: i < 3 ? "#fff" : T.sub, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontWeight: 700, flexShrink: 0, marginTop: 14 }}>{i + 1}</div>
-          <div style={{ flex: 1 }}><CafeCard cafe={c} onClick={() => onSelect(c)} fav={favs.has(c.id)} onFav={onFav} emptyCafeIds={[]} /></div>
+          <div style={{ flex: 1 }}><CafeCard cafe={c} onClick={() => onSelect(c)} fav={favs.has(c.id)} onFav={onFav} emptyCafeIds={new Set()} /></div>
         </div>
       ))}
     </div>
@@ -308,7 +363,7 @@ const FavoritesPage = ({ cafes, favs, onSelect, onFav }) => {
           <div>還沒有收藏</div>
           <div style={{ fontSize: 12, marginTop: 4 }}>點擊 ☆ 加入收藏</div>
         </div>
-      ) : list.map(c => <CafeCard key={c.id} cafe={c} onClick={() => onSelect(c)} fav={true} onFav={onFav} emptyCafeIds={[]} />)}
+      ) : list.map(c => <CafeCard key={c.id} cafe={c} onClick={() => onSelect(c)} fav={true} onFav={onFav} emptyCafeIds={new Set()} />)}
     </div>
   );
 };
@@ -331,7 +386,7 @@ const MapPage = ({ cafes, onSelect }) => {
         </div>
       </div>
       <div style={{ fontSize: 13, color: T.sub, marginBottom: 10 }}>附近高評分咖啡廳</div>
-      {top.map(c => <CafeCard key={c.id} cafe={c} onClick={() => onSelect(c)} fav={false} onFav={() => {}} emptyCafeIds={[]} />)}
+      {top.map(c => <CafeCard key={c.id} cafe={c} onClick={() => onSelect(c)} fav={false} onFav={() => {}} emptyCafeIds={new Set()} />)}
     </div>
   );
 };
@@ -476,7 +531,7 @@ export default function App() {
   const [loading, setLoading] = useState(true);
   const [selected, setSelected] = useState(null);
   const [favs, setFavs] = useState(new Set());
-  const [emptyCafeIds, setEmptyCafeIds] = useState([]);
+  const [emptyCafeIds, setEmptyCafeIds] = useState(new Set());
 
   const fetchCafes = useCallback(async (c) => {
     setLoading(true);
@@ -504,9 +559,9 @@ export default function App() {
 
   const handleReportAndUpdateMap = (cafeId, status) => {
     if (status === "empty") {
-      setEmptyCafeIds(prev => [...new Set([...prev, cafeId])]);
+      setEmptyCafeIds(prev => new Set([...prev, cafeId]));
     } else {
-      setEmptyCafeIds(prev => prev.filter(id => id !== cafeId));
+      setEmptyCafeIds(prev => { const s = new Set(prev); s.delete(cafeId); return s; });
     }
   };
 
