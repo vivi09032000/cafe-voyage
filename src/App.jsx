@@ -695,7 +695,7 @@ const LocateController = ({ request, onStart, onSuccess, onError }) => {
 const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setMapQuery }) => {
   const [userPos, setUserPos] = useState(null);
   const [geoTarget, setGeoTarget] = useState(null);
-  const [locateRequest, setLocateRequest] = useState({ seq: 0, zoom: 15 });
+  const [locateRequest, setLocateRequest] = useState({ seq: 0, zoom: 15, mode: "auto" });
   const [locating, setLocating] = useState(false);
   const [locateError, setLocateError] = useState("");
   const [visibleBounds, setVisibleBounds] = useState(null);
@@ -711,7 +711,7 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
     });
   }, [allMapCafes, visibleBounds]);
 
-  const requestUserLocation = useCallback(async ({ silent = false, zoom = 15 } = {}) => {
+  const requestUserLocation = useCallback(async ({ silent = false, zoom = 15, mode = "manual" } = {}) => {
     if (!navigator.geolocation) {
       if (!silent) setLocateError("目前瀏覽器不支援定位。");
       return;
@@ -723,7 +723,7 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
 
     setLocating(true);
     if (!silent) setLocateError("");
-    setLocateRequest(prev => ({ seq: prev.seq + 1, zoom }));
+    setLocateRequest(prev => ({ seq: prev.seq + 1, zoom, mode }));
   }, []);
 
   const handleLocateStart = useCallback(() => {
@@ -751,7 +751,7 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
   useEffect(() => {
     if (hasAutoLocatedRef.current) return;
     hasAutoLocatedRef.current = true;
-    requestUserLocation({ silent: false, zoom: 15 });
+    requestUserLocation({ silent: false, zoom: 15, mode: "auto" });
   }, [requestUserLocation]);
 
   const mapCafes = useMemo(() => {
@@ -830,7 +830,7 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
           />
           <SaveMapView onMove={setMapView} onBoundsChange={setVisibleBounds} />
           {flyTarget && <FlyTo center={flyTarget} />}
-          <FlyToBySignal center={userPos} seq={locateRequest.seq} zoom={locateRequest.zoom} />
+          {(!mapQuery || locateRequest.mode === "manual") && <FlyToBySignal center={userPos} seq={locateRequest.seq} zoom={locateRequest.zoom} />}
           {userPos && <Marker position={userPos} icon={userIcon}>
             <Popup><span style={{ fontSize: 13, fontWeight: 700 }}>📍 你的位置</span></Popup>
           </Marker>}
@@ -864,7 +864,7 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
         <button
           onClick={() => {
             setLocateError("");
-            requestUserLocation({ silent: false, zoom: 15 });
+            requestUserLocation({ silent: false, zoom: 15, mode: "manual" });
           }}
           disabled={locating}
           style={{
