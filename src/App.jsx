@@ -474,18 +474,23 @@ const MapPage = ({ cafes, onSelect }) => {
     if (!q || mapCafes.length > 0) { setGeoTarget(null); return; }
     const timer = setTimeout(async () => {
       try {
-        const res = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(q + " 台灣")}&limit=1`);
+        const res = await fetch(
+          `https://nominatim.openstreetmap.org/search?format=json&countrycodes=tw&q=${encodeURIComponent(q)}&limit=1`,
+          { headers: { "Accept-Language": "zh-TW", "User-Agent": "CafeVoyage/1.0" } }
+        );
         const data = await res.json();
         if (data.length > 0) {
-          setGeoTarget([parseFloat(data[0].lat), parseFloat(data[0].lon)]);
+          const pos = [parseFloat(data[0].lat), parseFloat(data[0].lon)];
+          setGeoTarget(pos);
+          if (mapRef.current) mapRef.current.flyTo(pos, 15, { duration: 0.8 });
         }
       } catch {}
     }, 500);
     return () => clearTimeout(timer);
   }, [q, mapCafes.length]);
 
-  // Fly to target
-  const flyTarget = cafeTarget || geoTarget;
+  // Fly to target (for cafe matches)
+  const flyTarget = cafeTarget;
 
   // Default center: Taipei, or first cafe with coords
   const defaultCenter = allMapCafes.length > 0
