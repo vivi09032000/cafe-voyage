@@ -455,6 +455,7 @@ const FlyTo = ({ center }) => {
 const MapPage = ({ cafes, onSelect }) => {
   const [userPos, setUserPos] = useState(null);
   const [q, setQ] = useState("");
+  const mapRef = useRef(null);
   const allMapCafes = useMemo(() => cafes.filter(isOpen).filter(c => c.latitude && c.longitude), [cafes]);
 
   const mapCafes = useMemo(() => {
@@ -493,6 +494,7 @@ const MapPage = ({ cafes, onSelect }) => {
           zoom={14}
           style={{ height: "100%", width: "100%" }}
           zoomControl={false}
+          ref={mapRef}
         >
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>'
@@ -528,6 +530,42 @@ const MapPage = ({ cafes, onSelect }) => {
             </Marker>
           ))}
         </MapContainer>
+
+        {/* Locate me button */}
+        <button
+          onClick={() => {
+            if (userPos && mapRef.current) {
+              mapRef.current.flyTo(userPos, 15, { duration: 0.8 });
+            } else if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(
+                ({ coords }) => {
+                  const pos = [coords.latitude, coords.longitude];
+                  setUserPos(pos);
+                  if (mapRef.current) mapRef.current.flyTo(pos, 15, { duration: 0.8 });
+                },
+                () => {},
+                { enableHighAccuracy: true, timeout: 8000 }
+              );
+            }
+          }}
+          style={{
+            position: "absolute", bottom: 20, right: 16, zIndex: 1000,
+            width: 40, height: 40, borderRadius: "50%",
+            background: "#fff", border: `1px solid ${T.beige}`,
+            boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
+            display: "flex", alignItems: "center", justifyContent: "center",
+            cursor: "pointer",
+          }}
+          title="回到我的位置"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={T.brown} strokeWidth="2" strokeLinecap="round">
+            <circle cx="12" cy="12" r="4" />
+            <line x1="12" y1="2" x2="12" y2="6" />
+            <line x1="12" y1="18" x2="12" y2="22" />
+            <line x1="2" y1="12" x2="6" y2="12" />
+            <line x1="18" y1="12" x2="22" y2="12" />
+          </svg>
+        </button>
       </div>
     </div>
   );
