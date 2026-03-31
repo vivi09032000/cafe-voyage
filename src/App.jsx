@@ -468,45 +468,41 @@ const HomePage = ({ cafes, loading, city, onSelect, favs, onFav, emptyCafeIds })
 
   return (
     <div style={{ display: "flex", flexDirection: "column", flex: 1, minHeight: 0, overflow: "hidden" }}>
-      <div style={{ flexShrink: 0, padding: "0 0 12px", background: T.cream, borderBottom: `1px solid ${T.beige}` }}>
-        <div style={{ margin: "0 16px", background: "#f7efe5", borderRadius: filtersOpen ? "0 0 28px 28px" : "0 0 28px 28px", border: `1px solid #eadac6`, borderTop: "none", overflow: "hidden" }}>
-          <div style={{ padding: "20px 24px 14px" }}>
-            <div style={{ position: "relative", marginBottom: 16 }}>
-              <svg style={{ position: "absolute", left: 22, top: "50%", transform: "translateY(-50%)" }} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={T.sub} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
-              <input value={q} onChange={e => setQ(e.target.value)} placeholder="搜尋店名、地址..."
-                style={{ width: "100%", padding: "17px 18px 17px 54px", borderRadius: 999, border: `2px solid #e1d1bf`, background: "#fff", fontSize: 15, outline: "none", boxSizing: "border-box", color: T.text, fontWeight: 500 }} />
-            </div>
-
-            {!filtersOpen ? (
-              <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
-                {activeFilterLabels.slice(0, 2).map((label) => (
-                  <FilterChip key={label} active={true} label={label} onClick={() => setFiltersOpen(true)} />
-                ))}
-                {activeFilterCount > 2 && (
-                  <span style={{ background: "#e7dccd", color: "#8a745f", borderRadius: 18, padding: "9px 14px", fontSize: 12, fontWeight: 700, lineHeight: 1 }}>+{activeFilterCount - 2}</span>
-                )}
-                <button
-                  onClick={() => setFiltersOpen(true)}
-                  style={{ marginLeft: "auto", background: "none", border: "none", color: T.brown, fontSize: 13, fontWeight: 700, cursor: "pointer", textDecoration: "underline", textUnderlineOffset: 4, fontFamily: "inherit" }}
-                >
-                  篩選 ▾
-                </button>
-              </div>
-            ) : (
-              <>
-                <FilterSection filters={filters} toggle={toggle} />
-                <div style={{ display: "flex", justifyContent: "flex-end" }}>
-                  <button
-                    onClick={() => setFiltersOpen(false)}
-                    style={{ background: "none", border: "none", color: T.brown, fontSize: 13, fontWeight: 700, cursor: "pointer", textDecoration: "underline", textUnderlineOffset: 4, fontFamily: "inherit" }}
-                  >
-                    收起篩選 ▴
-                  </button>
-                </div>
-              </>
-            )}
-          </div>
+      <div style={{ flexShrink: 0, padding: "18px 16px 12px", background: T.cream, borderBottom: `1px solid ${T.beige}` }}>
+        <div style={{ position: "relative", marginBottom: 16 }}>
+          <svg style={{ position: "absolute", left: 22, top: "50%", transform: "translateY(-50%)" }} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={T.sub} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
+          <input value={q} onChange={e => setQ(e.target.value)} placeholder="搜尋店名、地址..."
+            style={{ width: "100%", padding: "17px 18px 17px 54px", borderRadius: 999, border: `2px solid #e1d1bf`, background: "#fff", fontSize: 15, outline: "none", boxSizing: "border-box", color: T.text, fontWeight: 500 }} />
         </div>
+
+        {!filtersOpen ? (
+          <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+            {activeFilterLabels.slice(0, 2).map((label) => (
+              <FilterChip key={label} active={true} label={label} onClick={() => setFiltersOpen(true)} />
+            ))}
+            {activeFilterCount > 2 && (
+              <span style={{ background: "#e7dccd", color: "#8a745f", borderRadius: 18, padding: "9px 14px", fontSize: 12, fontWeight: 700, lineHeight: 1 }}>+{activeFilterCount - 2}</span>
+            )}
+            <button
+              onClick={() => setFiltersOpen(true)}
+              style={{ marginLeft: "auto", background: "none", border: "none", color: T.brown, fontSize: 13, fontWeight: 700, cursor: "pointer", textDecoration: "underline", textUnderlineOffset: 4, fontFamily: "inherit" }}
+            >
+              篩選 ▾
+            </button>
+          </div>
+        ) : (
+          <>
+            <FilterSection filters={filters} toggle={toggle} />
+            <div style={{ display: "flex", justifyContent: "flex-end" }}>
+              <button
+                onClick={() => setFiltersOpen(false)}
+                style={{ background: "none", border: "none", color: T.brown, fontSize: 13, fontWeight: 700, cursor: "pointer", textDecoration: "underline", textUnderlineOffset: 4, fontFamily: "inherit" }}
+              >
+                收起篩選 ▴
+              </button>
+            </div>
+          </>
+        )}
       </div>
 
       {/* 滾動區：咖啡廳列表 */}
