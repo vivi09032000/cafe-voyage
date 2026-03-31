@@ -445,8 +445,8 @@ const HomePage = ({ cafes, loading, regionLabel, onSelect, favs, onFav, emptyCaf
   const [page, setPage] = useState(1);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [filters, setFilters] = useState({
-    noLimit: false, socket: false, standing: false,
-    wifi: false, quiet: false, tasty: false, cheap: false,
+    noLimit: true, socket: false, standing: false,
+    wifi: true, quiet: false, tasty: false, cheap: false,
     empty: false,
   });
 
