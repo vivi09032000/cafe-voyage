@@ -200,14 +200,84 @@ const timeAgo = (ts) => {
 };
 
 // ── Header ──
-const Header = () => (
+const Header = ({ cityLabel, onOpenMenu }) => (
   <div style={{ background: T.brown, padding: "13px 18px", display: "flex", justifyContent: "space-between", alignItems: "center", flexShrink: 0 }}>
-    <div style={{ color: "#fff", fontFamily: "'Playfair Display', serif", fontSize: 15, fontWeight: 700, letterSpacing: 1 }}>☕ Cafe Voyage</div>
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round">
-      <line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" />
-    </svg>
+    <div>
+      <div style={{ color: "#fff", fontFamily: "'Playfair Display', serif", fontSize: 15, fontWeight: 700, letterSpacing: 1 }}>Cafe Voyage</div>
+      <div style={{ color: "#f1e5d6", fontSize: 11, marginTop: 2 }}>{cityLabel}</div>
+    </div>
+    <button onClick={onOpenMenu} style={{ background: "none", border: "none", cursor: "pointer", padding: 0 }}>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round">
+        <line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" />
+      </svg>
+    </button>
   </div>
 );
+
+const SettingsPanel = ({ open, city, setCity, onClose }) => {
+  if (!open) return null;
+  return (
+    <div style={{ position: "absolute", inset: 0, zIndex: 40, background: "rgba(32, 24, 18, 0.26)" }} onClick={onClose}>
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          right: 0,
+          width: "min(86vw, 320px)",
+          height: "100%",
+          background: "#fffaf4",
+          boxShadow: "-18px 0 40px rgba(0,0,0,0.18)",
+          padding: "20px 18px calc(24px + env(safe-area-inset-bottom, 0px))",
+          display: "flex",
+          flexDirection: "column",
+          gap: 18,
+        }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <div>
+            <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, color: T.text }}>設定</div>
+            <div style={{ fontSize: 12, color: T.sub, marginTop: 4 }}>帳號與城市偏好</div>
+          </div>
+          <button onClick={onClose} style={{ background: "none", border: "none", cursor: "pointer", color: T.sub, fontSize: 24, lineHeight: 1 }}>×</button>
+        </div>
+
+        <div style={{ background: "#fff", border: `1px solid ${T.beige}`, borderRadius: 14, padding: 14 }}>
+          <div style={{ fontSize: 12, color: T.sub, marginBottom: 10 }}>User</div>
+          <button style={{ width: "100%", background: T.brown, color: "#fff", border: "none", borderRadius: 10, padding: "12px 14px", textAlign: "left", fontSize: 14, fontWeight: 700, cursor: "pointer", fontFamily: "inherit" }}>
+            Login
+          </button>
+          <div style={{ fontSize: 11, color: T.sub, marginTop: 8 }}>先預留登入入口，之後可接 Supabase Auth。</div>
+        </div>
+
+        <div style={{ background: "#fff", border: `1px solid ${T.beige}`, borderRadius: 14, padding: 14 }}>
+          <div style={{ fontSize: 12, color: T.sub, marginBottom: 10 }}>地區選擇</div>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+            {CITIES.map((item) => (
+              <button
+                key={item.key}
+                onClick={() => { setCity(item.key); onClose(); }}
+                style={{
+                  background: city === item.key ? T.brown : T.cream,
+                  color: city === item.key ? "#fff" : T.text,
+                  border: `1px solid ${city === item.key ? T.brown : T.beige}`,
+                  borderRadius: 16,
+                  padding: "7px 12px",
+                  fontSize: 12,
+                  cursor: "pointer",
+                  fontFamily: "inherit",
+                  fontWeight: city === item.key ? 700 : 500,
+                }}
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 // ── Bottom Nav ──
 const NAV_ITEMS = [
@@ -352,9 +422,10 @@ const CafeCard = ({ cafe, onClick, fav, onFav, emptyCafeIds }) => (
 );
 
 // ── Page: Home ──
-const HomePage = ({ cafes, loading, city, setCity, onSelect, favs, onFav, emptyCafeIds }) => {
+const HomePage = ({ cafes, loading, city, onSelect, favs, onFav, emptyCafeIds }) => {
   const [q, setQ] = useState("");
   const [page, setPage] = useState(1);
+  const [filtersOpen, setFiltersOpen] = useState(false);
   const [filters, setFilters] = useState({
     noLimit: false, socket: false, standing: false,
     wifi: false, quiet: false, tasty: false, cheap: false,
@@ -381,35 +452,43 @@ const HomePage = ({ cafes, loading, city, setCity, onSelect, favs, onFav, emptyC
 
   // Reset page when search changes
   useEffect(() => { setPage(1); }, [q]);
+  const activeFilterCount = Object.values(filters).filter(Boolean).length;
 
   return (
     <div style={{ display: "flex", flexDirection: "column", flex: 1, minHeight: 0, overflow: "hidden" }}>
-      {/* 固定區：城市選擇 + 搜尋 + 篩選標籤 */}
+      {/* 固定區：搜尋 + 篩選 */}
       <div style={{ flexShrink: 0, padding: "14px 16px 0", background: T.cream, borderBottom: `1px solid ${T.beige}` }}>
-        <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, marginBottom: 10, color: T.text }}>首頁</div>
-
-        {/* City Selector */}
-        <div style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 6, marginBottom: 10 }}>
-          {CITIES.map(c => (
-            <button key={c.key} onClick={() => { setCity(c.key); setPage(1); }} style={{
-              background: city === c.key ? T.brown : "#fff",
-              color: city === c.key ? "#fff" : T.text,
-              border: `1px solid ${T.beige}`, borderRadius: 16,
-              padding: "5px 13px", fontSize: 12, cursor: "pointer", whiteSpace: "nowrap",
-              fontWeight: city === c.key ? 700 : 400, flexShrink: 0,
-            }}>{c.label}</button>
-          ))}
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12, marginBottom: 10 }}>
+          <div>
+            <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, color: T.text }}>首頁</div>
+            <div style={{ fontSize: 12, color: T.sub, marginTop: 4 }}>{CITIES.find((item) => item.key === city)?.label || "台北"} ・ 共 {total} 間</div>
+          </div>
+          <button
+            onClick={() => setFiltersOpen(prev => !prev)}
+            style={{
+              background: filtersOpen || activeFilterCount > 0 ? T.brown : "#fff",
+              color: filtersOpen || activeFilterCount > 0 ? "#fff" : T.text,
+              border: `1px solid ${filtersOpen || activeFilterCount > 0 ? T.brown : T.beige}`,
+              borderRadius: 18,
+              padding: "8px 12px",
+              fontSize: 12,
+              cursor: "pointer",
+              fontFamily: "inherit",
+              fontWeight: 700,
+              flexShrink: 0,
+            }}
+          >
+            {filtersOpen ? "收起篩選" : `篩選${activeFilterCount > 0 ? `・${activeFilterCount}` : ""}`}
+          </button>
         </div>
 
-        {/* Search */}
         <div style={{ position: "relative", marginBottom: 10 }}>
           <svg style={{ position: "absolute", left: 11, top: "50%", transform: "translateY(-50%)" }} width="15" height="15" viewBox="0 0 24 24" fill="none" stroke={T.sub} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
           <input value={q} onChange={e => setQ(e.target.value)} placeholder="搜尋店名、地址、捷運站..."
             style={{ width: "100%", padding: "9px 14px 9px 34px", borderRadius: 22, border: `1px solid ${T.beige}`, background: "#fff", fontSize: 13, outline: "none", boxSizing: "border-box", color: T.text }} />
         </div>
 
-        {/* Grouped Filters */}
-        <FilterSection filters={filters} toggle={toggle} />
+        {filtersOpen && <FilterSection filters={filters} toggle={toggle} />}
       </div>
 
       {/* 滾動區：咖啡廳列表 */}
@@ -977,6 +1056,7 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport }) => {
 export default function App() {
   const [tab, setTab] = useState("home");
   const [tabHistory, setTabHistory] = useState([]);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [city, setCity] = useState("taipei");
   const [cafes, setCafes] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -1048,7 +1128,7 @@ export default function App() {
   const renderPage = () => {
     if (selected) return <DetailPage cafe={selected} onBack={() => setSelected(null)} fav={favoriteLookup.has(selected.id)} onFav={toggleFav} onReport={handleReportAndUpdateMap} />;
     switch (tab) {
-      case "home": return <HomePage cafes={cafes} loading={loading} city={city} setCity={handleCityChange} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} emptyCafeIds={emptyCafeIds} />;
+      case "home": return <HomePage cafes={cafes} loading={loading} city={city} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} emptyCafeIds={emptyCafeIds} />;
       case "search": return <SearchPage cafes={cafes} loading={loading} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} />;
       case "map": return <MapPage cafes={cafes} onSelect={setSelected} mapView={mapView} setMapView={setMapView} mapQuery={mapQuery} setMapQuery={setMapQuery} />;
       case "favorites": return <FavoritesPage cafes={cafes} favs={favoriteLookup} onSelect={setSelected} onFav={toggleFav} />;
@@ -1060,7 +1140,7 @@ export default function App() {
     <>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');html,body,#root{height:100%}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,'PingFang TC',sans-serif;background:#f0ebe4}::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:${T.beige};border-radius:3px}`}</style>
       <div style={{ maxWidth: 430, margin: "0 auto", width: "100%", height: "100svh", minHeight: "100dvh", display: "flex", flexDirection: "column", background: T.cream, overflow: "hidden", boxShadow: "0 0 40px rgba(0,0,0,0.15)" }}>
-        {!selected && <Header />}
+        {!selected && <Header cityLabel={CITIES.find((item) => item.key === city)?.label || "台北"} onOpenMenu={() => setMenuOpen(true)} />}
         {selected ? (
           <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", overflow: "hidden" }}>
             {renderPage()}
@@ -1071,6 +1151,7 @@ export default function App() {
           </SwipeBackShell>
         )}
         {!selected && <BottomNav active={tab} onChange={handleTabChange} />}
+        {!selected && <SettingsPanel open={menuOpen} city={city} setCity={handleCityChange} onClose={() => setMenuOpen(false)} />}
       </div>
     </>
   );
