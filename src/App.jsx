@@ -171,6 +171,25 @@ const FilterSection = ({ filters, toggle }) => (
   </div>
 );
 
+const PER_PAGE = 30;
+const Pagination = ({ page, total, onPage }) => {
+  const maxPage = Math.ceil(total / PER_PAGE);
+  if (maxPage <= 1) return null;
+  return (
+    <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 12, padding: "14px 0 4px" }}>
+      <button onClick={() => onPage(page - 1)} disabled={page <= 1} style={{
+        background: page <= 1 ? T.beige : T.brown, color: page <= 1 ? T.sub : "#fff",
+        border: "none", borderRadius: 8, padding: "6px 14px", fontSize: 12, cursor: page <= 1 ? "default" : "pointer", fontFamily: "inherit",
+      }}>← 上一頁</button>
+      <span style={{ fontSize: 12, color: T.sub }}>{page} / {maxPage}</span>
+      <button onClick={() => onPage(page + 1)} disabled={page >= maxPage} style={{
+        background: page >= maxPage ? T.beige : T.brown, color: page >= maxPage ? T.sub : "#fff",
+        border: "none", borderRadius: 8, padding: "6px 14px", fontSize: 12, cursor: page >= maxPage ? "default" : "pointer", fontFamily: "inherit",
+      }}>下一頁 →</button>
+    </div>
+  );
+};
+
 const timeAgo = (ts) => {
   const date = new Date(ts);
   const mins = Math.floor((Date.now() - date) / 60000);
@@ -259,15 +278,16 @@ const CafeCard = ({ cafe, onClick, fav, onFav, emptyCafeIds }) => (
 // ── Page: Home ──
 const HomePage = ({ cafes, loading, city, setCity, onSelect, favs, onFav, emptyCafeIds }) => {
   const [q, setQ] = useState("");
+  const [page, setPage] = useState(1);
   const [filters, setFilters] = useState({
     noLimit: false, socket: false, standing: false,
     wifi: false, quiet: false, tasty: false, cheap: false,
     empty: false,
   });
 
-  const toggle = (key) => setFilters(prev => ({ ...prev, [key]: !prev[key] }));
+  const toggle = (key) => { setFilters(prev => ({ ...prev, [key]: !prev[key] })); setPage(1); };
 
-  const filtered = cafes
+  const allFiltered = cafes
     .filter(isOpen)
     .filter(c => !q || c.name.includes(q) || c.address.includes(q) || (c.mrt && c.mrt.includes(q)))
     .filter(c => !filters.noLimit || c.limited_time === "no")
@@ -277,8 +297,14 @@ const HomePage = ({ cafes, loading, city, setCity, onSelect, favs, onFav, emptyC
     .filter(c => !filters.quiet || c.quiet >= 4)
     .filter(c => !filters.tasty || c.tasty >= 4)
     .filter(c => !filters.cheap || c.cheap >= 4)
-    .filter(c => !filters.empty || emptyCafeIds.has(c.id))
-    .slice(0, 30);
+    .filter(c => !filters.empty || emptyCafeIds.has(c.id));
+
+  const total = allFiltered.length;
+  const start = (page - 1) * PER_PAGE;
+  const filtered = allFiltered.slice(start, start + PER_PAGE);
+
+  // Reset page when search changes
+  useEffect(() => { setPage(1); }, [q]);
 
   return (
     <div style={{ flex: 1, overflow: "auto", padding: "0 16px 16px" }}>
@@ -287,7 +313,7 @@ const HomePage = ({ cafes, loading, city, setCity, onSelect, favs, onFav, emptyC
       {/* City Selector */}
       <div style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 6, marginBottom: 10 }}>
         {CITIES.map(c => (
-          <button key={c.key} onClick={() => setCity(c.key)} style={{
+          <button key={c.key} onClick={() => { setCity(c.key); setPage(1); }} style={{
             background: city === c.key ? T.brown : "#fff",
             color: city === c.key ? "#fff" : T.text,
             border: `1px solid ${T.beige}`, borderRadius: 16,
@@ -314,9 +340,10 @@ const HomePage = ({ cafes, loading, city, setCity, onSelect, favs, onFav, emptyC
         </div>
       ) : (
         <>
-          <div style={{ fontSize: 12, color: T.sub, marginBottom: 10 }}>共 {filtered.length} 間咖啡廳</div>
+          <div style={{ fontSize: 12, color: T.sub, marginBottom: 10 }}>共 {total} 間咖啡廳{total > PER_PAGE ? `（顯示第 ${start + 1}-${Math.min(start + PER_PAGE, total)} 間）` : ""}</div>
           {filtered.map(c => <CafeCard key={c.id} cafe={c} onClick={() => onSelect(c)} fav={favs.has(c.id)} onFav={onFav} emptyCafeIds={emptyCafeIds} />)}
           {filtered.length === 0 && <div style={{ textAlign: "center", padding: "40px 0", color: T.sub }}>找不到符合條件的咖啡廳</div>}
+          <Pagination page={page} total={total} onPage={setPage} />
         </>
       )}
     </div>
@@ -326,12 +353,19 @@ const HomePage = ({ cafes, loading, city, setCity, onSelect, favs, onFav, emptyC
 // ── Page: Search (sorted by wifi+quiet) ──
 const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
   const [q, setQ] = useState("");
-  const sorted = cafes
+  const [page, setPage] = useState(1);
+
+  const allSorted = cafes
     .filter(isOpen)
     .filter(c => c.wifi > 0 || c.quiet > 0)
     .filter(c => !q || c.name.includes(q) || c.address.includes(q) || (c.mrt && c.mrt.includes(q)))
-    .sort((a, b) => (b.wifi + b.quiet + b.tasty) - (a.wifi + a.quiet + a.tasty))
-    .slice(0, 30);
+    .sort((a, b) => (b.wifi + b.quiet + b.tasty) - (a.wifi + a.quiet + a.tasty));
+
+  const total = allSorted.length;
+  const start = (page - 1) * PER_PAGE;
+  const sorted = allSorted.slice(start, start + PER_PAGE);
+
+  useEffect(() => { setPage(1); }, [q]);
 
   return (
     <div style={{ flex: 1, overflow: "auto", padding: "0 16px 16px" }}>
@@ -341,15 +375,21 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
         <input value={q} onChange={e => setQ(e.target.value)} placeholder="搜尋..."
           style={{ width: "100%", padding: "9px 14px 9px 34px", borderRadius: 22, border: `1px solid ${T.beige}`, background: "#fff", fontSize: 13, outline: "none", boxSizing: "border-box", color: T.text }} />
       </div>
-      <div style={{ fontSize: 12, color: T.sub, marginBottom: 10 }}>依 WiFi + 安靜 + 咖啡 綜合排序</div>
+      <div style={{ fontSize: 12, color: T.sub, marginBottom: 10 }}>依 WiFi + 安靜 + 咖啡 綜合排序・共 {total} 間{total > PER_PAGE ? `（第 ${start + 1}-${Math.min(start + PER_PAGE, total)} 間）` : ""}</div>
       {loading ? (
         <div style={{ textAlign: "center", padding: "60px 0", color: T.sub }}><div style={{ fontSize: 32, marginBottom: 10 }}>☕</div><div>載入中...</div></div>
-      ) : sorted.map((c, i) => (
-        <div key={c.id} style={{ display: "flex", alignItems: "flex-start", gap: 8 }}>
-          <div style={{ width: 24, height: 24, borderRadius: "50%", background: i < 3 ? T.brown : T.beige, color: i < 3 ? "#fff" : T.sub, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontWeight: 700, flexShrink: 0, marginTop: 14 }}>{i + 1}</div>
-          <div style={{ flex: 1 }}><CafeCard cafe={c} onClick={() => onSelect(c)} fav={favs.has(c.id)} onFav={onFav} emptyCafeIds={new Set()} /></div>
-        </div>
-      ))}
+      ) : (
+        <>
+          {sorted.map((c, i) => (
+            <div key={c.id} style={{ display: "flex", alignItems: "flex-start", gap: 8 }}>
+              <div style={{ width: 24, height: 24, borderRadius: "50%", background: (start + i) < 3 ? T.brown : T.beige, color: (start + i) < 3 ? "#fff" : T.sub, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontWeight: 700, flexShrink: 0, marginTop: 14 }}>{start + i + 1}</div>
+              <div style={{ flex: 1 }}><CafeCard cafe={c} onClick={() => onSelect(c)} fav={favs.has(c.id)} onFav={onFav} emptyCafeIds={new Set()} /></div>
+            </div>
+          ))}
+          {sorted.length === 0 && <div style={{ textAlign: "center", padding: "40px 0", color: T.sub }}>找不到符合條件的咖啡廳</div>}
+          <Pagination page={page} total={total} onPage={setPage} />
+        </>
+      )}
     </div>
   );
 };
