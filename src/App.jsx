@@ -61,6 +61,8 @@ const CITIES = [
 ];
 
 // ── helpers ──
+const CLOSED_KW = ["暫停營業", "已歇業", "停業", "結束營業"];
+const isOpen = (c) => !CLOSED_KW.some(kw => c.name.includes(kw));
 const scoreBar = (val, max = 5) => {
   if (!val || val === 0) return null;
   const pct = (val / max) * 100;
@@ -263,6 +265,7 @@ const HomePage = ({ cafes, loading, city, setCity, onSelect, favs, onFav, emptyC
   const toggle = (key) => setFilters(prev => ({ ...prev, [key]: !prev[key] }));
 
   const filtered = cafes
+    .filter(isOpen)
     .filter(c => !q || c.name.includes(q) || c.address.includes(q) || (c.mrt && c.mrt.includes(q)))
     .filter(c => !filters.noLimit || c.limited_time === "no")
     .filter(c => !filters.socket || c.socket === "yes")
@@ -321,6 +324,7 @@ const HomePage = ({ cafes, loading, city, setCity, onSelect, favs, onFav, emptyC
 const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
   const [q, setQ] = useState("");
   const sorted = cafes
+    .filter(isOpen)
     .filter(c => c.wifi > 0 || c.quiet > 0)
     .filter(c => !q || c.name.includes(q) || c.address.includes(q) || (c.mrt && c.mrt.includes(q)))
     .sort((a, b) => (b.wifi + b.quiet + b.tasty) - (a.wifi + a.quiet + a.tasty))
@@ -349,7 +353,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
 
 // ── Page: Favorites ──
 const FavoritesPage = ({ cafes, favs, onSelect, onFav }) => {
-  const list = cafes.filter(c => favs.has(c.id));
+  const list = cafes.filter(isOpen).filter(c => favs.has(c.id));
   return (
     <div style={{ flex: 1, overflow: "auto", padding: "0 16px 16px" }}>
       <div style={{ display: "flex", alignItems: "center", gap: 7, margin: "14px 0 4px" }}>
@@ -370,7 +374,7 @@ const FavoritesPage = ({ cafes, favs, onSelect, onFav }) => {
 
 // ── Page: Map placeholder ──
 const MapPage = ({ cafes, onSelect }) => {
-  const top = cafes.filter(c => c.latitude && c.wifi > 3).slice(0, 5);
+  const top = cafes.filter(isOpen).filter(c => c.latitude && c.wifi > 3).slice(0, 5);
   return (
     <div style={{ flex: 1, overflow: "auto", padding: "0 16px 16px" }}>
       <div style={{ display: "flex", alignItems: "center", gap: 7, margin: "14px 0 12px" }}>
