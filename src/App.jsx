@@ -62,6 +62,8 @@ const CITIES = [
   { key: "yilan", label: "宜蘭" }, { key: "hualien", label: "花蓮" },
   { key: "taitung", label: "台東" }, { key: "keelung", label: "基隆" },
 ];
+const MAP_CACHE_KEY = "cafe-voyage:map-cafes";
+const MAP_CACHE_TTL = 1000 * 60 * 60 * 12;
 
 // ── helpers ──
 const CLOSED_KW = ["暫停營業", "已歇業", "停業", "結束營業"];
@@ -1109,6 +1111,7 @@ export default function App() {
   const [emptyCafeIds, setEmptyCafeIds] = useState(new Set());
   const [mapView, setMapView] = useState({ center: null, zoom: null });
   const [mapQuery, setMapQuery] = useState("");
+  const mapFetchKeyRef = useRef("");
 
   const fetchCafes = useCallback(async (c) => {
     setLoading(true);
@@ -1123,24 +1126,62 @@ export default function App() {
     }
   }, []);
 
-  const fetchMapCafes = useCallback(async () => {
-    setMapLoading(true);
+  const fetchMapCafes = useCallback(async (preferredCity) => {
+    let cacheLoaded = false;
     try {
-      const results = await Promise.all(
-        CITIES.map(async ({ key }) => {
-          const res = await fetch(`/api/cafes?city=${key}`);
-          return res.json();
-        })
-      );
-      const merged = [];
+      const raw = localStorage.getItem(MAP_CACHE_KEY);
+      if (raw) {
+        const cached = JSON.parse(raw);
+        if (cached?.timestamp && Array.isArray(cached?.data) && Date.now() - cached.timestamp < MAP_CACHE_TTL) {
+          setMapCafes(cached.data);
+          cacheLoaded = true;
+        }
+      }
+    } catch (e) {
+      console.error(e);
+    }
+
+    setMapLoading(!cacheLoaded);
+
+    try {
+      const orderedCities = [
+        preferredCity,
+        ...CITIES.map(({ key }) => key).filter((key) => key !== preferredCity),
+      ];
+
+      const firstCity = orderedCities[0];
+      const firstRes = await fetch(`/api/cafes?city=${firstCity}`);
+      const firstData = await firstRes.json();
+
       const seen = new Set();
-      results.flat().forEach((cafe) => {
+      const merged = [];
+      firstData.forEach((cafe) => {
         const dedupeKey = cafe.id || `${cafe.name}-${cafe.address}`;
         if (seen.has(dedupeKey)) return;
         seen.add(dedupeKey);
         merged.push(cafe);
       });
+      setMapCafes((prev) => (prev.length > merged.length ? prev : merged));
+
+      const restResults = await Promise.allSettled(
+        orderedCities.slice(1).map(async (cityKey) => {
+          const res = await fetch(`/api/cafes?city=${cityKey}`);
+          return res.json();
+        })
+      );
+
+      restResults.forEach((result) => {
+        if (result.status !== "fulfilled" || !Array.isArray(result.value)) return;
+        result.value.forEach((cafe) => {
+          const dedupeKey = cafe.id || `${cafe.name}-${cafe.address}`;
+          if (seen.has(dedupeKey)) return;
+          seen.add(dedupeKey);
+          merged.push(cafe);
+        });
+      });
+
       setMapCafes(merged);
+      localStorage.setItem(MAP_CACHE_KEY, JSON.stringify({ timestamp: Date.now(), data: merged }));
     } catch (e) {
       console.error(e);
     } finally {
@@ -1150,9 +1191,12 @@ export default function App() {
 
   useEffect(() => { fetchCafes(city); }, [city, fetchCafes]);
   useEffect(() => {
-    if (tab !== "map" || mapCafes.length > 0 || mapLoading) return;
-    fetchMapCafes();
-  }, [tab, mapCafes.length, mapLoading, fetchMapCafes]);
+    if (tab !== "map" || mapLoading) return;
+    const fetchKey = `${tab}:${city}`;
+    if (mapFetchKeyRef.current === fetchKey && mapCafes.length > 0) return;
+    mapFetchKeyRef.current = fetchKey;
+    fetchMapCafes(city);
+  }, [tab, city, mapCafes.length, mapLoading, fetchMapCafes]);
   
   // App 啟動時 / 切換城市時抓取 emptyCafeIds
   useEffect(() => { 
