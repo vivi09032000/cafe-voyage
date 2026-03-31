@@ -470,9 +470,9 @@ const HomePage = ({ cafes, loading, city, onSelect, favs, onFav, emptyCafeIds })
     <div style={{ display: "flex", flexDirection: "column", flex: 1, minHeight: 0, overflow: "hidden" }}>
       <div style={{ flexShrink: 0, padding: "18px 16px 12px", background: T.cream, borderBottom: `1px solid ${T.beige}` }}>
         <div style={{ position: "relative", marginBottom: 16 }}>
-          <svg style={{ position: "absolute", left: 22, top: "50%", transform: "translateY(-50%)" }} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={T.sub} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
+          <svg style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)" }} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A89880" strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
           <input value={q} onChange={e => setQ(e.target.value)} placeholder="搜尋店名、地址..."
-            style={{ width: "100%", padding: "17px 18px 17px 54px", borderRadius: 999, border: `2px solid #e1d1bf`, background: "#fff", fontSize: 15, outline: "none", boxSizing: "border-box", color: T.text, fontWeight: 500 }} />
+            style={{ width: "100%", padding: "10px 14px 10px 36px", borderRadius: 12, border: "1px solid #C8BFB5", background: "#fff", fontSize: 14, outline: "none", boxSizing: "border-box", color: T.text, fontWeight: 500 }} />
         </div>
 
         {!filtersOpen ? (
@@ -1152,7 +1152,7 @@ export default function App() {
 
   return (
     <>
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');html,body,#root{height:100%}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,'PingFang TC',sans-serif;background:#f0ebe4}::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:${T.beige};border-radius:3px}`}</style>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');html,body,#root{height:100%}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,'PingFang TC',sans-serif;background:#f0ebe4}input::placeholder{color:#A89880;opacity:1}::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:${T.beige};border-radius:3px}`}</style>
       <div style={{ maxWidth: 430, margin: "0 auto", width: "100%", height: "100svh", minHeight: "100dvh", display: "flex", flexDirection: "column", background: T.cream, overflow: "hidden", boxShadow: "0 0 40px rgba(0,0,0,0.15)" }}>
         {!selected && <Header cityLabel={CITIES.find((item) => item.key === city)?.label || "台北"} subtitle={`📍 ${CITIES.find((item) => item.key === city)?.label || "台北"}・${cafes.filter(isOpen).length} 間`} onOpenMenu={() => setMenuOpen(true)} />}
         {selected ? (
