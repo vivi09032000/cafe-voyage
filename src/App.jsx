@@ -62,8 +62,21 @@ const CITIES = [
   { key: "yilan", label: "宜蘭" }, { key: "hualien", label: "花蓮" },
   { key: "taitung", label: "台東" }, { key: "keelung", label: "基隆" },
 ];
+const ALL_REGION_KEY = "all";
 const MAP_CACHE_KEY = "cafe-voyage:map-cafes";
 const MAP_CACHE_TTL = 1000 * 60 * 60 * 12;
+const REGION_PATTERN = /(台北市|新北市|桃園市|台中市|臺中市|台南市|臺南市|高雄市|基隆市|新竹市|新竹縣|苗栗縣|彰化縣|南投縣|雲林縣|嘉義市|嘉義縣|屏東縣|宜蘭縣|花蓮縣|台東縣|臺東縣)/;
+
+const normalizeRegionLabel = (label = "") => label
+  .replace("臺中市", "台中市")
+  .replace("臺南市", "台南市")
+  .replace("臺東縣", "台東縣");
+
+const getCafeRegion = (cafe) => {
+  const match = (cafe.address || "").match(REGION_PATTERN);
+  if (match) return normalizeRegionLabel(match[0]);
+  return "";
+};
 
 // ── helpers ──
 const CLOSED_KW = ["暫停營業", "已歇業", "停業", "結束營業"];
@@ -226,7 +239,7 @@ const Header = ({ title = "Cafe Voyage", cityLabel, subtitle, onOpenMenu }) => (
   </div>
 );
 
-const SettingsPanel = ({ open, city, setCity, onClose }) => {
+const SettingsPanel = ({ open, region, regionOptions, setRegion, onClose }) => {
   if (!open) return null;
   return (
     <div style={{ position: "absolute", inset: 0, zIndex: 40, background: "rgba(32, 24, 18, 0.26)" }} onClick={onClose}>
@@ -265,20 +278,20 @@ const SettingsPanel = ({ open, city, setCity, onClose }) => {
         <div style={{ background: "#fff", border: `1px solid ${T.beige}`, borderRadius: 14, padding: 14 }}>
           <div style={{ fontSize: 12, color: T.sub, marginBottom: 10 }}>地區選擇</div>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-            {CITIES.map((item) => (
+            {regionOptions.map((item) => (
               <button
                 key={item.key}
-                onClick={() => { setCity(item.key); onClose(); }}
+                onClick={() => { setRegion(item.key); onClose(); }}
                 style={{
-                  background: city === item.key ? T.brown : T.cream,
-                  color: city === item.key ? "#fff" : T.text,
-                  border: `1px solid ${city === item.key ? T.brown : T.beige}`,
+                  background: region === item.key ? T.brown : T.cream,
+                  color: region === item.key ? "#fff" : T.text,
+                  border: `1px solid ${region === item.key ? T.brown : T.beige}`,
                   borderRadius: 16,
                   padding: "7px 12px",
                   fontSize: 12,
                   cursor: "pointer",
                   fontFamily: "inherit",
-                  fontWeight: city === item.key ? 700 : 500,
+                  fontWeight: region === item.key ? 700 : 500,
                 }}
               >
                 {item.label}
@@ -434,7 +447,7 @@ const CafeCard = ({ cafe, onClick, fav, onFav, emptyCafeIds }) => (
 );
 
 // ── Page: Home ──
-const HomePage = ({ cafes, loading, city, onSelect, favs, onFav, emptyCafeIds }) => {
+const HomePage = ({ cafes, loading, regionLabel, onSelect, favs, onFav, emptyCafeIds }) => {
   const [q, setQ] = useState("");
   const [page, setPage] = useState(1);
   const [filtersOpen, setFiltersOpen] = useState(false);
@@ -466,7 +479,6 @@ const HomePage = ({ cafes, loading, city, onSelect, favs, onFav, emptyCafeIds })
   useEffect(() => { setPage(1); }, [q]);
   const activeFilterCount = Object.values(filters).filter(Boolean).length;
   const activeFilterLabels = Object.entries(filters).filter(([, value]) => value).map(([key]) => FILTER_LABELS[key]);
-  const headerCityLabel = CITIES.find((item) => item.key === city)?.label || "台北";
 
   return (
     <div style={{ display: "flex", flexDirection: "column", flex: 1, minHeight: 0, overflow: "hidden" }}>
@@ -1102,11 +1114,9 @@ export default function App() {
   const [tab, setTab] = useState("home");
   const [tabHistory, setTabHistory] = useState([]);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [city, setCity] = useState("taipei");
-  const [cafes, setCafes] = useState([]);
-  const [mapCafes, setMapCafes] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [mapLoading, setMapLoading] = useState(false);
+  const [region, setRegion] = useState(ALL_REGION_KEY);
+  const [allCafes, setAllCafes] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [selected, setSelected] = useState(null);
   const [favs, setFavs] = useState(() => {
     try {
@@ -1121,29 +1131,14 @@ export default function App() {
   const [emptyCafeIds, setEmptyCafeIds] = useState(new Set());
   const [mapView, setMapView] = useState({ center: null, zoom: null });
   const [mapQuery, setMapQuery] = useState("");
-  const mapFetchKeyRef = useRef("");
-
-  const fetchCafes = useCallback(async (c) => {
-    setLoading(true);
-    try {
-      const res = await fetch(`/api/cafes?city=${c}`);
-      const data = await res.json();
-      setCafes(data);
-    } catch (e) {
-      console.error(e);
-    } finally {
-      setLoading(false);
-    }
-  }, []);
-
-  const fetchMapCafes = useCallback(async (preferredCity) => {
+  const fetchAllCafes = useCallback(async () => {
     let cacheLoaded = false;
     try {
       const raw = localStorage.getItem(MAP_CACHE_KEY);
       if (raw) {
         const cached = JSON.parse(raw);
         if (cached?.timestamp && Array.isArray(cached?.data) && Date.now() - cached.timestamp < MAP_CACHE_TTL) {
-          setMapCafes(cached.data);
+          setAllCafes(cached.data);
           cacheLoaded = true;
         }
       }
@@ -1151,16 +1146,11 @@ export default function App() {
       console.error(e);
     }
 
-    setMapLoading(!cacheLoaded);
+    setLoading(!cacheLoaded);
 
     try {
-      const orderedCities = [
-        preferredCity,
-        ...CITIES.map(({ key }) => key).filter((key) => key !== preferredCity),
-      ];
-
-      const firstCity = orderedCities[0];
-      const firstRes = await fetch(`/api/cafes?city=${firstCity}`);
+      const orderedCities = CITIES.map(({ key }) => key);
+      const firstRes = await fetch(`/api/cafes?city=${orderedCities[0]}`);
       const firstData = await firstRes.json();
 
       const seen = new Set();
@@ -1171,7 +1161,7 @@ export default function App() {
         seen.add(dedupeKey);
         merged.push(cafe);
       });
-      setMapCafes((prev) => (prev.length > merged.length ? prev : merged));
+      setAllCafes((prev) => (prev.length > merged.length ? prev : merged));
 
       const restResults = await Promise.allSettled(
         orderedCities.slice(1).map(async (cityKey) => {
@@ -1190,28 +1180,24 @@ export default function App() {
         });
       });
 
-      setMapCafes(merged);
+      setAllCafes(merged);
       localStorage.setItem(MAP_CACHE_KEY, JSON.stringify({ timestamp: Date.now(), data: merged }));
     } catch (e) {
       console.error(e);
     } finally {
-      setMapLoading(false);
+      setLoading(false);
     }
   }, []);
 
-  useEffect(() => { fetchCafes(city); }, [city, fetchCafes]);
   useEffect(() => {
-    if (tab !== "map" || mapLoading) return;
-    const fetchKey = `${tab}:${city}`;
-    if (mapFetchKeyRef.current === fetchKey && mapCafes.length > 0) return;
-    mapFetchKeyRef.current = fetchKey;
-    fetchMapCafes(city);
-  }, [tab, city, mapCafes.length, mapLoading, fetchMapCafes]);
+    if (allCafes.length > 0 || loading) return;
+    fetchAllCafes();
+  }, [allCafes.length, loading, fetchAllCafes]);
   
-  // App 啟動時 / 切換城市時抓取 emptyCafeIds
+  // App 啟動時抓取 emptyCafeIds
   useEffect(() => { 
     fetchEmptyCafeIds().then(setEmptyCafeIds).catch(() => {}); 
-  }, [city]);
+  }, []);
 
   useEffect(() => {
     localStorage.setItem("cafe-voyage:favs", JSON.stringify([...favs]));
@@ -1219,8 +1205,24 @@ export default function App() {
 
   const toggleFav = (id) => setFavs(prev => { const key = String(id); const s = new Set(prev); s.has(key) ? s.delete(key) : s.add(key); return s; });
   const favoriteLookup = useMemo(() => ({ has: (id) => favs.has(String(id)) }), [favs]);
+  const availableRegions = useMemo(() => {
+    const seen = new Set();
+    const options = [{ key: ALL_REGION_KEY, label: "全台" }];
+    allCafes.forEach((cafe) => {
+      const regionLabel = getCafeRegion(cafe);
+      if (!regionLabel || seen.has(regionLabel)) return;
+      seen.add(regionLabel);
+      options.push({ key: regionLabel, label: regionLabel });
+    });
+    return options;
+  }, [allCafes]);
+  const regionLabel = availableRegions.find((item) => item.key === region)?.label || "全台";
+  const cafes = useMemo(() => {
+    if (region === ALL_REGION_KEY) return allCafes;
+    return allCafes.filter((cafe) => getCafeRegion(cafe) === region);
+  }, [allCafes, region]);
 
-  const handleCityChange = (c) => { setCity(c); setSelected(null); };
+  const handleRegionChange = (nextRegion) => { setRegion(nextRegion); setSelected(null); };
   const handleTabChange = (nextTab) => {
     if (nextTab === tab) return;
     setTabHistory(prev => [...prev, tab]);
@@ -1246,9 +1248,9 @@ export default function App() {
   const renderPage = () => {
     if (selected) return <DetailPage cafe={selected} onBack={() => setSelected(null)} fav={favoriteLookup.has(selected.id)} onFav={toggleFav} onReport={handleReportAndUpdateMap} />;
     switch (tab) {
-      case "home": return <HomePage cafes={cafes} loading={loading} city={city} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} emptyCafeIds={emptyCafeIds} />;
+      case "home": return <HomePage cafes={cafes} loading={loading} regionLabel={regionLabel} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} emptyCafeIds={emptyCafeIds} />;
       case "search": return <SearchPage cafes={cafes} loading={loading} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} />;
-      case "map": return <MapPage cafes={mapCafes} onSelect={setSelected} mapView={mapView} setMapView={setMapView} mapQuery={mapQuery} setMapQuery={setMapQuery} loading={mapLoading} />;
+      case "map": return <MapPage cafes={allCafes} onSelect={setSelected} mapView={mapView} setMapView={setMapView} mapQuery={mapQuery} setMapQuery={setMapQuery} loading={loading} />;
       case "favorites": return <FavoritesPage cafes={cafes} favs={favoriteLookup} onSelect={setSelected} onFav={toggleFav} />;
       default: return null;
     }
@@ -1258,7 +1260,7 @@ export default function App() {
     <>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');html,body,#root{height:100%}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,'PingFang TC',sans-serif;background:#f0ebe4}input::placeholder{color:#A89880;opacity:1}::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:${T.beige};border-radius:3px}`}</style>
       <div style={{ maxWidth: 430, margin: "0 auto", width: "100%", height: "100svh", minHeight: "100dvh", display: "flex", flexDirection: "column", background: T.cream, overflow: "hidden", boxShadow: "0 0 40px rgba(0,0,0,0.15)" }}>
-        {!selected && <Header cityLabel={CITIES.find((item) => item.key === city)?.label || "台北"} subtitle={tab === "map" ? "" : `📍 ${CITIES.find((item) => item.key === city)?.label || "台北"}・${cafes.filter(isOpen).length} 間`} onOpenMenu={() => setMenuOpen(true)} />}
+        {!selected && <Header cityLabel={regionLabel} subtitle={tab === "map" ? "" : `📍 ${regionLabel}・${cafes.filter(isOpen).length} 間`} onOpenMenu={() => setMenuOpen(true)} />}
         {selected ? (
           <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", overflow: "hidden" }}>
             {renderPage()}
@@ -1269,7 +1271,7 @@ export default function App() {
           </SwipeBackShell>
         )}
         {!selected && <BottomNav active={tab} onChange={handleTabChange} />}
-        {!selected && <SettingsPanel open={menuOpen} city={city} setCity={handleCityChange} onClose={() => setMenuOpen(false)} />}
+        {!selected && <SettingsPanel open={menuOpen} region={region} regionOptions={availableRegions} setRegion={handleRegionChange} onClose={() => setMenuOpen(false)} />}
       </div>
     </>
   );
