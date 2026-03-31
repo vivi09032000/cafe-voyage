@@ -217,7 +217,17 @@ const NAV_ITEMS = [
   { key: "favorites", label: "收藏", heart: true },
 ];
 const BottomNav = ({ active, onChange }) => (
-  <div style={{ background: T.beige, borderTop: `1px solid ${T.brown}22`, display: "flex", justifyContent: "space-around", padding: "9px 0 13px", flexShrink: 0 }}>
+  <div style={{
+    background: T.beige,
+    borderTop: `1px solid ${T.brown}22`,
+    display: "flex",
+    justifyContent: "space-around",
+    padding: "9px 0 calc(13px + env(safe-area-inset-bottom, 0px))",
+    flexShrink: 0,
+    position: "sticky",
+    bottom: 0,
+    zIndex: 20,
+  }}>
     {NAV_ITEMS.map(({ key, label, d, circle, pin, heart }) => {
       const on = active === key;
       const c = on ? T.brown : T.sub;
@@ -307,7 +317,7 @@ const HomePage = ({ cafes, loading, city, setCity, onSelect, favs, onFav, emptyC
   useEffect(() => { setPage(1); }, [q]);
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", height: "100%", overflow: "hidden" }}>
+    <div style={{ display: "flex", flexDirection: "column", flex: 1, minHeight: 0, overflow: "hidden" }}>
       {/* 固定區：城市選擇 + 搜尋 + 篩選標籤 */}
       <div style={{ flexShrink: 0, padding: "14px 16px 0", background: T.cream, borderBottom: `1px solid ${T.beige}` }}>
         <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, marginBottom: 10, color: T.text }}>首頁</div>
@@ -374,7 +384,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
   useEffect(() => { setPage(1); }, [q]);
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", height: "100%", overflow: "hidden" }}>
+    <div style={{ display: "flex", flexDirection: "column", flex: 1, minHeight: 0, overflow: "hidden" }}>
       {/* 固定區 */}
       <div style={{ flexShrink: 0, padding: "14px 16px 0", background: T.cream, borderBottom: `1px solid ${T.beige}` }}>
         <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, marginBottom: 10, color: T.text }}>工作友善排行</div>
@@ -411,7 +421,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
 const FavoritesPage = ({ cafes, favs, onSelect, onFav }) => {
   const list = cafes.filter(isOpen).filter(c => favs.has(c.id));
   return (
-    <div style={{ display: "flex", flexDirection: "column", height: "100%", overflow: "hidden" }}>
+    <div style={{ display: "flex", flexDirection: "column", flex: 1, minHeight: 0, overflow: "hidden" }}>
       {/* 固定區 */}
       <div style={{ flexShrink: 0, padding: "14px 16px 4px", background: T.cream, borderBottom: `1px solid ${T.beige}` }}>
         <div style={{ display: "flex", alignItems: "center", gap: 7 }}>
@@ -604,7 +614,7 @@ const MapPage = ({ cafes, onSelect, mapView, setMapView, mapQuery, setMapQuery }
   const defaultZoom = mapView.zoom || 14;
 
   return (
-    <div style={{ flex: 1, display: "flex", flexDirection: "column", overflow: "hidden" }}>
+    <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", overflow: "hidden" }}>
       <div style={{ display: "flex", alignItems: "center", gap: 7, padding: "10px 16px 6px" }}>
         <span style={{ fontSize: 20 }}>📍</span>
         <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, color: T.text }}>地圖</div>
@@ -790,7 +800,7 @@ const CrowdReport = ({ cafeId, onReport }) => {
 
 // ── Page: Detail ──
 const DetailPage = ({ cafe, onBack, fav, onFav, onReport }) => (
-  <div style={{ flex: 1, overflow: "auto" }}>
+  <div style={{ flex: 1, minHeight: 0, overflow: "auto" }}>
     <div style={{ background: T.brown, padding: "13px 18px", display: "flex", alignItems: "center", gap: 10 }}>
       <button onClick={onBack} style={{ background: "none", border: "none", cursor: "pointer" }}>
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round"><polyline points="15 18 9 12 15 6" /></svg>
@@ -915,10 +925,12 @@ export default function App() {
 
   return (
     <>
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,'PingFang TC',sans-serif;background:#f0ebe4}::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:${T.beige};border-radius:3px}`}</style>
-      <div style={{ maxWidth: 430, margin: "0 auto", width: "100%", height: "100dvh", display: "flex", flexDirection: "column", background: T.cream, overflow: "hidden", boxShadow: "0 0 40px rgba(0,0,0,0.15)" }}>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');html,body,#root{height:100%}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,'PingFang TC',sans-serif;background:#f0ebe4}::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:${T.beige};border-radius:3px}`}</style>
+      <div style={{ maxWidth: 430, margin: "0 auto", width: "100%", height: "100svh", minHeight: "100dvh", display: "flex", flexDirection: "column", background: T.cream, overflow: "hidden", boxShadow: "0 0 40px rgba(0,0,0,0.15)" }}>
         {!selected && <Header />}
-        {renderPage()}
+        <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", overflow: "hidden" }}>
+          {renderPage()}
+        </div>
         {!selected && <BottomNav active={tab} onChange={t => { setTab(t); }} />}
       </div>
     </>
