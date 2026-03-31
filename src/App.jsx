@@ -246,6 +246,72 @@ const BottomNav = ({ active, onChange }) => (
   </div>
 );
 
+const SwipeBackShell = ({ enabled, onBack, children }) => {
+  const touchStartX = useRef(0);
+  const touchStartY = useRef(0);
+  const swipeActive = useRef(false);
+  const [swipeX, setSwipeX] = useState(0);
+
+  const handleTouchStart = (e) => {
+    if (!enabled) return;
+    const touch = e.touches[0];
+    touchStartX.current = touch.clientX;
+    touchStartY.current = touch.clientY;
+    swipeActive.current = touch.clientX <= 28;
+  };
+
+  const handleTouchMove = (e) => {
+    if (!enabled || !swipeActive.current) return;
+    const touch = e.touches[0];
+    const deltaX = touch.clientX - touchStartX.current;
+    const deltaY = touch.clientY - touchStartY.current;
+
+    if (Math.abs(deltaY) > Math.abs(deltaX)) {
+      swipeActive.current = false;
+      setSwipeX(0);
+      return;
+    }
+
+    if (deltaX > 0) {
+      setSwipeX(Math.min(deltaX, 120));
+    } else {
+      setSwipeX(0);
+    }
+  };
+
+  const handleTouchEnd = () => {
+    if (enabled && swipeActive.current && swipeX > 72) {
+      setSwipeX(0);
+      swipeActive.current = false;
+      onBack();
+      return;
+    }
+    swipeActive.current = false;
+    setSwipeX(0);
+  };
+
+  return (
+    <div
+      style={{
+        flex: 1,
+        minHeight: 0,
+        display: "flex",
+        flexDirection: "column",
+        overflow: "hidden",
+        transform: swipeX ? `translateX(${swipeX}px)` : "translateX(0)",
+        transition: swipeActive.current ? "none" : "transform 0.18s ease-out",
+        touchAction: "pan-y",
+      }}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+      onTouchCancel={handleTouchEnd}
+    >
+      {children}
+    </div>
+  );
+};
+
 // ── Cafe Card ──
 const CafeCard = ({ cafe, onClick, fav, onFav, emptyCafeIds }) => (
   <div style={{ background: "#fff", borderRadius: 12, border: `1px solid ${T.beige}`, marginBottom: 12, overflow: "hidden", cursor: "pointer" }} onClick={onClick}>
@@ -910,6 +976,7 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport }) => {
 // ── Main App ──
 export default function App() {
   const [tab, setTab] = useState("home");
+  const [tabHistory, setTabHistory] = useState([]);
   const [city, setCity] = useState("taipei");
   const [cafes, setCafes] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -956,6 +1023,19 @@ export default function App() {
   const favoriteLookup = useMemo(() => ({ has: (id) => favs.has(String(id)) }), [favs]);
 
   const handleCityChange = (c) => { setCity(c); setSelected(null); };
+  const handleTabChange = (nextTab) => {
+    if (nextTab === tab) return;
+    setTabHistory(prev => [...prev, tab]);
+    setTab(nextTab);
+  };
+  const handleTabBack = () => {
+    setTabHistory(prev => {
+      if (prev.length === 0) return prev;
+      const nextTab = prev[prev.length - 1];
+      setTab(nextTab);
+      return prev.slice(0, -1);
+    });
+  };
 
   const handleReportAndUpdateMap = (cafeId, status) => {
     if (status === "empty") {
@@ -981,10 +1061,16 @@ export default function App() {
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');html,body,#root{height:100%}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,'PingFang TC',sans-serif;background:#f0ebe4}::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:${T.beige};border-radius:3px}`}</style>
       <div style={{ maxWidth: 430, margin: "0 auto", width: "100%", height: "100svh", minHeight: "100dvh", display: "flex", flexDirection: "column", background: T.cream, overflow: "hidden", boxShadow: "0 0 40px rgba(0,0,0,0.15)" }}>
         {!selected && <Header />}
-        <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", overflow: "hidden" }}>
-          {renderPage()}
-        </div>
-        {!selected && <BottomNav active={tab} onChange={t => { setTab(t); }} />}
+        {selected ? (
+          <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", overflow: "hidden" }}>
+            {renderPage()}
+          </div>
+        ) : (
+          <SwipeBackShell enabled={tabHistory.length > 0} onBack={handleTabBack}>
+            {renderPage()}
+          </SwipeBackShell>
+        )}
+        {!selected && <BottomNav active={tab} onChange={handleTabChange} />}
       </div>
     </>
   );
