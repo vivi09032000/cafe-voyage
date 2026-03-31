@@ -117,26 +117,48 @@ const crowdTagFromIds = (cafeId, emptyCafeIds) => {
 };
 
 // ── Filter Section ──
+const FILTER_LABELS = {
+  noLimit: "不限時",
+  socket: "插座多",
+  standing: "站立桌",
+  wifi: "WiFi穩",
+  quiet: "超安靜",
+  tasty: "咖啡好喝",
+  cheap: "價格實惠",
+  empty: "目前人少",
+};
+
+const FilterChip = ({ active, label, onClick, icon }) => (
+  <button onClick={onClick} style={{
+    background: active ? T.green : "#e7dccd",
+    color: active ? "#fff" : "#8a745f",
+    border: "none",
+    borderRadius: 18,
+    padding: "9px 16px",
+    fontSize: 12,
+    cursor: "pointer",
+    fontWeight: active ? 700 : 500,
+    fontFamily: "inherit",
+    lineHeight: 1,
+  }}>
+    {active ? "✓ " : ""}{icon ? `${icon} ` : ""}{label}
+  </button>
+);
+
 const FilterSection = ({ filters, toggle }) => (
   <div style={{ marginBottom: 14 }}>
-    <div style={{ fontSize: 11, color: T.sub, marginBottom: 6 }}>工作環境</div>
+    <div style={{ fontSize: 11, color: T.sub, marginBottom: 8, fontWeight: 700 }}>工作環境</div>
     <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 10 }}>
       {[
         { key: "noLimit", label: "不限時" },
         { key: "socket", label: "插座多" },
         { key: "standing", label: "站立桌" },
       ].map(({ key, label }) => (
-        <button key={key} onClick={() => toggle(key)} style={{
-          background: filters[key] ? T.green : T.beige,
-          color: filters[key] ? "#fff" : T.sub,
-          border: "none", borderRadius: 20, padding: "5px 12px",
-          fontSize: 12, cursor: "pointer", fontWeight: filters[key] ? 700 : 400,
-          fontFamily: "inherit",
-        }}>{filters[key] ? "✓ " : ""}{label}</button>
+        <FilterChip key={key} active={filters[key]} label={label} onClick={() => toggle(key)} />
       ))}
     </div>
 
-    <div style={{ fontSize: 11, color: T.sub, marginBottom: 6 }}>網路 & 環境</div>
+    <div style={{ fontSize: 11, color: T.sub, marginBottom: 8, fontWeight: 700 }}>網路 & 環境</div>
     <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 10 }}>
       {[
         { key: "wifi", label: "WiFi 穩" },
@@ -144,28 +166,16 @@ const FilterSection = ({ filters, toggle }) => (
         { key: "tasty", label: "咖啡好喝" },
         { key: "cheap", label: "價格實惠" },
       ].map(({ key, label }) => (
-        <button key={key} onClick={() => toggle(key)} style={{
-          background: filters[key] ? T.green : T.beige,
-          color: filters[key] ? "#fff" : T.sub,
-          border: "none", borderRadius: 20, padding: "5px 12px",
-          fontSize: 12, cursor: "pointer", fontWeight: filters[key] ? 700 : 400,
-          fontFamily: "inherit",
-        }}>{filters[key] ? "✓ " : ""}{label}</button>
+        <FilterChip key={key} active={filters[key]} label={label} onClick={() => toggle(key)} />
       ))}
     </div>
 
-    <div style={{ fontSize: 11, color: T.sub, marginBottom: 6 }}>即時狀態</div>
+    <div style={{ fontSize: 11, color: T.sub, marginBottom: 8, fontWeight: 700 }}>即時狀態</div>
     <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
       {[
-        { key: "empty", label: "🟢 目前人少" },
+        { key: "empty", label: "目前人少", icon: "🟢" },
       ].map(({ key, label }) => (
-        <button key={key} onClick={() => toggle(key)} style={{
-          background: filters[key] ? T.green : T.beige,
-          color: filters[key] ? "#fff" : T.sub,
-          border: "none", borderRadius: 20, padding: "5px 12px",
-          fontSize: 12, cursor: "pointer", fontWeight: filters[key] ? 700 : 400,
-          fontFamily: "inherit",
-        }}>{filters[key] ? "✓ " : ""}{label}</button>
+        <FilterChip key={key} active={filters[key]} label={label} icon="🟢" onClick={() => toggle(key)} />
       ))}
     </div>
   </div>
@@ -200,14 +210,14 @@ const timeAgo = (ts) => {
 };
 
 // ── Header ──
-const Header = ({ title = "Cafe Voyage", cityLabel, onOpenMenu }) => (
-  <div style={{ background: T.brown, padding: "13px 18px", display: "flex", justifyContent: "space-between", alignItems: "center", flexShrink: 0 }}>
+const Header = ({ title = "Cafe Voyage", cityLabel, subtitle, onOpenMenu }) => (
+  <div style={{ background: T.brown, padding: "18px 22px 22px", display: "flex", justifyContent: "space-between", alignItems: "center", flexShrink: 0 }}>
     <div>
-      <div style={{ color: "#fff", fontFamily: "'Playfair Display', serif", fontSize: 15, fontWeight: 700, letterSpacing: 1 }}>{title}</div>
-      <div style={{ color: "#f1e5d6", fontSize: 11, marginTop: 2 }}>{cityLabel}</div>
+      <div style={{ color: "#fff", fontFamily: "'Playfair Display', serif", fontSize: 18, fontWeight: 700, letterSpacing: 0.3 }}>{title}</div>
+      <div style={{ color: "#f1e5d6", fontSize: 12, marginTop: 5 }}>{subtitle || cityLabel}</div>
     </div>
-    <button onClick={onOpenMenu} style={{ background: "none", border: "none", cursor: "pointer", padding: 0 }}>
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round">
+    <button onClick={onOpenMenu} style={{ background: "none", border: "none", cursor: "pointer", padding: 4 }}>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.2" strokeLinecap="round">
         <line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" />
       </svg>
     </button>
@@ -453,40 +463,50 @@ const HomePage = ({ cafes, loading, city, onSelect, favs, onFav, emptyCafeIds })
   // Reset page when search changes
   useEffect(() => { setPage(1); }, [q]);
   const activeFilterCount = Object.values(filters).filter(Boolean).length;
+  const activeFilterLabels = Object.entries(filters).filter(([, value]) => value).map(([key]) => FILTER_LABELS[key]);
+  const headerCityLabel = CITIES.find((item) => item.key === city)?.label || "台北";
 
   return (
     <div style={{ display: "flex", flexDirection: "column", flex: 1, minHeight: 0, overflow: "hidden" }}>
-      {/* 固定區：搜尋 + 篩選 */}
-      <div style={{ flexShrink: 0, padding: "14px 16px 0", background: T.cream, borderBottom: `1px solid ${T.beige}` }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, marginBottom: 10 }}>
-          <div style={{ fontSize: 12, color: T.sub }}>{CITIES.find((item) => item.key === city)?.label || "台北"} ・ 共 {total} 間</div>
-          <button
-            onClick={() => setFiltersOpen(prev => !prev)}
-            style={{
-              background: filtersOpen || activeFilterCount > 0 ? T.brown : "#fff",
-              color: filtersOpen || activeFilterCount > 0 ? "#fff" : T.text,
-              border: `1px solid ${filtersOpen || activeFilterCount > 0 ? T.brown : T.beige}`,
-              borderRadius: 20,
-              padding: "10px 15px",
-              fontSize: 13,
-              cursor: "pointer",
-              fontFamily: "inherit",
-              fontWeight: 700,
-              flexShrink: 0,
-              minHeight: 40,
-            }}
-          >
-            {filtersOpen ? "收起篩選" : `篩選${activeFilterCount > 0 ? `・${activeFilterCount}` : ""}`}
-          </button>
-        </div>
+      <div style={{ flexShrink: 0, padding: "0 0 12px", background: T.cream, borderBottom: `1px solid ${T.beige}` }}>
+        <div style={{ margin: "0 16px", background: "#f7efe5", borderRadius: filtersOpen ? "0 0 28px 28px" : "0 0 28px 28px", border: `1px solid #eadac6`, borderTop: "none", overflow: "hidden" }}>
+          <div style={{ padding: "20px 24px 14px" }}>
+            <div style={{ position: "relative", marginBottom: 16 }}>
+              <svg style={{ position: "absolute", left: 22, top: "50%", transform: "translateY(-50%)" }} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={T.sub} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
+              <input value={q} onChange={e => setQ(e.target.value)} placeholder="搜尋店名、地址..."
+                style={{ width: "100%", padding: "17px 18px 17px 54px", borderRadius: 999, border: `2px solid #e1d1bf`, background: "#fff", fontSize: 15, outline: "none", boxSizing: "border-box", color: T.text, fontWeight: 500 }} />
+            </div>
 
-        <div style={{ position: "relative", marginBottom: 10 }}>
-          <svg style={{ position: "absolute", left: 11, top: "50%", transform: "translateY(-50%)" }} width="15" height="15" viewBox="0 0 24 24" fill="none" stroke={T.sub} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
-          <input value={q} onChange={e => setQ(e.target.value)} placeholder="搜尋店名、地址、捷運站..."
-            style={{ width: "100%", padding: "9px 14px 9px 34px", borderRadius: 22, border: `1px solid ${T.beige}`, background: "#fff", fontSize: 13, outline: "none", boxSizing: "border-box", color: T.text }} />
+            {!filtersOpen ? (
+              <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+                {activeFilterLabels.slice(0, 2).map((label) => (
+                  <FilterChip key={label} active={true} label={label} onClick={() => setFiltersOpen(true)} />
+                ))}
+                {activeFilterCount > 2 && (
+                  <span style={{ background: "#e7dccd", color: "#8a745f", borderRadius: 18, padding: "9px 14px", fontSize: 12, fontWeight: 700, lineHeight: 1 }}>+{activeFilterCount - 2}</span>
+                )}
+                <button
+                  onClick={() => setFiltersOpen(true)}
+                  style={{ marginLeft: "auto", background: "none", border: "none", color: T.brown, fontSize: 13, fontWeight: 700, cursor: "pointer", textDecoration: "underline", textUnderlineOffset: 4, fontFamily: "inherit" }}
+                >
+                  篩選 ▾
+                </button>
+              </div>
+            ) : (
+              <>
+                <FilterSection filters={filters} toggle={toggle} />
+                <div style={{ display: "flex", justifyContent: "flex-end" }}>
+                  <button
+                    onClick={() => setFiltersOpen(false)}
+                    style={{ background: "none", border: "none", color: T.brown, fontSize: 13, fontWeight: 700, cursor: "pointer", textDecoration: "underline", textUnderlineOffset: 4, fontFamily: "inherit" }}
+                  >
+                    收起篩選 ▴
+                  </button>
+                </div>
+              </>
+            )}
+          </div>
         </div>
-
-        {filtersOpen && <FilterSection filters={filters} toggle={toggle} />}
       </div>
 
       {/* 滾動區：咖啡廳列表 */}
@@ -498,7 +518,7 @@ const HomePage = ({ cafes, loading, city, onSelect, favs, onFav, emptyCafeIds })
           </div>
         ) : (
           <>
-            <div style={{ fontSize: 12, color: T.sub, margin: "10px 0" }}>共 {total} 間咖啡廳{total > PER_PAGE ? `（顯示第 ${start + 1}-${Math.min(start + PER_PAGE, total)} 間）` : ""}</div>
+            <div style={{ fontSize: 12, color: T.sub, margin: "10px 0 12px" }}>共 {total} 間{total > PER_PAGE ? `（顯示第 ${start + 1}-${Math.min(start + PER_PAGE, total)} 間）` : ""}</div>
             {filtered.map(c => <CafeCard key={c.id} cafe={c} onClick={() => onSelect(c)} fav={favs.has(c.id)} onFav={onFav} emptyCafeIds={emptyCafeIds} />)}
             {filtered.length === 0 && <div style={{ textAlign: "center", padding: "40px 0", color: T.sub }}>找不到符合條件的咖啡廳</div>}
             <Pagination page={page} total={total} onPage={setPage} />
@@ -1138,7 +1158,7 @@ export default function App() {
     <>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');html,body,#root{height:100%}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,'PingFang TC',sans-serif;background:#f0ebe4}::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:${T.beige};border-radius:3px}`}</style>
       <div style={{ maxWidth: 430, margin: "0 auto", width: "100%", height: "100svh", minHeight: "100dvh", display: "flex", flexDirection: "column", background: T.cream, overflow: "hidden", boxShadow: "0 0 40px rgba(0,0,0,0.15)" }}>
-        {!selected && <Header cityLabel={CITIES.find((item) => item.key === city)?.label || "台北"} onOpenMenu={() => setMenuOpen(true)} />}
+        {!selected && <Header cityLabel={CITIES.find((item) => item.key === city)?.label || "台北"} subtitle={`📍 ${CITIES.find((item) => item.key === city)?.label || "台北"}・${cafes.filter(isOpen).length} 間`} onOpenMenu={() => setMenuOpen(true)} />}
         {selected ? (
           <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", overflow: "hidden" }}>
             {renderPage()}
