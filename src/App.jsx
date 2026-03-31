@@ -448,20 +448,10 @@ const userIcon = new L.Icon({
   iconSize: [24, 24], iconAnchor: [12, 12],
 });
 
-const LocateUser = ({ setUserPos }) => {
-  const map = useMap();
+const LocateUser = ({ onLocate }) => {
   useEffect(() => {
-    if (!navigator.geolocation) return;
-    navigator.geolocation.getCurrentPosition(
-      ({ coords }) => {
-        const pos = [coords.latitude, coords.longitude];
-        setUserPos(pos);
-        map.setView(pos, 14);
-      },
-      () => {},
-      { enableHighAccuracy: true, timeout: 8000 }
-    );
-  }, [map, setUserPos]);
+    onLocate({ silent: true, zoom: 14 });
+  }, [onLocate]);
   return null;
 };
 
@@ -496,8 +486,54 @@ const BindMapRef = ({ mapRef }) => {
 const MapPage = ({ cafes, onSelect, mapView, setMapView, mapQuery, setMapQuery }) => {
   const [userPos, setUserPos] = useState(null);
   const [geoTarget, setGeoTarget] = useState(null);
+  const [locating, setLocating] = useState(false);
+  const [locateError, setLocateError] = useState("");
   const mapRef = useRef(null);
   const allMapCafes = useMemo(() => cafes.filter(isOpen).filter(c => c.latitude && c.longitude), [cafes]);
+
+  const getPosition = useCallback((options) => new Promise((resolve, reject) => {
+    navigator.geolocation.getCurrentPosition(resolve, reject, options);
+  }), []);
+
+  const requestUserLocation = useCallback(async ({ silent = false, zoom = 15 } = {}) => {
+    if (!navigator.geolocation) {
+      if (!silent) setLocateError("目前瀏覽器不支援定位。");
+      return;
+    }
+    if (!window.isSecureContext) {
+      if (!silent) setLocateError("定位需要在 HTTPS 或 localhost 環境下使用。");
+      return;
+    }
+
+    setLocating(true);
+    if (!silent) setLocateError("");
+
+    try {
+      let result;
+      try {
+        result = await getPosition({ enableHighAccuracy: true, timeout: 8000, maximumAge: 0 });
+      } catch {
+        // Retry with lower accuracy to reduce failures on some devices/networks.
+        result = await getPosition({ enableHighAccuracy: false, timeout: 12000, maximumAge: 300000 });
+      }
+
+      const pos = [result.coords.latitude, result.coords.longitude];
+      setUserPos(pos);
+      if (mapRef.current) mapRef.current.flyTo(pos, zoom, { duration: 0.8 });
+    } catch (err) {
+      if (silent) return;
+      const code = err?.code;
+      if (code === 1) {
+        setLocateError("定位權限被拒絕，請在瀏覽器允許位置權限後再試一次。");
+      } else if (code === 3) {
+        setLocateError("定位逾時，請移動到訊號較好的地方再試一次。");
+      } else {
+        setLocateError("目前無法取得位置，請稍後再試。");
+      }
+    } finally {
+      setLocating(false);
+    }
+  }, [getPosition]);
 
   const mapCafes = useMemo(() => {
     if (!mapQuery) return allMapCafes;
@@ -565,7 +601,7 @@ const MapPage = ({ cafes, onSelect, mapView, setMapView, mapQuery, setMapQuery }
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           <BindMapRef mapRef={mapRef} />
-          <LocateUser setUserPos={setUserPos} />
+          <LocateUser onLocate={requestUserLocation} />
           <SaveMapView onMove={setMapView} />
           {flyTarget && <FlyTo center={flyTarget} />}
           {userPos && <Marker position={userPos} icon={userIcon}>
@@ -601,28 +637,23 @@ const MapPage = ({ cafes, onSelect, mapView, setMapView, mapQuery, setMapQuery }
         <button
           onClick={() => {
             if (userPos && mapRef.current) {
+              setLocateError("");
               mapRef.current.flyTo(userPos, 15, { duration: 0.8 });
-            } else if (navigator.geolocation) {
-              navigator.geolocation.getCurrentPosition(
-                ({ coords }) => {
-                  const pos = [coords.latitude, coords.longitude];
-                  setUserPos(pos);
-                  if (mapRef.current) mapRef.current.flyTo(pos, 15, { duration: 0.8 });
-                },
-                () => {},
-                { enableHighAccuracy: true, timeout: 8000 }
-              );
+              return;
             }
+            requestUserLocation({ silent: false, zoom: 15 });
           }}
+          disabled={locating}
           style={{
             position: "absolute", bottom: 20, right: 16, zIndex: 1000,
             width: 40, height: 40, borderRadius: "50%",
             background: "#fff", border: `1px solid ${T.beige}`,
             boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
             display: "flex", alignItems: "center", justifyContent: "center",
-            cursor: "pointer",
+            cursor: locating ? "default" : "pointer",
+            opacity: locating ? 0.7 : 1,
           }}
-          title="回到我的位置"
+          title={locating ? "定位中..." : "回到我的位置"}
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={T.brown} strokeWidth="2" strokeLinecap="round">
             <circle cx="12" cy="12" r="4" />
@@ -632,6 +663,16 @@ const MapPage = ({ cafes, onSelect, mapView, setMapView, mapQuery, setMapQuery }
             <line x1="18" y1="12" x2="22" y2="12" />
           </svg>
         </button>
+        {locateError && (
+          <div style={{
+            position: "absolute", right: 16, bottom: 68, zIndex: 1000,
+            maxWidth: 260, background: "#fff", color: T.text, border: `1px solid ${T.beige}`,
+            borderRadius: 10, boxShadow: "0 4px 12px rgba(0,0,0,0.12)", padding: "8px 10px",
+            fontSize: 12, lineHeight: 1.35,
+          }}>
+            {locateError}
+          </div>
+        )}
       </div>
     </div>
   );
