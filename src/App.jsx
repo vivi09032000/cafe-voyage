@@ -56,22 +56,44 @@ const T = {
 };
 
 const REGION_PROMPT_KEY = "prompt";
-const ALL_REGION_KEY = "all";
 const REGION_STORAGE_KEY = "cafe-voyage:region";
 const MAP_CACHE_KEY = "cafe-voyage:map-cafes";
 const MAP_CACHE_TTL = 1000 * 60 * 60 * 12;
 const REGION_PATTERN = /(台北市|新北市|桃園市|台中市|臺中市|台南市|臺南市|高雄市|基隆市|新竹市|新竹縣|苗栗縣|彰化縣|南投縣|雲林縣|嘉義市|嘉義縣|屏東縣|宜蘭縣|花蓮縣|台東縣|臺東縣)/;
+const REGION_GROUPS = [
+  { key: "taipei", label: "台北", members: ["台北市", "新北市"] },
+  { key: "taichung", label: "台中", members: ["台中市"] },
+  { key: "tainan", label: "台南", members: ["台南市"] },
+  { key: "kaohsiung", label: "高雄", members: ["高雄市"] },
+  { key: "chiayi", label: "嘉義", members: ["嘉義市", "嘉義縣"] },
+  { key: "hsinchu", label: "新竹", members: ["新竹市", "新竹縣"] },
+  { key: "taoyuan", label: "桃園", members: ["桃園市"] },
+  { key: "keelung", label: "基隆", members: ["基隆市"] },
+  { key: "miaoli", label: "苗栗", members: ["苗栗縣"] },
+  { key: "changhua", label: "彰化", members: ["彰化縣"] },
+  { key: "nantou", label: "南投", members: ["南投縣"] },
+  { key: "yunlin", label: "雲林", members: ["雲林縣"] },
+  { key: "pingtung", label: "屏東", members: ["屏東縣"] },
+  { key: "yilan", label: "宜蘭", members: ["宜蘭縣"] },
+  { key: "hualien", label: "花蓮", members: ["花蓮縣"] },
+  { key: "taitung", label: "台東", members: ["台東縣"] },
+];
 
 const normalizeRegionLabel = (label = "") => label
   .replace("臺中市", "台中市")
   .replace("臺南市", "台南市")
   .replace("臺東縣", "台東縣");
 
+const findRegionGroup = (regionLabel = "") =>
+  REGION_GROUPS.find((group) => group.members.includes(regionLabel)) || null;
+
 const getCafeRegion = (cafe) => {
   const match = (cafe.address || "").match(REGION_PATTERN);
   if (match) return normalizeRegionLabel(match[0]);
   return "";
 };
+
+const getCafeRegionGroupKey = (cafe) => findRegionGroup(getCafeRegion(cafe))?.key || "";
 
 const reverseGeocodeRegion = async (latitude, longitude) => {
   const res = await fetch(
@@ -563,7 +585,7 @@ const HomePage = ({ cafes, loading, regionLabel, hasRegionSelection, onOpenRegio
             >
               選擇縣市
             </button>
-            <div style={{ fontSize: 12, marginTop: 10 }}>你也可以到右上角設定改成全台。</div>
+            <div style={{ fontSize: 12, marginTop: 10 }}>之後也可以從右上角設定隨時切換地區。</div>
           </div>
         ) : (
           <>
@@ -1243,12 +1265,15 @@ export default function App() {
   const favoriteLookup = useMemo(() => ({ has: (id) => favs.has(String(id)) }), [favs]);
   const availableRegions = useMemo(() => {
     const seen = new Set();
-    const options = [{ key: ALL_REGION_KEY, label: "全台" }];
+    const options = [];
     allCafes.forEach((cafe) => {
-      const regionLabel = getCafeRegion(cafe);
-      if (!regionLabel || seen.has(regionLabel)) return;
-      seen.add(regionLabel);
-      options.push({ key: regionLabel, label: regionLabel });
+      const groupKey = getCafeRegionGroupKey(cafe);
+      if (!groupKey || seen.has(groupKey)) return;
+      seen.add(groupKey);
+    });
+    REGION_GROUPS.forEach((group) => {
+      if (!seen.has(group.key)) return;
+      options.push({ key: group.key, label: group.label });
     });
     return options;
   }, [allCafes]);
@@ -1256,18 +1281,17 @@ export default function App() {
   const hasRegionSelection = region !== REGION_PROMPT_KEY;
   const regionLabel = region === REGION_PROMPT_KEY
     ? "請選擇縣市"
-    : (availableRegions.find((item) => item.key === region)?.label || "全台");
+    : (availableRegions.find((item) => item.key === region)?.label || "請選擇縣市");
   const regionScopedCafes = useMemo(() => {
-    if (region === ALL_REGION_KEY) return allCafes;
     if (region === REGION_PROMPT_KEY) return [];
-    return allCafes.filter((cafe) => getCafeRegion(cafe) === region);
+    return allCafes.filter((cafe) => getCafeRegionGroupKey(cafe) === region);
   }, [allCafes, region]);
   const homeCafes = hasRegionSelection ? regionScopedCafes : [];
   const searchCafes = hasRegionSelection ? regionScopedCafes : allCafes;
   const favoritesCafes = hasRegionSelection ? regionScopedCafes : allCafes;
 
   useEffect(() => {
-    if (region === REGION_PROMPT_KEY || region === ALL_REGION_KEY) return;
+    if (region === REGION_PROMPT_KEY) return;
     if (availableRegions.length <= 1) return;
     if (regionOptionKeys.has(region)) return;
     setRegion(REGION_PROMPT_KEY);
@@ -1286,9 +1310,10 @@ export default function App() {
       async ({ coords }) => {
         try {
           const nextRegion = await reverseGeocodeRegion(coords.latitude, coords.longitude);
-          if (!nextRegion || cancelled) return;
-          if (!regionOptionKeys.has(nextRegion)) return;
-          setRegion((current) => (current === REGION_PROMPT_KEY ? nextRegion : current));
+          const nextGroupKey = findRegionGroup(nextRegion)?.key || "";
+          if (!nextGroupKey || cancelled) return;
+          if (!regionOptionKeys.has(nextGroupKey)) return;
+          setRegion((current) => (current === REGION_PROMPT_KEY ? nextGroupKey : current));
         } catch {}
       },
       () => {},
