@@ -477,7 +477,7 @@ const MapPage = ({ cafes, onSelect }) => {
       <div style={{ display: "flex", alignItems: "center", gap: 7, padding: "10px 16px 6px" }}>
         <span style={{ fontSize: 20 }}>📍</span>
         <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, color: T.text }}>地圖</div>
-        <div style={{ fontSize: 12, color: T.sub, marginLeft: "auto" }}>{mapCafes.length} 間咖啡廳</div>
+        <div style={{ fontSize: 12, color: T.sub, marginLeft: "auto" }}>{q ? `${mapCafes.length} 筆結果` : `${allMapCafes.length} 間咖啡廳`}</div>
       </div>
 
       {/* Search */}
@@ -503,7 +503,7 @@ const MapPage = ({ cafes, onSelect }) => {
           {userPos && <Marker position={userPos} icon={userIcon}>
             <Popup><span style={{ fontSize: 13, fontWeight: 700 }}>📍 你的位置</span></Popup>
           </Marker>}
-          {mapCafes.map(c => (
+          {allMapCafes.map(c => (
             <Marker key={c.id} position={[parseFloat(c.latitude), parseFloat(c.longitude)]} icon={cafeIcon}>
               <Popup minWidth={200} maxWidth={260}>
                 <div style={{ fontFamily: "-apple-system, 'PingFang TC', sans-serif" }}>
