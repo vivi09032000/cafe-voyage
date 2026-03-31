@@ -307,45 +307,51 @@ const HomePage = ({ cafes, loading, city, setCity, onSelect, favs, onFav, emptyC
   useEffect(() => { setPage(1); }, [q]);
 
   return (
-    <div style={{ flex: 1, overflow: "auto", padding: "0 16px 16px" }}>
-      <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, margin: "14px 0 10px", color: T.text }}>首頁</div>
+    <div style={{ display: "flex", flexDirection: "column", height: "100%", overflow: "hidden" }}>
+      {/* 固定區：城市選擇 + 搜尋 + 篩選標籤 */}
+      <div style={{ flexShrink: 0, padding: "14px 16px 0", background: T.cream, borderBottom: `1px solid ${T.beige}` }}>
+        <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, marginBottom: 10, color: T.text }}>首頁</div>
 
-      {/* City Selector */}
-      <div style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 6, marginBottom: 10 }}>
-        {CITIES.map(c => (
-          <button key={c.key} onClick={() => { setCity(c.key); setPage(1); }} style={{
-            background: city === c.key ? T.brown : "#fff",
-            color: city === c.key ? "#fff" : T.text,
-            border: `1px solid ${T.beige}`, borderRadius: 16,
-            padding: "5px 13px", fontSize: 12, cursor: "pointer", whiteSpace: "nowrap",
-            fontWeight: city === c.key ? 700 : 400, flexShrink: 0,
-          }}>{c.label}</button>
-        ))}
-      </div>
-
-      {/* Search */}
-      <div style={{ position: "relative", marginBottom: 10 }}>
-        <svg style={{ position: "absolute", left: 11, top: "50%", transform: "translateY(-50%)" }} width="15" height="15" viewBox="0 0 24 24" fill="none" stroke={T.sub} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
-        <input value={q} onChange={e => setQ(e.target.value)} placeholder="搜尋店名、地址、捷運站..."
-          style={{ width: "100%", padding: "9px 14px 9px 34px", borderRadius: 22, border: `1px solid ${T.beige}`, background: "#fff", fontSize: 13, outline: "none", boxSizing: "border-box", color: T.text }} />
-      </div>
-
-      {/* Grouped Filters */}
-      <FilterSection filters={filters} toggle={toggle} />
-
-      {loading ? (
-        <div style={{ textAlign: "center", padding: "60px 0", color: T.sub }}>
-          <div style={{ fontSize: 32, marginBottom: 10 }}>☕</div>
-          <div>載入中...</div>
+        {/* City Selector */}
+        <div style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 6, marginBottom: 10 }}>
+          {CITIES.map(c => (
+            <button key={c.key} onClick={() => { setCity(c.key); setPage(1); }} style={{
+              background: city === c.key ? T.brown : "#fff",
+              color: city === c.key ? "#fff" : T.text,
+              border: `1px solid ${T.beige}`, borderRadius: 16,
+              padding: "5px 13px", fontSize: 12, cursor: "pointer", whiteSpace: "nowrap",
+              fontWeight: city === c.key ? 700 : 400, flexShrink: 0,
+            }}>{c.label}</button>
+          ))}
         </div>
-      ) : (
-        <>
-          <div style={{ fontSize: 12, color: T.sub, marginBottom: 10 }}>共 {total} 間咖啡廳{total > PER_PAGE ? `（顯示第 ${start + 1}-${Math.min(start + PER_PAGE, total)} 間）` : ""}</div>
-          {filtered.map(c => <CafeCard key={c.id} cafe={c} onClick={() => onSelect(c)} fav={favs.has(c.id)} onFav={onFav} emptyCafeIds={emptyCafeIds} />)}
-          {filtered.length === 0 && <div style={{ textAlign: "center", padding: "40px 0", color: T.sub }}>找不到符合條件的咖啡廳</div>}
-          <Pagination page={page} total={total} onPage={setPage} />
-        </>
-      )}
+
+        {/* Search */}
+        <div style={{ position: "relative", marginBottom: 10 }}>
+          <svg style={{ position: "absolute", left: 11, top: "50%", transform: "translateY(-50%)" }} width="15" height="15" viewBox="0 0 24 24" fill="none" stroke={T.sub} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
+          <input value={q} onChange={e => setQ(e.target.value)} placeholder="搜尋店名、地址、捷運站..."
+            style={{ width: "100%", padding: "9px 14px 9px 34px", borderRadius: 22, border: `1px solid ${T.beige}`, background: "#fff", fontSize: 13, outline: "none", boxSizing: "border-box", color: T.text }} />
+        </div>
+
+        {/* Grouped Filters */}
+        <FilterSection filters={filters} toggle={toggle} />
+      </div>
+
+      {/* 滾動區：咖啡廳列表 */}
+      <div style={{ flex: 1, overflowY: "auto", padding: "0 16px 16px" }}>
+        {loading ? (
+          <div style={{ textAlign: "center", padding: "60px 0", color: T.sub }}>
+            <div style={{ fontSize: 32, marginBottom: 10 }}>☕</div>
+            <div>載入中...</div>
+          </div>
+        ) : (
+          <>
+            <div style={{ fontSize: 12, color: T.sub, margin: "10px 0" }}>共 {total} 間咖啡廳{total > PER_PAGE ? `（顯示第 ${start + 1}-${Math.min(start + PER_PAGE, total)} 間）` : ""}</div>
+            {filtered.map(c => <CafeCard key={c.id} cafe={c} onClick={() => onSelect(c)} fav={favs.has(c.id)} onFav={onFav} emptyCafeIds={emptyCafeIds} />)}
+            {filtered.length === 0 && <div style={{ textAlign: "center", padding: "40px 0", color: T.sub }}>找不到符合條件的咖啡廳</div>}
+            <Pagination page={page} total={total} onPage={setPage} />
+          </>
+        )}
+      </div>
     </div>
   );
 };
@@ -368,28 +374,35 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
   useEffect(() => { setPage(1); }, [q]);
 
   return (
-    <div style={{ flex: 1, overflow: "auto", padding: "0 16px 16px" }}>
-      <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, margin: "14px 0 10px", color: T.text }}>工作友善排行</div>
-      <div style={{ position: "relative", marginBottom: 14 }}>
-        <svg style={{ position: "absolute", left: 11, top: "50%", transform: "translateY(-50%)" }} width="15" height="15" viewBox="0 0 24 24" fill="none" stroke={T.sub} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
-        <input value={q} onChange={e => setQ(e.target.value)} placeholder="搜尋..."
-          style={{ width: "100%", padding: "9px 14px 9px 34px", borderRadius: 22, border: `1px solid ${T.beige}`, background: "#fff", fontSize: 13, outline: "none", boxSizing: "border-box", color: T.text }} />
+    <div style={{ display: "flex", flexDirection: "column", height: "100%", overflow: "hidden" }}>
+      {/* 固定區 */}
+      <div style={{ flexShrink: 0, padding: "14px 16px 0", background: T.cream, borderBottom: `1px solid ${T.beige}` }}>
+        <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, marginBottom: 10, color: T.text }}>工作友善排行</div>
+        <div style={{ position: "relative", marginBottom: 14 }}>
+          <svg style={{ position: "absolute", left: 11, top: "50%", transform: "translateY(-50%)" }} width="15" height="15" viewBox="0 0 24 24" fill="none" stroke={T.sub} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
+          <input value={q} onChange={e => setQ(e.target.value)} placeholder="搜尋..."
+            style={{ width: "100%", padding: "9px 14px 9px 34px", borderRadius: 22, border: `1px solid ${T.beige}`, background: "#fff", fontSize: 13, outline: "none", boxSizing: "border-box", color: T.text }} />
+        </div>
       </div>
-      <div style={{ fontSize: 12, color: T.sub, marginBottom: 10 }}>依 WiFi + 安靜 + 咖啡 綜合排序・共 {total} 間{total > PER_PAGE ? `（第 ${start + 1}-${Math.min(start + PER_PAGE, total)} 間）` : ""}</div>
-      {loading ? (
-        <div style={{ textAlign: "center", padding: "60px 0", color: T.sub }}><div style={{ fontSize: 32, marginBottom: 10 }}>☕</div><div>載入中...</div></div>
-      ) : (
-        <>
-          {sorted.map((c, i) => (
-            <div key={c.id} style={{ display: "flex", alignItems: "flex-start", gap: 8 }}>
-              <div style={{ width: 24, height: 24, borderRadius: "50%", background: (start + i) < 3 ? T.brown : T.beige, color: (start + i) < 3 ? "#fff" : T.sub, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontWeight: 700, flexShrink: 0, marginTop: 14 }}>{start + i + 1}</div>
-              <div style={{ flex: 1 }}><CafeCard cafe={c} onClick={() => onSelect(c)} fav={favs.has(c.id)} onFav={onFav} emptyCafeIds={new Set()} /></div>
-            </div>
-          ))}
-          {sorted.length === 0 && <div style={{ textAlign: "center", padding: "40px 0", color: T.sub }}>找不到符合條件的咖啡廳</div>}
-          <Pagination page={page} total={total} onPage={setPage} />
-        </>
-      )}
+
+      {/* 滾動區 */}
+      <div style={{ flex: 1, overflowY: "auto", padding: "0 16px 16px" }}>
+        <div style={{ fontSize: 12, color: T.sub, margin: "10px 0" }}>依 WiFi + 安靜 + 咖啡 綜合排序・共 {total} 間{total > PER_PAGE ? `（第 ${start + 1}-${Math.min(start + PER_PAGE, total)} 間）` : ""}</div>
+        {loading ? (
+          <div style={{ textAlign: "center", padding: "60px 0", color: T.sub }}><div style={{ fontSize: 32, marginBottom: 10 }}>☕</div><div>載入中...</div></div>
+        ) : (
+          <>
+            {sorted.map((c, i) => (
+              <div key={c.id} style={{ display: "flex", alignItems: "flex-start", gap: 8 }}>
+                <div style={{ width: 24, height: 24, borderRadius: "50%", background: (start + i) < 3 ? T.brown : T.beige, color: (start + i) < 3 ? "#fff" : T.sub, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontWeight: 700, flexShrink: 0, marginTop: 14 }}>{start + i + 1}</div>
+                <div style={{ flex: 1 }}><CafeCard cafe={c} onClick={() => onSelect(c)} fav={favs.has(c.id)} onFav={onFav} emptyCafeIds={new Set()} /></div>
+              </div>
+            ))}
+            {sorted.length === 0 && <div style={{ textAlign: "center", padding: "40px 0", color: T.sub }}>找不到符合條件的咖啡廳</div>}
+            <Pagination page={page} total={total} onPage={setPage} />
+          </>
+        )}
+      </div>
     </div>
   );
 };
@@ -398,19 +411,26 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
 const FavoritesPage = ({ cafes, favs, onSelect, onFav }) => {
   const list = cafes.filter(isOpen).filter(c => favs.has(c.id));
   return (
-    <div style={{ flex: 1, overflow: "auto", padding: "0 16px 16px" }}>
-      <div style={{ display: "flex", alignItems: "center", gap: 7, margin: "14px 0 4px" }}>
-        <span style={{ fontSize: 20 }}>❤️</span>
-        <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, color: T.text }}>我的收藏</div>
-      </div>
-      <div style={{ fontSize: 12, color: T.sub, marginBottom: 12 }}>已收藏 {list.length} 間</div>
-      {list.length === 0 ? (
-        <div style={{ textAlign: "center", padding: "60px 0", color: T.sub }}>
-          <div style={{ fontSize: 40, marginBottom: 10 }}>☕</div>
-          <div>還沒有收藏</div>
-          <div style={{ fontSize: 12, marginTop: 4 }}>點擊 ☆ 加入收藏</div>
+    <div style={{ display: "flex", flexDirection: "column", height: "100%", overflow: "hidden" }}>
+      {/* 固定區 */}
+      <div style={{ flexShrink: 0, padding: "14px 16px 4px", background: T.cream, borderBottom: `1px solid ${T.beige}` }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 7 }}>
+          <span style={{ fontSize: 20 }}>❤️</span>
+          <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, color: T.text }}>我的收藏</div>
         </div>
-      ) : list.map(c => <CafeCard key={c.id} cafe={c} onClick={() => onSelect(c)} fav={true} onFav={onFav} emptyCafeIds={new Set()} />)}
+      </div>
+
+      {/* 滾動區 */}
+      <div style={{ flex: 1, overflowY: "auto", padding: "0 16px 16px" }}>
+        <div style={{ fontSize: 12, color: T.sub, margin: "10px 0" }}>已收藏 {list.length} 間</div>
+        {list.length === 0 ? (
+          <div style={{ textAlign: "center", padding: "60px 0", color: T.sub }}>
+            <div style={{ fontSize: 40, marginBottom: 10 }}>☕</div>
+            <div>還沒有收藏</div>
+            <div style={{ fontSize: 12, marginTop: 4 }}>點擊 ☆ 加入收藏</div>
+          </div>
+        ) : list.map(c => <CafeCard key={c.id} cafe={c} onClick={() => onSelect(c)} fav={true} onFav={onFav} emptyCafeIds={new Set()} />)}
+      </div>
     </div>
   );
 };
@@ -748,7 +768,16 @@ export default function App() {
   const [cafes, setCafes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selected, setSelected] = useState(null);
-  const [favs, setFavs] = useState(new Set());
+  const [favs, setFavs] = useState(() => {
+    try {
+      const raw = localStorage.getItem("cafe-voyage:favs");
+      if (!raw) return new Set();
+      const parsed = JSON.parse(raw);
+      return Array.isArray(parsed) ? new Set(parsed) : new Set();
+    } catch {
+      return new Set();
+    }
+  });
   const [emptyCafeIds, setEmptyCafeIds] = useState(new Set());
   const [mapView, setMapView] = useState({ center: null, zoom: null });
   const [mapQuery, setMapQuery] = useState("");
@@ -772,6 +801,10 @@ export default function App() {
   useEffect(() => { 
     fetchEmptyCafeIds().then(setEmptyCafeIds).catch(() => {}); 
   }, [city]);
+
+  useEffect(() => {
+    localStorage.setItem("cafe-voyage:favs", JSON.stringify([...favs]));
+  }, [favs]);
 
   const toggleFav = (id) => setFavs(prev => { const s = new Set(prev); s.has(id) ? s.delete(id) : s.add(id); return s; });
 
@@ -799,7 +832,7 @@ export default function App() {
   return (
     <>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,'PingFang TC',sans-serif;background:#f0ebe4}::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:${T.beige};border-radius:3px}`}</style>
-      <div style={{ maxWidth: 400, margin: "0 auto", height: "100vh", display: "flex", flexDirection: "column", background: T.cream, overflow: "hidden", boxShadow: "0 0 40px rgba(0,0,0,0.15)" }}>
+      <div style={{ maxWidth: 430, margin: "0 auto", width: "100%", height: "100dvh", display: "flex", flexDirection: "column", background: T.cream, overflow: "hidden", boxShadow: "0 0 40px rgba(0,0,0,0.15)" }}>
         {!selected && <Header />}
         {renderPage()}
         {!selected && <BottomNav active={tab} onChange={t => { setTab(t); }} />}
