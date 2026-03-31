@@ -681,7 +681,7 @@ const LocateController = ({ request, onStart, onSuccess, onError }) => {
     if (!request.seq) return;
     onStart();
     map.locate({
-      setView: true,
+      setView: false,
       maxZoom: request.zoom,
       enableHighAccuracy: false,
       timeout: 12000,
@@ -777,15 +777,14 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
         if (data.length > 0) {
           const pos = [parseFloat(data[0].lat), parseFloat(data[0].lon)];
           setGeoTarget(pos);
-          if (mapRef.current) mapRef.current.flyTo(pos, 15, { duration: 0.8 });
         }
       } catch {}
     }, 500);
     return () => clearTimeout(timer);
   }, [mapQuery, mapCafes.length]);
 
-  // Fly to target (for cafe matches)
-  const flyTarget = cafeTarget;
+  // Fly to target from either cafe match or geocoded search result.
+  const flyTarget = cafeTarget || geoTarget;
 
   // Use saved map view or default
   const defaultCenter = mapView.center || (allMapCafes.length > 0
