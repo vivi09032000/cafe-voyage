@@ -200,10 +200,10 @@ const timeAgo = (ts) => {
 };
 
 // ── Header ──
-const Header = ({ cityLabel, onOpenMenu }) => (
+const Header = ({ title = "Cafe Voyage", cityLabel, onOpenMenu }) => (
   <div style={{ background: T.brown, padding: "13px 18px", display: "flex", justifyContent: "space-between", alignItems: "center", flexShrink: 0 }}>
     <div>
-      <div style={{ color: "#fff", fontFamily: "'Playfair Display', serif", fontSize: 15, fontWeight: 700, letterSpacing: 1 }}>Cafe Voyage</div>
+      <div style={{ color: "#fff", fontFamily: "'Playfair Display', serif", fontSize: 15, fontWeight: 700, letterSpacing: 1 }}>{title}</div>
       <div style={{ color: "#f1e5d6", fontSize: 11, marginTop: 2 }}>{cityLabel}</div>
     </div>
     <button onClick={onOpenMenu} style={{ background: "none", border: "none", cursor: "pointer", padding: 0 }}>
@@ -458,24 +458,22 @@ const HomePage = ({ cafes, loading, city, onSelect, favs, onFav, emptyCafeIds })
     <div style={{ display: "flex", flexDirection: "column", flex: 1, minHeight: 0, overflow: "hidden" }}>
       {/* 固定區：搜尋 + 篩選 */}
       <div style={{ flexShrink: 0, padding: "14px 16px 0", background: T.cream, borderBottom: `1px solid ${T.beige}` }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12, marginBottom: 10 }}>
-          <div>
-            <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, color: T.text }}>首頁</div>
-            <div style={{ fontSize: 12, color: T.sub, marginTop: 4 }}>{CITIES.find((item) => item.key === city)?.label || "台北"} ・ 共 {total} 間</div>
-          </div>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, marginBottom: 10 }}>
+          <div style={{ fontSize: 12, color: T.sub }}>{CITIES.find((item) => item.key === city)?.label || "台北"} ・ 共 {total} 間</div>
           <button
             onClick={() => setFiltersOpen(prev => !prev)}
             style={{
               background: filtersOpen || activeFilterCount > 0 ? T.brown : "#fff",
               color: filtersOpen || activeFilterCount > 0 ? "#fff" : T.text,
               border: `1px solid ${filtersOpen || activeFilterCount > 0 ? T.brown : T.beige}`,
-              borderRadius: 18,
-              padding: "8px 12px",
-              fontSize: 12,
+              borderRadius: 20,
+              padding: "10px 15px",
+              fontSize: 13,
               cursor: "pointer",
               fontFamily: "inherit",
               fontWeight: 700,
               flexShrink: 0,
+              minHeight: 40,
             }}
           >
             {filtersOpen ? "收起篩選" : `篩選${activeFilterCount > 0 ? `・${activeFilterCount}` : ""}`}
@@ -1140,7 +1138,7 @@ export default function App() {
     <>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');html,body,#root{height:100%}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,'PingFang TC',sans-serif;background:#f0ebe4}::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:${T.beige};border-radius:3px}`}</style>
       <div style={{ maxWidth: 430, margin: "0 auto", width: "100%", height: "100svh", minHeight: "100dvh", display: "flex", flexDirection: "column", background: T.cream, overflow: "hidden", boxShadow: "0 0 40px rgba(0,0,0,0.15)" }}>
-        {!selected && <Header cityLabel={CITIES.find((item) => item.key === city)?.label || "台北"} onOpenMenu={() => setMenuOpen(true)} />}
+        {!selected && <Header title={tab === "home" ? "首頁" : "Cafe Voyage"} cityLabel={CITIES.find((item) => item.key === city)?.label || "台北"} onOpenMenu={() => setMenuOpen(true)} />}
         {selected ? (
           <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", overflow: "hidden" }}>
             {renderPage()}
