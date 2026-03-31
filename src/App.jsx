@@ -55,7 +55,9 @@ const T = {
   text: "#2C2016", sub: "#7A6652", tag: "#2D4A3E",
 };
 
+const REGION_PROMPT_KEY = "prompt";
 const ALL_REGION_KEY = "all";
+const REGION_STORAGE_KEY = "cafe-voyage:region";
 const MAP_CACHE_KEY = "cafe-voyage:map-cafes";
 const MAP_CACHE_TTL = 1000 * 60 * 60 * 12;
 const REGION_PATTERN = /(台北市|新北市|桃園市|台中市|臺中市|台南市|臺南市|高雄市|基隆市|新竹市|新竹縣|苗栗縣|彰化縣|南投縣|雲林縣|嘉義市|嘉義縣|屏東縣|宜蘭縣|花蓮縣|台東縣|臺東縣)/;
@@ -69,6 +71,25 @@ const getCafeRegion = (cafe) => {
   const match = (cafe.address || "").match(REGION_PATTERN);
   if (match) return normalizeRegionLabel(match[0]);
   return "";
+};
+
+const reverseGeocodeRegion = async (latitude, longitude) => {
+  const res = await fetch(
+    `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}&zoom=10&addressdetails=1`,
+    { headers: { "Accept-Language": "zh-TW" } }
+  );
+  if (!res.ok) return "";
+  const data = await res.json();
+  const address = data?.address || {};
+  const candidates = [
+    address.city,
+    address.county,
+    address.state_district,
+    address.state,
+    (data?.display_name || "").match(REGION_PATTERN)?.[0],
+  ];
+  const match = candidates.find(Boolean);
+  return match ? normalizeRegionLabel(match) : "";
 };
 
 // ── helpers ──
@@ -440,7 +461,7 @@ const CafeCard = ({ cafe, onClick, fav, onFav, emptyCafeIds }) => (
 );
 
 // ── Page: Home ──
-const HomePage = ({ cafes, loading, regionLabel, onSelect, favs, onFav, emptyCafeIds }) => {
+const HomePage = ({ cafes, loading, regionLabel, hasRegionSelection, onOpenRegionPicker, onSelect, favs, onFav, emptyCafeIds }) => {
   const [q, setQ] = useState("");
   const [page, setPage] = useState(1);
   const [filtersOpen, setFiltersOpen] = useState(false);
@@ -518,6 +539,31 @@ const HomePage = ({ cafes, loading, regionLabel, onSelect, favs, onFav, emptyCaf
           <div style={{ textAlign: "center", padding: "60px 0", color: T.sub }}>
             <div style={{ fontSize: 32, marginBottom: 10 }}>☕</div>
             <div>載入中...</div>
+          </div>
+        ) : !hasRegionSelection ? (
+          <div style={{ textAlign: "center", padding: "56px 0", color: T.sub }}>
+            <div style={{ fontSize: 34, marginBottom: 10 }}>📍</div>
+            <div style={{ fontSize: 18, color: T.text, fontWeight: 700, marginBottom: 8 }}>請先選擇縣市</div>
+            <div style={{ fontSize: 13, lineHeight: 1.6, maxWidth: 260, margin: "0 auto 16px" }}>
+              首頁先聚焦在你常去的地區，列表會比直接看全台更準也更好逛。
+            </div>
+            <button
+              onClick={onOpenRegionPicker}
+              style={{
+                background: T.brown,
+                color: "#fff",
+                border: "none",
+                borderRadius: 12,
+                padding: "12px 18px",
+                fontSize: 14,
+                fontWeight: 700,
+                cursor: "pointer",
+                fontFamily: "inherit",
+              }}
+            >
+              選擇縣市
+            </button>
+            <div style={{ fontSize: 12, marginTop: 10 }}>你也可以到右上角設定改成全台。</div>
           </div>
         ) : (
           <>
@@ -1107,7 +1153,13 @@ export default function App() {
   const [tab, setTab] = useState("home");
   const [tabHistory, setTabHistory] = useState([]);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [region, setRegion] = useState(ALL_REGION_KEY);
+  const [region, setRegion] = useState(() => {
+    try {
+      return localStorage.getItem(REGION_STORAGE_KEY) || REGION_PROMPT_KEY;
+    } catch {
+      return REGION_PROMPT_KEY;
+    }
+  });
   const [allCafes, setAllCafes] = useState([]);
   const [loading, setLoading] = useState(false);
   const [selected, setSelected] = useState(null);
@@ -1124,6 +1176,7 @@ export default function App() {
   const [emptyCafeIds, setEmptyCafeIds] = useState(new Set());
   const [mapView, setMapView] = useState({ center: null, zoom: null });
   const [mapQuery, setMapQuery] = useState("");
+  const hasAttemptedAutoRegionRef = useRef(false);
   const fetchAllCafes = useCallback(async () => {
     let cacheLoaded = false;
     try {
@@ -1176,6 +1229,16 @@ export default function App() {
     localStorage.setItem("cafe-voyage:favs", JSON.stringify([...favs]));
   }, [favs]);
 
+  useEffect(() => {
+    try {
+      if (region === REGION_PROMPT_KEY) {
+        localStorage.removeItem(REGION_STORAGE_KEY);
+      } else {
+        localStorage.setItem(REGION_STORAGE_KEY, region);
+      }
+    } catch {}
+  }, [region]);
+
   const toggleFav = (id) => setFavs(prev => { const key = String(id); const s = new Set(prev); s.has(key) ? s.delete(key) : s.add(key); return s; });
   const favoriteLookup = useMemo(() => ({ has: (id) => favs.has(String(id)) }), [favs]);
   const availableRegions = useMemo(() => {
@@ -1189,11 +1252,53 @@ export default function App() {
     });
     return options;
   }, [allCafes]);
-  const regionLabel = availableRegions.find((item) => item.key === region)?.label || "全台";
-  const cafes = useMemo(() => {
+  const regionOptionKeys = useMemo(() => new Set(availableRegions.map((item) => item.key)), [availableRegions]);
+  const hasRegionSelection = region !== REGION_PROMPT_KEY;
+  const regionLabel = region === REGION_PROMPT_KEY
+    ? "請選擇縣市"
+    : (availableRegions.find((item) => item.key === region)?.label || "全台");
+  const regionScopedCafes = useMemo(() => {
     if (region === ALL_REGION_KEY) return allCafes;
+    if (region === REGION_PROMPT_KEY) return [];
     return allCafes.filter((cafe) => getCafeRegion(cafe) === region);
   }, [allCafes, region]);
+  const homeCafes = hasRegionSelection ? regionScopedCafes : [];
+  const searchCafes = hasRegionSelection ? regionScopedCafes : allCafes;
+  const favoritesCafes = hasRegionSelection ? regionScopedCafes : allCafes;
+
+  useEffect(() => {
+    if (region === REGION_PROMPT_KEY || region === ALL_REGION_KEY) return;
+    if (availableRegions.length <= 1) return;
+    if (regionOptionKeys.has(region)) return;
+    setRegion(REGION_PROMPT_KEY);
+  }, [availableRegions.length, region, regionOptionKeys]);
+
+  useEffect(() => {
+    if (hasAttemptedAutoRegionRef.current) return;
+    if (region !== REGION_PROMPT_KEY) return;
+    if (availableRegions.length <= 1) return;
+    if (!navigator.geolocation || !window.isSecureContext) return;
+
+    let cancelled = false;
+    hasAttemptedAutoRegionRef.current = true;
+
+    navigator.geolocation.getCurrentPosition(
+      async ({ coords }) => {
+        try {
+          const nextRegion = await reverseGeocodeRegion(coords.latitude, coords.longitude);
+          if (!nextRegion || cancelled) return;
+          if (!regionOptionKeys.has(nextRegion)) return;
+          setRegion((current) => (current === REGION_PROMPT_KEY ? nextRegion : current));
+        } catch {}
+      },
+      () => {},
+      { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 }
+    );
+
+    return () => {
+      cancelled = true;
+    };
+  }, [availableRegions.length, region, regionOptionKeys]);
 
   const handleRegionChange = (nextRegion) => { setRegion(nextRegion); setSelected(null); };
   const handleTabChange = (nextTab) => {
@@ -1221,19 +1326,25 @@ export default function App() {
   const renderPage = () => {
     if (selected) return <DetailPage cafe={selected} onBack={() => setSelected(null)} fav={favoriteLookup.has(selected.id)} onFav={toggleFav} onReport={handleReportAndUpdateMap} />;
     switch (tab) {
-      case "home": return <HomePage cafes={cafes} loading={loading} regionLabel={regionLabel} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} emptyCafeIds={emptyCafeIds} />;
-      case "search": return <SearchPage cafes={cafes} loading={loading} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} />;
+      case "home": return <HomePage cafes={homeCafes} loading={loading} regionLabel={regionLabel} hasRegionSelection={hasRegionSelection} onOpenRegionPicker={() => setMenuOpen(true)} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} emptyCafeIds={emptyCafeIds} />;
+      case "search": return <SearchPage cafes={searchCafes} loading={loading} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} />;
       case "map": return <MapPage cafes={allCafes} onSelect={setSelected} mapView={mapView} setMapView={setMapView} mapQuery={mapQuery} setMapQuery={setMapQuery} loading={loading} />;
-      case "favorites": return <FavoritesPage cafes={cafes} favs={favoriteLookup} onSelect={setSelected} onFav={toggleFav} />;
+      case "favorites": return <FavoritesPage cafes={favoritesCafes} favs={favoriteLookup} onSelect={setSelected} onFav={toggleFav} />;
       default: return null;
     }
   };
+
+  const headerSubtitle = tab === "map"
+    ? ""
+    : hasRegionSelection
+      ? `📍 ${regionLabel}・${homeCafes.filter(isOpen).length} 間`
+      : "📍 請選擇縣市";
 
   return (
     <>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');html,body,#root{height:100%}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,'PingFang TC',sans-serif;background:#f0ebe4}input::placeholder{color:#A89880;opacity:1}::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:${T.beige};border-radius:3px}`}</style>
       <div style={{ maxWidth: 430, margin: "0 auto", width: "100%", height: "100svh", minHeight: "100dvh", display: "flex", flexDirection: "column", background: T.cream, overflow: "hidden", boxShadow: "0 0 40px rgba(0,0,0,0.15)" }}>
-        {!selected && <Header cityLabel={regionLabel} subtitle={tab === "map" ? "" : `📍 ${regionLabel}・${cafes.filter(isOpen).length} 間`} onOpenMenu={() => setMenuOpen(true)} />}
+        {!selected && <Header cityLabel={regionLabel} subtitle={headerSubtitle} onOpenMenu={() => setMenuOpen(true)} />}
         {selected ? (
           <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", overflow: "hidden" }}>
             {renderPage()}
