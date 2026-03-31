@@ -633,16 +633,26 @@ const FlyToBySignal = ({ center, seq, zoom = 15 }) => {
   return null;
 };
 
-const SaveMapView = ({ onMove }) => {
+const SaveMapView = ({ onMove, onBoundsChange }) => {
   const map = useMap();
   useEffect(() => {
     const handler = () => {
       const c = map.getCenter();
       onMove({ center: [c.lat, c.lng], zoom: map.getZoom() });
+      if (onBoundsChange) {
+        const bounds = map.getBounds();
+        onBoundsChange({
+          north: bounds.getNorth(),
+          south: bounds.getSouth(),
+          east: bounds.getEast(),
+          west: bounds.getWest(),
+        });
+      }
     };
     map.on("moveend", handler);
+    handler();
     return () => map.off("moveend", handler);
-  }, [map, onMove]);
+  }, [map, onMove, onBoundsChange]);
   return null;
 };
 
@@ -680,15 +690,24 @@ const LocateController = ({ request, onStart, onSuccess, onError }) => {
   return null;
 };
 
-const MapPage = ({ cafes, onSelect, mapView, setMapView, mapQuery, setMapQuery }) => {
+const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setMapQuery }) => {
   const [userPos, setUserPos] = useState(null);
   const [geoTarget, setGeoTarget] = useState(null);
   const [locateRequest, setLocateRequest] = useState({ seq: 0, zoom: 15 });
   const [locating, setLocating] = useState(false);
   const [locateError, setLocateError] = useState("");
+  const [visibleBounds, setVisibleBounds] = useState(null);
   const mapRef = useRef(null);
   const hasAutoLocatedRef = useRef(false);
   const allMapCafes = useMemo(() => cafes.filter(isOpen).filter(c => c.latitude && c.longitude), [cafes]);
+  const visibleMapCafes = useMemo(() => {
+    if (!visibleBounds) return allMapCafes;
+    return allMapCafes.filter((cafe) => {
+      const lat = parseFloat(cafe.latitude);
+      const lng = parseFloat(cafe.longitude);
+      return lat <= visibleBounds.north && lat >= visibleBounds.south && lng <= visibleBounds.east && lng >= visibleBounds.west;
+    });
+  }, [allMapCafes, visibleBounds]);
 
   const requestUserLocation = useCallback(async ({ silent = false, zoom = 15 } = {}) => {
     if (!navigator.geolocation) {
@@ -734,9 +753,9 @@ const MapPage = ({ cafes, onSelect, mapView, setMapView, mapQuery, setMapQuery }
   }, [requestUserLocation]);
 
   const mapCafes = useMemo(() => {
-    if (!mapQuery) return allMapCafes;
+    if (!mapQuery) return visibleMapCafes;
     return allMapCafes.filter(c => c.name.includes(mapQuery) || c.address.includes(mapQuery) || (c.mrt && c.mrt.includes(mapQuery)));
-  }, [allMapCafes, mapQuery]);
+  }, [allMapCafes, visibleMapCafes, mapQuery]);
 
   const cafeTarget = useMemo(() => {
     if (!mapQuery || mapCafes.length === 0) return null;
@@ -749,7 +768,7 @@ const MapPage = ({ cafes, onSelect, mapView, setMapView, mapQuery, setMapQuery }
     const timer = setTimeout(async () => {
       try {
         const res = await fetch(
-          `https://nominatim.openstreetmap.org/search?format=json&countrycodes=tw&q=${encodeURIComponent(mapQuery)}&limit=1`,
+          `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(mapQuery)}&limit=1`,
           { headers: { "Accept-Language": "zh-TW", "User-Agent": "CafeVoyage/1.0" } }
         );
         const data = await res.json();
@@ -777,7 +796,7 @@ const MapPage = ({ cafes, onSelect, mapView, setMapView, mapQuery, setMapQuery }
       <div style={{ display: "flex", alignItems: "center", gap: 7, padding: "10px 16px 6px" }}>
         <span style={{ fontSize: 20 }}>📍</span>
         <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, color: T.text }}>地圖</div>
-        <div style={{ fontSize: 12, color: T.sub, marginLeft: "auto" }}>{mapQuery ? `${mapCafes.length} 筆結果` : `${allMapCafes.length} 間咖啡廳`}</div>
+        <div style={{ fontSize: 12, color: T.sub, marginLeft: "auto" }}>{loading ? "載入全台資料..." : mapQuery ? `${mapCafes.length} 筆結果` : `${visibleMapCafes.length} 間咖啡廳`}</div>
       </div>
 
       {/* Search */}
@@ -808,13 +827,13 @@ const MapPage = ({ cafes, onSelect, mapView, setMapView, mapQuery, setMapQuery }
             onSuccess={handleLocateSuccess}
             onError={handleLocateError}
           />
-          <SaveMapView onMove={setMapView} />
+          <SaveMapView onMove={setMapView} onBoundsChange={setVisibleBounds} />
           {flyTarget && <FlyTo center={flyTarget} />}
           <FlyToBySignal center={userPos} seq={locateRequest.seq} zoom={locateRequest.zoom} />
           {userPos && <Marker position={userPos} icon={userIcon}>
             <Popup><span style={{ fontSize: 13, fontWeight: 700 }}>📍 你的位置</span></Popup>
           </Marker>}
-          {allMapCafes.map(c => (
+          {mapCafes.map(c => (
             <Marker key={c.id} position={[parseFloat(c.latitude), parseFloat(c.longitude)]} icon={cafeIcon}>
               <Popup minWidth={200} maxWidth={260}>
                 <div style={{ fontFamily: "-apple-system, 'PingFang TC', sans-serif" }}>
@@ -1073,7 +1092,9 @@ export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [city, setCity] = useState("taipei");
   const [cafes, setCafes] = useState([]);
+  const [mapCafes, setMapCafes] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [mapLoading, setMapLoading] = useState(false);
   const [selected, setSelected] = useState(null);
   const [favs, setFavs] = useState(() => {
     try {
@@ -1102,7 +1123,36 @@ export default function App() {
     }
   }, []);
 
+  const fetchMapCafes = useCallback(async () => {
+    setMapLoading(true);
+    try {
+      const results = await Promise.all(
+        CITIES.map(async ({ key }) => {
+          const res = await fetch(`/api/cafes?city=${key}`);
+          return res.json();
+        })
+      );
+      const merged = [];
+      const seen = new Set();
+      results.flat().forEach((cafe) => {
+        const dedupeKey = cafe.id || `${cafe.name}-${cafe.address}`;
+        if (seen.has(dedupeKey)) return;
+        seen.add(dedupeKey);
+        merged.push(cafe);
+      });
+      setMapCafes(merged);
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setMapLoading(false);
+    }
+  }, []);
+
   useEffect(() => { fetchCafes(city); }, [city, fetchCafes]);
+  useEffect(() => {
+    if (tab !== "map" || mapCafes.length > 0 || mapLoading) return;
+    fetchMapCafes();
+  }, [tab, mapCafes.length, mapLoading, fetchMapCafes]);
   
   // App 啟動時 / 切換城市時抓取 emptyCafeIds
   useEffect(() => { 
@@ -1144,7 +1194,7 @@ export default function App() {
     switch (tab) {
       case "home": return <HomePage cafes={cafes} loading={loading} city={city} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} emptyCafeIds={emptyCafeIds} />;
       case "search": return <SearchPage cafes={cafes} loading={loading} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} />;
-      case "map": return <MapPage cafes={cafes} onSelect={setSelected} mapView={mapView} setMapView={setMapView} mapQuery={mapQuery} setMapQuery={setMapQuery} />;
+      case "map": return <MapPage cafes={mapCafes} onSelect={setSelected} mapView={mapView} setMapView={setMapView} mapQuery={mapQuery} setMapQuery={setMapQuery} loading={mapLoading} />;
       case "favorites": return <FavoritesPage cafes={cafes} favs={favoriteLookup} onSelect={setSelected} onFav={toggleFav} />;
       default: return null;
     }
@@ -1154,7 +1204,7 @@ export default function App() {
     <>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');html,body,#root{height:100%}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,'PingFang TC',sans-serif;background:#f0ebe4}input::placeholder{color:#A89880;opacity:1}::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:${T.beige};border-radius:3px}`}</style>
       <div style={{ maxWidth: 430, margin: "0 auto", width: "100%", height: "100svh", minHeight: "100dvh", display: "flex", flexDirection: "column", background: T.cream, overflow: "hidden", boxShadow: "0 0 40px rgba(0,0,0,0.15)" }}>
-        {!selected && <Header cityLabel={CITIES.find((item) => item.key === city)?.label || "台北"} subtitle={`📍 ${CITIES.find((item) => item.key === city)?.label || "台北"}・${cafes.filter(isOpen).length} 間`} onOpenMenu={() => setMenuOpen(true)} />}
+        {!selected && <Header cityLabel={CITIES.find((item) => item.key === city)?.label || "台北"} subtitle={tab === "map" ? `📍 目前畫面範圍・${mapCafes.filter(isOpen).length} 間` : `📍 ${CITIES.find((item) => item.key === city)?.label || "台北"}・${cafes.filter(isOpen).length} 間`} onOpenMenu={() => setMenuOpen(true)} />}
         {selected ? (
           <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", overflow: "hidden" }}>
             {renderPage()}
