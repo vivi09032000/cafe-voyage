@@ -1258,7 +1258,7 @@ export default function App() {
     <>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');html,body,#root{height:100%}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,'PingFang TC',sans-serif;background:#f0ebe4}input::placeholder{color:#A89880;opacity:1}::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:${T.beige};border-radius:3px}`}</style>
       <div style={{ maxWidth: 430, margin: "0 auto", width: "100%", height: "100svh", minHeight: "100dvh", display: "flex", flexDirection: "column", background: T.cream, overflow: "hidden", boxShadow: "0 0 40px rgba(0,0,0,0.15)" }}>
-        {!selected && <Header cityLabel={CITIES.find((item) => item.key === city)?.label || "台北"} subtitle={tab === "map" ? `📍 目前畫面範圍・${mapCafes.filter(isOpen).length} 間` : `📍 ${CITIES.find((item) => item.key === city)?.label || "台北"}・${cafes.filter(isOpen).length} 間`} onOpenMenu={() => setMenuOpen(true)} />}
+        {!selected && <Header cityLabel={CITIES.find((item) => item.key === city)?.label || "台北"} subtitle={tab === "map" ? "" : `📍 ${CITIES.find((item) => item.key === city)?.label || "台北"}・${cafes.filter(isOpen).length} 間`} onOpenMenu={() => setMenuOpen(true)} />}
         {selected ? (
           <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", overflow: "hidden" }}>
             {renderPage()}
