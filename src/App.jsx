@@ -95,25 +95,6 @@ const getCafeRegion = (cafe) => {
 
 const getCafeRegionGroupKey = (cafe) => findRegionGroup(getCafeRegion(cafe))?.key || "";
 
-const reverseGeocodeRegion = async (latitude, longitude) => {
-  const res = await fetch(
-    `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}&zoom=10&addressdetails=1`,
-    { headers: { "Accept-Language": "zh-TW" } }
-  );
-  if (!res.ok) return "";
-  const data = await res.json();
-  const address = data?.address || {};
-  const candidates = [
-    address.city,
-    address.county,
-    address.state_district,
-    address.state,
-    (data?.display_name || "").match(REGION_PATTERN)?.[0],
-  ];
-  const match = candidates.find(Boolean);
-  return match ? normalizeRegionLabel(match) : "";
-};
-
 // ── helpers ──
 const CLOSED_KW = ["暫停營業", "已歇業", "停業", "結束營業"];
 const isOpen = (c) => !CLOSED_KW.some(kw => c.name.includes(kw));
@@ -483,7 +464,7 @@ const CafeCard = ({ cafe, onClick, fav, onFav, emptyCafeIds }) => (
 );
 
 // ── Page: Home ──
-const HomePage = ({ cafes, loading, regionLabel, hasRegionSelection, onOpenRegionPicker, onSelect, favs, onFav, emptyCafeIds }) => {
+const HomePage = ({ cafes, hasRegionSelection, onOpenRegionPicker, onSelect, favs, onFav, emptyCafeIds }) => {
   const [q, setQ] = useState("");
   const [page, setPage] = useState(1);
   const [filtersOpen, setFiltersOpen] = useState(false);
@@ -557,17 +538,11 @@ const HomePage = ({ cafes, loading, regionLabel, hasRegionSelection, onOpenRegio
 
       {/* 滾動區：咖啡廳列表 */}
       <div style={{ flex: 1, overflowY: "auto", padding: "0 16px 16px" }}>
-        {loading ? (
-          <div style={{ textAlign: "center", padding: "60px 0", color: T.sub }}>
-            <div style={{ fontSize: 32, marginBottom: 10 }}>☕</div>
-            <div>載入中...</div>
-          </div>
-        ) : !hasRegionSelection ? (
-          <div style={{ textAlign: "center", padding: "56px 0", color: T.sub }}>
-            <div style={{ fontSize: 34, marginBottom: 10 }}>📍</div>
-            <div style={{ fontSize: 18, color: T.text, fontWeight: 700, marginBottom: 8 }}>請先選擇縣市</div>
-            <div style={{ fontSize: 13, lineHeight: 1.6, maxWidth: 260, margin: "0 auto 16px" }}>
-              首頁先聚焦在你常去的地區，列表會比直接看全台更準也更好逛。
+        {!hasRegionSelection && (
+          <div style={{ margin: "12px 0", background: "#fff", border: `1px solid ${T.beige}`, borderRadius: 14, padding: "14px 14px 12px" }}>
+            <div style={{ fontSize: 14, color: T.text, fontWeight: 700, marginBottom: 6 }}>先選一個地區開始看</div>
+            <div style={{ fontSize: 12, color: T.sub, lineHeight: 1.6, marginBottom: 10 }}>
+              右上角可以切換地區。首頁先聚焦在單一城市，列表會比較清楚。
             </div>
             <button
               onClick={onOpenRegionPicker}
@@ -575,17 +550,22 @@ const HomePage = ({ cafes, loading, regionLabel, hasRegionSelection, onOpenRegio
                 background: T.brown,
                 color: "#fff",
                 border: "none",
-                borderRadius: 12,
-                padding: "12px 18px",
-                fontSize: 14,
+                borderRadius: 10,
+                padding: "10px 14px",
+                fontSize: 13,
                 fontWeight: 700,
                 cursor: "pointer",
                 fontFamily: "inherit",
               }}
             >
-              選擇縣市
+              選擇地區
             </button>
-            <div style={{ fontSize: 12, marginTop: 10 }}>之後也可以從右上角設定隨時切換地區。</div>
+          </div>
+        )}
+        {loading ? (
+          <div style={{ textAlign: "center", padding: "60px 0", color: T.sub }}>
+            <div style={{ fontSize: 32, marginBottom: 10 }}>☕</div>
+            <div>載入中...</div>
           </div>
         ) : (
           <>
@@ -1198,7 +1178,6 @@ export default function App() {
   const [emptyCafeIds, setEmptyCafeIds] = useState(new Set());
   const [mapView, setMapView] = useState({ center: null, zoom: null });
   const [mapQuery, setMapQuery] = useState("");
-  const hasAttemptedAutoRegionRef = useRef(false);
   const fetchAllCafes = useCallback(async () => {
     let cacheLoaded = false;
     try {
@@ -1297,34 +1276,6 @@ export default function App() {
     setRegion(REGION_PROMPT_KEY);
   }, [availableRegions.length, region, regionOptionKeys]);
 
-  useEffect(() => {
-    if (hasAttemptedAutoRegionRef.current) return;
-    if (region !== REGION_PROMPT_KEY) return;
-    if (availableRegions.length <= 1) return;
-    if (!navigator.geolocation || !window.isSecureContext) return;
-
-    let cancelled = false;
-    hasAttemptedAutoRegionRef.current = true;
-
-    navigator.geolocation.getCurrentPosition(
-      async ({ coords }) => {
-        try {
-          const nextRegion = await reverseGeocodeRegion(coords.latitude, coords.longitude);
-          const nextGroupKey = findRegionGroup(nextRegion)?.key || "";
-          if (!nextGroupKey || cancelled) return;
-          if (!regionOptionKeys.has(nextGroupKey)) return;
-          setRegion((current) => (current === REGION_PROMPT_KEY ? nextGroupKey : current));
-        } catch {}
-      },
-      () => {},
-      { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 }
-    );
-
-    return () => {
-      cancelled = true;
-    };
-  }, [availableRegions.length, region, regionOptionKeys]);
-
   const handleRegionChange = (nextRegion) => { setRegion(nextRegion); setSelected(null); };
   const handleTabChange = (nextTab) => {
     if (nextTab === tab) return;
@@ -1351,7 +1302,7 @@ export default function App() {
   const renderPage = () => {
     if (selected) return <DetailPage cafe={selected} onBack={() => setSelected(null)} fav={favoriteLookup.has(selected.id)} onFav={toggleFav} onReport={handleReportAndUpdateMap} />;
     switch (tab) {
-      case "home": return <HomePage cafes={homeCafes} loading={loading} regionLabel={regionLabel} hasRegionSelection={hasRegionSelection} onOpenRegionPicker={() => setMenuOpen(true)} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} emptyCafeIds={emptyCafeIds} />;
+      case "home": return <HomePage cafes={homeCafes} hasRegionSelection={hasRegionSelection} onOpenRegionPicker={() => setMenuOpen(true)} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} emptyCafeIds={emptyCafeIds} />;
       case "search": return <SearchPage cafes={searchCafes} loading={loading} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} />;
       case "map": return <MapPage cafes={allCafes} onSelect={setSelected} mapView={mapView} setMapView={setMapView} mapQuery={mapQuery} setMapQuery={setMapQuery} loading={loading} />;
       case "favorites": return <FavoritesPage cafes={favoritesCafes} favs={favoriteLookup} onSelect={setSelected} onFav={toggleFav} />;
@@ -1363,7 +1314,7 @@ export default function App() {
     ? ""
     : hasRegionSelection
       ? `📍 ${regionLabel}・${homeCafes.filter(isOpen).length} 間`
-      : "📍 請選擇縣市";
+      : "📍 從右上角選擇地區";
 
   return (
     <>
