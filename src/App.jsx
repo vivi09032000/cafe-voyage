@@ -448,17 +448,19 @@ const userIcon = new L.Icon({
   iconSize: [24, 24], iconAnchor: [12, 12],
 });
 
-const LocateUser = ({ onLocate }) => {
-  useEffect(() => {
-    onLocate({ silent: true, zoom: 14 });
-  }, [onLocate]);
-  return null;
-};
-
 // ── Page: Map ──
 const FlyTo = ({ center }) => {
   const map = useMap();
   useEffect(() => { if (center) map.flyTo(center, 15, { duration: 0.8 }); }, [center, map]);
+  return null;
+};
+
+const FlyToBySignal = ({ center, seq, zoom = 15 }) => {
+  const map = useMap();
+  useEffect(() => {
+    if (!center || seq === 0) return;
+    map.flyTo(center, zoom, { duration: 0.8 });
+  }, [center, seq, zoom, map]);
   return null;
 };
 
@@ -486,6 +488,7 @@ const BindMapRef = ({ mapRef }) => {
 const MapPage = ({ cafes, onSelect, mapView, setMapView, mapQuery, setMapQuery }) => {
   const [userPos, setUserPos] = useState(null);
   const [geoTarget, setGeoTarget] = useState(null);
+  const [locateSeq, setLocateSeq] = useState(0);
   const [locating, setLocating] = useState(false);
   const [locateError, setLocateError] = useState("");
   const mapRef = useRef(null);
@@ -519,7 +522,7 @@ const MapPage = ({ cafes, onSelect, mapView, setMapView, mapQuery, setMapQuery }
 
       const pos = [result.coords.latitude, result.coords.longitude];
       setUserPos(pos);
-      if (mapRef.current) mapRef.current.flyTo(pos, zoom, { duration: 0.8 });
+      setLocateSeq(prev => prev + 1);
     } catch (err) {
       if (silent) return;
       const code = err?.code;
@@ -601,9 +604,9 @@ const MapPage = ({ cafes, onSelect, mapView, setMapView, mapQuery, setMapQuery }
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           <BindMapRef mapRef={mapRef} />
-          <LocateUser onLocate={requestUserLocation} />
           <SaveMapView onMove={setMapView} />
           {flyTarget && <FlyTo center={flyTarget} />}
+          <FlyToBySignal center={userPos} seq={locateSeq} zoom={15} />
           {userPos && <Marker position={userPos} icon={userIcon}>
             <Popup><span style={{ fontSize: 13, fontWeight: 700 }}>📍 你的位置</span></Popup>
           </Marker>}
@@ -636,11 +639,8 @@ const MapPage = ({ cafes, onSelect, mapView, setMapView, mapQuery, setMapQuery }
         {/* Locate me button */}
         <button
           onClick={() => {
-            if (userPos && mapRef.current) {
-              setLocateError("");
-              mapRef.current.flyTo(userPos, 15, { duration: 0.8 });
-              return;
-            }
+            setLocateError("");
+            if (userPos) setLocateSeq(prev => prev + 1);
             requestUserLocation({ silent: false, zoom: 15 });
           }}
           disabled={locating}
