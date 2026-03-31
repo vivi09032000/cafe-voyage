@@ -799,60 +799,113 @@ const CrowdReport = ({ cafeId, onReport }) => {
 };
 
 // ── Page: Detail ──
-const DetailPage = ({ cafe, onBack, fav, onFav, onReport }) => (
-  <div style={{ flex: 1, minHeight: 0, overflow: "auto" }}>
-    <div style={{ background: T.brown, padding: "13px 18px", display: "flex", alignItems: "center", gap: 10 }}>
-      <button onClick={onBack} style={{ background: "none", border: "none", cursor: "pointer" }}>
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round"><polyline points="15 18 9 12 15 6" /></svg>
-      </button>
-      <span style={{ color: "#fff", fontWeight: 700, fontSize: 15, flex: 1 }}>{cafe.name}</span>
-      <button onClick={() => onFav(cafe.id)} style={{ background: "none", border: "none", cursor: "pointer", fontSize: 20 }}>{fav ? "⭐" : "☆"}</button>
-    </div>
-    <div style={{ padding: "16px 18px" }}>
-      <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 20, fontWeight: 700, color: T.text, marginBottom: 4 }}>{cafe.name}</div>
-      {cafe.mrt && <div style={{ fontSize: 13, color: T.sub, marginBottom: 3 }}>🚇 {cafe.mrt}</div>}
-      <div style={{ fontSize: 13, color: T.sub, marginBottom: 12 }}>📍 {cafe.address}</div>
-      {cafe.open_time && <div style={{ fontSize: 13, color: T.text, marginBottom: 8 }}>🕐 {cafe.open_time}</div>}
+const DetailPage = ({ cafe, onBack, fav, onFav, onReport }) => {
+  const touchStartX = useRef(0);
+  const touchStartY = useRef(0);
+  const swipeActive = useRef(false);
+  const [swipeX, setSwipeX] = useState(0);
 
-      {/* Crowd Report — 放在最前面，一進來就看到 */}
-      <CrowdReport cafeId={cafe.id} onReport={onReport} />
+  const handleTouchStart = (e) => {
+    const touch = e.touches[0];
+    touchStartX.current = touch.clientX;
+    touchStartY.current = touch.clientY;
+    swipeActive.current = touch.clientX <= 28;
+  };
 
-      {/* Tags */}
-      <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 20 }}>
-        {limitedTag(cafe.limited_time)}
-        {socketTag(cafe.socket)}
-        {cafe.standing_desk === "yes" && <Tag label="站立桌" type="gray" />}
+  const handleTouchMove = (e) => {
+    if (!swipeActive.current) return;
+    const touch = e.touches[0];
+    const deltaX = touch.clientX - touchStartX.current;
+    const deltaY = touch.clientY - touchStartY.current;
+
+    if (Math.abs(deltaY) > Math.abs(deltaX)) {
+      swipeActive.current = false;
+      setSwipeX(0);
+      return;
+    }
+
+    if (deltaX > 0) {
+      setSwipeX(Math.min(deltaX, 120));
+    } else {
+      setSwipeX(0);
+    }
+  };
+
+  const handleTouchEnd = () => {
+    if (swipeActive.current && swipeX > 72) {
+      setSwipeX(0);
+      swipeActive.current = false;
+      onBack();
+      return;
+    }
+    swipeActive.current = false;
+    setSwipeX(0);
+  };
+
+  return (
+    <div
+      style={{
+        flex: 1,
+        minHeight: 0,
+        overflow: "auto",
+        transform: swipeX ? `translateX(${swipeX}px)` : "translateX(0)",
+        transition: swipeActive.current ? "none" : "transform 0.18s ease-out",
+        touchAction: "pan-y",
+      }}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+      onTouchCancel={handleTouchEnd}
+    >
+      <div style={{ background: T.brown, padding: "13px 18px", display: "flex", alignItems: "center", gap: 10 }}>
+        <button onClick={onBack} style={{ background: "none", border: "none", cursor: "pointer" }}>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round"><polyline points="15 18 9 12 15 6" /></svg>
+        </button>
+        <span style={{ color: "#fff", fontWeight: 700, fontSize: 15, flex: 1 }}>{cafe.name}</span>
+        <button onClick={() => onFav(cafe.id)} style={{ background: "none", border: "none", cursor: "pointer", fontSize: 20 }}>{fav ? "⭐" : "☆"}</button>
       </div>
+      <div style={{ padding: "16px 18px" }}>
+        <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 20, fontWeight: 700, color: T.text, marginBottom: 4 }}>{cafe.name}</div>
+        {cafe.mrt && <div style={{ fontSize: 13, color: T.sub, marginBottom: 3 }}>🚇 {cafe.mrt}</div>}
+        <div style={{ fontSize: 13, color: T.sub, marginBottom: 12 }}>📍 {cafe.address}</div>
+        {cafe.open_time && <div style={{ fontSize: 13, color: T.text, marginBottom: 8 }}>🕐 {cafe.open_time}</div>}
 
-      {/* Scores */}
-      {cafe.wifi > 0 && (
-        <div style={{ background: "#fff", borderRadius: 12, border: `1px solid ${T.beige}`, padding: 16, marginBottom: 16 }}>
-          <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 16, fontWeight: 700, marginBottom: 12, color: T.text }}>環境評分</div>
-          {[["📶 WiFi 穩定", cafe.wifi], ["🔇 安靜程度", cafe.quiet], ["☕ 咖啡好喝", cafe.tasty], ["💺 通常有位", cafe.seat], ["💰 價格便宜", cafe.cheap], ["🎵 裝潢音樂", cafe.music]].map(([label, val]) =>
-            val > 0 ? (
-              <div key={label} style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
-                <span style={{ fontSize: 13, color: T.text, width: 90, flexShrink: 0 }}>{label}</span>
-                {scoreBar(val)}
-              </div>
-            ) : null
-          )}
+        <CrowdReport cafeId={cafe.id} onReport={onReport} />
+
+        <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 20 }}>
+          {limitedTag(cafe.limited_time)}
+          {socketTag(cafe.socket)}
+          {cafe.standing_desk === "yes" && <Tag label="站立桌" type="gray" />}
         </div>
-      )}
 
-      {/* Links */}
-      {cafe.url && (
-        <a href={cafe.url} target="_blank" rel="noreferrer" style={{ display: "block", background: T.green, color: "#fff", borderRadius: 10, padding: "12px", textAlign: "center", textDecoration: "none", fontSize: 14, fontWeight: 700, marginBottom: 10 }}>
-          🔗 前往官網
-        </a>
-      )}
-      {cafe.address && (
-        <a href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(cafe.address)}`} target="_blank" rel="noreferrer" style={{ display: "block", background: T.brown, color: "#fff", borderRadius: 10, padding: "12px", textAlign: "center", textDecoration: "none", fontSize: 14, fontWeight: 700 }}>
-          🧭 導航到這裡
-        </a>
-      )}
+        {cafe.wifi > 0 && (
+          <div style={{ background: "#fff", borderRadius: 12, border: `1px solid ${T.beige}`, padding: 16, marginBottom: 16 }}>
+            <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 16, fontWeight: 700, marginBottom: 12, color: T.text }}>環境評分</div>
+            {[["📶 WiFi 穩定", cafe.wifi], ["🔇 安靜程度", cafe.quiet], ["☕ 咖啡好喝", cafe.tasty], ["💺 通常有位", cafe.seat], ["💰 價格便宜", cafe.cheap], ["🎵 裝潢音樂", cafe.music]].map(([label, val]) =>
+              val > 0 ? (
+                <div key={label} style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
+                  <span style={{ fontSize: 13, color: T.text, width: 90, flexShrink: 0 }}>{label}</span>
+                  {scoreBar(val)}
+                </div>
+              ) : null
+            )}
+          </div>
+        )}
+
+        {cafe.url && (
+          <a href={cafe.url} target="_blank" rel="noreferrer" style={{ display: "block", background: T.green, color: "#fff", borderRadius: 10, padding: "12px", textAlign: "center", textDecoration: "none", fontSize: 14, fontWeight: 700, marginBottom: 10 }}>
+            🔗 前往官網
+          </a>
+        )}
+        {cafe.address && (
+          <a href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(cafe.address)}`} target="_blank" rel="noreferrer" style={{ display: "block", background: T.brown, color: "#fff", borderRadius: 10, padding: "12px", textAlign: "center", textDecoration: "none", fontSize: 14, fontWeight: 700 }}>
+            🧭 導航到這裡
+          </a>
+        )}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 // ── Main App ──
 export default function App() {
