@@ -1,4 +1,7 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef, useMemo } from "react";
+import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
 
 const SUPABASE_URL = "https://dmymcnmsyhppwstpwmal.supabase.co";
 const SUPABASE_KEY = "sb_publishable_2mlstxr8qtRrybaIyBIB8Q_oS_Im60Q";
@@ -372,25 +375,94 @@ const FavoritesPage = ({ cafes, favs, onSelect, onFav }) => {
   );
 };
 
-// ── Page: Map placeholder ──
+// ── Map helpers ──
+const cafeIcon = new L.Icon({
+  iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
+  iconRetinaUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
+  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+  iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34], shadowSize: [41, 41],
+});
+
+const userIcon = new L.Icon({
+  iconUrl: "data:image/svg+xml," + encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><circle cx='12' cy='12' r='8' fill='%234285F4' stroke='white' stroke-width='3'/></svg>`),
+  iconSize: [24, 24], iconAnchor: [12, 12],
+});
+
+const LocateUser = ({ setUserPos }) => {
+  const map = useMap();
+  useEffect(() => {
+    if (!navigator.geolocation) return;
+    navigator.geolocation.getCurrentPosition(
+      ({ coords }) => {
+        const pos = [coords.latitude, coords.longitude];
+        setUserPos(pos);
+        map.setView(pos, 14);
+      },
+      () => {},
+      { enableHighAccuracy: true, timeout: 8000 }
+    );
+  }, [map, setUserPos]);
+  return null;
+};
+
+// ── Page: Map ──
 const MapPage = ({ cafes, onSelect }) => {
-  const top = cafes.filter(isOpen).filter(c => c.latitude && c.wifi > 3).slice(0, 5);
+  const [userPos, setUserPos] = useState(null);
+  const mapCafes = useMemo(() => cafes.filter(isOpen).filter(c => c.latitude && c.longitude), [cafes]);
+
+  // Default center: Taipei, or first cafe with coords
+  const defaultCenter = mapCafes.length > 0
+    ? [parseFloat(mapCafes[0].latitude), parseFloat(mapCafes[0].longitude)]
+    : [25.033, 121.5654];
+
   return (
-    <div style={{ flex: 1, overflow: "auto", padding: "0 16px 16px" }}>
-      <div style={{ display: "flex", alignItems: "center", gap: 7, margin: "14px 0 12px" }}>
+    <div style={{ flex: 1, display: "flex", flexDirection: "column", overflow: "hidden" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 7, padding: "10px 16px 6px" }}>
         <span style={{ fontSize: 20 }}>📍</span>
         <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, color: T.text }}>地圖</div>
+        <div style={{ fontSize: 12, color: T.sub, marginLeft: "auto" }}>{mapCafes.length} 間咖啡廳</div>
       </div>
-      <div style={{ borderRadius: 12, overflow: "hidden", marginBottom: 16, background: "linear-gradient(135deg,#2d3a4a,#1a2535)", height: 200, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", color: "#fff", position: "relative" }}>
-        <div style={{ fontSize: 34, marginBottom: 6 }}>🗺️</div>
-        <div style={{ fontSize: 18, fontWeight: 700 }}>互動地圖</div>
-        <div style={{ fontSize: 12, opacity: 0.7, marginTop: 4 }}>整合 Google Maps API 可顯示真實地圖</div>
-        <div style={{ display: "flex", gap: 6, marginTop: 12 }}>
-          {top.slice(0, 3).map(c => <div key={c.id} style={{ background: "rgba(255,255,255,0.15)", borderRadius: 6, padding: "3px 8px", fontSize: 10 }}>📍</div>)}
-        </div>
+      <div style={{ flex: 1, position: "relative", margin: "0 0 0 0", borderTop: `1px solid ${T.beige}` }}>
+        <MapContainer
+          center={defaultCenter}
+          zoom={14}
+          style={{ height: "100%", width: "100%" }}
+          zoomControl={false}
+        >
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          <LocateUser setUserPos={setUserPos} />
+          {userPos && <Marker position={userPos} icon={userIcon}>
+            <Popup><span style={{ fontSize: 13, fontWeight: 700 }}>📍 你的位置</span></Popup>
+          </Marker>}
+          {mapCafes.map(c => (
+            <Marker key={c.id} position={[parseFloat(c.latitude), parseFloat(c.longitude)]} icon={cafeIcon}>
+              <Popup minWidth={200} maxWidth={260}>
+                <div style={{ fontFamily: "-apple-system, 'PingFang TC', sans-serif" }}>
+                  <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 4, color: T.text }}>{c.name}</div>
+                  {c.mrt && <div style={{ fontSize: 11, color: T.sub, marginBottom: 2 }}>🚇 {c.mrt}</div>}
+                  <div style={{ fontSize: 11, color: T.sub, marginBottom: 6 }}>📍 {c.address}</div>
+                  <div style={{ display: "flex", gap: 4, flexWrap: "wrap", marginBottom: 8 }}>
+                    {c.wifi > 0 && <span style={{ fontSize: 11, background: T.beige, borderRadius: 10, padding: "2px 7px" }}>📶 {c.wifi.toFixed(1)}</span>}
+                    {c.quiet > 0 && <span style={{ fontSize: 11, background: T.beige, borderRadius: 10, padding: "2px 7px" }}>🔇 {c.quiet.toFixed(1)}</span>}
+                    {c.limited_time === "no" && <span style={{ fontSize: 11, background: T.green, color: "#fff", borderRadius: 10, padding: "2px 7px" }}>✓ 不限時</span>}
+                  </div>
+                  <button
+                    onClick={(e) => { e.stopPropagation(); onSelect(c); }}
+                    style={{
+                      width: "100%", padding: "7px 0", background: T.brown, color: "#fff",
+                      border: "none", borderRadius: 8, fontSize: 12, fontWeight: 700,
+                      cursor: "pointer", fontFamily: "inherit",
+                    }}
+                  >查看詳情</button>
+                </div>
+              </Popup>
+            </Marker>
+          ))}
+        </MapContainer>
       </div>
-      <div style={{ fontSize: 13, color: T.sub, marginBottom: 10 }}>附近高評分咖啡廳</div>
-      {top.map(c => <CafeCard key={c.id} cafe={c} onClick={() => onSelect(c)} fav={false} onFav={() => {}} emptyCafeIds={new Set()} />)}
     </div>
   );
 };
