@@ -695,12 +695,14 @@ const LocateController = ({ request, onStart, onSuccess, onError }) => {
 const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setMapQuery }) => {
   const [userPos, setUserPos] = useState(null);
   const [geoTarget, setGeoTarget] = useState(null);
+  const [searchTarget, setSearchTarget] = useState(null);
   const [locateRequest, setLocateRequest] = useState({ seq: 0, zoom: 15, mode: "auto" });
   const [locating, setLocating] = useState(false);
   const [locateError, setLocateError] = useState("");
   const [visibleBounds, setVisibleBounds] = useState(null);
   const mapRef = useRef(null);
   const hasAutoLocatedRef = useRef(false);
+  const lastSearchQueryRef = useRef("");
   const allMapCafes = useMemo(() => cafes.filter(isOpen).filter(c => c.latitude && c.longitude), [cafes]);
   const visibleMapCafes = useMemo(() => {
     if (!visibleBounds) return allMapCafes;
@@ -754,19 +756,29 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
     requestUserLocation({ silent: false, zoom: 15, mode: "auto" });
   }, [requestUserLocation]);
 
-  const mapCafes = useMemo(() => {
-    if (!mapQuery) return visibleMapCafes;
+  const searchMatches = useMemo(() => {
+    if (!mapQuery) return [];
     return allMapCafes.filter(c => c.name.includes(mapQuery) || c.address.includes(mapQuery) || (c.mrt && c.mrt.includes(mapQuery)));
-  }, [allMapCafes, visibleMapCafes, mapQuery]);
-
-  const cafeTarget = useMemo(() => {
-    if (!mapQuery || mapCafes.length === 0) return null;
-    return [parseFloat(mapCafes[0].latitude), parseFloat(mapCafes[0].longitude)];
-  }, [mapQuery, mapCafes]);
+  }, [allMapCafes, mapQuery]);
 
   // Geocode fallback: when no cafe matches, query Nominatim
   useEffect(() => {
-    if (!mapQuery || mapCafes.length > 0) { setGeoTarget(null); return; }
+    if (!mapQuery) {
+      setGeoTarget(null);
+      setSearchTarget(null);
+      lastSearchQueryRef.current = "";
+      return;
+    }
+    if (lastSearchQueryRef.current === mapQuery) return;
+    lastSearchQueryRef.current = mapQuery;
+
+    if (searchMatches.length > 0) {
+      setGeoTarget(null);
+      setSearchTarget([parseFloat(searchMatches[0].latitude), parseFloat(searchMatches[0].longitude)]);
+      return;
+    }
+
+    setSearchTarget(null);
     const timer = setTimeout(async () => {
       try {
         const res = await fetch(
@@ -781,10 +793,9 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
       } catch {}
     }, 500);
     return () => clearTimeout(timer);
-  }, [mapQuery, mapCafes.length]);
+  }, [mapQuery, searchMatches]);
 
-  // Fly to target from either cafe match or geocoded search result.
-  const flyTarget = cafeTarget || geoTarget;
+  const flyTarget = searchTarget || geoTarget;
 
   // Use saved map view or default
   const defaultCenter = mapView.center || (allMapCafes.length > 0
@@ -797,7 +808,7 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
       <div style={{ display: "flex", alignItems: "center", gap: 7, padding: "10px 16px 6px" }}>
         <span style={{ fontSize: 20 }}>📍</span>
         <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, color: T.text }}>地圖</div>
-        <div style={{ fontSize: 12, color: T.sub, marginLeft: "auto" }}>{loading ? "載入全台資料..." : mapQuery ? `${mapCafes.length} 筆結果` : `${visibleMapCafes.length} 間咖啡廳`}</div>
+        <div style={{ fontSize: 12, color: T.sub, marginLeft: "auto" }}>{loading ? "載入全台資料..." : `${visibleMapCafes.length} 間咖啡廳`}</div>
       </div>
 
       {/* Search */}
@@ -834,7 +845,7 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
           {userPos && <Marker position={userPos} icon={userIcon}>
             <Popup><span style={{ fontSize: 13, fontWeight: 700 }}>📍 你的位置</span></Popup>
           </Marker>}
-          {mapCafes.map(c => (
+          {visibleMapCafes.map(c => (
             <Marker key={c.id} position={[parseFloat(c.latitude), parseFloat(c.longitude)]} icon={cafeIcon}>
               <Popup minWidth={200} maxWidth={260}>
                 <div style={{ fontFamily: "-apple-system, 'PingFang TC', sans-serif" }}>
