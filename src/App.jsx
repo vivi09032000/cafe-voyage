@@ -485,6 +485,14 @@ const SaveMapView = ({ onMove }) => {
   return null;
 };
 
+const BindMapRef = ({ mapRef }) => {
+  const map = useMap();
+  useEffect(() => {
+    mapRef.current = map;
+  }, [map, mapRef]);
+  return null;
+};
+
 const MapPage = ({ cafes, onSelect, mapView, setMapView, mapQuery, setMapQuery }) => {
   const [userPos, setUserPos] = useState(null);
   const [geoTarget, setGeoTarget] = useState(null);
@@ -551,12 +559,12 @@ const MapPage = ({ cafes, onSelect, mapView, setMapView, mapQuery, setMapQuery }
           zoom={defaultZoom}
           style={{ height: "100%", width: "100%" }}
           zoomControl={false}
-          ref={mapRef}
         >
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
+          <BindMapRef mapRef={mapRef} />
           <LocateUser setUserPos={setUserPos} />
           <SaveMapView onMove={setMapView} />
           {flyTarget && <FlyTo center={flyTarget} />}
