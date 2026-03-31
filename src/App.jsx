@@ -265,7 +265,7 @@ const HomePage = ({ cafes, loading, city, setCity, onSelect, favs, onFav, emptyC
   const filtered = cafes
     .filter(c => !q || c.name.includes(q) || c.address.includes(q) || (c.mrt && c.mrt.includes(q)))
     .filter(c => !filters.noLimit || c.limited_time === "no")
-    .filter(c => !filters.socket || c.socket === "yes" || c.socket === "maybe")
+    .filter(c => !filters.socket || c.socket === "yes")
     .filter(c => !filters.standing || c.standing_desk === "yes")
     .filter(c => !filters.wifi || c.wifi >= 4)
     .filter(c => !filters.quiet || c.quiet >= 4)
