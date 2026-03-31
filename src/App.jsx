@@ -346,7 +346,7 @@ const HomePage = ({ cafes, loading, city, setCity, onSelect, favs, onFav, emptyC
         ) : (
           <>
             <div style={{ fontSize: 12, color: T.sub, margin: "10px 0" }}>共 {total} 間咖啡廳{total > PER_PAGE ? `（顯示第 ${start + 1}-${Math.min(start + PER_PAGE, total)} 間）` : ""}</div>
-            {filtered.map(c => <CafeCard key={c.id} cafe={c} onClick={() => onSelect(c)} fav={favs.has(String(c.id))} onFav={onFav} emptyCafeIds={emptyCafeIds} />)}
+            {filtered.map(c => <CafeCard key={c.id} cafe={c} onClick={() => onSelect(c)} fav={favs.has(c.id)} onFav={onFav} emptyCafeIds={emptyCafeIds} />)}
             {filtered.length === 0 && <div style={{ textAlign: "center", padding: "40px 0", color: T.sub }}>找不到符合條件的咖啡廳</div>}
             <Pagination page={page} total={total} onPage={setPage} />
           </>
@@ -395,7 +395,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
             {sorted.map((c, i) => (
               <div key={c.id} style={{ display: "flex", alignItems: "flex-start", gap: 8 }}>
                 <div style={{ width: 24, height: 24, borderRadius: "50%", background: (start + i) < 3 ? T.brown : T.beige, color: (start + i) < 3 ? "#fff" : T.sub, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontWeight: 700, flexShrink: 0, marginTop: 14 }}>{start + i + 1}</div>
-                <div style={{ flex: 1 }}><CafeCard cafe={c} onClick={() => onSelect(c)} fav={favs.has(String(c.id))} onFav={onFav} emptyCafeIds={new Set()} /></div>
+                <div style={{ flex: 1 }}><CafeCard cafe={c} onClick={() => onSelect(c)} fav={favs.has(c.id)} onFav={onFav} emptyCafeIds={new Set()} /></div>
               </div>
             ))}
             {sorted.length === 0 && <div style={{ textAlign: "center", padding: "40px 0", color: T.sub }}>找不到符合條件的咖啡廳</div>}
@@ -409,7 +409,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
 
 // ── Page: Favorites ──
 const FavoritesPage = ({ cafes, favs, onSelect, onFav }) => {
-  const list = cafes.filter(isOpen).filter(c => favs.has(String(c.id)));
+  const list = cafes.filter(isOpen).filter(c => favs.has(c.id));
   return (
     <div style={{ display: "flex", flexDirection: "column", height: "100%", overflow: "hidden" }}>
       {/* 固定區 */}
@@ -807,6 +807,7 @@ export default function App() {
   }, [favs]);
 
   const toggleFav = (id) => setFavs(prev => { const key = String(id); const s = new Set(prev); s.has(key) ? s.delete(key) : s.add(key); return s; });
+  const favoriteLookup = useMemo(() => ({ has: (id) => favs.has(String(id)) }), [favs]);
 
   const handleCityChange = (c) => { setCity(c); setSelected(null); };
 
@@ -819,12 +820,12 @@ export default function App() {
   };
 
   const renderPage = () => {
-    if (selected) return <DetailPage cafe={selected} onBack={() => setSelected(null)} fav={favs.has(String(selected.id))} onFav={toggleFav} onReport={handleReportAndUpdateMap} />;
+    if (selected) return <DetailPage cafe={selected} onBack={() => setSelected(null)} fav={favoriteLookup.has(selected.id)} onFav={toggleFav} onReport={handleReportAndUpdateMap} />;
     switch (tab) {
-      case "home": return <HomePage cafes={cafes} loading={loading} city={city} setCity={handleCityChange} onSelect={setSelected} favs={favs} onFav={toggleFav} emptyCafeIds={emptyCafeIds} />;
-      case "search": return <SearchPage cafes={cafes} loading={loading} onSelect={setSelected} favs={favs} onFav={toggleFav} />;
+      case "home": return <HomePage cafes={cafes} loading={loading} city={city} setCity={handleCityChange} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} emptyCafeIds={emptyCafeIds} />;
+      case "search": return <SearchPage cafes={cafes} loading={loading} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} />;
       case "map": return <MapPage cafes={cafes} onSelect={setSelected} mapView={mapView} setMapView={setMapView} mapQuery={mapQuery} setMapQuery={setMapQuery} />;
-      case "favorites": return <FavoritesPage cafes={cafes} favs={favs} onSelect={setSelected} onFav={toggleFav} />;
+      case "favorites": return <FavoritesPage cafes={cafes} favs={favoriteLookup} onSelect={setSelected} onFav={toggleFav} />;
       default: return null;
     }
   };
