@@ -452,30 +452,42 @@ const FlyTo = ({ center }) => {
   return null;
 };
 
-const MapPage = ({ cafes, onSelect }) => {
+const SaveMapView = ({ onMove }) => {
+  const map = useMap();
+  useEffect(() => {
+    const handler = () => {
+      const c = map.getCenter();
+      onMove({ center: [c.lat, c.lng], zoom: map.getZoom() });
+    };
+    map.on("moveend", handler);
+    return () => map.off("moveend", handler);
+  }, [map, onMove]);
+  return null;
+};
+
+const MapPage = ({ cafes, onSelect, mapView, setMapView, mapQuery, setMapQuery }) => {
   const [userPos, setUserPos] = useState(null);
-  const [q, setQ] = useState("");
   const [geoTarget, setGeoTarget] = useState(null);
   const mapRef = useRef(null);
   const allMapCafes = useMemo(() => cafes.filter(isOpen).filter(c => c.latitude && c.longitude), [cafes]);
 
   const mapCafes = useMemo(() => {
-    if (!q) return allMapCafes;
-    return allMapCafes.filter(c => c.name.includes(q) || c.address.includes(q) || (c.mrt && c.mrt.includes(q)));
-  }, [allMapCafes, q]);
+    if (!mapQuery) return allMapCafes;
+    return allMapCafes.filter(c => c.name.includes(mapQuery) || c.address.includes(mapQuery) || (c.mrt && c.mrt.includes(mapQuery)));
+  }, [allMapCafes, mapQuery]);
 
   const cafeTarget = useMemo(() => {
-    if (!q || mapCafes.length === 0) return null;
+    if (!mapQuery || mapCafes.length === 0) return null;
     return [parseFloat(mapCafes[0].latitude), parseFloat(mapCafes[0].longitude)];
-  }, [q, mapCafes]);
+  }, [mapQuery, mapCafes]);
 
   // Geocode fallback: when no cafe matches, query Nominatim
   useEffect(() => {
-    if (!q || mapCafes.length > 0) { setGeoTarget(null); return; }
+    if (!mapQuery || mapCafes.length > 0) { setGeoTarget(null); return; }
     const timer = setTimeout(async () => {
       try {
         const res = await fetch(
-          `https://nominatim.openstreetmap.org/search?format=json&countrycodes=tw&q=${encodeURIComponent(q)}&limit=1`,
+          `https://nominatim.openstreetmap.org/search?format=json&countrycodes=tw&q=${encodeURIComponent(mapQuery)}&limit=1`,
           { headers: { "Accept-Language": "zh-TW", "User-Agent": "CafeVoyage/1.0" } }
         );
         const data = await res.json();
@@ -487,35 +499,36 @@ const MapPage = ({ cafes, onSelect }) => {
       } catch {}
     }, 500);
     return () => clearTimeout(timer);
-  }, [q, mapCafes.length]);
+  }, [mapQuery, mapCafes.length]);
 
   // Fly to target (for cafe matches)
   const flyTarget = cafeTarget;
 
-  // Default center: Taipei, or first cafe with coords
-  const defaultCenter = allMapCafes.length > 0
+  // Use saved map view or default
+  const defaultCenter = mapView.center || (allMapCafes.length > 0
     ? [parseFloat(allMapCafes[0].latitude), parseFloat(allMapCafes[0].longitude)]
-    : [25.033, 121.5654];
+    : [25.033, 121.5654]);
+  const defaultZoom = mapView.zoom || 14;
 
   return (
     <div style={{ flex: 1, display: "flex", flexDirection: "column", overflow: "hidden" }}>
       <div style={{ display: "flex", alignItems: "center", gap: 7, padding: "10px 16px 6px" }}>
         <span style={{ fontSize: 20 }}>📍</span>
         <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, color: T.text }}>地圖</div>
-        <div style={{ fontSize: 12, color: T.sub, marginLeft: "auto" }}>{q ? `${mapCafes.length} 筆結果` : `${allMapCafes.length} 間咖啡廳`}</div>
+        <div style={{ fontSize: 12, color: T.sub, marginLeft: "auto" }}>{mapQuery ? `${mapCafes.length} 筆結果` : `${allMapCafes.length} 間咖啡廳`}</div>
       </div>
 
       {/* Search */}
       <div style={{ padding: "0 16px 8px", position: "relative" }}>
         <svg style={{ position: "absolute", left: 27, top: "50%", transform: "translateY(-60%)" }} width="15" height="15" viewBox="0 0 24 24" fill="none" stroke={T.sub} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
-        <input value={q} onChange={e => setQ(e.target.value)} placeholder="搜尋店名、地址、捷運站..."
+        <input value={mapQuery} onChange={e => setMapQuery(e.target.value)} placeholder="搜尋店名、地址、捷運站..."
           style={{ width: "100%", padding: "9px 14px 9px 34px", borderRadius: 22, border: `1px solid ${T.beige}`, background: "#fff", fontSize: 13, outline: "none", boxSizing: "border-box", color: T.text }} />
       </div>
 
       <div style={{ flex: 1, position: "relative", borderTop: `1px solid ${T.beige}` }}>
         <MapContainer
           center={defaultCenter}
-          zoom={14}
+          zoom={defaultZoom}
           style={{ height: "100%", width: "100%" }}
           zoomControl={false}
           ref={mapRef}
@@ -525,6 +538,7 @@ const MapPage = ({ cafes, onSelect }) => {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           <LocateUser setUserPos={setUserPos} />
+          <SaveMapView onMove={setMapView} />
           {flyTarget && <FlyTo center={flyTarget} />}
           {userPos && <Marker position={userPos} icon={userIcon}>
             <Popup><span style={{ fontSize: 13, fontWeight: 700 }}>📍 你的位置</span></Popup>
@@ -736,6 +750,8 @@ export default function App() {
   const [selected, setSelected] = useState(null);
   const [favs, setFavs] = useState(new Set());
   const [emptyCafeIds, setEmptyCafeIds] = useState(new Set());
+  const [mapView, setMapView] = useState({ center: null, zoom: null });
+  const [mapQuery, setMapQuery] = useState("");
 
   const fetchCafes = useCallback(async (c) => {
     setLoading(true);
@@ -774,7 +790,7 @@ export default function App() {
     switch (tab) {
       case "home": return <HomePage cafes={cafes} loading={loading} city={city} setCity={handleCityChange} onSelect={setSelected} favs={favs} onFav={toggleFav} emptyCafeIds={emptyCafeIds} />;
       case "search": return <SearchPage cafes={cafes} loading={loading} onSelect={setSelected} favs={favs} onFav={toggleFav} />;
-      case "map": return <MapPage cafes={cafes} onSelect={setSelected} />;
+      case "map": return <MapPage cafes={cafes} onSelect={setSelected} mapView={mapView} setMapView={setMapView} mapQuery={mapQuery} setMapQuery={setMapQuery} />;
       case "favorites": return <FavoritesPage cafes={cafes} favs={favs} onSelect={setSelected} onFav={toggleFav} />;
       default: return null;
     }
