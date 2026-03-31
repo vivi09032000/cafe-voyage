@@ -518,6 +518,7 @@ const MapPage = ({ cafes, onSelect, mapView, setMapView, mapQuery, setMapQuery }
   const [locating, setLocating] = useState(false);
   const [locateError, setLocateError] = useState("");
   const mapRef = useRef(null);
+  const hasAutoLocatedRef = useRef(false);
   const allMapCafes = useMemo(() => cafes.filter(isOpen).filter(c => c.latitude && c.longitude), [cafes]);
 
   const requestUserLocation = useCallback(async ({ silent = false, zoom = 15 } = {}) => {
@@ -556,6 +557,12 @@ const MapPage = ({ cafes, onSelect, mapView, setMapView, mapQuery, setMapQuery }
     }
     setLocating(false);
   }, []);
+
+  useEffect(() => {
+    if (hasAutoLocatedRef.current) return;
+    hasAutoLocatedRef.current = true;
+    requestUserLocation({ silent: false, zoom: 15 });
+  }, [requestUserLocation]);
 
   const mapCafes = useMemo(() => {
     if (!mapQuery) return allMapCafes;
