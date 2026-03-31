@@ -55,13 +55,6 @@ const T = {
   text: "#2C2016", sub: "#7A6652", tag: "#2D4A3E",
 };
 
-const CITIES = [
-  { key: "taipei", label: "台北" }, { key: "taichung", label: "台中" },
-  { key: "tainan", label: "台南" }, { key: "kaohsiung", label: "高雄" },
-  { key: "hsinchu", label: "新竹" }, { key: "taoyuan", label: "桃園" },
-  { key: "yilan", label: "宜蘭" }, { key: "hualien", label: "花蓮" },
-  { key: "taitung", label: "台東" }, { key: "keelung", label: "基隆" },
-];
 const ALL_REGION_KEY = "all";
 const MAP_CACHE_KEY = "cafe-voyage:map-cafes";
 const MAP_CACHE_TTL = 1000 * 60 * 60 * 12;
@@ -1149,35 +1142,15 @@ export default function App() {
     setLoading(!cacheLoaded);
 
     try {
-      const orderedCities = CITIES.map(({ key }) => key);
-      const firstRes = await fetch(`/api/cafes?city=${orderedCities[0]}`);
-      const firstData = await firstRes.json();
-
+      const res = await fetch("/api/cafes");
+      const data = await res.json();
       const seen = new Set();
       const merged = [];
-      firstData.forEach((cafe) => {
+      data.forEach((cafe) => {
         const dedupeKey = cafe.id || `${cafe.name}-${cafe.address}`;
         if (seen.has(dedupeKey)) return;
         seen.add(dedupeKey);
         merged.push(cafe);
-      });
-      setAllCafes((prev) => (prev.length > merged.length ? prev : merged));
-
-      const restResults = await Promise.allSettled(
-        orderedCities.slice(1).map(async (cityKey) => {
-          const res = await fetch(`/api/cafes?city=${cityKey}`);
-          return res.json();
-        })
-      );
-
-      restResults.forEach((result) => {
-        if (result.status !== "fulfilled" || !Array.isArray(result.value)) return;
-        result.value.forEach((cafe) => {
-          const dedupeKey = cafe.id || `${cafe.name}-${cafe.address}`;
-          if (seen.has(dedupeKey)) return;
-          seen.add(dedupeKey);
-          merged.push(cafe);
-        });
       });
 
       setAllCafes(merged);
