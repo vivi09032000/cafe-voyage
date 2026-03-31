@@ -406,13 +406,30 @@ const LocateUser = ({ setUserPos }) => {
 };
 
 // ── Page: Map ──
+const FlyTo = ({ center }) => {
+  const map = useMap();
+  useEffect(() => { if (center) map.flyTo(center, 15, { duration: 0.8 }); }, [center, map]);
+  return null;
+};
+
 const MapPage = ({ cafes, onSelect }) => {
   const [userPos, setUserPos] = useState(null);
-  const mapCafes = useMemo(() => cafes.filter(isOpen).filter(c => c.latitude && c.longitude), [cafes]);
+  const [q, setQ] = useState("");
+  const allMapCafes = useMemo(() => cafes.filter(isOpen).filter(c => c.latitude && c.longitude), [cafes]);
+
+  const mapCafes = useMemo(() => {
+    if (!q) return allMapCafes;
+    return allMapCafes.filter(c => c.name.includes(q) || c.address.includes(q) || (c.mrt && c.mrt.includes(q)));
+  }, [allMapCafes, q]);
+
+  const flyTarget = useMemo(() => {
+    if (!q || mapCafes.length === 0) return null;
+    return [parseFloat(mapCafes[0].latitude), parseFloat(mapCafes[0].longitude)];
+  }, [q, mapCafes]);
 
   // Default center: Taipei, or first cafe with coords
-  const defaultCenter = mapCafes.length > 0
-    ? [parseFloat(mapCafes[0].latitude), parseFloat(mapCafes[0].longitude)]
+  const defaultCenter = allMapCafes.length > 0
+    ? [parseFloat(allMapCafes[0].latitude), parseFloat(allMapCafes[0].longitude)]
     : [25.033, 121.5654];
 
   return (
@@ -422,7 +439,15 @@ const MapPage = ({ cafes, onSelect }) => {
         <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, color: T.text }}>地圖</div>
         <div style={{ fontSize: 12, color: T.sub, marginLeft: "auto" }}>{mapCafes.length} 間咖啡廳</div>
       </div>
-      <div style={{ flex: 1, position: "relative", margin: "0 0 0 0", borderTop: `1px solid ${T.beige}` }}>
+
+      {/* Search */}
+      <div style={{ padding: "0 16px 8px", position: "relative" }}>
+        <svg style={{ position: "absolute", left: 27, top: "50%", transform: "translateY(-60%)" }} width="15" height="15" viewBox="0 0 24 24" fill="none" stroke={T.sub} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
+        <input value={q} onChange={e => setQ(e.target.value)} placeholder="搜尋店名、地址、捷運站..."
+          style={{ width: "100%", padding: "9px 14px 9px 34px", borderRadius: 22, border: `1px solid ${T.beige}`, background: "#fff", fontSize: 13, outline: "none", boxSizing: "border-box", color: T.text }} />
+      </div>
+
+      <div style={{ flex: 1, position: "relative", borderTop: `1px solid ${T.beige}` }}>
         <MapContainer
           center={defaultCenter}
           zoom={14}
@@ -434,6 +459,7 @@ const MapPage = ({ cafes, onSelect }) => {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           <LocateUser setUserPos={setUserPos} />
+          {flyTarget && <FlyTo center={flyTarget} />}
           {userPos && <Marker position={userPos} icon={userIcon}>
             <Popup><span style={{ fontSize: 13, fontWeight: 700 }}>📍 你的位置</span></Popup>
           </Marker>}
