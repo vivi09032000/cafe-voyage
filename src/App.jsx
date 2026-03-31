@@ -455,6 +455,7 @@ const FlyTo = ({ center }) => {
 const MapPage = ({ cafes, onSelect }) => {
   const [userPos, setUserPos] = useState(null);
   const [q, setQ] = useState("");
+  const [geoTarget, setGeoTarget] = useState(null);
   const mapRef = useRef(null);
   const allMapCafes = useMemo(() => cafes.filter(isOpen).filter(c => c.latitude && c.longitude), [cafes]);
 
@@ -463,10 +464,28 @@ const MapPage = ({ cafes, onSelect }) => {
     return allMapCafes.filter(c => c.name.includes(q) || c.address.includes(q) || (c.mrt && c.mrt.includes(q)));
   }, [allMapCafes, q]);
 
-  const flyTarget = useMemo(() => {
+  const cafeTarget = useMemo(() => {
     if (!q || mapCafes.length === 0) return null;
     return [parseFloat(mapCafes[0].latitude), parseFloat(mapCafes[0].longitude)];
   }, [q, mapCafes]);
+
+  // Geocode fallback: when no cafe matches, query Nominatim
+  useEffect(() => {
+    if (!q || mapCafes.length > 0) { setGeoTarget(null); return; }
+    const timer = setTimeout(async () => {
+      try {
+        const res = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(q + " 台灣")}&limit=1`);
+        const data = await res.json();
+        if (data.length > 0) {
+          setGeoTarget([parseFloat(data[0].lat), parseFloat(data[0].lon)]);
+        }
+      } catch {}
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [q, mapCafes.length]);
+
+  // Fly to target
+  const flyTarget = cafeTarget || geoTarget;
 
   // Default center: Taipei, or first cafe with coords
   const defaultCenter = allMapCafes.length > 0
