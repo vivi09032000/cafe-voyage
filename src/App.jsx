@@ -242,11 +242,13 @@ const timeAgo = (ts) => {
 };
 
 // ── Header ──
-const Header = ({ title = "Cafe Voyage", cityLabel, subtitle, onOpenMenu }) => (
+const Header = ({ title = "Cafe Voyage", cityLabel, subtitle, onOpenMenu }) => {
+  const metaText = subtitle ?? cityLabel;
+  return (
   <div style={{ background: T.brown, padding: "18px 22px 22px", display: "flex", justifyContent: "space-between", alignItems: "center", flexShrink: 0 }}>
     <div>
       <div style={{ color: "#fff", fontFamily: "'Playfair Display', serif", fontSize: 18, fontWeight: 700, letterSpacing: 0.3 }}>{title}</div>
-      <div style={{ color: "#f1e5d6", fontSize: 12, marginTop: 5 }}>{subtitle || cityLabel}</div>
+      {metaText !== "" && <div style={{ color: "#f1e5d6", fontSize: 12, marginTop: 5 }}>{metaText}</div>}
     </div>
     <button onClick={onOpenMenu} style={{ background: "none", border: "none", cursor: "pointer", padding: 4 }}>
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.2" strokeLinecap="round">
@@ -254,7 +256,8 @@ const Header = ({ title = "Cafe Voyage", cityLabel, subtitle, onOpenMenu }) => (
       </svg>
     </button>
   </div>
-);
+  );
+};
 
 const SettingsPanel = ({ open, region, regionOptions, setRegion, onClose }) => {
   if (!open) return null;
@@ -1405,7 +1408,7 @@ export default function App() {
   }, [allCafes, region]);
   const homeCafes = hasRegionSelection ? regionScopedCafes : [];
   const searchCafes = hasRegionSelection ? regionScopedCafes : allCafes;
-  const favoritesCafes = hasRegionSelection ? regionScopedCafes : allCafes;
+  const favoritesCafes = allCafes;
 
   useEffect(() => {
     if (region === REGION_PROMPT_KEY) return;
@@ -1448,7 +1451,7 @@ export default function App() {
     }
   };
 
-  const headerSubtitle = tab === "map"
+  const headerSubtitle = tab === "map" || tab === "favorites"
     ? ""
     : hasRegionSelection
       ? `📍 ${regionLabel}・${homeCafes.filter(isOpen).length} 間`
