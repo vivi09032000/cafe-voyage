@@ -464,7 +464,7 @@ const CafeCard = ({ cafe, onClick, fav, onFav, emptyCafeIds }) => (
 );
 
 // ── Page: Home ──
-const HomePage = ({ cafes, hasRegionSelection, onOpenRegionPicker, onSelect, favs, onFav, emptyCafeIds }) => {
+const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSelect, favs, onFav, emptyCafeIds }) => {
   const [q, setQ] = useState("");
   const [page, setPage] = useState(1);
   const [filtersOpen, setFiltersOpen] = useState(false);
@@ -1302,7 +1302,7 @@ export default function App() {
   const renderPage = () => {
     if (selected) return <DetailPage cafe={selected} onBack={() => setSelected(null)} fav={favoriteLookup.has(selected.id)} onFav={toggleFav} onReport={handleReportAndUpdateMap} />;
     switch (tab) {
-      case "home": return <HomePage cafes={homeCafes} hasRegionSelection={hasRegionSelection} onOpenRegionPicker={() => setMenuOpen(true)} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} emptyCafeIds={emptyCafeIds} />;
+      case "home": return <HomePage cafes={homeCafes} loading={loading} hasRegionSelection={hasRegionSelection} onOpenRegionPicker={() => setMenuOpen(true)} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} emptyCafeIds={emptyCafeIds} />;
       case "search": return <SearchPage cafes={searchCafes} loading={loading} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} />;
       case "map": return <MapPage cafes={allCafes} onSelect={setSelected} mapView={mapView} setMapView={setMapView} mapQuery={mapQuery} setMapQuery={setMapQuery} loading={loading} />;
       case "favorites": return <FavoritesPage cafes={favoritesCafes} favs={favoriteLookup} onSelect={setSelected} onFav={toggleFav} />;
