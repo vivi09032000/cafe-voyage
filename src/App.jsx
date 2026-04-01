@@ -928,7 +928,15 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
           </Marker>}
           {visibleMapCafes.map(c => (
             <Marker key={c.id} position={[parseFloat(c.latitude), parseFloat(c.longitude)]} icon={cafeIcon}>
-              <Popup minWidth={200} maxWidth={260}>
+              <Popup
+                className="map-popup"
+                minWidth={160}
+                maxWidth={220}
+                keepInView={true}
+                autoPan={true}
+                autoPanPaddingTopLeft={[20, 96]}
+                autoPanPaddingBottomRight={[20, 24]}
+              >
                 <div style={{ fontFamily: "-apple-system, 'PingFang TC', sans-serif" }}>
                   <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 4, color: T.text }}>{c.name}</div>
                   {c.mrt && <div style={{ fontSize: 11, color: T.sub, marginBottom: 2 }}>🚇 {c.mrt}</div>}
@@ -1346,7 +1354,7 @@ export default function App() {
 
   return (
     <>
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');html,body,#root{height:100%}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,'PingFang TC',sans-serif;background:#f0ebe4}input::placeholder{color:#A89880;opacity:1}::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:${T.beige};border-radius:3px}`}</style>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');html,body,#root{height:100%}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,'PingFang TC',sans-serif;background:#f0ebe4}input::placeholder{color:#A89880;opacity:1}::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:${T.beige};border-radius:3px}.map-popup .leaflet-popup-content-wrapper{border-radius:14px}.map-popup .leaflet-popup-content{margin:10px 12px;min-width:0 !important;width:min(220px,calc(100vw - 88px)) !important}.map-popup .leaflet-popup-close-button{padding:8px 10px 0 0;font-size:18px}`}</style>
       <div style={{ maxWidth: 430, margin: "0 auto", width: "100%", height: "100svh", minHeight: "100dvh", display: "flex", flexDirection: "column", background: T.cream, overflow: "hidden", boxShadow: "0 0 40px rgba(0,0,0,0.15)" }}>
         {!selected && <Header cityLabel={regionLabel} subtitle={headerSubtitle} onOpenMenu={() => setMenuOpen(true)} />}
         {selected ? (
