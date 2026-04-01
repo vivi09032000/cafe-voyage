@@ -1001,7 +1001,7 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
           </Marker>}
           {searchMarker && (
             <Marker position={searchMarker.position} icon={stationIcon}>
-              <Popup className="map-popup" minWidth={160} maxWidth={220} keepInView={true} autoPan={true}>
+              <Popup className="map-popup" minWidth={160} maxWidth={220} autoPan={false}>
                 <div style={{ fontFamily: "-apple-system, 'PingFang TC', sans-serif" }}>
                   <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 4, color: T.text }}>🚇 搜尋站點</div>
                   <div style={{ fontSize: 11, color: T.sub }}>{searchMarker.label}</div>
@@ -1028,10 +1028,7 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
                 className="map-popup"
                 minWidth={160}
                 maxWidth={220}
-                keepInView={true}
-                autoPan={true}
-                autoPanPaddingTopLeft={[20, 140]}
-                autoPanPaddingBottomRight={[20, 24]}
+                autoPan={false}
               >
                 <div style={{ fontFamily: "-apple-system, 'PingFang TC', sans-serif" }}>
                   <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 4, color: T.text }}>{c.name}</div>
