@@ -840,6 +840,13 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
     setLocateRequest(prev => ({ seq: prev.seq + 1, zoom, mode }));
   }, []);
 
+  const closeSearchPopup = useCallback(() => {
+    setSearchPopupCafeId(null);
+    if (mapRef.current) {
+      mapRef.current.closePopup();
+    }
+  }, []);
+
   const handleLocateStart = useCallback(() => {
     if (mapRef.current) mapRef.current.invalidateSize();
   }, []);
@@ -869,7 +876,9 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
   }, [requestUserLocation]);
 
   useEffect(() => {
-    setSearchPopupCafeId(null);
+    if (!mapQuery) {
+      setSearchPopupCafeId(null);
+    }
   }, [mapQuery]);
 
   const searchMatches = useMemo(() => {
@@ -958,7 +967,7 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
       {/* Search */}
       <div style={{ padding: "0 16px 8px", position: "relative", width: "100%", boxSizing: "border-box" }}>
         <svg style={{ position: "absolute", left: 27, top: "50%", transform: "translateY(-60%)" }} width="15" height="15" viewBox="0 0 24 24" fill="none" stroke={T.sub} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
-        <input value={mapQuery} onChange={e => setMapQuery(e.target.value)} placeholder="搜尋店名、地址、捷運站..."
+        <input value={mapQuery} onFocus={closeSearchPopup} onClick={closeSearchPopup} onChange={e => setMapQuery(e.target.value)} placeholder="搜尋店名、地址、捷運站..."
           style={{ width: "100%", padding: "9px 14px 9px 34px", borderRadius: 22, border: `1px solid ${T.beige}`, background: "#fff", fontSize: 16, outline: "none", boxSizing: "border-box", color: T.text }} />
       </div>
 
@@ -1008,6 +1017,11 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
               ref={(marker) => {
                 if (marker) markerRefs.current.set(c.id, marker);
                 else markerRefs.current.delete(c.id);
+              }}
+              eventHandlers={{
+                popupclose: () => {
+                  setSearchPopupCafeId((current) => (current === c.id ? null : current));
+                },
               }}
             >
               <Popup
