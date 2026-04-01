@@ -271,29 +271,9 @@ const SettingsPanel = ({
   authBusy,
   authMessage,
   authError,
-  onAuthSubmit,
+  onGoogleSignIn,
   onSignOut,
 }) => {
-  const [authMode, setAuthMode] = useState("login");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  useEffect(() => {
-    if (!open) return;
-    setPassword("");
-    if (user?.email) setEmail(user.email);
-  }, [open, user]);
-
-  const submitAuth = async (e) => {
-    e.preventDefault();
-    await onAuthSubmit({ mode: authMode, email, password });
-    if (authMode === "login") {
-      setPassword("");
-    } else if (!authError) {
-      setPassword("");
-    }
-  };
-
   if (!open) return null;
   return (
     <div style={{ position: "absolute", inset: 0, zIndex: 40, background: "rgba(32, 24, 18, 0.26)" }} onClick={onClose}>
@@ -326,7 +306,7 @@ const SettingsPanel = ({
           {user ? (
             <>
               <div style={{ fontSize: 14, color: T.text, fontWeight: 700, marginBottom: 6 }}>{user.email || "已登入"}</div>
-              <div style={{ fontSize: 11, color: T.sub, marginBottom: 10 }}>已登入 Cafe Voyage，之後可以延伸做跨裝置同步收藏。</div>
+              <div style={{ fontSize: 11, color: T.sub, marginBottom: 10 }}>已用 Google 登入 Cafe Voyage，之後可以延伸做跨裝置同步收藏。</div>
               <button
                 onClick={onSignOut}
                 disabled={authBusy}
@@ -337,58 +317,50 @@ const SettingsPanel = ({
             </>
           ) : (
             <>
-              <div style={{ display: "flex", gap: 8, marginBottom: 12 }}>
-                {[
-                  { key: "login", label: "登入" },
-                  { key: "signup", label: "註冊" },
-                ].map((item) => (
-                  <button
-                    key={item.key}
-                    onClick={() => setAuthMode(item.key)}
-                    style={{
-                      flex: 1,
-                      background: authMode === item.key ? T.brown : T.cream,
-                      color: authMode === item.key ? "#fff" : T.text,
-                      border: `1px solid ${authMode === item.key ? T.brown : T.beige}`,
-                      borderRadius: 10,
-                      padding: "10px 12px",
-                      fontSize: 13,
-                      fontWeight: 700,
-                      cursor: "pointer",
-                      fontFamily: "inherit",
-                    }}
-                  >
-                    {item.label}
-                  </button>
-                ))}
-              </div>
-              <form onSubmit={submitAuth} style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Email"
-                  autoComplete="email"
-                  style={{ width: "100%", border: `1px solid ${T.beige}`, borderRadius: 10, padding: "11px 12px", fontSize: 16, outline: "none", fontFamily: "inherit", color: T.text, background: "#fff" }}
-                />
-                <input
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Password"
-                  autoComplete={authMode === "login" ? "current-password" : "new-password"}
-                  style={{ width: "100%", border: `1px solid ${T.beige}`, borderRadius: 10, padding: "11px 12px", fontSize: 16, outline: "none", fontFamily: "inherit", color: T.text, background: "#fff" }}
-                />
-                <button
-                  type="submit"
-                  disabled={authBusy}
-                  style={{ width: "100%", background: T.brown, color: "#fff", border: "none", borderRadius: 10, padding: "12px 14px", textAlign: "center", fontSize: 14, fontWeight: 700, cursor: authBusy ? "default" : "pointer", fontFamily: "inherit", opacity: authBusy ? 0.7 : 1 }}
+              <button
+                onClick={onGoogleSignIn}
+                disabled={authBusy}
+                style={{
+                  width: "100%",
+                  background: "#fff",
+                  color: T.text,
+                  border: `1px solid ${T.beige}`,
+                  borderRadius: 12,
+                  padding: "12px 14px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: 10,
+                  fontSize: 14,
+                  fontWeight: 700,
+                  cursor: authBusy ? "default" : "pointer",
+                  fontFamily: "inherit",
+                  opacity: authBusy ? 0.7 : 1,
+                }}
+              >
+                <span
+                  aria-hidden="true"
+                  style={{
+                    width: 18,
+                    height: 18,
+                    borderRadius: "50%",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: 12,
+                    fontWeight: 700,
+                    background: "#fff",
+                    color: "#4285F4",
+                    border: "1px solid #dadce0",
+                    flexShrink: 0,
+                  }}
                 >
-                  {authBusy ? "處理中..." : authMode === "login" ? "登入" : "建立帳號"}
-                </button>
-              </form>
-              <div style={{ fontSize: 11, color: T.sub, marginTop: 8 }}>
-                {authMode === "login" ? "用 Email 與密碼登入。" : "註冊後若啟用 Email 驗證，請先到信箱完成確認。"}
+                  G
+                </span>
+                {authBusy ? "跳轉中..." : "使用 Google 登入"}
+              </button>
+              <div style={{ fontSize: 11, color: T.sub, marginTop: 8, lineHeight: 1.5 }}>
+                會跳轉到 Google 完成授權，回來後就會自動登入，不再需要點 Email 驗證信。
               </div>
             </>
           )}
@@ -794,6 +766,12 @@ const stationIcon = new L.Icon({
 });
 
 const looksLikeTransitQuery = (query = "") => /站|捷運|mrt|metro|station/i.test(query);
+const getAuthRedirectUrl = () => {
+  if (typeof window === "undefined") return undefined;
+  const url = new URL(window.location.href);
+  url.hash = "";
+  return url.toString();
+};
 
 // ── Page: Map ──
 const FlyTo = ({ center, zoom, offsetY = 0 }) => {
@@ -1508,44 +1486,29 @@ export default function App() {
     } catch {}
   }, [region]);
 
-  const handleAuthSubmit = useCallback(async ({ mode, email, password }) => {
-    const safeEmail = email.trim();
-    const safePassword = password;
-
-    if (!safeEmail || !safePassword) {
-      setAuthError("請輸入 Email 和密碼。");
-      setAuthMessage("");
-      return;
-    }
-
+  const handleGoogleSignIn = useCallback(async () => {
+    let redirectStarted = false;
     setAuthBusy(true);
     setAuthError("");
     setAuthMessage("");
 
     try {
-      if (mode === "signup") {
-        const { data, error } = await supabase.auth.signUp({
-          email: safeEmail,
-          password: safePassword,
-        });
-        if (error) throw error;
-        if (data.session) {
-          setAuthMessage("帳號建立完成，已自動登入。");
-        } else {
-          setAuthMessage("註冊成功，若系統啟用 Email 驗證，請先到信箱完成確認。");
-        }
-      } else {
-        const { error } = await supabase.auth.signInWithPassword({
-          email: safeEmail,
-          password: safePassword,
-        });
-        if (error) throw error;
-        setAuthMessage("登入成功。");
-      }
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: "google",
+        options: {
+          redirectTo: getAuthRedirectUrl(),
+        },
+      });
+      if (error) throw error;
+      redirectStarted = true;
+      setAuthMessage("即將跳轉到 Google 完成登入。");
     } catch (error) {
       setAuthError(error.message || "目前無法登入，請稍後再試。");
     } finally {
-      setAuthBusy(false);
+      if (redirectStarted) return;
+      window.setTimeout(() => {
+        setAuthBusy(false);
+      }, 0);
     }
   }, []);
 
@@ -1666,7 +1629,7 @@ export default function App() {
             authBusy={authBusy}
             authMessage={authMessage}
             authError={authError}
-            onAuthSubmit={handleAuthSubmit}
+            onGoogleSignIn={handleGoogleSignIn}
             onSignOut={handleSignOut}
           />
         )}
