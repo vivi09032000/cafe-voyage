@@ -719,6 +719,33 @@ const BindMapRef = ({ mapRef }) => {
   return null;
 };
 
+const EnsureMapLayout = () => {
+  const map = useMap();
+
+  useEffect(() => {
+    const refresh = () => {
+      requestAnimationFrame(() => {
+        map.invalidateSize();
+      });
+    };
+
+    const initialTimer = setTimeout(refresh, 0);
+    const settleTimer = setTimeout(refresh, 250);
+
+    window.addEventListener("resize", refresh);
+    window.addEventListener("orientationchange", refresh);
+
+    return () => {
+      clearTimeout(initialTimer);
+      clearTimeout(settleTimer);
+      window.removeEventListener("resize", refresh);
+      window.removeEventListener("orientationchange", refresh);
+    };
+  }, [map]);
+
+  return null;
+};
+
 const LocateController = ({ request, onStart, onSuccess, onError }) => {
   const map = useMapEvents({
     locationfound(event) {
@@ -865,13 +892,13 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
       </div>
 
       {/* Search */}
-      <div style={{ padding: "0 16px 8px", position: "relative" }}>
+      <div style={{ padding: "0 16px 8px", position: "relative", width: "100%", boxSizing: "border-box" }}>
         <svg style={{ position: "absolute", left: 27, top: "50%", transform: "translateY(-60%)" }} width="15" height="15" viewBox="0 0 24 24" fill="none" stroke={T.sub} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
         <input value={mapQuery} onChange={e => setMapQuery(e.target.value)} placeholder="搜尋店名、地址、捷運站..."
           style={{ width: "100%", padding: "9px 14px 9px 34px", borderRadius: 22, border: `1px solid ${T.beige}`, background: "#fff", fontSize: 13, outline: "none", boxSizing: "border-box", color: T.text }} />
       </div>
 
-      <div style={{ flex: 1, position: "relative", borderTop: `1px solid ${T.beige}` }}>
+      <div style={{ flex: 1, minHeight: 0, position: "relative", borderTop: `1px solid ${T.beige}`, overflow: "hidden" }}>
         <MapContainer
           center={defaultCenter}
           zoom={defaultZoom}
@@ -886,6 +913,7 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
             maxZoom={20}
           />
           <BindMapRef mapRef={mapRef} />
+          <EnsureMapLayout />
           <LocateController
             request={locateRequest}
             onStart={handleLocateStart}
