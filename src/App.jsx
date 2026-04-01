@@ -1,10 +1,12 @@
 import { useState, useEffect, useCallback, useRef, useMemo } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap, useMapEvents } from "react-leaflet";
+import { createClient } from "@supabase/supabase-js";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
 const SUPABASE_URL = "https://dmymcnmsyhppwstpwmal.supabase.co";
 const SUPABASE_KEY = "sb_publishable_2mlstxr8qtRrybaIyBIB8Q_oS_Im60Q";
+const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 async function getCrowdReport(cafeId) {
   const since = new Date(Date.now() - 3 * 60 * 60 * 1000).toISOString();
@@ -259,7 +261,39 @@ const Header = ({ title = "Cafe Voyage", cityLabel, subtitle, onOpenMenu }) => {
   );
 };
 
-const SettingsPanel = ({ open, region, regionOptions, setRegion, onClose }) => {
+const SettingsPanel = ({
+  open,
+  region,
+  regionOptions,
+  setRegion,
+  onClose,
+  user,
+  authBusy,
+  authMessage,
+  authError,
+  onAuthSubmit,
+  onSignOut,
+}) => {
+  const [authMode, setAuthMode] = useState("login");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  useEffect(() => {
+    if (!open) return;
+    setPassword("");
+    if (user?.email) setEmail(user.email);
+  }, [open, user]);
+
+  const submitAuth = async (e) => {
+    e.preventDefault();
+    await onAuthSubmit({ mode: authMode, email, password });
+    if (authMode === "login") {
+      setPassword("");
+    } else if (!authError) {
+      setPassword("");
+    }
+  };
+
   if (!open) return null;
   return (
     <div style={{ position: "absolute", inset: 0, zIndex: 40, background: "rgba(32, 24, 18, 0.26)" }} onClick={onClose}>
@@ -289,10 +323,77 @@ const SettingsPanel = ({ open, region, regionOptions, setRegion, onClose }) => {
 
         <div style={{ background: "#fff", border: `1px solid ${T.beige}`, borderRadius: 14, padding: 14 }}>
           <div style={{ fontSize: 12, color: T.sub, marginBottom: 10 }}>User</div>
-          <button style={{ width: "100%", background: T.brown, color: "#fff", border: "none", borderRadius: 10, padding: "12px 14px", textAlign: "left", fontSize: 14, fontWeight: 700, cursor: "pointer", fontFamily: "inherit" }}>
-            Login
-          </button>
-          <div style={{ fontSize: 11, color: T.sub, marginTop: 8 }}>先預留登入入口，之後可接 Supabase Auth。</div>
+          {user ? (
+            <>
+              <div style={{ fontSize: 14, color: T.text, fontWeight: 700, marginBottom: 6 }}>{user.email || "已登入"}</div>
+              <div style={{ fontSize: 11, color: T.sub, marginBottom: 10 }}>已登入 Cafe Voyage，之後可以延伸做跨裝置同步收藏。</div>
+              <button
+                onClick={onSignOut}
+                disabled={authBusy}
+                style={{ width: "100%", background: T.brown, color: "#fff", border: "none", borderRadius: 10, padding: "12px 14px", textAlign: "center", fontSize: 14, fontWeight: 700, cursor: authBusy ? "default" : "pointer", fontFamily: "inherit", opacity: authBusy ? 0.7 : 1 }}
+              >
+                {authBusy ? "處理中..." : "登出"}
+              </button>
+            </>
+          ) : (
+            <>
+              <div style={{ display: "flex", gap: 8, marginBottom: 12 }}>
+                {[
+                  { key: "login", label: "登入" },
+                  { key: "signup", label: "註冊" },
+                ].map((item) => (
+                  <button
+                    key={item.key}
+                    onClick={() => setAuthMode(item.key)}
+                    style={{
+                      flex: 1,
+                      background: authMode === item.key ? T.brown : T.cream,
+                      color: authMode === item.key ? "#fff" : T.text,
+                      border: `1px solid ${authMode === item.key ? T.brown : T.beige}`,
+                      borderRadius: 10,
+                      padding: "10px 12px",
+                      fontSize: 13,
+                      fontWeight: 700,
+                      cursor: "pointer",
+                      fontFamily: "inherit",
+                    }}
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
+              <form onSubmit={submitAuth} style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Email"
+                  autoComplete="email"
+                  style={{ width: "100%", border: `1px solid ${T.beige}`, borderRadius: 10, padding: "11px 12px", fontSize: 16, outline: "none", fontFamily: "inherit", color: T.text, background: "#fff" }}
+                />
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Password"
+                  autoComplete={authMode === "login" ? "current-password" : "new-password"}
+                  style={{ width: "100%", border: `1px solid ${T.beige}`, borderRadius: 10, padding: "11px 12px", fontSize: 16, outline: "none", fontFamily: "inherit", color: T.text, background: "#fff" }}
+                />
+                <button
+                  type="submit"
+                  disabled={authBusy}
+                  style={{ width: "100%", background: T.brown, color: "#fff", border: "none", borderRadius: 10, padding: "12px 14px", textAlign: "center", fontSize: 14, fontWeight: 700, cursor: authBusy ? "default" : "pointer", fontFamily: "inherit", opacity: authBusy ? 0.7 : 1 }}
+                >
+                  {authBusy ? "處理中..." : authMode === "login" ? "登入" : "建立帳號"}
+                </button>
+              </form>
+              <div style={{ fontSize: 11, color: T.sub, marginTop: 8 }}>
+                {authMode === "login" ? "用 Email 與密碼登入。" : "註冊後若啟用 Email 驗證，請先到信箱完成確認。"}
+              </div>
+            </>
+          )}
+          {authMessage && <div style={{ fontSize: 11, color: T.green, marginTop: 8, lineHeight: 1.5 }}>{authMessage}</div>}
+          {authError && <div style={{ fontSize: 11, color: "#9b2335", marginTop: 8, lineHeight: 1.5 }}>{authError}</div>}
         </div>
 
         <div style={{ background: "#fff", border: `1px solid ${T.beige}`, borderRadius: 14, padding: 14 }}>
@@ -1296,6 +1397,10 @@ export default function App() {
   const [tab, setTab] = useState("home");
   const [tabHistory, setTabHistory] = useState([]);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [authUser, setAuthUser] = useState(null);
+  const [authBusy, setAuthBusy] = useState(false);
+  const [authMessage, setAuthMessage] = useState("");
+  const [authError, setAuthError] = useState("");
   const [region, setRegion] = useState(() => {
     try {
       return localStorage.getItem(REGION_STORAGE_KEY) || REGION_PROMPT_KEY;
@@ -1372,6 +1477,28 @@ export default function App() {
   }, [favs]);
 
   useEffect(() => {
+    let active = true;
+
+    supabase.auth.getSession().then(({ data, error }) => {
+      if (!active) return;
+      if (error) {
+        setAuthError(error.message);
+        return;
+      }
+      setAuthUser(data.session?.user ?? null);
+    });
+
+    const { data: subscription } = supabase.auth.onAuthStateChange((_event, session) => {
+      setAuthUser(session?.user ?? null);
+    });
+
+    return () => {
+      active = false;
+      subscription.subscription.unsubscribe();
+    };
+  }, []);
+
+  useEffect(() => {
     try {
       if (region === REGION_PROMPT_KEY) {
         localStorage.removeItem(REGION_STORAGE_KEY);
@@ -1380,6 +1507,62 @@ export default function App() {
       }
     } catch {}
   }, [region]);
+
+  const handleAuthSubmit = useCallback(async ({ mode, email, password }) => {
+    const safeEmail = email.trim();
+    const safePassword = password;
+
+    if (!safeEmail || !safePassword) {
+      setAuthError("請輸入 Email 和密碼。");
+      setAuthMessage("");
+      return;
+    }
+
+    setAuthBusy(true);
+    setAuthError("");
+    setAuthMessage("");
+
+    try {
+      if (mode === "signup") {
+        const { data, error } = await supabase.auth.signUp({
+          email: safeEmail,
+          password: safePassword,
+        });
+        if (error) throw error;
+        if (data.session) {
+          setAuthMessage("帳號建立完成，已自動登入。");
+        } else {
+          setAuthMessage("註冊成功，若系統啟用 Email 驗證，請先到信箱完成確認。");
+        }
+      } else {
+        const { error } = await supabase.auth.signInWithPassword({
+          email: safeEmail,
+          password: safePassword,
+        });
+        if (error) throw error;
+        setAuthMessage("登入成功。");
+      }
+    } catch (error) {
+      setAuthError(error.message || "目前無法登入，請稍後再試。");
+    } finally {
+      setAuthBusy(false);
+    }
+  }, []);
+
+  const handleSignOut = useCallback(async () => {
+    setAuthBusy(true);
+    setAuthError("");
+    setAuthMessage("");
+    try {
+      const { error } = await supabase.auth.signOut();
+      if (error) throw error;
+      setAuthMessage("已登出。");
+    } catch (error) {
+      setAuthError(error.message || "目前無法登出，請稍後再試。");
+    } finally {
+      setAuthBusy(false);
+    }
+  }, []);
 
   const toggleFav = (id) => setFavs(prev => { const key = String(id); const s = new Set(prev); s.has(key) ? s.delete(key) : s.add(key); return s; });
   const favoriteLookup = useMemo(() => ({ has: (id) => favs.has(String(id)) }), [favs]);
@@ -1472,7 +1655,21 @@ export default function App() {
           </SwipeBackShell>
         )}
         {!selected && <BottomNav active={tab} onChange={handleTabChange} />}
-        {!selected && <SettingsPanel open={menuOpen} region={region} regionOptions={availableRegions} setRegion={handleRegionChange} onClose={() => setMenuOpen(false)} />}
+        {!selected && (
+          <SettingsPanel
+            open={menuOpen}
+            region={region}
+            regionOptions={availableRegions}
+            setRegion={handleRegionChange}
+            onClose={() => setMenuOpen(false)}
+            user={authUser}
+            authBusy={authBusy}
+            authMessage={authMessage}
+            authError={authError}
+            onAuthSubmit={handleAuthSubmit}
+            onSignOut={handleSignOut}
+          />
+        )}
       </div>
     </>
   );
