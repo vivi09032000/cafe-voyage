@@ -755,6 +755,16 @@ const EnsureMapLayout = () => {
   return null;
 };
 
+const DismissMapSelection = ({ onDismiss }) => {
+  useMapEvents({
+    click() {
+      onDismiss();
+    },
+  });
+
+  return null;
+};
+
 const LocateController = ({ request, onStart, onSuccess, onError }) => {
   const map = useMapEvents({
     locationfound(event) {
@@ -785,6 +795,7 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
   const [userPos, setUserPos] = useState(null);
   const [geoTarget, setGeoTarget] = useState(null);
   const [searchTarget, setSearchTarget] = useState(null);
+  const [activeMapCafe, setActiveMapCafe] = useState(null);
   const [locateRequest, setLocateRequest] = useState({ seq: 0, zoom: 15, mode: "auto" });
   const [locating, setLocating] = useState(false);
   const [locateError, setLocateError] = useState("");
@@ -844,6 +855,10 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
     hasAutoLocatedRef.current = true;
     requestUserLocation({ silent: false, zoom: 15, mode: "auto" });
   }, [requestUserLocation]);
+
+  useEffect(() => {
+    setActiveMapCafe(null);
+  }, [mapQuery]);
 
   const searchMatches = useMemo(() => {
     if (!mapQuery) return [];
@@ -929,6 +944,7 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
             onSuccess={handleLocateSuccess}
             onError={handleLocateError}
           />
+          <DismissMapSelection onDismiss={() => setActiveMapCafe(null)} />
           <SaveMapView onMove={setMapView} onBoundsChange={setVisibleBounds} />
           {flyTarget && <FlyTo center={flyTarget} zoom={15} offsetY={120} />}
           {(!mapQuery || locateRequest.mode === "manual") && <FlyToBySignal center={userPos} seq={locateRequest.seq} zoom={locateRequest.zoom} />}
@@ -936,36 +952,14 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
             <Popup><span style={{ fontSize: 13, fontWeight: 700 }}>📍 你的位置</span></Popup>
           </Marker>}
           {visibleMapCafes.map(c => (
-            <Marker key={c.id} position={[parseFloat(c.latitude), parseFloat(c.longitude)]} icon={cafeIcon}>
-              <Popup
-                className="map-popup"
-                minWidth={160}
-                maxWidth={220}
-                keepInView={true}
-                autoPan={true}
-                autoPanPaddingTopLeft={[20, 140]}
-                autoPanPaddingBottomRight={[20, 24]}
-              >
-                <div style={{ fontFamily: "-apple-system, 'PingFang TC', sans-serif" }}>
-                  <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 4, color: T.text }}>{c.name}</div>
-                  {c.mrt && <div style={{ fontSize: 11, color: T.sub, marginBottom: 2 }}>🚇 {c.mrt}</div>}
-                  <div style={{ fontSize: 11, color: T.sub, marginBottom: 6 }}>📍 {c.address}</div>
-                  <div style={{ display: "flex", gap: 4, flexWrap: "wrap", marginBottom: 8 }}>
-                    {c.wifi > 0 && <span style={{ fontSize: 11, background: T.beige, borderRadius: 10, padding: "2px 7px" }}>📶 {c.wifi.toFixed(1)}</span>}
-                    {c.quiet > 0 && <span style={{ fontSize: 11, background: T.beige, borderRadius: 10, padding: "2px 7px" }}>🔇 {c.quiet.toFixed(1)}</span>}
-                    {c.limited_time === "no" && <span style={{ fontSize: 11, background: T.green, color: "#fff", borderRadius: 10, padding: "2px 7px" }}>✓ 不限時</span>}
-                  </div>
-                  <button
-                    onClick={(e) => { e.stopPropagation(); onSelect(c); }}
-                    style={{
-                      width: "100%", padding: "7px 0", background: T.brown, color: "#fff",
-                      border: "none", borderRadius: 8, fontSize: 12, fontWeight: 700,
-                      cursor: "pointer", fontFamily: "inherit",
-                    }}
-                  >查看詳情</button>
-                </div>
-              </Popup>
-            </Marker>
+            <Marker
+              key={c.id}
+              position={[parseFloat(c.latitude), parseFloat(c.longitude)]}
+              icon={cafeIcon}
+              eventHandlers={{
+                click: () => setActiveMapCafe(c),
+              }}
+            />
           ))}
         </MapContainer>
 
@@ -977,7 +971,7 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
           }}
           disabled={locating}
           style={{
-            position: "absolute", bottom: 20, right: 16, zIndex: 1000,
+            position: "absolute", bottom: activeMapCafe ? 192 : 20, right: 16, zIndex: 1000,
             width: 40, height: 40, borderRadius: "50%",
             background: "#fff", border: `1px solid ${T.beige}`,
             boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
@@ -997,12 +991,72 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
         </button>
         {locateError && (
           <div style={{
-            position: "absolute", right: 16, bottom: 68, zIndex: 1000,
+            position: "absolute", right: 16, bottom: activeMapCafe ? 240 : 68, zIndex: 1000,
             maxWidth: 260, background: "#fff", color: T.text, border: `1px solid ${T.beige}`,
             borderRadius: 10, boxShadow: "0 4px 12px rgba(0,0,0,0.12)", padding: "8px 10px",
             fontSize: 12, lineHeight: 1.35,
           }}>
             {locateError}
+          </div>
+        )}
+        {activeMapCafe && (
+          <div
+            style={{
+              position: "absolute",
+              left: 12,
+              right: 12,
+              bottom: 16,
+              zIndex: 1000,
+              background: "#fff",
+              border: `1px solid ${T.beige}`,
+              borderRadius: 16,
+              boxShadow: "0 12px 28px rgba(0,0,0,0.18)",
+              padding: "14px 14px 12px",
+            }}
+          >
+            <button
+              onClick={() => setActiveMapCafe(null)}
+              style={{
+                position: "absolute",
+                top: 8,
+                right: 10,
+                background: "none",
+                border: "none",
+                color: T.sub,
+                fontSize: 24,
+                lineHeight: 1,
+                cursor: "pointer",
+              }}
+            >
+              ×
+            </button>
+            <div style={{ fontFamily: "-apple-system, 'PingFang TC', sans-serif" }}>
+              <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 4, color: T.text, paddingRight: 24 }}>{activeMapCafe.name}</div>
+              {activeMapCafe.mrt && <div style={{ fontSize: 11, color: T.sub, marginBottom: 2 }}>🚇 {activeMapCafe.mrt}</div>}
+              <div style={{ fontSize: 11, color: T.sub, marginBottom: 8 }}>📍 {activeMapCafe.address}</div>
+              <div style={{ display: "flex", gap: 4, flexWrap: "wrap", marginBottom: 10 }}>
+                {activeMapCafe.wifi > 0 && <span style={{ fontSize: 11, background: T.beige, borderRadius: 10, padding: "2px 7px" }}>📶 {activeMapCafe.wifi.toFixed(1)}</span>}
+                {activeMapCafe.quiet > 0 && <span style={{ fontSize: 11, background: T.beige, borderRadius: 10, padding: "2px 7px" }}>🔇 {activeMapCafe.quiet.toFixed(1)}</span>}
+                {activeMapCafe.limited_time === "no" && <span style={{ fontSize: 11, background: T.green, color: "#fff", borderRadius: 10, padding: "2px 7px" }}>✓ 不限時</span>}
+              </div>
+              <button
+                onClick={() => onSelect(activeMapCafe)}
+                style={{
+                  width: "100%",
+                  padding: "10px 0",
+                  background: T.brown,
+                  color: "#fff",
+                  border: "none",
+                  borderRadius: 10,
+                  fontSize: 13,
+                  fontWeight: 700,
+                  cursor: "pointer",
+                  fontFamily: "inherit",
+                }}
+              >
+                查看詳情
+              </button>
+            </div>
           </div>
         )}
       </div>
