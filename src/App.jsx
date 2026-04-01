@@ -901,12 +901,14 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
     const isTransitQuery = looksLikeTransitQuery(mapQuery);
 
     if (searchMatches.length > 0 && !isTransitQuery) {
+      setActiveMapCafe(searchMatches[0]);
       setGeoTarget(null);
       setSearchTarget([parseFloat(searchMatches[0].latitude), parseFloat(searchMatches[0].longitude)]);
       setSearchMarker(null);
       return;
     }
 
+    setActiveMapCafe(null);
     setGeoTarget(null);
     setSearchTarget(null);
     setSearchMarker(null);
@@ -927,6 +929,7 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
             });
           }
         } else if (searchMatches.length > 0) {
+          setActiveMapCafe(searchMatches[0]);
           setSearchTarget([parseFloat(searchMatches[0].latitude), parseFloat(searchMatches[0].longitude)]);
         }
       } catch {}
