@@ -672,6 +672,25 @@ const userIcon = new L.Icon({
   iconSize: [24, 24], iconAnchor: [12, 12],
 });
 
+const stationIcon = new L.Icon({
+  iconUrl: "data:image/svg+xml," + encodeURIComponent(
+    `<svg xmlns='http://www.w3.org/2000/svg' width='30' height='42' viewBox='0 0 30 42'>
+      <path d='M15 1C8 1 2.5 6.5 2.5 13.4c0 10.2 12.5 27.6 12.5 27.6s12.5-17.4 12.5-27.6C27.5 6.5 22 1 15 1z' fill='#C84C31' stroke='white' stroke-width='2'/>
+      <circle cx='15' cy='14' r='8' fill='white'/>
+      <path d='M10 12h10v5a5 5 0 0 1-10 0z' fill='#C84C31'/>
+      <rect x='12.5' y='18' width='1.6' height='5' rx='0.8' fill='#C84C31'/>
+      <rect x='15.9' y='18' width='1.6' height='5' rx='0.8' fill='#C84C31'/>
+      <circle cx='12.5' cy='14' r='1' fill='white'/>
+      <circle cx='17.5' cy='14' r='1' fill='white'/>
+    </svg>`
+  ),
+  iconSize: [30, 42],
+  iconAnchor: [15, 42],
+  popupAnchor: [0, -36],
+});
+
+const looksLikeTransitQuery = (query = "") => /站|捷運|mrt|metro|station/i.test(query);
+
 // ── Page: Map ──
 const FlyTo = ({ center, zoom, offsetY = 0 }) => {
   const map = useMap();
@@ -796,6 +815,7 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
   const [userPos, setUserPos] = useState(null);
   const [geoTarget, setGeoTarget] = useState(null);
   const [searchTarget, setSearchTarget] = useState(null);
+  const [searchMarker, setSearchMarker] = useState(null);
   const [activeMapCafe, setActiveMapCafe] = useState(null);
   const [locateRequest, setLocateRequest] = useState({ seq: 0, zoom: 15, mode: "auto" });
   const [locating, setLocating] = useState(false);
@@ -871,19 +891,25 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
     if (!mapQuery) {
       setGeoTarget(null);
       setSearchTarget(null);
+      setSearchMarker(null);
       lastSearchQueryRef.current = "";
       return;
     }
     if (lastSearchQueryRef.current === mapQuery) return;
     lastSearchQueryRef.current = mapQuery;
 
-    if (searchMatches.length > 0) {
+    const isTransitQuery = looksLikeTransitQuery(mapQuery);
+
+    if (searchMatches.length > 0 && !isTransitQuery) {
       setGeoTarget(null);
       setSearchTarget([parseFloat(searchMatches[0].latitude), parseFloat(searchMatches[0].longitude)]);
+      setSearchMarker(null);
       return;
     }
 
+    setGeoTarget(null);
     setSearchTarget(null);
+    setSearchMarker(null);
     const timer = setTimeout(async () => {
       try {
         const res = await fetch(
@@ -894,6 +920,14 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
         if (data.length > 0) {
           const pos = [parseFloat(data[0].lat), parseFloat(data[0].lon)];
           setGeoTarget(pos);
+          if (isTransitQuery) {
+            setSearchMarker({
+              position: pos,
+              label: data[0].display_name || mapQuery,
+            });
+          }
+        } else if (searchMatches.length > 0) {
+          setSearchTarget([parseFloat(searchMatches[0].latitude), parseFloat(searchMatches[0].longitude)]);
         }
       } catch {}
     }, 500);
@@ -952,6 +986,16 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
           {userPos && <Marker position={userPos} icon={userIcon}>
             <Popup><span style={{ fontSize: 13, fontWeight: 700 }}>📍 你的位置</span></Popup>
           </Marker>}
+          {searchMarker && (
+            <Marker position={searchMarker.position} icon={stationIcon}>
+              <Popup className="map-popup" minWidth={160} maxWidth={220} keepInView={true} autoPan={true}>
+                <div style={{ fontFamily: "-apple-system, 'PingFang TC', sans-serif" }}>
+                  <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 4, color: T.text }}>🚇 搜尋站點</div>
+                  <div style={{ fontSize: 11, color: T.sub }}>{searchMarker.label}</div>
+                </div>
+              </Popup>
+            </Marker>
+          )}
           {visibleMapCafes.map(c => (
             <Marker
               key={c.id}
