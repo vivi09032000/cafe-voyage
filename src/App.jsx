@@ -673,17 +673,18 @@ const userIcon = new L.Icon({
 });
 
 // ── Page: Map ──
-const FlyTo = ({ center, zoom = 15, offsetY = 0 }) => {
+const FlyTo = ({ center, zoom, offsetY = 0 }) => {
   const map = useMap();
   useEffect(() => {
     if (!center) return;
+    const targetZoom = typeof zoom === "number" ? zoom : map.getZoom();
     if (!offsetY) {
-      map.flyTo(center, zoom, { duration: 0.8 });
+      map.flyTo(center, targetZoom, { duration: 0.8 });
       return;
     }
-    const targetPoint = map.project(center, zoom).subtract([0, offsetY]);
-    const adjustedCenter = map.unproject(targetPoint, zoom);
-    map.flyTo(adjustedCenter, zoom, { duration: 0.8 });
+    const targetPoint = map.project(center, targetZoom).subtract([0, offsetY]);
+    const adjustedCenter = map.unproject(targetPoint, targetZoom);
+    map.flyTo(adjustedCenter, targetZoom, { duration: 0.8 });
   }, [center, map, zoom, offsetY]);
   return null;
 };
@@ -946,7 +947,7 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
           />
           <DismissMapSelection onDismiss={() => setActiveMapCafe(null)} />
           <SaveMapView onMove={setMapView} onBoundsChange={setVisibleBounds} />
-          {flyTarget && <FlyTo center={flyTarget} zoom={15} offsetY={120} />}
+          {flyTarget && <FlyTo center={flyTarget} offsetY={120} />}
           {(!mapQuery || locateRequest.mode === "manual") && <FlyToBySignal center={userPos} seq={locateRequest.seq} zoom={locateRequest.zoom} />}
           {userPos && <Marker position={userPos} icon={userIcon}>
             <Popup><span style={{ fontSize: 13, fontWeight: 700 }}>📍 你的位置</span></Popup>
