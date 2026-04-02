@@ -363,7 +363,6 @@ const SettingsPanel = ({
         </div>
 
         <div style={{ background: "#fff", border: `1px solid ${T.beige}`, borderRadius: 14, padding: 12, margin: "0 16px 12px" }}>
-          <div style={{ fontSize: 11, color: T.sub, marginBottom: 8 }}>User</div>
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
             <div
               style={{
