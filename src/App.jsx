@@ -338,10 +338,10 @@ const SettingsPanel = ({
         style={{
           position: "absolute",
           top: 0,
-          left: 0,
-          width: "100%",
+          right: 0,
+          width: "min(86vw, 320px)",
           height: "100%",
-          background: T.cream,
+          background: "#fffaf4",
           boxShadow: "-18px 0 40px rgba(0,0,0,0.18)",
           display: "flex",
           flexDirection: "column",
@@ -349,45 +349,39 @@ const SettingsPanel = ({
         }}
         onClick={(e) => e.stopPropagation()}
       >
-        <div
-          style={{
-            background: T.brown,
-            color: "#fff",
-            padding: "18px 18px 20px",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            flexShrink: 0,
-          }}
-        >
-          <div style={{ fontSize: 24, fontWeight: 800, letterSpacing: "-0.02em" }}>選單</div>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "20px 18px 16px", flexShrink: 0 }}>
+          <div>
+            <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, color: T.text }}>設定</div>
+            <div style={{ fontSize: 12, color: T.sub, marginTop: 4 }}>帳號與城市偏好</div>
+          </div>
           <button
             onClick={onClose}
-            style={{ background: "none", border: "none", cursor: "pointer", color: "#fff", fontSize: 26, lineHeight: 1 }}
+            style={{ background: "none", border: "none", cursor: "pointer", color: T.sub, fontSize: 24, lineHeight: 1 }}
           >
             ×
           </button>
         </div>
 
-        <div style={{ padding: "18px 18px 14px" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 14 }}>
+        <div style={{ background: "#fff", border: `1px solid ${T.beige}`, borderRadius: 14, padding: 14, margin: "0 18px 18px" }}>
+          <div style={{ fontSize: 12, color: T.sub, marginBottom: 10 }}>User</div>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
             <div
               style={{
-                width: 54,
-                height: 54,
+                width: 48,
+                height: 48,
                 borderRadius: "50%",
                 background: T.beige,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                fontSize: 25,
+                fontSize: 22,
                 flexShrink: 0,
               }}
             >
               {user ? "☕" : "👤"}
             </div>
             <div>
-              <div style={{ fontSize: 18, fontWeight: 800, color: T.text, lineHeight: 1.15 }}>
+              <div style={{ fontSize: 17, fontWeight: 800, color: T.text, lineHeight: 1.15 }}>
                 {user ? "已登入" : "尚未登入"}
               </div>
               <div style={{ fontSize: 12, color: T.sub, marginTop: 4, lineHeight: 1.45 }}>
@@ -405,10 +399,10 @@ const SettingsPanel = ({
                 background: T.brown,
                 color: "#fff",
                 border: "none",
-                borderRadius: 16,
-                padding: "14px 16px",
+                borderRadius: 12,
+                padding: "12px 14px",
                 textAlign: "center",
-                fontSize: 15,
+                fontSize: 14,
                 fontWeight: 800,
                 cursor: authBusy ? "default" : "pointer",
                 fontFamily: "inherit",
@@ -426,10 +420,10 @@ const SettingsPanel = ({
                 background: T.brown,
                 color: "#fff",
                 border: "none",
-                borderRadius: 16,
-                padding: "14px 16px",
+                borderRadius: 12,
+                padding: "12px 14px",
                 textAlign: "center",
-                fontSize: 15,
+                fontSize: 14,
                 fontWeight: 800,
                 cursor: authBusy ? "default" : "pointer",
                 fontFamily: "inherit",
@@ -450,9 +444,9 @@ const SettingsPanel = ({
           {authError && <div style={{ fontSize: 11, color: "#9b2335", marginTop: 8, lineHeight: 1.6 }}>{authError}</div>}
         </div>
 
-        <div style={{ borderTop: `1px solid ${T.beige}`, padding: "18px 18px 24px" }}>
-          <div style={{ fontSize: 15, color: T.sub, fontWeight: 700, marginBottom: 14 }}>選擇地區</div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 10 }}>
+        <div style={{ background: "#fff", border: `1px solid ${T.beige}`, borderRadius: 14, padding: 14, margin: "0 18px 18px" }}>
+          <div style={{ fontSize: 12, color: T.sub, marginBottom: 10 }}>地區選擇</div>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
             {regionOptions.map((item) => (
               <button
                 key={item.key}
@@ -460,14 +454,13 @@ const SettingsPanel = ({
                 style={{
                   background: region === item.key ? T.brown : T.cream,
                   color: region === item.key ? "#fff" : T.text,
-                  border: "none",
-                  borderRadius: 18,
-                  padding: "16px 8px",
-                  fontSize: 14,
+                  border: `1px solid ${region === item.key ? T.brown : T.beige}`,
+                  borderRadius: 16,
+                  padding: "7px 12px",
+                  fontSize: 12,
                   cursor: "pointer",
                   fontFamily: "inherit",
-                  fontWeight: region === item.key ? 800 : 600,
-                  boxShadow: region === item.key ? "none" : "inset 0 0 0 1px rgba(92,61,46,0.05)",
+                  fontWeight: region === item.key ? 700 : 500,
                 }}
               >
                 {item.label}
@@ -476,7 +469,7 @@ const SettingsPanel = ({
           </div>
         </div>
 
-        <div style={{ borderTop: `1px solid ${T.beige}`, padding: "0 18px calc(28px + env(safe-area-inset-bottom, 0px))" }}>
+        <div style={{ padding: "0 18px calc(28px + env(safe-area-inset-bottom, 0px))" }}>
           {menuLinks.map((item) => (
             <SectionRow key={item.title} {...item} />
           ))}
