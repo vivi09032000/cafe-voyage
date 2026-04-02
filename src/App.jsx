@@ -1115,10 +1115,8 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
 
   return (
     <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", overflow: "hidden" }}>
-      <div style={{ display: "flex", alignItems: "center", gap: 7, padding: "10px 16px 6px" }}>
-        <span style={{ fontSize: 20 }}>📍</span>
-        <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, color: T.text }}>地圖</div>
-        <div style={{ fontSize: 12, color: T.sub, marginLeft: "auto" }}>{loading ? "載入全台資料..." : `${visibleMapCafes.length} 間咖啡廳`}</div>
+      <div style={{ display: "flex", justifyContent: "flex-end", padding: "10px 16px 6px" }}>
+        <div style={{ fontSize: 12, color: T.sub }}>{loading ? "載入全台資料..." : `${visibleMapCafes.length} 間咖啡廳`}</div>
       </div>
 
       {/* Search */}
