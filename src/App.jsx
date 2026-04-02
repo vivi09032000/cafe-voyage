@@ -370,28 +370,28 @@ const SettingsPanel = ({
         </div>
 
         <div style={{ padding: "18px 18px 14px" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 18 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 14 }}>
             <div
               style={{
-                width: 66,
-                height: 66,
+                width: 54,
+                height: 54,
                 borderRadius: "50%",
                 background: T.beige,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                fontSize: 32,
+                fontSize: 25,
                 flexShrink: 0,
               }}
             >
               {user ? "☕" : "👤"}
             </div>
             <div>
-              <div style={{ fontSize: 21, fontWeight: 800, color: T.text, lineHeight: 1.15 }}>
+              <div style={{ fontSize: 18, fontWeight: 800, color: T.text, lineHeight: 1.15 }}>
                 {user ? "已登入" : "尚未登入"}
               </div>
-              <div style={{ fontSize: 13, color: T.sub, marginTop: 6, lineHeight: 1.4 }}>
-                {user ? (user.email || "已連接 Google 帳號") : "登入後可儲存收藏"}
+              <div style={{ fontSize: 12, color: T.sub, marginTop: 4, lineHeight: 1.45 }}>
+                {user ? (user.email || "已連接 Google 帳號") : "想要跨裝置同步？登入 Google 帳號"}
               </div>
             </div>
           </div>
@@ -405,10 +405,10 @@ const SettingsPanel = ({
                 background: T.brown,
                 color: "#fff",
                 border: "none",
-                borderRadius: 18,
-                padding: "18px 16px",
+                borderRadius: 16,
+                padding: "14px 16px",
                 textAlign: "center",
-                fontSize: 16,
+                fontSize: 15,
                 fontWeight: 800,
                 cursor: authBusy ? "default" : "pointer",
                 fontFamily: "inherit",
@@ -426,10 +426,10 @@ const SettingsPanel = ({
                 background: T.brown,
                 color: "#fff",
                 border: "none",
-                borderRadius: 18,
-                padding: "18px 16px",
+                borderRadius: 16,
+                padding: "14px 16px",
                 textAlign: "center",
-                fontSize: 16,
+                fontSize: 15,
                 fontWeight: 800,
                 cursor: authBusy ? "default" : "pointer",
                 fontFamily: "inherit",
@@ -440,8 +440,14 @@ const SettingsPanel = ({
             </button>
           )}
 
-          {authMessage && <div style={{ fontSize: 12, color: T.green, marginTop: 10, lineHeight: 1.6 }}>{authMessage}</div>}
-          {authError && <div style={{ fontSize: 12, color: "#9b2335", marginTop: 10, lineHeight: 1.6 }}>{authError}</div>}
+          {!user && (
+            <div style={{ fontSize: 11, color: T.sub, marginTop: 8, lineHeight: 1.5 }}>
+              登入後可跨裝置保存你收藏的咖啡廳。
+            </div>
+          )}
+
+          {authMessage && <div style={{ fontSize: 11, color: T.green, marginTop: 8, lineHeight: 1.6 }}>{authMessage}</div>}
+          {authError && <div style={{ fontSize: 11, color: "#9b2335", marginTop: 8, lineHeight: 1.6 }}>{authError}</div>}
         </div>
 
         <div style={{ borderTop: `1px solid ${T.beige}`, padding: "18px 18px 24px" }}>
