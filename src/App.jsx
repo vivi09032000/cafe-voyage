@@ -381,7 +381,7 @@ const SettingsPanel = ({
                 {user ? "已登入" : "尚未登入"}
               </div>
               <div style={{ fontSize: 10.5, color: "rgba(122, 102, 82, 0.88)", marginTop: 2, lineHeight: 1.35 }}>
-                {user ? (user.email || "已連接 Google 帳號") : "想要跨裝置同步？登入 Google 帳號"}
+                {user ? (user.email || "已連接 Google 帳號") : "用 Google 同步收藏"}
               </div>
             </div>
           </div>
