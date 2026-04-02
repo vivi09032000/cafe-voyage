@@ -7,6 +7,7 @@ Notes:
 - `wifi`, `seat`, `quiet`, `tasty`, `cheap`, `music`, `limited_time`, and `socket` were normalized from public descriptions and reviews, so they should be treated as editorial estimates rather than exact measurements.
 - `latitude` and `longitude` are left blank unless a current public source exposed reliable coordinates.
 - On 2026-04-02, an additional user-curated Digital Nomad shortlist was merged in and deduplicated. The only explicit duplicate merged at this stage was `Hub Hoi An` into the existing `Hub Hoi An Coworking` entry.
+- A few coordinates were corrected to nearby street-level approximations inside Hội An after public geocoders returned false matches in other Vietnamese cities.
 
 Entries:
 

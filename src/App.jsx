@@ -59,26 +59,34 @@ const T = {
 
 const REGION_PROMPT_KEY = "prompt";
 const REGION_STORAGE_KEY = "cafe-voyage:region";
-const MAP_CACHE_KEY = "cafe-voyage:map-cafes";
+const COUNTRY_STORAGE_KEY = "cafe-voyage:country";
+const MAP_CACHE_KEY = "cafe-voyage:map-cafes:v2";
 const MAP_CACHE_TTL = 1000 * 60 * 60 * 12;
 const REGION_PATTERN = /(台北市|新北市|桃園市|台中市|臺中市|台南市|臺南市|高雄市|基隆市|新竹市|新竹縣|苗栗縣|彰化縣|南投縣|雲林縣|嘉義市|嘉義縣|屏東縣|宜蘭縣|花蓮縣|台東縣|臺東縣)/;
+const COUNTRY_OPTIONS = [
+  { key: "taiwan", label: "台灣", flag: "🇹🇼" },
+  { key: "vietnam", label: "越南", flag: "🇻🇳" },
+  { key: "thailand", label: "泰國", flag: "🇹🇭", comingSoon: true },
+  { key: "japan", label: "日本", flag: "🇯🇵", comingSoon: true },
+];
 const REGION_GROUPS = [
-  { key: "taipei", label: "台北", members: ["台北市", "新北市"] },
-  { key: "taichung", label: "台中", members: ["台中市"] },
-  { key: "tainan", label: "台南", members: ["台南市"] },
-  { key: "kaohsiung", label: "高雄", members: ["高雄市"] },
-  { key: "chiayi", label: "嘉義", members: ["嘉義市", "嘉義縣"] },
-  { key: "hsinchu", label: "新竹", members: ["新竹市", "新竹縣"] },
-  { key: "taoyuan", label: "桃園", members: ["桃園市"] },
-  { key: "keelung", label: "基隆", members: ["基隆市"] },
-  { key: "miaoli", label: "苗栗", members: ["苗栗縣"] },
-  { key: "changhua", label: "彰化", members: ["彰化縣"] },
-  { key: "nantou", label: "南投", members: ["南投縣"] },
-  { key: "yunlin", label: "雲林", members: ["雲林縣"] },
-  { key: "pingtung", label: "屏東", members: ["屏東縣"] },
-  { key: "yilan", label: "宜蘭", members: ["宜蘭縣"] },
-  { key: "hualien", label: "花蓮", members: ["花蓮縣"] },
-  { key: "taitung", label: "台東", members: ["台東縣"] },
+  { key: "taipei", label: "台北", country: "taiwan", members: ["台北市", "新北市"] },
+  { key: "taichung", label: "台中", country: "taiwan", members: ["台中市"] },
+  { key: "tainan", label: "台南", country: "taiwan", members: ["台南市"] },
+  { key: "kaohsiung", label: "高雄", country: "taiwan", members: ["高雄市"] },
+  { key: "chiayi", label: "嘉義", country: "taiwan", members: ["嘉義市", "嘉義縣"] },
+  { key: "hsinchu", label: "新竹", country: "taiwan", members: ["新竹市", "新竹縣"] },
+  { key: "taoyuan", label: "桃園", country: "taiwan", members: ["桃園市"] },
+  { key: "keelung", label: "基隆", country: "taiwan", members: ["基隆市"] },
+  { key: "miaoli", label: "苗栗", country: "taiwan", members: ["苗栗縣"] },
+  { key: "changhua", label: "彰化", country: "taiwan", members: ["彰化縣"] },
+  { key: "nantou", label: "南投", country: "taiwan", members: ["南投縣"] },
+  { key: "yunlin", label: "雲林", country: "taiwan", members: ["雲林縣"] },
+  { key: "pingtung", label: "屏東", country: "taiwan", members: ["屏東縣"] },
+  { key: "yilan", label: "宜蘭", country: "taiwan", members: ["宜蘭縣"] },
+  { key: "hualien", label: "花蓮", country: "taiwan", members: ["花蓮縣"] },
+  { key: "taitung", label: "台東", country: "taiwan", members: ["台東縣"] },
+  { key: "hoi_an", label: "會安", country: "vietnam", members: ["Hội An", "Hoi An", "會安"] },
 ];
 
 const normalizeRegionLabel = (label = "") => label
@@ -89,7 +97,13 @@ const normalizeRegionLabel = (label = "") => label
 const findRegionGroup = (regionLabel = "") =>
   REGION_GROUPS.find((group) => group.members.includes(regionLabel)) || null;
 
+const getCafeCountryKey = (cafe) => {
+  if (cafe.city === "hoi_an_vn" || /Vietnam|Việt Nam|Hội An|Hoi An/.test(cafe.address || "")) return "vietnam";
+  return "taiwan";
+};
+
 const getCafeRegion = (cafe) => {
+  if (getCafeCountryKey(cafe) === "vietnam") return "Hội An";
   const match = (cafe.address || "").match(REGION_PATTERN);
   if (match) return normalizeRegionLabel(match[0]);
   return "";
@@ -263,6 +277,9 @@ const Header = ({ title = "Cafe Voyage", cityLabel, subtitle, onOpenMenu }) => {
 
 const SettingsPanel = ({
   open,
+  country,
+  countryOptions,
+  setCountry,
   region,
   regionOptions,
   setRegion,
@@ -275,6 +292,7 @@ const SettingsPanel = ({
   onSignOut,
 }) => {
   if (!open) return null;
+  const [countryMenuOpen, setCountryMenuOpen] = useState(false);
   const menuLinks = [
     {
       title: "關於 Cafe Voyage",
@@ -292,6 +310,16 @@ const SettingsPanel = ({
       href: null,
     },
   ];
+
+  const selectedCountry = countryOptions.find((item) => item.key === country) || COUNTRY_OPTIONS[0];
+  const countryMenuItems = COUNTRY_OPTIONS.map((item) => ({
+    ...item,
+    enabled: item.comingSoon ? false : countryOptions.some((option) => option.key === item.key),
+  }));
+
+  useEffect(() => {
+    if (!open) setCountryMenuOpen(false);
+  }, [open]);
 
   const SectionRow = ({ title, subtitle, href }) => {
     const sharedStyle = {
@@ -438,7 +466,75 @@ const SettingsPanel = ({
 
         <div style={{ background: "rgba(255,255,255,0.92)", border: "1px solid rgba(232, 221, 208, 0.75)", borderRadius: 16, padding: 12, margin: "0 16px 10px" }}>
           <div style={{ fontSize: 10.5, color: "rgba(122, 102, 82, 0.82)", marginBottom: 8 }}>地區選擇</div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: 7 }}>
+          <div style={{ border: "1px solid rgba(92, 61, 46, 0.12)", borderRadius: 14, overflow: "hidden", marginBottom: 10, background: "#fff" }}>
+            <button
+              onClick={() => setCountryMenuOpen((openState) => !openState)}
+              style={{
+                width: "100%",
+                background: "none",
+                border: "none",
+                borderBottom: countryMenuOpen ? "1px solid rgba(92, 61, 46, 0.08)" : "none",
+                padding: "12px 12px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                gap: 8,
+                cursor: "pointer",
+                fontFamily: "inherit",
+                color: T.text,
+              }}
+            >
+              <span style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, fontWeight: 650 }}>
+                <span>{selectedCountry.flag}</span>
+                <span>{selectedCountry.label}</span>
+              </span>
+              <span style={{ fontSize: 10, color: T.sub, transform: countryMenuOpen ? "rotate(180deg)" : "none" }}>▲</span>
+            </button>
+            {countryMenuOpen && (
+              <div>
+                {countryMenuItems.map((item) => {
+                  const isSelected = item.key === country;
+                  return (
+                    <button
+                      key={item.key}
+                      onClick={() => {
+                        if (!item.enabled) return;
+                        setCountry(item.key);
+                        setCountryMenuOpen(false);
+                      }}
+                      disabled={!item.enabled}
+                      style={{
+                        width: "100%",
+                        background: isSelected ? "rgba(92, 61, 46, 0.04)" : "none",
+                        border: "none",
+                        borderBottom: "1px solid rgba(92, 61, 46, 0.06)",
+                        padding: "12px 12px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                        gap: 8,
+                        cursor: item.enabled ? "pointer" : "default",
+                        fontFamily: "inherit",
+                        color: item.enabled ? T.text : T.sub,
+                        opacity: item.enabled ? 1 : 0.72,
+                      }}
+                    >
+                      <span style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, fontWeight: 600 }}>
+                        <span>{item.flag}</span>
+                        <span>{item.label}</span>
+                      </span>
+                      {item.comingSoon ? (
+                        <span style={{ fontSize: 10, color: T.sub, background: T.beige, padding: "3px 7px", borderRadius: 999 }}>即將推出</span>
+                      ) : isSelected ? (
+                        <span style={{ width: 9, height: 9, borderRadius: "50%", background: T.brown, display: "inline-block" }} />
+                      ) : null}
+                    </button>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: country === "vietnam" ? "repeat(2, minmax(0, 1fr))" : "repeat(4, minmax(0, 1fr))", gap: 7 }}>
             {regionOptions.map((item) => (
               <button
                 key={item.key}
@@ -1452,6 +1548,13 @@ export default function App() {
   const [authBusy, setAuthBusy] = useState(false);
   const [authMessage, setAuthMessage] = useState("");
   const [authError, setAuthError] = useState("");
+  const [country, setCountry] = useState(() => {
+    try {
+      return localStorage.getItem(COUNTRY_STORAGE_KEY) || "taiwan";
+    } catch {
+      return "taiwan";
+    }
+  });
   const [region, setRegion] = useState(() => {
     try {
       return localStorage.getItem(REGION_STORAGE_KEY) || REGION_PROMPT_KEY;
@@ -1493,8 +1596,12 @@ export default function App() {
     setLoading(!cacheLoaded);
 
     try {
-      const res = await fetch("/api/cafes");
-      const data = await res.json();
+      const [taiwanRes, hoiAnRes] = await Promise.all([
+        fetch("/api/cafes"),
+        fetch("/api/cafes?city=hoi-an-vn"),
+      ]);
+      const [taiwanData, hoiAnData] = await Promise.all([taiwanRes.json(), hoiAnRes.json()]);
+      const data = [...taiwanData, ...hoiAnData];
       const seen = new Set();
       const merged = [];
       data.forEach((cafe) => {
@@ -1551,6 +1658,12 @@ export default function App() {
 
   useEffect(() => {
     try {
+      localStorage.setItem(COUNTRY_STORAGE_KEY, country);
+    } catch {}
+  }, [country]);
+
+  useEffect(() => {
+    try {
       if (region === REGION_PROMPT_KEY) {
         localStorage.removeItem(REGION_STORAGE_KEY);
       } else {
@@ -1602,31 +1715,39 @@ export default function App() {
 
   const toggleFav = (id) => setFavs(prev => { const key = String(id); const s = new Set(prev); s.has(key) ? s.delete(key) : s.add(key); return s; });
   const favoriteLookup = useMemo(() => ({ has: (id) => favs.has(String(id)) }), [favs]);
+  const availableCountries = useMemo(() => {
+    const existing = new Set(allCafes.map((cafe) => getCafeCountryKey(cafe)));
+    return COUNTRY_OPTIONS.filter((item) => !item.comingSoon && existing.has(item.key));
+  }, [allCafes]);
+  const countryOptionKeys = useMemo(() => new Set(availableCountries.map((item) => item.key)), [availableCountries]);
+  const selectedCountry = availableCountries.find((item) => item.key === country) || availableCountries[0] || COUNTRY_OPTIONS[0];
+  const countryScopedCafes = useMemo(() => allCafes.filter((cafe) => getCafeCountryKey(cafe) === selectedCountry.key), [allCafes, selectedCountry.key]);
   const availableRegions = useMemo(() => {
     const seen = new Set();
     const options = [];
-    allCafes.forEach((cafe) => {
+    countryScopedCafes.forEach((cafe) => {
       const groupKey = getCafeRegionGroupKey(cafe);
       if (!groupKey || seen.has(groupKey)) return;
       seen.add(groupKey);
     });
     REGION_GROUPS.forEach((group) => {
+      if (group.country !== selectedCountry.key) return;
       if (!seen.has(group.key)) return;
       options.push({ key: group.key, label: group.label });
     });
     return options;
-  }, [allCafes]);
+  }, [countryScopedCafes, selectedCountry.key]);
   const regionOptionKeys = useMemo(() => new Set(availableRegions.map((item) => item.key)), [availableRegions]);
   const hasRegionSelection = region !== REGION_PROMPT_KEY;
   const regionLabel = region === REGION_PROMPT_KEY
-    ? "請選擇縣市"
-    : (availableRegions.find((item) => item.key === region)?.label || "請選擇縣市");
+    ? "請選擇地區"
+    : (availableRegions.find((item) => item.key === region)?.label || "請選擇地區");
   const regionScopedCafes = useMemo(() => {
     if (region === REGION_PROMPT_KEY) return [];
-    return allCafes.filter((cafe) => getCafeRegionGroupKey(cafe) === region);
-  }, [allCafes, region]);
+    return countryScopedCafes.filter((cafe) => getCafeRegionGroupKey(cafe) === region);
+  }, [countryScopedCafes, region]);
   const homeCafes = hasRegionSelection ? regionScopedCafes : [];
-  const searchCafes = hasRegionSelection ? regionScopedCafes : allCafes;
+  const searchCafes = hasRegionSelection ? regionScopedCafes : countryScopedCafes;
   const favoritesCafes = allCafes;
 
   useEffect(() => {
@@ -1636,6 +1757,24 @@ export default function App() {
     setRegion(REGION_PROMPT_KEY);
   }, [availableRegions.length, region, regionOptionKeys]);
 
+  useEffect(() => {
+    if (countryOptionKeys.has(country)) return;
+    if (availableCountries[0]) setCountry(availableCountries[0].key);
+  }, [availableCountries, country, countryOptionKeys]);
+
+  useEffect(() => {
+    if (region !== REGION_PROMPT_KEY) return;
+    if (availableRegions.length !== 1) return;
+    setRegion(availableRegions[0].key);
+  }, [availableRegions, region]);
+
+  const handleCountryChange = (nextCountry) => {
+    setCountry(nextCountry);
+    setRegion(REGION_PROMPT_KEY);
+    setMapView({ center: null, zoom: null });
+    setMapQuery("");
+    setSelected(null);
+  };
   const handleRegionChange = (nextRegion) => { setRegion(nextRegion); setSelected(null); };
   const handleTabChange = (nextTab) => {
     if (nextTab === tab) return;
@@ -1664,7 +1803,7 @@ export default function App() {
     switch (tab) {
       case "home": return <HomePage cafes={homeCafes} loading={loading} hasRegionSelection={hasRegionSelection} onOpenRegionPicker={() => setMenuOpen(true)} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} emptyCafeIds={emptyCafeIds} />;
       case "search": return <SearchPage cafes={searchCafes} loading={loading} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} />;
-      case "map": return <MapPage cafes={allCafes} onSelect={setSelected} mapView={mapView} setMapView={setMapView} mapQuery={mapQuery} setMapQuery={setMapQuery} loading={loading} />;
+      case "map": return <MapPage cafes={countryScopedCafes} onSelect={setSelected} mapView={mapView} setMapView={setMapView} mapQuery={mapQuery} setMapQuery={setMapQuery} loading={loading} />;
       case "favorites": return <FavoritesPage cafes={favoritesCafes} favs={favoriteLookup} onSelect={setSelected} onFav={toggleFav} />;
       default: return null;
     }
@@ -1674,13 +1813,13 @@ export default function App() {
     ? ""
     : hasRegionSelection
       ? `📍 ${regionLabel}・${homeCafes.filter(isOpen).length} 間`
-      : "📍 從右上角選擇地區";
+      : `📍 ${selectedCountry.label}・請選擇地區`;
 
   return (
     <>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');html,body,#root{height:100%}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,'PingFang TC',sans-serif;background:#f0ebe4}input::placeholder{color:#A89880;opacity:1}::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:${T.beige};border-radius:3px}.map-popup .leaflet-popup-content-wrapper{border-radius:14px}.map-popup .leaflet-popup-content{margin:10px 12px;min-width:0 !important;width:min(220px,calc(100vw - 88px)) !important}.map-popup .leaflet-popup-close-button{padding:8px 10px 0 0;font-size:18px}`}</style>
       <div style={{ maxWidth: 430, margin: "0 auto", width: "100%", height: "100svh", minHeight: "100dvh", display: "flex", flexDirection: "column", background: T.cream, overflow: "hidden", boxShadow: "0 0 40px rgba(0,0,0,0.15)" }}>
-        {!selected && <Header cityLabel={regionLabel} subtitle={headerSubtitle} onOpenMenu={() => setMenuOpen(true)} />}
+        {!selected && <Header cityLabel={hasRegionSelection ? regionLabel : selectedCountry.label} subtitle={headerSubtitle} onOpenMenu={() => setMenuOpen(true)} />}
         {selected ? (
           <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", overflow: "hidden" }}>
             {renderPage()}
@@ -1694,6 +1833,9 @@ export default function App() {
         {!selected && (
           <SettingsPanel
             open={menuOpen}
+            country={selectedCountry.key}
+            countryOptions={availableCountries}
+            setCountry={handleCountryChange}
             region={region}
             regionOptions={availableRegions}
             setRegion={handleRegionChange}
