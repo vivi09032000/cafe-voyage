@@ -278,7 +278,7 @@ const SettingsPanel = ({
   const menuLinks = [
     {
       title: "關於 Cafe Voyage",
-      subtitle: "找工作、放空、約會都剛好的咖啡廳地圖。",
+      subtitle: "找工作、放空、約會都剛好的咖啡廳地圖",
       href: null,
     },
     {
@@ -298,12 +298,12 @@ const SettingsPanel = ({
       width: "100%",
       background: "none",
       border: "none",
-      borderBottom: `1px solid ${T.beige}`,
-      padding: "12px 0",
+      borderBottom: `1px solid rgba(92, 61, 46, 0.08)`,
+      padding: "10px 0",
       display: "flex",
-      alignItems: "center",
+      alignItems: "flex-start",
       justifyContent: "space-between",
-      gap: 12,
+      gap: 10,
       textAlign: "left",
       textDecoration: "none",
       cursor: href ? "pointer" : "default",
@@ -314,10 +314,10 @@ const SettingsPanel = ({
     const content = (
       <>
         <div>
-          <div style={{ fontSize: 15, fontWeight: 700, color: T.text, marginBottom: subtitle ? 2 : 0 }}>{title}</div>
-          {subtitle && <div style={{ fontSize: 11, lineHeight: 1.45, color: T.sub }}>{subtitle}</div>}
+          <div style={{ fontSize: 14, fontWeight: 650, color: T.text, marginBottom: subtitle ? 1 : 0, letterSpacing: "-0.01em" }}>{title}</div>
+          {subtitle && <div style={{ fontSize: 10.5, lineHeight: 1.45, color: "rgba(122, 102, 82, 0.86)" }}>{subtitle}</div>}
         </div>
-        <div style={{ fontSize: 16, color: T.sub, flexShrink: 0 }}>{href ? "›" : ""}</div>
+        <div style={{ fontSize: 15, color: "rgba(122, 102, 82, 0.7)", flexShrink: 0, paddingTop: 1 }}>{href ? "›" : ""}</div>
       </>
     );
 
@@ -339,7 +339,7 @@ const SettingsPanel = ({
           position: "absolute",
           top: 0,
           right: 0,
-          width: "min(86vw, 320px)",
+          width: "min(84vw, 312px)",
           height: "100%",
           background: "#fffaf4",
           boxShadow: "-18px 0 40px rgba(0,0,0,0.18)",
@@ -349,41 +349,41 @@ const SettingsPanel = ({
         }}
         onClick={(e) => e.stopPropagation()}
       >
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "16px 16px 12px", flexShrink: 0 }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", padding: "18px 18px 10px", flexShrink: 0 }}>
           <div>
-            <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 20, color: T.text }}>設定</div>
-            <div style={{ fontSize: 11, color: T.sub, marginTop: 3 }}>帳號與城市偏好</div>
+            <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 21, color: T.text, letterSpacing: "-0.02em" }}>設定</div>
+            <div style={{ fontSize: 10.5, color: "rgba(122, 102, 82, 0.82)", marginTop: 2 }}>帳號與城市偏好</div>
           </div>
           <button
             onClick={onClose}
-            style={{ background: "none", border: "none", cursor: "pointer", color: T.sub, fontSize: 24, lineHeight: 1 }}
+            style={{ background: "none", border: "none", cursor: "pointer", color: T.sub, fontSize: 23, lineHeight: 1, paddingTop: 2 }}
           >
             ×
           </button>
         </div>
 
-        <div style={{ background: "#fff", border: `1px solid ${T.beige}`, borderRadius: 14, padding: 12, margin: "0 16px 12px" }}>
+        <div style={{ background: "rgba(255,255,255,0.92)", border: "1px solid rgba(232, 221, 208, 0.75)", borderRadius: 16, padding: 12, margin: "0 16px 10px" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
             <div
               style={{
-                width: 42,
-                height: 42,
+                width: 40,
+                height: 40,
                 borderRadius: "50%",
-                background: T.beige,
+                background: "linear-gradient(180deg, #f1e7da 0%, #eadccc 100%)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                fontSize: 19,
+                fontSize: 18,
                 flexShrink: 0,
               }}
             >
               {user ? "☕" : "👤"}
             </div>
             <div>
-              <div style={{ fontSize: 15, fontWeight: 800, color: T.text, lineHeight: 1.15 }}>
+              <div style={{ fontSize: 15, fontWeight: 700, color: T.text, lineHeight: 1.15, letterSpacing: "-0.01em" }}>
                 {user ? "已登入" : "尚未登入"}
               </div>
-              <div style={{ fontSize: 11, color: T.sub, marginTop: 3, lineHeight: 1.35 }}>
+              <div style={{ fontSize: 10.5, color: "rgba(122, 102, 82, 0.88)", marginTop: 2, lineHeight: 1.35 }}>
                 {user ? (user.email || "已連接 Google 帳號") : "想要跨裝置同步？登入 Google 帳號"}
               </div>
             </div>
@@ -398,14 +398,15 @@ const SettingsPanel = ({
                 background: T.brown,
                 color: "#fff",
                 border: "none",
-                borderRadius: 12,
+                borderRadius: 14,
                 padding: "11px 12px",
                 textAlign: "center",
                 fontSize: 13,
-                fontWeight: 800,
+                fontWeight: 700,
                 cursor: authBusy ? "default" : "pointer",
                 fontFamily: "inherit",
                 opacity: authBusy ? 0.7 : 1,
+                letterSpacing: "-0.01em",
               }}
             >
               {authBusy ? "處理中..." : "登出"}
@@ -419,14 +420,15 @@ const SettingsPanel = ({
                 background: T.brown,
                 color: "#fff",
                 border: "none",
-                borderRadius: 12,
+                borderRadius: 14,
                 padding: "11px 12px",
                 textAlign: "center",
                 fontSize: 13,
-                fontWeight: 800,
+                fontWeight: 700,
                 cursor: authBusy ? "default" : "pointer",
                 fontFamily: "inherit",
                 opacity: authBusy ? 0.7 : 1,
+                letterSpacing: "-0.01em",
               }}
             >
               {authBusy ? "跳轉中..." : "Google 登入"}
@@ -437,9 +439,9 @@ const SettingsPanel = ({
           {authError && <div style={{ fontSize: 10, color: "#9b2335", marginTop: 6, lineHeight: 1.45 }}>{authError}</div>}
         </div>
 
-        <div style={{ background: "#fff", border: `1px solid ${T.beige}`, borderRadius: 14, padding: 12, margin: "0 16px 12px" }}>
-          <div style={{ fontSize: 11, color: T.sub, marginBottom: 8 }}>地區選擇</div>
-          <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+        <div style={{ background: "rgba(255,255,255,0.92)", border: "1px solid rgba(232, 221, 208, 0.75)", borderRadius: 16, padding: 12, margin: "0 16px 10px" }}>
+          <div style={{ fontSize: 10.5, color: "rgba(122, 102, 82, 0.82)", marginBottom: 8 }}>地區選擇</div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: 7 }}>
             {regionOptions.map((item) => (
               <button
                 key={item.key}
@@ -447,13 +449,14 @@ const SettingsPanel = ({
                 style={{
                   background: region === item.key ? T.brown : T.cream,
                   color: region === item.key ? "#fff" : T.text,
-                  border: `1px solid ${region === item.key ? T.brown : T.beige}`,
-                  borderRadius: 15,
-                  padding: "6px 11px",
+                  border: `1px solid ${region === item.key ? T.brown : "rgba(232, 221, 208, 0.92)"}`,
+                  borderRadius: 14,
+                  padding: "8px 4px",
                   fontSize: 11,
                   cursor: "pointer",
                   fontFamily: "inherit",
                   fontWeight: region === item.key ? 700 : 500,
+                  lineHeight: 1.1,
                 }}
               >
                 {item.label}
