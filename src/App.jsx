@@ -349,14 +349,11 @@ const SettingsPanel = ({
         }}
         onClick={(e) => e.stopPropagation()}
       >
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", padding: "18px 18px 10px", flexShrink: 0 }}>
-          <div>
-            <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 21, color: T.text, letterSpacing: "-0.02em" }}>設定</div>
-            <div style={{ fontSize: 10.5, color: "rgba(122, 102, 82, 0.82)", marginTop: 2 }}>帳號與城市偏好</div>
-          </div>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "18px 18px 12px", flexShrink: 0 }}>
+          <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 21, color: T.text, letterSpacing: "-0.02em" }}>設定</div>
           <button
             onClick={onClose}
-            style={{ background: "none", border: "none", cursor: "pointer", color: T.sub, fontSize: 23, lineHeight: 1, paddingTop: 2 }}
+            style={{ background: "none", border: "none", cursor: "pointer", color: T.sub, fontSize: 23, lineHeight: 1 }}
           >
             ×
           </button>
