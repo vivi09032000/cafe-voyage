@@ -275,102 +275,178 @@ const SettingsPanel = ({
   onSignOut,
 }) => {
   if (!open) return null;
+  const menuLinks = [
+    {
+      title: "關於 Cafe Voyage",
+      subtitle: "一個幫你找工作、放空、約會都剛好的咖啡廳地圖。",
+      href: null,
+    },
+    {
+      title: "意見回饋",
+      subtitle: "功能建議、錯誤回報與合作邀約，之後都會集中在這裡。",
+      href: null,
+    },
+    {
+      title: "Buy me a coffee",
+      subtitle: "如果你喜歡 Cafe Voyage，未來可以在這裡支持我們繼續維護。",
+      href: null,
+    },
+  ];
+
+  const SectionRow = ({ title, subtitle, href }) => {
+    const sharedStyle = {
+      width: "100%",
+      background: "none",
+      border: "none",
+      borderBottom: `1px solid ${T.beige}`,
+      padding: "18px 0",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      gap: 16,
+      textAlign: "left",
+      textDecoration: "none",
+      cursor: href ? "pointer" : "default",
+      fontFamily: "inherit",
+      color: T.text,
+    };
+
+    const content = (
+      <>
+        <div>
+          <div style={{ fontSize: 17, fontWeight: 700, color: T.text, marginBottom: subtitle ? 4 : 0 }}>{title}</div>
+          {subtitle && <div style={{ fontSize: 12, lineHeight: 1.6, color: T.sub }}>{subtitle}</div>}
+        </div>
+        <div style={{ fontSize: 18, color: T.sub, flexShrink: 0 }}>{href ? "›" : ""}</div>
+      </>
+    );
+
+    if (href) {
+      return (
+        <a href={href} target="_blank" rel="noreferrer" style={sharedStyle}>
+          {content}
+        </a>
+      );
+    }
+
+    return <div style={sharedStyle}>{content}</div>;
+  };
+
   return (
     <div style={{ position: "absolute", inset: 0, zIndex: 40, background: "rgba(32, 24, 18, 0.26)" }} onClick={onClose}>
       <div
         style={{
           position: "absolute",
           top: 0,
-          right: 0,
-          width: "min(86vw, 320px)",
+          left: 0,
+          width: "100%",
           height: "100%",
-          background: "#fffaf4",
+          background: T.cream,
           boxShadow: "-18px 0 40px rgba(0,0,0,0.18)",
-          padding: "20px 18px calc(24px + env(safe-area-inset-bottom, 0px))",
           display: "flex",
           flexDirection: "column",
-          gap: 18,
+          overflowY: "auto",
         }}
         onClick={(e) => e.stopPropagation()}
       >
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <div>
-            <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, color: T.text }}>設定</div>
-            <div style={{ fontSize: 12, color: T.sub, marginTop: 4 }}>帳號與城市偏好</div>
-          </div>
-          <button onClick={onClose} style={{ background: "none", border: "none", cursor: "pointer", color: T.sub, fontSize: 24, lineHeight: 1 }}>×</button>
+        <div
+          style={{
+            background: T.brown,
+            color: "#fff",
+            padding: "18px 18px 20px",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            flexShrink: 0,
+          }}
+        >
+          <div style={{ fontSize: 24, fontWeight: 800, letterSpacing: "-0.02em" }}>選單</div>
+          <button
+            onClick={onClose}
+            style={{ background: "none", border: "none", cursor: "pointer", color: "#fff", fontSize: 26, lineHeight: 1 }}
+          >
+            ×
+          </button>
         </div>
 
-        <div style={{ background: "#fff", border: `1px solid ${T.beige}`, borderRadius: 14, padding: 14 }}>
-          <div style={{ fontSize: 12, color: T.sub, marginBottom: 10 }}>User</div>
-          {user ? (
-            <>
-              <div style={{ fontSize: 14, color: T.text, fontWeight: 700, marginBottom: 6 }}>{user.email || "已登入"}</div>
-              <div style={{ fontSize: 11, color: T.sub, marginBottom: 10 }}>已用 Google 登入 Cafe Voyage，之後可以延伸做跨裝置同步收藏。</div>
-              <button
-                onClick={onSignOut}
-                disabled={authBusy}
-                style={{ width: "100%", background: T.brown, color: "#fff", border: "none", borderRadius: 10, padding: "12px 14px", textAlign: "center", fontSize: 14, fontWeight: 700, cursor: authBusy ? "default" : "pointer", fontFamily: "inherit", opacity: authBusy ? 0.7 : 1 }}
-              >
-                {authBusy ? "處理中..." : "登出"}
-              </button>
-            </>
-          ) : (
-            <>
-              <button
-                onClick={onGoogleSignIn}
-                disabled={authBusy}
-                style={{
-                  width: "100%",
-                  background: "#fff",
-                  color: T.text,
-                  border: `1px solid ${T.beige}`,
-                  borderRadius: 12,
-                  padding: "12px 14px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  gap: 10,
-                  fontSize: 14,
-                  fontWeight: 700,
-                  cursor: authBusy ? "default" : "pointer",
-                  fontFamily: "inherit",
-                  opacity: authBusy ? 0.7 : 1,
-                }}
-              >
-                <span
-                  aria-hidden="true"
-                  style={{
-                    width: 18,
-                    height: 18,
-                    borderRadius: "50%",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: 12,
-                    fontWeight: 700,
-                    background: "#fff",
-                    color: "#4285F4",
-                    border: "1px solid #dadce0",
-                    flexShrink: 0,
-                  }}
-                >
-                  G
-                </span>
-                {authBusy ? "跳轉中..." : "使用 Google 登入"}
-              </button>
-              <div style={{ fontSize: 11, color: T.sub, marginTop: 8, lineHeight: 1.5 }}>
-                會跳轉到 Google 完成授權，回來後就會自動登入，不再需要點 Email 驗證信。
+        <div style={{ padding: "18px 18px 14px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 18 }}>
+            <div
+              style={{
+                width: 66,
+                height: 66,
+                borderRadius: "50%",
+                background: T.beige,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: 32,
+                flexShrink: 0,
+              }}
+            >
+              {user ? "☕" : "👤"}
+            </div>
+            <div>
+              <div style={{ fontSize: 21, fontWeight: 800, color: T.text, lineHeight: 1.15 }}>
+                {user ? "已登入" : "尚未登入"}
               </div>
-            </>
+              <div style={{ fontSize: 13, color: T.sub, marginTop: 6, lineHeight: 1.4 }}>
+                {user ? (user.email || "已連接 Google 帳號") : "登入後可儲存收藏"}
+              </div>
+            </div>
+          </div>
+
+          {user ? (
+            <button
+              onClick={onSignOut}
+              disabled={authBusy}
+              style={{
+                width: "100%",
+                background: T.brown,
+                color: "#fff",
+                border: "none",
+                borderRadius: 18,
+                padding: "18px 16px",
+                textAlign: "center",
+                fontSize: 16,
+                fontWeight: 800,
+                cursor: authBusy ? "default" : "pointer",
+                fontFamily: "inherit",
+                opacity: authBusy ? 0.7 : 1,
+              }}
+            >
+              {authBusy ? "處理中..." : "登出"}
+            </button>
+          ) : (
+            <button
+              onClick={onGoogleSignIn}
+              disabled={authBusy}
+              style={{
+                width: "100%",
+                background: T.brown,
+                color: "#fff",
+                border: "none",
+                borderRadius: 18,
+                padding: "18px 16px",
+                textAlign: "center",
+                fontSize: 16,
+                fontWeight: 800,
+                cursor: authBusy ? "default" : "pointer",
+                fontFamily: "inherit",
+                opacity: authBusy ? 0.7 : 1,
+              }}
+            >
+              {authBusy ? "跳轉中..." : "Google 登入"}
+            </button>
           )}
-          {authMessage && <div style={{ fontSize: 11, color: T.green, marginTop: 8, lineHeight: 1.5 }}>{authMessage}</div>}
-          {authError && <div style={{ fontSize: 11, color: "#9b2335", marginTop: 8, lineHeight: 1.5 }}>{authError}</div>}
+
+          {authMessage && <div style={{ fontSize: 12, color: T.green, marginTop: 10, lineHeight: 1.6 }}>{authMessage}</div>}
+          {authError && <div style={{ fontSize: 12, color: "#9b2335", marginTop: 10, lineHeight: 1.6 }}>{authError}</div>}
         </div>
 
-        <div style={{ background: "#fff", border: `1px solid ${T.beige}`, borderRadius: 14, padding: 14 }}>
-          <div style={{ fontSize: 12, color: T.sub, marginBottom: 10 }}>地區選擇</div>
-          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+        <div style={{ borderTop: `1px solid ${T.beige}`, padding: "18px 18px 24px" }}>
+          <div style={{ fontSize: 15, color: T.sub, fontWeight: 700, marginBottom: 14 }}>選擇地區</div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 10 }}>
             {regionOptions.map((item) => (
               <button
                 key={item.key}
@@ -378,19 +454,26 @@ const SettingsPanel = ({
                 style={{
                   background: region === item.key ? T.brown : T.cream,
                   color: region === item.key ? "#fff" : T.text,
-                  border: `1px solid ${region === item.key ? T.brown : T.beige}`,
-                  borderRadius: 16,
-                  padding: "7px 12px",
-                  fontSize: 12,
+                  border: "none",
+                  borderRadius: 18,
+                  padding: "16px 8px",
+                  fontSize: 14,
                   cursor: "pointer",
                   fontFamily: "inherit",
-                  fontWeight: region === item.key ? 700 : 500,
+                  fontWeight: region === item.key ? 800 : 600,
+                  boxShadow: region === item.key ? "none" : "inset 0 0 0 1px rgba(92,61,46,0.05)",
                 }}
               >
                 {item.label}
               </button>
             ))}
           </div>
+        </div>
+
+        <div style={{ borderTop: `1px solid ${T.beige}`, padding: "0 18px calc(28px + env(safe-area-inset-bottom, 0px))" }}>
+          {menuLinks.map((item) => (
+            <SectionRow key={item.title} {...item} />
+          ))}
         </div>
       </div>
     </div>
