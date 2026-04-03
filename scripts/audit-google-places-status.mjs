@@ -5,12 +5,16 @@ const DATASETS = {
     label: "Hoi An",
     outputJson: new URL("../reviews/hoi-an-google-places-status.json", import.meta.url),
     outputMd: new URL("../reviews/hoi-an-google-places-status.md", import.meta.url),
+    outputCsv: new URL("../reviews/hoi-an-google-places-review.csv", import.meta.url),
+    outputClosedCsv: new URL("../reviews/hoi-an-google-places-permanently-closed.csv", import.meta.url),
     loadCafes: async () => JSON.parse(await readFile(new URL("../data/hoi-an-cafes.json", import.meta.url), "utf8")),
   },
   taipei: {
     label: "Taipei",
     outputJson: new URL("../reviews/taipei-google-places-status.json", import.meta.url),
     outputMd: new URL("../reviews/taipei-google-places-status.md", import.meta.url),
+    outputCsv: new URL("../reviews/taipei-google-places-review.csv", import.meta.url),
+    outputClosedCsv: new URL("../reviews/taipei-google-places-permanently-closed.csv", import.meta.url),
     loadCafes: async () => {
       const res = await fetch("https://cafenomad.tw/api/v1.2/cafes/taipei");
       if (!res.ok) throw new Error(`Cafe Nomad request failed: ${res.status}`);
@@ -348,6 +352,44 @@ function toMarkdown(label, rows) {
   return lines.join("\n");
 }
 
+function csvCell(value) {
+  const text = String(value ?? "");
+  return `"${text.replace(/"/g, '""')}"`;
+}
+
+function toCsv(rows) {
+  const headers = [
+    "category",
+    "reason",
+    "business_status",
+    "name",
+    "address",
+    "source_url",
+    "google_match_name",
+    "google_match_address",
+    "google_place_id",
+    "google_maps_url",
+    "moved_place_id",
+  ];
+  const lines = [headers.map(csvCell).join(",")];
+  for (const row of rows) {
+    lines.push([
+      row.audit.category,
+      row.audit.reason,
+      rowStatus(row),
+      row.name,
+      row.address || "",
+      row.url || "",
+      row.findPlace?.name || "",
+      row.findPlace?.formatted_address || "",
+      row.findPlace?.place_id || "",
+      row.details?.googleMapsUri || row.findPlace?.google_maps_uri || "",
+      row.details?.movedPlaceId || "",
+    ].map(csvCell).join(","));
+  }
+  return `${lines.join("\n")}\n`;
+}
+
 async function main() {
   const target = process.argv[2] || "hoi-an";
   const renderOnly = process.argv.includes("--render-only");
@@ -398,8 +440,11 @@ async function main() {
 
   await mkdir(new URL("../reviews/", import.meta.url), { recursive: true });
   await writeFile(dataset.outputMd, toMarkdown(dataset.label, rows));
-
   const flagged = rows.filter((row) => row.audit.category !== "ok");
+  const permanentlyClosed = rows.filter((row) => row.audit.category === "suspected_closed");
+  await writeFile(dataset.outputCsv, toCsv(flagged));
+  await writeFile(dataset.outputClosedCsv, toCsv(permanentlyClosed));
+
   console.log(`Checked ${rows.length} cafes`);
   console.log(`Flagged ${flagged.length} cafes for review`);
 }
