@@ -1530,6 +1530,16 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport }) => {
           </a>
         )}
         {cafe.address && (
+          <a
+            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${cafe.name} ${cafe.address}`)}`}
+            target="_blank"
+            rel="noreferrer"
+            style={{ display: "block", background: "#4285F4", color: "#fff", borderRadius: 10, padding: "12px", textAlign: "center", textDecoration: "none", fontSize: 14, fontWeight: 700, marginBottom: 10 }}
+          >
+            📍 在 Google Maps 開啟
+          </a>
+        )}
+        {cafe.address && (
           <a href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(cafe.address)}`} target="_blank" rel="noreferrer" style={{ display: "block", background: T.brown, color: "#fff", borderRadius: 10, padding: "12px", textAlign: "center", textDecoration: "none", fontSize: 14, fontWeight: 700 }}>
             🧭 導航到這裡
           </a>
