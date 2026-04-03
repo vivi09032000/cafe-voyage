@@ -1497,7 +1497,16 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport }) => {
         <button onClick={() => onFav(cafe.id)} style={{ background: "none", border: "none", cursor: "pointer", fontSize: 20 }}>{fav ? "⭐" : "☆"}</button>
       </div>
       <div style={{ padding: "16px 18px" }}>
-        <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 20, fontWeight: 700, color: T.text, marginBottom: 4 }}>{cafe.name}</div>
+        <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
+          <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 20, fontWeight: 700, color: T.text }}>
+            {cafe.name}
+          </div>
+          {cafe.url && (
+            <a href={cafe.url} target="_blank" rel="noreferrer" style={{ color: T.sub, fontSize: 13, lineHeight: 1, textDecoration: "none" }}>
+              🔗
+            </a>
+          )}
+        </div>
         {cafe.mrt && <div style={{ fontSize: 13, color: T.sub, marginBottom: 3 }}>🚇 {cafe.mrt}</div>}
         <div style={{ fontSize: 13, color: T.sub, marginBottom: 12 }}>📍 {cafe.address}</div>
         {cafe.open_time && <div style={{ fontSize: 13, color: T.text, marginBottom: 8 }}>🕐 {cafe.open_time}</div>}
@@ -1524,11 +1533,6 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport }) => {
           </div>
         )}
 
-        {cafe.url && (
-          <a href={cafe.url} target="_blank" rel="noreferrer" style={{ display: "block", background: T.green, color: "#fff", borderRadius: 10, padding: "12px", textAlign: "center", textDecoration: "none", fontSize: 14, fontWeight: 700, marginBottom: 10 }}>
-            🔗 前往官網
-          </a>
-        )}
         {cafe.address && (
           <a
             href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${cafe.name} ${cafe.address}`)}`}
