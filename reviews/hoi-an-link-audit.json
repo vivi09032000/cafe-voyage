@@ -1,0 +1,119 @@
+[
+  {
+    "name": "Hub Hoi An Coworking",
+    "address": "98 Lê Thánh Tông, An Mỹ, Cẩm Châu, Hội An, Quảng Nam, Vietnam",
+    "url": "https://new.hubhoian.com/",
+    "status": 200,
+    "location": "",
+    "checked_at": "2026-04-03T07:59:53.691Z",
+    "audit": {
+      "category": "ok",
+      "reason": "HTTP 200",
+      "severity": "low"
+    }
+  },
+  {
+    "name": "Hoi An Roastery - Lê Lợi",
+    "address": "47 Lê Lợi, Minh An, Hội An, Quảng Nam 560000, Vietnam",
+    "url": "https://www.hoianroastery.com/",
+    "status": 301,
+    "location": "https://hoianroastery.com/",
+    "checked_at": "2026-04-03T07:59:54.762Z",
+    "audit": {
+      "category": "ok",
+      "reason": "Redirects to https://hoianroastery.com/",
+      "severity": "low"
+    }
+  },
+  {
+    "name": "Sound Of Silence Coffee Shop",
+    "address": "40 Nguyễn Phan Vinh, Cẩm An, Hội An, Quảng Nam 560000, Vietnam",
+    "url": "https://soundofsilencecoffee.business.site/?utm_source=gmb&utm_medium=referral",
+    "status": 404,
+    "location": "",
+    "checked_at": "2026-04-03T07:59:54.980Z",
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "URL returned HTTP 404",
+      "severity": "high"
+    }
+  },
+  {
+    "name": "Buttercup by Rosie's Cafe",
+    "address": "12/9 Bạch Đằng, Cẩm Châu, Hội An, Quảng Nam 560000, Vietnam",
+    "url": "https://buttercuphoian.com/",
+    "status": 302,
+    "location": "https://buttercuphoian.com/cgi-sys/suspendedpage.cgi",
+    "checked_at": "2026-04-03T07:59:55.149Z",
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Website redirects to suspended hosting page",
+      "severity": "high"
+    }
+  },
+  {
+    "name": "Dudu Cafe",
+    "address": "11 Trần Phú, Minh An, Hội An, Quảng Nam 560000, Vietnam",
+    "url": "https://www.facebook.com/duducafe1",
+    "status": 200,
+    "location": "",
+    "checked_at": "2026-04-03T07:59:55.673Z",
+    "audit": {
+      "category": "ok",
+      "reason": "HTTP 200",
+      "severity": "low"
+    }
+  },
+  {
+    "name": "Faifo Coffee",
+    "address": "130 Trần Phú, Minh An, Hội An, Quảng Nam, Vietnam",
+    "url": "https://www.facebook.com/Faifocoffee",
+    "status": 200,
+    "location": "",
+    "checked_at": "2026-04-03T07:59:56.001Z",
+    "audit": {
+      "category": "ok",
+      "reason": "HTTP 200",
+      "severity": "low"
+    }
+  },
+  {
+    "name": "Moments Hoi An",
+    "address": "47 Lê Lợi, Minh An, Hội An, Quảng Nam 560000, Vietnam",
+    "url": "https://www.facebook.com/moments.hoian",
+    "status": 200,
+    "location": "",
+    "checked_at": "2026-04-03T07:59:56.301Z",
+    "audit": {
+      "category": "ok",
+      "reason": "HTTP 200",
+      "severity": "low"
+    }
+  },
+  {
+    "name": "Roving ChillHouse",
+    "address": "Đường Nguyễn Trãi, Thanh Tây, Cẩm Châu, Hội An, Quảng Nam, Vietnam",
+    "url": "https://www.facebook.com/RovingChillhouseHoiAn/",
+    "status": 200,
+    "location": "",
+    "checked_at": "2026-04-03T07:59:56.567Z",
+    "audit": {
+      "category": "ok",
+      "reason": "HTTP 200",
+      "severity": "low"
+    }
+  },
+  {
+    "name": "The Little River Cafe",
+    "address": "Thôn Vạn Lăng, Cẩm Thanh, Hội An, Quảng Nam, Vietnam",
+    "url": "https://www.facebook.com/The-Little-RIVER-CAFE-669304489868094/",
+    "status": 301,
+    "location": "https://www.facebook.com/mrtaistours",
+    "checked_at": "2026-04-03T07:59:56.796Z",
+    "audit": {
+      "category": "review",
+      "reason": "Facebook URL redirects to a different page: /mrtaistours",
+      "severity": "medium"
+    }
+  }
+]
