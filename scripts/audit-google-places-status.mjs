@@ -189,8 +189,78 @@ function classify(result) {
   };
 }
 
+function escapeCell(value) {
+  return String(value || "").replace(/\|/g, "\\|").replace(/\n/g, " ").trim();
+}
+
+function rowStatus(row) {
+  return row.details?.businessStatus || row.findPlace?.business_status || "";
+}
+
+function summarize(rows) {
+  const summary = {
+    total: rows.length,
+    ok: 0,
+    suspected_closed: 0,
+    review: 0,
+    permanently_closed: 0,
+    temporarily_closed: 0,
+    no_candidate: 0,
+    api_issues: 0,
+    no_status: 0,
+  };
+
+  for (const row of rows) {
+    summary[row.audit.category] += 1;
+    const status = rowStatus(row);
+    if (status === "CLOSED_PERMANENTLY") summary.permanently_closed += 1;
+    if (status === "CLOSED_TEMPORARILY") summary.temporarily_closed += 1;
+    if (row.audit.reason === "No Google Places candidate found") summary.no_candidate += 1;
+    if (row.audit.reason.includes("denied") || row.audit.reason.includes("failed") || row.audit.reason.includes("limit")) {
+      summary.api_issues += 1;
+    }
+    if (row.audit.reason === "Google Places returned no business status") summary.no_status += 1;
+  }
+
+  return summary;
+}
+
+function pushTable(lines, headers, rows) {
+  if (!rows.length) {
+    lines.push("無。", "");
+    return;
+  }
+
+  lines.push(`| ${headers.join(" | ")} |`);
+  lines.push(`| ${headers.map(() => "---").join(" | ")} |`);
+  for (const row of rows) {
+    lines.push(`| ${row.map(escapeCell).join(" | ")} |`);
+  }
+  lines.push("");
+}
+
 function toMarkdown(label, rows) {
-  const flagged = rows.filter((row) => row.audit.category !== "ok");
+  const summary = summarize(rows);
+  const permanentlyClosed = rows
+    .filter((row) => row.audit.category === "suspected_closed")
+    .sort((a, b) => a.name.localeCompare(b.name, "zh-Hant"));
+  const temporarilyClosed = rows
+    .filter((row) => row.audit.reason === "Google Places businessStatus = CLOSED_TEMPORARILY")
+    .sort((a, b) => a.name.localeCompare(b.name, "zh-Hant"));
+  const noCandidate = rows
+    .filter((row) => row.audit.reason === "No Google Places candidate found")
+    .sort((a, b) => a.name.localeCompare(b.name, "zh-Hant"));
+  const apiIssues = rows
+    .filter((row) =>
+      row.audit.reason.includes("denied") ||
+      row.audit.reason.includes("failed") ||
+      row.audit.reason.includes("limit")
+    )
+    .sort((a, b) => a.name.localeCompare(b.name, "zh-Hant"));
+  const noStatus = rows
+    .filter((row) => row.audit.reason === "Google Places returned no business status")
+    .sort((a, b) => a.name.localeCompare(b.name, "zh-Hant"));
+
   const lines = [
     `# ${label} Google Places Closure Review`,
     "",
@@ -198,78 +268,135 @@ function toMarkdown(label, rows) {
     "",
     "Google Places was used as the primary signal for closure review.",
     "",
-    "Per Google documentation, `business_status` may return `OPERATIONAL`, `CLOSED_TEMPORARILY`, or `CLOSED_PERMANENTLY`, and Place Details (New) can also indicate if a closed place has moved.",
+    "這份報表已經改成 review-friendly 版本：先看總覽，再分成幾個需要人工確認的群組。",
     "",
-    "## Flagged For Review",
+    "## 總覽",
+    "",
+    `- 總店數：${summary.total}`,
+    `- Google 判定仍在營業：${summary.ok}`,
+    `- 疑似永久歇業：${summary.permanently_closed}`,
+    `- 疑似暫停營業：${summary.temporarily_closed}`,
+    `- 找不到 Google Places 候選：${summary.no_candidate}`,
+    `- API / 權限 / 配額問題：${summary.api_issues}`,
+    `- Google 有回店家但沒有 business status：${summary.no_status}`,
+    "",
+    "## 1. 疑似永久歇業",
     "",
   ];
 
-  if (!flagged.length) {
-    lines.push("No suspicious cafes found in this run.", "");
-  } else {
-    for (const row of flagged) {
-      lines.push(`### ${row.name}`);
-      lines.push(`- Address: ${row.address || "N/A"}`);
-      lines.push(`- Finding: ${row.audit.reason}`);
-      lines.push(`- Source URL: ${row.url || "N/A"}`);
-      if (row.findPlace?.place_id) lines.push(`- Google Place ID: ${row.findPlace.place_id}`);
-      if (row.findPlace?.formatted_address) lines.push(`- Google matched address: ${row.findPlace.formatted_address}`);
-      if (row.details?.googleMapsUri) lines.push(`- Google Maps: ${row.details.googleMapsUri}`);
-      if (row.details?.movedPlaceId) lines.push(`- Moved place ID: ${row.details.movedPlaceId}`);
-      lines.push("");
-    }
-  }
+  pushTable(
+    lines,
+    ["店名", "資料地址", "Google 比對地址", "狀態", "Google Maps"],
+    permanentlyClosed.map((row) => [
+      row.name,
+      row.address || "",
+      row.findPlace?.formatted_address || "",
+      rowStatus(row),
+      row.details?.googleMapsUri || "",
+    ])
+  );
 
-  lines.push("## Full Summary", "");
-  for (const row of rows) {
-    lines.push(`- ${row.name}: ${row.audit.category} (${row.audit.reason})`);
-  }
-  lines.push("");
+  lines.push("## 2. 疑似暫停營業", "");
+  pushTable(
+    lines,
+    ["店名", "資料地址", "Google 比對地址", "狀態", "Google Maps"],
+    temporarilyClosed.map((row) => [
+      row.name,
+      row.address || "",
+      row.findPlace?.formatted_address || "",
+      rowStatus(row),
+      row.details?.googleMapsUri || row.findPlace?.google_maps_uri || "",
+    ])
+  );
+
+  lines.push("## 3. 找不到 Google 候選", "");
+  pushTable(
+    lines,
+    ["店名", "資料地址", "來源網址", "原因"],
+    noCandidate.map((row) => [
+      row.name,
+      row.address || "",
+      row.url || "",
+      row.audit.reason,
+    ])
+  );
+
+  lines.push("## 4. API / 權限 / 配額問題", "");
+  pushTable(
+    lines,
+    ["店名", "資料地址", "來源網址", "原因"],
+    apiIssues.map((row) => [
+      row.name,
+      row.address || "",
+      row.url || "",
+      row.audit.reason,
+    ])
+  );
+
+  lines.push("## 5. Google 有回店家但沒有 business status", "");
+  pushTable(
+    lines,
+    ["店名", "資料地址", "Google 比對地址", "Google Maps"],
+    noStatus.map((row) => [
+      row.name,
+      row.address || "",
+      row.findPlace?.formatted_address || "",
+      row.details?.googleMapsUri || row.findPlace?.google_maps_uri || "",
+    ])
+  );
 
   return lines.join("\n");
 }
 
 async function main() {
   const target = process.argv[2] || "hoi-an";
+  const renderOnly = process.argv.includes("--render-only");
   const dataset = DATASETS[target];
   if (!dataset) {
     throw new Error(`Unsupported target: ${target}`);
   }
 
-  const apiKey = await getApiKey();
-  const cafes = await dataset.loadCafes();
-  const rows = [];
+  let rows = [];
 
-  for (const cafe of cafes) {
-    let result = {
-      id: cafe.id,
-      name: cafe.name,
-      address: cafe.address,
-      url: cafe.url || "",
-      findPlace: null,
-      details: null,
-    };
+  if (renderOnly) {
+    rows = JSON.parse(await readFile(dataset.outputJson, "utf8"));
+  } else {
+    const apiKey = await getApiKey();
+    const cafes = await dataset.loadCafes();
 
-    try {
-      const findPlace = await searchPlace(apiKey, cafe);
-      result.findPlace = findPlace;
-      if (findPlace?.place_id && findPlace.business_status === "CLOSED_PERMANENTLY") {
-        result.details = await getPlaceDetails(apiKey, findPlace.place_id);
+    for (const cafe of cafes) {
+      let result = {
+        id: cafe.id,
+        name: cafe.name,
+        address: cafe.address,
+        url: cafe.url || "",
+        findPlace: null,
+        details: null,
+      };
+
+      try {
+        const findPlace = await searchPlace(apiKey, cafe);
+        result.findPlace = findPlace;
+        if (findPlace?.place_id && findPlace.business_status === "CLOSED_PERMANENTLY") {
+          result.details = await getPlaceDetails(apiKey, findPlace.place_id);
+        }
+      } catch (error) {
+        result.error = error.message || String(error);
       }
-    } catch (error) {
-      result.error = error.message || String(error);
+
+      result.audit = classify(result);
+      rows.push(result);
+      if (rows.length % 50 === 0) {
+        console.log(`Progress ${rows.length}/${cafes.length}`);
+      }
+      await sleep(120);
     }
 
-    result.audit = classify(result);
-    rows.push(result);
-    if (rows.length % 50 === 0) {
-      console.log(`Progress ${rows.length}/${cafes.length}`);
-    }
-    await sleep(120);
+    await mkdir(new URL("../reviews/", import.meta.url), { recursive: true });
+    await writeFile(dataset.outputJson, `${JSON.stringify(rows, null, 2)}\n`);
   }
 
   await mkdir(new URL("../reviews/", import.meta.url), { recursive: true });
-  await writeFile(dataset.outputJson, `${JSON.stringify(rows, null, 2)}\n`);
   await writeFile(dataset.outputMd, toMarkdown(dataset.label, rows));
 
   const flagged = rows.filter((row) => row.audit.category !== "ok");
