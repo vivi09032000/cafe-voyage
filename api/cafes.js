@@ -14,6 +14,45 @@ async function readHoiAnFallback() {
   return JSON.parse(raw);
 }
 
+let taipeiReviewCache = null;
+
+async function readTaipeiClosureReview() {
+  if (taipeiReviewCache) return taipeiReviewCache;
+  const raw = await readFile(new URL("../reviews/taipei-google-places-status.json", import.meta.url), "utf8");
+  const rows = JSON.parse(raw);
+  const permanentlyClosedIds = new Set();
+  const temporarilyClosedIds = new Set();
+
+  for (const row of rows) {
+    if (row.audit?.reason === "Google Places businessStatus = CLOSED_PERMANENTLY") {
+      permanentlyClosedIds.add(row.id);
+    } else if (row.audit?.reason === "Google Places businessStatus = CLOSED_TEMPORARILY") {
+      temporarilyClosedIds.add(row.id);
+    }
+  }
+
+  taipeiReviewCache = { permanentlyClosedIds, temporarilyClosedIds };
+  return taipeiReviewCache;
+}
+
+async function applyTaipeiClosureReview(cafes, normalizedCity) {
+  if (!Array.isArray(cafes) || cafes.length === 0) return cafes;
+  if (normalizedCity && normalizedCity !== "taipei") return cafes;
+
+  const { permanentlyClosedIds, temporarilyClosedIds } = await readTaipeiClosureReview();
+
+  return cafes
+    .filter((cafe) => !permanentlyClosedIds.has(cafe.id))
+    .map((cafe) => {
+      if (!temporarilyClosedIds.has(cafe.id)) return cafe;
+      return {
+        ...cafe,
+        google_business_status: "CLOSED_TEMPORARILY",
+        google_business_note: "Google 顯示暫停營業",
+      };
+    });
+}
+
 async function fetchCustomCafes(cityKey) {
   const url = new URL(`${SUPABASE_URL}/rest/v1/custom_cafes`);
   url.searchParams.set("select", "id,slug,name,city,wifi,seat,quiet,tasty,cheap,music,url,address,latitude,longitude,limited_time,socket,standing_desk,mrt,open_time,country_code,country_name,city_key,city_label");
@@ -77,7 +116,8 @@ export default async function handler(req, res) {
     ? `https://cafenomad.tw/api/v1.2/cafes/${city}`
     : 'https://cafenomad.tw/api/v1.2/cafes';
   const response = await fetch(endpoint);
-  const data = await response.json();
+  let data = await response.json();
+  data = await applyTaipeiClosureReview(data, normalizedCity);
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.json(data);
 }

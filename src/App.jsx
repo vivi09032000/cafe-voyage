@@ -156,6 +156,13 @@ const socketTag = (v) => {
   return null;
 };
 
+const temporaryClosureTag = (cafe) => {
+  if (cafe.google_business_status === "CLOSED_TEMPORARILY") {
+    return <Tag label="⏸ 暫停營業" type="amber" />;
+  }
+  return null;
+};
+
 // ── Crowd helpers ──
 const crowdTagFromIds = (cafeId, emptyCafeIds) => {
   if (emptyCafeIds && emptyCafeIds.has && emptyCafeIds.has(cafeId)) {
@@ -701,6 +708,7 @@ const CafeCard = ({ cafe, onClick, fav, onFav, emptyCafeIds }) => (
       )}
 
       <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
+        {temporaryClosureTag(cafe)}
         {limitedTag(cafe.limited_time)}
         {socketTag(cafe.socket)}
         {crowdTagFromIds(cafe.id, emptyCafeIds)}
@@ -1286,6 +1294,7 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
                   {c.mrt && <div style={{ fontSize: 11, color: T.sub, marginBottom: 2 }}>🚇 {c.mrt}</div>}
                   <div style={{ fontSize: 11, color: T.sub, marginBottom: 6 }}>📍 {c.address}</div>
                   <div style={{ display: "flex", gap: 4, flexWrap: "wrap", marginBottom: 10 }}>
+                    {temporaryClosureTag(c)}
                     {c.wifi > 0 && <span style={{ fontSize: 11, background: T.beige, borderRadius: 10, padding: "2px 7px" }}>📶 {c.wifi.toFixed(1)}</span>}
                     {c.quiet > 0 && <span style={{ fontSize: 11, background: T.beige, borderRadius: 10, padding: "2px 7px" }}>🔇 {c.quiet.toFixed(1)}</span>}
                     {c.limited_time === "no" && <span style={{ fontSize: 11, background: T.green, color: "#fff", borderRadius: 10, padding: "2px 7px" }}>✓ 不限時</span>}
@@ -1509,11 +1518,13 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport }) => {
         </div>
         {cafe.mrt && <div style={{ fontSize: 13, color: T.sub, marginBottom: 3 }}>🚇 {cafe.mrt}</div>}
         <div style={{ fontSize: 13, color: T.sub, marginBottom: 12 }}>📍 {cafe.address}</div>
+        {cafe.google_business_note && <div style={{ fontSize: 13, color: "#b7791f", marginBottom: 8, fontWeight: 600 }}>⏸ {cafe.google_business_note}</div>}
         {cafe.open_time && <div style={{ fontSize: 13, color: T.text, marginBottom: 8 }}>🕐 {cafe.open_time}</div>}
 
         <CrowdReport cafeId={cafe.id} onReport={onReport} />
 
         <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 20 }}>
+          {temporaryClosureTag(cafe)}
           {limitedTag(cafe.limited_time)}
           {socketTag(cafe.socket)}
           {cafe.standing_desk === "yes" && <Tag label="站立桌" type="gray" />}
