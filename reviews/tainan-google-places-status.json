@@ -1,0 +1,4575 @@
+[
+  {
+    "id": "002bfe32-e3d4-4abe-9eae-53377bc161f4",
+    "name": "CALM Ice Workshop-冷靜工作坊",
+    "address": "台南市永康區新民街11號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJlQVFxCl3bjQR7d-ZFibY9Y8",
+      "name": "CALM Ice Workshop-冷靜工作坊(手作冰品）",
+      "formatted_address": "新民街11號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "013fea91-2d05-4e67-b961-ac9e0659ec08",
+    "name": "性格咖啡",
+    "address": "台南市北區成功路68巷4-5號",
+    "url": "https://www.facebook.com/Singletoast/",
+    "findPlace": {
+      "place_id": "ChIJzT9C8op2bjQRQE5LahQxNP8",
+      "name": "性格",
+      "formatted_address": "成功路68巷4-5號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0226048a-f553-4689-a131-4f9caff1e34f",
+    "name": "192手工咖啡",
+    "address": "台南市東區育樂街117巷13號",
+    "url": "https://www.facebook.com/192coffee/",
+    "findPlace": {
+      "place_id": "ChIJiQ9SSER3bjQRzJCxmu6kots",
+      "name": "192手工咖啡(手沖、自家手網烘焙、精品咖啡、單品咖啡、咖啡豆)",
+      "formatted_address": "育樂街117巷13號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0299f482-86b6-47f9-a718-ef82cdb8434c",
+    "name": "緩緩咖啡",
+    "address": "台南市東區東光路二段86號",
+    "url": "https://www.facebook.com/easecoffee0205",
+    "findPlace": {
+      "place_id": "ChIJRbJAiKJ3bjQR0SnBVceC3gc",
+      "name": "緩緩咖啡 Ease Coffee_極淺專門",
+      "formatted_address": "東光路二段86號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0393ba9b-553f-445f-aa9f-6cd197ee8ff1",
+    "name": "Panorama Caffe",
+    "address": "704 台南市北區南園街2號",
+    "url": "https://www.facebook.com/Panorama-Caffe-1800994453522595/",
+    "findPlace": {
+      "place_id": "ChIJoZaAE-Z2bjQRIe82u2wyF3U",
+      "name": "Panorama caffe 4月2、3號 店休（因為座位數不多，計畫前來時，也可以撥通電話確認座位情況，才不會多跑一趟。 麻煩大家了，謝謝。）",
+      "formatted_address": "南園街2號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "06867ea9-b509-43e9-8a51-defbef877721",
+    "name": "findcoffee 找咖啡",
+    "address": "台南市佳里區平等街183號",
+    "url": "https://www.facebook.com/findcoffee183/",
+    "findPlace": {
+      "place_id": "ChIJ2TNIprR4bjQRUMF7HG5OoiE",
+      "name": "找咖啡 (不定時公休，詳細請看FB專頁)",
+      "formatted_address": "平等街183號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "073354ca-6914-4245-ae3c-d1231d62cfd1",
+    "name": "西門洋行",
+    "address": "台南市西門路一段607號3F",
+    "url": "https://www.facebook.com/simen.cafe/",
+    "findPlace": {
+      "place_id": "ChIJRfHvtH52bjQRP0FCjIP8QWk",
+      "name": "西門洋行",
+      "formatted_address": "704臺南市北區西門路四段33巷24號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0769bba0-7c81-48ca-bf37-da4daf056e1a",
+    "name": "湠咖啡",
+    "address": "台南市學甲區中正路225號",
+    "url": "https://www.facebook.com/thuanncoffee/",
+    "findPlace": {
+      "place_id": "ChIJa5mPx-d_bjQRvZ8okDEH2o4",
+      "name": "湠咖啡 Thuann Coffee",
+      "formatted_address": "中正路225號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "086e90bb-5f6d-449d-9fa8-31726f60eb32",
+    "name": "頑童主義咖啡Stand-Up Shop",
+    "address": "70245台南市南區西門路一段269號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJr-le8fF3bjQRf3tVzgt8mms",
+      "name": "DasKind頑童主義咖啡",
+      "formatted_address": "西門路一段269號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0ace13d8-bb5a-485d-af29-d1d21a5918b4",
+    "name": "橋上看書(bRidge+)",
+    "address": "台南市東區勝利路52巷13號",
+    "url": "https://www.facebook.com/bridgeplus2012/",
+    "findPlace": {
+      "place_id": "ChIJs3SPkZF2bjQRcMOkqrkYpkE",
+      "name": "橋上看書bRidge+",
+      "formatted_address": "勝利路52巷13號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0acf29bc-46ff-4671-a370-710286b0101f",
+    "name": "黑羊咖啡",
+    "address": "台南市永福路一段五號",
+    "url": "https://www.facebook.com/%E9%BB%91%E7%BE%8A%E5%92%96%E5%95%A1-537527469747930/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJk2MAwHZ3bjQRlWXlNH2hiXU",
+      "name": "Django 決哥手烘咖啡吧-永福店",
+      "formatted_address": "700臺南市中西區永福路一段90號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0b048887-f048-4fd6-a4f3-c0813aa71eb1",
+    "name": "FOR YOU espresso 為你·煮咖啡",
+    "address": "701台南市東區長榮路三段66巷62-1號",
+    "url": "https://www.facebook.com/foryouespresso/",
+    "findPlace": {
+      "place_id": "ChIJyXLzbZR2bjQRxhXiCn2V8M4",
+      "name": "For you espresso 為你·煮咖啡",
+      "formatted_address": "長榮路三段66巷62-1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0b317028-3a83-4aed-b70f-744e3ad42f1e",
+    "name": " 1982 de glacée 法式冰淇淋",
+    "address": "700台灣台南市中西區永福路一段68巷9號",
+    "url": "https://www.facebook.com/pg/1982eco/about/?ref=page_internal",
+    "findPlace": {
+      "place_id": "ChIJA0JNFHx2bjQRrTlEApZmHGs",
+      "name": "1982 de glacée 法式冰淇淋",
+      "formatted_address": "永福路一段68巷9號1樓",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "0c44ed70-2904-48ce-84ef-881c261e9d35",
+    "name": "貓門Cafe Moment",
+    "address": "台南市北區南園街87號1樓",
+    "url": "https://www.facebook.com/MaoMenCafeMoment/",
+    "findPlace": {
+      "place_id": "ChIJUUmjCGd2bjQRdMKGKrBic_k",
+      "name": "貓門珈琲",
+      "formatted_address": "700臺南市中西區信義街46巷17號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0e3f6083-bd9b-4800-840d-670a90f4bec1",
+    "name": "豐咖啡 安平店",
+    "address": "70846台南市安平區健康二街508號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJf6R7dKF3bjQRd_LpyK6orr8",
+      "name": "唯享咖啡（原豐咖啡 安平店）",
+      "formatted_address": "508號, No. 508健康二街安平區臺南市70846",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0ec8d078-0012-4389-9b5a-d36ca148802b",
+    "name": "大風堂",
+    "address": "台南市東和路159巷29號",
+    "url": "https://www.facebook.com/DAFONGTANG/",
+    "findPlace": {
+      "place_id": "ChIJT0a05jx3bjQRLMD5YhVoZN0",
+      "name": "一風堂 台南南紡店",
+      "formatted_address": "701臺南市東區中華東路一段358號南紡購物中心A2館1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0ee0fe9c-327f-4fa8-b930-40f526de4ada",
+    "name": "棧留咖啡小館",
+    "address": "台南市安南區本原街2段32號",
+    "url": "https://www.facebook.com/stayinn.coffee.tw/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJg9QApZF3bjQRAnD-m6zo34Y",
+      "name": "棧留咖啡小館",
+      "formatted_address": "本原街二段32號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "10809e7c-f711-4ba8-a48d-3a66f8f1ee3b",
+    "name": "路易莎咖啡永康分店",
+    "address": "台南市永康區中華二路365號",
+    "url": "https://www.facebook.com/%E8%B7%AF%E6%98%93%E8%8E%8ELouisa-coffee%E4%B9%8B%E5%8F%B0%E5%8D%97%E6%B0%B8%E5%BA%B7%E5%BA%97-117941595272468/",
+    "findPlace": {
+      "place_id": "ChIJ6QpO79x2bjQR4WYEjdR5gk4",
+      "name": "Louisa Coffee 路易莎咖啡(台南永康門市)",
+      "formatted_address": "中華二路365號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "12d05d89-b572-4912-8b35-d42f3ebe6407",
+    "name": "肥貓咖啡",
+    "address": "台南市中西區神農街135號",
+    "url": "https://www.facebook.com/fatcatcoffee135/",
+    "findPlace": {
+      "place_id": "ChIJHXp5dGZ2bjQRNApIA6L9V6s",
+      "name": "肥貓咖啡",
+      "formatted_address": "神農街135號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "13a7a35d-f212-482e-a021-5bf3c2347e0c",
+    "name": "街頭咖啡Street Cafe 民生店 ",
+    "address": "台南市中西區新美街7號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ14yxhGN2bjQRjDSRX37kJjI",
+      "name": "街頭咖啡 Street Cafe 民生店 中西區 咖啡",
+      "formatted_address": "新美街7號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "1404d099-8a85-41b7-8cec-2ad4f7dbcf3f",
+    "name": "THE YUAN 東興店",
+    "address": "701台南市東區東興路13號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJAVwm0Vx3bjQRLzu_ihQeRUM",
+      "name": "THE YUAN 東興店（無訂位）",
+      "formatted_address": "東興路13號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "142ba05b-8c7e-45f0-8002-0a1e82969283",
+    "name": "Lefty's Cafe 左撇子咖啡吧",
+    "address": "台南市民族路三段289號",
+    "url": "https://www.facebook.com/leftyscoffeetogo/",
+    "findPlace": {
+      "place_id": "ChIJz1Any2h2bjQRxJzckeL6xjg",
+      "name": "Lefty's Cafe左撇子外帶咖啡吧",
+      "formatted_address": "民族路三段289號後車庫",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "15bab905-9502-415c-a3ec-bc6e25222465",
+    "name": "雷巴咖啡烘焙道場",
+    "address": "701台南市東區長榮路一段186號1樓",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ38Y89013bjQRXALcsesHTuE",
+      "name": "雷巴咖啡烘焙道場 I 山形外帶店 I 溫度手沖 I 療癒拿鐵 I 冠軍風味 I 專營咖啡豆 I 咖啡濾掛包",
+      "formatted_address": "710臺南市永康區小東路423巷16-3號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "1696a0cc-6538-4c6c-80f4-06bd24dae30f",
+    "name": "Bobosa Coffee",
+    "address": "台南市北區小東路321號",
+    "url": "https://www.facebook.com/bobosa.coffee.tainan.com.tw/",
+    "findPlace": {
+      "place_id": "ChIJiZ8_psF2bjQREyws05mDpho",
+      "name": "Bobosa Coffee",
+      "formatted_address": "小東路321號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "17471888-4833-4644-b6aa-2de0062f254f",
+    "name": "虫二咖啡",
+    "address": "台南市東區長榮路一段101號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJAX0JRpt2bjQR-aOiLXeXKEg",
+      "name": "where café 大眾建築講座及大人的畫畫課持續舉辦",
+      "formatted_address": "長榮路一段101號紅色拱門兩邊樓梯走下來就可以看到我們B1樓",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "19e23eed-3301-49ae-9594-3661bceabdfa",
+    "name": "歐塔克ottag caf'e手作烘焙咖啡館",
+    "address": "台南市安平區華平路726號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJx_VshxF2bjQRdemuWSoNsO0",
+      "name": "歐塔克手作咖啡烘焙館",
+      "formatted_address": "華平路726號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "1d704f83-3988-4d21-801a-5640673117f0",
+    "name": "ARA  coffee co",
+    "address": "台南市安平區 健康三街107巷7號旁貨櫃屋",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJPwO1BsF5bjQR2CljT0afV78",
+      "name": "橘子河貨櫃咖啡",
+      "formatted_address": "709臺南市安南區東和里",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "1f824006-d6e2-45d1-9ae5-df920eaef452",
+    "name": "鉄工咖啡館/千層蛋糕",
+    "address": "701台南市東區裕豐街105號",
+    "url": "https://www.facebook.com/strongironcoffee",
+    "findPlace": {
+      "place_id": "ChIJXUoMwG53bjQR8YC-4491sYE",
+      "name": "鉄工咖啡館（千層專賣店）營業資訊請洽IG 臉書）",
+      "formatted_address": "900屏東縣屏東市和平路320號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "226c23dd-fe32-4f1f-90b8-6ec5d0ef04ea",
+    "name": "農林咖啡",
+    "address": "台南市麻豆區麻口里10之13號",
+    "url": "https://www.facebook.com/nonglincafe/",
+    "findPlace": {
+      "place_id": "ChIJVeQ2u-1-bjQR1YLzgYGlz2Y",
+      "name": "新農林檜木｜超跑咖啡 | 台南不限時咖啡廳",
+      "formatted_address": "麻佳路二段2號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "27de2f1b-dfc4-4b0c-a67f-1e8d56dc419d",
+    "name": "金鑛咖啡台南永華店",
+    "address": "台南市永華路一段301號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJVSOiUnF2bjQR-6vEgp00AYw",
+      "name": "金鑛咖啡 台南永華門市",
+      "formatted_address": "永華路一段301號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "29529b23-e8af-4d69-8746-3417dab8968d",
+    "name": "直式咖啡",
+    "address": "台南市西門路二段412-1號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJE1cibWF2bjQRoDbtH_CfyKY",
+      "name": "隱誘咖啡",
+      "formatted_address": "2樓, No. 186號新美街",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "2a4974e9-5a59-4a55-a1d4-e80cdbc7c9a7",
+    "name": "安徒生咖啡館",
+    "address": "台南市北區東豐路249號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJWdDgpu52bjQRdZ8_c1hV_nE",
+      "name": "安徒生咖啡館",
+      "formatted_address": "東豐路249號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "2ad64a26-9790-4be3-a096-9928ae081488",
+    "name": "卡加米亞casamia cafe",
+    "address": "台南市中西區西門路二段426號",
+    "url": "https://www.facebook.com/casamiacafe",
+    "findPlace": {
+      "place_id": "ChIJQVhy5GB2bjQRbCKCXlnzXX0",
+      "name": "卡加米亞casamia cafe",
+      "formatted_address": "西門路二段426號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "2b28b2db-f915-4b92-9daf-68d9a8480c25",
+    "name": "月光咖啡廳",
+    "address": "台南巿東區崇明路405號2樓",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ42hH6CB0bjQRIFnTDSznrzM",
+      "name": "里仁-台南崇明店",
+      "formatted_address": "崇明路405號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "2b8aabc9-49aa-4bb7-9483-8606de48f5c5",
+    "name": "A WEEK",
+    "address": "台南市中西區武德街22-1號",
+    "url": "https://www.facebook.com/AWEEKcoffeepancake/",
+    "findPlace": {
+      "place_id": "ChIJkdX3Iol2bjQRoMKvWcajNuE",
+      "name": "A WEEK pancake 乳酪小鬆餅 & 美式鬆餅.早午餐",
+      "formatted_address": "武德街22-1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "2c1833e5-aff3-4489-81c2-369ae4509dde",
+    "name": "Caf'e Duet",
+    "address": "台南市健康路一段113巷66號",
+    "url": "https://www.facebook.com/cafeduet/",
+    "findPlace": null,
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "No Google Places candidate found"
+    }
+  },
+  {
+    "id": "2c252b48-0e1c-4dce-914d-6e1cbacdf722",
+    "name": "兩倆",
+    "address": "台南市中西區信義街100號",
+    "url": "https://www.facebook.com/2liang/",
+    "findPlace": {
+      "place_id": "ChIJ10wuSmZ2bjQRv2exeQWeisU",
+      "name": "目栮",
+      "formatted_address": "信義街59號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "2d43783e-f5b0-45f8-868e-feff37129460",
+    "name": "More Cafe, 摩爾咖啡. 摩爾先生咖啡館",
+    "address": "台南市中西區赤嵌街47號",
+    "url": "https://www.facebook.com/HelloMoreCafe/",
+    "findPlace": {
+      "place_id": "ChIJo2hCqWF2bjQRNNIl3BeBi40",
+      "name": "More Cafe",
+      "formatted_address": "赤嵌街47號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "2d8ab165-5299-4116-9ea9-28e9a6a654ce",
+    "name": "PEKOPEKO",
+    "address": "700台南市中西區民生路一段132巷5號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJe6t-mGN2bjQRn4ZcBDyj4E0",
+      "name": "PEKO PEKO",
+      "formatted_address": "民生路一段132巷5號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "2f91200e-4c1f-4168-8982-6d89d032b132",
+    "name": "深作咖啡",
+    "address": "台南市中西區民權路二段231號",
+    "url": "https://www.facebook.com/%E6%B7%B1%E4%BD%9Ccafe-139303346276286/",
+    "findPlace": {
+      "place_id": "ChIJWSMFxmN2bjQRwpKdZbf5DL4",
+      "name": "深作cafe'",
+      "formatted_address": "民權路二段231號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "2feadb1c-9cb4-4bfd-ae62-4f2d9ad91e65",
+    "name": "bib pancake",
+    "address": "台南市開山路106號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJN91L2Yd2bjQRp5IgpXpeci0",
+      "name": "bibi pancake（營業時間以fb公告為主）",
+      "formatted_address": "700臺南市中西區開山路106號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "300e5387-883a-41a1-9476-0ffe939bb758",
+    "name": "橘舍",
+    "address": "中西區中正路108巷1號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJoTW1XWN2bjQRcU3McBVT2Xs",
+      "name": "橘舍咖啡(結束店面營業)",
+      "formatted_address": "700臺南市中西區中正路108巷1號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "3100ca44-d52a-4186-abd3-77ea4ecac858",
+    "name": "蔬食樂 初始店",
+    "address": "台南市東區東平路61號",
+    "url": "https://www.facebook.com/SoothRoadoriginal/",
+    "findPlace": {
+      "place_id": "ChIJfd1eZL92bjQR8zXpti2a6D4",
+      "name": "蔬食樂 初始店 SoothRoad Original",
+      "formatted_address": "東平路61號2-3樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "32060f39-d4a1-4f62-8c54-59af9ebdf4f0",
+    "name": "哈本咖啡Happen Coffee",
+    "address": "台南市東區長榮路三段3號2F",
+    "url": "https://www.facebook.com/Happencoffee/",
+    "findPlace": {
+      "place_id": "ChIJsUQyWat3bjQRtgaCqgkAFek",
+      "name": "哈本咖啡",
+      "formatted_address": "701臺南市東區長榮路三段3號二樓",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "32c59c93-3150-438d-b0ba-f53ffe91475b",
+    "name": "M2 coffee shop 崇德店",
+    "address": "701台南市東區崇德路616號",
+    "url": "",
+    "findPlace": null,
+    "details": null,
+    "error": "fetch failed",
+    "audit": {
+      "category": "review",
+      "reason": "fetch failed"
+    }
+  },
+  {
+    "id": "33c277d3-09fd-41f6-9083-b04e6e22d12e",
+    "name": "華莎咖啡",
+    "address": "台南市東區富農街一段131巷24-1號1樓",
+    "url": "https://www.facebook.com/warszawa.cafe/",
+    "findPlace": {
+      "place_id": "ChIJv3OYgqR2bjQRldb16qJNmFs",
+      "name": "華莎咖啡",
+      "formatted_address": "富農街一段131巷24-1號1樓",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "33e698ab-8cde-4ec2-8114-56469a4215b5",
+    "name": "猛男咖啡",
+    "address": "台南市南區大成路一段32號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJUZ-DhtR1bjQR-jDF8z9096Y",
+      "name": "猛男咖啡 大成精品店",
+      "formatted_address": "702臺南市南區大成路一段32號1樓",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "34a25d36-ade6-4c72-a62e-56605af7ff96",
+    "name": "James Cofa",
+    "address": "台南市民族路二段47號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJyUBLYIl2bjQRVDbhnOGO4eQ",
+      "name": "django決哥手烘咖啡吧",
+      "formatted_address": "700臺南市中西區民族路二段63號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "35a2dbbb-ade9-48e1-a17d-82187947c16c",
+    "name": "爖咖啡",
+    "address": "70463台南市北區開元路342巷8弄1號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJjwLN3et3bjQR2z-EfcX5KcI",
+      "name": "爖咖啡（不定休/請見IG公告）",
+      "formatted_address": "開元路342巷8弄1號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "35d335ac-783c-4868-9b4c-30704e28fd83",
+    "name": "CHEFFRESH cafe (南門)",
+    "address": "國立台灣文學館—台南中正路1號（南門路出入口）",
+    "url": "https://www.facebook.com/CHEFFRESH-cafe-133198263358168/",
+    "findPlace": {
+      "place_id": "ChIJZw5zmWJ2bjQRzIm5Cc1G9sU",
+      "name": "CHEFFRESH文學咖啡坊",
+      "formatted_address": "中正路1號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "35d3a55e-5be1-433d-bc11-da73e43250db",
+    "name": "那咖啡",
+    "address": "744台南市新市區信義街5-13",
+    "url": "https://www.facebook.com/nacofe",
+    "findPlace": {
+      "place_id": "ChIJ18HTR1x6bjQR9Pn5qcpm-VI",
+      "name": "那咖啡",
+      "formatted_address": "信義街5號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "380137bf-41d5-46a1-b716-f1e80a2197b5",
+    "name": "村有熊",
+    "address": "台南市永康區中山東路239號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJpV7HGAB3bjQR0f3jKenZr8s",
+      "name": "村有熊咖啡",
+      "formatted_address": "中山東路239號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "38c0c26e-d120-4368-a3cc-90abdb762c0d",
+    "name": "曲屋咖啡",
+    "address": "台南市中西區府緯街82號",
+    "url": "https://www.facebook.com/musichousecoffee/",
+    "findPlace": {
+      "place_id": "ChIJL3ueAnl2bjQRJFtXWPBApXI",
+      "name": "曲屋咖啡府緯店",
+      "formatted_address": "府緯街82號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "38ca249c-df2c-4b71-946b-75924e66ab5c",
+    "name": "Coffee Concept 隱初",
+    "address": "台南市中西區西門路二段365巷5號",
+    "url": "https://m.facebook.com/coffeeconcept01/",
+    "findPlace": {
+      "place_id": "ChIJzWKZpMt3bjQR_cvVURkKUM4",
+      "name": "Coffee Concept |隱初",
+      "formatted_address": "西門路二段365巷5號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "38f5b7d0-3244-42ad-bd44-817c4657c402",
+    "name": "東楓咖啡",
+    "address": "台南市北區東豐路161號",
+    "url": "https://www.facebook.com/dongfongcoffee/",
+    "findPlace": {
+      "place_id": "ChIJdeIEdu52bjQRnPilzsBejp4",
+      "name": "東楓咖啡茶飲",
+      "formatted_address": "東豐路161號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3a410430-abf0-4041-9159-dadac8a0ce99",
+    "name": "歸旅咖啡＠台南安平＠早午餐＠民宿＠Guei Cafe",
+    "address": "台南市安平區建平七街752號",
+    "url": "https://www.facebook.com/gueicafe/",
+    "findPlace": {
+      "place_id": "ChIJL96JUwZ2bjQRBjxHJwLDNtI",
+      "name": "歸旅咖啡（不定期公休, 詳見FB公告",
+      "formatted_address": "建平七街752號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3acf17b5-d5eb-4f21-bf93-2adf661e405a",
+    "name": "恆萃咖啡Coffee Forever",
+    "address": "741台南市善化區民權路37-1號",
+    "url": "https://www.facebook.com/licoffeefoever/",
+    "findPlace": {
+      "place_id": "ChIJX4uqofV9bjQRIZCFAUIYtOs",
+      "name": "NAÜN COFFEE 䛁ㄋㄢˊ䛁咖啡善化千層蛋糕店｜現場無販售整模蛋糕",
+      "formatted_address": "民族路105號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3adc15e4-b824-4a21-a4b4-0726a8aac6f6",
+    "name": "am's food and goods",
+    "address": "台南市北區前鋒路173號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJA8OYn-d3bjQRO4rQcKiEV2I",
+      "name": "IAM澳洲小時光",
+      "formatted_address": "70050臺南市中西區忠義路二段169號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3b653515-6d68-497c-bda0-235140f432a0",
+    "name": "URN Cafe",
+    "address": "台南市中西區臨安路一段97號",
+    "url": "https://www.facebook.com/URNCAFE",
+    "findPlace": {
+      "place_id": "ChIJL4WAvn92bjQRQ2vLCDW9wTY",
+      "name": "URN Cafe 陶甕現烘焙精品咖啡",
+      "formatted_address": "臨安路一段97號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "3d531140-60e1-4194-96c5-c186c0bf0cc6",
+    "name": "順風號",
+    "address": "台南市中西區開山路35巷39弄32號",
+    "url": "https://www.facebook.com/%E9%A0%86%E9%A2%A8%E8%99%9F-337562839689320/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJc159rZx3bjQRenI9GU25mfI",
+      "name": "順風號 Sūn Hong Hō",
+      "formatted_address": "開山路35巷39弄32號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3dba2825-5fbb-4832-a918-f1d8837c2988",
+    "name": "品蓬咖啡Pinpong Coffee",
+    "address": "台南市中西區府前路一段196巷17號",
+    "url": "https://www.facebook.com/pinpongcoffee/",
+    "findPlace": {
+      "place_id": "ChIJnYD8V312bjQRbzFUXyAsR2M",
+      "name": "品蓬咖啡",
+      "formatted_address": "府前路一段196巷17號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3dea5309-ef45-41b0-80be-abb1c147696b",
+    "name": "正興咖啡館",
+    "address": "台南市中西區國華街三段43號",
+    "url": "https://www.facebook.com/zx.cafe",
+    "findPlace": {
+      "place_id": "ChIJ_0-h_2R2bjQRU5PYL1NinHI",
+      "name": "成真咖啡 台南正興店",
+      "formatted_address": "海安路二段78號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3f90aba5-2a6b-4fa8-b102-7a5fd1294031",
+    "name": "Coffee Cafe' 咖啡珈琲",
+    "address": "台南市中西區樹林街二段290號",
+    "url": "https://www.facebook.com/abelCoffeeCafe/",
+    "findPlace": {
+      "place_id": "ChIJLzLbOnx2bjQRYDTWoW1GdJU",
+      "name": "巴黎小餐館",
+      "formatted_address": "700台南市中西区永福路二段146號2樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3facb8a4-f116-47e9-bc29-f2edbfc1fc75",
+    "name": "Smile Elephant 微笑日作菓子",
+    "address": "台南市中西區神農街109號",
+    "url": "https://www.facebook.com/Smile-Elephant-%E5%BE%AE%E7%AC%91%E6%97%A5%E4%BD%9C%E8%8F%93%E5%AD%90-196798317171327/",
+    "findPlace": {
+      "place_id": "ChIJQ_YEeWZ2bjQRU0ziGudvoSQ",
+      "name": "BUTTER ROO 台南神農店 x 花食間 x 寵物友善餐廳 x 神農街美食",
+      "formatted_address": "700臺南市中西區神農街109號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4024b04f-5748-41d5-be34-6ac665e439ea",
+    "name": "席瑪朵珈琲烘焙棧(立賢店)",
+    "address": "台南市北區立賢路一段569號",
+    "url": "https://www.facebook.com/cermado.spirit/",
+    "findPlace": {
+      "place_id": "ChIJYZzPDll2bjQRtViOhGjDvzM",
+      "name": "席瑪朵珈琲烘焙棧",
+      "formatted_address": "立賢路一段569號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "409300b4-9125-4de7-b090-efe4c44bf3a6",
+    "name": "小巷裡的拾壹號",
+    "address": "台南市中西區衛民街143巷11號",
+    "url": "https://www.facebook.com/thealleyno11",
+    "findPlace": {
+      "place_id": "ChIJFU-rqIl2bjQRyyL1zmacA-w",
+      "name": "小巷裡的拾壹號(餐點供應至16:00)",
+      "formatted_address": "衛民街143巷11號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "416e74a2-9c40-4b77-b3ea-6a52b36f538d",
+    "name": "穎可達Incosda Coffee",
+    "address": "台南市東區仁和路37號",
+    "url": "https://www.facebook.com/incosda/",
+    "findPlace": {
+      "place_id": "ChIJe8rTVqsFbjQRP8VeEJ2laaQ",
+      "name": "穎可達咖啡股份有限公司",
+      "formatted_address": "71742臺南市仁德區林頂街5號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "431c4a4f-febf-4c9b-93ba-c99f7b6571e7",
+    "name": "私人藏豆 COFFELLECTION - 永康店",
+    "address": "台南市永康區永平街No. 161號",
+    "url": "https://www.facebook.com/coffellection/",
+    "findPlace": {
+      "place_id": "ChIJYUF1Ic5wbjQRRTuzRStamdk",
+      "name": "私人藏豆-永康店",
+      "formatted_address": "永平街161號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "43a25b9a-a14c-4047-827b-ba23b63133cc",
+    "name": "咖啡基因 Espresso Bar & Specialty Coffee",
+    "address": "台南市中西區府連路132號",
+    "url": "https://www.facebook.com/coffeegenes/",
+    "findPlace": {
+      "place_id": "ChIJae5fAoR2bjQR2JHOO39V72k",
+      "name": "基因咖啡 Espresso Bar & Specialty Coffee",
+      "formatted_address": "府連路127號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "43b2ea21-5cc3-4572-8749-337a7bcd9284",
+    "name": "FuYu cafe'賦于咖啡",
+    "address": "台南市東區長榮路三段76號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJfwFtjpN2bjQRznvF-RENbqI",
+      "name": "賦于咖啡",
+      "formatted_address": "長榮路三段76號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "452784e9-31df-460b-9a8e-e91442902db7",
+    "name": "艾登咖啡館",
+    "address": "台南市中西區成功路437號",
+    "url": "https://www.facebook.com/cafeidentw/",
+    "findPlace": {
+      "place_id": "ChIJQV1vD2d2bjQR1yjMuXnZdZo",
+      "name": "艾登咖啡館 Café IDEN",
+      "formatted_address": "號1樓, No. 437成功路",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "452c1b88-9658-4b38-8751-588fb27d43b7",
+    "name": "辰星咖啡 EstrellaCoffee",
+    "address": "台南市東區府連東路47號",
+    "url": "https://www.facebook.com/EstrellaCoffeeShop/",
+    "findPlace": {
+      "place_id": "ChIJX4jGGZt2bjQRCqodmPpQUOA",
+      "name": "辰星咖啡",
+      "formatted_address": "府連東路47號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "469220ff-8419-4d7e-9f16-f78d93f28952",
+    "name": "鹿耳",
+    "address": "台南市林森路一段153巷19號",
+    "url": "https://www.facebook.com/lurelatelatebreakfast/",
+    "findPlace": {
+      "place_id": "ChIJ-2iLmoR2bjQREdeivWRjL9E",
+      "name": "鹿耳晚晚早餐｜鹿耳夜間部",
+      "formatted_address": "701臺南市東區林森路一段153巷19號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "49e50b1f-510e-40e6-a3f5-29081e15ef66",
+    "name": "KOS CAFE",
+    "address": "702台南市南區健康路一段113巷6號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJZeJEHLJ3bjQRnkW-E4rMlHo",
+      "name": "KOS CAFE",
+      "formatted_address": "健康路一段113巷6號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4a9e0aae-917a-4cb1-8823-4a77323c7caa",
+    "name": "開普三號店",
+    "address": "台南市東區長榮路三段66巷70號",
+    "url": "https://www.facebook.com/%E9%96%8B%E6%99%AE%E4%B8%89%E8%99%9F%E5%BA%97-CAPE-CAFE-3-439555272844579/",
+    "findPlace": {
+      "place_id": "ChIJw9PibZR2bjQR9Vqin19AMIw",
+      "name": "開普三號店",
+      "formatted_address": "長榮路三段66巷70號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "4cd2354f-13f4-43eb-85b3-d9bb9d93bdaf",
+    "name": "Season Cafe",
+    "address": "台南市中西區開山路257號",
+    "url": "https://www.facebook.com/Season.Cafe.257/",
+    "findPlace": {
+      "place_id": "ChIJlWQDhYZ2bjQRplvhUaAn0Nw",
+      "name": "Season Café",
+      "formatted_address": "開山路257號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "4cea08c3-a3ed-4434-bcac-37dd53a8a473",
+    "name": "福米cafe",
+    "address": "台南市中西區西門路一段536號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJWfD5QXl2bjQRKFSrnRLmXkY",
+      "name": "福米cafe",
+      "formatted_address": "西門路一段536號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "4d339dc5-2086-4a2b-b37d-1c6ab5a206cf",
+    "name": "藏風藝文咖啡",
+    "address": "台南市中西區衛民街67號-1",
+    "url": "https://www.facebook.com/TsangFongCoffee/",
+    "findPlace": {
+      "place_id": "ChIJu11IJol2bjQRFCk8_U-CTZk",
+      "name": "藏風藝文空間",
+      "formatted_address": "武德街26巷6號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4d520730-ebe5-4509-a39d-7a9dc1dda7a5",
+    "name": "ICI Cafe",
+    "address": "台南市中西區忠孝街93巷108號",
+    "url": "https://www.facebook.com/ici-cafe-831634633530313/",
+    "findPlace": {
+      "place_id": "ChIJLQV0HwB3bjQRWdAdqthLu0M",
+      "name": "today",
+      "formatted_address": "700臺南市中西區忠孝街93巷34號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4e6a9eab-618c-40da-827c-92250e2d8ab3",
+    "name": "跳舞的羊咖啡豆專賣店",
+    "address": "台南市中西區衛民街59號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJRdeDNIl2bjQR4j_9P-KXL4I",
+      "name": "跳舞的羊咖啡豆專賣店",
+      "formatted_address": "衛民街59號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4e8ee6e5-5e97-4447-91bc-4274c15b5eed",
+    "name": "日澗咖啡 Day Stream Caf'e",
+    "address": "台南市中西區大埔街57號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJAUxnVoZ2bjQRcEPgW39iHCc",
+      "name": "日澗咖啡",
+      "formatted_address": "大埔街57號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4ecf7c0b-e626-483a-8110-b207bfe53c25",
+    "name": "微果咖啡  wego cafe",
+    "address": "台南市東區崇善11街2號",
+    "url": "https://www.facebook.com/%E5%BE%AE%E6%9E%9C%E5%92%96%E5%95%A1-WeGo-Cafe-1083408225050754/",
+    "findPlace": {
+      "place_id": "ChIJIXd7IAB1bjQRmpHaJJGmRXo",
+      "name": "MUC漫悠客咖啡B1+崇德店",
+      "formatted_address": "701臺南市東區崇德路870號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4f5aa79b-4d28-425e-aff2-7ba317a0a2e7",
+    "name": "K30 COFFEE",
+    "address": "台南市中西區中正路217巷7號",
+    "url": "https://m.facebook.com/K30COFFEE/",
+    "findPlace": {
+      "place_id": "ChIJEXa9gKp3bjQRH4TF4YactaI",
+      "name": "K30 COFFEE (精品咖啡 專門店)",
+      "formatted_address": "中正路217巷7號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "50223d86-cd69-4ea6-bcbd-8a33584824bf",
+    "name": "寮國咖啡",
+    "address": "台南市中西區中山路79巷60號",
+    "url": "https://www.facebook.com/%E5%AF%AE%E5%9C%8B%E5%92%96%E5%95%A1%E5%AF%AE%E6%9E%9C%E5%92%96%E5%95%A1%E5%B7%A5%E5%9D%8A-212644352411035/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJKSejlIl2bjQR0R5HFKGTPSU",
+      "name": "寮國咖啡",
+      "formatted_address": "中山路79巷60號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "52c77ab2-dceb-4e1e-b778-5e03add4e08f",
+    "name": "EAGER CAF'E",
+    "address": "台南市善化區文昌路93-1號",
+    "url": "https://www.facebook.com/EAGER-CAFE-%E4%B8%80%E5%80%8B-%E5%92%96%E5%95%A1%E8%87%AA%E5%AE%B6%E7%83%98%E7%84%99-231885243936347/",
+    "findPlace": {
+      "place_id": "ChIJDb2UgYZ7bjQRYYjIBDFt9DA",
+      "name": "EAGER CAFE 一個 咖啡",
+      "formatted_address": "文昌路93號1",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "534b9cdf-e19b-4168-9563-2d2d459c4545",
+    "name": "樂享學",
+    "address": "台南市永康區中山路298號",
+    "url": "https://www.facebook.com/o.fami.tw/?eid=ARDmkHrmzf4AGsfA2oK-7-4zFa9-bBpNemGNoogxF-I6cMEH8wD_tmesJDX-NcGd9km551FXUneMuTve",
+    "findPlace": {
+      "place_id": "ChIJ9U4Yv-1xbjQRcCTOuqA55QI",
+      "name": "大東北餡餅粥專賣店",
+      "formatted_address": "中山路231之1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "54f82ada-0bda-41fd-aa66-10fa6900aa1e",
+    "name": "魚羊鮮豆",
+    "address": "台南市北區東豐路275號",
+    "url": "https://www.facebook.com/pages/%E9%AD%9A%E7%BE%8A%E9%AE%AE%E8%B1%86%E5%92%96%E5%95%A1%E9%A4%A8/141002589293227?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJ7WuMWel2bjQRSjPvtJxUW84",
+      "name": "魚羊鮮豆 東豐店",
+      "formatted_address": "東豐路275號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "56cbb403-3298-46b8-a856-8f29e7641605",
+    "name": "lazy day",
+    "address": "台南市中西區忠孝街116巷2號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJX-ygMyZ3bjQR8evnmI0RzB4",
+      "name": "TAKE CAKE",
+      "formatted_address": "700臺南市中西區忠孝街116巷2號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "583ebeb4-c211-4afa-a176-6ee1bf0332de",
+    "name": "神榕147",
+    "address": "臺南市神農街147號",
+    "url": "https://www.facebook.com/shennong147/",
+    "findPlace": {
+      "place_id": "ChIJseQKc2Z2bjQR26O10DtsIiU",
+      "name": "神榕一四七",
+      "formatted_address": "神農街147號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "583ed0c1-4ef6-46d3-b58d-c46dcdb195bf",
+    "name": "小野珈琲烘焙坊",
+    "address": "台南市東區崇善二街74號",
+    "url": "https://www.facebook.com/bestcoffeetime/",
+    "findPlace": {
+      "place_id": "ChIJ5bp26qF2bjQRAZ6Dqco2_UA",
+      "name": "小野珈琲自家烘豆~手沖咖啡.拿鐵.咖啡豆(僅外帶)",
+      "formatted_address": "崇善二街74號Chongshan 2nd St74",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "583f2646-05df-431d-9db0-852d791bd258",
+    "name": "Django 決哥手烘咖啡吧-勝利店",
+    "address": "台南市東區勝利路187號",
+    "url": "https://www.facebook.com/django6999",
+    "findPlace": {
+      "place_id": "ChIJf0bFjJJ2bjQRqARqD1xlxmQ",
+      "name": "Django 決哥手烘咖啡吧-勝利店",
+      "formatted_address": "勝利路167-1號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "5c38586b-09ca-4eda-9811-f4c71574736d",
+    "name": "奧薇小鎮",
+    "address": "台南市東區裕平路110號",
+    "url": "https://www.facebook.com/%E5%A5%A7%E8%96%87%E5%B0%8F%E9%8E%AE-354391024651887/",
+    "findPlace": {
+      "place_id": "ChIJ1e78ZrB2bjQRs2_zp_ZCZYw",
+      "name": "奧薇小鎮",
+      "formatted_address": "裕平路110號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "5cceb4c3-fd20-4a59-89d3-ce801c98de91",
+    "name": "南十三咖啡",
+    "address": "台南市中西區民族路二段317巷46號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJSwRLKGJ2bjQR1JaJg9HkPrU",
+      "name": "南十三咖啡",
+      "formatted_address": "民族路二段317巷46號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "5d191eba-8bdd-4fc3-b112-7c39d5e7263e",
+    "name": "a room",
+    "address": "台南市長榮路一段234巷17號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ350__Jp2bjQRrJMD1dW_rfU",
+      "name": "a Room房間咖啡",
+      "formatted_address": "長榮路一段234巷17號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "5e322b4f-285a-47ed-bf66-e25f86709c2e",
+    "name": "For coffee",
+    "address": "台南市永康區東橋八街38號",
+    "url": "https://www.facebook.com/forcoffee38/",
+    "findPlace": {
+      "place_id": "ChIJk3UaRwB3bjQRV8bYRiLnJDo",
+      "name": "起士公爵未來飲食研究所-東橋門巿生活健康館",
+      "formatted_address": "東橋八街38號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "5e723daa-b62f-46e6-b30c-21d3a2951660",
+    "name": "榮寓冰室",
+    "address": "台南市東區榮譽街84巷55號",
+    "url": "https://www.facebook.com/%E6%A6%AE%E5%AF%93%E5%86%B0%E5%AE%A4-779315372144403/",
+    "findPlace": {
+      "place_id": "ChIJCTEXpSd0bjQROXkczlf6e18",
+      "name": "榮寓冰室",
+      "formatted_address": "榮譽街84巷55號701",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "5e7a44b1-d232-4407-b7a7-558a5c970309",
+    "name": "咚珈琲",
+    "address": "台南市府前路一段17號",
+    "url": "https://www.facebook.com/dongkohi/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJ72nQAIZ2bjQRbLFp7cAzwdI",
+      "name": "咚珈琲自家烘焙",
+      "formatted_address": "號 No, No. 17府前路一段",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "5ffdfed1-da22-4726-b790-6d249970fdd3",
+    "name": "旅享所在",
+    "address": "台南市南區仁慈街21號",
+    "url": "https://www.facebook.com/travelifelab",
+    "findPlace": {
+      "place_id": "ChIJDfy4uvJ1bjQRzwXTv8NCNxM",
+      "name": "旅享所在咖啡｜甜點｜咖哩｜早午餐｜旅遊講座｜空間合作 （每週三四公休）",
+      "formatted_address": "仁慈街21號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "60530c95-ce65-4ec3-983a-d2103ea2058e",
+    "name": "未艾公寓",
+    "address": "台南市中西區正興街77巷10號",
+    "url": "https://www.facebook.com/welove7710/",
+    "findPlace": {
+      "place_id": "ChIJ3f9K-2R2bjQR2lJKpu-EIm4",
+      "name": "未艾公寓(住宿)",
+      "formatted_address": "正興街77巷10號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "63780ddc-16aa-4cb4-be83-a47697e3d67e",
+    "name": "甘谷咖啡",
+    "address": "701台南市東區裕豐街54巷1號",
+    "url": "https://www.facebook.com/Gongulu.Coffee/",
+    "findPlace": {
+      "place_id": "ChIJj_zSFJh2bjQRintDLBFmNis",
+      "name": "甘谷咖啡",
+      "formatted_address": "裕豐街54巷1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "63cb8cf2-d0af-439f-bb67-20dcdc242b8c",
+    "name": "沛里歐早午餐鬆餅咖啡館",
+    "address": "700台南市中西區樹林街二段67號",
+    "url": "https://www.facebook.com/PELLEO.TW/",
+    "findPlace": {
+      "place_id": "ChIJX00GWod2bjQRUid5ZB9jWq4",
+      "name": "沛里歐早午餐鬆餅咖啡館(店休日請看FB/IG)",
+      "formatted_address": "樹林街二段67號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "63cfcbf1-0aec-465e-8841-4ada066f3f69",
+    "name": "花樓二店",
+    "address": "台南市中西區民權路三段55號",
+    "url": "https://www.facebook.com/%E8%8A%B1%E6%A8%93follow_coffee-1058378214308090/",
+    "findPlace": {
+      "place_id": "ChIJNQRqF2R2bjQRgPhSkChMrNU",
+      "name": "花樓咖啡 Follow Coffee 二店",
+      "formatted_address": "民權路三段55號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "67164a15-138e-421d-bd2a-66f8aef40fc6",
+    "name": "牽咖啡 Chen Coffee",
+    "address": "台南市中西區民權路一段219號",
+    "url": "https://www.facebook.com/chenchencoffee/",
+    "findPlace": {
+      "place_id": "ChIJCxuITYh2bjQR4938C-DoY1w",
+      "name": "牽咖啡台灣茶飲",
+      "formatted_address": "民權路一段219號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "6759dbca-19ea-4414-8924-19d44e6542f5",
+    "name": "台南艾咖啡 ALFEE Coffee",
+    "address": "台南市中西區西華南街15號",
+    "url": "https://www.facebook.com/ICAFFEFANS",
+    "findPlace": {
+      "place_id": "ChIJP1Mra4l2bjQRMvTvyle_pCw",
+      "name": "ALFEE Coffee 台南艾咖啡",
+      "formatted_address": "西華南街15號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "67854661-1f61-44a9-82ea-cb6736a2e760",
+    "name": "路咖啡/ROAD CAFE",
+    "address": "704台南市北區長榮路五段55號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJf-YS7sN3bjQRs0QfhmL06pw",
+      "name": "路咖啡Road Café/外帶咖啡吧",
+      "formatted_address": "長榮路五段55號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "688e93ea-17e6-4b76-9080-1f24edf35523",
+    "name": "豆趣留聲",
+    "address": "台南市東區北門路二段16號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJN0zpWJ13bjQRsYV0ebs8vWU",
+      "name": "星巴克台南文創門市",
+      "formatted_address": "北門路二段16號1b 室",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "6a742fc3-a490-4f1c-996c-3c4cb6e8350e",
+    "name": "金礦咖啡-台南中華門市",
+    "address": "台南市永康區中華路617號",
+    "url": "https://www.facebook.com/pg/b030783/about/?tab=page_info",
+    "findPlace": {
+      "place_id": "ChIJEUoTzcF3bjQR1pPe6c0__lY",
+      "name": "力金咖啡設備原料台南門市l咖啡機l咖啡豆l咖啡器具",
+      "formatted_address": "700臺南市中西區開山路52巷1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "6cba77d6-6719-4575-950d-4ba4c855c57d",
+    "name": "道南館 自家烘焙咖啡館",
+    "address": "台南市中西區民權路二段248號",
+    "url": "https://www.facebook.com/pg/daonanguan/",
+    "findPlace": {
+      "place_id": "ChIJkczc52N2bjQRCsewjQtsPEk",
+      "name": "道南館 自家烘焙咖啡館",
+      "formatted_address": "民權路二段248號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "6cfb28a6-6d29-4695-a3eb-d8754a944a8e",
+    "name": "多那之台南西門門市（寶美樓）",
+    "address": "台南市中西區西門路二段309號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJXdi5eIl2bjQRkHoHkV0YZqc",
+      "name": "多那之台南西門門市",
+      "formatted_address": "西門路二段309號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "6d6000c5-ae01-40d6-a503-2ea943402b39",
+    "name": "I'M Coffee",
+    "address": "台南市北區開元路515號",
+    "url": "https://www.facebook.com/IMCOFFEETW/",
+    "findPlace": {
+      "place_id": "ChIJF4otNO93bjQRQSPi58obLvA",
+      "name": "I'M COFFEE 開元店(遷移店址)",
+      "formatted_address": "開元路515號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "6e111a89-4976-4183-9cbc-563a0e34f0a7",
+    "name": "Lure Late Late Breakfast 鹿耳晚晚早餐",
+    "address": "台南市東區林森路一段153巷19號",
+    "url": "https://www.facebook.com/lurelatelatebreakfast/",
+    "findPlace": {
+      "place_id": "ChIJ-2iLmoR2bjQREdeivWRjL9E",
+      "name": "鹿耳晚晚早餐｜鹿耳夜間部",
+      "formatted_address": "林森路一段153巷19號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "6eb4b047-5d6c-4629-bef0-be4972a3f287",
+    "name": "CaffeBene 咖啡伴_成大門市",
+    "address": "台南市東區大學路16-1號",
+    "url": "https://www.facebook.com/%E5%92%96%E5%95%A1%E4%BC%B4_%E6%88%90%E5%A4%A7%E9%96%80%E5%B8%82-2475209642705352/",
+    "findPlace": {
+      "place_id": "ChIJZftMx2_lZzQREuYnTtAv5x8",
+      "name": "Caffe bene 咖啡伴宜蘭女中門市",
+      "formatted_address": "260宜蘭縣宜蘭市女中路三段553號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "6ee0d3d4-6b1a-498b-bf30-1f5c59b45fd6",
+    "name": "Cheng10誠十咖啡",
+    "address": "台南市安平區健康路三段329號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJjaht6eJ1bjQRIRR-bxIwT2s",
+      "name": "cheng10coffee｜誠十咖啡台南旗艦店",
+      "formatted_address": "健康路三段329號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "6fe02ef5-d366-405e-acbd-5608a86b8db6",
+    "name": "透南風咖啡聚場",
+    "address": "台南市中西區永福路二段35巷6號",
+    "url": "https://www.facebook.com/southwind.2016/",
+    "findPlace": {
+      "place_id": "ChIJo96ts3x2bjQRrKDn4qA3318",
+      "name": "透南風咖啡聚場",
+      "formatted_address": "永福路二段35巷6號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "714e710a-2a4b-418c-b3cd-da5717f90955",
+    "name": "花樓follow_coffee",
+    "address": "台南市中西區民權路二段118號",
+    "url": "https://www.facebook.com/%E8%8A%B1%E6%A8%93follow_coffee-1058378214308090/?ref=br_rs",
+    "findPlace": {
+      "place_id": "ChIJmSpQPmJ2bjQRVCpaXJUvKWo",
+      "name": "花樓 follow coffee",
+      "formatted_address": "民權路二段118號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "733f638e-b136-4982-aad9-fe55698d1b37",
+    "name": "有緣人 Yuan Coffee",
+    "address": "701台南市東區東興路13號",
+    "url": "https://www.facebook.com/%E6%9C%89%E7%B7%A3%E4%BA%BAYuan-Coffee-102737151223922/",
+    "findPlace": {
+      "place_id": "ChIJAVwm0Vx3bjQRLzu_ihQeRUM",
+      "name": "THE YUAN 東興店（無訂位）",
+      "formatted_address": "東興路13號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "737630b1-571e-490d-a885-96ad83cded01",
+    "name": "mumu小客廳",
+    "address": "台南市中西區開山路35巷16號",
+    "url": "https://www.facebook.com/MumuBrunch/?ref=br_rs",
+    "findPlace": {
+      "place_id": "ChIJi8SVbIh2bjQRLTWoNMOVJJs",
+      "name": "Mumu小客廳",
+      "formatted_address": "開山路35巷16號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "73a5c0e7-2c5b-4535-9c24-5c8bb74ec677",
+    "name": "握咖啡台南赤崁店",
+    "address": "700台南市中西區成功路223號後棟",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJlfksz7d3bjQRDVMBcOgSCxU",
+      "name": "握咖啡台南赤崁店",
+      "formatted_address": "成功路223號與赤崁東街口 早安美芝城巷弄進來第一間後棟",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "7634087a-26eb-47cb-b3d8-2d21ab18a8f5",
+    "name": "加比萊瑟思 License.CAF'E",
+    "address": "700台南市民權路一段270號",
+    "url": "https://www.facebook.com/cafelicense2016",
+    "findPlace": {
+      "place_id": "ChIJ_yKr9FnHbjQR9e3ZjCYy1gk",
+      "name": "古坑鄉農會農業休閒中心加比山咖啡加工廠",
+      "formatted_address": "64648雲林縣古坑鄉光昌路12號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "76c72f1c-d966-40ba-91bf-7e07afecd16c",
+    "name": "双生 Shuànsên Cafe",
+    "address": "台南市中西區忠義路二段147巷17號",
+    "url": "https://www.facebook.com/ShuansenCafe/",
+    "findPlace": {
+      "place_id": "ChIJh622J2J2bjQR3OzRDCGw7d0",
+      "name": "双生 Shuànsên Cafe",
+      "formatted_address": "忠義路二段147巷17號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "77f43040-111b-46e2-816a-7fda1ce6fc30",
+    "name": "BORN 2 HER Cafe 她她咖啡",
+    "address": "台南市西華南街28號",
+    "url": "https://www.facebook.com/born2her/",
+    "findPlace": {
+      "place_id": "ChIJzfN8aol2bjQRDUT6uNfx45k",
+      "name": "Born 2 her cafe",
+      "formatted_address": "西華南街28號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "79e0a000-ca7b-4ed6-9e01-116008db3c5a",
+    "name": "朋友的朋友咖啡店",
+    "address": "台南市中西區建安街51巷30號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ_zGotpB3bjQRADfallH8RbA",
+      "name": "朋友的朋友咖啡店",
+      "formatted_address": "建安街51巷30號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "79ea2e99-3e61-49f8-a2cf-df4a264e3d6f",
+    "name": "生命樹咖啡",
+    "address": "台南市東區小東路350號",
+    "url": "https://www.facebook.com/lifetreesilkroadcoffee/",
+    "findPlace": {
+      "place_id": "ChIJu1UL65V2bjQRvQ_l_ezgxsg",
+      "name": "生命樹咖啡",
+      "formatted_address": "小東路350號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "7b6e2035-8778-4fcf-98ba-37b3c1bd83a3",
+    "name": "裁縫師深夜咖啡館 coffee bar",
+    "address": "臺南市安平區延平街122號",
+    "url": "https://www.facebook.com/tailorcoffeebar",
+    "findPlace": {
+      "place_id": "ChIJ5U3N4Bx2bjQRUykr8nSaYPc",
+      "name": "裁縫師深夜咖啡館bar｜裁縫師咖啡",
+      "formatted_address": "延平街122號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "7c491c8b-3122-4a45-ad6e-14393f492d63",
+    "name": "曼頓咖啡Manton Coffee-成大店24H",
+    "address": "台南市小東路151號",
+    "url": "https://www.facebook.com/MantonNCKU/?ref=br_rs",
+    "findPlace": {
+      "place_id": "ChIJDxLaQep2bjQRn9nqlmNcVKs",
+      "name": "曼頓咖啡Manton Coffee-成大店",
+      "formatted_address": "小東路151號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "7da69f3c-f73b-47b3-a150-275a287bc787",
+    "name": "Et咖啡",
+    "address": "台南市臨安路二段253號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ9bf0Xl52bjQRqaSg2--9fL8",
+      "name": "ET咖啡",
+      "formatted_address": "臨安路二段253號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "7ed76005-09d8-422d-92ad-0e6df1b3f2c4",
+    "name": "David yang cafe",
+    "address": "台南市府前路一段185號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJAe3dYH12bjQRl7N_HtA5uRQ",
+      "name": "大衛洋咖啡DAVIDYANG COFFEE",
+      "formatted_address": "府前路一段185號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "7ee1516f-1391-4b19-944e-e5f80d539554",
+    "name": "私人藏豆 Coffellection",
+    "address": "台南市東區崇德路333巷1號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ-fN4bp52bjQRJzMAqU_vIUs",
+      "name": "私人藏豆",
+      "formatted_address": "701臺南市東區崇德路333巷1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "7f01e748-2241-4864-98e0-1ff0b91d89c6",
+    "name": "鹿柴咖啡",
+    "address": "708, Taiwan, Tainan City, Anping District, Jiankang 3rd Street, 77號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJmSVsWYd2bjQRJJM4fO15Naw",
+      "name": "鹿柴咖啡",
+      "formatted_address": "708臺南市安平區育平九街377號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "7f3807fa-23cc-48ac-af5f-2c67b4a7f406",
+    "name": "圻圻。嚴選咖啡",
+    "address": "台南市新市區大營里豐榮17-3號",
+    "url": "https://www.facebook.com/kickeycoffee/",
+    "findPlace": {
+      "place_id": "ChIJk-Pm_QJ7bjQRkW7F0fWZXrM",
+      "name": "圻圻咖啡（僅接單預約販賣熟豆）",
+      "formatted_address": "豐榮17-3號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "8083c5a3-4ae6-47d9-b976-55af4fc45647",
+    "name": "St.1 Cafe' / Work Room 一街咖啡",
+    "address": "台南市永康區大橋一街328號",
+    "url": "https://www.facebook.com/st1cafe/",
+    "findPlace": {
+      "place_id": "ChIJI70ZHiF3bjQRVDKGPUTltTU",
+      "name": "St.1 Cafe' 一街咖啡",
+      "formatted_address": "大橋一街328號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "81a440cf-1050-467c-9c41-ca68583e5852",
+    "name": "貓薄荷咖啡",
+    "address": "台南市安平區育平九街235號",
+    "url": "https://www.facebook.com/sweets.coffee.cats/",
+    "findPlace": {
+      "place_id": "ChIJt871ewV2bjQRm1Lp5jrgv-s",
+      "name": "貓薄荷手工蛋糕咖啡館",
+      "formatted_address": "育平九街235號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "824675cb-abdf-4135-b5e8-259ff0a89911",
+    "name": "萃行咖啡館 Atelier Pure",
+    "address": "台南市南區樹林街二段420號",
+    "url": "https://www.facebook.com/AtelierPureCafe/",
+    "findPlace": {
+      "place_id": "ChIJLQKofXl2bjQRFTVmVTB6fYg",
+      "name": "萃行咖啡館",
+      "formatted_address": "樹林街二段420號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "82e54a92-08a0-4eea-8ef1-a61867e26ae0",
+    "name": "木蘭咖啡",
+    "address": "台南市中西區信義街46巷9號2樓 ",
+    "url": "https://instagram.com/mulan.tw?igshid=YmMyMTA2M2Y=",
+    "findPlace": {
+      "place_id": "ChIJnSayP113bjQRD85GP9NVl8Q",
+      "name": "木蘭咖啡(MULAN CAFE)(營業時間及店休日請看ig動態）",
+      "formatted_address": "信義街46巷9號2樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "8309a7c7-2a75-49db-b6e9-176c0b781b22",
+    "name": "Lu.CY Coffee Roast & Brew",
+    "address": "台南市北區 育德二路340號 ",
+    "url": "https://www.facebook.com/Lu.CYcoffeestudio/",
+    "findPlace": {
+      "place_id": "ChIJHXissFd2bjQRQeUgrXl7e2M",
+      "name": "盧西咖啡工作室",
+      "formatted_address": "育德二路340號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "85ac9359-a6a5-4d12-8577-c69f4d986bc0",
+    "name": "L'esprit café",
+    "address": "台南市中西區民生路二段401號",
+    "url": "https://www.facebook.com/LespritCafe/",
+    "findPlace": {
+      "place_id": "ChIJF-cNgZh2bjQRZLHtsKu2wFs",
+      "name": "L'esprit café 初衷咖啡 @lespritcafe_tainan",
+      "formatted_address": "民生路二段401號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "869b3ba3-7af9-4a74-a186-512e2b2dc61a",
+    "name": "南島夢遊",
+    "address": "台南市北區公園路487巷18號",
+    "url": "https://www.facebook.com/dreamXdrift/",
+    "findPlace": {
+      "place_id": "ChIJnQTcPfd2bjQRYUJG-WENETs",
+      "name": "南島夢遊",
+      "formatted_address": "公園路487巷18號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "894faf32-f2b4-433b-89f2-37d4d2f38866",
+    "name": "咖啡森活",
+    "address": "台南市東區東門路一段52巷3弄5號",
+    "url": "https://www.facebook.com/coffeelife1124/",
+    "findPlace": {
+      "place_id": "ChIJY-TPj4V2bjQRluPzjCus5Nc",
+      "name": "Coffee Life 咖啡森活",
+      "formatted_address": "701臺南市東區東門路一段52巷3弄5號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "89b1f554-ea40-4926-ba94-cf36878c8a13",
+    "name": "是吉咖啡",
+    "address": "台南市北區公園路295巷50-2號",
+    "url": "https://www.facebook.com/twcafeichi/",
+    "findPlace": {
+      "place_id": "ChIJpeBYQfR2bjQRSZvxKPHlg4s",
+      "name": "是吉咖啡",
+      "formatted_address": "公園路295巷50之2號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "8c3a7271-d805-424f-950e-28ebdbaad804",
+    "name": "代謝俱楽部",
+    "address": "台南市北區開元路212巷126號",
+    "url": "https://www.facebook.com/DaixieClub/",
+    "findPlace": {
+      "place_id": "ChIJO7duBWF2bjQRdvi9Q4CmXII",
+      "name": "代謝俱樂部 Daixie Club",
+      "formatted_address": "開元路212巷126號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "8c6751e3-656d-4db3-8397-8ecd8d437990",
+    "name": "大鋤花間",
+    "address": "733 台南市台南市東山區高原村高原109之17號 (台南縣東山鄉175線道11.5公里)",
+    "url": "https://www.facebook.com/pages/%E5%A4%A7%E9%8B%A4%E8%8A%B1%E9%96%93/142333645830278",
+    "findPlace": {
+      "place_id": "ChIJf8L9COuMbjQRWyiSaAjn4Zc",
+      "name": "大鋤花間",
+      "formatted_address": "733台灣臺南市東山區",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "8caa38a3-6ac7-41f4-9ee2-988fd4b84686",
+    "name": "PIANO,PIANO",
+    "address": "台南市中西區府前路一段342巷19號",
+    "url": "https://www.facebook.com/PIANOPIANO-141154832635987/",
+    "findPlace": {
+      "place_id": "ChIJS_qrT3t2bjQRUXAJosebMbU",
+      "name": "PIANO，PIANO",
+      "formatted_address": "府前路一段342巷19號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "8cd539b0-d406-4be7-9bc4-4af3eb08eadb",
+    "name": "二子",
+    "address": "701台南市東區城東街66號",
+    "url": "https://www.instagram.com/asleepcoffeebar/",
+    "findPlace": {
+      "place_id": "ChIJY9SAxJF2bjQRnO0kJ9CJnBQ",
+      "name": "二子（不定休、無訂位）",
+      "formatted_address": "城東街66號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "8d501edf-aebc-4f21-a32a-01a04c4c3b2d",
+    "name": "聶樓",
+    "address": "700台南市中西區信義街60巷3號",
+    "url": "https://www.facebook.com/niielou/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJjdyogWZ2bjQRc57a52MKo8s",
+      "name": "聶樓",
+      "formatted_address": "700臺南市中西區信義街60巷3號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "8f9ebc09-4537-4643-9049-3288308e6bc5",
+    "name": "窩餐廳--咖啡話語",
+    "address": "台南市中西區友愛街261號",
+    "url": "https://m.facebook.com/cafewhispering/?locale2=zh_TW",
+    "findPlace": {
+      "place_id": "ChIJeZ931Xp2bjQReEFQeBBDi44",
+      "name": "窩wuo餐廳",
+      "formatted_address": "友愛街261號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "90aec48b-ff49-4e3c-9fa1-0e340fc433f2",
+    "name": "沒有咖啡",
+    "address": "701台南市東區裕豐街84巷6號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ45qRGYB3bjQR0Otugn7GekA",
+      "name": "粼粼",
+      "formatted_address": "701臺南市東區裕豐街35號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "9144170f-9fea-43dc-899d-18e77c3c1fea",
+    "name": "雷克斯咖啡吧",
+    "address": "台南市北區南園街153巷2號",
+    "url": "https://www.facebook.com/Rexespressobar/",
+    "findPlace": {
+      "place_id": "ChIJUWPUZuh2bjQRK4LlNcGNrkg",
+      "name": "雷克斯咖啡吧（翻新裝潢暫時停業中）",
+      "formatted_address": "南園街153巷2號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "92f21750-89f5-4c63-9048-d7a67ec26df1",
+    "name": "哈本咖啡(隨行吧) Happen Coffee",
+    "address": "700台南市中西區中正路86號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJQbDa8s93bjQRQBbgwnxf8Kw",
+      "name": "哈本咖啡 | Happen Coffee",
+      "formatted_address": "民生路一段100號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "9374a1fb-2db2-4cde-95b2-b080871cd7e8",
+    "name": "悠豆咖啡",
+    "address": "734台南市六甲區民生街47號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJAVd00wyIbjQRm9FSpJk9Ztg",
+      "name": "悠豆咖啡",
+      "formatted_address": "民生街47號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "93e0d452-d09b-41c0-a69e-c4d6aa709731",
+    "name": "尚品咖啡 (南門店)",
+    "address": "台南市中西區南門路233-6號",
+    "url": "https://www.facebook.com/sanpincoffee1980/",
+    "findPlace": {
+      "place_id": "ChIJQ4uY6tR1bjQRZY8fLzm3xgY",
+      "name": "尚品咖啡 - Sanremo 咖啡機台灣總代理 ＆ 設備器材",
+      "formatted_address": "702032臺南市南區南門路341號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "95d9878e-1883-47aa-95e8-bc359a2c0a70",
+    "name": "喝起來 Bottoms Up",
+    "address": "701台南市東區長榮路三段131號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJYyRiTwB3bjQRea5rypQqGkg",
+      "name": "Bottoms Up喝起來(無訂位/不接待12歲以下孩童)",
+      "formatted_address": "長榮路三段131號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "9900de78-4a89-438a-8ec8-3c1e59a2396f",
+    "name": "美麗少婦的羽球咖-白色小舖子",
+    "address": "台南市東區裕信路166號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ_c8kU7F2bjQRkSYhvQ7Wo0Y",
+      "name": "白色小舖子咖啡館",
+      "formatted_address": "裕信路166號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "999879a0-4fde-425d-8673-9221c34d9ac2",
+    "name": "Louisa Coffee 路易．莎咖啡(台南大同門市)",
+    "address": "700台南市中西區大同路一段214號",
+    "url": "https://www.louisacoffee.co/",
+    "findPlace": {
+      "place_id": "ChIJn9biBeZ3bjQRjjDwH2vIlM4",
+      "name": "Louisa Coffee 路易莎咖啡(台南大同門市)",
+      "formatted_address": "大同路一段214號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "9a67bf55-0b1d-4421-a45e-ebdb9d1f14ce",
+    "name": "咖啡．候機室The Departure Lounge台南大同店",
+    "address": "701台南市東區大同路一段231號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJkb46LuV3bjQR-aR2BYzYgcM",
+      "name": "咖啡候機室 台南大同店",
+      "formatted_address": "大同路一段231號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "9bc56aa6-e56c-451b-be3f-37c25b21d980",
+    "name": "曉咖啡",
+    "address": " 台南市中西區忠義路一段84巷6弄2號",
+    "url": "https://www.facebook.com/akatsukicoffee/",
+    "findPlace": {
+      "place_id": "ChIJ6xeIr2N2bjQRmk1WkLkenus",
+      "name": "曉咖啡",
+      "formatted_address": "忠義路一段84巷6弄2號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "9bf00b32-494d-4fda-9130-e749e160c720",
+    "name": "吉光咖啡",
+    "address": "台南市東區光華街229巷28弄9號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJu1W3AYV2bjQRRpCm9GdGATE",
+      "name": "吉光咖啡",
+      "formatted_address": "光華街229巷28弄9號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "9c34cb14-2844-42d9-8a0a-5a66e6e4ebba",
+    "name": "極萃咖啡Kaffuns Brew Coffee",
+    "address": "700台南市中西區府前一街109巷2號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJhR9ag2N2bjQRKFWVGW57c8c",
+      "name": "極萃咖啡淺焙烘豆坊",
+      "formatted_address": "700臺南市中西區府前一街109巷2號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "9c6f77ed-6b26-49ca-96c0-425ad2ab53be",
+    "name": "旺德實驗室",
+    "address": "台南市北區公園路437巷10號",
+    "url": "https://www.facebook.com/WLAB.10BF/",
+    "findPlace": {
+      "place_id": "ChIJc4b13_Z2bjQRZvYmBOqSOWE",
+      "name": "旺德實驗室（已停業",
+      "formatted_address": "公園路437巷10號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "9caaa850-a39e-45ea-afbc-e2256267652a",
+    "name": "MixCoffee",
+    "address": "台南市永康區中華路23巷9號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJEwCxssZ2bjQRDAoS53H-RG4",
+      "name": "MIX Coffee",
+      "formatted_address": "中華路23巷9號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "9cae70e6-7d8e-4db6-9548-4fbd78f76b9b",
+    "name": "甘單咖啡",
+    "address": "台南市中西區民權路二段4巷13號",
+    "url": "https://www.facebook.com/%E9%96%8B%E9%9A%86%E5%AE%AE-%E7%94%98%E5%96%AE%E5%92%96%E5%95%A1-148567851869417/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJKQvNlYl2bjQRGZCMHUi--u4",
+      "name": "甘單咖啡館",
+      "formatted_address": "民權路二段4巷13號由中山路79巷進入",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "9d92d2d9-322c-44c3-aebc-2bb9fd40f49c",
+    "name": "銅板咖啡",
+    "address": "台南市中西區忠義路二段141號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJnzn-cVB3bjQRZ-IxeH4legM",
+      "name": "銅板咖啡",
+      "formatted_address": "民權路二段116號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "9df5ea5a-57bb-4d02-a96e-ea5f28fe315a",
+    "name": " 臺南・特有種商行",
+    "address": "臺南市中西區正興街71號",
+    "url": "https://www.facebook.com/RealgutsCafe.Tainan/",
+    "findPlace": {
+      "place_id": "ChIJF3jg-mR2bjQRJaezTZImxw0",
+      "name": "台南特有種商行",
+      "formatted_address": "正興街71號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "a08dd144-3acd-4b2e-b667-99b8b5788a2d",
+    "name": "belonginn",
+    "address": "台南市神農街80號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJO8_9qgd3bjQRBZBYXntLNbQ",
+      "name": "BELONGINN",
+      "formatted_address": "神農街80號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "a2b0369e-8dd1-4ceb-9e7c-52180e1b8ac8",
+    "name": "parkview綠帕克",
+    "address": "台南市東區育樂街250號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ2Y_FXI52bjQROkirYIszRl4",
+      "name": "綠帕克咖啡館PARKVIEW",
+      "formatted_address": "育樂街250號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "a5433fb9-13f4-4898-bdba-4d3a6e0b5cd1",
+    "name": "老棧",
+    "address": "台南市仁德區中正路二段669號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJW8O_bv13bjQRYfeFr2rP4MQ",
+      "name": "老賴茶棧台南文賢店 - 歡迎來電預訂",
+      "formatted_address": "700臺南市中西區文賢路197-2號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a5cae1cf-4005-4376-8fb5-dde1365f3296",
+    "name": "有邑家咖啡",
+    "address": "台南市北區海安路三段147號",
+    "url": "https://www.facebook.com/HomefromHome3147/",
+    "findPlace": {
+      "place_id": "ChIJNydw4lp3bjQRm6YucU6WqbU",
+      "name": "有邑家 Home from Home Cafe",
+      "formatted_address": "海安路三段147號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a678d905-8540-4350-89b2-50646d429968",
+    "name": "南找咖啡",
+    "address": "704台南市北區長榮路五段406巷28號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJr9m71aN3bjQRSYfLnDbbYAw",
+      "name": "南找咖啡",
+      "formatted_address": "長榮路五段406巷28號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "a83ffcde-53ba-41b5-8097-2b1aa8bbbc36",
+    "name": "奇美咖啡館",
+    "address": "台南市東區大學路1號",
+    "url": "https://www.facebook.com/cafechimei/",
+    "findPlace": {
+      "place_id": "ChIJuUOHMpN2bjQRwF_WBUzhJrg",
+      "name": "成功大學奇美樓奇美咖啡成大門市",
+      "formatted_address": "大學路1號與長榮路三段交叉口 自強校區 奇美樓",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "a84767d6-c5e4-4da3-945f-db9ca9e75e86",
+    "name": "台南-秘氏咖啡",
+    "address": "台南市中西區國華街三段123之160",
+    "url": "https://www.facebook.com/cafechamber.tainan/",
+    "findPlace": {
+      "place_id": "ChIJhTQOG2R2bjQRtGSzT9PPIrw",
+      "name": "台南-秘氏咖啡",
+      "formatted_address": "國華街三段123-160號永樂市場2樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a8502b2b-b4dc-42cb-bc0b-381c10679afd",
+    "name": "豆谷咖啡 Dual Good",
+    "address": "台南市永康區崑山街4巷9號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJDwS5Hy5xbjQRVUSgGT4F-gc",
+      "name": "豆谷咖啡",
+      "formatted_address": "崑山街4巷9號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a8989be1-2940-4236-b992-a479a8cbc758",
+    "name": "貓吐司",
+    "address": "台南市東區大學路22巷16-1號",
+    "url": "https://www.facebook.com/fatcattoast/",
+    "findPlace": {
+      "place_id": "ChIJH5_Xn5N2bjQRQH76vGyJsmk",
+      "name": "貓吐司堡專賣店",
+      "formatted_address": "大學路22巷16-1號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "a960dd99-a1e6-4f53-95a6-0d74889860af",
+    "name": "瑞尹咖啡館Rui Yin Cafe",
+    "address": "台南市東區裕信路201號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJeSlgC652bjQR42u3NJXnOLM",
+      "name": "瑞尹咖啡館Rui Yin Cafe",
+      "formatted_address": "958臺東縣池上鄉中山路67號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "adf90e86-4fb4-443f-b5c7-b9294c4de066",
+    "name": "安內咖啡 An1943 Coffee 新市店",
+    "address": "74445台南市新市區富中街83號",
+    "url": "https://an-coffee.com/",
+    "findPlace": {
+      "place_id": "ChIJXa_zcsF7bjQR_FomcOXHNHU",
+      "name": "安內咖啡 An1943 Coffee 新市店",
+      "formatted_address": "富中街83號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ae36c4cf-8e83-4732-9c98-df7f289ec8a7",
+    "name": "Ho-Yo Cookies",
+    "address": "700台南市中西區中正路138巷6號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJV8r4YGN2bjQRz2uA-LpmnG0",
+      "name": "HO-YO Cookies",
+      "formatted_address": "中正路138巷6號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "ae39c052-360e-4dc5-a2f5-3783bcbd54f9",
+    "name": "自己的房間",
+    "address": "台南市中西區新美街160號",
+    "url": "https://www.instagram.com/aroomofonesown160/",
+    "findPlace": {
+      "place_id": "ChIJR_SmbmF2bjQRVBcj95_mwJo",
+      "name": "自己的房間",
+      "formatted_address": "新美街160號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "afa06993-3720-4634-9553-4b2a66d8bfe1",
+    "name": "小雨咖啡 Café Drizzle",
+    "address": "台南市中西區海安路一段133號",
+    "url": "https://www.facebook.com/cafe3952/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJa6M37Hp2bjQRLvW0LIipYZU",
+      "name": "小雨咖啡 Café Drizzle (無內用座位)",
+      "formatted_address": "海安路一段133號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b0551959-d912-46fc-bcad-50e72baf1134",
+    "name": "毛伊咖啡",
+    "address": "台南市東區東門路二段385號",
+    "url": "https://www.facebook.com/Mauicoffee.Tainan/",
+    "findPlace": {
+      "place_id": "ChIJjfATyrJ3bjQRymt9MSl5TII",
+      "name": "Pullovercoffee",
+      "formatted_address": "701臺南市東區衛國街112巷35號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b074654a-ccb2-4e8e-9841-518134ec9f96",
+    "name": "日日咖啡",
+    "address": "台南市永康區中華路23巷1-2號",
+    "url": "https://www.facebook.com/anicedaycoffee/",
+    "findPlace": {
+      "place_id": "ChIJuUDHDgN3bjQR9ifGoaqcFT0",
+      "name": "好在wellin早午餐(週二不定期公休，請看IG頁面）",
+      "formatted_address": "小東路368號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b30bd965-37b8-41dd-84f2-acf78e14b5fe",
+    "name": "勝曼咖啡 公園店",
+    "address": "台南市北區公園路916號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJg2Rngft2bjQR6EuSIeIFj48",
+      "name": "勝曼咖啡-公園門市",
+      "formatted_address": "公園路916號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b4092f3b-2fcf-4267-bfa3-e379e212f1b6",
+    "name": "漿果咖啡",
+    "address": "712台南市新化区復興路285-1號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJw-ZMXnBwbjQRMATgVJCZ3Xc",
+      "name": "漿果咖啡館BACCA CAFE",
+      "formatted_address": "復興路285號之1",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b4f95596-1e30-4d16-8249-95892fcd5d41",
+    "name": "Coffee x Conscience",
+    "address": "台南市東區崇德21街138巷23號",
+    "url": "https://www.facebook.com/ConscienceTaiwan/",
+    "findPlace": {
+      "place_id": "ChIJVVI6nRh0bjQRdxL1YKura5s",
+      "name": "Coffee x Conscience 咖啡良知",
+      "formatted_address": "崇德二十一街138巷23號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b6a75208-7361-496e-95d4-08f213e1ffd2",
+    "name": "手草生活",
+    "address": "台南市北區裕民街72巷12號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJcW_fL2B2bjQR2cagHwj9n-8",
+      "name": "手艸HAND HAABU",
+      "formatted_address": "裕民街72巷12號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b71f252f-704c-40b1-b73b-33618e02a4e1",
+    "name": "雄雄食社",
+    "address": "台南市東區東光路二段152號",
+    "url": "https://www.facebook.com/XiongXiongSnack/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJV-k6HcF2bjQRYIQ5bucCFdg",
+      "name": "雄雄食社",
+      "formatted_address": "東光路二段152號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b77b7164-995a-4a0c-ac5e-ee964b8b877d",
+    "name": "友日子丨咖啡丨台灣茶",
+    "address": "台南市北區民德路90巷35號",
+    "url": "https://www.facebook.com/profile.php?id=61578381785256",
+    "findPlace": {
+      "place_id": "ChIJyZyBuk53bjQRvNPyp-MLbXM",
+      "name": "友日子丨咖啡丨台灣茶",
+      "formatted_address": "民德路90巷35號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b842353f-667d-43ed-80ac-1042158413a5",
+    "name": "Wooli cafe屋裡自家烘焙咖啡店",
+    "address": "台南市永康區東橋三路476號",
+    "url": "https://www.facebook.com/muskaemilycoffee/",
+    "findPlace": {
+      "place_id": "ChIJw8gmmCN3bjQR7BnKZSrTRnc",
+      "name": "屋裡咖啡",
+      "formatted_address": "東橋三路476號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "be206fd9-2ca0-4107-aa8b-bad194625cd9",
+    "name": "134巷內的女巫's",
+    "address": "台南市東區東寧路134巷61-2號",
+    "url": "https://www.facebook.com/witchesin134/",
+    "findPlace": {
+      "place_id": "ChIJjee2uZZ2bjQRYq52cevF3dQ",
+      "name": "134巷內的女巫's",
+      "formatted_address": "東寧路134巷61-2號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "beb960f8-d0cc-4d42-bbfb-d42c620b6a79",
+    "name": "塗鴉空間 書店 小酒館 - Picturesque",
+    "address": "台南市東區大學路18巷18-1號",
+    "url": "https://www.facebook.com/picturesquebookstore/",
+    "findPlace": {
+      "place_id": "ChIJhR26o5N2bjQRxoj1JSykbxU",
+      "name": "塗鴉空間",
+      "formatted_address": "大學路18巷18-1號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "bef9904f-0317-41c4-b47f-6f9d2ec5746e",
+    "name": "Hour Jungle共同工作室（台南崇學館）",
+    "address": "台南市東區崇學路165號7樓",
+    "url": "https://www.facebook.com/HourJungle/",
+    "findPlace": {
+      "place_id": "ChIJd1st8a53bjQRBrvYykl9lpg",
+      "name": "Hour Jungle Coworking 共同工作室 （獨立辦公室/開放座位/會議室出租/活動場地）",
+      "formatted_address": "崇學路165號7樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c0ec40f6-c17c-43b9-a098-f8796e0348d7",
+    "name": " 樸澍 咖啡館",
+    "address": "台南市東區榮譽街23號",
+    "url": "https://www.facebook.com/CafePrimitive/",
+    "findPlace": {
+      "place_id": "ChIJlU85jih0bjQR6JS5_kbiAvU",
+      "name": "樸澍",
+      "formatted_address": "榮譽街23號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "c112f714-d301-4720-a3f2-d9ff3cd41af4",
+    "name": "安內咖啡",
+    "address": "台南市永康區大橋一街73巷34號",
+    "url": "https://www.facebook.com/An1943.coffee",
+    "findPlace": {
+      "place_id": "ChIJw291zCF3bjQRn3X-_2mENd0",
+      "name": "An 1943 Coffee",
+      "formatted_address": "大橋一街73巷34號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c191a9f9-8fd5-4857-b429-44d89bdf169d",
+    "name": "叁七茶房",
+    "address": "台南市北區忠義路三段68號1樓",
+    "url": "https://www.facebook.com/37cafetea",
+    "findPlace": {
+      "place_id": "ChIJPTG40r93bjQR7My_QOtL_Ac",
+      "name": "叁七茶房(37茶房)",
+      "formatted_address": "704台南市北区忠义路三段68號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c2cccc23-7e5e-44c8-9499-be58dd5423ee",
+    "name": "MR PIKI 外帶吧",
+    "address": "台南市中西區忠義路一段102號",
+    "url": "MR PIKI Roasters",
+    "findPlace": {
+      "place_id": "ChIJk0p6Q5B3bjQRD5arzwCgVxs",
+      "name": "MR GOOD 古德先生澳式咖啡 忠義店",
+      "formatted_address": "忠義路一段102號 中間號那間",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c34d88e1-296e-48cf-9e30-bb928372a24a",
+    "name": "巷隅咖啡Lane Corner Coffee",
+    "address": "台南市東區中華東路三段399巷5號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ35Uy5CZ0bjQRAbAUzbf9C_k",
+      "name": "巷隅咖啡",
+      "formatted_address": "中華東路三段399巷5號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c74c7b6e-739f-440a-aaa2-5ca822d4d26b",
+    "name": "Meller 墨樂咖啡",
+    "address": "台南市安平區安北路53號",
+    "url": "https://www.facebook.com/MellerCoffee/",
+    "findPlace": {
+      "place_id": "ChIJkaF4DBt2bjQRG_fUZd1WsEM",
+      "name": "Meller 墨樂咖啡",
+      "formatted_address": "安北路53號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ca26bc59-e486-44dc-b33f-831b5f9ebd7e",
+    "name": "覓拾coffee",
+    "address": "台南市東區立德2路38號",
+    "url": "https://www.facebook.com/%E8%A6%93%E6%8B%BEcoffee-1841900586043285/",
+    "findPlace": {
+      "place_id": "ChIJs13GYCh0bjQRUGxGBXm8CBU",
+      "name": "覓拾coffee",
+      "formatted_address": "立德二路38號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "caa35b81-98c9-48e0-8297-eb1879e87a62",
+    "name": "Cama現烘咖啡專門店-台南西門店",
+    "address": "台南市中西區西門路一段701號",
+    "url": "http://www.camacafe.com/",
+    "findPlace": {
+      "place_id": "ChIJ1ZKFx3t2bjQRZasaZa3iZLU",
+      "name": "CAMA CAFE 台南西門店",
+      "formatted_address": "西門路一段701號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "cb382d7c-4908-4e54-8625-405f0c3e3ccf",
+    "name": "mini izzy cafe 府前店",
+    "address": "台南市中西區府前路一段172-1號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ8__rwod2bjQRw8grrxMisuU",
+      "name": "Mini izzy Cafe 府前店",
+      "formatted_address": "府前路一段172-1號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "cc67a8be-eea0-4c6a-b798-0fbdcb2b4dca",
+    "name": "More Cafe,摩爾咖啡",
+    "address": "台南市中西區赤崁街47號",
+    "url": "https://www.facebook.com/HelloMoreCafe?ref=hl",
+    "findPlace": {
+      "place_id": "ChIJo2hCqWF2bjQRNNIl3BeBi40",
+      "name": "More Cafe",
+      "formatted_address": "赤嵌街47號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "cc8bc6e8-62e5-497c-b96a-b30aee7196d3",
+    "name": "Kizuna Café",
+    "address": " 71248台南市新化區民治路23號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJT45zz7FxbjQRhOPkalLwO7A",
+      "name": "Kizuna Café",
+      "formatted_address": "民治路23號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "cfb24df8-a94a-4c48-af33-720a3b7c8bc5",
+    "name": "好像不錯 Sounds Nice",
+    "address": "台南市北區勝利路286號",
+    "url": "https://www.instagram.com/soundsnice.obj/",
+    "findPlace": {
+      "place_id": "ChIJL1rvXGN3bjQR-s7uSG2CReI",
+      "name": "好像不錯 Sounds Nice",
+      "formatted_address": "開元路124號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d041eb3f-7cf1-45fe-bdc9-0628c158afc9",
+    "name": "咖啡匙",
+    "address": "704台南市北區文成五街66號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJR8Tv_Fd2bjQRtu68QeFgjFU",
+      "name": "咖啡匙 － 精品咖啡｜濾掛咖啡｜自家烘焙｜咖啡課程｜生豆供應｜咖啡產品開發",
+      "formatted_address": "文成五路66號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d140aa0f-3d1c-4964-9280-558ca8c3b774",
+    "name": "月牙兒彎彎 Le Croissant de Lune",
+    "address": "701台南市東區東興路20巷109號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ8T-G32B2bjQR7UhUzSikWKE",
+      "name": "月牙兒彎彎 Le Croissant de Lune",
+      "formatted_address": "東興路20巷109號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d5586bed-f320-4565-8ed3-64cf753380c8",
+    "name": "MR PIKI Cafe'",
+    "address": "台南市北區中華北路二段90巷50號",
+    "url": "MR PIKI Roasters",
+    "findPlace": {
+      "place_id": "ChIJi6UEuqd3bjQRsalOLGEKosc",
+      "name": "MR PIKI 澳式咖啡專家《咖啡技能培訓》咖啡講座｜烘豆教學｜精品咖啡｜咖啡豆專賣｜批發｜零售",
+      "formatted_address": "中華北路二段90巷50號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "d92e0b21-5288-4cd8-b0df-d84eb15b8ca5",
+    "name": "Mini Izzy cafe 小東店",
+    "address": "710台南市永康區小東路553號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJL2Lqi8Z2bjQRdNeF5jIbw84",
+      "name": "Mini Izzy cafe 小東店",
+      "formatted_address": "忠義街81巷53號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "da273534-985e-4d43-85d8-00b2a2b4e0fa",
+    "name": "雨露微亮 everiridescent",
+    "address": "台南市北區富北街64號",
+    "url": "https://www.facebook.com/everiridescent/",
+    "findPlace": {
+      "place_id": "ChIJPyVjsYx2bjQRLo1DaoZpW2E",
+      "name": "雨露微亮 everiridescent",
+      "formatted_address": "富北街64號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "db429664-18d8-4ff2-82e5-8886e165f8f9",
+    "name": "喝我咖啡 Hold My Cafe‘ 咖啡豆專門店",
+    "address": "700台南市中西區康樂街282巷17號",
+    "url": "https://linktr.ee/holdmycafe",
+    "findPlace": {
+      "place_id": "ChIJ_ZgOVr13bjQRT02xSbUG0o4",
+      "name": "喝我咖啡 Hold My Cafe‘ 咖啡豆自烘專門店Coffee roaster 店休中",
+      "formatted_address": "海安路二段301巷17號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "dc6300f3-a755-4d16-9f70-c2afc207472a",
+    "name": "ROOM A",
+    "address": "台南市中西區康樂街21號",
+    "url": "https://www.facebook.com/on.RoomA/",
+    "findPlace": {
+      "place_id": "ChIJlWzRbHl2bjQRjKtopVctaAg",
+      "name": "Room A",
+      "formatted_address": "康樂街21號3F",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "dd982a7b-40be-4ed7-b27e-aea2b727f942",
+    "name": "Paripari ",
+    "address": "台南市忠義路2段158巷9號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJd4KnAmJ2bjQRf1g5LdX4URU",
+      "name": "Paripari apt.",
+      "formatted_address": "忠義路二段158巷9號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "de0d7c49-d2ac-4a60-871f-77eac120a0a5",
+    "name": "Miss Bossy Café",
+    "address": "台南市中西區新美街185號",
+    "url": "https://www.facebook.com/Miss-Bossy-Caf%C3%A9-400688696777876/",
+    "findPlace": {
+      "place_id": "ChIJuxTuD2F2bjQRfaBSETGziHc",
+      "name": "Miss Bossy Cafe(甜點)",
+      "formatted_address": "新美街185號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "de1e166d-9064-4600-b22b-698cc5c769c6",
+    "name": "寂寞先生 Mr.lonely Cafe & Bar",
+    "address": "70261台灣台南市南區萬年路160巷6-3號",
+    "url": "https://www.facebook.com/mrlonelycafe/",
+    "findPlace": {
+      "place_id": "ChIJSVni4U11bjQR69SZqPgf9EE",
+      "name": "寂寞先生 MR.LONELY CAFE",
+      "formatted_address": "萬年路160巷6-3號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "e0a92d53-802d-46a6-9b00-62d930cbf4f8",
+    "name": "木門 朝午洋食 MOMENT",
+    "address": "台南市中西區民權路一段192號",
+    "url": "https://www.facebook.com/moment192/",
+    "findPlace": {
+      "place_id": "ChIJ96kYpiZ3bjQR6HvF4Z-CY4o",
+      "name": "Minimou Brunch 文學店",
+      "formatted_address": "湯德章大道1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e0c49408-8fb3-4814-9a6c-a58aac529d72",
+    "name": "WO TANG XING 莪堂行",
+    "address": "台南市中西區府前路一段359巷22號",
+    "url": "https://www.facebook.com/wotangxing/",
+    "findPlace": {
+      "place_id": "ChIJpYMpkm92bjQRnFhOF49cnSU",
+      "name": "糯夫米糕",
+      "formatted_address": "700臺南市中西區府前路一段359巷22號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e3d23279-5c97-4d3d-a417-e1daba04c4d1",
+    "name": "肆樓咖啡",
+    "address": "台南市安平區延平街104巷21號",
+    "url": "https://www.facebook.com/slowcoffeeshop/",
+    "findPlace": {
+      "place_id": "ChIJybIIpel3bjQR69AZCkJzIsQ",
+      "name": "肆樓咖啡",
+      "formatted_address": "延平街104巷21號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e56c9b0c-2d71-4bba-ad38-05273ea956f0",
+    "name": "M2 coffee shop 凱旋店",
+    "address": "701台南市東區凱旋路15號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJs5vWVL52bjQRTryfIjD_8BA",
+      "name": "m2 coffee shop",
+      "formatted_address": "凱旋路15號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "e5c58d42-bac9-429c-aaad-458e8041a0df",
+    "name": "甜在心咖啡館",
+    "address": "台南市北區北忠街58巷12號",
+    "url": "https://www.facebook.com/甜在心咖啡館-147910205312553/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJxRCBpYx2bjQRC4PhjOObSjY",
+      "name": "甜在心咖啡館",
+      "formatted_address": "北忠街58巷12號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e672b74a-67d1-4d3b-b043-ee2eeb4ce49c",
+    "name": "賣 飲料 my beverages",
+    "address": "台南市中西區永福路二段142-1號",
+    "url": "https://www.facebook.com/my.beverage/",
+    "findPlace": {
+      "place_id": "ChIJd4-t8ox2bjQR3VsxHRBKnHk",
+      "name": "賣飲料 my beverages",
+      "formatted_address": "永福路二段142-1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e6b324dc-dbd5-4be7-ada6-56bc265fb2cc",
+    "name": "豐咖啡東橋店",
+    "address": "710台南市永康區東橋十街5號1樓",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJVRKw8rV3bjQRuCLm-VvV60M",
+      "name": "豐咖啡東橋店 / 極淺烘焙、淺焙 /營業時間當天如有異動會在限動公告",
+      "formatted_address": "東橋十街5號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e7a9af45-e6ba-4da8-8c07-2c7bae54b517",
+    "name": "娜咖啡 Hannah's cafe & bar",
+    "address": "73052台南市新營區復興路620巷61弄38號",
+    "url": "https://www.instagram.com/hannahscafe2020/",
+    "findPlace": {
+      "place_id": "ChIJefZGVhaFbjQRJ5LbTiHrKe0",
+      "name": "娜咖啡Hannah's cafe & bar",
+      "formatted_address": "復興路620巷61弄38號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e960b4ba-add1-49fe-89e0-4338fc11be5c",
+    "name": "可斯里咖啡烘焙",
+    "address": "台南市北區海安路3段908號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJPcHSeVl2bjQRJF-J99RLOaU",
+      "name": "可斯里咖啡烘培",
+      "formatted_address": "海安路三段908號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e96cbda5-2377-43ab-b61d-5396fbc3c1e1",
+    "name": "六合境 茶弥",
+    "address": "台南市中西區建業街18號2樓",
+    "url": "https://www.facebook.com/r.sabiski/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJl9two4d2bjQRvCZum_76ZAk",
+      "name": "六合境 茶弥 SaBiSKi (在2F）",
+      "formatted_address": "建業街18號2F",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e9e0c171-5251-4b0b-8964-16b7671cce0d",
+    "name": "RW Coffee",
+    "address": "台南市東區東興路4號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJAVwm0Vx3bjQRLzu_ihQeRUM",
+      "name": "THE YUAN 東興店（無訂位）",
+      "formatted_address": "東興路13號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e9e35693-f332-4e20-9298-b5b6cb7f09eb",
+    "name": "IZZY CAFE",
+    "address": "708台南市安平區安平路346之1號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ278oMBJ2bjQRR2KArzVEreA",
+      "name": "IZZY CAFE",
+      "formatted_address": "700臺南市中西區永福路二段35巷2號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e9eaaa01-a174-473a-8734-1fcc4aaad7d0",
+    "name": "TreesWind 樹有風精選咖啡豆專賣店",
+    "address": "台南市中西區府前路一段333號",
+    "url": "https://www.facebook.com/treeswindcafe/?ref=br_rs",
+    "findPlace": {
+      "place_id": "ChIJZ1OzC4h2bjQR72tnDTaR3PE",
+      "name": "樹有風",
+      "formatted_address": "府前路一段331號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ea235fed-a2ce-4f15-b50f-51fd51a99f93",
+    "name": "暖暖蛇咖啡館 Café Flâneur",
+    "address": "台南市中西區普濟街53號",
+    "url": "https://www.facebook.com/cafeflaneur/",
+    "findPlace": {
+      "place_id": "ChIJfY3fOrx3bjQRkDsOT-EhUDY",
+      "name": "他她咖啡館｜清明連假正常營業",
+      "formatted_address": "海安路三段32巷18號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "eab91270-ad72-47e4-bbed-6b0cc8e926f2",
+    "name": "鹿柴咖啡",
+    "address": "708台南市安平區健康三街77號",
+    "url": "https://www.facebook.com/Luchaicafe/",
+    "findPlace": {
+      "place_id": "ChIJmSVsWYd2bjQRJJM4fO15Naw",
+      "name": "鹿柴咖啡",
+      "formatted_address": "708臺南市安平區育平九街377號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "eac50485-9aeb-4128-826f-51ba74b31b33",
+    "name": "Mini Izzy cafe 民族店",
+    "address": "700台南市中西區民族路三段150號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJr04mH_13bjQROTq5PVzz3ac",
+      "name": "Mini Izzy cafe 民族店",
+      "formatted_address": "民族路三段150號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "eb3b2eba-d86f-4f77-9b71-f5cb304873a9",
+    "name": "Kadoya喫茶店",
+    "address": "台南市東區樹林街一段36號",
+    "url": "https://www.facebook.com/Kadoyasweets/",
+    "findPlace": {
+      "place_id": "ChIJGVU9zYV2bjQRbsh2vFqivpw",
+      "name": "KADOYA喫茶店",
+      "formatted_address": "樹林街一段36號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ed69cfca-ec2f-4ebe-9ec3-5e60dfea67a7",
+    "name": "zee's coffee jar",
+    "address": "台南市北門路二段547巷",
+    "url": "",
+    "findPlace": null,
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "No Google Places candidate found"
+    }
+  },
+  {
+    "id": "ee42202d-f634-4008-a492-9ba2b27fe2d9",
+    "name": "古行自家烘焙咖啡",
+    "address": "台南市中西區民族路二段399號",
+    "url": "https://m.facebook.com/goodthingcoffeetw/",
+    "findPlace": {
+      "place_id": "ChIJQ62xaGF2bjQRhum1tpGPKsc",
+      "name": "古行咖啡goodthingcoffee",
+      "formatted_address": "民族路二段399號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ef3250a0-17b1-476c-9468-0db953f046ea",
+    "name": "先吃•再聊",
+    "address": "台南市中西區開山路122巷36弄12號",
+    "url": "https://www.facebook.com/stomachfriend/",
+    "findPlace": {
+      "place_id": "ChIJKbqsQFd3bjQRUmk2TxfGfjk",
+      "name": "IBT COffee",
+      "formatted_address": "700臺南市中西區開山路122巷54號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f1126f00-5ddc-4974-96fd-bc8383e54c17",
+    "name": "Coffee Cape station",
+    "address": "台南市中西區萬昌街133-1號",
+    "url": "https://www.facebook.com/Coffee-Cape-station-1502589336715645/",
+    "findPlace": {
+      "place_id": "ChIJ4R0N-R0CaDQRXjO2AGZNFbY",
+      "name": "COFFEE: CAPE（工作室型態_咖啡牛乳專賣）",
+      "formatted_address": "231新北市新店區中正路332號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f1aa3ba4-5069-46c2-b12d-af00325dd0b3",
+    "name": "福吉161商行",
+    "address": "台南市南區福吉五街16巷1號",
+    "url": "https://www.facebook.com/fuji161cafe/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJybJHp6l3bjQROOMtYc-FvkI",
+      "name": "荒流 HomeReal",
+      "formatted_address": "70246臺南市南區福吉五街16巷1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f326dad8-2a8c-4196-a1b9-e4357659f8ed",
+    "name": "慕坐會",
+    "address": "台南市北區成功路68巷9號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJR_ZI84p2bjQROTCXMQs2rIo",
+      "name": "慕坐會小聚所",
+      "formatted_address": "成功路68巷9號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "f333f5be-bbaf-4d67-9448-198a66ba239e",
+    "name": "( AT ) ~Cats&Tea 茶飲輕食",
+    "address": "台南市中西區建業街72號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJh6O7gId2bjQRhhkT9Gh60PQ",
+      "name": "( AT ) ~Cats&Tea 茶飲輕食",
+      "formatted_address": "建業街72號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "f371e8a6-e3a0-4289-bec7-15b9d61e90b6",
+    "name": "T'WIN coffee 咖啡' 云",
+    "address": "台南市東區崇明路526號",
+    "url": "http://www.facebook.com/526twin/",
+    "findPlace": {
+      "place_id": "ChIJF6np5iB0bjQRUOyhfn0Oi6E",
+      "name": "T'WIN Coffee · 咖啡 / 云",
+      "formatted_address": "崇明路526號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f4250350-db43-4b5d-83ca-0926b681355a",
+    "name": "漫步日光",
+    "address": "台南市新營區中山路93-2號1樓",
+    "url": "https://an-coffee.com",
+    "findPlace": {
+      "place_id": "ChIJqx5zi92FbjQRVcemmH98E1k",
+      "name": "漫步日光",
+      "formatted_address": "中山路50號 3 號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f462f5a6-e8e4-49b2-b7f3-e9b7db1c2042",
+    "name": "咖啡茶朵CHADOR",
+    "address": "台南市東區勝利路115-1號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJE1XuapJ2bjQRRHCH0BxFnXg",
+      "name": "台南-CHADOR",
+      "formatted_address": "勝利路115-1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f51ea929-5512-479e-8c2e-1a1c7fa2fcc0",
+    "name": "山椿台灣咖啡",
+    "address": "71445台南市玉井區中正里中正120號",
+    "url": "https://m.facebook.com/SMCtaiwan/",
+    "findPlace": {
+      "place_id": "ChIJtRI2ensEbjQRS20UUrlvjKo",
+      "name": "山椿台灣咖啡",
+      "formatted_address": "中正里中正120號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f558af1e-9fbb-40ac-bbe9-c2ec5f0a8fd6",
+    "name": "那豆鮮焙",
+    "address": "台南市東區長榮路三段24巷20號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJi66B5hnbVaYRtJnm4UeGYcU",
+      "name": "那家韓國飯捲",
+      "formatted_address": "70154臺南市東區長榮路三段24巷20號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f5a4c3cb-a3db-4638-ae83-1f8af4a64072",
+    "name": "瞎聊貓咖啡",
+    "address": "台南市東區府東街214號",
+    "url": "https://www.facebook.com/catchatcafe/",
+    "findPlace": {
+      "place_id": "ChIJiXOREpV2bjQR9RpzODjyOAc",
+      "name": "瞎聊。貓咖啡",
+      "formatted_address": "701臺南市東區府東街214號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f689d579-ad0d-4fe1-a001-c811986c4d95",
+    "name": "Quinny cafe & lounge",
+    "address": "台南市東區長榮路一段95號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ45UKRpt2bjQRNeTNdBco19M",
+      "name": "Quinny Coffee 歐式西餐廳｜午餐｜下午茶｜晚餐｜團體聚會｜聚餐推薦｜多人聚會首選｜活動包場",
+      "formatted_address": "長榮路一段95號2F 2F",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "f6a97699-27f0-431d-81b6-1733d12369a4",
+    "name": "T3CA精緻咖啡店",
+    "address": "台南市東區中華東路二段133巷17弄21號1樓",
+    "url": "https://www.facebook.com/t3cabrew/",
+    "findPlace": {
+      "place_id": "ChIJXTS2grx2bjQRZ4fTCIOOKJA",
+      "name": "T3CA - 第三爆聯盟精緻咖啡店",
+      "formatted_address": "中華東路二段133巷17弄21號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f7e5ff2a-a1fb-46e8-b28d-e2503fd94eb6",
+    "name": "米寓",
+    "address": "台南市中西區忠明街3號",
+    "url": "https://www.facebook.com/APTM1040103/",
+    "findPlace": {
+      "place_id": "ChIJeQEJOGR2bjQRPteNEjYXPas",
+      "name": "米寓",
+      "formatted_address": "忠明街3號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f8083929-2d82-4082-a6dd-3687a86947a9",
+    "name": "Birdeye Espresso / 被愛咖啡",
+    "address": "No, No. 29長榮路二段24巷東區台南市701",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJDa65eJp2bjQRYvoyroU4CeI",
+      "name": "被愛咖啡",
+      "formatted_address": "長榮路二段24巷29號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f979f252-c19a-4f19-ad6a-9e54749024b0",
+    "name": "咖啡匙咖啡工作室",
+    "address": "台南市北區和緯路二段235號",
+    "url": "https://www.facebook.com/cuppingspoon/",
+    "findPlace": {
+      "place_id": "ChIJR8Tv_Fd2bjQRtu68QeFgjFU",
+      "name": "咖啡匙 － 精品咖啡｜濾掛咖啡｜自家烘焙｜咖啡課程｜生豆供應｜咖啡產品開發",
+      "formatted_address": "704臺南市北區文成五路66號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "fa4a109c-4b7f-476a-bc93-edcf55b48cb8",
+    "name": "稍後咖啡館Encore Cafe",
+    "address": "台南市東區裕農二街六號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJPZhlD3N3bjQR_wv9XUDCAAk",
+      "name": "稍後咖啡館 Encore Cafe",
+      "formatted_address": "裕農二街6號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "fbcdb965-88e1-4f90-8817-b6f1cb9eeb0f",
+    "name": "李白先生咖啡",
+    "address": "台南市永康區中山南路43巷40弄3號",
+    "url": "https://www.facebook.com/MrLeeWhiteCafe/",
+    "findPlace": {
+      "place_id": "ChIJa5NwOft3bjQRkZsoKdvNYRs",
+      "name": "李白先生咖啡-台南咖啡教學工作室|咖啡課程|咖啡教學|自家烘焙咖啡|手沖咖啡教學|咖啡拉花教學",
+      "formatted_address": "中山南路43巷40弄3號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "fc674aa4-0261-4641-9c48-153cecf1897d",
+    "name": "蛋黃咖啡",
+    "address": "台南市歸仁區中正六街27號",
+    "url": "https://www.facebook.com/YOLKCOFFEE/",
+    "findPlace": {
+      "place_id": "ChIJH1YBxn5xbjQRY5QXWrDCYEI",
+      "name": "蛋黃咖啡",
+      "formatted_address": "中正六街27 號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "fcef8dc2-ac0f-4902-a89d-2d28329e2d97",
+    "name": "存憶CafeBar",
+    "address": "台南市中西區國華路三段211號",
+    "url": "https://www.facebook.com/%E5%AD%98%E6%86%B6Cafe-Bar-239830979545229/",
+    "findPlace": {
+      "place_id": "ChIJHW_2ymZ2bjQRtsDJDeTCLJU",
+      "name": "存憶 Cafe Bar",
+      "formatted_address": "忠孝街45號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "fd33590f-47ad-4535-aa1e-633be679ba64",
+    "name": "首璽咖啡 SoSee Coffee",
+    "address": "701台南市東區裕農路375號",
+    "url": "https://m.facebook.com/soseecoffee/",
+    "findPlace": {
+      "place_id": "ChIJ_WuvCb12bjQRPUuoe88IWIc",
+      "name": "台灣聯通停車場-台南裕農場",
+      "formatted_address": "裕農路375號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "fe112249-a116-4e42-ad65-aa778fbf8ed8",
+    "name": "窄門咖啡",
+    "address": "台南市中西區南門路67號2樓",
+    "url": "https://www.facebook.com/narrowdoor99/",
+    "findPlace": {
+      "place_id": "ChIJq-hjV312bjQRc2uqPnxTEwg",
+      "name": "窄門咖啡館",
+      "formatted_address": "南門路67號2F",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "fee5529e-f314-4653-a295-571135e1bad6",
+    "name": "ours我們工作室",
+    "address": "台南市北區開元路394巷27弄44號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJAd7W3PF2bjQRWd9wn0ZEaD0",
+      "name": "我們工作室 Our",
+      "formatted_address": "開元路44號號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "ff28cacc-e00d-4780-b1c8-426d92b7f148",
+    "name": "阿烏咖啡",
+    "address": "台南市中西區開山路201號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ5xh7YIZ2bjQRWBdzm1oGw2M",
+      "name": "阿烏咖啡",
+      "formatted_address": "開山路201號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ff8ec474-b672-4034-870d-9a2a2446011e",
+    "name": "浮游咖啡",
+    "address": "台南市中西區府前路一段122巷81號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJqYi_rO52bjQRVf5X4vtGXcE",
+      "name": "浮游咖啡(暫停營業）",
+      "formatted_address": "府前路一段122巷81號1樓，2樓私人空間勿擅闖浮游咖啡在1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ffc23f54-a2fe-42a6-be2b-1bb8c33b08c5",
+    "name": "StableNice BLDG.",
+    "address": "700台南市中西區南寧街83巷9號",
+    "url": "https://www.facebook.com/StableNiceBLDG",
+    "findPlace": {
+      "place_id": "ChIJfYm5zK93bjQRQezTliFyOXU",
+      "name": "StableNice BLDG.",
+      "formatted_address": "南寧街83巷9號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  }
+]

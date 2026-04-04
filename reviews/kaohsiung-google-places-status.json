@@ -1,0 +1,5770 @@
+[
+  {
+    "id": "003c1c71-b6c9-4257-8722-54307a2281be",
+    "name": "Fuelwood Coffee 燃木咖啡研究所",
+    "address": "高雄市前鎮區復興三路311-14號",
+    "url": "https://www.facebook.com/fuelwoodcafe/",
+    "findPlace": {
+      "place_id": "ChIJ82mS9F4DbjQRKCE9G2nrJCU",
+      "name": "燃木咖啡研究所＿咖啡豆販售專門",
+      "formatted_address": "806高雄市前鎮區復興三路311-14號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "00544d87-9d8f-4910-88e6-79aa69c5b447",
+    "name": "咖啡林咖啡 ",
+    "address": "高雄市三民區鼎祥街12號",
+    "url": "https://www.facebook.com/coffeelingcafe/",
+    "findPlace": {
+      "place_id": "ChIJJVt0ZIkEbjQRQI6M4oY8ywQ",
+      "name": "咖啡林咖啡",
+      "formatted_address": "鼎祥街12號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "014ca85b-0a9d-4882-8a51-2e8e1a67315c",
+    "name": "多那之岡山分店",
+    "address": "高雄市岡山區前鋒路6號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJu3rlPCkMbjQR_RWv9QUo2U8",
+      "name": "多那之高雄岡山門市",
+      "formatted_address": "前峰路6號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "016c172f-34fa-4b21-b912-2c05f81ee209",
+    "name": "高雄 TaMa 咖啡館",
+    "address": "高雄市苓雅區永康街73號",
+    "url": "https://www.facebook.com/TaMa.Cafe/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJPewgGpsEbjQRExZMIlW4bU4",
+      "name": "TaMa Cafe",
+      "formatted_address": "永康街73號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "02c2bf8c-3a1f-45c6-b248-827bf124653f",
+    "name": "清．咖啡印製所",
+    "address": "高雄市三民區皓東路296號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJc17Z5AKoQjQRFG8CJNSRwL4",
+      "name": "咖啡印 Coffee in",
+      "formatted_address": "220新北市板橋區中正路1巷16弄23號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "02c4ca19-22a4-4baa-8b39-a3b144967596",
+    "name": "Zone Café 弄咖啡",
+    "address": "高雄市三民區北平一街158號",
+    "url": "https://www.facebook.com/zonecafe.kaohsiung/",
+    "findPlace": {
+      "place_id": "ChIJu-GVfj8bbjQRhVvhi6kmsI0",
+      "name": "Zone Cafe 弄咖啡親子餐廳 大東店",
+      "formatted_address": "830高雄市鳳山區光遠路161號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "03353e4b-fa15-4c4a-b930-1f15c9900907",
+    "name": "Cuiqu Coffee(奎克咖啡)",
+    "address": "高雄市鼓山區博愛二路236號",
+    "url": "https://www.facebook.com/cuiqucoffee/",
+    "findPlace": {
+      "place_id": "ChIJ-X57gAEFbjQRHHV3g2cme2I",
+      "name": "奎克咖啡 Cuiqu Coffee",
+      "formatted_address": "博愛二路236號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "0339466b-af7a-4e73-af90-4e46b1d9e1cc",
+    "name": "季洋咖啡隨行吧福山店",
+    "address": "高雄市左營區重愛路158號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJL6zl7gIFbjQRraHNxeGGdt8",
+      "name": "季洋咖啡minibar左營至聖吧",
+      "formatted_address": "813高雄市左營區忠貞街69號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "04548030-9211-465b-a87a-f32429d7c45b",
+    "name": "My cofi",
+    "address": "高雄市苓雅區廈門街19號",
+    "url": "https://www.facebook.com/My-cofi-116728305117302/",
+    "findPlace": {
+      "place_id": "ChIJfcVuzZAEbjQRA4Ty9R7xv14",
+      "name": "my cofi",
+      "formatted_address": "廈門街19號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0490448b-539a-4a23-878f-f5bd4f0caaa2",
+    "name": "咖啡敘事曲",
+    "address": "高雄市苓雅區永定街85號",
+    "url": "https://www.facebook.com/balladecafe/",
+    "findPlace": {
+      "place_id": "ChIJk0AzgZwEbjQRko_QpdKcMVE",
+      "name": "咖啡敘事曲",
+      "formatted_address": "永定街85號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "05129b1d-349e-4052-832f-b94b14b87530",
+    "name": "羅斯朵.晴天現烘精品咖啡研究室",
+    "address": "五福三路98-1號",
+    "url": "https://www.facebook.com/sunnyday.cafe.roaster3/",
+    "findPlace": {
+      "place_id": "ChIJd5NCbH4EbjQR_vnBy2CT4IM",
+      "name": "羅斯朵.晴天現烘精品咖啡研究室",
+      "formatted_address": "五福三路98-1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "069f67d2-9e26-40f8-bbd5-178d982a19ac",
+    "name": "溫柔實驗室",
+    "address": "高雄市鹽埕區大公路62號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJRVEitP4FbjQRMa-7rEY22c0",
+      "name": "溫柔實驗室",
+      "formatted_address": "大公路62號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "072b7a84-0542-401a-b350-71595f073eae",
+    "name": "O2 Caffe 歐兔咖啡",
+    "address": "高雄市楠梓區土庫二路183號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJG9K1DFIPbjQRLlvdSk76Xew",
+      "name": "O2 coffee(甲圍店）",
+      "formatted_address": "825高雄市橋頭區甲圍路117號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "075fd07c-3cdf-4c9b-9f29-9fa3927c3a9d",
+    "name": "噗 咖啡 Pu Cafe",
+    "address": "高雄市鹽埕區新樂街152號",
+    "url": "https://www.facebook.com/pucafe5515023/",
+    "findPlace": {
+      "place_id": "ChIJR0NSnqEFbjQRcbjnf8l8Unc",
+      "name": "koou coffee (僅接待十二歲以上，老屋二樓空間安全考量）",
+      "formatted_address": "新樂街117號2樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "079bebfe-01af-4f60-88ba-3b0cb1b88921",
+    "name": "INBAR 日日誌",
+    "address": "高雄市苓雅區海邊路105號",
+    "url": "https://instagram.com/inbar_kaohsiung?igshid=N2x3cGVnY3docnE=",
+    "findPlace": {
+      "place_id": "ChIJIe2CzngEbjQR3ZAospKF0Nc",
+      "name": "日日誌 IN BAR",
+      "formatted_address": "海邊路105號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "0836ee53-ed69-4f9e-9c06-d6ef0c3dcb84",
+    "name": " KamoGamo貓窩 ",
+    "address": "800台灣高雄市新興區文橫二路121巷22號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJwTUZ6MY9aTQRcJ8A76y8EMM",
+      "name": "KAMOGAMO",
+      "formatted_address": "403臺中市西區中美街243巷4號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "08b77441-6004-4018-a814-5dd8f1130759",
+    "name": " Taylor's Caf'e 泰勒咖啡坊",
+    "address": "高雄市三民區臥龍路54巷49號1樓",
+    "url": "https://www.facebook.com/tdtc.cafe/",
+    "findPlace": {
+      "place_id": "ChIJkzU7isUEbjQRcNFADxDI4Vw",
+      "name": "Taylor's Café 泰勒咖啡坊",
+      "formatted_address": "臥龍路54巷49號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "09822d7f-3bf0-447d-8f7b-089bd7df77ef",
+    "name": "Pure Black Coffee",
+    "address": "高雄市左營區至聖路14號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJa0Bc4xwFbjQR8mbl7fhzTKw",
+      "name": "Pure Black Coffee ·現烘咖啡豆·耳掛包",
+      "formatted_address": "813高雄市左營區文康路145號8樓",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "098d1f76-0118-4df8-8251-d638d1a16aee",
+    "name": "Louisa Coffee 路易．莎咖啡(高雄裕誠店)",
+    "address": "高雄市左營區裕誠路366號",
+    "url": "https://www.facebook.com/%E8%B7%AF%E6%98%93%E8%8E%8E%E5%92%96%E5%95%A1-Louisa-Coffee-%E9%AB%98%E9%9B%84%E8%A3%95%E8%AA%A0%E5%BA%97-1819695671592819/",
+    "findPlace": {
+      "place_id": "ChIJpyDl4AQFbjQR-ySwG8X1bko",
+      "name": "Louisa Coffee 路易莎咖啡(高雄裕誠店)",
+      "formatted_address": "裕誠路366號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0b118140-0a3f-45da-8178-732317197e89",
+    "name": "一等一咖啡",
+    "address": "高雄市鹽埕區新興街28-1號",
+    "url": "https://www.facebook.com/Top1CafeTea",
+    "findPlace": {
+      "place_id": "ChIJ0dLMXZYFbjQR6n0_eoERfvg",
+      "name": "一等一咖啡茶飲",
+      "formatted_address": "新興街28之1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0b80d7aa-7816-48a8-bf4f-45dc2c981007",
+    "name": "向陽樹咖啡-峇里島驛站",
+    "address": "高雄市梓官區大舍南路92號",
+    "url": "https://www.facebook.com/shinytree.tw/",
+    "findPlace": {
+      "place_id": "ChIJwfrsj5gPbjQRTgN0IHvTs2A",
+      "name": "峇里島咖啡驛站",
+      "formatted_address": "大舍南路92號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0b99334b-b2a7-49dc-b79f-2c08fd69224c",
+    "name": "艾奇諾珈琲工坊",
+    "address": "高雄市鹽埕區建國四路41號",
+    "url": "https://www.facebook.com/CaffeArtigiano1982/",
+    "findPlace": {
+      "place_id": "ChIJWxTGvnUEbjQROeYcaILS2sc",
+      "name": "艾奇諾咖啡",
+      "formatted_address": "建國四路41號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0cb05285-0f05-4e9c-849b-6f9f2ef4a5c0",
+    "name": "季洋莊園咖啡隨行吧成功店",
+    "address": "高雄市前金區成功一路431號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ-_ldvXwEbjQRZ8KPQ_yQ4o4",
+      "name": "季洋咖啡&三分春色-成功店",
+      "formatted_address": "成功一路431號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0d22ac54-a34b-4200-a512-d15d48827eb2",
+    "name": "吉拉德咖啡",
+    "address": "807高雄市三民區建國三路2-2號號1樓",
+    "url": "https://www.facebook.com/Gerard3221?mibextid=LQQJ4d",
+    "findPlace": {
+      "place_id": "ChIJ8yTNsvUFbjQRLHsJQHiJnRs",
+      "name": "吉拉德咖啡 Gerard café｜場地租借｜wifi 插座｜辦公商談",
+      "formatted_address": "建國三路2-2號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0d81d7b8-b483-487d-963a-1027af7d2d5b",
+    "name": "都提咖啡",
+    "address": "高雄市三民區吉林街86號",
+    "url": "https://www.facebook.com/Duttycoffee/",
+    "findPlace": {
+      "place_id": "ChIJdac2g_EEbjQRnnyD6OntACg",
+      "name": "古歐雷咖啡",
+      "formatted_address": "807高雄市三民區吉林街86號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0ef14210-e614-4a9b-bf10-782756de0ea9",
+    "name": "Café Strada 步道咖啡",
+    "address": "高雄市新興區中正二路67號",
+    "url": "https://www.facebook.com/Caf%C3%A9-Strada-%E6%AD%A5%E9%81%93%E5%92%96%E5%95%A1-131409216946863/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJcTSbSpQEbjQRVy7WwwEfDFI",
+      "name": "步道咖啡館 Cafe Strada",
+      "formatted_address": "800高雄市新興區中正四路44號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0f59887a-0316-4fdc-89a2-e8193e223603",
+    "name": "Petite Cafe 波醍精品咖啡館 大立百貨店",
+    "address": "80148高雄市前金區五福三路59號B館大立百貨",
+    "url": "www.petitecafe.com.tw",
+    "findPlace": {
+      "place_id": "ChIJC48JuFMFbjQRorqgLYChUHU",
+      "name": "就是黑咖啡",
+      "formatted_address": "五福三路59號B館大立百貨五樓",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "0f84e75e-05cb-4c57-b277-315d2b59f7e3",
+    "name": "草圖自家烘焙咖啡館",
+    "address": "高雄市前金區中正四路111號",
+    "url": "https://www.facebook.com/sketchcafe.tw/",
+    "findPlace": {
+      "place_id": "ChIJH84gKYgEbjQRm8xsvOZ5rKM",
+      "name": "草圖自家烘焙咖啡館 Sketch cafe & Roastery.",
+      "formatted_address": "中正四路111號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "104fb87b-6fe2-4a02-b8be-662a670a325b",
+    "name": "三餘書店 TaKaoBooks",
+    "address": "高雄市新興區中正二路214號",
+    "url": "https://www.facebook.com/pg/takaobooks214/about/?ref=page_internal",
+    "findPlace": {
+      "place_id": "ChIJ10OmbZQEbjQR9HoWOoBV7VM",
+      "name": "三餘書店",
+      "formatted_address": "中正二路214號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "10b47950-d480-48ae-827e-8f96541439df",
+    "name": "摩迅高雄楠梓店",
+    "address": "高雄市楠梓區裕昌街312號1樓",
+    "url": "https://www.facebook.com/MoPaoJack/",
+    "findPlace": {
+      "place_id": "ChIJx3LD63EPbjQRnnvkF2prioY",
+      "name": "迅維快修全國連鎖",
+      "formatted_address": "999之3號, 德民路",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "10e39ef3-f6a8-426f-8647-12b2658d6a4c",
+    "name": "費奧納咖啡",
+    "address": "前鎮區光華三路229號",
+    "url": "https://www.facebook.com/pg/Cofe.Fiona/about/?ref=page_internal",
+    "findPlace": {
+      "place_id": "ChIJp519hWYDbjQR4S8oXrp4JeI",
+      "name": "費奧納咖啡",
+      "formatted_address": "光華三路229號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "120aa98f-0a2e-423c-b2af-27c229d17c41",
+    "name": "CHOOSY GOURMET 啡嚐挑剔",
+    "address": "高雄市仁武區後港巷151之10號",
+    "url": "https://www.facebook.com/choosy.gourmet/",
+    "findPlace": {
+      "place_id": "ChIJCUHWCn4FbjQRG1X4o958HNs",
+      "name": "墨門珈琲 | 榮總店 咖啡 精品咖啡 咖啡豆 咖啡批發 甜點 下午茶 巴斯克 烤布蕾 手工甜點",
+      "formatted_address": "霞海南一街1號一樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "120e668a-673a-473d-9c73-51a9503c7515",
+    "name": "咕蒂咕蒂中山店",
+    "address": "高雄市新興區中山一路27號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJjTbC7YgEbjQRpz1j6QkJgAs",
+      "name": "咕蒂咕蒂研磨咖啡 Goody Goody Coffee｜咖啡店｜苓雅區咖啡｜高雄老店",
+      "formatted_address": "802高雄市苓雅區民權一路21-1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "1233abc7-5fac-4862-9a82-de85bdacef12",
+    "name": "亞舍咖啡 Arthur Cafe",
+    "address": "高雄市左營區文府路416號之3",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJYYFS1GUFbjQRLGKAwNpJcGA",
+      "name": "亞舍茶業-精品咖啡（4/4～4/6休假",
+      "formatted_address": "文府路416號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "12826970-e547-4c73-8e64-0d38a2ec7fec",
+    "name": "KSL Coffee",
+    "address": "高雄市鳳山區青年路二段167號",
+    "url": "https://www.facebook.com/Kslcoffee/",
+    "findPlace": {
+      "place_id": "ChIJVRA1cDEbbjQRR_XKtVK8gXU",
+      "name": "KSL Coffee＊整修中，暫停營業",
+      "formatted_address": "青年路二段167號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "12f0c52d-dd04-4540-a657-aef98647d568",
+    "name": "Hu's Coffee 誰的咖啡",
+    "address": "826高雄市梓官區赤崁西路24號",
+    "url": "https://www.facebook.com/huscoffeee/",
+    "findPlace": {
+      "place_id": "ChIJV-IWZmsJbjQRRtOwvVKocJE",
+      "name": "已搬家-Hu's Coffee 誰的咖啡 -最新資訊請看粉專、IG",
+      "formatted_address": "赤崁西路24號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "130f27bc-bf98-4912-a2be-fb6f644b551e",
+    "name": "卡啡那 CAFFAINA 明誠店",
+    "address": "高雄市左營區明誠二路243號",
+    "url": "https://www.facebook.com/Caffaina-Coffee-Gallery-%E5%8D%A1%E5%95%A1%E9%82%A3%E6%98%8E%E8%AA%A0%E5%A3%B9%E8%99%9F%E5%BA%97-453732771383399/",
+    "findPlace": {
+      "place_id": "ChIJueBRwRwFbjQRkS2789Vrdn8",
+      "name": "卡啡那 明誠館",
+      "formatted_address": "明誠二路243號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "1454fb0d-839e-4fc2-9d19-957aa7c8ce7c",
+    "name": " Monday Black Espresso Bar X 咖啡漫談",
+    "address": "高雄市前鎮區台鋁十一巷十四號一樓",
+    "url": "https://www.facebook.com/sakicafe.3.0",
+    "findPlace": {
+      "place_id": "ChIJgWy_yCsDbjQRi2IkrTcMYhY",
+      "name": "Kaohsiung Monday Black Espresso Bar X 咖啡漫談",
+      "formatted_address": "80607高雄市前鎮區台鋁十一巷十四號一樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "172d9f40-9a17-49f9-b192-9d66b23ae577",
+    "name": "The Original One -T O O",
+    "address": "高雄市前鎮區瑞隆路138號",
+    "url": "https://www.facebook.com/TOO138/?ref=page_internal",
+    "findPlace": {
+      "place_id": "ChIJ2fGgilYDbjQR4xAf6mWr2GE",
+      "name": "too烘培坊",
+      "formatted_address": "瑞隆路138號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "185d744c-dad1-459b-9d1f-594456e70677",
+    "name": "黛西堂咖啡豆舖",
+    "address": "高雄市鳳山區新富路182號",
+    "url": "https://goo.gl/ErJw9M",
+    "findPlace": {
+      "place_id": "ChIJzwf5F1YDbjQRARfkYWQ7mVw",
+      "name": "黛西堂咖啡豆舖",
+      "formatted_address": "新富路182號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "188fb9f6-ec2e-4028-8cb3-6a273a2f88ed",
+    "name": "Coffee Wake Up 咖啡覺醒（中山店）",
+    "address": "801高雄市前金區中山二路547號",
+    "url": "https://zh-tw.facebook.com/coffeewakeuptaiwan/",
+    "findPlace": {
+      "place_id": "ChIJ0SACk_oFbjQRz_naC4KLpaE",
+      "name": "咖啡覺醒 中山店",
+      "formatted_address": "中山二路547號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "196f1b3f-c35c-4f76-9948-ad41b9b0bab1",
+    "name": "吟香居 In SIANG 咖啡&甜點",
+    "address": "830台灣高雄市鳳山區錦田路270號",
+    "url": "https://www.facebook.com/inSIANG270",
+    "findPlace": {
+      "place_id": "ChIJc5JxRhYDbjQRNHCIv4Eoyos",
+      "name": "吟香居 In SIANG 咖啡&甜點",
+      "formatted_address": "錦田路270號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "19a0bc76-2013-4be2-9b8d-b62a9339fe74",
+    "name": "AWAKE COFFEE",
+    "address": "高雄市前鎮區民豐街24號",
+    "url": "https://www.facebook.com/coffee.Awake/",
+    "findPlace": {
+      "place_id": "ChIJywauPGUDbjQR_1C-8pHCmlM",
+      "name": "Awake coffee有為咖啡館 高雄美食 聚餐好所在",
+      "formatted_address": "民豐街24號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "1a6134fd-7933-4a52-9aa8-764fa4c263ce",
+    "name": "多那之高雄青年門市",
+    "address": "802台灣高雄市苓雅區青年一路141號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJoRA7a3kFbjQRnTuSsYIEFQs",
+      "name": "多那之高雄青年門市",
+      "formatted_address": "青年一路141號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "1abc4c2c-f7d6-45b8-853d-02857d0b81e8",
+    "name": "Kingmauii Coffee 金茂宜咖啡 文濱店",
+    "address": "83048高雄市鳳山區文濱路186號1樓",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ_czbhLMbbjQRfkPLqLEjBx0",
+      "name": "Kingmauii Coffee 金茂宜咖啡 文濱店",
+      "formatted_address": "文濱路186號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "1abca3a0-4afd-4b8d-b13c-87a2d4d56608",
+    "name": "易易茶室",
+    "address": "高雄市苓雅區海邊路55號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJfej5eMgFbjQRqnr6CYlkDVE",
+      "name": "曦-日光島嶼合作社",
+      "formatted_address": "光明街155號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "1b3164dc-1362-4c44-81da-2c6ed05e3682",
+    "name": "14g 光華店",
+    "address": "802高雄市苓雅區光華一路315號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJBU1s45kEbjQR6CPDT2GYLOA",
+      "name": "馞咖啡-光華店 Balmy Cafe'",
+      "formatted_address": "802高雄市苓雅區光華一路207號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "1cc1269d-fbca-488a-855e-2778a811fa40",
+    "name": "學院便利電",
+    "address": "高雄市楠梓區高雄大學路700號",
+    "url": "https://www.facebook.com/SCPGJ/",
+    "findPlace": {
+      "place_id": "ChIJH19sFQ4PbjQRVSPNy6hTDRI",
+      "name": "學院便利電(高大店)",
+      "formatted_address": "法學院 111 室, No. 700高雄大學路",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "1d0536d4-b36c-431b-8f98-ae356806d43c",
+    "name": "季洋莊園咖啡隨行吧民族店",
+    "address": "高雄市新興區民族二路65-1號",
+    "url": "https://www.facebook.com/pages/%E5%AD%A3%E6%B4%8B%E8%8E%8A%E5%9C%92%E5%92%96%E5%95%A1%E9%9A%A8%E8%A1%8C%E5%90%A7%E6%B0%91%E6%97%8F%E5%BA%97/192027707635318?ref=stream",
+    "findPlace": {
+      "place_id": "ChIJbVdSvJMEbjQR0xOUPcVC6uw",
+      "name": "季洋莊園咖啡隨行吧民族店",
+      "formatted_address": "民族二路65-1號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "1e5229c9-1169-404a-a3e0-1a0e643ec15f",
+    "name": "聽見花開咖啡館 ",
+    "address": "高雄市楠梓區土庫路283號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJTUf3wjIObjQRPQGu5TvI90M",
+      "name": "悟8庫商行/精品咖啡/酵素 共振淨水系統（無餐點）",
+      "formatted_address": "土庫路283號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "1ee3de9f-73b4-429a-98d5-fcd1810233c5",
+    "name": "Grace Café 典．咖啡 Love．Story．Coffee",
+    "address": "802高雄市苓雅區仁智街4號",
+    "url": "https://m.facebook.com/gracecafe0507",
+    "findPlace": {
+      "place_id": "ChIJV_lnIwcDbjQRmzXq6nMR6pc",
+      "name": "Grace Café 典．咖啡 Love．Story．Coffee",
+      "formatted_address": "仁智街4號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "1f59f0b3-e320-47cd-864c-be8a36c9ae72",
+    "name": "東二巷咖啡",
+    "address": "台南市後壁區長安里中寮35-5號",
+    "url": "https://www.facebook.com/arashi1986/",
+    "findPlace": {
+      "place_id": "ChIJPwfKEoAObjQRpb0338ppuUw",
+      "name": "東二巷咖啡工作室（預約制）",
+      "formatted_address": "35之5號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "1f7ddfa3-3352-4d1c-892a-0a7762ba94f6",
+    "name": "好林珈琲",
+    "address": "高雄市旗山區民權二街13號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJi3KBak1qbjQReOV5dOQ2EK0",
+      "name": "好林珈琲店（最新菜單只在FB粉專，請看FB粉專））",
+      "formatted_address": "842高雄市旗山區民權二街13號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "218e1e17-568c-4d7a-be10-02eec3044c52",
+    "name": "核桃栗栗珈琲屋",
+    "address": "81359高雄市左營區辛亥路43號",
+    "url": "https://facebook.com/kurumicafe",
+    "findPlace": {
+      "place_id": "ChIJOUn0sRwFbjQRKS6kJo-F7UI",
+      "name": "核桃栗栗珈琲屋（預約制咖啡廳） Kuri & Kurumi Cafè",
+      "formatted_address": "辛亥路43號1",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "21a3c602-e48d-42c0-bb8a-d3091c1aa778",
+    "name": "HAUS COFFEE",
+    "address": "高雄市左營區新正路28巷1號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJjxO9jm4FbjQRxd68bsYR2IM",
+      "name": "HAUS COFFEE",
+      "formatted_address": "新正路28巷1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "22dd5086-733a-48b6-b218-33f4f50fdf2a",
+    "name": "Michel Coffee Beans",
+    "address": "807高雄市三民區民族一路617號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJwU7KHBcFbjQRm6Ta5UAVtu8",
+      "name": "MICHEL COFFEE",
+      "formatted_address": "民族一路617號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "241c2c2f-5aec-47aa-9b71-88be22e4d096",
+    "name": "Bikecoffee - 拜克咖啡",
+    "address": "高雄市三民區林森一路345巷13號",
+    "url": "https://www.facebook.com/Bikecoffee-%E6%8B%9C%E5%85%8B%E5%92%96%E5%95%A1-142406032633950/",
+    "findPlace": {
+      "place_id": "ChIJ6RRSDfMEbjQR36lJUXPoXgw",
+      "name": "Bikecoffee - 拜克咖啡",
+      "formatted_address": "林森一路345巷13號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "24f7acee-2308-4750-b140-f53e518cb111",
+    "name": "握咖啡 OH！cafe",
+    "address": "高雄市鼓山區濱海二路5號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJTVobtPUDbjQR_ann5LQe_9M",
+      "name": "握咖啡西子灣店(總店)",
+      "formatted_address": "濱海二路5號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "272ef094-bbd0-4347-8a9e-21aabaaa570a",
+    "name": "旅行養分",
+    "address": "鹽埕區新興街291號2樓",
+    "url": "https://www.facebook.com/travelnutrients",
+    "findPlace": {
+      "place_id": "ChIJobsdvm8EbjQRhS1e3Y2k_kk",
+      "name": "旅行養分 早午餐咖啡廳",
+      "formatted_address": "新興街291號2樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "275aa2ae-4fa3-4a51-bacf-9a444ccd8519",
+    "name": "虛室咖啡 Fictional Room Coffee",
+    "address": "高雄市鼓山區鼓波街62號",
+    "url": "https://www.facebook.com/fictionalroom/",
+    "findPlace": {
+      "place_id": "ChIJGYcqTAAFbjQRM_Iy70Rdg-w",
+      "name": "隅室咖啡餐廳 us cafe 美術店",
+      "formatted_address": "804高雄市鼓山區美術東二路598號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "28a50971-1cd2-4d35-bfc2-d91f8b0dbd2b",
+    "name": "慢生活咖啡",
+    "address": "高雄市鳳山區五甲二路538號",
+    "url": "https://www.facebook.com/Slow-Life-Cafe-%E6%85%A2%E7%94%9F%E6%B4%BB%E5%92%96%E5%95%A1-787391827994869/",
+    "findPlace": {
+      "place_id": "ChIJb7ilPwUDbjQRVv_azgKH_wI",
+      "name": "慢生活咖啡 Slow Life Cafe 直火焙煎",
+      "formatted_address": "五甲二路538號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "28ca6676-8411-4063-affb-8218283c05b2",
+    "name": "大呆咖啡",
+    "address": "高雄市苓雅區和平一路36巷42-1號",
+    "url": "https://www.facebook.com/bigstupidbird",
+    "findPlace": {
+      "place_id": "ChIJQw4r-owFbjQRjbhIRw-9kLg",
+      "name": "大呆咖啡—備長炭直火烘焙工作室",
+      "formatted_address": "和平一路36巷42-1號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "29ab59f5-75ef-49a3-9140-f8f86b4be455",
+    "name": "貓頭鷹咖啡館",
+    "address": "新興區忠孝一路458號",
+    "url": "https://www.facebook.com/pg/%E8%B2%93%E9%A0%AD%E9%B7%B9%E5%92%96%E5%95%A1%E9%A4%A8-203670999688804/about/?ref=page_internal",
+    "findPlace": {
+      "place_id": "ChIJFya4Ho0EbjQR_PR5HILGZB0",
+      "name": "貓頭鷹咖啡館",
+      "formatted_address": "忠孝一路458號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "29dbca87-8d4e-40f2-a5ed-908b4107a0e1",
+    "name": "羅斯朵.晴天現烘咖啡-站前店",
+    "address": "高雄市新興區中山一路262號",
+    "url": "https://www.facebook.com/roaster.sunny/",
+    "findPlace": {
+      "place_id": "ChIJ9eFxeosEbjQRIYBMZHIq6_k",
+      "name": "羅斯朵.晴天現烘咖啡-站前店 （手沖咖啡 | 自家烘焙咖啡 | 精品咖啡豆專賣店）",
+      "formatted_address": "中山一路262號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "2a929d36-3759-48e9-8729-e2255ac0307b",
+    "name": "她她咖比",
+    "address": "高雄市三民區正忠路148號",
+    "url": "https://www.facebook.com/top2gabe160625/",
+    "findPlace": {
+      "place_id": "ChIJa32rf9AEbjQRAOTUmq90390",
+      "name": "PX Mart - Kaohsiung Dachang 2nd",
+      "formatted_address": "大昌二路146號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "2aeb6efa-626f-4466-9a9c-ff540108e512",
+    "name": "來福咖啡Life Coffee Studio",
+    "address": "高雄市苓雅區永定街46號",
+    "url": "https://www.facebook.com/life.coffee.studio/",
+    "findPlace": {
+      "place_id": "ChIJndlBYZwEbjQRNE1Yp4BXuuQ",
+      "name": "來福咖啡 Life Coffee Studio",
+      "formatted_address": "永定街46號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "2af93901-e1b1-4374-9812-218cc1308f48",
+    "name": "路易莎咖啡 河堤店",
+    "address": "高雄市三民區明仁路51號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJt8B-BhwFbjQRicslYVuaqzQ",
+      "name": "Louisa Coffee 路易莎咖啡(高雄河堤門市)",
+      "formatted_address": "明仁路51號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "2b24b977-c49e-4bc5-9527-8a1a3d7c61c9",
+    "name": "路易莎咖啡小港店",
+    "address": "高雄市小港區漢民路616號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJvfTM-tscbjQRZH378TSfTWY",
+      "name": "路易莎咖啡 (高雄小港門市)",
+      "formatted_address": "漢民路616號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "2b9cd451-e8d7-4af5-8708-0e38890ff8b8",
+    "name": "Lino coffee roastery",
+    "address": "高雄市鼓山區河西一路1591-11號",
+    "url": "https://www.facebook.com/LINOCAFECOMPANY/",
+    "findPlace": {
+      "place_id": "ChIJdZOxr1AEbjQRtXdvyA7PFxc",
+      "name": "力諾咖啡",
+      "formatted_address": "河西一路1591-11號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "2cab54e8-dd70-4066-9ab9-d8873874427a",
+    "name": "歐客佬Oklao咖啡農場(高雄瑞豐店)",
+    "address": "高雄市左營區明倫路85號",
+    "url": "http://www.oklaocoffee.com/",
+    "findPlace": {
+      "place_id": "ChIJHZFWewcFbjQRWoP_YBLUGT0",
+      "name": "歐客佬精品咖啡 高雄瑞豐店",
+      "formatted_address": "昌盛路332號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "2d57601a-8847-4d68-b7da-f9b5e8d1572d",
+    "name": "想享咖啡茶屋",
+    "address": "高雄市三民區鼎中路639號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJRc2rBS4FbjQRFFZhWZ9kzDs",
+      "name": "想享咖啡茶屋",
+      "formatted_address": "鼎中路639號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "2ddeef12-655d-4b5d-a6bb-7c4bb3f5f233",
+    "name": "多那之(中正)",
+    "address": "高雄市苓雅區中正一路288號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJv52625cEbjQRFDdQ4ZyADEE",
+      "name": "多那之高雄文化門市",
+      "formatted_address": "802高雄市苓雅區和平一路149-15號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "2e58490d-c7e3-43ac-8854-529bc52b420e",
+    "name": "咖啡覺醒 美術店",
+    "address": "804高雄市鼓山區美術南三路220號",
+    "url": "https://www.coffeewakeup.com.tw/",
+    "findPlace": {
+      "place_id": "ChIJs7AFkIIFbjQRnXvy60Iomyc",
+      "name": "咖啡覺醒 美術店",
+      "formatted_address": "美術南三路220號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "2f4f29fb-92ae-4669-bac7-7b2cdbf98d06",
+    "name": "好意外咖啡",
+    "address": "高雄市左營區文上路38號",
+    "url": "https://www.facebook.com/SerendipityCoffeeRoasters/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJD6AM5AgFbjQR_o9sRIsn6Q0",
+      "name": "MEDIUM & CO. 質介社会 • Café & Bistro",
+      "formatted_address": "文上路38號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "2fe14b87-9822-4d3c-bfd5-c90abf6a177e",
+    "name": "五餅二魚-點心舖",
+    "address": "高雄市大樹區久堂里久堂路城隍巷15號之3",
+    "url": "https://www.facebook.com/share/1FvDSHe3xR/?mibextid=wwXIfr",
+    "findPlace": {
+      "place_id": "ChIJeQMmpIQbbjQRaAzhFNFLQSg",
+      "name": "五餅二魚音樂學苑-大樹店",
+      "formatted_address": "840高雄市大樹區久堂路城隍巷15號15之3號之3",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "300aa162-1fb7-42f5-9500-38fcb6bece9b",
+    "name": "依賴咖啡2號店",
+    "address": "高雄市三民區陽明路162號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJHSCOOzMFbjQR9ZtX5HPSEGw",
+      "name": "依賴咖啡2號店Dependence Coffee·Pastry & Croissant no.2【高雄市文山特區商圈】",
+      "formatted_address": "陽明路162號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "303820ac-b9a7-4e66-b409-ccaf628fe65c",
+    "name": "善廸花廚",
+    "address": "高雄市鼓山區青海路278號",
+    "url": "https://www.facebook.com/SHANDIROSEMEAL/",
+    "findPlace": {
+      "place_id": "ChIJV2_6C1AEbjQRCGvdlx-jBKU",
+      "name": "善廸花廚",
+      "formatted_address": "青海路278號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "30a23d21-cf1d-47df-87c0-9238c76df333",
+    "name": "赤菓咖啡（行動咖啡車）",
+    "address": "高雄市鹽埕區新化街與光榮街公園內",
+    "url": "https://www.facebook.com/Akakashi.cafe/",
+    "findPlace": {
+      "place_id": "ChIJWbaEC4gDbjQR7TGxLy-f5tM",
+      "name": "NOW & THEN by nybc 駁二店",
+      "formatted_address": "大義街2號駁二藝術特區大義倉庫C9 19",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "30f2ec6e-41a2-47c8-b4c9-f020dd457641",
+    "name": "Milani 樂甜點",
+    "address": "804高雄市鼓山區南屏路843號",
+    "url": "https://www.facebook.com/profile.php?id=100094497584943",
+    "findPlace": {
+      "place_id": "ChIJ7x0qzl0FbjQREpUbvX2-wXs",
+      "name": "樂甜點咖啡廳",
+      "formatted_address": "神農路91號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "31b6897a-2362-4836-94f9-8e2d51acbc0d",
+    "name": "伴珈家",
+    "address": "鼓山區美術東七街102號",
+    "url": "https://www.facebook.com/tomokoka102/",
+    "findPlace": {
+      "place_id": "ChIJD9cOxawFbjQRkx4qTzAviSA",
+      "name": "伴珈家",
+      "formatted_address": "美術東七街102號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3218ef96-01b3-4fec-b801-0c6fa05b1626",
+    "name": "MINI.D COFFEE 裕誠館",
+    "address": "813高雄市左營區裕誠路428號",
+    "url": "https://www.facebook.com/MINIDCOFFEE",
+    "findPlace": {
+      "place_id": "ChIJcyWw9G4FbjQR7wXtORJ4CoY",
+      "name": "MINI.D COFFEE 裕誠館",
+      "formatted_address": "裕誠路428號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "324e4a80-c59e-4c76-a0c7-5e82c594845a",
+    "name": "米奈咖啡 Meet 9 Cafe",
+    "address": "高雄市鹽埕區府北路9號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJd1qNsOQFbjQRi00W94Qcg4U",
+      "name": "米奈咖啡 Meet 9 Cafe",
+      "formatted_address": "府北路9號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "32ba3147-01b5-40aa-a394-12b5f8c3c431",
+    "name": "卡啡那 CAFFAINA 文化探索館（文化中心）",
+    "address": "802高雄市苓雅區五福一路67號文化中心西苑",
+    "url": "https://www.caffaina.com",
+    "findPlace": {
+      "place_id": "ChIJ916Pti0FbjQRZD7D55UV1qU",
+      "name": "卡啡那 文化探索館",
+      "formatted_address": "五福一路67號西苑",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "34a40dd1-47a2-4819-be09-859c94799971",
+    "name": "BOOKING",
+    "address": "高雄市鹽埕區瀨南街177號",
+    "url": "https://www.facebook.com/bookingbookstore/",
+    "findPlace": {
+      "place_id": "ChIJe9864XAEbjQR87EJntDzgEY",
+      "name": "BOOKING",
+      "formatted_address": "瀨南街177號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3514f56e-b6b7-4f78-a9c3-820abb744b92",
+    "name": "季洋莊園咖啡隨行吧（河堤店）",
+    "address": "高雄市三民區河堤路586號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJLbkKkSgFbjQRNUmf5EwfcyI",
+      "name": "季洋咖啡minibar三民熱河吧-咖啡攤車/咖啡外帶/拿鐵美式/三民咖啡",
+      "formatted_address": "807高雄市三民區熱河一街145號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3690e61b-6975-48a3-9c00-0b9f7df513e4",
+    "name": "aroma cafe live 香氣現場",
+    "address": "高雄市前金區長生街25號",
+    "url": "https://www.facebook.com/aromacafe96",
+    "findPlace": {
+      "place_id": "ChIJY-PgdH4EbjQRT9xriaLq1vQ",
+      "name": "aroma caf'e live香氣現場",
+      "formatted_address": "長生街25號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3864a1e9-d9ac-4d1b-92ef-0e390eabae5a",
+    "name": "咖啡鳥咖啡館",
+    "address": "高雄市苓雅區青年一路24號",
+    "url": "https://www.facebook.com/caffe.bird.coffee/",
+    "findPlace": {
+      "place_id": "ChIJO-SFqJAEbjQRNxPOSiSRL20",
+      "name": "咖啡鳥Café | 苓雅區 健康溫蔬食餐&午餐餐盒",
+      "formatted_address": "青年一路24號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "38bcec21-879a-4441-b662-2e694825a2b5",
+    "name": "14克咖啡",
+    "address": "高雄市新興區文橫二路121巷28號",
+    "url": "https://www.facebook.com/14gCoffee/",
+    "findPlace": {
+      "place_id": "ChIJ1ZNsxJkEbjQRPEYqs2t8Lac",
+      "name": "14克咖啡 直火焙煎",
+      "formatted_address": "802高雄市苓雅區自強三路53巷6號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3998ef38-1a2d-4259-8933-9e5b11ae08f8",
+    "name": "路人咖啡",
+    "address": "高雄市苓雅區四維三路217號",
+    "url": "https://www.facebook.com/ruhcafe/",
+    "findPlace": {
+      "place_id": "ChIJ6ZxBT4IEbjQRhLkt6Hd2kjA",
+      "name": "路人咖啡1號店-高雄苓雅區咖啡廳 義式/手沖/冰滴/黑咖啡/冷萃 精品咖啡豆/禮盒/濾掛式咖啡 免費WiFi/插座/充電/寵物友善 辦公/讀書/工作 2026人氣熱門推薦 PTT Dcard",
+      "formatted_address": "四維三路217號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3b7be78f-1c6c-46bb-b46d-7cdb64aab953",
+    "name": "小涼福",
+    "address": "高雄市三民區熱河一街431號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJj7K3QvEEbjQRGepFdvceT1w",
+      "name": "小涼福",
+      "formatted_address": "大連街99巷7號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3c5a3572-318b-4a67-bf92-cb615c124a0f",
+    "name": "豆宅咖啡",
+    "address": "高雄市左營區福山里榮德街19號",
+    "url": "https://www.facebook.com/BeanOtakusCoffe/",
+    "findPlace": {
+      "place_id": "ChIJ-V2zCGoFbjQR5VoSRfz5fFA",
+      "name": "豆宅咖啡",
+      "formatted_address": "榮德街19號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3ce5c993-2c71-4f23-ad4c-dfe6f55ab08d",
+    "name": "My cofi 哈瑪星",
+    "address": "高雄市鼓山區鼓元街57號1樓 高雄市",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ91X3ol8DbjQRomBLhavWLRU",
+      "name": "My Cofi 哈瑪星",
+      "formatted_address": "鼓元街57號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "3d89bf91-d05c-4228-95d6-ec4ece0b6a07",
+    "name": "左咖啡x夜間部",
+    "address": "高雄市鹽埕區大勇路157號",
+    "url": "https://www.facebook.com/chocoffee157",
+    "findPlace": {
+      "place_id": "ChIJLbW6mEkFbjQRfOf4Usl6bR0",
+      "name": "左咖啡",
+      "formatted_address": "大勇路157號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3de1f9c2-1b4f-4225-bee6-2a5bf950a878",
+    "name": "MAY 16 CAFE",
+    "address": "高雄市苓雅區青年二路198號",
+    "url": "https://www.facebook.com/may16cafe.2013/",
+    "findPlace": {
+      "place_id": "ChIJ8wIVD50FbjQRuiGWVaU7puU",
+      "name": "MAY 16 CAFE",
+      "formatted_address": "青年二路198號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3e4f734f-611c-4bd6-a925-dbc048ae5cd8",
+    "name": "百瓦哥咖啡正興店",
+    "address": "高雄市三民區正興路1818 cl4",
+    "url": "https://www.facebook.com/BaiwagoPlusZhengxing/",
+    "findPlace": {
+      "place_id": "ChIJoxAWcOcEbjQRKzMO9UMxHlY",
+      "name": "百瓦哥咖啡 高雄正興店",
+      "formatted_address": "正興路181號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3f2a6133-1707-4405-9bb5-a87b59029e68",
+    "name": "AWAY COFFEE",
+    "address": "高雄市三民區懷安街66號",
+    "url": "https://www.facebook.com/awaycoffeeshop/",
+    "findPlace": {
+      "place_id": "ChIJgyCoUlgFbjQRkcSxqPnoGuw",
+      "name": "FIX COFFEE",
+      "formatted_address": "807高雄市三民區北安街90號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3f39e9d6-ced8-466b-9bad-a0d4a64b357f",
+    "name": "捌邸樓 8deroad",
+    "address": "高雄市新興區八德二路46-1號",
+    "url": "http://bit.ly/8deroadfb",
+    "findPlace": {
+      "place_id": "ChIJfzdHkiQFbjQRfj8kjn6IUtM",
+      "name": "捌邸樓咖啡",
+      "formatted_address": "八德二路46-1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3ffa340d-ff9f-4cca-9c01-cbf8efc9ac25",
+    "name": "樂邦客",
+    "address": "高雄市新興區錦田路11號",
+    "url": "https://www.facebook.com/THEBONCO2017/",
+    "findPlace": {
+      "place_id": "ChIJZRgl91MEbjQRAg2JPb9S2_M",
+      "name": "樂邦客",
+      "formatted_address": "錦田路11號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "4003d7cb-5555-4f19-b74c-e2d0161aae70",
+    "name": "百瓦哥咖啡（民生店）",
+    "address": "高雄市新興區民生一路15號",
+    "url": "https://www.facebook.com/百瓦哥咖啡-Baiwago-Plus-Cafe-高雄民生店-376194262744519/",
+    "findPlace": {
+      "place_id": "ChIJO5z1P5EEbjQRd89jZfvpQUk",
+      "name": "百瓦哥咖啡 民生店",
+      "formatted_address": "民生一路15號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "418419f6-afe0-4c95-96db-8eb4892b8af3",
+    "name": "新銳咖啡(高雄鼎中店)",
+    "address": "高雄市三民區鼎中路172號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJiXLa5RIFbjQRX3JnICkXAnc",
+      "name": "新銳咖啡高雄鼎中店",
+      "formatted_address": "鼎泰里鼎中路172號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "41c1a970-8530-45d9-ae0c-916576083624",
+    "name": "Arosa Café",
+    "address": "813高雄市左營區明誠二路539號",
+    "url": "https://www.facebook.com/arosacoffee/",
+    "findPlace": {
+      "place_id": "ChIJKcrigvMFbjQRigNfI4T7DeE",
+      "name": "AROSA COFFEE阿洛薩手工烘焙咖啡-左營明誠店",
+      "formatted_address": "明誠二路539號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "428467d4-f65b-466b-bb69-0fe04f62f582",
+    "name": "草侍咖啡烘焙工坊",
+    "address": "嘉義市西區湖美二路395號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJla5Q9IwPbjQRcXzmlYrPUok",
+      "name": "草侍咖啡烘焙工坊 Kuanz Coffee Roaster（預約制）",
+      "formatted_address": "湖美二路395號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4369f97a-9341-40ca-9c9b-7f140161e78b",
+    "name": "書店喫茶一二三亭 (ヒフミテイ)",
+    "address": "高雄市鼓山區鼓元街4號",
+    "url": "https://facebook.com/cafehifumi/",
+    "findPlace": {
+      "place_id": "ChIJBdDvS_UDbjQR5F0o2F7c8b4",
+      "name": "書店喫茶 一二三亭",
+      "formatted_address": "鼓元街4號2樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4576a08c-49c7-4c95-a48f-9c34094aff8a",
+    "name": "日沐咖啡",
+    "address": "高雄市苓雅區凱旋三路619號",
+    "url": "https://www.facebook.com/rimoocafe/",
+    "findPlace": {
+      "place_id": "ChIJOZGKAqQEbjQRRRbTpYQgok8",
+      "name": "日沐咖啡",
+      "formatted_address": "凱旋三路619號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "462ec5af-4b03-49e0-9620-354fb7815637",
+    "name": "芝咖啡",
+    "address": "高雄市左營區明誠二路265號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJHVGry_8EbjQRfoCxwBi-K24",
+      "name": "芝咖啡",
+      "formatted_address": "明誠二路265號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "46a0848e-0933-4657-b0e4-1970aa045d57",
+    "name": "MINI.D COFFEE 至聖館",
+    "address": "813高雄市左營區至聖路250號",
+    "url": "https://www.facebook.com/MINIDCOFFEE",
+    "findPlace": {
+      "place_id": "ChIJEet8z-4FbjQRtpCUJJTd0Nc",
+      "name": "MINI.D COFFEE 至聖館",
+      "formatted_address": "至聖路250號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "47bc0531-e48f-43da-963c-45aa5249a2b5",
+    "name": "真心豆行",
+    "address": "高雄市新興區洛陽街68號",
+    "url": "https://www.facebook.com/ZhenXinDouHung/",
+    "findPlace": {
+      "place_id": "ChIJlbN4g5IEbjQRgEaFC9n848A",
+      "name": "真心豆行-洛陽分店",
+      "formatted_address": "洛陽街38號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4b127718-549d-4881-9c7c-31eb42b9836a",
+    "name": "161烘焙咖啡屋(民族路)",
+    "address": "高雄市三民區民族一路637號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJlwYbnxwFbjQRKIl8OSZikHU",
+      "name": "161咖啡",
+      "formatted_address": "民族一路637號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4bde2a37-3886-4d60-933c-d7f94848344e",
+    "name": "MINI.D COFFEE 復興館",
+    "address": "806台灣高雄市前鎮區三多三路81號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJYZHoCsUFbjQR2PQxCcL_zu0",
+      "name": "MINI.D COFFEE 復興館",
+      "formatted_address": "三多三路81號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4d9f9d0d-9bc2-49be-8ae2-46f7eebe1230",
+    "name": "always a+",
+    "address": "高雄市前金區新田路217號",
+    "url": "https://www.facebook.com/Always-A-%E5%92%96%E5%95%A1%E9%A4%A8-195980383748847/",
+    "findPlace": {
+      "place_id": "ChIJiUjpZI4FbjQRgNgJ7dBCPOE",
+      "name": "春麥商行CHUN MAI - 自家烘焙吐司/輕食早午餐/精品咖啡",
+      "formatted_address": "801高雄市前金區新田路217號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4ee5fff7-8b89-4357-85a6-47c8e8308425",
+    "name": "鐵塔咖啡 Tower Cafe",
+    "address": "高雄市三民區同盟三路198號",
+    "url": "https://www.facebook.com/jtowercafe/",
+    "findPlace": {
+      "place_id": "ChIJn4Q8hGgEbjQRQxtJw-HzqOQ",
+      "name": "鐵塔咖啡",
+      "formatted_address": "807高雄市三民區同盟三路198號807",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "4f14ce8b-e3c9-42e9-a4eb-c79110f15290",
+    "name": "LA MAISON BERRY 貝瑞家 鼎華店",
+    "address": "三民區鼎華路165號",
+    "url": "https://www.lamaisonberry.com/",
+    "findPlace": {
+      "place_id": "ChIJuVsjQOEEbjQRdsFalb4-bCA",
+      "name": "貝瑞家",
+      "formatted_address": "804高雄市鼓山區慶豐街100號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "52c671d1-07e4-44a7-b09f-be639a6c3a95",
+    "name": "Lab 駁二",
+    "address": "高雄市鹽埕區大義街2-1號 大義倉庫C7-5",
+    "url": "https://www.facebook.com/labpiertwo/",
+    "findPlace": {
+      "place_id": "ChIJdVWmGogDbjQRWfNtXAbElIA",
+      "name": "LAB PIER2 駁二店",
+      "formatted_address": "大義街2-1號大義倉庫C7-5",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "54a8f71d-f59e-4626-9af5-7f35eb42da14",
+    "name": "Ciao日安咖啡(大華店)",
+    "address": "高雄市鳥松區球場路42巷7號 (店面門口在後門, 面臨大華路)",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJLWdt_CsFbjQRt5ZA77l9J4U",
+      "name": "日安咖啡",
+      "formatted_address": "球場路42巷7號後門_大華公園對面",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "5506976b-7114-42d1-9ba0-1ef190e84e9a",
+    "name": "二元品嚐咖啡",
+    "address": "高雄市前金區民生二路201-1號",
+    "url": "https://www.facebook.com/pages/%E4%BA%8C%E5%85%83%E5%93%81%E5%9A%90%E5%92%96%E5%95%A1/155376311182312?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJB44dB3wEbjQRgeOBGmFe3xI",
+      "name": "二元咖啡館",
+      "formatted_address": "民生二路201-1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "5648f3fe-a59c-419d-944b-2498ca732ffc",
+    "name": "36味咖啡館",
+    "address": "高雄市三民區正興路74號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJaZUSb90EbjQRH0i_5pEwqZk",
+      "name": "36味咖啡館",
+      "formatted_address": "正興路74號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "56c09498-755c-4146-b033-d5dca69778f1",
+    "name": "卡啡那高雄文濱店",
+    "address": "高雄市鳳山區文濱路131號",
+    "url": "https://www.facebook.com/CaffainaCoffeeGallery",
+    "findPlace": {
+      "place_id": "ChIJHbPs228bbjQRH-dxGMJ7LgA",
+      "name": "卡啡那 文濱館",
+      "formatted_address": "文濱路131號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "57b2fdc7-8161-45de-8610-8157ba0a8a84",
+    "name": "Helen's son coffee",
+    "address": "高雄市鼓山區高雄市鼓山區哨船街87號",
+    "url": "https://www.facebook.com/helensson.coffee/",
+    "findPlace": {
+      "place_id": "ChIJB_KuKAAFbjQR_IFZnm_IQ4M",
+      "name": "海秋咖啡西子灣店 High Chill cafe",
+      "formatted_address": "804高雄市鼓山區蓮海路90號2樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "58581eea-b150-4aaf-a059-a7da7b41ff46",
+    "name": "愚度咖啡 udu café",
+    "address": "高雄市苓雅區憲治路2號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ1YbJAOEFbjQRq7u_AE_Vhtg",
+      "name": "愚度咖啡 udu café",
+      "formatted_address": "憲治路2號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "59625bbb-f1a5-4d34-ba3d-02b7e949fbed",
+    "name": "Café De Lecture",
+    "address": "高雄市前鎮區忠勤路8號2F",
+    "url": "https://www.facebook.com/MLDtailu/",
+    "findPlace": {
+      "place_id": "ChIJSywjj0MDbjQRdAZKl5mjVEU",
+      "name": "黑浮咖啡",
+      "formatted_address": "忠勤路8號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "59ee9cfc-e1c5-4c9b-b524-c9b95e3d71a5",
+    "name": "季洋咖啡隨行吧楠梓店",
+    "address": "高雄市楠梓區藍昌路351號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJrSj8enMPbjQR-HWoQXrf9wE",
+      "name": "季洋莊園咖啡隨行吧 楠梓門市",
+      "formatted_address": "藍昌路351號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "59ffbb9c-deeb-482c-9105-1532976dd2fe",
+    "name": "扎根咖啡",
+    "address": "高雄市三民區鼎中路552號1樓",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJxUabevoFbjQRn7050gYVzNE",
+      "name": "扎根咖啡 Zha Gen Cafe （公休日請看IG)",
+      "formatted_address": "鼎中路552號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "5a919c7e-7cdd-46df-ad98-2d53df7e8667",
+    "name": "多那之(五甲店)",
+    "address": "高雄市鳳山區五甲三路1號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJB3cbq8kDbjQRmPWE_BCclbA",
+      "name": "多那之高雄五甲門市",
+      "formatted_address": "五甲三路1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "5c8066fa-93e6-4a54-bca2-cb43ad50cd64",
+    "name": "Möbius 莫比巫師",
+    "address": "830高雄市鳳山區海洋一路60巷7號",
+    "url": "https://www.facebook.com/pg/MoBius.Waffle.Cafe/posts/?ref=page_internal",
+    "findPlace": {
+      "place_id": "ChIJX7BH8gkFbjQRFAPNz0XCyOU",
+      "name": "奧比沐 高雄博愛店",
+      "formatted_address": "813高雄市左營區博愛二路236號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "5dadcc02-dcc0-4715-9348-4d50de4bfbbc",
+    "name": "品甜咖啡",
+    "address": "高雄市三民區大昌二路533巷10弄9號",
+    "url": "https://www.facebook.com/TASTESWEETCOFFEE/",
+    "findPlace": {
+      "place_id": "ChIJP-BpkvoFbjQRqSFJhjdVNz8",
+      "name": "品甜咖啡（有一隻💗貓）",
+      "formatted_address": "大昌二路533巷10弄9號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "5f1019aa-3ab6-4339-9814-dc3bd5c7f89f",
+    "name": "元啡驢派",
+    "address": "高雄市鹽埕區建國四路276號",
+    "url": "https://www.facebook.com/donkeypie/",
+    "findPlace": {
+      "place_id": "ChIJ2aYR0m8EbjQREzoK_Fnu4lM",
+      "name": "元啡驢派",
+      "formatted_address": "建國四路276號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "5f458e6c-c481-4f78-a211-310b1d795a49",
+    "name": "612號月光海洋咖啡館",
+    "address": "高雄市三民區明賢街67號",
+    "url": "https://www.facebook.com/612cafe/",
+    "findPlace": {
+      "place_id": "ChIJ463WeBwFbjQR7ddQtqivdb4",
+      "name": "小本X612",
+      "formatted_address": "明賢街67號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "5fdf4d92-0f09-4cf8-a611-5970647536a2",
+    "name": "Tryer Cafe 嗜咖啡",
+    "address": "高雄市苓雅區林南街19號",
+    "url": "https://www.facebook.com/TRYerCafe/",
+    "findPlace": {
+      "place_id": "ChIJX-ZbO5cEbjQRPMh2dx7qlUE",
+      "name": "嗜咖啡",
+      "formatted_address": "號 No, No. 89民享街新興區高雄市800",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "616fd985-14d8-4c57-ba00-63c54f87b15a",
+    "name": "TADYcoffee 泰迪咖啡",
+    "address": "高雄市三民區旅順街8號",
+    "url": "https://www.facebook.com/tadycoffeeshop/",
+    "findPlace": {
+      "place_id": "ChIJNaC-vu4EbjQRDRhbV-9jsik",
+      "name": "TADYcoffee精品咖啡",
+      "formatted_address": "旅順街8號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "61ddf40b-af83-45ff-b810-ee94e80a24a8",
+    "name": "Formula Coffee Roaster",
+    "address": "高雄市三民區重慶街117號",
+    "url": "fcrcoffeeroaster.com",
+    "findPlace": {
+      "place_id": "ChIJ8eKVepoFbjQRXgmJQZKg0b0",
+      "name": "程式咖啡",
+      "formatted_address": "重慶街117號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "6380ace7-514d-4f11-8f8d-fbed6eb3da1e",
+    "name": "義來義去 Eagle Cafe",
+    "address": "高雄市鼓山區南屏路599號",
+    "url": "https://www.facebook.com/eaglehk19/",
+    "findPlace": {
+      "place_id": "ChIJV6X1NAAFbjQRoZTzsYCxLwQ",
+      "name": "義來藝去 Eagle",
+      "formatted_address": "南屏路599號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "63d5db51-b1fc-4055-a593-0fd11d0d5a67",
+    "name": "咖啡隱 Cofein Café 漢神自強店",
+    "address": "802高雄市苓雅區自強三路275號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJcfpbiEMFbjQRUL6qgrg5wLE",
+      "name": "可不可熟成茶行-漢神自強店",
+      "formatted_address": "自強三路254號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "64fc3577-e8cc-434d-a08d-f62ea589956f",
+    "name": "逃咖啡",
+    "address": "高雄市三民區義德路3號",
+    "url": "https://www.facebook.com/chintecoffee/",
+    "findPlace": {
+      "place_id": "ChIJjyc3qdEEbjQRR7bQObLCcxA",
+      "name": "逃咖啡陶藝",
+      "formatted_address": "義德路3號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "654e6f5b-3691-41b7-b3e0-82c1989efa50",
+    "name": "來珈宿囍。咖啡||早午餐||鳳山咖啡||包場||場地租借",
+    "address": "830高雄市鳳山區西五巷52號",
+    "url": "https://www.facebook.com/profile.php?id=100083353662186&mibextid=dGKdO6",
+    "findPlace": {
+      "place_id": "ChIJ-0Hu9p0bbjQRi9AV0hhNZa0",
+      "name": "來珈宿囍。咖啡||早午餐||鳳山咖啡||包場||場地租借",
+      "formatted_address": "西五巷52號咖啡廳出入口 西四巷41號(民宿",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "66b83aae-0fa6-45e0-9d6c-6e006c84037e",
+    "name": "Parlare cafe",
+    "address": "鳳山區文化西路7號",
+    "url": "https://www.facebook.com/Parlare.coffee/",
+    "findPlace": {
+      "place_id": "ChIJLUbh2TMbbjQR_ZGXZTK6Nds",
+      "name": "Parlare coffee",
+      "formatted_address": "文化西路7號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "6763177e-44b5-418d-a960-6f9474dfc845",
+    "name": "海珈琲 海とコーヒー",
+    "address": "804高雄市鼓山區鼓山一路26號",
+    "url": "https://instagram.com/umi.to.kohi?igshid=1bjnl6yxm8jip",
+    "findPlace": {
+      "place_id": "ChIJcRyODJ8DbjQRvgJL8JvMK2w",
+      "name": "海珈琲 海とコーヒー",
+      "formatted_address": "鼓山一路26號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "67fe136d-9e96-4612-99b5-6400fd04a709",
+    "name": "馤 咖啡。食作",
+    "address": "高雄市左營區文府路159巷18號",
+    "url": "https://www.facebook.com/hay.cafeteria/",
+    "findPlace": {
+      "place_id": "ChIJJYsWk28FbjQRhcK1HPT7xI0",
+      "name": "馤 咖啡。食作",
+      "formatted_address": "文府路159巷18號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "68c18813-64de-477a-8868-935b02347c30",
+    "name": "Do good coffee & dessert",
+    "address": "803高雄市鹽埕區必信街116-1號",
+    "url": "https://www.facebook.com/dogood1161/",
+    "findPlace": {
+      "place_id": "ChIJXaM6dXYEbjQRlGc_pto95xg",
+      "name": "Do good coffee & dessert",
+      "formatted_address": "必信街116-1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "69804668-b9b9-4323-b3f6-7ed01fb2514a",
+    "name": "小農坊",
+    "address": "高雄市前金區自強三路237號（235巷內）",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJq0cUKn4EbjQRrbNE5rX_SrA",
+      "name": "小農坊",
+      "formatted_address": "自強三路237號（235巷內）",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "6981e6d1-aa6f-4013-a9f1-066543ca5a68",
+    "name": "Fans cafe",
+    "address": "土庫一路158號",
+    "url": "https://www.facebook.com/fanscafekh/",
+    "findPlace": {
+      "place_id": "ChIJQ6o3Bs0PbjQRPUmo-QDWq-E",
+      "name": "FANs CAFÉ-楠梓網美下午茶|人氣咖啡|高雄咖啡廳|熱門咖啡館|高雄甜點推薦|咖啡廳推薦|高雄下午茶推薦|人氣甜點",
+      "formatted_address": "土庫一路158號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "6a631dc9-713c-43aa-beb8-7b6c6d071ad7",
+    "name": "意滿漁",
+    "address": "826高雄市梓官區赤崁南路130巷30號",
+    "url": "https://www.facebook.com/%E6%84%8F%E6%BB%BF%E6%BC%81-1736990176523613/",
+    "findPlace": {
+      "place_id": "ChIJid3kf8oIbjQR8J4BatiKcc8",
+      "name": "意滿漁",
+      "formatted_address": "赤崁南路130巷30號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "6b081749-b8a3-4c91-93fc-4694adce3158",
+    "name": "amical café 日光巴黎咖啡廳",
+    "address": "高雄市三民區自由一路105號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ2xZBJQAFbjQR45XYuG8aQvI",
+      "name": "小院日光",
+      "formatted_address": "807318高雄市三民區力行路10號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "6bcf48e5-5e6b-4258-8060-a869e23126d0",
+    "name": "菁咖啡",
+    "address": "高雄市燕巢區橫山路86號",
+    "url": "https://www.facebook.com/CQICoffeeDrink/",
+    "findPlace": {
+      "place_id": "ChIJAbIXdVwFbjQRUALVKjYz5FM",
+      "name": "菁咖啡 coffee drink",
+      "formatted_address": "804高雄市鼓山區美術東三路1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "6f8251d0-9439-4fa2-a1b2-165be678df0d",
+    "name": "移動咖啡 (進駐於高雄個共作空間)",
+    "address": "高雄市三民區熱河二街六巷16號",
+    "url": "https://www.facebook.com/mobile.coffe/\n",
+    "findPlace": {
+      "place_id": "ChIJrRkE0PYEbjQR_i4bxSFu5zE",
+      "name": "作伙共同生活空間",
+      "formatted_address": "807高雄市三民區熱河二街6巷16號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "702378c1-e872-405b-941f-e489f5eec902",
+    "name": "咖啡中學",
+    "address": "鼓山區青海路392號",
+    "url": "https://www.facebook.com/lic392yang/",
+    "findPlace": {
+      "place_id": "ChIJsUUHV0UEbjQRaojpx-Nf-BY",
+      "name": "咖啡中學",
+      "formatted_address": "青海路392號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "7201a5b0-feb8-4c22-9b3d-03dda298c886",
+    "name": "Buii sheep's",
+    "address": "高雄市左營區明華一路13號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ-eWKnxwFbjQRWrjt9QIndgI",
+      "name": "羊淘咖啡 BUII SHEEP COFFEE",
+      "formatted_address": "明華一路13號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "73836884-34ae-41be-bc4b-87a29bfa459f",
+    "name": "歐咖逼",
+    "address": "高雄市楠梓區惠民路158號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJpWAopkwPbjQRWtOmmKZY4o8",
+      "name": "Colorful Life 毎日の食事",
+      "formatted_address": "壽豐路400號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "7479d2e5-23c0-4722-9cb0-c1828053a616",
+    "name": "GEORGE HOUSE (高雄文山店)",
+    "address": "高雄市鳳山區文平街33號",
+    "url": "http://www.georgehousefinecoffee.com/ws.htm",
+    "findPlace": {
+      "place_id": "ChIJ12E4uC4bbjQRPiVJEiNDdGA",
+      "name": "GEORGE HOUSE 高雄文山門市",
+      "formatted_address": "文平街1號樓 33",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "760c55aa-e33f-4bf5-89c0-378baf5bcd17",
+    "name": "本東咖啡",
+    "address": "高雄市新興區民有街86號",
+    "url": "https://www.facebook.com/pages/%E6%9C%AC%E6%9D%B1%E5%92%96%E5%95%A1/217428735008414?rf=539327169465754",
+    "findPlace": {
+      "place_id": "ChIJ-8LS_oQEbjQR5IUIflnp968",
+      "name": "撥撥橘",
+      "formatted_address": "民有街71號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "760f32e2-29aa-4acb-a8de-d114c11edd77",
+    "name": "咖啡隱 Cofein Café 青年旗艦店",
+    "address": "830高雄市鳳山區青年路二段317-2號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJS45vtukbbjQRYNFiHNqFLd0",
+      "name": "咖啡隱 Cofein Café 青年旗艦店",
+      "formatted_address": "青年路二段317-2號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "76d0960c-90d2-4b58-839b-4ac3a1c2566f",
+    "name": "公寓咖啡",
+    "address": "高雄市前金區仁義街227號",
+    "url": "https://www.facebook.com/%E5%85%AC%E5%AF%93%E5%92%96%E5%95%A1-198711466969602/",
+    "findPlace": {
+      "place_id": "ChIJqxSvJIEEbjQRbKTAIv_9Vb4",
+      "name": "公寓咖啡（每月店休請詳見FB、IG）",
+      "formatted_address": "仁義街227號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "779b04f4-db37-4bad-88c0-be141afc76bd",
+    "name": "Light 3 Cafe",
+    "address": "高雄市三民區有光路3巷1號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJaz-TctYFbjQRq-lvxH7a27Q",
+      "name": "Light 3 Cafe ｜營業時間請看IG公告 ✨",
+      "formatted_address": "有光路3巷1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "78e09503-5cf6-4028-a299-b719ecd5f8ea",
+    "name": "一麥珈琲",
+    "address": "高雄市左營區自由二路382號",
+    "url": "https://m.facebook.com/Yimile0906570470/?locale2=zh_TW",
+    "findPlace": {
+      "place_id": "ChIJfxvkKxsFbjQRayl-42ud7Hk",
+      "name": "一麥珈琲 Yi Mile",
+      "formatted_address": "自由二路382號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "791b7edd-5112-4872-83ff-ed7955477b11",
+    "name": "小小瑜咖啡",
+    "address": "811高雄市楠梓區加宏路158號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJD0HyWXYPbjQRjp51gFcsJeE",
+      "name": "小小瑜咖啡",
+      "formatted_address": "加宏路158號號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "7952eed3-3343-4675-9e5a-6b6e31e136d4",
+    "name": "洛斯特咖啡",
+    "address": "新興區七賢二路90號",
+    "url": "https://www.facebook.com/roastcafe/",
+    "findPlace": {
+      "place_id": "ChIJbTLqaYoEbjQRDeAtPdiaBMM",
+      "name": "Roast Cafe 洛斯特咖啡",
+      "formatted_address": "七賢二路90號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "7b2e35c8-cf56-4df8-9ae9-6277f161b64b",
+    "name": "威爾希斯",
+    "address": "高雄市鼓山區蓮海路70號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJY3UpAQkEbjQRwPeTaPbP4mQ",
+      "name": "威爾希斯咖啡",
+      "formatted_address": "蓮海路70號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "7d4af445-04be-47e1-a9d4-602af6976b8c",
+    "name": "Liévre Cafe",
+    "address": "807高雄市三民區皓東路171-6號",
+    "url": "https://www.facebook.com/lievrercafe/",
+    "findPlace": {
+      "place_id": "ChIJAzAD_Q0FbjQRS78BoPo4RJQ",
+      "name": "墨品有機咖啡 MoreBeans",
+      "formatted_address": "807高雄市三民區皓東路171-6號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "7dffb3be-6665-43d1-bb8b-7329c83f28f7",
+    "name": "Good Day Coffee ",
+    "address": "高雄市前鎮區昆明街80號",
+    "url": "https://www.facebook.com/a5354319",
+    "findPlace": {
+      "place_id": "ChIJqSWAHn0DbjQROElrPntmZAo",
+      "name": "瑞福咖啡",
+      "formatted_address": "林森三路83巷31號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "7f03af79-4d22-4c2c-9cfe-ca74f9d4adb3",
+    "name": "CaffeBene 咖啡伴_文化門市",
+    "address": "高雄市苓雅區廣州一街131號",
+    "url": "https://www.facebook.com/caffebene.culture/",
+    "findPlace": {
+      "place_id": "ChIJB2VRbQA9aTQRe897-Bhtm3c",
+      "name": "CAFFE BENE 雙十店",
+      "formatted_address": "404臺中市北區雙十路二段39號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "7f48725b-a78e-4437-bce9-dfb95967b573",
+    "name": "庭園樹咖啡",
+    "address": "高雄市楠梓區德民路46-25號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJC379NroPbjQRpk3m695Y7NM",
+      "name": "庭園樹咖啡",
+      "formatted_address": "德民路46-25號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "7fffa54d-9a15-404b-b8c1-b78f87f51378",
+    "name": "Café d'Amour 暮慕咖啡",
+    "address": "高雄市前金區成功一路295號",
+    "url": "https://www.facebook.com/cafedamour/",
+    "findPlace": {
+      "place_id": "ChIJGeWcgX4EbjQRV7stjYsOrkU",
+      "name": "Cafe D'Amour 暮慕咖啡",
+      "formatted_address": "成功一路295號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "813c7dbb-6b7b-44e0-a84e-928bdcdaf48b",
+    "name": "Try試研所",
+    "address": "高雄市三民區同盟二路217號",
+    "url": "https://www.facebook.com/TRYforyou2019/",
+    "findPlace": {
+      "place_id": "ChIJw_Wp4DYFbjQRjzRnno6e4A0",
+      "name": "217好食複合式餐廳",
+      "formatted_address": "807高雄市三民區同盟二路217號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "818bd320-63ed-41ff-9e1a-efecfce06564",
+    "name": "柴吉他。咖啡（停止營業）",
+    "address": "高雄市鳳山區文學街83號",
+    "url": "https://www.facebook.com/pg/Lee198675/about/?ref=page_internal",
+    "findPlace": {
+      "place_id": "ChIJt2LUCTMbbjQR5JRZc72XNIU",
+      "name": "柴。咖啡 (只有咖啡)",
+      "formatted_address": "No. 83號, 文學街鳳山區高雄市830",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "82c14833-28e9-4cb0-9ae1-118c39befabd",
+    "name": "Planet · 10 咖啡館",
+    "address": "高雄市苓雅區永定街148號",
+    "url": "https://www.facebook.com/Planet10cafe/",
+    "findPlace": {
+      "place_id": "ChIJ8SOgJoMEbjQRHM04b7aX7Oo",
+      "name": "Planet • 10 cafe",
+      "formatted_address": "永定街148號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "8431ff34-ad34-4200-bdde-aa46e3f3753c",
+    "name": "木子咖啡 Muzi Cafe",
+    "address": "830高雄市鳳山區自由路246號",
+    "url": "https://www.facebook.com/MuziCafeShop",
+    "findPlace": {
+      "place_id": "ChIJmw0oyYEbbjQRp0kRh9l5fsI",
+      "name": "木子咖啡 Muzi Cafe",
+      "formatted_address": "自由路246號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "844670ec-4eaf-46a8-8297-259b9ddedaf7",
+    "name": "OD Coffee",
+    "address": "高雄市三民區懷安街137號",
+    "url": "https://www.facebook.com/OD.Coffee/?hc_ref=PAGES_TIMELINE",
+    "findPlace": {
+      "place_id": "ChIJhT2GcukEbjQRXf1uHE_IGxw",
+      "name": "OD Coffee",
+      "formatted_address": "懷安街137號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "85211c60-c208-47fc-9bde-c6f6ed5b3c54",
+    "name": "大城小事",
+    "address": "高雄市鹽埕區河西路147號三角窗 (七賢橋旁)",
+    "url": "https://www.facebook.com/bigtownsmallthings/",
+    "findPlace": {
+      "place_id": "ChIJR0NSnqEFbjQRcbjnf8l8Unc",
+      "name": "koou coffee (僅接待十二歲以上，老屋二樓空間安全考量）",
+      "formatted_address": "803007高雄市鹽埕區新樂街117號2樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "85c49a41-b59d-4e7d-b36c-9e26dbf03bd0",
+    "name": "Bon Voyage 棒！遠行咖啡",
+    "address": "高雄市鳳山區鳳明街11號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJNzeYMr8bbjQRWV_EYDtOJuE",
+      "name": "Bon Voyage 棒！遠行咖啡",
+      "formatted_address": "鳳明街11號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "875e957a-e674-4ad1-b73a-e8f2d4279cdd",
+    "name": "烘豆坊（文化店）",
+    "address": "高雄市苓雅區青年一路2-5號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ98-pbJcEbjQRbSlEiHZimtA",
+      "name": "烘豆房（文化店）",
+      "formatted_address": "青年一路2-3號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "87686b66-8b9b-4604-aef1-fb3f16755069",
+    "name": "Louisa Coffee路易莎咖啡(高雄昌盛店)",
+    "address": "高雄市鼓山區昌盛路292號",
+    "url": "https://www.facebook.com/louisacoffee.292/",
+    "findPlace": {
+      "place_id": "ChIJncp-1wAFbjQRbVgkIWcurgg",
+      "name": "Louisa Coffee 路易莎咖啡(昌盛門市)",
+      "formatted_address": "昌盛路292號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "8804e7ee-1ecf-4696-ad3e-b176f9c7e839",
+    "name": "繫前緣",
+    "address": "高雄市左營區孔營路78號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJQ-h3oJ0FbjQR5PX-Tzmm3Lo",
+      "name": "繫前緣 |茶|咖啡|風味餐",
+      "formatted_address": "孔營路78號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "888c767a-48d9-49cd-9eea-a00d216e5b26",
+    "name": "Gavagai Café(各比伊咖啡)",
+    "address": "高雄市三民區敦煌路80巷11號",
+    "url": "https://zh-tw.facebook.com/GavagaiCafe/",
+    "findPlace": {
+      "place_id": "ChIJD1P6yh0FbjQRih_IRuvf5k8",
+      "name": "Gavagai Cafe",
+      "formatted_address": "敦煌路80巷11號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "889ba94c-b37c-4354-bd9d-7cdf6b3ab27d",
+    "name": "仁和雅咖啡",
+    "address": "高雄市旗山區仁和街112號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ65LUlrJrbjQRMOSNEesaJro",
+      "name": "仁和雅咖啡",
+      "formatted_address": "仁和街112號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "8b8708dc-f888-4e1d-b035-bb311a110a1b",
+    "name": "In-Lane內向咖啡",
+    "address": "高雄市前金區市中一路268號",
+    "url": "https://www.facebook.com/inlanecafe/",
+    "findPlace": {
+      "place_id": "ChIJJaet830EbjQRuhFrz3M8GxU",
+      "name": "內向咖啡館InLane",
+      "formatted_address": "市中一路268號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "8c110750-20ce-492f-872d-08fac0e71862",
+    "name": "Reve黑浮咖啡（楠梓店）",
+    "address": "高雄市楠梓區益群路63號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ_-05VaQPbjQRXHuOWvN0Kkk",
+      "name": "VASO HOME",
+      "formatted_address": "益群路63號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "8ce9d31a-bff7-4210-a9dd-f42acbc16724",
+    "name": "NAMU 拿沐",
+    "address": "高雄市中正四路235號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJb9U1Z_wbbjQR86uVubbYvNU",
+      "name": "沐咖啡 ✦ 精品手沖專賣✦ 秋波甜點外燴✦",
+      "formatted_address": "814高雄市仁武區仁忠七街15號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "8d0376f0-e7a3-4406-b9e2-94b8efdf1af2",
+    "name": "灰咖啡",
+    "address": "新興區林森一路146巷2號",
+    "url": "https://www.facebook.com/hwaycoffee.taiwan/",
+    "findPlace": {
+      "place_id": "ChIJX3hN5o4EbjQRQDAYmaj2Bxs",
+      "name": "灰。咖啡（無訂位、四位以上無接待）",
+      "formatted_address": "林森一路146巷2號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "8dc86e73-3840-4038-9e8c-d0fd233ba649",
+    "name": "私心咖啡Favorite Café",
+    "address": "高雄市左營區翠華路584號(果貿社區)",
+    "url": "https://www.facebook.com/cafefavorite/",
+    "findPlace": {
+      "place_id": "ChIJv7rAbK8FbjQRUN4MjP9UKpY",
+      "name": "私心珈啡",
+      "formatted_address": "翠華路584號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "8e9b74a8-55ef-4830-8e45-63a6ca5bc888",
+    "name": "脆阿尼咖啡",
+    "address": "高雄市鼓山區濱海一路79號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJCQbZTPQDbjQRDL5_3BPuHCk",
+      "name": "大碗公冰·甜品（西子灣門市）",
+      "formatted_address": "濱海一路107號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "907f36f4-541d-4676-a3b8-0513703de16d",
+    "name": "菁咖啡 coffee drink 美術店",
+    "address": "高雄市鼓山區美術東三路一號",
+    "url": "",
+    "findPlace": null,
+    "details": null,
+    "error": "fetch failed",
+    "audit": {
+      "category": "review",
+      "reason": "fetch failed"
+    }
+  },
+  {
+    "id": "91396b55-d32b-4f40-b20d-d6a7a9a09a52",
+    "name": "Grace cafe",
+    "address": "高雄市三民區明吉路8號",
+    "url": "https://www.facebook.com/gracecafe0507/",
+    "findPlace": {
+      "place_id": "ChIJJa04B-0FbjQRzFHEVerxH8E",
+      "name": "Grace Café 典．咖啡 - 仁武店",
+      "formatted_address": "814高雄市仁武區京吉六路63號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "916e8025-0a3c-4bb5-bb88-334a645b5e2a",
+    "name": "五零年代咖啡",
+    "address": "高雄市鹽埕區大智路99號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJgS7PfncEbjQRH-9fv57WwQg",
+      "name": "五零年代咖啡（手沖專門-自家烘焙）",
+      "formatted_address": "大智路99號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "92121cc3-f2a6-4233-8ba4-c9248b92bf74",
+    "name": "找咖啡",
+    "address": "高雄市左營區文自路735號",
+    "url": "https://www.facebook.com/ilikeifound/",
+    "findPlace": {
+      "place_id": "ChIJqRF3HWwFbjQRbcZmps9tFWE",
+      "name": "找咖啡",
+      "formatted_address": "文自路735號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "92c47f7d-7667-4280-944b-f9a4494de41a",
+    "name": "94 cafe",
+    "address": "高雄市岡山區平和路48號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJJ0v5PywMbjQRuh0cZrirJHA",
+      "name": "94 cafe",
+      "formatted_address": "平和路48號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "944c9018-7ed8-4bf2-9ced-02ed73b570b7",
+    "name": "路易莎高雄中正店",
+    "address": "中正三路68-2號",
+    "url": "https://www.facebook.com/LouisaCoffeeKaohsiung/",
+    "findPlace": {
+      "place_id": "ChIJ_Qf2-Y0EbjQRcFraSmkGtuA",
+      "name": "Louisa Coffee 路易．莎咖啡(高雄中正店)",
+      "formatted_address": "中正三路68-2號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "9583b53f-2c71-45f2-9b5d-eb77aed1e434",
+    "name": "阿貴私塾",
+    "address": "高雄市鹽埕區莒光街85號",
+    "url": "https://www.facebook.com/pages/%E9%98%BF%E8%B2%B4%E7%A7%81%E5%A1%BE/111915355552548",
+    "findPlace": {
+      "place_id": "ChIJARS8pHkEbjQRVO_mWhg6jgQ",
+      "name": "阿貴私塾",
+      "formatted_address": "莒光街85號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "98719740-f169-413d-b99c-74d0d617991e",
+    "name": "漠憩match",
+    "address": "813009台灣高雄市左營區安吉街409號",
+    "url": "https://www.facebook.com/profile.php?id=61555199376993",
+    "findPlace": {
+      "place_id": "ChIJ56ZFdtoFbjQRmTQ-1pDeEtE",
+      "name": "漠憩match-左營聚餐餐廳|網美下午茶|網美餐廳|包場餐廳|下午茶首選|複合式餐廳|人氣餐廳|在地推薦餐廳",
+      "formatted_address": "安吉街409號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "9b39081f-26f8-421e-90a3-e62df4eb2d9c",
+    "name": "Amis cafe",
+    "address": "高雄市新興區信守街99號",
+    "url": "https://www.facebook.com/amiscafe99/",
+    "findPlace": {
+      "place_id": "ChIJfYm67_kFbjQR9s6c9m-FKtM",
+      "name": "RanGerハス珈琲",
+      "formatted_address": "800高雄市新興區信守街99號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "9b465171-0f7e-44d0-811d-c1d2c9073c36",
+    "name": "濃好咖啡",
+    "address": "高雄市岡山區中山南路430號",
+    "url": "https://www.facebook.com/KnowHowCoffee/",
+    "findPlace": {
+      "place_id": "ChIJza_0EdUNbjQRRJSfuxzdoe4",
+      "name": "濃好咖啡",
+      "formatted_address": "中山南路430-5號岡山火車站往南約200米",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "9b700783-6f08-43f0-91e3-e10556c67b8b",
+    "name": "Acc Café de Coeur 真心豆行七賢店",
+    "address": " 801高雄市前金區七賢二路365號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ8zqNH2UEbjQRp_1UdhLak0Y",
+      "name": "真心豆行 - 七賢分店",
+      "formatted_address": "七賢二路365號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "9ba0f950-3c2a-4976-a817-31b63ddc7bca",
+    "name": "卡啡那 CAFFAINA 美術館店",
+    "address": "高雄市鼓山區美術東二路3號",
+    "url": "https://www.facebook.com/Caffaina-Coffee-Gallery-%E5%8D%A1%E5%95%A1%E9%82%A3%E6%98%8E%E8%AA%A0%E5%A3%B9%E8%99%9F%E5%BA%97-453732771383399/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJgcLVcFAEbjQR07mcu9Bb1PM",
+      "name": "卡啡那 美術館",
+      "formatted_address": "美術東二路3號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "9bcbc2e2-5a99-4454-9a51-7ab963125eaa",
+    "name": "客美多咖啡 Komeda‘s Coffee - 高雄美術館店",
+    "address": "804高雄市鼓山區青海路300號平日可訂位",
+    "url": "https://komeda.com.tw/",
+    "findPlace": {
+      "place_id": "ChIJ3fV_mZUFbjQRf6Gv5SlHFPM",
+      "name": "客美多咖啡 Komeda‘s Coffee - 高雄美術館店",
+      "formatted_address": "青海路300號平日可訂位",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "9c294788-2e76-4477-8cf3-fa99be8b45fd",
+    "name": "Illuminate coffee河映咖啡",
+    "address": "高雄市三民區河堤路302號",
+    "url": "https://www.facebook.com/Illuminate-%E6%B2%B3%E6%98%A0%E5%92%96%E5%95%A1-911688742217740",
+    "findPlace": {
+      "place_id": "ChIJw3l-gBwFbjQRkMvelO6YG94",
+      "name": "河映咖啡館 illuminate coffee",
+      "formatted_address": "河堤路302號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "9c96c7d8-b1d5-4b29-9081-64f3d8f99a75",
+    "name": "NOW & THEN by nybc 駁二店",
+    "address": "高雄市鹽埕區大義街2號駁二藝術特區大義倉庫C9-19",
+    "url": "https://www.facebook.com/nowandthenbynybc/",
+    "findPlace": {
+      "place_id": "ChIJWbaEC4gDbjQR7TGxLy-f5tM",
+      "name": "NOW & THEN by nybc 駁二店",
+      "formatted_address": "大義街2號駁二藝術特區大義倉庫C9 19",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "9cad08b2-1387-434c-a23e-c5e38e3082f8",
+    "name": "Around Cafe 流浪咖啡",
+    "address": "802高雄市苓雅區福建街66號",
+    "url": "https://www.facebook.com/Around.cafe",
+    "findPlace": {
+      "place_id": "ChIJTxvsEpkEbjQRkQd2VViTIog",
+      "name": "Around Cafe 流浪咖啡（週五、六營業至21：00）",
+      "formatted_address": "福建街66號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "9d777f3b-3a7a-4f1a-a3d9-a2880cc1e6d2",
+    "name": "啡嚐不可青年咖啡",
+    "address": "高雄市左營區富民路13巷16號",
+    "url": "https://www.facebook.com/family087380518/",
+    "findPlace": {
+      "place_id": "ChIJzTPfnUwFbjQRrmxskiI-Iz0",
+      "name": "啡嚐不可青年咖啡",
+      "formatted_address": "富民路13巷16號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "9de68bf3-1fe5-45fc-86c0-bb1c936fe9da",
+    "name": "MiS Cafe 謎思咖啡",
+    "address": "高雄市前金區市中一路167號",
+    "url": "https://www.facebook.com/MISCOFFEE/",
+    "findPlace": {
+      "place_id": "ChIJz3lUj3sEbjQRezJBfbtQPQI",
+      "name": "謎思咖啡",
+      "formatted_address": "804高雄市鼓山區鼓山一路59號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "9ebd6f40-8765-4df2-b50f-e62bd1b3f96a",
+    "name": "品好乳酪",
+    "address": "高雄市鼓山區昌盛路379號",
+    "url": "https://www.pincheesecake.com/",
+    "findPlace": {
+      "place_id": "ChIJo0yZaFAEbjQR_3uLhM-9pxg",
+      "name": "蘿芙甜點",
+      "formatted_address": "華榮路72號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "9f648e4a-ee2c-4386-af07-4c7666221b46",
+    "name": "6吋盤早午餐-前鎮瑞興店",
+    "address": "806高雄市前鎮區瑞興街105-1號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ1dw7lKcEbjQR06oaRH-T1aA",
+      "name": "6吋盤早午餐-前鎮瑞興店",
+      "formatted_address": "瑞興街105-1號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "a06d7466-0245-45dc-9669-4ccd936607da",
+    "name": "第四紀咖啡",
+    "address": "高雄市左營區博愛二路204號",
+    "url": "https://www.facebook.com/%E7%AC%AC%E5%9B%9B%E7%B4%80%E5%92%96%E5%95%A1-173037693143767/",
+    "findPlace": {
+      "place_id": "ChIJcd1pMDcFbjQR5c5_yvsRN34",
+      "name": "胖尼咖啡",
+      "formatted_address": "813017高雄市左營區博愛二路204號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a17d0e50-d9ae-485c-be9f-fe4346911215",
+    "name": "咖啡強Coffejohn",
+    "address": "高雄市鼓山區延平街64-3號",
+    "url": "https://www.facebook.com/CoffeeJohn0915056758/",
+    "findPlace": {
+      "place_id": "ChIJs92vPpAEbjQRrMrld4lJ4A4",
+      "name": "花路café（每月店休請參考💐IG置頂文💐）",
+      "formatted_address": "804高雄市鼓山區延平街64-3號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a2b5d5eb-a07a-43a7-a991-4ed6fd283d36",
+    "name": "Jamling cafe高雄店",
+    "address": "高雄市鼓山區美術東五路56號",
+    "url": "https://www.facebook.com/jamlingcafekaohsiung/",
+    "findPlace": {
+      "place_id": "ChIJid1Mp6wFbjQRzlUX8AKx6Ds",
+      "name": "Rowling Cafe 琳咖啡",
+      "formatted_address": "804高雄市鼓山區美術東六街258號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a3688df2-a4bf-4e47-a57e-1f1bbb5eaa5e",
+    "name": "Kbsca高雄精品咖啡",
+    "address": "高雄市塩埕區府北路27之2號",
+    "url": "",
+    "findPlace": null,
+    "details": null,
+    "error": "fetch failed",
+    "audit": {
+      "category": "review",
+      "reason": "fetch failed"
+    }
+  },
+  {
+    "id": "a3dc7bfd-ccc2-4754-9108-37bd74738a22",
+    "name": "亨利咖啡(西子灣)",
+    "address": "高雄市鼓山區哨船街75-18號",
+    "url": "https://www.facebook.com/%E8%A5%BF%E5%AD%90%E7%81%A3%E4%BA%A8%E5%88%A9%E5%92%96%E5%95%A1-663165500473447/",
+    "findPlace": {
+      "place_id": "ChIJV9kE-PUDbjQRtZgDeVaJY_A",
+      "name": "西子灣亨利咖啡",
+      "formatted_address": "哨船街75-18號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a3e0c948-8ecb-4c22-94f6-282714423617",
+    "name": "留一點空間咖啡",
+    "address": "高雄市鳳山區文鳳路63號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJL1_JFSwbbjQRK794K9FOnPg",
+      "name": "留一點空間咖啡",
+      "formatted_address": "807高雄市三民區昭良街2巷12號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a43590b0-f339-4ad3-b0b0-f20632896359",
+    "name": "燃木咖啡研究所Fuelwood Coffee Lab",
+    "address": "802高雄市苓雅區建國一路90-1號16F-2",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJp9cVDsgEbjQRniJZV8jqxwc",
+      "name": "Fuelwood Coffee Lab(教室空間，全預約制)",
+      "formatted_address": "建國一路90-1號16F-2",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a46950c6-6b9e-47a0-948b-8128e91886ea",
+    "name": "BuCafe 不咖啡",
+    "address": "高雄市鼓山區美術南二路2號",
+    "url": "https://www.facebook.com/bubucafe/",
+    "findPlace": {
+      "place_id": "ChIJQX7aJEUEbjQREuw91y9-GBc",
+      "name": "不咖啡 BuCafe",
+      "formatted_address": "美術南二路2號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a5231be4-ad73-4e71-ba18-649b1e0d4b8d",
+    "name": "Menippe 媚力泊咖啡林森店",
+    "address": "高雄市新興區林森一路195號",
+    "url": "https://www.facebook.com/Cafe.de.parfum.tw/",
+    "findPlace": {
+      "place_id": "ChIJL-jWF4wEbjQRiAPTY0IRCCs",
+      "name": "MENIPPE 媚力泊咖啡 - 林森店",
+      "formatted_address": "800高雄市新興區林森一路109號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "a7053386-0872-4055-aa4d-9c40f8761bb3",
+    "name": "Coffee。修",
+    "address": "高雄市旗山區中山路60-7號",
+    "url": "https://www.facebook.com/coffeehsiu/",
+    "findPlace": {
+      "place_id": "ChIJc4nOKVNqbjQRBy2bmUrkrTw",
+      "name": "Coffee。修",
+      "formatted_address": "中山路60-12號號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "a7ccf39c-f4cd-4bbf-a33a-7d272bad560c",
+    "name": "51咖啡",
+    "address": "高雄市左營區重信路577號",
+    "url": "https://www.facebook.com/51cafe%E4%BA%94%E4%B8%80%E5%92%96%E5%95%A1-1406305012920644/",
+    "findPlace": {
+      "place_id": "ChIJ0QyFrVYFbjQR1llO-L2KfPE",
+      "name": "Kurimono café 可莉茉姆女僕咖啡",
+      "formatted_address": "813高雄市左營區重信路577號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a85c99c3-83fb-42a4-9ba0-17a6c80a7adc",
+    "name": "波貝拉咖啡Bobelle Coffee Brunch",
+    "address": "高雄市左營區崇德路272號",
+    "url": "https://www.facebook.com/bobelletw",
+    "findPlace": {
+      "place_id": "ChIJs_6kcgwFbjQR15PMHrMQNko",
+      "name": "波貝拉咖啡 Bobelle Coffee Brunch",
+      "formatted_address": "崇德路272號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "a88dc084-8c35-4e1a-b0d9-60ad15345596",
+    "name": "Drake193 Coffee Roaster",
+    "address": "高雄市鼓山區葆禎路58巷40號",
+    "url": "https://www.facebook.com/drake193/",
+    "findPlace": {
+      "place_id": "ChIJQRjfbeMFbjQRTY7Doct7sHs",
+      "name": "Drake193 Coffee Roasters",
+      "formatted_address": "葆禎路58巷40號公園邊",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a97f718a-7130-4228-9969-f0a92c0a1ff9",
+    "name": "一盞咖啡",
+    "address": "高雄市苓雅區復興二路49巷9號",
+    "url": "https://www.facebook.com/tsitpha/",
+    "findPlace": {
+      "place_id": "ChIJSfaqOo0FbjQRqpZMEur5uhc",
+      "name": "一盞咖啡（沒有訂位）",
+      "formatted_address": "復興二路49巷9號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "aaf83449-bddb-46dc-b1c8-02bb7536b4a4",
+    "name": "金礦咖啡(四維店)",
+    "address": "高雄市苓雅區四維四路63號 ",
+    "url": "http://www.crownfancy.com/index.php",
+    "findPlace": {
+      "place_id": "ChIJPQMyGoAEbjQRSPikvy2Mk3M",
+      "name": "南豐魯肉飯",
+      "formatted_address": "自強三路139號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "abc29ada-3815-4cd2-9233-7087bdb37ff7",
+    "name": "格言咖啡 Maximum Coffee",
+    "address": "高雄市鼓山區美術東五路50號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJleRO4FQEbjQRm2CTZEqkmZ8",
+      "name": "格言咖啡《已恢復營業，暫時無提供餐點，預計下週週末供餐》",
+      "formatted_address": "美術東五路50號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ae1a4867-1b48-4187-ab2a-27c061c31564",
+    "name": "Kingmauii 金茂宜咖啡 美術店",
+    "address": "804高雄市鼓山區美術東五路75號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJsQd1JQ4FbjQRwdSouzkbO84",
+      "name": "Kingmauii 金茂宜咖啡 美術店",
+      "formatted_address": "美術東五路75號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "aeeea9d6-11e4-4934-af4b-b16168a74511",
+    "name": "Wolong Coffee Studio臥龍咖啡工作室",
+    "address": "高雄市三民區慶雲街117號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJo3SOzugEbjQRhu2TBsgoCSs",
+      "name": "Wolong Coffee Studio臥龍咖啡工作室 （4/3-4/4有加開可內用",
+      "formatted_address": "慶雲街117號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "afb1f8b1-1f32-44ab-a8c8-7c60c8a3f6f7",
+    "name": "Eske Place Coffee House",
+    "address": "高雄市楠梓加工區中一街5號",
+    "url": "https://www.facebook.com/eskeplace/",
+    "findPlace": {
+      "place_id": "ChIJ02M2Q5gPbjQRmvWMgKW1bdM",
+      "name": "Eske Place Coffee House 日月光店",
+      "formatted_address": "號, 中一街楠梓區高雄市811",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "b1573cf1-4b8d-4e1b-aabe-8de343ea4095",
+    "name": "Louisa Coffee 路易．莎咖啡(高雄河堤店)",
+    "address": "807高雄市三民區明仁路51號",
+    "url": "https://www.facebook.com/LouisaCoffee3rdWave0810/",
+    "findPlace": {
+      "place_id": "ChIJt8B-BhwFbjQRicslYVuaqzQ",
+      "name": "Louisa Coffee 路易莎咖啡(高雄河堤門市)",
+      "formatted_address": "明仁路51號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b288b963-f318-4551-bb9b-6d473dcb0308",
+    "name": "奧爾司咖啡",
+    "address": "高雄市新興區中東街62號",
+    "url": "https://www.facebook.com/OursCafe62/",
+    "findPlace": {
+      "place_id": "ChIJbWLu6ZQEbjQRKV6hQmTmRNw",
+      "name": "奧爾司咖啡 Ours Cafe",
+      "formatted_address": "中東街62號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b30e0f80-6b31-4300-8a35-489ff5f5bc27",
+    "name": "Atti咖啡研究工坊",
+    "address": "高雄市三民區興隆街58號",
+    "url": "https://m.facebook.com/atticoffee",
+    "findPlace": {
+      "place_id": "ChIJR3pMLOEEbjQRpLxjzo7I-Fs",
+      "name": "Atti咖啡研究工坊",
+      "formatted_address": "興隆街58號一樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b3ef0e12-92f0-4d37-b8e1-4c089566c015",
+    "name": "TiARA Cafe",
+    "address": "高雄市鳥松區大昌路563號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJHf811i4FbjQRWhSwqsnfVgQ",
+      "name": "TiARA cafe 專業咖啡｜居家調酒",
+      "formatted_address": "807高雄市三民區大裕路51巷56號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b47fb6bd-6065-4d96-85c2-94166f69e06d",
+    "name": "Hay un café 沁馣",
+    "address": "高雄市鼓山區慶豐街131號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJlSwwZg8FbjQRyyMsPFAl8E8",
+      "name": "Hay un café 沁馣",
+      "formatted_address": "慶豐街131號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b4aafc21-57fc-4b17-a646-08969c6cfff6",
+    "name": "BasiD6Cafe",
+    "address": "高雄市中華一路2250號",
+    "url": "https://www.facebook.com/basid6cafe/",
+    "findPlace": {
+      "place_id": "ChIJt47FLFcEbjQR16QTqlQpRKY",
+      "name": "BASID6cafe",
+      "formatted_address": "中華一路2250號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b4fb304d-2dae-41d6-8f3c-e2f4043c0b1f",
+    "name": "自然醒cafe",
+    "address": "高雄市苓雅區中山二路463號",
+    "url": "https://www.facebook.com/Cafewakeup/",
+    "findPlace": {
+      "place_id": "ChIJmfyWgoEEbjQRw9SD1NbEXj8",
+      "name": "Cafe自然醒",
+      "formatted_address": "中山二路463號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b57f79a1-b3b1-4e17-bceb-aa71f48a55e0",
+    "name": "Donutes 多那之(瑞隆店)",
+    "address": "高雄市前鎮區瑞隆路232號",
+    "url": "http://www.donutes.com.tw/",
+    "findPlace": {
+      "place_id": "ChIJ6YRFElcDbjQRpc55pkobtYQ",
+      "name": "多那之 高雄瑞隆門市",
+      "formatted_address": "瑞隆路232號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b671533d-52c7-412a-848a-be9c877652b3",
+    "name": "和馬咖啡",
+    "address": "高雄市鳳山區體育路41號",
+    "url": "https://www.facebook.com/cafe.homer/",
+    "findPlace": {
+      "place_id": "ChIJFa5Ry0cbbjQR8wDsv7jKq04",
+      "name": "和馬咖啡 Café de Homer",
+      "formatted_address": "體育路41號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b6f1773a-9047-4f31-a63d-150cc568f519",
+    "name": "灰家咖啡 Hway + Coffee",
+    "address": "803007高雄市鹽埕區河西路10號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJXZqu1GIFbjQRz7rWu1-35og",
+      "name": "灰家咖啡 Hway + Coffee",
+      "formatted_address": "河西路10號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "b7ebf381-0521-40bc-9123-1ae665edf250",
+    "name": "王品咖啡",
+    "address": "高雄市楠梓區廣昌街182巷33弄6號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJmw_Fe3oPbjQREXRKSPJAeyw",
+      "name": "品皇咖啡-楠梓右昌店",
+      "formatted_address": "811高雄市楠梓區後昌新路56號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b83815b4-a88b-42b1-ba57-baf2457a1e16",
+    "name": "雅裴詩咖啡",
+    "address": "高雄市新興區中山一路115號B1(美麗島站內)",
+    "url": "https://www.facebook.com/apeuls/",
+    "findPlace": {
+      "place_id": "ChIJAQAAAI8EbjQRc6dNNsosCfw",
+      "name": "雅裴詩咖啡",
+      "formatted_address": "高捷, 美麗島站『內』往9號出口 方向, No. 115號中山一路",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "b8f053b6-48df-42f4-bb84-cc6b55cbafb0",
+    "name": "路易莎 左營重上店",
+    "address": "813高雄市左營區文萊路284號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJz5UUhuUFbjQR9tJzD9zqkX8",
+      "name": "Louisa Coffee 路易莎咖啡(高雄重上門市)",
+      "formatted_address": "文萊路284號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b92d967e-bbec-4d4e-8451-f121acd15f1b",
+    "name": "Agent caf's ",
+    "address": "高雄巿梓官區漁港二路22號附近",
+    "url": "https://www.facebook.com/Agent-cafe-144558948919014/",
+    "findPlace": {
+      "place_id": "ChIJkYaLSrMIbjQRHco492WILcQ",
+      "name": "蚵仔寮漁港",
+      "formatted_address": "826高雄市梓官區漁港二路32號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "bb169798-1a73-454d-b6bf-1219d38842a3",
+    "name": "25巷3號Caffe 自家咖啡烘焙館",
+    "address": "高雄市大寮區自強街25巷3號",
+    "url": "https://www.facebook.com/253caffe",
+    "findPlace": {
+      "place_id": "ChIJoamMMqobbjQRcCz4qbhGRgE",
+      "name": "25巷3號Caffe 自家咖啡烘焙館",
+      "formatted_address": "自強街25巷3號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "bb666ac6-cf0b-4082-9a16-3c051ca75066",
+    "name": "MARS睦工場風格餐廳",
+    "address": "高雄市鹽埕區大勇路80號",
+    "url": "https://www.facebook.com/MarsCube",
+    "findPlace": {
+      "place_id": "ChIJI-1JOXcEbjQRSPvQNq_JgOA",
+      "name": "MARS Cafe麻森咖啡義式餐廳-鹽埕場",
+      "formatted_address": "大勇路80號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "bce9efcf-a4bd-4d06-8860-854453ca036d",
+    "name": "Arosa Café",
+    "address": "80052高雄市新興區仁愛一街74號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJq01gq9sDbjQRq3kgssw-lsw",
+      "name": "AROSA COFFEE阿洛薩手工烘焙咖啡-夢時代店",
+      "formatted_address": "806高雄市前鎮區中華五路789號一樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "bd35262a-a8ef-4674-8b0f-b2484c4a29dc",
+    "name": "街頭咖啡.瑞隆店",
+    "address": "高雄市前鎮區瑞隆路530號",
+    "url": "https://www.facebook.com/Streetcafe61/",
+    "findPlace": {
+      "place_id": "ChIJy4HhY1ADbjQRLvrRNmXEiyM",
+      "name": "東和昌商行",
+      "formatted_address": "瑞隆路534號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "be008e68-53da-42c7-bed5-92d81c8a7585",
+    "name": "MINI.D COFFEE 中正館",
+    "address": "800高雄市新興區中正三路68-2號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJyUOCbykFbjQRKtsv8R0PPEQ",
+      "name": "MINI.D COFFEE 中正館",
+      "formatted_address": "中正三路68-2號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "be4b8ae0-3325-4bae-b4fb-6b3cde2e5a49",
+    "name": "帶我去旅行.靜咖啡（英明店）",
+    "address": "高雄市苓雅區英明路186號",
+    "url": "https://www.facebook.com/pages/category/Coffee-Shop/%E5%B8%B6%E6%88%91%E5%8E%BB%E6%97%85%E8%A1%8C%E9%9D%9C%E5%92%96%E5%95%A1%E8%8B%B1%E6%98%8E%E5%BA%97-2113603452302540/",
+    "findPlace": {
+      "place_id": "ChIJFWBwaU4FbjQRt0J9SVUUSb0",
+      "name": "帶我去旅行",
+      "formatted_address": "英明路186號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "be95b66a-4719-4e61-9b24-64e54e7c9839",
+    "name": "合理餘香 咖啡豆舖",
+    "address": "高雄市三民區大昌一路218號",
+    "url": "https://www.facebook.com/reasonablegoodcoffee/",
+    "findPlace": {
+      "place_id": "ChIJ0X_HAd4FbjQRoyfUJ1aq6tk",
+      "name": "合理餘香 咖啡豆舖（無店面、無內用） 訂購咖啡豆請加 line id: @reasonablegood",
+      "formatted_address": "807高雄市三民區大昌一路400號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "bebfd636-7ac7-452e-b556-c3494ee77713",
+    "name": "這條路咖啡 Thisway Coffee",
+    "address": "高雄市新興區玉竹一街17巷13號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJiy50aYYEbjQRSnmfjZUrAWo",
+      "name": "Thisway Coffee",
+      "formatted_address": "玉竹一街17巷13號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "becdbdbc-ae2d-4f34-9969-362368555698",
+    "name": "德爾文咖啡",
+    "address": "高雄市三民區大豐二路67號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJMW9NSSQFbjQR4JvpDOKdfI0",
+      "name": "德爾文咖啡直火焙煎專門店",
+      "formatted_address": "大豐二路67 號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "bef555ed-da37-419e-a048-47e438c87ab8",
+    "name": "Mi's Mate",
+    "address": "802台灣高雄市苓雅區新光路24巷21號",
+    "url": "https://www.facebook.com/MISMATECOFFEE/",
+    "findPlace": {
+      "place_id": "ChIJIQpsKnwDbjQRCGoxygFpF6o",
+      "name": "謎思咖啡新光店 Mi'S MATE",
+      "formatted_address": "新光路24巷21號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "bf234a28-dc4b-432f-9986-f572bdcfa23f",
+    "name": "芙諾河",
+    "address": "高雄市高雄市苓雅區福德一路50-4號",
+    "url": "https://www.facebook.com/coffeeflower/",
+    "findPlace": {
+      "place_id": "ChIJXZbD4cgEbjQRWRdbJ4VrQmU",
+      "name": "芙諾河",
+      "formatted_address": "福德一路50-4號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "bf635a1d-1421-48c8-a551-41f9c70d223b",
+    "name": "描Cafe X 屋 Brunch",
+    "address": "高雄市新興區文橫一路68號",
+    "url": "https://www.facebook.com/%E6%8F%8FCafe-X-%E5%B1%8BBrunch-351238351720863/",
+    "findPlace": {
+      "place_id": "ChIJMTNEsZwEbjQRbY-ioxAeb6k",
+      "name": "描Cafe X 屋 Brunch",
+      "formatted_address": "文橫一路68號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "bf9f9106-73ed-4414-8bd4-986b902a63e2",
+    "name": "珈品豆行KaFei",
+    "address": "高雄市鳳山區新富路480巷8號",
+    "url": "https://m.facebook.com/cripcafe/",
+    "findPlace": {
+      "place_id": "ChIJaQjOolMbbjQRbc3de9oXJI4",
+      "name": "珈品豆行 KaFei Coffee／鳳山 蟹老闆 專賣 咖啡豆濾掛耳掛（4/5店休）",
+      "formatted_address": "新富路480巷8號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c00206d5-bd5b-43c4-9e3b-e8e3d04964bf",
+    "name": "161烘焙咖啡屋(明華路)",
+    "address": "高雄市左營區明華一路5號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJlwYbnxwFbjQRKIl8OSZikHU",
+      "name": "161咖啡",
+      "formatted_address": "807高雄市三民區民族一路637號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c16d9cf3-57ae-400b-87b6-2905b04876ff",
+    "name": "青田",
+    "address": "新田路29號",
+    "url": "https://www.facebook.com/SugarAnndc/",
+    "findPlace": {
+      "place_id": "ChIJDeJrPYUEbjQR2QOma2ueRgw",
+      "name": "青田甜作 AOTa D&C",
+      "formatted_address": "新田路29號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "c1dc6432-2049-46e0-85d7-ea6248bc862d",
+    "name": "咖啡林咖啡 河堤店",
+    "address": "高雄市三民區鼎祥街12號",
+    "url": "https://www.facebook.com/coffeelingcafe/",
+    "findPlace": {
+      "place_id": "ChIJJVt0ZIkEbjQRQI6M4oY8ywQ",
+      "name": "咖啡林咖啡",
+      "formatted_address": "鼎祥街12號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c37b4ac3-b98f-4922-a169-e2b0dccdd41f",
+    "name": "Betterman Pizza x Coffee ",
+    "address": "高雄市新興區高雄市新興區民生一路265號",
+    "url": "https://www.facebook.com/betterman265/",
+    "findPlace": {
+      "place_id": "ChIJRd43uY8EbjQRJOFXTQa4CQs",
+      "name": "Betterman Pizza x Coffee",
+      "formatted_address": "民生一路265號No",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "c4e3176f-bd57-41ed-bda1-00e4b25d44fb",
+    "name": "LA MAISON BERRY 貝瑞家 巨蛋店",
+    "address": "左營區新莊仔路614號",
+    "url": "https://www.lamaisonberry.com/",
+    "findPlace": {
+      "place_id": "ChIJ4UWSeMMFbjQRfwxAtmeH-Iw",
+      "name": "夏德莉brunch.pasta巨蛋店",
+      "formatted_address": "新庄仔路570號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c52350b1-d25d-4f15-901e-53df79799564",
+    "name": "瑟拉威",
+    "address": "高雄市民族二路66號",
+    "url": "https://www.facebook.com/cestlavie2232633/",
+    "findPlace": {
+      "place_id": "ChIJm9o1cZMEbjQRrzb4y9KFej8",
+      "name": "瑟拉威藝廊咖啡館",
+      "formatted_address": "民族二路66號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c52c92e5-cec4-42e9-aa8d-7231916fba38",
+    "name": "愛倫手感烘焙、咖啡-大社旗艦店",
+    "address": "高雄市大社區中山路223之1、2號",
+    "url": "https://www.facebook.com/allen.cake/",
+    "findPlace": {
+      "place_id": "ChIJSwsP4sIRbjQRM61fIkUjtdw",
+      "name": "愛倫手感烘焙 (大社旗艦店)",
+      "formatted_address": "中山路223-1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c7b2aa7a-ad0f-4cd9-8069-186fb7ff26d2",
+    "name": "HWC 黑沃咖啡（高雄高醫店）",
+    "address": "80782 高雄市三民區正忠路228-1號",
+    "url": "https://www.hwcroasters.com",
+    "findPlace": {
+      "place_id": "ChIJ4Uhjd1MFbjQRGdyBdk_JEd4",
+      "name": "HWC 黑沃咖啡 | 高雄正忠店",
+      "formatted_address": "80782高雄市三民區正忠路228-1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c91aa4c7-d50c-4fae-8576-9fae346ab541",
+    "name": "咖啡這件事",
+    "address": "高雄市左營區華夏路262號",
+    "url": "咖啡這件事",
+    "findPlace": {
+      "place_id": "ChIJPXpY1cAFbjQRgeX6BOO78tI",
+      "name": "咖啡這件事 Coffee&Things",
+      "formatted_address": "華夏路262號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "c9246d43-3b83-4abe-a255-12887dc1550f",
+    "name": "金錨咖啡",
+    "address": "高雄市新興區尚義街113號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJRTeCGEMFbjQRDVOSz9T7eSo",
+      "name": "Gold anchor coffee 金錨咖啡",
+      "formatted_address": "尚義街113號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c933b393-0cc4-4e93-bad7-36d61a0d783f",
+    "name": "Room 71 Cafe",
+    "address": "高雄市新興區六合一路71號",
+    "url": "https://m.facebook.com/room71cafe/",
+    "findPlace": {
+      "place_id": "ChIJZR0mvI0EbjQR4epxdofW_Uo",
+      "name": "渝陽川菜",
+      "formatted_address": "800高雄市新興區六合一路71-1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c98c017e-38af-40e0-a471-33461761c378",
+    "name": "蓮貴藝文咖啡館",
+    "address": "高雄市新興區河南一路119號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJY4siqIwEbjQR2oksbgzML0s",
+      "name": "蓮貴藝文茶館",
+      "formatted_address": "河南一路118號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "ca21c60f-e470-4a92-ac0b-5d797fc7c4ca",
+    "name": "耀cafe",
+    "address": "高雄市楠梓區慶昌街11巷18號",
+    "url": "https://www.facebook.com/YaoCafeYaoCafe/",
+    "findPlace": {
+      "place_id": "ChIJS_OPYXgPbjQRXZQalqav0v8",
+      "name": "耀café",
+      "formatted_address": "慶昌街11巷18號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "cac47c0f-1979-4f7c-9c9c-904331bac535",
+    "name": "宮前咖啡",
+    "address": "高雄市新興區球庭路79號",
+    "url": "https://goo.gl/6H2HbG",
+    "findPlace": {
+      "place_id": "ChIJQUx1to4EbjQRGJ-JFxHrvzA",
+      "name": "宮上韻 空間/簡餐/咖啡",
+      "formatted_address": "球庭路79號2樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "cb257154-2405-457d-bc6e-7b946f7ff04b",
+    "name": "oracle coffee神諭咖啡",
+    "address": "高雄市新興區大同一路103號",
+    "url": "https://www.facebook.com/Oracle7272672/",
+    "findPlace": {
+      "place_id": "ChIJ8c36144EbjQRrCdQ-uxWLLA",
+      "name": "神諭咖啡 駁二店",
+      "formatted_address": "803高雄市鹽埕區必信街105號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "cb39e4df-1d7d-4a63-9b8b-7dad8aedcf45",
+    "name": "FANs cafe",
+    "address": "高雄市楠梓區土庫一路158號",
+    "url": "https://www.facebook.com/fanscafekh/",
+    "findPlace": {
+      "place_id": "ChIJQ6o3Bs0PbjQRPUmo-QDWq-E",
+      "name": "FANs CAFÉ-楠梓網美下午茶|人氣咖啡|高雄咖啡廳|熱門咖啡館|高雄甜點推薦|咖啡廳推薦|高雄下午茶推薦|人氣甜點",
+      "formatted_address": "土庫一路158號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "cb848021-63f7-401c-a385-0c1572fbcfeb",
+    "name": "馬修咖啡·廚房",
+    "address": "高雄市鼓山區大順一路925號",
+    "url": "https://m.facebook.com/matther.cafe.kitchen/?locale2=zh_TW",
+    "findPlace": {
+      "place_id": "ChIJaV_0LPIEbjQRKYYFLGpyoxQ",
+      "name": "詠月焼き鳥職人酒場",
+      "formatted_address": "804高雄市鼓山區大順一路925號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "cb9f780a-5f91-4acc-b12e-1d4e5c9b97a6",
+    "name": "好久不見 • 咖啡",
+    "address": "高雄市苓雅區林泉街108號",
+    "url": "https://www.facebook.com/pages/category/Coffee-Shop/%E5%A5%BD%E4%B9%85%E4%B8%8D%E8%A6%8B%E5%92%96%E5%95%A1-2481470691903422/",
+    "findPlace": {
+      "place_id": "ChIJ0ex52m8FbjQRM4CO2x40uZ8",
+      "name": "好久不見·咖啡",
+      "formatted_address": "林泉街108號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "cca961a6-296c-444a-a850-834a2dbeb019",
+    "name": "和。好珈琲店",
+    "address": "高雄市三民區興隆街21號",
+    "url": "https://www.facebook.com/hhcafe/",
+    "findPlace": {
+      "place_id": "ChIJedmRn-cEbjQRHCcvsRmLAvE",
+      "name": "和好珈琲店",
+      "formatted_address": "興隆街21號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "cda888fd-7d0f-4d0b-8311-d8c3bf266000",
+    "name": "大衛咖啡文字店",
+    "address": "高雄市左營區文自路99號",
+    "url": "https://www.facebook.com/carwashfun/",
+    "findPlace": {
+      "place_id": "ChIJJ_5MMWsFbjQRLgwm1Ex-hho",
+      "name": "Dí Coffee 迪咖啡｜左營巨蛋店",
+      "formatted_address": "81360高雄市左營區新上街261號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "cf964ccd-ac85-4997-a16f-bfb4bcd0f3c5",
+    "name": "Dmore Coffee 達墨爾咖啡",
+    "address": "高雄市鹽埕區必忠街19號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJYdWZ8e4FbjQRkFi2mBZns6g",
+      "name": "達墨爾咖啡 Dmore Coffee",
+      "formatted_address": "必忠街19號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "cfe837d0-ba27-4174-ac21-64fdfdd4f5ff",
+    "name": "Lab Library",
+    "address": "高雄市前鎮區新光路61號3樓",
+    "url": "https://www.facebook.com/Lablibrarycafe/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJ604_NnkDbjQRkJljrE1ChaE",
+      "name": "Lab Library Cafe",
+      "formatted_address": "2F, No. 61號新光路",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "d041396e-0fe4-4c30-b801-cade4ac7e599",
+    "name": "Freedom 咖啡BAR",
+    "address": "高雄市博愛一路192-1號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJFeGqaOwFbjQRGuwyeAEcFVw",
+      "name": "萬萬液廊 One One Liquid Gallery",
+      "formatted_address": "博愛一路190號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d1e00731-cf13-4aaf-af83-8855b87f89ae",
+    "name": "馞咖啡 光華店",
+    "address": "高雄市苓雅區光華一路207號",
+    "url": "https://www.facebook.com/balmy.cafe/",
+    "findPlace": {
+      "place_id": "ChIJBU1s45kEbjQR6CPDT2GYLOA",
+      "name": "馞咖啡-光華店 Balmy Cafe'",
+      "formatted_address": "光華一路207號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d214c05b-13f9-475c-aa3e-4db911d437a9",
+    "name": "泊咖啡 Theo Coffee",
+    "address": "高雄市左營區翠峰路16號",
+    "url": "https://www.facebook.com/KaohsiungTheoCoffee/",
+    "findPlace": {
+      "place_id": "ChIJVydc5Q0FbjQRzD0jHrSytC4",
+      "name": "dotz coffee roasters 多點咖啡",
+      "formatted_address": "813高雄市左營區富民路13巷20號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d26c7411-dc43-4fa3-8006-ea81e7c56c46",
+    "name": "合日咖啡",
+    "address": "高雄市左營區文強路409號",
+    "url": "https://www.facebook.com/hericafe409/",
+    "findPlace": {
+      "place_id": "ChIJA83amxIFbjQRPmqFJzK_jnk",
+      "name": "合日精品咖啡館",
+      "formatted_address": "文強路409號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d28fc611-6456-4922-bad5-3e7f20e8a1e0",
+    "name": "Reel_木軸咖啡館",
+    "address": "高雄市三民區天民路11號",
+    "url": "https://www.facebook.com/Reelcoffeespace/",
+    "findPlace": {
+      "place_id": "ChIJm_A2kiwbbjQR-KJ1S4yWW70",
+      "name": "Reel_木軸咖啡館_4/5(日)清明節公休",
+      "formatted_address": "天民路11號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d29db7ac-4e7d-4cb2-9d24-6054f64dd287",
+    "name": "#Space Cafe'",
+    "address": "高雄市新興區民享街88號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJw0QoerkFbjQRE13CUHmJeDg",
+      "name": "SPACE 民享店",
+      "formatted_address": "民享街88號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d44ee072-5a42-46b2-90ed-a2eca8ef8c5f",
+    "name": "電商咖啡高雄鹽埕店",
+    "address": "高雄市鹽埕區大勇路98號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJHQKds3AEbjQRp_-PexIfpEw",
+      "name": "義美食品高雄鹽埕門市",
+      "formatted_address": "大勇路108號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d895792f-1826-4805-b8b6-3b3b04fa309d",
+    "name": "台灣壹品咖啡",
+    "address": "高雄市左營區蓮潭路40號",
+    "url": "https://www.facebook.com/pages/category/Coffee-Shop/%E5%8F%B0%E7%81%A3%E5%A3%B9%E5%93%81%E5%92%96%E5%95%A1-175371296700742/",
+    "findPlace": {
+      "place_id": "ChIJpZBahWMFbjQR9W0vqjfhYXk",
+      "name": "壹品咖啡店",
+      "formatted_address": "蓮潭路40號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "dab41bce-b8b0-455a-9033-b04ca1d6d428",
+    "name": "咖啡足矣",
+    "address": "高雄市新興區渤海街26號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJYfgYya0FbjQRw-RAGHFopQM",
+      "name": "咖啡足矣 Coffee Serenity（假日•國定紅字•皆無訂位)",
+      "formatted_address": "渤海街26號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "db4c9ee4-1c17-4605-bb00-f208d9f9bfd5",
+    "name": "光井咖啡",
+    "address": "高雄市岡山區維仁路30巷6號",
+    "url": "https://www.facebook.com/%E5%85%89%E4%BA%95%E5%92%96%E5%95%A1-Wellight-Coffee-308913679242263/",
+    "findPlace": {
+      "place_id": "ChIJ22vxySsMbjQRHnmYx2BsO8Q",
+      "name": "光井咖啡Wellight Coffee 4/3(五)～4/5(日)正常營業，4/6(一)休",
+      "formatted_address": "維仁路30巷6號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "de8add79-1448-4894-b7a6-d0b4b8ee0424",
+    "name": "咖啡平方左營自由店",
+    "address": "高雄市左營區自由二路109號",
+    "url": "https://www.facebook.com/%E5%92%96%E5%95%A1%E5%B9%B3%E6%96%B9-%E5%B7%A6%E7%87%9F%E8%87%AA%E7%94%B1%E5%BA%97-595095634020891/",
+    "findPlace": {
+      "place_id": "ChIJO0U8zAIFbjQROUTwNUohQkI",
+      "name": "咖啡平方 左營自由店",
+      "formatted_address": "自由二路109號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "dfa64265-0428-4dd1-8d16-72af9668308c",
+    "name": "Lab 146",
+    "address": "高雄市前金區中正四路146號",
+    "url": "https://www.facebook.com/lab146cafe/",
+    "findPlace": {
+      "place_id": "ChIJs7ojhGIEbjQRKVNMjE6f4uA",
+      "name": "Lab146",
+      "formatted_address": "中正四路146號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "e374746d-4a44-4470-92e9-2415c38f42f1",
+    "name": "樂客食品行",
+    "address": "高雄市苓雅區建國一路139-8號",
+    "url": "https://m.facebook.com/pg/Lecocoffee/posts/",
+    "findPlace": {
+      "place_id": "ChIJU9tkkccEbjQR1sxMnicZLbo",
+      "name": "品皇咖啡-建國店 （樂客食品行）專業咖啡豆專賣店",
+      "formatted_address": "建國一路139-8號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e3c95f99-1a38-419f-8dcd-b4add0c0cb24",
+    "name": "來7號咖啡",
+    "address": "高雄市鳳山區國光路7號",
+    "url": "https://www.facebook.com/no7cafe/",
+    "findPlace": {
+      "place_id": "ChIJT5e2mE8bbjQRyIcPsWcjvdc",
+      "name": "水深咖啡 Dow Café ｜水深カフェ｜鳳山咖啡｜輕食三明治｜早午餐下午茶｜手沖義式精品咖啡｜自家烘焙咖啡豆｜蔬食素食｜親子友善",
+      "formatted_address": "國光路7號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e3f76fc8-7150-4ebe-8305-4ae906591505",
+    "name": "黑黑黑咖啡",
+    "address": "高雄市岡山區柳橋西路1號",
+    "url": "https://www.facebook.com/BLACKx3CafexGangShan/",
+    "findPlace": {
+      "place_id": "ChIJK7rEgpkObjQRa8E7AZqzIh4",
+      "name": "黑黑黑咖啡",
+      "formatted_address": "柳橋西路1號國軍岡山福利站內",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e4f947d6-5414-4332-bc6f-354112e076c8",
+    "name": "卡啡那美術館店",
+    "address": "804高雄市鼓山區美術東二路3號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJgcLVcFAEbjQR07mcu9Bb1PM",
+      "name": "卡啡那 美術館",
+      "formatted_address": "美術東二路3號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e52f2293-92fe-4773-88b2-ecf7e32455b1",
+    "name": "有。咖啡",
+    "address": "高雄市苓雅區中正二路56巷11號",
+    "url": "https://www.facebook.com/rruyocafe/",
+    "findPlace": {
+      "place_id": "ChIJy9UjgTgbbjQRcZputIHMM4E",
+      "name": "有。咖啡(已不更新資訊，請以IG或粉絲頁資訊為準）",
+      "formatted_address": "802高雄市苓雅區中正二路56巷11號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e53ecc8c-f48e-422e-b3ed-507b53300970",
+    "name": "G Coffee ",
+    "address": "高雄市鳳山區大東二路92號",
+    "url": "www.facebook.com.tw/GCoffeeKHH",
+    "findPlace": {
+      "place_id": "ChIJzX4JOUQbbjQRi39HAyQ2HN4",
+      "name": "G Coffee居藝咖啡（飲品烘焙原物料、包材販售）",
+      "formatted_address": "大東二路92號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e5d4a09a-0988-485c-b793-f2940a199435",
+    "name": "隔間咖啡 KEH-KING COFFEE",
+    "address": "高雄市鼓山區臨海一路45號",
+    "url": "https://www.facebook.com/kehkingcoffee",
+    "findPlace": {
+      "place_id": "ChIJ_wHvAeQFbjQRZN4v4UkG2SE",
+      "name": "隔間咖啡 KEH KING COFFEE",
+      "formatted_address": "臨海一路45號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e63d775d-7914-4f21-bb35-a2438b8191ec",
+    "name": "KBSCA",
+    "address": "高雄市塩埕區府北路27之2號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJW2VGdnAEbjQRNwgP6EyARrY",
+      "name": "金鹽埕",
+      "formatted_address": "803高雄市鹽埕區府北路25號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e752712f-113f-4b9f-91c5-a6a7565b1894",
+    "name": "爵品咖啡",
+    "address": "高雄市苓雅區武慶三路81號",
+    "url": "https://www.facebook.com/%E7%88%B5%E5%93%81%E5%92%96%E5%95%A1-313543022017911/",
+    "findPlace": {
+      "place_id": "ChIJq8pspLoEbjQRzLuPDXWOdTg",
+      "name": "爵品咖啡",
+      "formatted_address": "武慶三路81號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e790aa4f-1d6b-41ab-b32e-3ebf5e5234d9",
+    "name": "構筑咖啡 weave cafe",
+    "address": "高雄市左營區民族一路909號",
+    "url": "http://fb.me/weavecoffee",
+    "findPlace": {
+      "place_id": "ChIJY-leF2oFbjQRhEfsISQoXQs",
+      "name": "構筑咖啡 Weave Café",
+      "formatted_address": "民族一路909號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e7da8642-1701-44f4-85ab-d964b185ca6b",
+    "name": "五金咖啡",
+    "address": "高雄巿梓官區大舍北路38號",
+    "url": "https://www.facebook.com/5Ghardwarecoffee/",
+    "findPlace": {
+      "place_id": "ChIJoSH1tygPbjQRsum6l-Sy_Pw",
+      "name": "五金咖啡",
+      "formatted_address": "大舍北路38號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e83c3c2b-3283-4f37-933f-216c99bd29d7",
+    "name": "曼哈頓咖啡",
+    "address": "807台灣高雄市三民區慶雲街115號",
+    "url": "https://m.facebook.com/manttn2020/",
+    "findPlace": {
+      "place_id": "ChIJv5nRo8cFbjQRZoEnZ0TMhWk",
+      "name": "曼哈頓咖啡",
+      "formatted_address": "慶雲街115號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e8a6ce4a-00bd-45fe-874f-4f195bf66917",
+    "name": "MINI.D COFFEE 明倫館",
+    "address": "804060高雄市鼓山區明倫路141號",
+    "url": "https://www.facebook.com/MINIDCOFFEE/",
+    "findPlace": {
+      "place_id": "ChIJR_KvC3EFbjQR2MiVLk4p024",
+      "name": "MINI.D COFFEE 明倫館",
+      "formatted_address": "明倫路141號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e8f2a433-4d29-4ccb-a1ee-30f3ff52622e",
+    "name": "KAFEi 珈品咖啡-建國店",
+    "address": "高雄市苓雅區建國一路137-5號",
+    "url": "https://www.facebook.com/kafei7226990/",
+    "findPlace": {
+      "place_id": "ChIJMavEKYwFbjQRS3KdpY9k3v8",
+      "name": "The Light x Coffee Art n Design灯泡咖啡館 手沖｜滬掛｜軽食｜甜点｜芸術｜家居",
+      "formatted_address": "正言路95號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e9cae906-cc12-4260-aa47-40c8dad15e6a",
+    "name": "拉茉咖啡 Lamore coffee",
+    "address": "高雄市左營區蓮潭路18號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJvT6GACQFbjQRtu2L3eD96Bs",
+      "name": "拉茉咖啡 Lamore coffee",
+      "formatted_address": "蓮潭路17號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ea2862bf-4591-4ba3-87ec-97a8ce945b1e",
+    "name": "泮咖啡",
+    "address": "高雄市左營區蓮潭路400號南側",
+    "url": "https://m.facebook.com/PAMMACoffee/",
+    "findPlace": {
+      "place_id": "ChIJJ7owGnYFbjQR3I-lJEvjuVs",
+      "name": "泮咖啡PAMMA COFFEE|左營湖畔聚餐首選Lotus Pond Coffee / Cultural Cafe Kaohsiung",
+      "formatted_address": "813高雄市左營區蓮潭路176號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ea29c35f-b420-4312-b73c-2ee240bf6101",
+    "name": "PiNNCafe 品．咖啡",
+    "address": "高雄市左營區新庄仔路704號",
+    "url": "https://www.facebook.com/PiNNCafe/",
+    "findPlace": {
+      "place_id": "ChIJb_K-5A8FbjQRocY_z9sfZY0",
+      "name": "PiNNCafe 品．咖啡",
+      "formatted_address": "新庄仔路704號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ea3fe515-8664-4861-8333-e7d43c51aea1",
+    "name": "Bunny Walking Coffee",
+    "address": "高雄市左營區文強路33號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ752iqd0FbjQRYBNehubefcU",
+      "name": "Bunny Walking Coffee",
+      "formatted_address": "文強路33號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "eb3f37d6-1fa8-4dd5-9c1f-886c38a3f23f",
+    "name": "MAD",
+    "address": "高雄市楠梓區土庫三路215號",
+    "url": "https://www.facebook.com/MAD073555711/",
+    "findPlace": {
+      "place_id": "ChIJs45PYDMObjQRIlFQZUQYt_4",
+      "name": "MAD小餐館（最後點餐8:30）",
+      "formatted_address": "土庫三路215號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ec44fd55-aa51-4f49-8a72-58391a6d2b86",
+    "name": "路人咖啡3號店",
+    "address": "高雄市三民區天津路253號",
+    "url": "https://www.facebook.com/ruhcafeno.3/",
+    "findPlace": {
+      "place_id": "ChIJE6ixfjEFbjQREzmgSGh7ElI",
+      "name": "路人咖啡3號店",
+      "formatted_address": "807高雄市三民區天津街253號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ee1d30f4-1692-4694-a675-8b51d7e48fdf",
+    "name": "鬲离咖啡館",
+    "address": "高雄市左營區新上街253號",
+    "url": "https://www.facebook.com/GELIcoffee/",
+    "findPlace": {
+      "place_id": "ChIJi6mceA8FbjQRz92SLIxT5OU",
+      "name": "鬲离咖啡館",
+      "formatted_address": "807高雄市三民區明仁路141號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "eea53a69-5849-45ee-aae9-55f9ffdc7b86",
+    "name": "挪威森林咖啡館",
+    "address": "高雄市三民區九如二路512號",
+    "url": "https://www.facebook.com/%E6%8C%AA%E5%A8%81%E6%A3%AE%E6%9E%97%E5%92%96%E5%95%A1%E9%A4%A8-354151644700977/",
+    "findPlace": {
+      "place_id": "ChIJKdfDjvUEbjQRVjpGMW7kptU",
+      "name": "挪威森林咖啡館",
+      "formatted_address": "807高雄市三民區熱河二街8號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "eec936a1-9689-4904-945f-9ed6aead0ab0",
+    "name": "時刻咖啡",
+    "address": "高雄市前金區育才街4號",
+    "url": "https://www.facebook.com/CafeDeTiming/",
+    "findPlace": {
+      "place_id": "ChIJO-08D2IEbjQRET-FtXiLs-4",
+      "name": "Café De Timing (滴時刻咖啡)",
+      "formatted_address": "1樓, No. 4號育才街",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "ef43c443-6d44-45a4-b527-c9e3177ff41a",
+    "name": "羅斯朵。晴天現烘咖啡",
+    "address": "高雄市苓雅區廣州一街143-5號(文化中心西側門)",
+    "url": "https://www.facebook.com/sunnyday.cafe.roaster/",
+    "findPlace": {
+      "place_id": "ChIJf27cE5cEbjQRi-Edw4is7WE",
+      "name": "羅斯朵晴天現烘咖啡-文化總店【各國咖啡豆專賣 | 文化中心推薦咖啡館】",
+      "formatted_address": "廣州一街153-3號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f08bf341-e387-47ff-8628-16f4ff8e7373",
+    "name": "36味咖啡館",
+    "address": "高雄市三民區正興路74號",
+    "url": "https://www.facebook.com/36%E5%91%B3%E5%92%96%E5%95%A1%E9%A4%A8%E8%87%AA%E5%AE%B6%E7%85%8E%E7%84%99-137578109645701/",
+    "findPlace": {
+      "place_id": "ChIJaZUSb90EbjQRH0i_5pEwqZk",
+      "name": "36味咖啡館",
+      "formatted_address": "正興路74號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f1ad08ff-70ba-4992-8f8c-5e70407269e4",
+    "name": "元極CAF'E",
+    "address": "高雄市楠梓區土庫一路232號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ_RPdKSQPbjQRBTMUNDhh0X8",
+      "name": "元極CAF'E",
+      "formatted_address": "土庫一路232號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "f41118b2-3a02-47b9-8626-1e1e315e3ecf",
+    "name": "Cafe種子屋",
+    "address": "高雄市橋頭區橋頭路125號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ-VWJv5cPbjQR5LKCdxtRAIQ",
+      "name": "橋頭Cafe種子屋",
+      "formatted_address": "橋頭路125號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f532defc-14aa-412f-b492-2b6be403a0d1",
+    "name": "貓魚咖啡 Cat&Fish Coffee",
+    "address": "高雄市左營區民族一路1012-1號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJxSLUbWoFbjQRY0_QIxBe7dM",
+      "name": "貓魚咖啡-Cat&Fish Coffee",
+      "formatted_address": "榮德街1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f5595732-a004-4be3-80d5-d46729db363a",
+    "name": "O-Ba泡芙手沖咖啡",
+    "address": "高雄市苓雅區青年一路4巷10號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJH4v_KRUFbjQRBTs64k6_Dck",
+      "name": "O-Ba 手沖咖啡",
+      "formatted_address": "青年一路4巷10號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f57bf6e7-c0c7-45f7-b3af-3090cd49c2a1",
+    "name": "帶我去旅行",
+    "address": "高雄市鳳山區光復路171號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ62_VqDkbbjQROuBjOOeRnxk",
+      "name": "帶我去旅行",
+      "formatted_address": "830高雄市鳳山區光復路171號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "f5b13736-64d1-4f7d-8672-58a4bea9176d",
+    "name": "Artisan Cafe",
+    "address": "高雄市前金區仁義街223號",
+    "url": "https://www.facebook.com/pg/artisantw/about/?tab=page_info",
+    "findPlace": {
+      "place_id": "ChIJb1lSI4EEbjQRSP4ZFwhLpBI",
+      "name": "美森咖啡",
+      "formatted_address": "仁義街223號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f820b167-e2fb-437e-bf08-ddc8eb7ec2dd",
+    "name": "辰咖啡館 (Tatsu Cafe)",
+    "address": "807台灣高雄市三民區中華二路369號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJz2j7KloEbjQRAZAMVVqH1io",
+      "name": "辰咖啡館 (Tatsu Cafe)自家咖啡烘焙",
+      "formatted_address": "中華二路369號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f83f67cc-f57d-4509-86cf-d921472babc5",
+    "name": "瑞福咖啡 Revel",
+    "address": "高雄市林森三路83巷31號1樓",
+    "url": "https://www.facebook.com/revelcoffeestudio/",
+    "findPlace": {
+      "place_id": "ChIJqSWAHn0DbjQROElrPntmZAo",
+      "name": "瑞福咖啡",
+      "formatted_address": "林森三路83巷31號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f88bde66-f0f2-4b20-bf6d-67b5a655dd06",
+    "name": "貓武將",
+    "address": "高雄市大社區大社路137號",
+    "url": "https://www.facebook.com/pages/%E8%B2%93%E6%AD%A6%E5%B0%87/130251404010625?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJ2a-h6tIRbjQRLF8WXAHSfo8",
+      "name": "貓武將預約制",
+      "formatted_address": "大社路137號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "f91f3299-101a-4d0b-bf20-abe7a64e4317",
+    "name": "瑪琪朵朵",
+    "address": "民權二路411號",
+    "url": "https://www.facebook.com/m5372066/",
+    "findPlace": {
+      "place_id": "ChIJtX1VotdXBxQR5rHzR4taUwc",
+      "name": "瑪琪朵朵 高雄民權店",
+      "formatted_address": "民權二路411號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f94e79ed-b47d-4d8d-ac63-695d2383644b",
+    "name": "路易莎咖啡",
+    "address": "高雄市楠梓區德惠路22號",
+    "url": "https://www.facebook.com/louisacoffee20161116/",
+    "findPlace": {
+      "place_id": "ChIJpR0Y0TUPbjQRSJ3RGU9PZdA",
+      "name": "Louisa Coffee 路易莎咖啡 (楠梓光寶門市)",
+      "formatted_address": "內環北路101號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "faa96c24-dd41-4d0a-b8ca-ae2e8ba75176",
+    "name": "馬可的店｜自家烘焙咖啡",
+    "address": "高雄市三民區正興路165號",
+    "url": "https://www.facebook.com/MarcoCafeKaohsiung/",
+    "findPlace": {
+      "place_id": "ChIJv2efnOcEbjQRR7MZRyrpaYY",
+      "name": "馬可的店 自家烘焙咖啡 高雄店",
+      "formatted_address": "正興路165號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "fb431907-355b-480f-9416-ce1f0c003841",
+    "name": "春正商行",
+    "address": "高雄市鳥松區本館路72巷11-1號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJqUmM-CoFbjQReUpoIND9bbI",
+      "name": "春正商行",
+      "formatted_address": "本館路72巷11-1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "fb8a1692-275e-4305-864c-a4f15cd958d6",
+    "name": "宥謙豆行",
+    "address": "高雄市小港區新昌街21之26號",
+    "url": "https://www.facebook.com/yocheer.coffee/",
+    "findPlace": {
+      "place_id": "ChIJp2qHLL8cbjQRAtD6fyrCzjU",
+      "name": "宥謙豆行",
+      "formatted_address": "新昌街21-26號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "fba3d560-e69b-47cc-82bd-4b441932bc8c",
+    "name": "滴滴咖啡 Daily Dose Coffee",
+    "address": "高雄市前金區中正四路106號",
+    "url": "www.facebook.com/ddcaffee",
+    "findPlace": {
+      "place_id": "ChIJQ1rbfQ8FbjQRJ08UsAe61b8",
+      "name": "滴滴咖啡 DailyDose Coffee 高雄咖啡 拿鐵 커피",
+      "formatted_address": "中正四路106號一樓",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "ff97e646-9e02-4da8-802e-566605ed3c01",
+    "name": "多那之明誠店",
+    "address": "813台灣高雄市左營區明誠二路433號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJlSu7BgMFbjQR4TMq-6wzLG4",
+      "name": "多那之高雄明誠門市",
+      "formatted_address": "明誠二路433號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ffe1b3ce-e239-44cc-b93b-72a1f4982bac",
+    "name": "哈維卡",
+    "address": "高雄市左營區文守路168巷8弄1號",
+    "url": "https://www.facebook.com/%E5%93%88%E7%B6%AD%E5%8D%A1%E5%92%96%E5%95%A1%E7%83%98%E7%84%99%E9%A4%A8-481151981913441/",
+    "findPlace": {
+      "place_id": "ChIJ4TU6nxYFbjQR6IfK90g1nVc",
+      "name": "哈維卡咖啡烘焙館",
+      "formatted_address": "文守路168巷8弄1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  }
+]

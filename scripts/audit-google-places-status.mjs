@@ -1,5 +1,20 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 
+function createCafeNomadDataset(cityKey, label) {
+  return {
+    label,
+    outputJson: new URL(`../reviews/${cityKey}-google-places-status.json`, import.meta.url),
+    outputMd: new URL(`../reviews/${cityKey}-google-places-status.md`, import.meta.url),
+    outputCsv: new URL(`../reviews/${cityKey}-google-places-review.csv`, import.meta.url),
+    outputClosedCsv: new URL(`../reviews/${cityKey}-google-places-permanently-closed.csv`, import.meta.url),
+    loadCafes: async () => {
+      const res = await fetch(`https://cafenomad.tw/api/v1.2/cafes/${cityKey}`);
+      if (!res.ok) throw new Error(`Cafe Nomad request failed: ${res.status}`);
+      return await res.json();
+    },
+  };
+}
+
 const DATASETS = {
   "hoi-an": {
     label: "Hoi An",
@@ -9,18 +24,10 @@ const DATASETS = {
     outputClosedCsv: new URL("../reviews/hoi-an-google-places-permanently-closed.csv", import.meta.url),
     loadCafes: async () => JSON.parse(await readFile(new URL("../data/hoi-an-cafes.json", import.meta.url), "utf8")),
   },
-  taipei: {
-    label: "Taipei",
-    outputJson: new URL("../reviews/taipei-google-places-status.json", import.meta.url),
-    outputMd: new URL("../reviews/taipei-google-places-status.md", import.meta.url),
-    outputCsv: new URL("../reviews/taipei-google-places-review.csv", import.meta.url),
-    outputClosedCsv: new URL("../reviews/taipei-google-places-permanently-closed.csv", import.meta.url),
-    loadCafes: async () => {
-      const res = await fetch("https://cafenomad.tw/api/v1.2/cafes/taipei");
-      if (!res.ok) throw new Error(`Cafe Nomad request failed: ${res.status}`);
-      return await res.json();
-    },
-  },
+  taipei: createCafeNomadDataset("taipei", "Taipei"),
+  taichung: createCafeNomadDataset("taichung", "Taichung"),
+  tainan: createCafeNomadDataset("tainan", "Tainan"),
+  kaohsiung: createCafeNomadDataset("kaohsiung", "Kaohsiung"),
 };
 
 async function getApiKey() {
@@ -393,6 +400,7 @@ function toCsv(rows) {
 async function main() {
   const target = process.argv[2] || "hoi-an";
   const renderOnly = process.argv.includes("--render-only");
+  const shouldFetchDetails = process.argv.includes("--details");
   const dataset = DATASETS[target];
   if (!dataset) {
     throw new Error(`Unsupported target: ${target}`);
@@ -419,7 +427,7 @@ async function main() {
       try {
         const findPlace = await searchPlace(apiKey, cafe);
         result.findPlace = findPlace;
-        if (findPlace?.place_id && findPlace.business_status === "CLOSED_PERMANENTLY") {
+        if (shouldFetchDetails && findPlace?.place_id && findPlace.business_status === "CLOSED_PERMANENTLY") {
           result.details = await getPlaceDetails(apiKey, findPlace.place_id);
         }
       } catch (error) {
