@@ -1,6 +1,6 @@
 # Hualien Google Places Closure Review
 
-Checked at: 2026-04-04T09:35:06.336Z
+Checked at: 2026-04-04T10:17:03.840Z
 
 Google Places was used as the primary signal for closure review.
 
@@ -9,7 +9,7 @@ Google Places was used as the primary signal for closure review.
 ## 總覽
 
 - 總店數：50
-- Google 判定仍在營業：34
+- Google 判定仍在營業：35
 - 疑似永久歇業：9
 - 疑似暫停營業：4
 - 找不到 Google Places 候選：0
@@ -23,7 +23,6 @@ Google Places was used as the primary signal for closure review.
 | 斗宅。揀茶舍 | 花蓮市三民街23號(花蓮縣縣定古蹟檢察長宿舍) | 三民街23號 | CLOSED_PERMANENTLY |  |
 | 月荷塘鄉村廚房 | 花蓮縣富里鄉983花蓮縣富里鄉羅山村東湖39號 | 983台灣花蓮縣富里鄉 | CLOSED_PERMANENTLY |  |
 | 众咖啡 | 花蓮市中山路624號 | 中山路624號 | CLOSED_PERMANENTLY |  |
-| 吉野精品咖啡烘焙室 | 970花蓮縣花蓮市成功街206號 | 成功街206號 | OPERATIONAL |  |
 | 回春工作室 | 花蓮市光復街91-1號 | 建國路75巷16弄26號 | CLOSED_PERMANENTLY |  |
 | 色香貓精品咖啡 | 花蓮市建國路75巷16弄19號 | 建國路75巷16弄19號號 | CLOSED_PERMANENTLY |  |
 | 亞瑟的王座 | 花蓮市中興路81號 | 中興路81號 | CLOSED_PERMANENTLY |  |

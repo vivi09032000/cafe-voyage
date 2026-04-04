@@ -1,6 +1,6 @@
 # Yilan Google Places Closure Review
 
-Checked at: 2026-04-04T09:35:06.276Z
+Checked at: 2026-04-04T10:17:03.783Z
 
 Google Places was used as the primary signal for closure review.
 
@@ -9,7 +9,7 @@ Google Places was used as the primary signal for closure review.
 ## 總覽
 
 - 總店數：78
-- Google 判定仍在營業：47
+- Google 判定仍在營業：53
 - 疑似永久歇業：12
 - 疑似暫停營業：9
 - 找不到 Google Places 候選：0
@@ -21,23 +21,17 @@ Google Places was used as the primary signal for closure review.
 | 店名 | 資料地址 | Google 比對地址 | 狀態 | Google Maps |
 | --- | --- | --- | --- | --- |
 | 九號咖啡音樂廣場 | 宜蘭縣礁溪鄉溫泉路85號 | 溫泉路1054號 | CLOSED_PERMANENTLY |  |
-| 文鳥公寓 | 新北市板橋區國泰街120號 | 220新北市板橋區國泰街120號 | OPERATIONAL |  |
 | 日吉咖啡gooddaycafe' | 宜蘭縣宜蘭市東港路59-11號 | 東港路二段431號 | CLOSED_PERMANENTLY |  |
-| 平安居民宿 + GK coffee自家烘焙咖啡 | 宜蘭縣冬山鄉復興路166號 | 復興路166號 | OPERATIONAL |  |
 | 合盛太平咖啡 | 宜蘭縣宜蘭市中山路三段145號 | 26044宜蘭縣宜蘭市中山路三段145號 | CLOSED_PERMANENTLY |  |
 | 老房子咖啡 | 羅東鎮文化街53號 | 265宜蘭縣羅東鎮文化街53號 | CLOSED_PERMANENTLY |  |
 | 品品99 咖啡 輕食 | 268宜蘭縣五結鄉鎮安路63巷2號 | 鎮安路63巷2號 | OPERATIONAL |  |
 | 香草景觀咖啡 Vanilla Cafe-宜蘭頭城店 | 宜蘭縣頭城鎮北宜路一段398號 | 北宜路一段398號 | OPERATIONAL |  |
 | 舒室咖啡 | 宜蘭市慈安路61號 | 260宜蘭縣宜蘭市慈安路61號 | CLOSED_PERMANENTLY |  |
-| 逸境 X 心境 | 宜蘭市七張路117號 | 260宜蘭縣宜蘭市七張路117號 | OPERATIONAL |  |
 | 熊來了 | 宜蘭縣宜蘭市民權路二段178號 | 260宜蘭縣宜蘭市嵐峰路二段20號 | CLOSED_PERMANENTLY |  |
 | 歐麟咖啡館 | 宜蘭市女中路二段389號1樓 | 女中路二段389號1 樓 | CLOSED_PERMANENTLY |  |
-| Aqua Cafe 水色咖啡 | 花蓮縣吉安鄉吉祥七街13號 | 吉祥七街13號 | OPERATIONAL |  |
 | dew 36 綻露 coffee elite | 宜蘭市女中路二段385號 | 260宜蘭縣宜蘭市女中路二段385號 | OPERATIONAL |  |
-| GK Coffee（平安居咖啡民宿） | 宜蘭縣冬山鄉復興路166號 | 復興路166號 | OPERATIONAL |  |
 | GOROGORO | 宜蘭縣宜蘭市中山路二段187巷25號 | 中山路二段187巷25號 | CLOSED_PERMANENTLY |  |
 | HaoHaoKaffe(行口文旅店) | 宜蘭縣宜蘭市康樂路14號 | 康樂路14號一樓 | CLOSED_PERMANENTLY |  |
-| No.100咖啡隨行吧 | 265 宜蘭縣羅東鎮中正南路100號 | 中正南路100號 | OPERATIONAL |  |
 | PonPon 乓乓雜貨咖啡 | 宜蘭縣礁溪鄉信義路71號 | 信義路71號 | CLOSED_PERMANENTLY |  |
 | Resort Brew Coffee Co. | 宜蘭市農權路二段30號 | 農權路二段30號 | CLOSED_PERMANENTLY |  |
 | Stay旅人書店 | 宜蘭市碧霞街14號、宜蘭市康樂路14號行口文旅 | 260宜蘭縣宜蘭市康樂路14號 | OPERATIONAL |  |

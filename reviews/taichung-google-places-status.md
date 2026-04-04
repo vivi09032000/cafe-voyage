@@ -1,6 +1,6 @@
 # Taichung Google Places Closure Review
 
-Checked at: 2026-04-04T09:35:05.945Z
+Checked at: 2026-04-04T10:17:03.450Z
 
 Google Places was used as the primary signal for closure review.
 
@@ -9,7 +9,7 @@ Google Places was used as the primary signal for closure review.
 ## 總覽
 
 - 總店數：362
-- Google 判定仍在營業：209
+- Google 判定仍在營業：220
 - 疑似永久歇業：69
 - 疑似暫停營業：20
 - 找不到 Google Places 候選：5
@@ -34,6 +34,7 @@ Google Places was used as the primary signal for closure review.
 | 小葉茉莉 MOLY CAFE | 台中市中區中華路一段60巷6號 | 中華路一段60巷6號 | CLOSED_PERMANENTLY |  |
 | 山佳伊 3+1 café | 台中市西屯區玉門路80巷1號 | 407臺中市西屯區玉門路80巷21弄1之1號 | OPERATIONAL |  |
 | 中島 GLAB X Coffee Stopover R | 台中市⻄區府後街38-8號 | 府後街38-8號 | OPERATIONAL |  |
+| 中菲咖啡 | 403台中市西區四維街46號 | 四維街46號 | OPERATIONAL |  |
 | 今咖啡 cafe today | 40642台中市北屯區軍福十三路88號 | 軍福十三路88號1樓 | OPERATIONAL |  |
 | 元生咖啡 | 台中市西區向上路一段79巷64號 | 向上路一段79巷80弄11號 | CLOSED_PERMANENTLY |  |
 | 內巷X胡同咖啡 | 403台中市西區精誠九街16巷3號 | 精誠九街16巷3號 | OPERATIONAL |  |
@@ -41,7 +42,6 @@ Google Places was used as the primary signal for closure review.
 | 天味咖啡道 tenway cafe | 台中市西區健行路1020號 | 健行路1020號 | CLOSED_PERMANENTLY |  |
 | 巴菲特咖啡館 | 436台中市清水區忠貞路21號2樓 | 2樓, No. 21號忠貞路 | CLOSED_PERMANENTLY |  |
 | 方舟咖啡廚房 | 台中市南區復興路三段362號 | 復興路三段362號 | CLOSED_PERMANENTLY |  |
-| 日青咖啡店 | 台中市豐原區永康街101號 | 永康路101號 | OPERATIONAL |  |
 | 日染樹梢-銀塩写真雜貨 | 413台中市霧峰區中正路573-12號 | 中正路573-12號 | OPERATIONAL |  |
 | 卡啡那 CAFFAINA 惠來店 | 台中市西屯區惠中路二段45號 | 惠中路二段45號 | OPERATIONAL |  |
 | 目覺咖啡 trio店 | 台中市西區精誠七街1號 | 精誠七街1號 | CLOSED_PERMANENTLY |  |
@@ -54,10 +54,8 @@ Google Places was used as the primary signal for closure review.
 | 老陳咖啡L'espace caf'e | 台中市西區五權七街52號 | 五權七街52號 | CLOSED_PERMANENTLY |  |
 | 老貓蛋捲咖啡 | 台中市西屯區國安一路125號 | 國安一路125號 | CLOSED_PERMANENTLY |  |
 | 艾薇兒咖啡店 | 台中市西區大忠南街89號 | 大忠南街89號號 | CLOSED_PERMANENTLY |  |
-| 西成珈琲 | 台中市西區大昌街214號 | 403臺中市西區大昌街214號 | OPERATIONAL |  |
 | 伯朗咖啡館 (東海大學店) | 台中市西屯區台灣大道四段1727號 東海大學圖書館1樓 | 台灣大道四段1727號 | CLOSED_PERMANENTLY |  |
 | 坊呼咖啡 Fun hoster | 台中市西區大和路71號 | 大和路71號號 | CLOSED_PERMANENTLY |  |
-| 杜宅咖啡 | 台中市南區五權南路468號 | 五權南路468號 | OPERATIONAL |  |
 | 沃咖啡 | 台中市西屯區西屯路二段10-8號 | 西屯路二段10-8號 | OPERATIONAL |  |
 | 沃咖啡 | 台中市西屯區西屯路二段10-8號 | 西屯路二段10-8號 | OPERATIONAL |  |
 | 沐cafe | 402台中市南區五權南路380巷19號 | 五權南路380巷19號 | CLOSED_PERMANENTLY |  |
@@ -70,7 +68,6 @@ Google Places was used as the primary signal for closure review.
 | 食いしん坊 | 台中市五權南路278巷25號 | 403臺中市西區五權一街162巷1弄3號 | CLOSED_PERMANENTLY |  |
 | 原物咖啡公益店 | 台中市西區華美西街一段3號 | 華美西街一段3號 | OPERATIONAL |  |
 | 哩嘎哇 LIGAWA | 台中市東區自強街6巷28號 | 自強街6巷28號 | OPERATIONAL |  |
-| 啡文學-大英店 | 台中市西區大墩14街265號 | 大墩十四街265號 | OPERATIONAL |  |
 | 圈Charm直火烘豆所 | 台中市西區公益路115號 | 公益路115號 | OPERATIONAL |  |
 | 晨典咖啡（南區二店） | 台中市南區復興路一段265號 | 復興路一段265號 | CLOSED_PERMANENTLY |  |
 | 晨翼咖啡 | 436台中市清水區中興街10號 | 中興街10號 | CLOSED_PERMANENTLY |  |
@@ -93,7 +90,6 @@ Google Places was used as the primary signal for closure review.
 | 綠蓋茶館 - 河南店 | 407台中市西屯區河南路二段278號號 | 河南路二段278號 | CLOSED_PERMANENTLY |  |
 | 歐舍咖啡 ORSIR COFFEE | 台中市西區五權路14號 | 五權路14號 | OPERATIONAL |  |
 | 澄石咖啡蔬食廚坊 | 台中巿南屯區東興路三段221號 | 東興路三段221號 | CLOSED_PERMANENTLY |  |
-| 豬油、咖啡與閱讀 | 台中市清水區中正街71號 | Zhongzheng Street 71號 臺灣 | OPERATIONAL |  |
 | 醇豆咖啡_台中新光三越法雅客店 | 台中市西屯區台灣大道三段301號9樓( 新光三越法雅客) | 臺灣大道三段301號9F | CLOSED_PERMANENTLY |  |
 | 盧仕 Luscoffee | 台中市西區美村路一段771巷16號 | 美村路一段771巷16號 | CLOSED_PERMANENTLY |  |
 | 糟老頭咖啡 | 408台中市南屯區公益路二段296號 | 公益路二段292號 | CLOSED_PERMANENTLY |  |
@@ -104,7 +100,6 @@ Google Places was used as the primary signal for closure review.
 | Cafe Hello | 台中市南屯區大英街9號 | 大英街9號 | OPERATIONAL |  |
 | Café Mambo 漫波 | 台中市北區五權路594號 | 五權路594號 | CLOSED_PERMANENTLY |  |
 | Cafe PPM | 台中市大里區自立路91號 | 號 No, No. 91自立路 | CLOSED_PERMANENTLY |  |
-| Café sora (Coffee Industry) | 台中市西區民生路179號 | 民生路179號 | OPERATIONAL |  |
 | Caffina 卡啡那大墩店 | 台中南屯區大墩路573號 | 大墩路573號 | OPERATIONAL |  |
 | Chaud cafe 修咖啡 | 台中市霧峰區民主街71號 | 號 No, No. 71民主街 | CLOSED_PERMANENTLY |  |
 | Cherry Espresso 櫻桃計畫 | 台中市西屯區西屯路二段270巷1號 | 西屯路二段270巷1號 | OPERATIONAL |  |
@@ -114,19 +109,16 @@ Google Places was used as the primary signal for closure review.
 | Cuiqu Coffee奎克咖啡台中公益店 | 台中市南屯區公益路二段532號 | 公益路二段532號 | CLOSED_PERMANENTLY |  |
 | E.H coffee studio | 台中市南區崇倫街13號（芳奈烘焙坊內） | 402臺中市南區崇倫街13號 | OPERATIONAL |  |
 | Elk Cafe  路，鹿咖啡 | 412 台中市大里區環中東路五段628-1號 | 環中東路五段628-1號台灣 號 | CLOSED_PERMANENTLY |  |
-| EZ 咖啡 | 台中市北區健行路372號 | 健行路372號 | OPERATIONAL |  |
 | FIKA Kaffe | 台中市北區進化北路361號 | 進化北路361號 | CLOSED_PERMANENTLY |  |
 | Fish Cafe 自家烘焙咖啡館 | 台灣台中市龍井區新興路27巷8號 | 新興路27巷8號 | OPERATIONAL |  |
 | Fleet Street | 台中市中區民族路24號 | 400臺中市中區民族路24號 | OPERATIONAL |  |
 | Forro Cafe | 台中市西區精誠三街47號 | 精誠三街47號 | CLOSED_PERMANENTLY |  |
 | Found 找·咖啡 | 西區華美街348巷6號 | 華美街348巷6號 | CLOSED_PERMANENTLY |  |
 | hecho 做咖啡 | 台中市西區美村路一段133巷22號 | 美村路一段133巷22號2F | CLOSED_PERMANENTLY |  |
-| Kophy cafe | 台中市西區精誠八街1號 | 精誠八街1號 | OPERATIONAL |  |
 | Kusabi+ | 台中市 北區 篤行路316巷2號 | 篤行路316巷2號 | CLOSED_PERMANENTLY |  |
 | Le Mods | 台中市北區太原路二段201號 | 太原路二段201號 | CLOSED_PERMANENTLY |  |
 | LightBeam Coffee Roasters | 404台中市北區興進路165號 | 404臺中市北區興進路165號 | CLOSED_PERMANENTLY |  |
 | Louisa Coffee 路易．莎咖啡(逢甲福星店) | 台中市西屯區河南路2段301巷72號 | 河南路二段301巷72號 | CLOSED_PERMANENTLY |  |
-| Mh咖啡 | 台中市北屯區興安路一段238號 | 興安路一段238號 | OPERATIONAL |  |
 | Michaelis執事喫茶 | 台中市北區光大街26號 | 光大街26號 | OPERATIONAL |  |
 | Now Place | 台中市西屯區福上巷321-1號 | 福上巷321-1號 | OPERATIONAL |  |
 | Our café 奧兒咖啡 | 台中市大弘街82號1F | 1f, No. 82號大弘街 | CLOSED_PERMANENTLY |  |
@@ -134,15 +126,12 @@ Google Places was used as the primary signal for closure review.
 | REC COFFEE Taiwan | 台中市西屯區惠中路一段88號26樓 | 惠中路一段88號26樓 | OPERATIONAL |  |
 | Rice Caff'e 米咖啡 | 台中市西屯區精明二街11號 | 精明二街11號 | OPERATIONAL |  |
 | ROKARO coffee | 台中市美村路一段576巷21號 | 美村路一段576巷21號 | CLOSED_PERMANENTLY |  |
-| Roundabout Café | 台中市西區大和路73號 | 大和路73號 | OPERATIONAL |  |
 | Sepia coffee 斯比亞咖啡 (朝富店) | 台中市西屯區朝富路242號 | 朝富路242號 | CLOSED_PERMANENTLY |  |
 | SMILE CØFFEE 憲賣咖啡 (熱河店) | 台中市北屯區熱河路二段128號 | 熱河路二段128號 | OPERATIONAL |  |
 | T’s Bookstore 書店 | 台中市龍井區新興路2巷2-1號1樓 | 434臺中市龍井區新興路2巷2號 | CLOSED_PERMANENTLY |  |
-| TerraBella(原蜜舫咖啡) | 403台中市西區精誠二十街2號 | 精誠二十街2號 | OPERATIONAL |  |
 | tutti督醍咖啡 | 台中市中區中山路247號 | 中山路247號 | CLOSED_PERMANENTLY |  |
 | Under The Rose Cafe | 406台中市北屯區梅川東路四段98號 | 梅川東路四段98號 | CLOSED_PERMANENTLY |  |
 | Yasumi Cafe | 南區忠明南路809號 台中市 | 忠明南路809號 | OPERATIONAL |  |
-| Yosano与謝野直火烘焙咖啡工作室 | 台中市西區自治街242號 | 自治街242號 | OPERATIONAL |  |
 | Zeller Coffee | 台中市南屯區大墩十一街154號 | 大墩十一街154號 | CLOSED_PERMANENTLY |  |
 
 ## 2. 疑似暫停營業

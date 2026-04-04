@@ -14,6 +14,7 @@ const rows = JSON.parse(await readFile(INPUT, "utf8"));
 const kept = rows.filter((row) => {
   const reason = row.audit?.reason || "";
   return reason === "Google Places businessStatus = CLOSED_PERMANENTLY"
+    || reason === "Google matched a non-cafe business at the same address"
     || reason === "Google Places businessStatus = CLOSED_TEMPORARILY";
 });
 

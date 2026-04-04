@@ -1,6 +1,6 @@
 # Kaohsiung Google Places Closure Review
 
-Checked at: 2026-04-04T09:35:06.061Z
+Checked at: 2026-04-04T10:17:03.595Z
 
 Google Places was used as the primary signal for closure review.
 
@@ -9,7 +9,7 @@ Google Places was used as the primary signal for closure review.
 ## 總覽
 
 - 總店數：321
-- Google 判定仍在營業：196
+- Google 判定仍在營業：217
 - 疑似永久歇業：51
 - 疑似暫停營業：12
 - 找不到 Google Places 候選：0
@@ -20,13 +20,10 @@ Google Places was used as the primary signal for closure review.
 
 | 店名 | 資料地址 | Google 比對地址 | 狀態 | Google Maps |
 | --- | --- | --- | --- | --- |
-| #Space Cafe' | 高雄市新興區民享街88號 | 民享街88號 | OPERATIONAL |  |
 | 14g 光華店 | 802高雄市苓雅區光華一路315號 | 802高雄市苓雅區光華一路207號 | OPERATIONAL |  |
-| 161烘焙咖啡屋(民族路) | 高雄市三民區民族一路637號 | 民族一路637號 | OPERATIONAL |  |
 | 51咖啡 | 高雄市左營區重信路577號 | 813高雄市左營區重信路577號 | OPERATIONAL |  |
 | 612號月光海洋咖啡館 | 高雄市三民區明賢街67號 | 明賢街67號 | CLOSED_PERMANENTLY |  |
 | 6吋盤早午餐-前鎮瑞興店 | 806高雄市前鎮區瑞興街105-1號 | 瑞興街105-1號 | CLOSED_PERMANENTLY |  |
-| 二元品嚐咖啡 | 高雄市前金區民生二路201-1號 | 民生二路201-1號 | OPERATIONAL |  |
 | 大呆咖啡 | 高雄市苓雅區和平一路36巷42-1號 | 和平一路36巷42-1號 | CLOSED_PERMANENTLY |  |
 | 小小瑜咖啡 | 811高雄市楠梓區加宏路158號 | 加宏路158號號 | CLOSED_PERMANENTLY |  |
 | 小農坊 | 高雄市前金區自強三路237號（235巷內） | 自強三路237號（235巷內） | CLOSED_PERMANENTLY |  |
@@ -37,24 +34,16 @@ Google Places was used as the primary signal for closure review.
 | 卡啡那 CAFFAINA 明誠店 | 高雄市左營區明誠二路243號 | 明誠二路243號 | OPERATIONAL |  |
 | 卡啡那 CAFFAINA 美術館店 | 高雄市鼓山區美術東二路3號 | 美術東二路3號 | OPERATIONAL |  |
 | 卡啡那高雄文濱店 | 高雄市鳳山區文濱路131號 | 文濱路131號 | OPERATIONAL |  |
-| 台灣壹品咖啡 | 高雄市左營區蓮潭路40號 | 蓮潭路40號 | OPERATIONAL |  |
-| 合日咖啡 | 高雄市左營區文強路409號 | 文強路409號 | OPERATIONAL |  |
-| 向陽樹咖啡-峇里島驛站 | 高雄市梓官區大舍南路92號 | 大舍南路92號 | OPERATIONAL |  |
-| 多那之(五甲店) | 高雄市鳳山區五甲三路1號 | 五甲三路1號 | OPERATIONAL |  |
 | 多那之岡山分店 | 高雄市岡山區前鋒路6號 | 前峰路6號 | OPERATIONAL |  |
 | 多那之明誠店 | 813台灣高雄市左營區明誠二路433號 | 明誠二路433號 | OPERATIONAL |  |
-| 灰咖啡 | 新興區林森一路146巷2號 | 林森一路146巷2號 | OPERATIONAL |  |
 | 灰家咖啡 Hway + Coffee | 803007高雄市鹽埕區河西路10號 | 河西路10號 | CLOSED_PERMANENTLY |  |
 | 百瓦哥咖啡（民生店） | 高雄市新興區民生一路15號 | 民生一路15號 | CLOSED_PERMANENTLY |  |
-| 艾奇諾珈琲工坊 | 高雄市鹽埕區建國四路41號 | 建國四路41號 | OPERATIONAL |  |
-| 亨利咖啡(西子灣) | 高雄市鼓山區哨船街75-18號 | 哨船街75-18號 | OPERATIONAL |  |
 | 找咖啡 | 高雄市左營區文自路735號 | 文自路735號 | CLOSED_PERMANENTLY |  |
 | 私心咖啡Favorite Café | 高雄市左營區翠華路584號(果貿社區) | 翠華路584號 | OPERATIONAL |  |
 | 亞舍咖啡 Arthur Cafe | 高雄市左營區文府路416號之3 | 文府路416號 | OPERATIONAL |  |
 | 來7號咖啡 | 高雄市鳳山區國光路7號 | 國光路7號 | OPERATIONAL |  |
 | 咖啡平方左營自由店 | 高雄市左營區自由二路109號 | 自由二路109號 | CLOSED_PERMANENTLY |  |
 | 咖啡強Coffejohn | 高雄市鼓山區延平街64-3號 | 804高雄市鼓山區延平街64-3號 | OPERATIONAL |  |
-| 咖啡鳥咖啡館 | 高雄市苓雅區青年一路24號 | 青年一路24號 | OPERATIONAL |  |
 | 咖啡隱 Cofein Café 青年旗艦店 | 830高雄市鳳山區青年路二段317-2號 | 青年路二段317-2號 | CLOSED_PERMANENTLY |  |
 | 季洋咖啡隨行吧楠梓店 | 高雄市楠梓區藍昌路351號 | 藍昌路351號 | CLOSED_PERMANENTLY |  |
 | 季洋莊園咖啡隨行吧民族店 | 高雄市新興區民族二路65-1號 | 民族二路65-1號 | CLOSED_PERMANENTLY |  |
@@ -62,14 +51,12 @@ Google Places was used as the primary signal for closure review.
 | 波貝拉咖啡Bobelle Coffee Brunch | 高雄市左營區崇德路272號 | 崇德路272號 | CLOSED_PERMANENTLY |  |
 | 威爾希斯 | 高雄市鼓山區蓮海路70號 | 蓮海路70號 | CLOSED_PERMANENTLY |  |
 | 宮前咖啡 | 高雄市新興區球庭路79號 | 球庭路79號2樓 | OPERATIONAL |  |
-| 捌邸樓 8deroad | 高雄市新興區八德二路46-1號 | 八德二路46-1號 | OPERATIONAL |  |
 | 時刻咖啡 | 高雄市前金區育才街4號 | 1樓, No. 4號育才街 | CLOSED_PERMANENTLY |  |
 | 柴吉他。咖啡（停止營業） | 高雄市鳳山區文學街83號 | No. 83號, 文學街鳳山區高雄市830 | CLOSED_PERMANENTLY |  |
 | 核桃栗栗珈琲屋 | 81359高雄市左營區辛亥路43號 | 辛亥路43號1 | CLOSED_PERMANENTLY |  |
 | 格言咖啡 Maximum Coffee | 高雄市鼓山區美術東五路50號 | 美術東五路50號 | OPERATIONAL |  |
 | 馬可的店｜自家烘焙咖啡 | 高雄市三民區正興路165號 | 正興路165號 | OPERATIONAL |  |
 | 馬修咖啡·廚房 | 高雄市鼓山區大順一路925號 | 804高雄市鼓山區大順一路925號 | OPERATIONAL |  |
-| 高雄 TaMa 咖啡館 | 高雄市苓雅區永康街73號 | 永康街73號 | OPERATIONAL |  |
 | 帶我去旅行 | 高雄市鳳山區光復路171號 | 830高雄市鳳山區光復路171號 | CLOSED_PERMANENTLY |  |
 | 移動咖啡 (進駐於高雄個共作空間) | 高雄市三民區熱河二街六巷16號 | 807高雄市三民區熱河二街6巷16號 | OPERATIONAL |  |
 | 第四紀咖啡 | 高雄市左營區博愛二路204號 | 813017高雄市左營區博愛二路204號 | OPERATIONAL |  |
@@ -80,37 +67,29 @@ Google Places was used as the primary signal for closure review.
 | 雅裴詩咖啡 | 高雄市新興區中山一路115號B1(美麗島站內) | 高捷, 美麗島站『內』往9號出口 方向, No. 115號中山一路 | CLOSED_PERMANENTLY |  |
 | 想享咖啡茶屋 | 高雄市三民區鼎中路639號 | 鼎中路639號 | CLOSED_PERMANENTLY |  |
 | 愚度咖啡 udu café | 高雄市苓雅區憲治路2號 | 憲治路2號 | CLOSED_PERMANENTLY |  |
-| 義來義去 Eagle Cafe | 高雄市鼓山區南屏路599號 | 南屏路599號 | OPERATIONAL |  |
 | 路易莎 左營重上店 | 813高雄市左營區文萊路284號 | 文萊路284號 | OPERATIONAL |  |
 | 路易莎咖啡 河堤店 | 高雄市三民區明仁路51號 | 明仁路51號 | OPERATIONAL |  |
-| 路易莎咖啡小港店 | 高雄市小港區漢民路616號 | 漢民路616號 | OPERATIONAL |  |
 | 路易莎高雄中正店 | 中正三路68-2號 | 中正三路68-2號 | CLOSED_PERMANENTLY |  |
 | 滴滴咖啡 Daily Dose Coffee | 高雄市前金區中正四路106號 | 中正四路106號一樓 | CLOSED_PERMANENTLY |  |
 | 樂邦客 | 高雄市新興區錦田路11號 | 錦田路11號 | CLOSED_PERMANENTLY |  |
 | 蓮貴藝文咖啡館 | 高雄市新興區河南一路119號 | 河南一路118號 | CLOSED_PERMANENTLY |  |
 | 濃好咖啡 | 高雄市岡山區中山南路430號 | 中山南路430-5號岡山火車站往南約200米 | CLOSED_PERMANENTLY |  |
-| 燃木咖啡研究所Fuelwood Coffee Lab | 802高雄市苓雅區建國一路90-1號16F-2 | 建國一路90-1號16F-2 | OPERATIONAL |  |
 | 鐵塔咖啡 Tower Cafe | 高雄市三民區同盟三路198號 | 807高雄市三民區同盟三路198號807 | CLOSED_PERMANENTLY |  |
 | 聽見花開咖啡館 | 高雄市楠梓區土庫路283號 | 土庫路283號 | CLOSED_PERMANENTLY |  |
-| Acc Café de Coeur 真心豆行七賢店 | 801高雄市前金區七賢二路365號 | 七賢二路365號 | OPERATIONAL |  |
 | always a+ | 高雄市前金區新田路217號 | 801高雄市前金區新田路217號 | OPERATIONAL |  |
 | Amis cafe | 高雄市新興區信守街99號 | 800高雄市新興區信守街99號 | OPERATIONAL |  |
 | Arosa Café | 813高雄市左營區明誠二路539號 | 明誠二路539號 | OPERATIONAL |  |
 | Artisan Cafe | 高雄市前金區仁義街223號 | 仁義街223號 | OPERATIONAL |  |
 | Betterman Pizza x Coffee | 高雄市新興區高雄市新興區民生一路265號 | 民生一路265號No | CLOSED_PERMANENTLY |  |
 | Bon Voyage 棒！遠行咖啡 | 高雄市鳳山區鳳明街11號 | 鳳明街11號 | CLOSED_PERMANENTLY |  |
-| Buii sheep's | 高雄市左營區明華一路13號 | 明華一路13號 | OPERATIONAL |  |
 | Café De Lecture | 高雄市前鎮區忠勤路8號2F | 忠勤路8號 | CLOSED_PERMANENTLY |  |
 | Coffee。修 | 高雄市旗山區中山路60-7號 | 中山路60-12號號 | CLOSED_PERMANENTLY |  |
 | Cuiqu Coffee(奎克咖啡) | 高雄市鼓山區博愛二路236號 | 博愛二路236號 | CLOSED_PERMANENTLY |  |
 | Dmore Coffee 達墨爾咖啡 | 高雄市鹽埕區必忠街19號 | 必忠街19號 | CLOSED_PERMANENTLY |  |
 | Donutes 多那之(瑞隆店) | 高雄市前鎮區瑞隆路232號 | 瑞隆路232號 | OPERATIONAL |  |
 | Eske Place Coffee House | 高雄市楠梓加工區中一街5號 | 號, 中一街楠梓區高雄市811 | CLOSED_PERMANENTLY |  |
-| Fans cafe | 土庫一路158號 | 土庫一路158號 | OPERATIONAL |  |
-| FANs cafe | 高雄市楠梓區土庫一路158號 | 土庫一路158號 | OPERATIONAL |  |
 | Formula Coffee Roaster | 高雄市三民區重慶街117號 | 重慶街117號 | OPERATIONAL |  |
 | Fuelwood Coffee 燃木咖啡研究所 | 高雄市前鎮區復興三路311-14號 | 806高雄市前鎮區復興三路311-14號 | OPERATIONAL |  |
-| Gavagai Café(各比伊咖啡) | 高雄市三民區敦煌路80巷11號 | 敦煌路80巷11號 | OPERATIONAL |  |
 | GEORGE HOUSE (高雄文山店) | 高雄市鳳山區文平街33號 | 文平街1號樓 33 | CLOSED_PERMANENTLY |  |
 | INBAR 日日誌 | 高雄市苓雅區海邊路105號 | 海邊路105號 | CLOSED_PERMANENTLY |  |
 | Lab 146 | 高雄市前金區中正四路146號 | 中正四路146號 | CLOSED_PERMANENTLY |  |

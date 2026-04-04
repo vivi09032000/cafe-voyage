@@ -55,8 +55,24 @@ function normalizeName(value) {
     .replace(/[()（）［］【】「」『』'"`~!@#$%^&*+=:;,.?/\\|<>_\-\s]/g, "");
 }
 
+function simplifyNameForMatch(value) {
+  const stripped = String(value || "")
+    .replace(/（[^）]*）|\([^)]*\)|［[^］]*］|\[[^\]]*\]|【[^】]*】|「[^」]*」|『[^』]*』/g, " ")
+    .replace(/\s+-\s+.*/g, " ")
+    .replace(/\s+\|.+$/g, " ");
+
+  return normalizeName(
+    stripped
+      .toLowerCase()
+      .replace(
+        /咖啡館|咖啡店|咖啡|珈琲|早午餐|甜點|餐廳|餐館|小餐館|cafes?|coffee|coffeebar|coffeeroasters?|roastery|roaster|espresso|bakery|brunch|kitchen|restaurant|bar|house|studio|shop|deli/gi,
+        " "
+      )
+  );
+}
+
 function tokenizeName(value) {
-  const normalized = normalizeName(value);
+  const normalized = simplifyNameForMatch(value);
   return (normalized.match(/[a-z0-9]+|[\u3400-\u9fff]+/g) || [normalized]).filter(Boolean).sort();
 }
 
@@ -102,17 +118,31 @@ function nameSimilarity(sourceName, matchedName) {
   const matched = normalizeName(matchedName);
   if (!source || !matched) return 0;
   if (source === matched) return 1;
+  const prefixRatio = commonPrefixLength(source, matched)
+    / Math.max(Math.min(Array.from(source).length, Array.from(matched).length), 1);
+  if (prefixRatio >= 0.72) return 0.9;
   if (source.includes(matched) || matched.includes(source)) return 0.92;
 
   const sourceCanonical = canonicalName(sourceName);
   const matchedCanonical = canonicalName(matchedName);
   if (sourceCanonical && sourceCanonical === matchedCanonical) return 1;
 
+  const sourceCore = simplifyNameForMatch(sourceName);
+  const matchedCore = simplifyNameForMatch(matchedName);
+  if (sourceCore && matchedCore) {
+    if (sourceCore === matchedCore) return 0.96;
+    if (sourceCore.includes(matchedCore) || matchedCore.includes(sourceCore)) return 0.88;
+  }
+
   const maxLen = Math.max(Array.from(sourceCanonical).length, Array.from(matchedCanonical).length, 1);
   const editScore = 1 - (levenshtein(sourceCanonical, matchedCanonical) / maxLen);
   const tokenScore = tokenJaccard(tokenizeName(sourceName), tokenizeName(matchedName));
+  const coreMaxLen = Math.max(Array.from(sourceCore).length, Array.from(matchedCore).length, 1);
+  const coreEditScore = sourceCore && matchedCore
+    ? 1 - (levenshtein(sourceCore, matchedCore) / coreMaxLen)
+    : 0;
 
-  return Math.max(editScore, tokenScore);
+  return Math.max(editScore, tokenScore, coreEditScore);
 }
 
 function normalizeAddress(value) {
@@ -126,8 +156,16 @@ function extractDoorToken(address) {
   return normalizeAddress(address).match(/\d+(?:-\d+)?號/)?.[0] || "";
 }
 
+function commonPrefixLength(a, b) {
+  const aa = Array.from(a);
+  const bb = Array.from(b);
+  let i = 0;
+  while (i < aa.length && i < bb.length && aa[i] === bb[i]) i += 1;
+  return i;
+}
+
 function hasStrongNameMatch(sourceName, matchedName) {
-  return nameSimilarity(sourceName, matchedName) >= 0.72;
+  return nameSimilarity(sourceName, matchedName) >= 0.64;
 }
 
 function hasStrongAddressMatch(sourceAddress, matchedAddress) {
@@ -164,8 +202,86 @@ function mapLegacyPlace(place, addressField = "formatted_address") {
     name: place.name || "",
     formatted_address: place[addressField] || "",
     business_status: place.business_status || "",
+    types: Array.isArray(place.types) ? place.types : [],
     google_maps_uri: "",
   };
+}
+
+function bigrams(value) {
+  const chars = Array.from(simplifyNameForMatch(value));
+  if (chars.length < 2) return new Set(chars[0] ? [chars[0]] : []);
+  const out = new Set();
+  for (let i = 0; i < chars.length - 1; i += 1) {
+    out.add(chars.slice(i, i + 2).join(""));
+  }
+  return out;
+}
+
+function hasLooseNameOverlap(sourceName, matchedName) {
+  if (hasStrongNameMatch(sourceName, matchedName)) return true;
+  const a = bigrams(sourceName);
+  const b = bigrams(matchedName);
+  for (const token of a) {
+    if (b.has(token)) return true;
+  }
+  return false;
+}
+
+function isCafeLikePlace(place) {
+  const types = Array.isArray(place?.types) ? place.types : [];
+  return types.includes("cafe") || types.includes("coffee_shop");
+}
+
+const EXPLICIT_NON_CAFE_TYPES = new Set([
+  "restaurant",
+  "hot_pot_restaurant",
+  "chinese_restaurant",
+  "japanese_restaurant",
+  "ramen_restaurant",
+  "thai_restaurant",
+  "breakfast_restaurant",
+  "fast_food_restaurant",
+  "bar",
+  "bakery",
+  "ice_cream_shop",
+  "hair_salon",
+  "beauty_salon",
+  "lodging",
+  "hotel",
+  "bank",
+  "atm",
+  "clothing_store",
+  "shoe_store",
+  "convenience_store",
+  "supermarket",
+  "grocery_store",
+  "electronics_store",
+  "furniture_store",
+  "home_goods_store",
+  "department_store",
+  "book_store",
+  "pharmacy",
+  "hospital",
+  "gas_station",
+  "car_repair",
+  "car_dealer",
+  "gym",
+  "movie_theater",
+  "pet_store",
+  "florist",
+  "travel_agency",
+  "real_estate_agency",
+  "school",
+  "university",
+  "museum",
+  "park",
+  "tourist_attraction",
+]);
+
+function isExplicitNonCafePlace(place) {
+  const types = Array.isArray(place?.types) ? place.types : [];
+  if (isCafeLikePlace(place)) return false;
+  return types.some((type) => EXPLICIT_NON_CAFE_TYPES.has(type));
 }
 
 function chooseBestNearbyResult(cafe, places) {
@@ -253,6 +369,16 @@ function looksReplacedByAnotherBusiness(result) {
   return true;
 }
 
+function looksMatchedToNonCafeReplacement(result) {
+  const status = result.details?.businessStatus || result.findPlace?.business_status || "";
+  if (!result.findPlace || !status) return false;
+  if (status === "CLOSED_PERMANENTLY" || status === "CLOSED_TEMPORARILY") return false;
+  if (!isExplicitNonCafePlace(result.findPlace)) return false;
+  if (!hasLooseNameOverlap(result.name, result.findPlace.name)) return false;
+  if (!hasStrongAddressMatch(result.address, result.findPlace.formatted_address || "")) return false;
+  return true;
+}
+
 function classify(result) {
   if (result.error) {
     return {
@@ -288,6 +414,13 @@ function classify(result) {
     return {
       category: "review",
       reason: "Google Places businessStatus = CLOSED_TEMPORARILY",
+    };
+  }
+
+  if (looksMatchedToNonCafeReplacement(result)) {
+    return {
+      category: "suspected_closed",
+      reason: "Google matched a non-cafe business at the same address",
     };
   }
 
