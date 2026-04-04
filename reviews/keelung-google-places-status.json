@@ -1,0 +1,608 @@
+[
+  {
+    "id": "06810569-7409-4c91-8f99-898bda126b1a",
+    "name": "小義大利咖啡 Ocean",
+    "address": "基隆市仁愛區孝一路67號",
+    "url": "https://m.facebook.com/littleitalyocean/?locale2=zh_TW",
+    "findPlace": {
+      "place_id": "ChIJu1CIdxVOXTQRvrobJ54fYaM",
+      "name": "小義大利咖啡Ocean",
+      "formatted_address": "1樓, No. 67號孝一路",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "091dfcf3-757f-413c-be3b-1dc0792ad44f",
+    "name": "Comme cafe",
+    "address": "基隆市信義區信二路284號1樓",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJKz2EZj9OXTQR46A7Br8oeSQ",
+      "name": "基隆 卡瑪咖啡吧 Comme Coffee & Bar",
+      "formatted_address": "信二路284號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0c8fd155-e548-4f81-9896-7d939c7dc66a",
+    "name": "金豆咖啡",
+    "address": "基隆市仁愛區忠三路75號",
+    "url": "https://www.facebook.com/%E9%87%91%E8%B1%86%E5%92%96%E5%95%A1-174715529207985/",
+    "findPlace": {
+      "place_id": "ChIJ46tSyxVOXTQReZC_47g7qcU",
+      "name": "老窩咖啡館 忠三店",
+      "formatted_address": "忠三路49號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "1303c9d8-e9be-4fe6-97e4-e03db54b704f",
+    "name": "「像極了愛情」人文共享空間",
+    "address": "基隆市中正區北寧路2號，海洋大學學生活動中心1F，貴族世家隔壁",
+    "url": "https://bit.ly/3eTre7s",
+    "findPlace": {
+      "place_id": "ChIJmS_jN4VPXTQRFkY3ZD7aktc",
+      "name": "像極了愛情·人文共享空間·甜點·咖啡·無酒精調飲·自家手作甜點·海大甜點",
+      "formatted_address": "北寧路2號海洋大學學生活動中心1F",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "1e454738-9428-4cd1-acca-3346ac119454",
+    "name": "Mr Bean & A Fei 豆豆先生與他的阿肥",
+    "address": "基隆市安樂區安和一街330巷5-3號",
+    "url": "https://www.facebook.com/mrbeancoffee.tw",
+    "findPlace": {
+      "place_id": "ChIJb-R1HDlPXTQRhYoHQhZna18",
+      "name": "Bean ＆ Fei 豆豆先生與他的阿肥｜商用咖啡供應商 國際咖啡品鑑師品牌",
+      "formatted_address": "安和一街330巷5-3號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "1f7bf985-6608-40cb-9e81-9b96b6b726eb",
+    "name": "阿信咖啡館",
+    "address": "基隆市仁愛區愛五路3號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ14sLYD5OXTQRy-8duLmNFWU",
+      "name": "阿信咖啡店",
+      "formatted_address": "愛五路3號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3662b90c-c266-402f-8326-fba227642f6b",
+    "name": "Ruth C. Coffee",
+    "address": "基隆市仁愛區忠一路3巷25號",
+    "url": "https://www.facebook.com/ruthc.coffee/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJTckIohVOXTQR9jubHDuDP8g",
+      "name": "Ruth C. Coffee 茹絲咖啡",
+      "formatted_address": "202基隆市中正區中正路559-2號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "37ec7398-5df2-4f52-bdd8-35cc0f24f490",
+    "name": "像極了愛情｜人文共享空間",
+    "address": "基隆市中正區北寧路2號_海大學生活動中心1F(貴族世家牛排/右手邊隔壁)",
+    "url": "https://www.facebook.com/JustLikeLove/",
+    "findPlace": {
+      "place_id": "ChIJmS_jN4VPXTQRFkY3ZD7aktc",
+      "name": "像極了愛情·人文共享空間·甜點·咖啡·無酒精調飲·自家手作甜點·海大甜點",
+      "formatted_address": "北寧路2號海洋大學學生活動中心1F",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "40bd419c-1ca8-4e07-b24d-b8c0928b7c14",
+    "name": "SOH Espresso Cafe",
+    "address": "基隆市劉銘傳路6巷24號",
+    "url": "https://www.facebook.com/sohespresso/",
+    "findPlace": {
+      "place_id": "ChIJWQ7wITlOXTQRquD1EE9s5x8",
+      "name": "SOH Espresso Cafe",
+      "formatted_address": "劉銘傳路6巷24號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "426566b9-74de-48c1-ae92-e0f7594f17cf",
+    "name": "三奇壹號咖啡館",
+    "address": "200基隆市愛二路54巷2號",
+    "url": "https://www.facebook.com/senkicoffee/",
+    "findPlace": {
+      "place_id": "ChIJAz4YJz5OXTQRje4PKvkHSsE",
+      "name": "三奇壹號咖啡館x築甜製菓:Keelung Senki Coffee",
+      "formatted_address": "愛二路54巷2號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "48fd894e-399c-46de-bce2-113ca5cd63ea",
+    "name": "渡邊珈琲製造所",
+    "address": "201014基隆市信義區義三路4巷23號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJAQYEhoFPXTQR49AbJjl0ENs",
+      "name": "渡邊珈琲製造所",
+      "formatted_address": "義三路4巷23號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "50d32b2d-d5ef-4bb7-9238-d18134508d96",
+    "name": "熊豆咖啡",
+    "address": "基隆市中正區中正路579-1號",
+    "url": "https://www.facebook.com/%E7%86%8A%E8%B1%86%E5%92%96%E5%95%A1-527945280744393/",
+    "findPlace": {
+      "place_id": "ChIJe8mhWwFPXTQRK9EArb8oZeE",
+      "name": "熊豆咖啡",
+      "formatted_address": "中正路579-1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "5a13623e-b264-476a-9e3f-4e54cbe81420",
+    "name": "夏隆咖啡",
+    "address": " 基隆市信義區義六路38號",
+    "url": "https://www.facebook.com/%E5%A4%8F%E9%9A%86%E5%92%96%E5%95%A1%E9%A4%A8-Shalom-Coffee-948211421873402/",
+    "findPlace": {
+      "place_id": "ChIJ8XAkmEdOXTQRhRqD7FTr0lI",
+      "name": "夏隆咖啡 Shalom Cafe",
+      "formatted_address": "義六路38號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "5f0b3223-1c5d-48c9-8050-317bc85ea423",
+    "name": "隱山所",
+    "address": "200基隆市仁愛區獅球路48巷116號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJmZ1Gk7ZPXTQRnrQT09G_toc",
+      "name": "隱山所",
+      "formatted_address": "獅球路48巷116號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "6596d0c0-5022-4986-ad29-9d0529c5b769",
+    "name": "COZY Beans Coffee 艾爾咖啡",
+    "address": "基隆市七堵區百六街107巷7號",
+    "url": "https://www.facebook.com/cozybeans66/",
+    "findPlace": {
+      "place_id": "ChIJYQipBDZSXTQRgn_iVwrMMl8",
+      "name": "cozy beans coffee 艾爾咖啡(基隆咖啡館)",
+      "formatted_address": "百六街107巷7號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "6a020200-595e-4bff-b151-a1da7f542535",
+    "name": "Yili Coffee House 一粒珈琲",
+    "address": "基隆市中正區北寧路242之6號",
+    "url": "https://www.facebook.com/YiliCoffee/",
+    "findPlace": {
+      "place_id": "ChIJH2I9zwtPXTQR9NNmfYwuiuM",
+      "name": "一粒珈琲",
+      "formatted_address": "201基隆市信義區深美街152號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "71e1fcd1-14dd-41d6-9ee4-2eeaa85433d5",
+    "name": "FLOW CAFE",
+    "address": "東信路35巷4號1樓",
+    "url": "https://www.facebook.com/flowcafetw/",
+    "findPlace": {
+      "place_id": "ChIJwUDkX4pPXTQRIIHZIjYgRls",
+      "name": "FLOW CAFE",
+      "formatted_address": "200基隆市仁愛區忠二路68號2樓",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "774c158c-9ea7-44d0-a7d6-7e2f3aad6277",
+    "name": "Kai Jie Huang",
+    "address": "Zhuanyao Rd.",
+    "url": "",
+    "findPlace": null,
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "No Google Places candidate found"
+    }
+  },
+  {
+    "id": "77ef917b-544a-44f7-9bca-cd5d6b99d2ed",
+    "name": "Vita A Simple Cafe'",
+    "address": "基隆市信義區崇法街12號",
+    "url": "https://www.facebook.com/Vitaasimple/",
+    "findPlace": {
+      "place_id": "ChIJjfqRAddPXTQR0CKC93zGn74",
+      "name": "凱博克北區烘豆冠軍｜法星自家烘焙咖啡Vita A Simple Cafe｜咖啡豆專賣店",
+      "formatted_address": "崇法街12號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "7e107546-b695-4d01-976f-360a98016ce6",
+    "name": "Homerun Roasters",
+    "address": "200基隆市仁愛區仁二路82號",
+    "url": "https://www.google.com.tw/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwi4rM768LvSAhVGKpQKHdwbCV4QFggaMAA&url=https%3A%2F%2Fzh-tw.facebook.com%2Fhomerunroasters%2F&usg=AFQjCNGMuBRmxswiWdcjVOAdSsbbyZuD1g&sig2=Gei5oWSaVHTy8cjb3aNIaQ",
+    "findPlace": {
+      "place_id": "ChIJ7-B4qZBPXTQR9VtwklR2nE0",
+      "name": "Homerun Roasters.J 紅朗咖啡｜最後營業日12/14 ｜寵物友善(五六日限量販售飯類餐點）",
+      "formatted_address": "仁二路82號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "84f5b4fb-cede-443a-80e1-c7db962ec859",
+    "name": "LOKA CAFE",
+    "address": "202基隆市中正區中正路28號",
+    "url": "https://www.facebook.com/KEELUNGLOKACAFE/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJx75DZEBOXTQRd7npn9srbUw",
+      "name": "LOKA CAFE",
+      "formatted_address": "中正路28號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "903c92dd-a12b-4587-aba1-72d156132a77",
+    "name": "丸角後院 MaruCorner Coffee Stage & Bar",
+    "address": "200基隆市仁愛區孝一路23巷5弄13號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJDbcR0hVOXTQRpR5G7_yNIhw",
+      "name": "丸角後院 MaruCorner Coffee Stage & Bar",
+      "formatted_address": "23巷5弄, No. 13孝一路",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "950b2e4c-e1df-443e-8d29-2c002eb53f23",
+    "name": "魚咖啡",
+    "address": "基隆市中山區中和路168巷12弄20號1F",
+    "url": "https://www.facebook.com/2018YuCoffee/?eid=ARBOe_X1ctejlzjOpmhBLcAuCrtFjyw1_wDiRxwan4GNyMJFDt7Rk6z8bMqltVpIY8WC-aaLyvJnXMaz&fref=tag",
+    "findPlace": {
+      "place_id": "ChIJ7z1UQtdNXTQRjL1rYCnbNNw",
+      "name": "基隆 魚咖啡（每人基本消費一杯飲品）",
+      "formatted_address": "中和路168巷12弄20號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "97c3536c-36f5-47b1-8647-c09a20f56b9f",
+    "name": "丸角@自轉生活.咖啡 ",
+    "address": "基隆市孝二路28號",
+    "url": "https://www.facebook.com/Cafe.de.MaruCorner/",
+    "findPlace": {
+      "place_id": "ChIJf8RALRROXTQRStlTPxkaolI",
+      "name": "MaruCorner Cafe",
+      "formatted_address": "孝二路28號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a41a4ada-861e-4452-a515-739bde4fa54b",
+    "name": "貓町咖啡",
+    "address": "200基隆市仁愛區愛二路54巷12號",
+    "url": "https://www.facebook.com/cattowncoffee/",
+    "findPlace": {
+      "place_id": "ChIJXbHSJT5OXTQRhcukSjara0A",
+      "name": "貓町珈琲 Cattown : Coffee Stand （WiFi free 週日只提供咖啡）",
+      "formatted_address": "202基隆市中正區義二路2巷4號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b754bbd8-4a67-4681-b410-8848a791a576",
+    "name": "S&D咖啡基隆忠三門市",
+    "address": "基隆市仁愛區忠三路50號",
+    "url": "https://www.facebook.com/pg/SD0224253301/about/?ref=page_internal",
+    "findPlace": {
+      "place_id": "ChIJrY-cSRROXTQRpcQUnwQfPYU",
+      "name": "S&D基隆忠三店",
+      "formatted_address": "忠三路50號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "bb04b1a8-6a8d-4edc-a930-cf5d2e72d7ef",
+    "name": "幸福滿咖啡館",
+    "address": "基隆市暖暖區源遠路251-1號",
+    "url": "https://www.facebook.com/pg/HappinessCafeCafe/about/?ref=page_internal",
+    "findPlace": {
+      "place_id": "ChIJodVaVQBPXTQRDoAU7f95RUY",
+      "name": "幸福滿｜咖啡｜鬆餅｜蛋糕",
+      "formatted_address": "200基隆市仁愛區愛一路51號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "cf758030-48f6-42cf-8bfa-f95fc4ec33b5",
+    "name": "夏隆咖啡 Shalom Cafe",
+    "address": "基隆市信義區義六路38號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ8XAkmEdOXTQRhRqD7FTr0lI",
+      "name": "夏隆咖啡 Shalom Cafe",
+      "formatted_address": "義六路38號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d85a413f-74e5-450f-902e-3f77e9c94210",
+    "name": "Eddie's cafe Et Tiramisu",
+    "address": "基隆市仁愛區華四街25號",
+    "url": "https://www.facebook.com/Eddiescafetiramisu/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJSe1L1hBOXTQR74a194-C4pk",
+      "name": "Eddie's Cafe Et Tiramisu",
+      "formatted_address": "華四街25號一樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e16b7676-2a9f-46cd-b242-ad8287d62c1a",
+    "name": "語水工作室",
+    "address": "202基隆市中正區正豐街35號2樓",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ4-itWMpPXTQR1BeWmWI0cLo",
+      "name": "語水工作室",
+      "formatted_address": "正豐街35號2樓",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "e984596c-33a4-4ddc-a834-6b701df8c535",
+    "name": "圖們｜咖啡公寓 TUMAN Coffee APT",
+    "address": "202基隆市中正區信四路27號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJkQh7xe5PXTQRILXCnROQGq8",
+      "name": "圖們｜咖啡公寓 TUMAN Coffee APT",
+      "formatted_address": "信四路27號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "ea008e13-1a61-492a-98b7-28c0e15acc20",
+    "name": "圖們咖啡",
+    "address": "202基隆市中正區中正路551號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJl21jGDJPXTQRTMguwcsMze4",
+      "name": "圖們咖啡 tuman café",
+      "formatted_address": "中正路551號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "eed11edd-6d6a-4339-8b23-e81bff75bada",
+    "name": "行者咖啡館",
+    "address": "基隆市仁愛區愛二路45號3樓",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJe6qRiBVOXTQRUqRranT5HJ4",
+      "name": "行者咖啡館",
+      "formatted_address": "愛二路45號3 樓",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "f340520e-c12e-4952-ab63-246136769bd6",
+    "name": "WINTER SUN冬煦商行",
+    "address": "202基隆市中正區祥豐街481號",
+    "url": "https://www.facebook.com/profile.php?id=100082974986833",
+    "findPlace": {
+      "place_id": "ChIJM-zF4k9PXTQRUtT0nHjdwhY",
+      "name": "已歇業- 冬煦餐桌 / 冬煦商行",
+      "formatted_address": "202基隆市中正區信四路2-2號3樓",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  }
+]

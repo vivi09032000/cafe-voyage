@@ -1,0 +1,5 @@
+"category","reason","business_status","name","address","source_url","google_match_name","google_match_address","google_place_id","google_maps_url","moved_place_id"
+"suspected_closed","Google Places businessStatus = CLOSED_PERMANENTLY","CLOSED_PERMANENTLY","4.5公里咖啡","台東縣池上鄉3鄰33號","","4.5公里咖啡","3鄰33號","ChIJ_-TGh3QLbzQRCGL18COapyo","",""
+"suspected_closed","Google Places businessStatus = CLOSED_PERMANENTLY","CLOSED_PERMANENTLY","洛恩米薩克 Roen Misak","959台東縣東河鄉號","","洛恩米薩克 Roen Misak","959臺東縣東河鄉號","ChIJQUR2iO-ibzQRpU1s2iwxwyM","",""
+"suspected_closed","Google Places businessStatus = CLOSED_PERMANENTLY","CLOSED_PERMANENTLY","石在有人咖啡館","台東縣綠島鄉公館村60號","https://www.facebook.com/TheReefsCafe60/","石在有人咖啡館","60號","ChIJ28ZI07KNbzQR1IWxFYoGM28","",""
+"suspected_closed","Google Places businessStatus = CLOSED_PERMANENTLY","CLOSED_PERMANENTLY","默默珈琲手沖館","台東縣池上鄉中華路61號","沒有, 但在GoogleMap上可找到","默默珈琲手沖館 (租約到期囉~房東收回自用~The rent is due, see ya somewhere! Thanks all!)","中華路61號","ChIJQ3oC7loNbzQR27XmktbaqTU","",""

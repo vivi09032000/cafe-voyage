@@ -1,0 +1,3831 @@
+[
+  {
+    "id": "0061c67c-61ea-46e9-ba5d-dda35ac22964",
+    "name": "燊咖啡",
+    "address": "桃園市桃園區新埔六街138號",
+    "url": "https://www.facebook.com/pg/shencafetaoyuan/about/?ref=page_internal",
+    "findPlace": {
+      "place_id": "ChIJqz1LcbEfaDQRSXiK5J9q5_g",
+      "name": "燊咖啡",
+      "formatted_address": "新埔六街138號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "00c1a70f-1138-4cd6-9933-ebf53b92badf",
+    "name": "甯 咖啡 ",
+    "address": "桃園市中壢區大仁五街12號",
+    "url": "https://www.facebook.com/jackscoffee/",
+    "findPlace": {
+      "place_id": "ChIJ_7jRY5QjaDQRRKy4vDEXHP0",
+      "name": "甯 咖啡 自家烘焙（偶爾會偷懶，強烈建議出門前看一下粉專的最新動態！😃）",
+      "formatted_address": "大仁五街12號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "00d2ea54-ed84-41c5-a857-4bd38504b28d",
+    "name": "BeYou.té Café",
+    "address": "桃園市中壢區文化二路267號",
+    "url": "https://www.facebook.com/BeYouteCafe/",
+    "findPlace": {
+      "place_id": "ChIJJTRSrfAhaDQRrLja7kvYMMY",
+      "name": "BeYou.té Café咖啡館",
+      "formatted_address": "文化二路267號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "013c1f18-626d-43e0-b627-f76ee74232f1",
+    "name": "R9 Cafe 桃園店",
+    "address": "桃園市桃園區民生路55巷8號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ59Sw3FQeaDQRp3RlXoIejTY",
+      "name": "R9 Cafe 桃園店",
+      "formatted_address": "民生路55巷8號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "02c18a8f-79c8-43a3-a982-e75192ec21d4",
+    "name": "班迪克咖啡",
+    "address": "桃園市八德區建國路237號",
+    "url": "https://www.facebook.com/%E7%8F%AD%E8%BF%AA%E5%85%8B%E5%92%96%E5%95%A1-1568269403394952/",
+    "findPlace": {
+      "place_id": "ChIJ5ecEh-wYaDQR-xAxyU9FL7w",
+      "name": "班迪克咖啡",
+      "formatted_address": "建國路237號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "041690b5-78d8-4b2a-aaa0-047cf83d8007",
+    "name": "突奌咖啡喵",
+    "address": "桃園市中壢區福州路20號",
+    "url": "https://www.facebook.com/%E7%AA%81%E5%A5%8C%E5%92%96%E5%95%A1%E5%96%B5-220841121329242/?rf=375023756004853",
+    "findPlace": {
+      "place_id": "ChIJ39l0tEYiaDQRwVos2wPHYi8",
+      "name": "突奌咖啡喵",
+      "formatted_address": "福州路20號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "044fc366-62c7-47aa-8d5a-ba3490d7b122",
+    "name": "流石咖啡",
+    "address": "桃園市中壢區福州二街412-1號",
+    "url": "https://www.facebook.com/pg/cafe.sasuga",
+    "findPlace": {
+      "place_id": "ChIJI2fzvVAjaDQRpEMw1WqmHNM",
+      "name": "流石LS+D/早午餐/全日餐/餐酒館",
+      "formatted_address": "福州二街412-1號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "05d6e272-4b95-414c-a4b0-34e483566989",
+    "name": "香草蛋糕舖 Vanilla Pastry House",
+    "address": "桃園市桃園區民族路193號",
+    "url": "https://www.facebook.com/vanilla193/",
+    "findPlace": {
+      "place_id": "ChIJv2QiewIfaDQRcIK--0rz3H0",
+      "name": "香草蛋糕舖 民族總店",
+      "formatted_address": "民族路193號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "070d6564-673c-4125-ada9-90434e89dfc7",
+    "name": "George's coffee",
+    "address": "桃園市中壢區民權路150號",
+    "url": "https://www.facebook.com/ACID7-coffee-109876450746708/",
+    "findPlace": {
+      "place_id": "ChIJxbiJy2gjaDQR9F97UeTIoZw",
+      "name": "喬治的咖啡",
+      "formatted_address": "民權路150號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "077727a4-c546-4091-bd76-285271a6334f",
+    "name": "老墨咖啡",
+    "address": "桃園市中壢區延平路324號",
+    "url": "https://www.facebook.com/rockmexicocooffee",
+    "findPlace": {
+      "place_id": "ChIJz1J02tojaDQRsHLYMl_R3Tc",
+      "name": "老墨咖啡 La Mano Caffe",
+      "formatted_address": "延平路324號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "080794d6-7146-4260-a13f-73b20c32b500",
+    "name": "只是光影 獨立咖啡廳",
+    "address": "桃園市桃園區新民街43巷10之1號",
+    "url": "https://www.facebook.com/riverdays/",
+    "findPlace": {
+      "place_id": "ChIJX5dnI_weaDQRE2W_iHtHfqo",
+      "name": "只是光影 獨立咖啡廳（公告以FB為主）",
+      "formatted_address": "新民街43巷10之1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0b30a705-7392-4800-998d-08e30ad3d220",
+    "name": "我們。他們",
+    "address": "中壢區長安街 1之13號（老街溪河濱步道上）",
+    "url": "https://www.facebook.com/usthem0527/",
+    "findPlace": {
+      "place_id": "ChIJiwOqT0siaDQR8BvGDVAItpk",
+      "name": "我們。 他們 咖啡廳（老街溪河濱步道上，汽車勿入｜毛孩友善）",
+      "formatted_address": "長安街1之 13號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0ba1f888-bb31-4f43-a587-97638ac1733c",
+    "name": "喵日子 Café",
+    "address": "桃園區保定三街93號",
+    "url": "https://www.facebook.com/MeowDayCafe/",
+    "findPlace": {
+      "place_id": "ChIJE5HjWa8faDQRELbI7iEdnHE",
+      "name": "喵日子café｜貓咪咖啡廳｜網美咖啡廳",
+      "formatted_address": "保定三街93號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0d5a1c63-4f1c-4879-927b-253118711779",
+    "name": "尼爾瓦特",
+    "address": "桃園市龍潭區龍源路大平段690巷105號",
+    "url": "https://www.facebook.com/%E5%B0%BC%E7%88%BE%E7%93%A6%E7%89%B9-NEAR-WATER-caf%C3%A9-104960030910940/?view_public_for=104960030910940",
+    "findPlace": {
+      "place_id": "ChIJjT-SnNA9aDQRCH4gfnFMRWM",
+      "name": "尼爾瓦特 NEAR WATER café",
+      "formatted_address": "龍源路大平段690巷105號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "10493a5d-e562-474a-a04a-11e8a44855d4",
+    "name": "福森咖啡-大溪店",
+    "address": "桃園市大溪區登龍路18號",
+    "url": "https://www.facebook.com/fussencafe/",
+    "findPlace": {
+      "place_id": "ChIJgeHc7SEYaDQRDjTWRjaLkfs",
+      "name": "花森早午餐咖啡",
+      "formatted_address": "登龍路18號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "113dd43c-2eea-413c-be3b-4a1caa3c1f1e",
+    "name": "有間在桃園",
+    "address": "桃園市桃園區金門四街52號",
+    "url": "https://www.instagram.com/you_jian_in_taoyuan/",
+    "findPlace": {
+      "place_id": "ChIJD6XpTwAZaDQR5oEoqG1rkyE",
+      "name": "有間在桃園 You Jian in Taoyuan",
+      "formatted_address": "金門四街52號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "11f45596-bbef-42e7-9a25-18ea3e76d137",
+    "name": "山錡咖啡",
+    "address": "326桃園市楊梅區萬大路14號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJURpd0VAjaDQR2q1X7abZE10",
+      "name": "山錡咖啡",
+      "formatted_address": "萬大路14號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "121eee9e-808c-4f52-9aca-4c60e8d2dee0",
+    "name": "黑豆啡",
+    "address": "桃園市同德11街156號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJleD5LrofaDQRipEHRPEQKO4",
+      "name": "黑豆啡 精品咖啡",
+      "formatted_address": "同德十一街156號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "124f2130-f819-4d50-bc90-d5a512df8177",
+    "name": "金木犀 Kinmokusei",
+    "address": "桃園市桃園區力行路385巷31號",
+    "url": "https://www.facebook.com/kinmokusei2021",
+    "findPlace": {
+      "place_id": "ChIJ-9GYT38faDQRMEkEp9bjR3k",
+      "name": "金木犀KinMokusei ｜Specialty Coffee Roasters 桃園自家烘焙精品咖啡",
+      "formatted_address": "力行路385巷31號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "138c680c-9d97-49fb-9f29-ed5542f5a240",
+    "name": "Flowering 綻放咖啡",
+    "address": "桃園市萬壽路二段1427號",
+    "url": "https://www.floweringty.com/",
+    "findPlace": {
+      "place_id": "ChIJj4E1wBQfaDQRWVo4AumRerU",
+      "name": "Flowering 綻放果凍花 | 天然果汁在蒟蒻裡綻放",
+      "formatted_address": "萬壽路二段1427號1樓",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "1449f84d-be7f-4825-85e7-6b9f549b1e2a",
+    "name": "Chīwit Kaffe其味咖啡",
+    "address": "桃園市桃園區中華路32號2樓",
+    "url": "https://www.facebook.com/chiwitkaffe/",
+    "findPlace": {
+      "place_id": "ChIJnyR8I_0eaDQRpmefwl0bdiM",
+      "name": "#外帶咖啡其味咖啡2店Chiwit Coffee Bar",
+      "formatted_address": "33065桃園市桃園區文中一路136號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "153838fd-dc64-417d-8e9b-f711ac9efafd",
+    "name": "松鼎精品咖啡",
+    "address": "桃園市中壢區中山路59號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJPd2DakgiaDQR1Tc--KEd88Y",
+      "name": "松鼎精品咖啡",
+      "formatted_address": "320桃園市中壢區民權路150號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "154a9581-7543-48a1-93d8-ddf9bd26f31f",
+    "name": "晴天咖啡 sunny cafe",
+    "address": "桃園市中壢區中北路165巷61號",
+    "url": "https://www.facebook.com/320sunnycafe/",
+    "findPlace": {
+      "place_id": "ChIJM7utIzsjaDQRlJBREJa1ixY",
+      "name": "晴天咖啡sunny cafe",
+      "formatted_address": "中北路165巷61號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "1596a8a2-381f-4b10-bc89-2d1396f24b81",
+    "name": "圓桌咖啡",
+    "address": "桃園市中壢區三光路317號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJi9gpLTkjaDQRk0XmRUhqoxE",
+      "name": "圓桌咖啡 roundtable coffee",
+      "formatted_address": "三光路317號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "19d7425f-8982-436a-86d4-76e0549865b4",
+    "name": "Table No.2",
+    "address": "台灣桃園市中壢區興平路163號號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ7d0uDjAiaDQRv7ebfU5vQOg",
+      "name": "Table 2 Coffee Roaster",
+      "formatted_address": "320桃園市中壢區興平路165號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "19ff6ef1-08a5-4482-bb9e-182d9f6df12d",
+    "name": "木木秧咖啡",
+    "address": "桃園市大溪區慈光街128號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJq-qc-GwYaDQRKbfINT82G_E",
+      "name": "木木秧咖啡",
+      "formatted_address": "慈光街128號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "1b53da94-31d9-40ea-b585-d77b502d97c4",
+    "name": "TINA咖啡(中正店)",
+    "address": "桃園市中正路1029號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJa9OMO7AfaDQRn5Aa1pHJGrk",
+      "name": "TINA麵包茶屋-中正店",
+      "formatted_address": "330桃園市桃園區中正路1185號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "1d9c9a79-710e-4dfb-a5cd-9b7541e8ee4f",
+    "name": "ONE MO cafe",
+    "address": "桃園市楊梅區萬大路152巷15號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ7QFR7pojaDQRXfwZc2bRNe0",
+      "name": "ONE MO CAFE",
+      "formatted_address": "萬大路152巷15號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "1e2b4f2b-54df-4eb3-a096-8667ed0b37bc",
+    "name": "哈瓦那(中壢悅讀館)",
+    "address": "桃園市中壢區慈惠三街157巷6號",
+    "url": "https://www.facebook.com/harwanaread/",
+    "findPlace": {
+      "place_id": "ChIJTcqsHjEiaDQR_3bQHie-MvU",
+      "name": "哈瓦那咖啡悅讀館",
+      "formatted_address": "慈惠三街157巷6號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "1f0092fd-60b2-47ed-b7a0-fee25bf43e42",
+    "name": "J café",
+    "address": "桃園區力行路255巷2號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJz1WapgEfaDQRvR83E-RHnV8",
+      "name": "植感森活 HØST | 健康蔬食義大利麵-桃園健康蔬食|健康餐盒|低卡餐盒|低卡美食|溫沙拉推薦|蔬菜沙拉|蔬食餐盒|蔬食料理",
+      "formatted_address": "330桃園市桃園區力行路255巷2號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "20e0e553-4ac5-45bf-99fd-14ca6b2a5bc5",
+    "name": "寒咖啡_65號文創空間",
+    "address": "桃園市中壢區莒光路65號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJw_Ju8MCpQjQR-wEKUAUT4DY",
+      "name": "寒咖啡_寵物友善",
+      "formatted_address": "320桃園市中壢區慈惠一街124巷6號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "20e600d8-cd23-4f31-ad3a-ee44d7d63d03",
+    "name": "Cafeholic coffee & bar",
+    "address": "桃園市中壢區龍昌路26號號 1 樓",
+    "url": "https://www.facebook.com/Cafeholic.coffee.bar/",
+    "findPlace": {
+      "place_id": "ChIJl-_H7W8iaDQR7QiAPqQUSVs",
+      "name": "Cafeholic coffee & bar (時間及店休以IG,FB為主）",
+      "formatted_address": "龍昌路26號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "20e7616f-1282-4b27-ae1d-3bc7a03ff893",
+    "name": "Alpha Coffee & Tea",
+    "address": "桃園市平鎮區工業五路8號",
+    "url": "https://www.facebook.com/alphacoffeeandtea/",
+    "findPlace": {
+      "place_id": "ChIJhZATXjQjaDQRED0CIY3tQCE",
+      "name": "CAFE!N 硬咖啡 桃園總廠門市 (咖啡觀光工廠 )",
+      "formatted_address": "工業五路8號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "211b0ead-9e05-4b6e-8a84-1a134cc63ccc",
+    "name": "杜宅咖啡",
+    "address": "台中市南區五權南路468號",
+    "url": "https://www.facebook.com/dou.zhai.homemade.roasted.cafe/",
+    "findPlace": {
+      "place_id": "ChIJrw6X8xsfaDQRAWvkKwyEe-M",
+      "name": "杜宅自家烘焙精品咖啡豆（無訂位服務）Dou Zhai Homemade Roasted Cafe",
+      "formatted_address": "402012臺中市南區五權南路468號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "226dfc66-cb0e-4b7f-9499-54d521404f4e",
+    "name": "JD cafe",
+    "address": "桃園市龜山區興華三街6號",
+    "url": "https://www.facebook.com/JDcafeJDcafe/",
+    "findPlace": {
+      "place_id": "ChIJN82DSjinQjQRgIU0JaCeyV8",
+      "name": "爵帝咖啡",
+      "formatted_address": "興華三街6號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "24626b18-93b3-4373-8518-f7256d03ae18",
+    "name": "momo cafe",
+    "address": "桃園市大園區大勇路33號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJMRreEwAhaDQRnDFxw5muNmA",
+      "name": "coraz coffee青竹咖啡｜寵物友善｜早午餐｜咖啡",
+      "formatted_address": "337桃園市大園區大勇路20號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "25558306-9283-4702-a398-84c54dfea3d7",
+    "name": "沐瑟咖啡",
+    "address": "桃園市蘆竹區南平街31號",
+    "url": "https://www.facebook.com/CAPO.CAFE.CAPO/?ref=aymt_homepage_panel",
+    "findPlace": {
+      "place_id": "ChIJ-1OwK98faDQRtA-E_omYm0E",
+      "name": "沐瑟咖啡 CAPO CAFE",
+      "formatted_address": "號 No, No. 31南平街",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "25ed1210-457e-48cd-99a4-1b91d71602f4",
+    "name": "好咖 Howcup CURRY CAFE'",
+    "address": "桃園市中壢區中北路19號",
+    "url": "https://m.facebook.com/howcup/",
+    "findPlace": {
+      "place_id": "ChIJwdYuEj8iaDQRUEvUDJg-4v0",
+      "name": "好咖 Thai",
+      "formatted_address": "中北路19號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "26fab645-9307-443d-8cf3-a432be39563f",
+    "name": "野 freeman cafe",
+    "address": "桃園市桃園區中埔二街198號",
+    "url": "https://www.facebook.com/ifreemanGo/",
+    "findPlace": {
+      "place_id": "ChIJjbqXPaUfaDQRhBpzZlaaO0E",
+      "name": "野 freeman cafe桃園店",
+      "formatted_address": "330桃园市桃園區龙安街172號之1",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "283989ca-fdc9-4721-8818-11b41a078f8c",
+    "name": "路易莎咖啡 louisa coffee -桃園中路店-",
+    "address": "桃園市桃園區正光路181號",
+    "url": "https://www.facebook.com/%E8%B7%AF%E6%98%93%E8%8E%8E%E5%92%96%E5%95%A1-louisa-coffee-%E6%A1%83%E5%9C%92%E4%B8%AD%E8%B7%AF%E5%BA%97--106291971088026/",
+    "findPlace": {
+      "place_id": "ChIJlStrbdYfaDQRWx1dr_YeOUE",
+      "name": "Louisa Coffee 路易莎咖啡(桃園中路門市)",
+      "formatted_address": "正光路181號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "28de7d0e-aa17-4c9b-85da-d8824e91750f",
+    "name": "2 GATHER 藝起吧",
+    "address": "No. 181, Qiaxi Rd, Zhongli District, Taoyuan City, 320",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJtymsiVMhaDQRNkZXzu8evrg",
+      "name": "2 GATHER 藝起吧｜咖啡豆。手作甜點。生日蛋糕。空間租借",
+      "formatted_address": "洽溪路181號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "2c3d2a9a-99c0-4dbf-95fe-d6e72a9b5046",
+    "name": "小木馬咖啡",
+    "address": "桃園市桃園區民富十七街12號",
+    "url": "https://www.facebook.com/minimuma.com.tw/?ref=br_rs",
+    "findPlace": {
+      "place_id": "ChIJ1Y02cEseaDQRA6CTA3T_26c",
+      "name": "吾人知曉自家烘焙咖啡",
+      "formatted_address": "民富十七街12號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "2c809e9f-627f-459f-98b6-2842d1a6d138",
+    "name": "印象",
+    "address": "桃園市龍潭區華南路一段127號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJZwb4EB49aDQRJ80guAoky8g",
+      "name": "印象咖啡拼圖",
+      "formatted_address": "華南路一段118號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "2ca2a789-fec8-4f2e-b1a0-f177fcd8caf3",
+    "name": "啡蒔 Verse Cafe by Minorcode",
+    "address": "桃園市桃園區同德十一街45號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJH9UgWbcfaDQR24v29a5cbJo",
+      "name": "啡蒔 Verse Cafe",
+      "formatted_address": "同德十一街45號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "2e11306e-3188-49a4-a62b-b039b2bf4378",
+    "name": "方亭咖啡",
+    "address": "桃園市桃園區民生路103號",
+    "url": "https://www.facebook.com/%E6%96%B9%E4%BA%AD%E5%92%96%E5%95%A1-107003372713291/",
+    "findPlace": {
+      "place_id": "ChIJY16_ffweaDQRquY-pdm3Fo0",
+      "name": "方亭咖啡",
+      "formatted_address": "民生路103號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "2f677450-50ba-4e7a-beb9-6c0b34185c5d",
+    "name": "二哈咖啡",
+    "address": "桃園市桃園區大同路119號",
+    "url": "https://www.facebook.com/tohacoffee/",
+    "findPlace": {
+      "place_id": "ChIJZVuPpOkfaDQRQV8GiRKj3KY",
+      "name": "阿忠刈包總店",
+      "formatted_address": "中華路127號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "30a27ea2-f819-477d-8625-6e583f6943b6",
+    "name": "森林咖啡二號",
+    "address": "號, No. 661萬壽路二段龜山區桃園市333",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJy8EDab8daDQRLDQ9i1maX7U",
+      "name": "霖咖啡 lincafe'",
+      "formatted_address": "333024桃園市龜山區大棟山路701-3號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "30b33c2e-e095-4a26-9b67-da6d871b5a83",
+    "name": "紓咖",
+    "address": "環中東路357號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJowvwRyojaDQRCgVtlwJWrqQ",
+      "name": "紓咖｜瑜伽教室｜場地租借｜手沖咖啡｜精品咖啡豆｜天然精油｜",
+      "formatted_address": "環中東路357-1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "30cd155d-5ac7-4e14-96ce-f16c4b92e056",
+    "name": "Mr.Glasses眼鏡先生咖啡館",
+    "address": "桃園市中壢區莊敬路811巷12號",
+    "url": "https://www.facebook.com/pg/mrglassescf/about/?ref=page_internal",
+    "findPlace": {
+      "place_id": "ChIJB2vZ604BBDQRBuonBelfc_A",
+      "name": "Mr. Glasses 眼鏡先生",
+      "formatted_address": "Workshop 604, 6/F, Entrepot Centre, 117 How Ming St, Kwun Tong, 香港",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "30edc976-6706-4662-9d2b-a3c1c302c042",
+    "name": "木桌子咖啡",
+    "address": "桃園市桃園區中山路847巷27號",
+    "url": "https://www.facebook.com/woodtablecoffee",
+    "findPlace": {
+      "place_id": "ChIJ6zM27hQfaDQR72SIp3_BjQM",
+      "name": "木桌子咖啡",
+      "formatted_address": "中山路847巷27號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "33ed417a-786a-4490-af4e-d049a2dfeadf",
+    "name": "The Good One Coffee Roaster",
+    "address": "桃園市桃園區民有五街122號",
+    "url": "https://www.facebook.com/pg/TheGoodOne.coffee.roaster/",
+    "findPlace": {
+      "place_id": "ChIJATp3OFAeaDQRjLA-wRVZsGE",
+      "name": "The Good One Coffee Roaster ｜自家焙煎咖啡",
+      "formatted_address": "民有五街122號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "35aaff33-3986-4453-ad17-b145ffd814b4",
+    "name": "Drip Note Coffee",
+    "address": "桃園市楊梅區新農街366號",
+    "url": "https://www.facebook.com/dripnotecoffee/",
+    "findPlace": {
+      "place_id": "ChIJbQHOs1wlaDQRE0TrmuyCnuo",
+      "name": "Drip Note COFFEE 滴音咖啡",
+      "formatted_address": "新農街366號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3795c329-ddc3-42eb-9de3-9974f530c8fa",
+    "name": "愛瑞兒",
+    "address": "桃園市桃園區信一街27號",
+    "url": "https://www.facebook.com/ariel27cafe/",
+    "findPlace": {
+      "place_id": "ChIJlf1uigQfaDQRPe7BSep7AM0",
+      "name": "愛瑞兒咖啡坊",
+      "formatted_address": "信一街27號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3a6421dd-9efc-4925-8855-cae4b34c5a7f",
+    "name": "大觀 x 小弄",
+    "address": "桃園市中壢區環中東路708巷136號",
+    "url": "https://www.facebook.com/DaGuanAlley/",
+    "findPlace": {
+      "place_id": "ChIJ8Rpc9BQiaDQRni5n2dQp93U",
+      "name": "大觀x小弄",
+      "formatted_address": "環中東路708巷136號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3a761dc3-64c1-4c37-aa97-da8b0ce8584a",
+    "name": "鞠分號",
+    "address": "桃園市桃園區慈祥街32號",
+    "url": "https://www.facebook.com/jusemicolon",
+    "findPlace": {
+      "place_id": "ChIJOZA9UPseaDQR6nwXx7RXGtw",
+      "name": "鞠分號",
+      "formatted_address": "慈祥街32號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3a7c8c08-de3f-4db6-acbd-f03614f76db4",
+    "name": "The Path Coffeehouse",
+    "address": "桃園市中壢區中央西路二段150巷4號",
+    "url": "https://www.facebook.com/Coffeefield",
+    "findPlace": {
+      "place_id": "ChIJOal-gbUjaDQRbFtL9idTYw8",
+      "name": "The Path",
+      "formatted_address": "中央西路二段150巷4號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "3af2a7fd-d336-470b-a4f5-85715d6af0ae",
+    "name": "BY2 COFFEE 白²咖啡",
+    "address": "桃園市中壢區百韜二街48號",
+    "url": "https://www.facebook.com/BY2.COFFEE.SHOP/",
+    "findPlace": {
+      "place_id": "ChIJ7d0uDjAiaDQRv7ebfU5vQOg",
+      "name": "Table 2 Coffee Roaster",
+      "formatted_address": "320桃園市中壢區興平路165號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3bc4d689-1c27-495e-b6ac-fcd7d2af3fdd",
+    "name": "KAHVILA CAFE",
+    "address": "桃園區 南平路387號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ_VMNgbAfaDQRegzQz5VOkD0",
+      "name": "KAHVILA CAFE",
+      "formatted_address": "南平路387號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "3db608dd-a8b5-4f1d-8120-e9b1d3fd7aab",
+    "name": "Dute coffee ＆ bar",
+    "address": "桃園市中壢區中光路61號",
+    "url": "https://www.facebook.com/DUTEcoffeebar/?modal=admin_todo_tour",
+    "findPlace": {
+      "place_id": "ChIJg5s4lcojaDQRA9reKUaAjtU",
+      "name": "Dute coffee & bar",
+      "formatted_address": "中光路61號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3dc35363-7c1b-4015-9539-4e0fd5eb538c",
+    "name": "好野咖啡",
+    "address": "桃園市中壢區美樂路76號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ4e8SAgAjaDQRZzGJD5RXgIk",
+      "name": "百樂門庭院咖啡館",
+      "formatted_address": "324桃園市中壢區民族路三段62號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3f2d95d4-f98a-45b4-aa17-0ccb2ab5ab20",
+    "name": "丑咖啡 BU-SU cafe'",
+    "address": "桃園市大溪區中山路53號",
+    "url": "https://www.facebook.com/BUSU.cafe/",
+    "findPlace": {
+      "place_id": "ChIJky6o-E09aDQR8lQYWULkZtU",
+      "name": "丑咖啡BU SU Cafe在巷弄裡 歡迎訂位",
+      "formatted_address": "335021桃園市大溪區后尾一橫巷4號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4166cda1-c8de-4dee-b235-68feaf9c0ac1",
+    "name": "解放咖啡館",
+    "address": "台灣桃園市大溪區中山路19號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJA7e_5SAYaDQRgcevHP_jJJY",
+      "name": "解放咖啡企業社",
+      "formatted_address": "中山路19號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "41f4a0b8-31fd-422f-9b9d-34485c59887d",
+    "name": "走走咖啡",
+    "address": "桃園市桃園區寶山街358號",
+    "url": "https://www.facebook.com/goaroundwithus/",
+    "findPlace": {
+      "place_id": "ChIJmVXbd1IeaDQRbSYLASY9gjs",
+      "name": "走走咖啡 2024Tisca全國杯測賽第二、三名",
+      "formatted_address": "寶山街358號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "427c7916-745f-478b-9d06-7af742aa706d",
+    "name": "艾提咖啡",
+    "address": "桃園市桃園區民生路55巷20號",
+    "url": "https://www.facebook.com/AityCafe/",
+    "findPlace": {
+      "place_id": "ChIJdal-MP0eaDQRzXKy_A1A9-U",
+      "name": "艾提咖啡 AITY CAFE ｜義大利麵｜蜜糖吐司【最後收客 19:30】",
+      "formatted_address": "民生路55巷20號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4334e4d0-84b4-4ddb-a14f-d8b3e835f047",
+    "name": "37cafe",
+    "address": "桃園市龜山區文東五街37巷37號",
+    "url": "https://www.facebook.com/37cafe37cafe",
+    "findPlace": {
+      "place_id": "ChIJUw16o0mnQjQR4eHa2Bhqcps",
+      "name": "37cafe",
+      "formatted_address": "文東五街37巷37號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "440201a9-34f5-498a-a5a2-6459b1449a97",
+    "name": "找個地方cafe",
+    "address": "桃園市中壢區大仁二街15號2樓之13",
+    "url": "https://www.facebook.com/benson1011/",
+    "findPlace": {
+      "place_id": "ChIJoWv5bBUiaDQRBNfJq7PDDXw",
+      "name": "找個地方cafe (訂位請用臉書私訊）",
+      "formatted_address": "大仁二街15號二樓之13",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "47286f33-4259-4a61-9d31-a0449e1a09af",
+    "name": "卡諾咖啡生活館",
+    "address": "330桃園市桃園區大興路200號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJf_mac0weaDQR8ulQ7pdFuVA",
+      "name": "卡諾咖啡生活館 - 桃園金牌好店",
+      "formatted_address": "大興路200號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4781498a-58ec-481a-8b24-5720c3a48164",
+    "name": "胖茶壺",
+    "address": "桃園市蘆竹區中山路22號1樓",
+    "url": "https://www.facebook.com/THEFATKETTLECOFFEE/",
+    "findPlace": {
+      "place_id": "ChIJ97_Z3HugQjQR0sGA0rLK_Ug",
+      "name": "The Fat Kettle Coffee",
+      "formatted_address": "中山路22號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "47bb8e68-c645-4b64-ae0e-290d001bf950",
+    "name": "咖啡沁蜜",
+    "address": "桃園市八德區廣福路266號",
+    "url": "https://www.facebook.com/QINMICOFFEE/",
+    "findPlace": {
+      "place_id": "ChIJbxNE7rMZaDQRHy17BhQH1PI",
+      "name": "沐熹咖啡 MUXI COFFee｜自家烘焙咖啡｜生日蛋糕預訂",
+      "formatted_address": "334桃園市八德區豐德二路10號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "498727ca-be91-44f9-8729-d104b6fb6ebf",
+    "name": "午逅咖啡",
+    "address": "桃園市蘆竹區南崁路352號2樓",
+    "url": "https://www.facebook.com/wuho2121398/",
+    "findPlace": {
+      "place_id": "ChIJn6XYgXagQjQRdGkVOvyFZ4s",
+      "name": "午逅咖啡",
+      "formatted_address": "2樓, No. 352號南崁路",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4a417fe8-8ab1-4090-97c3-b056dfee550b",
+    "name": "Louisa Coffee 路易莎咖啡 (環球A8門市)",
+    "address": "333桃園市龜山區復興一路8號 (環球購物中心 桃園A8)",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJdT3oeT6nQjQReSR17NtSBts",
+      "name": "Louisa Coffee 路易莎咖啡(環球A8門市)",
+      "formatted_address": "復興一路8號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4a825f39-2759-44b7-9ea1-4a5051c62a23",
+    "name": "Z cafe 自家焙煎咖啡",
+    "address": "桃園市中壢區新生路二段36號",
+    "url": "https://m.facebook.com/Ziv.cafe/?ref=bookmarks",
+    "findPlace": {
+      "place_id": "ChIJJxMFjCkiaDQR_v6h-oA84bs",
+      "name": "再再之在 Cafe Here Again 咖啡豆專賣店",
+      "formatted_address": "320桃園市中壢區新生路二段36號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4af81f59-81d6-4eac-8ba8-22a30870fc76",
+    "name": "寮國咖啡",
+    "address": "桃園市桃園區廈門街19號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJv_Q_HAUfaDQRRR4NBbSk_Ng",
+      "name": "巴頌咖啡桃園寮國咖啡館",
+      "formatted_address": "330桃園市桃園區廈門街19號1樓",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "50cdb3e7-8f2b-4285-9ff0-9ccac77c58c3",
+    "name": "Poffee Canteen 波菲咖啡食堂",
+    "address": "中壢區元化路125巷32號",
+    "url": "https://www.facebook.com/poffeecanteen/",
+    "findPlace": {
+      "place_id": "ChIJ95qH0DkiaDQRsvn9BnLVVIg",
+      "name": "Poffee Canteen",
+      "formatted_address": "元化路125巷32號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "5125fe57-2ad1-4b42-af15-f9bde1f08fc6",
+    "name": "Want Cafe 玩咖咖啡館",
+    "address": "桃園市中壢區環北路167號",
+    "url": "https://www.facebook.com/WantCafe/",
+    "findPlace": {
+      "place_id": "ChIJ0ZmM3H8jaDQRtKOHmtxG5WY",
+      "name": "汪喵咖啡教學",
+      "formatted_address": "320桃園市中壢區正光一街16號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "51eb65bc-0b0a-4e8c-9a93-3b387beb1442",
+    "name": "等等計劃 nice ghost sleep clinic",
+    "address": "30桃園市桃園區中華路10號 3號樓之7",
+    "url": "https://linktr.ee/ngsc.space",
+    "findPlace": {
+      "place_id": "ChIJ9VpOzJYfaDQRLw3fwr54PzY",
+      "name": "等等計劃 ngsc - 各類展覽、應援咖啡、場地租借（店休見IG）",
+      "formatted_address": "中華路10號 3號樓之7",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "527bd116-909a-4109-bf5b-a867fc7194ee",
+    "name": "瑞沁咖啡",
+    "address": "桃園市中壢區元化路141號",
+    "url": "https://www.facebook.com/RichingCoffee/",
+    "findPlace": {
+      "place_id": "ChIJbTCWZDciaDQRRtqbTpyQMTg",
+      "name": "瑞沁咖啡",
+      "formatted_address": "元化路113號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "55b1d18c-d18b-49b1-8349-237aba85de5b",
+    "name": "豆舖咖啡",
+    "address": "桃園區大興西路二段322號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJL_7J4aUfaDQRwRTA0k-QKOM",
+      "name": "豆舖咖啡館",
+      "formatted_address": "大興西路二段322號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "55d3ec56-26b1-4837-acdc-8573c6127db2",
+    "name": " Daisy Cafe",
+    "address": "桃園市八德區忠勇一街37號",
+    "url": "https://www.facebook.com/Daisy.Cafe.Dessert/",
+    "findPlace": {
+      "place_id": "ChIJw6wXeikfaDQR0KVcAc8gKEk",
+      "name": "Daisy Cafe 客製化蛋糕、婚禮candynar外燴、甜點餐盒、生日蛋糕",
+      "formatted_address": "東勇北路598號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "56704293-be8d-464c-b78c-581cebf7cc03",
+    "name": "Re-Title Cafe",
+    "address": "桃園市中壢區愛國路60巷39號",
+    "url": "https://www.facebook.com/ReTitle",
+    "findPlace": {
+      "place_id": "ChIJD7jGy8wjaDQRoZWDVVnJdxY",
+      "name": "Re-Title Cafe",
+      "formatted_address": "愛國路60巷41號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "56efaaf9-def4-40d6-be02-0660ed8a3f8c",
+    "name": "大溪-草店尾事務所",
+    "address": "桃園市大溪區草店尾一巷1號",
+    "url": "https://www.facebook.com/bscafe.ltd/",
+    "findPlace": {
+      "place_id": "ChIJ0xHMayIYaDQRKEGAMQ56s5A",
+      "name": "Place & Brew-草店尾事務所2.0",
+      "formatted_address": "335桃园市大溪区普济路76號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "57293a49-341c-4176-8523-a3b75f223f9e",
+    "name": "Webberhood Coffee",
+    "address": "桃園市桃園區國強一街172號1樓",
+    "url": "https://www.facebook.com/webberhood/",
+    "findPlace": {
+      "place_id": "ChIJawMv62wfaDQRTN1Y484rpJI",
+      "name": "WEBBERHOOD COFFEE ROASTERS -無訂位",
+      "formatted_address": "國強一街172號1 樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "576a7e2b-ba69-4d49-b562-27dcfa15f80f",
+    "name": "築園咖啡",
+    "address": "桃園市楊梅區行善路120號",
+    "url": "https://www.facebook.com/%E7%AF%89%E7%B7%A3%E5%92%96%E5%95%A1-735650136491024/",
+    "findPlace": {
+      "place_id": "ChIJeVOnOP7nbjQRB0-rAC9d5a4",
+      "name": "鄒築園咖啡 Zouzhouyuan Specialty Coffee",
+      "formatted_address": "605嘉義縣阿里山鄉71號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "577e6556-a38c-416a-9317-926cdb41b29b",
+    "name": "年代人文咖啡館",
+    "address": "桃園市桃園區民族路271號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJE9LPukMfaDQRQYjP18An5DA",
+      "name": "旅人咖啡館 桃園店",
+      "formatted_address": "330桃園市桃園區大林路83號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "57d9fb4f-6c61-4985-ac23-db9efc4ec115",
+    "name": "野人獻曝咖啡館龍潭店",
+    "address": "桃園市龍潭區新龍路114號",
+    "url": "https://www.facebook.com/freemanTime.tw/",
+    "findPlace": {
+      "place_id": "ChIJrQnMmf08aDQRKNu6xuRKIv4",
+      "name": "野人獻曝 咖啡 龍潭",
+      "formatted_address": "新龍路114號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "58573642-21d8-4e95-89bd-41592c2ddcb7",
+    "name": "風雨珈琲",
+    "address": "桃園市桃園區民權路25巷12號",
+    "url": "https://www.facebook.com/風雨珈琲-1740317382919530/",
+    "findPlace": {
+      "place_id": "ChIJI13gKP0eaDQR91LkaNkqBqc",
+      "name": "風雨珈琲",
+      "formatted_address": "民權路25巷12號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "5ac41806-de55-4e0c-9bc0-536b20cbaf14",
+    "name": "午後時光Coffee烘焙",
+    "address": "桃園市蘆竹區南崁路178號2樓",
+    "url": "https://www.facebook.com/AfternoonTimeCoffeeRoast/",
+    "findPlace": {
+      "place_id": "ChIJOcySzXegQjQRPhTRZxBnvWg",
+      "name": "午後時光 coffee 烘焙",
+      "formatted_address": "南崁路178號2樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "5ca0ebcd-2ee5-4837-81f8-cdf82b9e481b",
+    "name": "音閱咖啡",
+    "address": "桃園市中壢區中央東路88號",
+    "url": "https://www.facebook.com/WantmusicCoffee",
+    "findPlace": {
+      "place_id": "ChIJ6RYYJUgiaDQRcJJo0-LgvFs",
+      "name": "Want 音閱咖啡",
+      "formatted_address": "中央東路88號11號樓之3",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "5d68779c-3172-47bd-a269-43e33db0ac4d",
+    "name": "八號咖啡館",
+    "address": "桃園市龜山區大興商場8號",
+    "url": "https://www.facebook.com/No8coffee/",
+    "findPlace": null,
+    "details": null,
+    "error": "fetch failed",
+    "audit": {
+      "category": "review",
+      "reason": "fetch failed"
+    }
+  },
+  {
+    "id": "5d886c50-6777-45c1-97a4-fdbd04e46812",
+    "name": "拾光咖啡",
+    "address": "中壢區中北路107號",
+    "url": "https://www.facebook.com/timelapse2015/",
+    "findPlace": {
+      "place_id": "ChIJN--lE-wjaDQRFH88UDEYBZE",
+      "name": "拾午gatherdelicious",
+      "formatted_address": "320桃園市中壢區慈惠一街127號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "5dc84e91-489c-4f7b-8dd5-3626efb0043a",
+    "name": " 三火木咖啡企業社 (燊咖啡3店)",
+    "address": "桃園市桃園區幸福路87號",
+    "url": "https://www.facebook.com/shencafe87/",
+    "findPlace": {
+      "place_id": "ChIJL37qQ8kfaDQRxtcVZoN5cyQ",
+      "name": "三火木咖啡 SHEN Roastery (燊咖啡幸福店)",
+      "formatted_address": "幸福路87號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "60f0d9f1-c29a-4250-a28a-f1007514e5b7",
+    "name": "甘田果鋪",
+    "address": "桃園市中壢區元化路213號",
+    "url": "https://www.facebook.com/甘田果舖-883231371768539/",
+    "findPlace": {
+      "place_id": "ChIJsVp4huwYaDQRuTJdZKUGTkw",
+      "name": "甘田空間設計",
+      "formatted_address": "334桃園市八德區仁德二路36號1 樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "60f5af6e-84b2-43f4-9c1c-ede37cb80a54",
+    "name": "陽台terrase 咖啡",
+    "address": "桃園市中壢區慈惠三街34號",
+    "url": "https://www.facebook.com/terrasecoffee/?_rdr=p&ref=bookmarks",
+    "findPlace": {
+      "place_id": "ChIJoS51wjYiaDQRtUhpEx-vncE",
+      "name": "陽台terrase2号店（慈惠店）",
+      "formatted_address": "慈惠三街34號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "627f9610-d03f-44ea-9061-c4f15c3cf18b",
+    "name": "奕鼎咖啡",
+    "address": "桃園縣八德區忠勇街317號",
+    "url": "https://www.facebook.com/%E5%A5%95%E9%BC%8E%E5%92%96%E5%95%A1%E8%B1%86-125685887482351/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJiZJs4ysfaDQR1ruXXfEYC8k",
+      "name": "奕鼎咖啡",
+      "formatted_address": "忠勇街317號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "63f53526-cce9-4e39-a585-f2285fff26b0",
+    "name": " Café 4 FUN 咖啡趣",
+    "address": "桃園市桃園區信光路52號",
+    "url": "https://www.facebook.com/cafe4fun/",
+    "findPlace": {
+      "place_id": "ChIJN9k0aqsfaDQRMVfPq-nRn74",
+      "name": "cafe 4 fun咖啡趣 桃園金牌好店親子餐廳",
+      "formatted_address": "信光路52號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "6767da05-65d2-400d-8cb6-23223ee0c99e",
+    "name": "Bowen Coffee 伯元精品咖啡烘焙",
+    "address": "桃園市八德區廣福路783號",
+    "url": "https://www.facebook.com/pg/BowenCoffeeTw/about/?ref=page_internal",
+    "findPlace": {
+      "place_id": "ChIJZ9nC-LMYaDQRv1ab9qVvSQ0",
+      "name": "伯元自家烘焙咖啡館",
+      "formatted_address": "廣福路783號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "6990db2f-f972-4f23-9d21-7f4ecaace0b6",
+    "name": "日青方好Goodafter",
+    "address": "桃園市桃園區大興路118號",
+    "url": "https://www.facebook.com/goodafter.tw/",
+    "findPlace": {
+      "place_id": "ChIJha7Q6kweaDQRbbeu6El-iFk",
+      "name": "日青方好 GOODAFTER",
+      "formatted_address": "大興路118號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "6a666a86-f0ad-4c38-993a-7d05c1bff8a6",
+    "name": "習作咖啡部",
+    "address": "桃園市桃園區林森路6巷37號",
+    "url": "https://www.facebook.com/%E7%BF%92%E4%BD%9C%E5%92%96%E5%95%A1%E9%83%A8-578442535616943/",
+    "findPlace": {
+      "place_id": "ChIJE0tV_O8eaDQRa_9CmmKp47g",
+      "name": "習作咖啡部(店休日請看fb或ig)",
+      "formatted_address": "林森路6巷37號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "6ac8f950-dd4c-4767-a19e-fee87a08cdbf",
+    "name": "嵐午咖啡",
+    "address": "桃園市中壢區實踐路225-17號",
+    "url": "https://www.facebook.com/lattoocafe/",
+    "findPlace": {
+      "place_id": "ChIJPc8Q9l8jaDQRXzjUR5HSAYo",
+      "name": "晨食司控/中壢美食/餐廳/早午餐/吐司盒專賣/桃園美食推薦",
+      "formatted_address": "大仁街36號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "6c743e7f-966b-461a-9b96-754e8e41b58f",
+    "name": "Yang Cafe (佑品)",
+    "address": "桃園市中壢區民權路364號1樓",
+    "url": "https://www.facebook.com/yangcafe/",
+    "findPlace": {
+      "place_id": "ChIJaVyqPecjaDQRxLq4SJaNshA",
+      "name": "遇見咖啡-自家烘培 咖啡豆專賣店/手沖咖啡/器具/濾掛咖啡/簡餐",
+      "formatted_address": "320桃園市中壢區民權路364號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "6ed0ffbe-30d8-493e-a387-b69511d37478",
+    "name": "鹿點咖啡workshop ",
+    "address": "桃園區文化二路34巷14弄6-5號",
+    "url": "https://www.facebook.com/caffepromisedlandworkshop/",
+    "findPlace": {
+      "place_id": "ChIJUexSlzCnQjQR4fgaG1ejtoE",
+      "name": "鹿點咖啡workshop 林口店",
+      "formatted_address": "文化二路34巷14弄6-5號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "73273237-9f48-492b-9d55-5c059ec2d1f1",
+    "name": "Raretreat Coffee Roaster 微樂咖啡館",
+    "address": "桃園縣中壢市恩德街52號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJN--lE-wjaDQRFH88UDEYBZE",
+      "name": "拾午gatherdelicious",
+      "formatted_address": "慈惠一街127號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "734eaa40-ca24-450f-9e8e-a9d173061e69",
+    "name": "四季芳庭",
+    "address": "桃園市蘆竹區南上路3號2樓",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ4xgNEwqhQjQRBu1VQCiqueA",
+      "name": "四季芳庭樓下早餐店",
+      "formatted_address": "南上路3號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "78bdb503-f62c-4a34-8efa-5be3a2563d29",
+    "name": "Love in cafe",
+    "address": "中壢市慈惠一街126號",
+    "url": "https://www.facebook.com/loveincafe/",
+    "findPlace": {
+      "place_id": "ChIJW3AM3jYiaDQRQRl1m7Aq4vk",
+      "name": "懶懶日咖啡 Lazy Lazy （一人經營易變動，前來可確認營業時間，謝謝🙏）",
+      "formatted_address": "慈惠一街126號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "7aa18025-c4c9-4330-8f47-a020a737e957",
+    "name": "豈咖啡",
+    "address": "桃園市八德區忠勇街84巷8號",
+    "url": "https://www.facebook.com/sipscofe/",
+    "findPlace": {
+      "place_id": "ChIJs6p_hqIfaDQRlNl10jHrJKU",
+      "name": "豈咖啡",
+      "formatted_address": "忠勇街84巷8號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "7ad7636d-9305-4d9d-bd45-8adcf70210f0",
+    "name": "紅果子手烘咖啡坊",
+    "address": "桃園市桃園區中山東路70號",
+    "url": "www.facebook.com/033389288.com.te/",
+    "findPlace": {
+      "place_id": "ChIJN8Ibo54faDQRUUMcOCcnm9Q",
+      "name": "紅果子手烘咖啡坊",
+      "formatted_address": "338桃园市芦竹区 長安路一段159巷, 9-1號號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "7da3561d-0721-478a-a88f-0374e2ebca90",
+    "name": "ㄩㄢˊ咖啡事務所",
+    "address": "桃園市龜山區復興二路131巷19號",
+    "url": "https://www.facebook.com/yuancoffee.tw",
+    "findPlace": {
+      "place_id": "ChIJdVuAxT6nQjQR9CAgiDo_ksU",
+      "name": "ㄩㄢˊ咖啡事務所 x ㄩㄢˊ來是洗車店",
+      "formatted_address": "復興二路131巷19號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "82dfc8cb-ef3a-4386-95c3-c2f2a296bdc3",
+    "name": "路易莎咖啡桃鶯店",
+    "address": "桃園區桃鶯路168-1號",
+    "url": "https://www.facebook.com/louisacoffeetaoyuan/",
+    "findPlace": {
+      "place_id": "ChIJ1eL84eUeaDQRUgvHgnENtK0",
+      "name": "Louisa Coffee 路易莎咖啡(桃鶯門市)",
+      "formatted_address": "桃鶯路168-1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "83182a01-aca9-4c5d-aa8f-805766895c57",
+    "name": "麻茶元",
+    "address": "桃園市蘆竹區桃園街2號",
+    "url": "https://m.facebook.com/MatchaMoto/",
+    "findPlace": {
+      "place_id": "ChIJlcjRmNkfaDQRREqdmRO21Fs",
+      "name": "麻茶元 Matcha Moto",
+      "formatted_address": "330桃園市桃園區南海街50號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "854d949c-1df0-48c7-a9a0-3112dd59d8ce",
+    "name": " Jo's Corner Café",
+    "address": "桃園市桃園區國強一街135號",
+    "url": "https://www.facebook.com/JosCornerCafe/",
+    "findPlace": {
+      "place_id": "ChIJMxIDrtwfaDQRbaykT8_lPLA",
+      "name": "Jo's Corner Café-桃園人氣咖啡|手沖咖啡|特色輕食|自家烘焙咖啡|人氣甜點|甜點推薦|手工麵包|現烤麵包",
+      "formatted_address": "國強一街135號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "86b35c6c-2094-4f5c-ab73-dd8d6b6dff74",
+    "name": "啡行計畫coffee&dessert",
+    "address": "桃園市桃園區敬二街38號",
+    "url": "https://www.facebook.com/coffeedessertlife/",
+    "findPlace": {
+      "place_id": "ChIJleD5LrofaDQRipEHRPEQKO4",
+      "name": "黑豆啡 精品咖啡",
+      "formatted_address": "同德十一街156號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "880d3674-82ab-4c79-97d8-f2934dc8088a",
+    "name": "雷爾森",
+    "address": "桃園市中壢區三光路205號",
+    "url": "https://www.facebook.com/%E9%9B%B7%E7%88%BE%E6%A3%AE%E5%92%96%E5%95%A1-145718265477350/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJywc_lssjaDQRknRJdPkKVks",
+      "name": "雷爾森咖啡",
+      "formatted_address": "三光路205號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "88e69d3f-e8e7-414e-b527-dbdef054e9d2",
+    "name": "Wooly café",
+    "address": "桃園市桃園區大同路60-1號",
+    "url": "https://www.facebook.com/woolycafe",
+    "findPlace": {
+      "place_id": "ChIJ_aOsL-MeaDQRWPk1fyCf5ZE",
+      "name": "Wooly Cafe",
+      "formatted_address": "2f, No. 60-1號大同路",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "8b5c8b7b-3a35-4287-93ae-35cf242a7fca",
+    "name": "友美子珈琲Cafeyumiko",
+    "address": "桃園區同德11街127號",
+    "url": "https://www.facebook.com/cafeyumiko/",
+    "findPlace": {
+      "place_id": "ChIJ4-2SrZ8faDQRObSa1WzFNTQ",
+      "name": "友美子珈琲 Cafe Yumiko",
+      "formatted_address": "同德十一街127號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "8bb6c3fa-8ac8-4ce1-97a8-40588482471e",
+    "name": "190 Café House 珈琲烘焙屋",
+    "address": "桃園市桃園區慈光街51號",
+    "url": "https://www.facebook.com/190CafeHouse/",
+    "findPlace": {
+      "place_id": "ChIJ96P-QagfaDQRB89tziwpCLs",
+      "name": "190 Café House 珈琲烘焙屋 - 桃園慈光店（咖啡豆販售、內用/外帶、精品手沖咖啡、貝果/甜點/鬆餅）",
+      "formatted_address": "慈光街51號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "926d5c19-4189-450f-a524-5c464aa04dd6",
+    "name": "Cafe Traveller 旅活楽咖啡",
+    "address": "桃園市龍潭區中正路103號",
+    "url": "https://www.facebook.com/CafeTraveller.LongTang/",
+    "findPlace": {
+      "place_id": "ChIJT7cOGuI8aDQRFjlgc5PIQI8",
+      "name": "Cafe Traveller 旅活楽咖啡館",
+      "formatted_address": "華南路一段1樓",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "92a994a5-aa37-423c-a00c-11ab574f72c9",
+    "name": "新南12文創實驗商行",
+    "address": "桃園市大溪區中山路12號",
+    "url": "https://www.facebook.com/sinnan12/",
+    "findPlace": {
+      "place_id": "ChIJg0P3tSEYaDQRx0tZaBvlT5A",
+      "name": "Sinnan 12 Homestay",
+      "formatted_address": "No. 12, 中山路",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "94216d83-9467-4c19-bca7-d3052c6767ce",
+    "name": "Louisa Coffee 路易．莎咖啡(桃園桃大極門市)",
+    "address": "桃園市八德區金和路60號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJA-8BHs4YaDQR3ge-3OAgHJ4",
+      "name": "Louisa Coffee 路易莎咖啡(桃園桃大極門市)",
+      "formatted_address": "金和路60號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "95cf032c-e86b-40ec-b316-9d3a5d8f79ef",
+    "name": "丹馬克咖啡",
+    "address": "桃園縣中壢市慈惠三街157巷10號",
+    "url": "https://www.facebook.com/DamarkCaFe/",
+    "findPlace": {
+      "place_id": "ChIJTcqsHjEiaDQRvwZNXbwQSGY",
+      "name": "丹馬克咖啡",
+      "formatted_address": "慈惠三街157巷10號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "97c692d2-37cb-4812-b4ae-0ea8af4a5735",
+    "name": "晴耕雨讀小書院",
+    "address": "桃園市平鎮區福龍路一段560巷12號",
+    "url": "https://www.facebook.com/lifestylebookstore/",
+    "findPlace": {
+      "place_id": "ChIJIYEPVtIiaDQRRc1bFf1FLYA",
+      "name": "晴耕雨讀小書院 Readlander Lifestyle Bookstore",
+      "formatted_address": "325桃園市龍潭區福龍路二段169巷181弄30衖90號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "980b8b4f-705d-4f33-887e-07a89dff6282",
+    "name": "MINE CAFE",
+    "address": "中壢區福州路63號",
+    "url": "https://www.facebook.com/MINE-CAFE-%E8%B3%A3%E5%92%96%E5%95%A1-1527754587536166/",
+    "findPlace": {
+      "place_id": "ChIJyVO_J0ciaDQROfTMjCkTIaQ",
+      "name": "MINE CAFÉ 賣咖啡",
+      "formatted_address": "福州路63號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "985e6450-118c-4b2c-8201-444e7812c9b0",
+    "name": "閱讀柒年",
+    "address": "桃園市桃園區中正路115巷6號",
+    "url": "https://www.facebook.com/sevenyear1156/",
+    "findPlace": {
+      "place_id": "ChIJrzKBVPweaDQRm-vWq8_wJvY",
+      "name": "閱讀柒年",
+      "formatted_address": "中正路115巷6號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "98ba6df1-678f-4d02-ba5c-9eb3439bfe00",
+    "name": "咖灰/咖啡餐酒館",
+    "address": "334桃園市八德區大福街199號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJi2VGvQ0faDQR-VK-aCKyFJM",
+      "name": "GRAY CAFE 咖灰（不提供訂位服務，最後點餐1930）",
+      "formatted_address": "253新北市石門區八甲路1號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "999a3f73-7db4-4430-8df2-354c530d32cb",
+    "name": "可樂農莊桌上遊戲",
+    "address": "桃園市中壢區東明街78號1樓",
+    "url": "https://www.facebook.com/AgricolaFarm/?ref=page_internal",
+    "findPlace": {
+      "place_id": "ChIJw6hGR0YiaDQRhOmGc29NLjE",
+      "name": "可樂農莊桌遊",
+      "formatted_address": "東明街78號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "99c23919-aaa0-4c61-8571-fe1734cb3414",
+    "name": "杯子。手沖咖啡",
+    "address": "桃園市龍潭區文化路(石門國小旁)",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJe4HoreU9aDQRu8G0ZjVxtAI",
+      "name": "BeiZi Coffee Roaster Studio｜咖啡烘焙工作室 (無甜點)",
+      "formatted_address": "文化路162-1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "9ac550f6-c0b3-498c-8227-281af137cb37",
+    "name": "Nuageクラウド雲朵鬆餅",
+    "address": "桃園市桃園區民生路55巷8號",
+    "url": "https://www.facebook.com/newdaycofe/",
+    "findPlace": {
+      "place_id": "ChIJBVR_ffseaDQR-UgcYcupehM",
+      "name": "Nuageクラウド雲朵鬆餅（僅此一家，無分店！沒有外帶！）",
+      "formatted_address": "民生路55巷8號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "9c1461f5-5663-49dc-b11c-732d2a66cc74",
+    "name": "路易.莎咖啡(桃園縣府店)",
+    "address": "桃園市桃園區中山路426號",
+    "url": "http://www.louisacoffee.co/",
+    "findPlace": {
+      "place_id": "ChIJg99KVAMfaDQRYrq4WhiGqNU",
+      "name": "路易莎咖啡(桃園縣府門市)",
+      "formatted_address": "中山路426號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "9ffd9b76-26f7-47e1-8d8e-eb237f230063",
+    "name": " 翻轉甜點 flipbakery",
+    "address": "桃園市桃園區正光路71巷6號",
+    "url": "https://www.facebook.com/flipbakery/",
+    "findPlace": {
+      "place_id": "ChIJO62POhAfaDQR_drkExcwnoI",
+      "name": "翻轉甜點正光總店",
+      "formatted_address": "正光路71巷6號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "9ffea7d7-7323-4ab3-b29c-c4c48f1853d3",
+    "name": "Boss Coffee 桃園旗艦店",
+    "address": "桃園市桃園區新埔八街53號",
+    "url": "https://www.facebook.com/Boss-Coffee-%E6%A1%83%E5%9C%92%E6%97%97%E8%89%A6%E9%BB%9E-403453739855910/",
+    "findPlace": {
+      "place_id": "ChIJHSGKGWohaDQRk6LN3UBQVGg",
+      "name": "Houar's Coffee豪爾咖啡",
+      "formatted_address": "320桃園市中壢區永平街21號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a1d34aec-1e35-42a7-bd71-78fb5375eb9f",
+    "name": "恰歐 Coffee Ciao",
+    "address": "桃園市中壢區文化路130巷27號",
+    "url": "https://www.facebook.com/ciaocoffeeciao/",
+    "findPlace": {
+      "place_id": "ChIJy7_8E_khaDQR-oSGR10H9Gk",
+      "name": "心空咖啡",
+      "formatted_address": "文化路130巷27號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a1da915a-fb0e-4ccd-8f4c-55d072080d98",
+    "name": " Collage咖楽聚-桃園總店",
+    "address": "桃園市桃園區國豐三街159號",
+    "url": "https://www.facebook.com/CollageBrunch/",
+    "findPlace": {
+      "place_id": "ChIJQ2n-MNcfaDQRHzeJFWMTUrc",
+      "name": "Kingmauii 金茂宜咖啡 桃園國豐店（原Collage Caf’e 咖楽聚）",
+      "formatted_address": "國豐三街159號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a71196ed-214f-4074-8a17-c509251c97f1",
+    "name": "粗蒔 the chos",
+    "address": "桃園市桃園區園二街48號",
+    "url": "https://www.facebook.com/thechos2021",
+    "findPlace": {
+      "place_id": "ChIJebmv1_geaDQRoYtZ8HnIoDk",
+      "name": "粗蒔(8/24起暫停營業）",
+      "formatted_address": "園二街48號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "aaa7f9ce-5fac-43b7-b134-5038b31c4c10",
+    "name": "Numbear 13 Cafe",
+    "address": "桃園市中壢區大仁五街32號1樓",
+    "url": "https://www.facebook.com/pg/numbear13/about/?ref=page_internal",
+    "findPlace": {
+      "place_id": "ChIJ95nrhRUiaDQRVZksIA8yZ_8",
+      "name": "Numbear 13 Cafe",
+      "formatted_address": "大仁五街32號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "abf1f8f3-9e25-4b93-8854-de0670e33a46",
+    "name": "鹿點咖啡 Luna桃園店",
+    "address": "桃園市桃園區成功路三段175號",
+    "url": "https://www.facebook.com/caffepromisedlandluna/",
+    "findPlace": {
+      "place_id": "ChIJv0uZlFseaDQRI8HRpz0epL8",
+      "name": "鹿點咖啡 Luna桃園店",
+      "formatted_address": "成功路三段175號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ac52e3e5-a709-49db-9e11-adc6a27a5784",
+    "name": "hiii birdie 知鳥咖啡",
+    "address": "桃園市龜山區興華五街75號",
+    "url": "https://www.facebook.com/hiiibirdiecafe/",
+    "findPlace": {
+      "place_id": "ChIJLdeqGWqnQjQRRtxW_MwO8p8",
+      "name": "Mr. Shhhhh Coffee (2F) 咖啡 甜點 深夜咖啡館 林口布丁王",
+      "formatted_address": "文化七路102號2樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ae745ebd-b80a-4001-a641-500914a156fa",
+    "name": "9bar",
+    "address": "桃園市龜山區自強南路741號",
+    "url": "https://www.facebook.com/9Bar-%E8%87%AA%E5%AE%B6%E7%83%98%E7%84%99%E5%92%96%E5%95%A1-148096171916268/",
+    "findPlace": {
+      "place_id": "ChIJ7eSIIoseaDQRiYW3BbX5GFw",
+      "name": "9BAR/自家烘焙咖啡/技術研究所/龜山/桃園《內用須先預約》",
+      "formatted_address": "自強南路741號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ae75f954-1512-4319-8edf-c53421af8bbf",
+    "name": "Ten past ten 咖啡豆專賣店",
+    "address": "桃園市蘆竹區洛陽街三號",
+    "url": "https://www.facebook.com/Ten-Past-Ten-%E5%92%96%E5%95%A1%E8%B1%86%E5%B0%88%E8%B3%A3%E5%BA%97-199950360035279/",
+    "findPlace": {
+      "place_id": "ChIJw8vk6asfaDQRpNQjpZ0h-dk",
+      "name": "Ten Past Ten 咖啡豆專賣店",
+      "formatted_address": "洛陽街3號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ae88b92f-541d-486f-821e-2583b5466325",
+    "name": " WonderCoffee汪森市",
+    "address": "桃園市桃園區延壽街162號",
+    "url": "https://www.facebook.com/WonderCoffee%E6%B1%AA%E6%A3%AE%E5%B8%82-297939741159621/",
+    "findPlace": {
+      "place_id": "ChIJzwpXHXkfaDQRqxMylrc2BE8",
+      "name": "汪森市WonderCoffee寵物友善餐廳/狗狗旅館",
+      "formatted_address": "延壽街162號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "af1a425e-5c7b-4b4e-9062-a6cbef6c0223",
+    "name": "再再之在 Cafe Here Again 咖啡豆專賣店",
+    "address": "桃園市中壢區新生路二段36號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJJxMFjCkiaDQR_v6h-oA84bs",
+      "name": "再再之在 Cafe Here Again 咖啡豆專賣店",
+      "formatted_address": "新生路二段36號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b07689f7-b70f-4b80-972f-943fed2ffd06",
+    "name": "6號咖啡館",
+    "address": "桃園市桃園區同德六街154號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJj7rtDLAfaDQRNWx4VUOtcVc",
+      "name": "6號咖啡館",
+      "formatted_address": "同德六街154號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b08e9598-26b2-4f6f-be42-7bdab5a3c800",
+    "name": "豆語精品咖啡烘焙坊",
+    "address": "桃園市桃園區信二街4號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ-ybxWwQfaDQRKkOyPxC1lHo",
+      "name": "豆語精品咖啡烘焙坊",
+      "formatted_address": "330桃園市桃園區中福街14號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b251b975-29ef-46d9-a490-8b307d5cfdc9",
+    "name": "養親轅咖啡",
+    "address": "320桃園市中壢區環中東路二段488號",
+    "url": "https://www.facebook.com/jodie.home.cafe9319/",
+    "findPlace": {
+      "place_id": "ChIJk7MT6UQiaDQR0w812SE07lw",
+      "name": "養親轅咖啡",
+      "formatted_address": "環中東路二段488號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b344ef9f-ed2c-44a0-a1b6-93a4b8f1caea",
+    "name": "冷杉咖啡 Silver Tree Coffee",
+    "address": "桃園市中壢區慈惠二街56號",
+    "url": "https://www.instagram.com/_silvertreecoffee_/",
+    "findPlace": {
+      "place_id": "ChIJyZvk5CgjaDQRVhDIb0VGzE4",
+      "name": "冷杉咖啡SilverTreeCoffee",
+      "formatted_address": "慈惠二街56號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "b4027d57-dabb-4980-9a9d-7fa3bf87a759",
+    "name": "日暖咖啡",
+    "address": "330桃園市桃園區春日路279號",
+    "url": "https://www.facebook.com/rinuancafe/",
+    "findPlace": {
+      "place_id": "ChIJDefBmrIfaDQRMdKb_6M4Jek",
+      "name": "覓糖Mi Tang 桃園春日店",
+      "formatted_address": "春日路305號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b4ef8a5b-4961-41ba-825e-ba540ee04bbd",
+    "name": "Think Coffee 阿信咖啡",
+    "address": "桃園市中壢區中正路四段32號",
+    "url": "Think Coffee 阿信咖啡 （咖啡豆專賣店 / 買豆可試喝 / 自家烘焙 / 公休日會在社群上公告） 03 498 1128 https://maps.app.goo.gl/hvvLxYcVEkeqzB369?g_st=ic",
+    "findPlace": {
+      "place_id": "ChIJgYJAWP0jaDQR2P8IwbXgNiE",
+      "name": "Think Coffee 阿信咖啡",
+      "formatted_address": "中正路四段32號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b5e4f0f7-b64a-4d31-9a16-749ff7c1ac45",
+    "name": "歐曼",
+    "address": " 桃園市龜山區自強東路204號",
+    "url": "https://www.facebook.com/pg/OhMyCoffee/about/?ref=page_internal",
+    "findPlace": {
+      "place_id": "ChIJ4yVx6XweaDQRX8NBS32nKi0",
+      "name": "歐曼咖啡",
+      "formatted_address": "自強東路204號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b65b672a-52f3-4a6e-a398-fa0b24fa3d82",
+    "name": "黑瓶咖啡",
+    "address": "桃園市桃園區大興西路二段138號",
+    "url": "https://www.facebook.com/blackbottlecafeTW/",
+    "findPlace": {
+      "place_id": "ChIJx8_T1BsfaDQRHzQXuvCHmZs",
+      "name": "黑瓶咖啡",
+      "formatted_address": "大興西路二段138號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b9360e78-790c-44ec-8fea-d4990b32809c",
+    "name": "酒豆 Chotto",
+    "address": "桃園市中壢區成章一街181號",
+    "url": "https://www.facebook.com/CHOTTO0938523002/",
+    "findPlace": {
+      "place_id": "ChIJJ7ZzQHIhaDQRk27tEn1_46E",
+      "name": "酒豆 Chotto",
+      "formatted_address": "320桃園市中壢區成功路133巷44弄22號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b9a5b618-1f7e-494e-9baa-3895eba685f2",
+    "name": "綠沐恬拾",
+    "address": "桃園市中壢區中央西路二段229-1號",
+    "url": "https://www.facebook.com/greenco2291/",
+    "findPlace": {
+      "place_id": "ChIJQUW5a8ojaDQRsHTTpZZgE1s",
+      "name": "綠沐恬拾 Café & Pâtisserie (已搬遷至三光路）",
+      "formatted_address": "三光路156號1 樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ba2d6758-b14f-476f-aa36-02ecc16a1b42",
+    "name": "Han's larger 自家烘焙",
+    "address": "桃園市龜山區文化一街十巷41弄8號一樓",
+    "url": "https://www.facebook.com/hanskaffee777/",
+    "findPlace": {
+      "place_id": "ChIJT8n0VwAfaDQRXMOWxBk-ELQ",
+      "name": "曹家烘焙坊",
+      "formatted_address": "333桃園市龜山區頂興路1巷1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ba63943a-caad-4a13-9dc9-f4a2f8e9f65f",
+    "name": "快樂天堂自家烘焙咖啡館Happy Paradise",
+    "address": "桃園市大溪區中正路41號",
+    "url": "https://www.facebook.com/HappyParadiseIllyCafe",
+    "findPlace": {
+      "place_id": "ChIJobJ93SEYaDQRgyrRcZS_bRg",
+      "name": "HAPPY PARADISE COFFEE ROASTERS 快樂天堂自家烘焙咖啡",
+      "formatted_address": "中正路41號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "bbac8b94-f9ae-4cf3-966b-017a75682af7",
+    "name": " Hidden Dream 嚐夢甜點",
+    "address": "桃園市桃園區民光路127號",
+    "url": "https://www.facebook.com/JosCornerCafe/",
+    "findPlace": {
+      "place_id": "ChIJn6KIa6ofaDQRQA1_jxzdY58",
+      "name": "Hidden Dream 嚐夢甜點（目前暫時休息，參考貼文說明）",
+      "formatted_address": "302新竹縣竹北市中正西路498號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "bc968773-a21f-4e32-a63f-c05697dcb14f",
+    "name": "共坐 Cafe",
+    "address": "桃園市中壢區大仁五街35號1樓",
+    "url": "https://cafeandspace.weebly.com/",
+    "findPlace": {
+      "place_id": "ChIJn0EZmYgjaDQRIfJN-3UgO6E",
+      "name": "共坐 Cafe / 場地租借暫停服務",
+      "formatted_address": "大仁五街35號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "bd36ed04-294e-457c-8aae-082e175f55db",
+    "name": "星海之戀咖啡館",
+    "address": "桃園市蘆竹區南山路三段446號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJx-cU_7ehQjQRuzuMwXrfktA",
+      "name": "星海之戀咖啡館",
+      "formatted_address": "338桃園市蘆竹區大古路228號福山宮旁 行車路線:請由左轉小古路",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "bd93bbe1-b1b3-44ab-80d7-86e0a885bf97",
+    "name": "INSIDE TO GO",
+    "address": "桃園市中壢區興仁路二段67巷7號2樓",
+    "url": "https://www.instagram.com/inside_togo",
+    "findPlace": {
+      "place_id": "ChIJSx9C72YjaDQRMSAGl4_niUs",
+      "name": "INSIDE TO GO 刺青、咖啡（只提供外帶）",
+      "formatted_address": "興仁路二段67巷7號2樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "bf91a444-0575-4859-b7d6-9e49dddc610f",
+    "name": "Material café 素材日常",
+    "address": "桃園市中壢區環中東路桃園區320",
+    "url": "https://www.facebook.com/material7761/",
+    "findPlace": {
+      "place_id": "ChIJQy0TwxQiaDQRY09Bdvw6hXc",
+      "name": "Material café 素材日常",
+      "formatted_address": "320桃園市中壢區環中東路776號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "bf9c0fad-9c6f-49ff-bf6a-f4aba2e9527c",
+    "name": "OWL Dessert 貓頭鷹法式手工甜點",
+    "address": "桃園市八德區東勇街78號",
+    "url": "https://www.facebook.com/koreaowldessert",
+    "findPlace": {
+      "place_id": "ChIJ3UDaNtUYaDQRnKnkkm3derg",
+      "name": "貓頭鷹法式手工甜點（工作室預約制）",
+      "formatted_address": "東勇街78號2F",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "bfee4702-4424-4642-a63f-d8d6cb2602e1",
+    "name": "MR.DODO自家烘焙咖啡館",
+    "address": "桃園市平鎮區北華里振平街3號",
+    "url": "https://www.facebook.com/MRDODO3606/",
+    "findPlace": {
+      "place_id": "ChIJW3iY_1IiaDQRqc_O5Jk2wMY",
+      "name": "MR.DODO 豆豆先生咖啡 (平鎮店)",
+      "formatted_address": "振平街3號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c34b9faf-446c-4f4d-b278-10cf1a010223",
+    "name": "BUNA CAF'E布納咖啡館藝文店",
+    "address": "桃園市桃園區中正路1061號",
+    "url": "https://www.facebook.com/bunacafe1061/?ref=br_rs",
+    "findPlace": {
+      "place_id": "ChIJp-OrQbAfaDQRvriOnnoN01I",
+      "name": "布納咖啡館 藝文館 | 網美打卡餐廳 | 親友聚餐 | 下午茶 | 包場 | 慶生 | 包廂 | 餐酒",
+      "formatted_address": "中正路1061號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c3a7cab2-0794-4cec-8b30-e757c695f00d",
+    "name": "年輕的老頭",
+    "address": "桃園市龍潭區聖亭路八德段22號",
+    "url": "http://youngoldcoffee.blogspot.com/",
+    "findPlace": {
+      "place_id": "ChIJJ9DNH-k8aDQRzMDL-s2q-ZI",
+      "name": "年輕的老頭咖啡 Young Oldie Coffee",
+      "formatted_address": "聖亭路八德段22號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "c42de0bb-f6fb-4957-b11e-c3b575bb3fba",
+    "name": "羅伯咖啡-桃園中華電信中壢中山門市",
+    "address": "桃園市中壢區中山路152號",
+    "url": "https://www.facebook.com/%E7%BE%85%E4%BC%AF%E5%92%96%E5%95%A1-%E6%A1%83%E5%9C%92%E4%B8%AD%E8%8F%AF%E9%9B%BB%E4%BF%A1%E4%B8%AD%E5%A3%A2%E4%B8%AD%E5%B1%B1%E9%96%80%E5%B8%82-1809127882470707/",
+    "findPlace": {
+      "place_id": "ChIJcR1-w0kiaDQR1f9MqzJ6LEo",
+      "name": "中華電信中壢服務中心",
+      "formatted_address": "中山路152號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c565f052-21dc-4bb4-976d-a1b3215df181",
+    "name": "樹舍308 Cafe",
+    "address": "桃園市中壢區復華街308號",
+    "url": "https://www.facebook.com/treatortreescafe/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJrbHyKO4haDQRLI6OvJQbbD0",
+      "name": "穀沐尼 早午餐 義大利麵 brunch（初五正常營業）",
+      "formatted_address": "復華街308號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c6112e60-2514-4bea-a589-948810fcb672",
+    "name": "Piepai Cafe'",
+    "address": "桃園區大興路120巷21號",
+    "url": "https://www.facebook.com/piepaicafe/",
+    "findPlace": {
+      "place_id": "ChIJGT94_0AiaDQRUPZc2acay08",
+      "name": "Piepai Cafe’ (中壢店)",
+      "formatted_address": "320桃園市中壢區莒光路89號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c6514743-55be-4b19-b4ab-63d154817a5d",
+    "name": "日福 OH HAPPY DAY",
+    "address": "桃園市桃園區中埔七街7號",
+    "url": "https://www.facebook.com/ohhappydaynow/",
+    "findPlace": {
+      "place_id": "ChIJBeHii7kfaDQRgAdV28VVWak",
+      "name": "日福 OH HAPPY DAY 風禾店",
+      "formatted_address": "330桃園市桃園區文中二路137號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c77d7cd5-23af-4f56-b682-542ef12f1054",
+    "name": "散步咖啡 La Promenade Café",
+    "address": "桃園市中壢區三和三街24號",
+    "url": "https://www.facebook.com/%E6%95%A3%E6%AD%A5%E5%92%96%E5%95%A1-La-Promenade-Caf%C3%A9-288910587876860/",
+    "findPlace": {
+      "place_id": "ChIJ3a12RBUiaDQRWaImIwtcheI",
+      "name": "散步咖啡",
+      "formatted_address": "三和三街24號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c85bac3e-9eb1-443d-99ea-6d75fc83ec9c",
+    "name": "7號公路",
+    "address": "桃園市復興區澤仁里詩朗14-1號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJv8DCmNQQaDQRc8kN7Ip7ayU",
+      "name": "七號公路咖啡館",
+      "formatted_address": "詩朗道路32號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c889ccea-fb4b-4d40-92b0-a2f3f8ab1154",
+    "name": "月光咖啡廳 ",
+    "address": "桃園市桃園區民富十一街108號",
+    "url": "https://www.facebook.com/moxonlight/",
+    "findPlace": {
+      "place_id": "ChIJIWJI124ZaDQRpJXaKauPNIE",
+      "name": "月光咖啡館",
+      "formatted_address": "335桃園市大溪區中央路98號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "c97f60b3-92d8-4ea8-a73e-013dde08da4c",
+    "name": "芮漢精品咖啡",
+    "address": "桃園市龜山區宏慶街70號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJK0ogYsqnQjQRQp2bPcTlxWA",
+      "name": "龜巢咖啡 KAME COFFEE🐢",
+      "formatted_address": "333桃園市龜山區復興路二段9巷7弄36號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ca5913c0-b2fc-40a7-9953-a7cf8e6f3c18",
+    "name": "喬治的咖啡 George’s Coffee",
+    "address": "桃園市中壢區民權路150號",
+    "url": "https://www.facebook.com/acid7coffee/",
+    "findPlace": {
+      "place_id": "ChIJxbiJy2gjaDQR9F97UeTIoZw",
+      "name": "喬治的咖啡",
+      "formatted_address": "民權路150號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "cddccc59-03bc-49e5-b49c-7b65427d1887",
+    "name": "老窩咖啡烘培館－桃園中平店",
+    "address": "宏昌六街256號",
+    "url": "https://www.facebook.com/laoozhongping/",
+    "findPlace": {
+      "place_id": "ChIJ4QBlKhQfaDQR5Q670ZSTjg8",
+      "name": "老窩咖啡桃園中平店",
+      "formatted_address": "宏昌六街256號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "cee188d1-0882-42ce-9878-a3447507c0d9",
+    "name": "拾事咖啡",
+    "address": "桃園市中壢區福星六街67號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJffLjtiQiaDQRQKMj4TGFFBA",
+      "name": "拾事咖啡｜自烘咖啡、手工甜點/鹹派、無訂位、最後點餐時間20:30",
+      "formatted_address": "福星六街67號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d09bb3f8-9c40-4aa4-b7b5-b55e1183eb67",
+    "name": "SOLO Coffee",
+    "address": "桃園區莊敬路二段34巷38之一號",
+    "url": "https://www.facebook.com/hellosolocoffee/",
+    "findPlace": {
+      "place_id": "ChIJg3AoH7kfaDQRGhRKMMVOXx0",
+      "name": "M",
+      "formatted_address": "莊敬路二段34巷38-1號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "d0b2c7e5-4d64-49ff-97e2-b96aa5f3c947",
+    "name": "我們。 他們 咖啡廳",
+    "address": "320桃園市中壢區長安街1之 13號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJiwOqT0siaDQR8BvGDVAItpk",
+      "name": "我們。 他們 咖啡廳（老街溪河濱步道上，汽車勿入｜毛孩友善）",
+      "formatted_address": "長安街1之 13號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d1fd635f-f3da-4f0d-bf0d-e014bf0e4126",
+    "name": "豆趣咖啡",
+    "address": "桃園市蘆竹區南山路一段212號",
+    "url": "https://www.facebook.com/excellentcoffeeshop/",
+    "findPlace": {
+      "place_id": "ChIJ_9xl0tkfaDQRr5uiHSq05E8",
+      "name": "豆趣咖啡",
+      "formatted_address": "南山路一段212號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d290a611-9494-4860-bd78-1af3751db07e",
+    "name": "森鄰水岸景觀咖啡館",
+    "address": "桃園市復興區澤仁里一鄰6號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ35FuZgoWaDQRerFuM5bt7NI",
+      "name": "森鄰水岸景觀咖啡館",
+      "formatted_address": "澤仁里溪口台2號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d64319eb-6f31-4e3d-8e97-7d8605fa2df8",
+    "name": "亞鷹咖啡館",
+    "address": "桃園市平鎮區中豐路山頂段236號",
+    "url": "https://www.facebook.com/ya.eagle.coffee/",
+    "findPlace": {
+      "place_id": "ChIJzyCh6Vw3aTQRw-Z40NTmb_w",
+      "name": "Eagle Valley Cafe｜老鷹咖啡 藝伎咖啡專賣",
+      "formatted_address": "510彰化縣員林市大勇街83號一樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d681c558-931d-4b8b-818a-5cc0497a0abc",
+    "name": "倆朵花 two flowers coffee",
+    "address": "桃園市桃園區介壽路427號1樓",
+    "url": "https://twoflowers.tw/",
+    "findPlace": {
+      "place_id": "ChIJ_6NDwmMfaDQRW6W38svOCQQ",
+      "name": "倆朵花咖啡工作室 ｜熟豆販售｜提拉米蘇｜甜點外燴 CANDY BAR｜無訂位無接待兒童",
+      "formatted_address": "介壽路427號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d718220c-2108-4578-92f0-db80b9765781",
+    "name": "Sieg cafe",
+    "address": "中壢區中和路271號1樓",
+    "url": "https://m.facebook.com/SiegCafe/",
+    "findPlace": {
+      "place_id": "ChIJ8_4WYEkiaDQRLdllLhcOIM4",
+      "name": "Sieg Hair",
+      "formatted_address": "中和路269號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d83a6326-d843-4b09-913c-8b7401b712ad",
+    "name": "甘日洋食行",
+    "address": "桃園市桃園區莊二街69號 ",
+    "url": "https://www.facebook.com/GanRiBrunch/",
+    "findPlace": {
+      "place_id": "ChIJD7R3iE8faDQRxMkJG4lGngI",
+      "name": "小溪.甘日 咖啡Creek Café & Bistro（原甘日洋食行）",
+      "formatted_address": "330桃園市桃園區民光東路373號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d9b9a447-5469-4c6d-95be-8a6247bedc4c",
+    "name": "祖厝咖啡·gugucoffee",
+    "address": "中壢區吉安街21號",
+    "url": "https://www.facebook.com/GUGUCOFFEE/",
+    "findPlace": {
+      "place_id": "ChIJp1U3iUUiaDQRa3L1JFQHXL8",
+      "name": "祖厝咖啡 GuguCoFFee",
+      "formatted_address": "吉安街21號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "dbe4370d-6d3a-49a0-afdd-426aa7f99436",
+    "name": "義點茶複合式餐飲",
+    "address": "桃園市中壢區龍東路33號",
+    "url": "https://www.facebook.com/APointDrink/",
+    "findPlace": {
+      "place_id": "ChIJrd0_gfkZaDQRIa0ixj0CCqk",
+      "name": "義點麵嗜 Eat Pasta",
+      "formatted_address": "334桃園市八德區廣福路347號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "dbe47ed3-d2a9-40e8-955f-9ca3fdc4d023",
+    "name": "豐滿 總匯三明治 桃園站前店",
+    "address": "桃園市桃園區武陵里長壽街4號",
+    "url": "https://www.facebook.com/Plumpsandwich033385756/",
+    "findPlace": {
+      "place_id": "ChIJISyNevseaDQRirt93hD5XDg",
+      "name": "好飽早午餐 民生店",
+      "formatted_address": "民生路68號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "de889a2e-4259-4b93-8ff1-d2dbc6602d4f",
+    "name": "引號inhowcafe",
+    "address": "龜山區山鶯路22號",
+    "url": "https://www.facebook.com/inhowcafe/",
+    "findPlace": {
+      "place_id": "ChIJKV9VIPEeaDQRmdhGw6gvkm0",
+      "name": "引號咖啡",
+      "formatted_address": "山鶯路22號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "df171933-624b-4ec8-a16f-437b70e72cf5",
+    "name": "卡爾地咖啡館",
+    "address": "桃園市桃園區大華五街27號",
+    "url": "https://www.facebook.com/%E5%8D%A1%E7%88%BE%E5%9C%B0%E5%92%96%E5%95%A1%E9%A4%A8-190102937702808/",
+    "findPlace": {
+      "place_id": "ChIJRaH5raofaDQRgrfQP3e68xw",
+      "name": "卡爾地咖啡。咖啡豆專賣",
+      "formatted_address": "大華五街27號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "df7f3ecc-dc00-4fa5-870f-d5d61813e1cd",
+    "name": "貳拾穗咖啡",
+    "address": "桃園市桃園區樹仁三街145-3號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJPUb9CvsfaDQRvcxqWHqnXbg",
+      "name": "貳拾穗精品咖啡-桃園咖啡/自家烘焙/精品咖啡/咖啡器具/桃園咖啡豆/咖啡豆專賣/桃園下午茶/人氣咖啡館",
+      "formatted_address": "樹仁三街145-3號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "dfaaa4e1-69b6-4b4d-be06-cec28a164e17",
+    "name": "老窩咖啡桃鶯店",
+    "address": "桃園市桃園區桃鶯路384-6號",
+    "url": "https://www.facebook.com/LAOO.2016.com.tw/?fref=nf",
+    "findPlace": {
+      "place_id": "ChIJl_o91ekeaDQR3dg5zXPzGY8",
+      "name": "老窩咖啡桃鶯店",
+      "formatted_address": "桃鶯路384-6號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "e18496a3-2b72-44ea-a54f-b435c71821e9",
+    "name": "歸 Return - 咖啡、餐食",
+    "address": "桃園市桃園區中山北路198號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJEdGN_AMfaDQRpho0yCIeaVo",
+      "name": "歸 Return - 咖啡、餐食（採預約制服務）",
+      "formatted_address": "330桃園市桃園區同安街373號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e190872a-f962-4ea3-af3a-c1d1846380ed",
+    "name": "路易莎",
+    "address": "八德區興豐路416號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJz_TLYfsZaDQRSQNFUW7U4Jc",
+      "name": "Louisa Coffee 路易莎咖啡(八德興豐門市)",
+      "formatted_address": "興豐路416號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e3ce0331-9a29-44a5-a456-54e25dbe3a36",
+    "name": "Cerro希羅精品咖啡",
+    "address": "桃園區同德五街218號",
+    "url": "https://www.facebook.com/cerrocoffee/",
+    "findPlace": {
+      "place_id": "ChIJUTzoKhkfaDQRn7rVJF0NV-o",
+      "name": "CERRO希羅精品咖啡",
+      "formatted_address": "中埔五街2巷1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e8728e5f-1d9a-4eaa-b083-d55215bd49bc",
+    "name": "客廳 coffee House",
+    "address": "桃園市楊梅區自立街19號",
+    "url": "https://www.facebook.com/Coffee-House-%E5%AE%A2%E5%BB%B3-The-Living-Room-1404320303181740/",
+    "findPlace": {
+      "place_id": "ChIJ1aNmJgAlaDQRK_9ZfZW48ho",
+      "name": "萃99'Caffee 新農旗艦店",
+      "formatted_address": "326桃園市楊梅區新農街620號玻璃屋旁",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e904a130-d967-4def-883d-8c6c560da15c",
+    "name": "Habbit coffee",
+    "address": "桃園市中壢區五族二街115號",
+    "url": "https://m.facebook.com/habbit2015/",
+    "findPlace": {
+      "place_id": "ChIJwXX_GBAjaDQRDe3oQg45P9o",
+      "name": "Habbit coffee（6/10-7/9公休一個月）",
+      "formatted_address": "五族二街115號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "eb43567c-e024-4b25-9cfe-ccdcb4bb51b8",
+    "name": "諦風咖啡",
+    "address": "320桃園市中壢區建國北路9號",
+    "url": "https://www.facebook.com/tiffforum/",
+    "findPlace": {
+      "place_id": "ChIJd0ueEUkiaDQRUJjnPJe2rSI",
+      "name": "諦風咖啡館",
+      "formatted_address": "建國北路9號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "eb58d26a-f6fa-4e7d-9664-149a94af3da4",
+    "name": "Mr.Coffee Grano格蕾諾",
+    "address": "桃園市桃園區大興路288號",
+    "url": "@Mr.Coffeegrano",
+    "findPlace": {
+      "place_id": "ChIJC-ZfqR8faDQRx8zNfQqskyQ",
+      "name": "Mr.Coffee Grano(格蕾諾）",
+      "formatted_address": "大興路288號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "ed2c762d-cce3-4b36-bdf5-3a6c3cb43b70",
+    "name": "Lai cafe 賴在家咖啡",
+    "address": "桃園市大園區青昇路一段48巷28號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJW3MAVrQhaDQR6845F6vPgHU",
+      "name": "賴在家咖啡 Lai cafe（只販售咖啡豆）",
+      "formatted_address": "青昇路一段48巷28號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ed58eab7-2904-4fb7-95a2-7ca404d21e2c",
+    "name": "秋穗",
+    "address": "桃園市桃園區慈光街164巷16號",
+    "url": "https://www.instagram.com/_ears.of_/",
+    "findPlace": {
+      "place_id": "ChIJC2QtMhYfaDQR4dmPb-wf0LU",
+      "name": "秋 穗（營業日以IG為準）",
+      "formatted_address": "慈光街164巷16號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f0922e04-f4a4-41b5-899f-b9410cff9006",
+    "name": "著手咖啡桃園店",
+    "address": "桃園市中壢區成功路135號",
+    "url": "https://www.facebook.com/coffeeintrointaoyuan",
+    "findPlace": {
+      "place_id": "ChIJbdYd2V0haDQRd72EQJCj6pw",
+      "name": "著手咖啡 Coffee Intro",
+      "formatted_address": "成功路135號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f0b4b542-b9ae-4a8d-9a04-fb4c9bcfd6e5",
+    "name": "八塊畫室",
+    "address": "桃園縣八德市長興路46號",
+    "url": "https://www.facebook.com/8kuai.atelierkafe/",
+    "findPlace": {
+      "place_id": "ChIJubGvR4IYaDQRHPx32r8qPZc",
+      "name": "八塊畫室咖啡",
+      "formatted_address": "長興路46號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "f3260035-6dd4-42ba-9a40-260ac3df2e05",
+    "name": "NxCoffee",
+    "address": "330桃園市桃園區成功路三段1號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJAdxSO-sfaDQRryEftot4g0Y",
+      "name": "NxCoffee 虎頭山直營店",
+      "formatted_address": "成功路三段1號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "f386f5e9-7f7f-4e63-b4a2-26f0a3148fe7",
+    "name": "at  CAFE",
+    "address": "桃園市中壢區慈惠三街 157巷14號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJTcqsHjEiaDQRvwZNXbwQSGY",
+      "name": "丹馬克咖啡",
+      "formatted_address": "慈惠三街157巷10號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f40f8a28-7290-42cc-a7cd-abd8fd4fc8ee",
+    "name": "米諾咖啡館",
+    "address": "桃園縣大溪鎮僑愛一街6巷15號",
+    "url": "https://www.facebook.com/%E7%B1%B3%E8%AB%BE%E5%92%96%E5%95%A1%E9%A4%A8-179587068729256/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJ6eXCQvYYaDQR4vIChua1JMk",
+      "name": "米諾咖啡館（無固定休假日、休假公布在FB官網）",
+      "formatted_address": "僑愛一街6巷15號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f5848e36-3319-40e1-ade9-ce9aed962e71",
+    "name": "日不落咖啡",
+    "address": "中壢區慈惠三街148號",
+    "url": "https://www.facebook.com/White-Nights-coffee-shop%E6%97%A5%E4%B8%8D%E8%90%BD%E5%92%96%E5%95%A1-1115038001915322/",
+    "findPlace": {
+      "place_id": "ChIJs5HVVzAiaDQRVNxAVgfxqXA",
+      "name": "日不落咖啡",
+      "formatted_address": "慈惠三街148號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f5b24b21-c830-44ac-bf8b-a28cb84b9f6a",
+    "name": "幸福53咖啡",
+    "address": "桃園市八德區建安街53號",
+    "url": "https://www.facebook.com/uncertaincafe/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJPXAK99gZaDQRFiuzkpOxoS8",
+      "name": "FIH Café 幸蘊坊 調酒咖啡館-八德調酒咖啡館推薦|調酒喝到飽|調酒壽星優惠|咖啡廳推薦|美食下午茶|可麗露推薦|提拉米蘇推薦|寵物友善咖啡廳",
+      "formatted_address": "334桃園市八德區興豐路168號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f757f824-6f06-45a3-acd5-1a5fe48bd631",
+    "name": "方亭咖啡 - 中壢興國店",
+    "address": "桃園市中壢區興國路77號1樓",
+    "url": "https://www.facebook.com/fountainchungli/?ref=page_internal",
+    "findPlace": {
+      "place_id": "ChIJszTnzjUiaDQR1cVlS6X0ero",
+      "name": "方亭咖啡(中壢)",
+      "formatted_address": "興國路77號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "fa9151c8-5a87-4565-94f9-8b58032620a5",
+    "name": "菲拉帖啡",
+    "address": "桃園巿桃園區國際路二段555號",
+    "url": "https://website-1708288507471630503128-coffeestore.business.site/",
+    "findPlace": {
+      "place_id": "ChIJt88sgZgfaDQR6DH7-U0-F1M",
+      "name": "菲拉帖啡CAFE",
+      "formatted_address": "國際路二段555號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "fa9e4795-92d0-4d4e-bd60-c3b82e31b301",
+    "name": "有間咖啡工作室",
+    "address": "桃園市楊梅區福羚路232巷30弄3號(三合院內)",
+    "url": "https://www.instagram.com/you_jian_ka_fei/",
+    "findPlace": {
+      "place_id": "ChIJ2UNAn_cjaDQRKttyzzXGTCA",
+      "name": "有間咖啡工作室",
+      "formatted_address": "福羚路232巷30弄3號三合院內 >>請往三合院方向",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "fad1227c-9957-471a-b0b6-48d875e111a6",
+    "name": "弎咖 θRICA CAFE",
+    "address": "桃園市中壢區文化二路305號",
+    "url": "https://www.instagram.com/thrica_2020",
+    "findPlace": {
+      "place_id": "ChIJa08Q0oshaDQRo2dOqXojXbk",
+      "name": "弎咖 θRICA CAFE",
+      "formatted_address": "文化二路305號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "fbc7a8ce-4b1f-4dc2-94be-b5afe3adec63",
+    "name": "老窩咖啡 桃園中山東店",
+    "address": "桃園市桃園區中山東路32之13號",
+    "url": "https://www.facebook.com/pushoo2002",
+    "findPlace": {
+      "place_id": "ChIJ2zdVs1QfaDQRwh2maDgXtMs",
+      "name": "老窩咖啡-桃園中山東店",
+      "formatted_address": "32之, No. 13號中山東路",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "fc926141-b5be-44de-bab5-b1e68017ea73",
+    "name": "穀穀咖啡",
+    "address": "桃園市龜山區文德路82號",
+    "url": "https://www.facebook.com/goodgoodcoffee/",
+    "findPlace": {
+      "place_id": "ChIJ2ZZXSQCnQjQRU1e5HxPKSBs",
+      "name": "NoVA CAFE",
+      "formatted_address": "樂學路590巷28號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "fcc250fb-8625-43f6-a0c8-c62b70487e16",
+    "name": "迴憶咖啡",
+    "address": "桃園縣中壢市延平路廟前31號",
+    "url": "https://www.facebook.com/memoriescafee/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJYaZVADoiaDQRfEfV9MJaH0o",
+      "name": "迴憶cafe",
+      "formatted_address": "32043桃園市中壢區延平路31號仁海宮",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "fd47fed0-ddf2-440c-bad2-8613619e0e1e",
+    "name": "Backdoor Cafe",
+    "address": "桃園市中壢區中央路216巷9號",
+    "url": "https://www.facebook.com/backdoorcafe",
+    "findPlace": {
+      "place_id": "ChIJE71NKpUjaDQRYxJcpmvGDl0",
+      "name": "Backdoor Café",
+      "formatted_address": "中央路216巷9號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ff345107-9fa8-4f33-87d7-697204680acb",
+    "name": "油田咖啡",
+    "address": "桃園市八德區介壽路二段393號",
+    "url": "https://www.facebook.com/pg/yotencoffee",
+    "findPlace": {
+      "place_id": "ChIJTwhFMNsYaDQRKCuMLWrhWbo",
+      "name": "油田咖啡",
+      "formatted_address": "334桃園市八德區豐田三路83號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ff558399-7ba6-4119-9a95-ab3e02411a66",
+    "name": "黑色公寓藝文咖啡",
+    "address": "桃園市楊梅區新農街4巷10號",
+    "url": "https://www.facebook.com/blackapartment",
+    "findPlace": {
+      "place_id": "ChIJtUJEcjU7aDQRfpXV3v7MuKE",
+      "name": "黑色公寓藝文空間",
+      "formatted_address": "新農街4巷10號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "ffb44614-8a0c-41d1-a201-d84eb3409ca4",
+    "name": "鹿點咖啡",
+    "address": "桃園市中壢區建國北路15號",
+    "url": "https://www.facebook.com/caffepromisedlandsince2013/",
+    "findPlace": {
+      "place_id": "ChIJkQ_B1jciaDQRT63m3sNqExA",
+      "name": "鹿點咖啡",
+      "formatted_address": "320桃園市中壢區建國北路15號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  }
+]

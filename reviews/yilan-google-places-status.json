@@ -1,0 +1,1406 @@
+[
+  {
+    "id": "00647eb2-1248-4af7-9c8a-409c5e0371da",
+    "name": "CAFÉ SLOW TRAIN 小火車咖啡館",
+    "address": "260宜蘭縣宜蘭市和睦路6巷23號",
+    "url": "https://www.facebook.com/cafeslowtrain",
+    "findPlace": {
+      "place_id": "ChIJgxw4utvkZzQRHagyFzFpfMY",
+      "name": "丟丟噹森林",
+      "formatted_address": "宜興路一段236號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "033728b5-37f1-4dab-943c-3774403cea04",
+    "name": "Jessica kafa",
+    "address": "宜蘭市女中路二段516號",
+    "url": "https://www.facebook.com/Jessica-Kafa-669446293115311/",
+    "findPlace": {
+      "place_id": "ChIJ0cPVTunkZzQR8wkCnNTYykI",
+      "name": "jessica kafa",
+      "formatted_address": "女中路二段516號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "03afe2ec-2d55-4570-b1f1-5dc7eb6ce76e",
+    "name": "昀頂咖啡坊",
+    "address": "宜蘭縣宜蘭市文化路11號",
+    "url": "https://www.facebook.com/coolandy0402/",
+    "findPlace": {
+      "place_id": "ChIJbQ9wwunkZzQRmRwgsY5UZaE",
+      "name": "云頂手作咖啡坊",
+      "formatted_address": "269宜蘭縣冬山鄉富農路一段319號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "056a997a-ca5a-43a2-a5bd-c56d035794eb",
+    "name": "日臻咖啡 Zhen's Cafe",
+    "address": "宜蘭市嵐峰路一段290號",
+    "url": "https://www.facebook.com/zhenscafe0402/",
+    "findPlace": {
+      "place_id": "ChIJ71sig0flZzQRTQJo7aZHYjI",
+      "name": "進·咖啡 JIN Café",
+      "formatted_address": "260宜蘭縣宜蘭市進士路二段322號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "06f03baf-1654-4f49-84bc-6e359c6d1cc9",
+    "name": "Cherry 經典咖啡",
+    "address": "宜蘭縣宜蘭市中華路8號",
+    "url": "https://www.facebook.com/CherryCafe.Yilan/",
+    "findPlace": {
+      "place_id": "ChIJacHYwOXlZzQRSO2L4Y2eNbw",
+      "name": "啡Style Café & 咖啡教學",
+      "formatted_address": "260宜蘭縣宜蘭市公園路461號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "08d9bd4f-3e0b-4470-90f0-456558be3320",
+    "name": "歆窩『sing‧cafe』",
+    "address": "宜蘭市健康路二段59號",
+    "url": "https://www.facebook.com/%E6%AD%86%E7%AA%A9SingCafe-844062925712181/",
+    "findPlace": {
+      "place_id": "ChIJwTKb_eblZzQREcbI9VYkRWQ",
+      "name": "Crazy art 瘋塗鴉會館❤️",
+      "formatted_address": "文化路86號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0bcd5ba2-0796-4e04-8aa9-050ec35addfb",
+    "name": "瑪德琳 café de madeleine",
+    "address": "宜蘭縣礁溪鄉茅埔路17號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJgZKlv2z7ZzQRb56DEEdLKGU",
+      "name": "Chou Chou 迷你可麗露專賣店",
+      "formatted_address": "260宜蘭縣宜蘭市大福路一段130號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "100a5e2d-b287-4487-9a59-d2455c746f64",
+    "name": "禾子咖啡",
+    "address": "宜蘭市農權路三段197巷1弄2號 Yilan City",
+    "url": "https://www.facebook.com/hzcoffee/",
+    "findPlace": {
+      "place_id": "ChIJNX6MOpTkZzQRTb3F-tQIGIs",
+      "name": "禾子咖啡",
+      "formatted_address": "農權路三段197巷1弄2號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "13ede237-555c-4dbf-a793-c9be8beecb10",
+    "name": "GOROGORO",
+    "address": "宜蘭縣宜蘭市中山路二段187巷25號",
+    "url": "http://gorogoro187.pixnet.net/blog",
+    "findPlace": {
+      "place_id": "ChIJV0iSx8LkZzQRqngIeXPP5jA",
+      "name": "GOROGORO",
+      "formatted_address": "中山路二段187巷25號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "16857a35-054c-4d03-892f-32c3c76072de",
+    "name": "哥倫布咖啡",
+    "address": "宜蘭縣宜蘭市中華路56號",
+    "url": "https://www.facebook.com/pages/%E5%93%A5%E5%80%AB%E5%B8%83%E5%92%96%E5%95%A1%E5%BB%B3/109254592490721",
+    "findPlace": {
+      "place_id": "ChIJaQjC0OfkZzQR4F5XzI9gDfs",
+      "name": "哥倫布咖啡",
+      "formatted_address": "中華路56號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "16908944-6f01-426e-a7ad-5a4618095bb3",
+    "name": "GK Coffee（平安居咖啡民宿）",
+    "address": "宜蘭縣冬山鄉復興路166號",
+    "url": "http://www.gkcoffee.com.tw",
+    "findPlace": {
+      "place_id": "ChIJR5-o15bmZzQR0UrnyU7uU0o",
+      "name": "GK咖啡 + 平安居咖啡民宿",
+      "formatted_address": "復興路166號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "1edabf40-9dd8-4a8e-89fa-d0d48983536b",
+    "name": "豐咖啡五結店",
+    "address": "宜蘭縣五結鄉中興路3段115號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ_____4LmZzQRzvtAGhpaK0w",
+      "name": "豐咖啡極淺烘焙專賣店 宜蘭五結店",
+      "formatted_address": "清水路15巷22號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "235065e9-d2a3-47fd-9df6-73487bad5271",
+    "name": "語後咖啡 Ameagari Cafe",
+    "address": "宜蘭市延平路42巷6號",
+    "url": "https://www.facebook.com/AmeagariCafe/",
+    "findPlace": {
+      "place_id": "ChIJ7-LrbdjkZzQRM8U0tcF9Jso",
+      "name": "語後咖啡",
+      "formatted_address": "延平路42巷6號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "23cb017d-6d35-4ca1-a11a-3adde3f00601",
+    "name": "郁見幸福",
+    "address": "宜蘭市健康路二段117號",
+    "url": "https://www.facebook.com/yubakingstudio/",
+    "findPlace": {
+      "place_id": "ChIJTefAM-jkZzQRiTwsG8AfGdI",
+      "name": "郁見幸福Coffe&Cake",
+      "formatted_address": "健康路二段117號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "30b39380-5a20-42c2-81fa-9547712a2ba7",
+    "name": "海神咖啡 Poseidon Cafe",
+    "address": "270宜蘭縣蘇澳鎮造船路106號",
+    "url": "https://www.facebook.com/poseidoncafe.2018/",
+    "findPlace": {
+      "place_id": "ChIJ3We3eELpZzQRhgD-8V1bsl4",
+      "name": "Poseidon Cafe/海神咖啡屋",
+      "formatted_address": "造船路106號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "32882a8c-a93c-4f6c-b765-a645f9652c5b",
+    "name": "灆咖啡Seaview Coffee",
+    "address": "宜蘭縣頭城鎮協天路636巷36-2號",
+    "url": "https://www.facebook.com/seaviewcoffee2017/",
+    "findPlace": {
+      "place_id": "ChIJz6eRbjVdXTQReP2k6tqxvj0",
+      "name": "灆咖啡Seaview Coffee",
+      "formatted_address": "261宜蘭縣頭城鎮濱海路七段350號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3c716d57-5475-40e7-a4ec-2b602c3a29d2",
+    "name": "夏至咖啡",
+    "address": "宜蘭市中華路48號1樓",
+    "url": "https://www.facebook.com/gesicafe",
+    "findPlace": {
+      "place_id": "ChIJMVfSMubkZzQR1ADUAn1hlO0",
+      "name": "夏至咖啡",
+      "formatted_address": "中華路48號1F",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3fae93c2-bfb3-4b94-857e-c639f32f3ec7",
+    "name": "平安居民宿 + GK coffee自家烘焙咖啡",
+    "address": "宜蘭縣冬山鄉復興路166號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJR5-o15bmZzQR0UrnyU7uU0o",
+      "name": "GK咖啡 + 平安居咖啡民宿",
+      "formatted_address": "復興路166號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4038e542-25be-4f40-8a90-cd2de5a108e6",
+    "name": "探險家咖啡",
+    "address": "宜蘭縣蘇澳鎮新榮路13巷33號",
+    "url": "https://www.facebook.com/explorers2015",
+    "findPlace": {
+      "place_id": "ChIJ1xFqktvpZzQRGNet2XRY-do",
+      "name": "We Cafe我們的海灣咖啡-南方澳內埤海灣",
+      "formatted_address": "270宜蘭縣蘇澳鎮造船路112號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4292cb1d-ad51-49a7-a191-b0c9138822a1",
+    "name": "對的咖啡學遊工場 THE COFFEE CENTER",
+    "address": "宜蘭縣宜蘭市東港路5-7號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ_XRikTvlZzQRAtIZYwx9o80",
+      "name": "對的咖啡學遊工場",
+      "formatted_address": "東港路一段247號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "482e174c-7a26-4e19-bdb3-25586bb4e0ad",
+    "name": "小眼睛．手作．咖啡館",
+    "address": "宜蘭縣員山鄉枕山村坡城路5-5號",
+    "url": "https://www.facebook.com/Smalleyescafe/",
+    "findPlace": {
+      "place_id": "ChIJAziEwUvjZzQRyNCOUX502G4",
+      "name": "小眼睛手作咖啡館",
+      "formatted_address": "慶安一路75號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4939eff6-9684-44e3-99d6-21708ac567b6",
+    "name": "鳴草咖啡",
+    "address": "宜蘭市碧霞街20-1號",
+    "url": "https://www.facebook.com/thesoundofgrass/",
+    "findPlace": {
+      "place_id": "ChIJCZthIg33ZzQRWSYXQdxO-90",
+      "name": "鳴草咖啡 自家烘焙館",
+      "formatted_address": "碧霞街20-1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4c30f27b-5731-4f48-8fcb-237013ddce39",
+    "name": "No.100咖啡隨行吧",
+    "address": "265 宜蘭縣羅東鎮中正南路100號",
+    "url": "https://www.facebook.com/NO.100cafe/",
+    "findPlace": {
+      "place_id": "ChIJu0W5rWTmZzQRwBoq6EoUSQA",
+      "name": "No.100 coffee shop",
+      "formatted_address": "中正南路100號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4d48c951-e7ec-4f79-8e7b-a9d213d1f2c9",
+    "name": "HaoHaoKaffe(行口文旅店)",
+    "address": "宜蘭縣宜蘭市康樂路14號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJmTySTNrkZzQRWGY5Yyh2OL4",
+      "name": "HaoHaoKaffe 行口文旅店",
+      "formatted_address": "康樂路14號一樓",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "4db108b9-f037-4fb7-84cf-bb92e4aaf57c",
+    "name": "啡Style義式咖啡推廣中心",
+    "address": "268宜蘭縣五結鄉五結路三段一號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJacHYwOXlZzQRSO2L4Y2eNbw",
+      "name": "啡Style Café & 咖啡教學",
+      "formatted_address": "260宜蘭縣宜蘭市公園路461號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "51ffe071-f7ce-46ec-8f70-bc4da90b6c65",
+    "name": "合盛太平咖啡",
+    "address": "宜蘭縣宜蘭市中山路三段145號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ1dytifnlZzQRWFNgf9_Fxbs",
+      "name": "飛魚食染-宜蘭店",
+      "formatted_address": "26044宜蘭縣宜蘭市中山路三段145號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "5c8fc6fe-911a-45ce-8454-6c202f6c21ae",
+    "name": "隱藏版小咖啡",
+    "address": "宜蘭縣羅東鎮安平路100號",
+    "url": "https://www.facebook.com/lil.secretcafe/",
+    "findPlace": {
+      "place_id": "ChIJe5HjbnnmZzQRGzSlNp7J-s8",
+      "name": "隱藏版小咖啡 but first coffee",
+      "formatted_address": "安平路100號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "5dec1642-6cbf-4d9e-b9ff-021f7dd9ce1e",
+    "name": "esencia cafe 艾聖席亞咖啡屋",
+    "address": "宜蘭縣宜蘭市民權新路281號",
+    "url": "https://www.facebook.com/esenciacafe/",
+    "findPlace": {
+      "place_id": "ChIJo7gTNMDkZzQR2_Oen_Z68fU",
+      "name": "艾聖席亞咖啡屋",
+      "formatted_address": "民權新路281號號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "6604d080-499c-41e9-b25e-16158ab3b212",
+    "name": "老房子咖啡",
+    "address": "羅東鎮文化街53號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJK4FSvXzmZzQR_KVd-MWjTiI",
+      "name": "校長宿舍-老房子咖啡",
+      "formatted_address": "265宜蘭縣羅東鎮文化街53號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "67b4e52c-e359-4bba-9e4f-5e5dfcc3fe41",
+    "name": "巷光咖啡 to light coffee roasters",
+    "address": "265 宜蘭縣羅東鎮公正街22號",
+    "url": "https://www.facebook.com/weTLCR/",
+    "findPlace": {
+      "place_id": "ChIJcTwxOyLnZzQRisKhiTnAl7U",
+      "name": "巷光咖啡 To Light Coffee Roasters",
+      "formatted_address": "公正街22號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "68ae98ae-e8ad-4581-800d-a84b8e82cead",
+    "name": "香草景觀咖啡 Vanilla Cafe-宜蘭頭城店",
+    "address": "宜蘭縣頭城鎮北宜路一段398號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJt9q8MvD5ZzQREQtGxfP5o2w",
+      "name": "香草庭園咖啡 頭城店",
+      "formatted_address": "北宜路一段398號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "696408a5-ed3c-4e48-8820-2cb43152f758",
+    "name": "立歐廚房 leo's cafe",
+    "address": "宜蘭縣宜蘭市農權路三段一號一樓",
+    "url": "https://www.facebook.com/Leos-Cafe-立歐廚房-110450210468262/",
+    "findPlace": {
+      "place_id": "ChIJ870qdkXlZzQRWQ3T8AXPwKk",
+      "name": "立歐廚房 Leoś cafe",
+      "formatted_address": "農權路三段1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "6c0f6d02-cedf-40a9-a619-dc4c830039a4",
+    "name": "南澳好糧食堂 Good Eats Cafe",
+    "address": "蘇澳鎮南澳路13-1號",
+    "url": "https://www.facebook.com/goodeatscafe/",
+    "findPlace": {
+      "place_id": "ChIJlZo2fSnbZzQRZh9BLYDWwDM",
+      "name": "南澳好糧食堂",
+      "formatted_address": "蘇花路二段326巷18號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "740200e9-eaa6-47ba-91b4-672c1070c968",
+    "name": "Pocafes波咖啡",
+    "address": "宜蘭縣羅東鎮純精路一段192號",
+    "url": "https://www.facebook.com/Pocafes/",
+    "findPlace": {
+      "place_id": "ChIJfezqc4fmZzQRpKPC7ZpsHf4",
+      "name": "Pocafes波咖啡",
+      "formatted_address": "純精路一段192號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "74898d91-0dbd-4089-bfab-67510ac7f948",
+    "name": "舒室咖啡",
+    "address": "宜蘭市慈安路61號",
+    "url": "https://www.facebook.com/ShuZoom/",
+    "findPlace": {
+      "place_id": "ChIJm2jgakrlZzQRmHnlV3KvS24",
+      "name": "舒室",
+      "formatted_address": "260宜蘭縣宜蘭市慈安路61號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "7509c810-3a15-4306-92ea-90dbe5dba74f",
+    "name": "ZeraCafe 頭城站舍",
+    "address": "宜蘭縣頭城鎮站舍巷1號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJQ0VzMhr3ZzQRT5DrEv3mq2w",
+      "name": "頭城站舍",
+      "formatted_address": "站舍巷1號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "76f77c16-b544-4673-a9ce-21ed6f098ee7",
+    "name": "九號咖啡音樂廣場",
+    "address": "宜蘭縣礁溪鄉溫泉路85號",
+    "url": "https://www.facebook.com/NO9cofee/",
+    "findPlace": {
+      "place_id": "ChIJC8xJOzb6ZzQRp4M6WdsOVbc",
+      "name": "九號咖啡音樂廣場",
+      "formatted_address": "溫泉路1054號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "7a84b5bd-14aa-435f-87d8-f5e85bafa432",
+    "name": "禮物咖啡",
+    "address": "宜蘭縣羅東鎮復興路一段6號",
+    "url": "https://www.facebook.com/pages/%E7%A6%AE%E7%89%A9%E5%92%96%E5%95%A1/240856706059892?rf=437026456382427",
+    "findPlace": {
+      "place_id": "ChIJI1vfnE_lZzQRvlD9ViCz37I",
+      "name": "美好排泄X物是咖啡X唱片收購 (文化幣商家)全面低消制 4/3-5無提供餐飲",
+      "formatted_address": "站前北路8號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "7d02ca70-7be7-4ae7-9858-24c31701ee5d",
+    "name": "跑馬咖啡 Paoma Cafe",
+    "address": "宜蘭縣礁溪鄉健康一街116號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJuX_x0ov7ZzQRghPzzAsXia8",
+      "name": "河馬 Homa Coffee",
+      "formatted_address": "262宜蘭縣礁溪鄉信義路71號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "81c6158e-a677-49d7-b552-5bc91152f074",
+    "name": "Deer's Café 鹿 咖啡工坊",
+    "address": "265宜蘭縣羅東鎮林森路105號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJwdCWDn_mZzQR0VodnxbEIms",
+      "name": "鹿咖啡工坊",
+      "formatted_address": "265宜蘭縣羅東鎮南門路148號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "82b82cb4-3190-4039-9966-93a2ae848c76",
+    "name": "藏酒酒莊",
+    "address": "宜蘭縣頭城鎮更新路126-50號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJk5XFe9H3ZzQRIfI-A3wker8",
+      "name": "藏酒酒莊",
+      "formatted_address": "261宜蘭縣頭城鎮更新路126-50號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "886a5e92-9e49-4df9-934c-c76e556a345f",
+    "name": "集咖啡",
+    "address": "宜蘭縣宜蘭市聖後街177號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ7zWbWcXkZzQRk2be2WUWp_Q",
+      "name": "集咖啡 餐酒館JI Express Cafe",
+      "formatted_address": "260宜蘭縣宜蘭市力行路165號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "904c5a82-d64a-4346-90f6-e7375b5dd1a9",
+    "name": "破布烏咖啡 Popuwoo Cafe",
+    "address": "宜蘭縣三星鄉三星路六段465號",
+    "url": "https://www.facebook.com/%E7%A0%B4%E5%B8%83%E7%83%8F%E5%92%96%E5%95%A1-Popuwoo-Cafe-1176803449112932/",
+    "findPlace": {
+      "place_id": "ChIJC-qYiy7gZzQRiap5iWm3MSg",
+      "name": "破布烏咖啡 Popuwoo Cafe",
+      "formatted_address": "三星路六段465號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "93f2ae9d-50f3-452b-9dc7-190dfa3264e7",
+    "name": "NORIMORI Shop & House",
+    "address": "宜蘭縣冬山鄉丸山五路60巷13號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJh0tiu_3mZzQRmIxipLuUTh0",
+      "name": "NORIMORI Shop & House",
+      "formatted_address": "270宜蘭縣蘇澳鎮江夏路2號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "94e6bbee-cec2-4727-a5a2-f9c8fa4079a9",
+    "name": "光覺咖啡 Lighten Cafe",
+    "address": " 宜蘭蘇澳鎮中原路228號",
+    "url": "https://www.facebook.com/lightenCafe/",
+    "findPlace": {
+      "place_id": "ChIJU3fgLU77ZzQRFnjQxR5vfr0",
+      "name": "光覺咖啡 Lighten Cafe",
+      "formatted_address": "270宜蘭縣蘇澳鎮中原路228號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "96439313-5b67-4cf4-8155-33f3cf1a710c",
+    "name": "Ori",
+    "address": "宜蘭市東港路二段441號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ_brCp5blZzQRNajbZQsWQic",
+      "name": "Ori Coffee & Makerspace 咖啡 ‧ 自造者",
+      "formatted_address": "東港路二段441號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "99a7cfc5-f2ef-47ca-a374-d6752b8d3bb9",
+    "name": "PonPon 乓乓雜貨咖啡",
+    "address": "宜蘭縣礁溪鄉信義路71號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJG4rDzEv6ZzQRr3zmZ4Ab6uQ",
+      "name": "PonPon 乓乓雜貨咖啡",
+      "formatted_address": "信義路71號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "a0d52fed-63c9-4328-9506-3d3d229731d3",
+    "name": "Calmhere Caffè",
+    "address": "宜蘭縣礁溪鄉礁溪路七段103巷5號",
+    "url": "https://www.instagram.com/calmhere_caffe?igsh=MXVla3B3Z25lendo",
+    "findPlace": {
+      "place_id": "ChIJo65My4f7ZzQRTYUUoGZEudc",
+      "name": "Calmhere Caffe",
+      "formatted_address": "礁溪路七段103巷5號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a51e8a50-3247-4eb8-83f4-88d5fc541aca",
+    "name": "虎咖啡",
+    "address": "宜蘭縣宜蘭市國榮路104號",
+    "url": "https://www.facebook.com/whocafe/",
+    "findPlace": {
+      "place_id": "ChIJ-1kGccHkZzQRlE6fi981yo0",
+      "name": "虎咖啡",
+      "formatted_address": "104號, 國榮路",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a965e583-6a47-4032-9ebb-4dca56dc76c3",
+    "name": "好森咖啡x 註書店",
+    "address": "宜蘭縣羅東鎮林森路117-1號",
+    "url": "https://www.facebook.com/TREE.GIII/",
+    "findPlace": {
+      "place_id": "ChIJYSScCX_mZzQR23z7o2KiLr8",
+      "name": "好森大吉",
+      "formatted_address": "268宜蘭縣五結鄉大吉一路435巷5弄8號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b293b180-81ea-442e-9fad-05070e12a960",
+    "name": " 玩逗樹桌遊咖啡",
+    "address": "宜蘭縣羅東鎮中華路154號2F",
+    "url": "https://www.facebook.com/pg/oldmajorcoffee/about/?ref=page_internal",
+    "findPlace": {
+      "place_id": "ChIJ53nHf3_mZzQRaimBB8I1efg",
+      "name": "玩逗樹桌遊咖啡-羅東店",
+      "formatted_address": "中華路154號2樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b81068ce-daf0-4462-9105-2bd533c95978",
+    "name": "小揭商行 Coffee Street CO.",
+    "address": "265 宜蘭縣羅東鎮公正街17號",
+    "url": "https://www.facebook.com/CoffeeStreetCo24/",
+    "findPlace": {
+      "place_id": "ChIJqanVrD_nZzQRLapddNLOHDs",
+      "name": "小揭商行 COFFEE STREET CO.",
+      "formatted_address": "公正街17號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "bdb5248a-5782-4b49-ac32-dcd1bcb06f0a",
+    "name": "逸境 X 心境",
+    "address": "宜蘭市七張路117號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJCR0BdDTlZzQRW45oF6i-B8o",
+      "name": "逸境咖啡",
+      "formatted_address": "260宜蘭縣宜蘭市七張路117號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "bde1cb5b-8711-4f8d-ba73-48116757d42c",
+    "name": "日吉咖啡gooddaycafe'",
+    "address": "宜蘭縣宜蘭市東港路59-11號",
+    "url": "https://www.facebook.com/gooddayDBM/",
+    "findPlace": {
+      "place_id": "ChIJdcrfttnkZzQRRw79T8ufABU",
+      "name": "日吉咖啡",
+      "formatted_address": "東港路二段431號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "c1f8b4d0-4bfb-4c4c-b222-9f23e4fb851a",
+    "name": "DOG SPACE - 寵物空間",
+    "address": "宜蘭縣礁溪鄉復興街41號",
+    "url": "https://www.facebook.com/www.dogspace.com.tw/",
+    "findPlace": {
+      "place_id": "ChIJeQzy9mTjZzQRE0Sk4TzuAWQ",
+      "name": "寵物空間-DOG.SPACE",
+      "formatted_address": "262宜蘭縣礁溪鄉大塭路19之8號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c250c327-176f-44eb-8c2e-dd75c0069f46",
+    "name": "Stay旅人書店",
+    "address": "宜蘭市碧霞街14號、宜蘭市康樂路14號行口文旅",
+    "url": "https://www.facebook.com/pg/staytravelerbookstore/about/?ref=page_internal",
+    "findPlace": {
+      "place_id": "ChIJmTySTNrkZzQR52rSedAL-UQ",
+      "name": "行口文旅",
+      "formatted_address": "260宜蘭縣宜蘭市康樂路14號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c3583caf-322a-4b17-9c6f-601d5d2b4494",
+    "name": "握咖啡Oh！cafe 宜蘭羅東店",
+    "address": "265宜蘭縣羅東鎮純精路三段453號",
+    "url": "https://www.facebook.com/pg/ohcafeilan/about/?ref=page_internal",
+    "findPlace": {
+      "place_id": "ChIJFSnw2tPlZzQRvOHW3YiJB9k",
+      "name": "握咖啡Oh！Cafe宜蘭羅東店",
+      "formatted_address": "純精路三段453號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c5fcaf08-335f-405d-a674-a325767e01cc",
+    "name": "舊書櫃-二手書 咖啡 輕食",
+    "address": "宜蘭市宜興路一段280號",
+    "url": "https://www.facebook.com/yilanbooks/",
+    "findPlace": {
+      "place_id": "ChIJtfm9BdrkZzQRs6yMfR0SVEE",
+      "name": "宜蘭 舊書櫃 人文咖啡",
+      "formatted_address": "265宜蘭縣羅東鎮中正北路124巷2-1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "cc17538e-d5b4-4486-b7f0-4132d71614a9",
+    "name": "dew 36 綻露 coffee elite",
+    "address": "宜蘭市女中路二段385號",
+    "url": "https://www.facebook.com/dew36elite/",
+    "findPlace": {
+      "place_id": "ChIJNWRby9DlZzQRTcWjcqK0RpE",
+      "name": "B Love hair salon",
+      "formatted_address": "260宜蘭縣宜蘭市女中路二段385號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "cc1b0661-b929-4149-a0a1-d438fd0f29d6",
+    "name": "Aqua Cafe 水色咖啡",
+    "address": "花蓮縣吉安鄉吉祥七街13號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJSaL4CrOjaDQRs7uhq9BUMpY",
+      "name": "Aqua Cafe《水色咖啡》假日連假預約制（粉專預約勿留電話）",
+      "formatted_address": "吉祥七街13號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "cd78321f-ce02-463d-8e66-aa41058a8ea0",
+    "name": "品品99 咖啡 輕食",
+    "address": "268宜蘭縣五結鄉鎮安路63巷2號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ9zjaWimqQjQREQMeNZYjenw",
+      "name": "PP.99 CAFE (最後點餐15:00，星期二，三店休）最新資訊請看粉絲頁",
+      "formatted_address": "鎮安路63巷2號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "cde192a3-8668-4094-a3c0-ee8a670c946c",
+    "name": "逗逗商號",
+    "address": "宜蘭縣宜蘭市弘志路81號",
+    "url": "https://www.facebook.com/DouKafe/",
+    "findPlace": {
+      "place_id": "ChIJr8vfIujkZzQRuhi131byKFw",
+      "name": "逗逗商號",
+      "formatted_address": "弘志路81號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "cebc038b-2fa6-4717-a212-a214d25ee2b9",
+    "name": "和平街屋",
+    "address": "宜蘭縣頭城鎮和平街135之2號",
+    "url": "https://www.facebook.com/%E5%92%8C%E5%B9%B3%E8%A1%97%E5%B1%8B-188237697932692/",
+    "findPlace": {
+      "place_id": "ChIJSWy1j0L3ZzQRTKMbbeCznAE",
+      "name": "和平街屋",
+      "formatted_address": "和平街135之2號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ced6ba61-2234-4373-adc7-25214c53b2c8",
+    "name": "袋鼠咖啡",
+    "address": "265宜蘭縣羅東鎮忠孝路99號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ2Y6-HX7mZzQRjzAmBXdV4oY",
+      "name": "袋鼠咖啡",
+      "formatted_address": "忠孝路99號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d0f4ba73-c744-457c-b4cf-a8a1a0e29bff",
+    "name": "大手小手咖啡屋",
+    "address": "260宜蘭縣宜蘭市建業路85號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJtfn-2pPlZzQRcSKipgZ8-yY",
+      "name": "大手小手咖啡屋",
+      "formatted_address": "建業路85號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "d1f38364-bc6c-4d2d-b7e7-0f981cc8d029",
+    "name": "散步Cafe Sanpo",
+    "address": "宜蘭縣宜蘭市和睦路2-20號",
+    "url": "https://www.facebook.com/sanpo2015/",
+    "findPlace": {
+      "place_id": "ChIJhaksIt3kZzQRDNqEGO701kA",
+      "name": "散步cafe sanpo ◤ 假日6位（包含6）內用低消金額$250，基本需要一杯飲品◢",
+      "formatted_address": "和睦路2之20號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d4cac5dc-768d-464e-a47d-f8694c399c9b",
+    "name": "Resort Brew Coffee Co.",
+    "address": "宜蘭市農權路二段30號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJSW_7gunkZzQRuueWp018JQM",
+      "name": "resort.brew.coffee.co. 7/15最後營業",
+      "formatted_address": "農權路二段30號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "d83b252c-295c-441e-870f-1cd36c271189",
+    "name": "歐麟咖啡館",
+    "address": "宜蘭市女中路二段389號1樓",
+    "url": "https://www.facebook.com/oulincoffeeshop/",
+    "findPlace": {
+      "place_id": "ChIJNXjj6ujkZzQRw0Z2vg5aKVE",
+      "name": "歐麟咖啡館",
+      "formatted_address": "女中路二段389號1 樓",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "dc365e64-79d3-43de-bb30-ec976cc37813",
+    "name": "定邦咖啡",
+    "address": "宜蘭縣礁溪鄉白雲二路173號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJO6Hjiz76ZzQRwD19qUw2fNY",
+      "name": "定邦咖啡",
+      "formatted_address": "白雲二路173號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "dd65c9c1-cf82-44d0-a472-f45ef5eb6d83",
+    "name": "一弄咖啡",
+    "address": "宜蘭縣宜蘭市進士路151巷1弄2號",
+    "url": "https://www.facebook.com/%E4%B8%80%E5%BC%84%E5%92%96%E5%95%A1-747592638662867/",
+    "findPlace": {
+      "place_id": "ChIJ74tnBezkZzQRLceyVadknGQ",
+      "name": "一弄咖啡",
+      "formatted_address": "進士路二段387巷2弄49號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e20a777a-d43c-45f7-a3ab-0d492e3d21e6",
+    "name": "文鳥公寓",
+    "address": "新北市板橋區國泰街120號",
+    "url": "https://www.facebook.com/buncho.apartment",
+    "findPlace": {
+      "place_id": "ChIJ1TYCGkz6ZzQRnZ3pAbhGDw4",
+      "name": "文鳥咖啡",
+      "formatted_address": "220新北市板橋區國泰街120號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e2a42637-3120-4201-a5c0-0d47b4c448ae",
+    "name": "Full House Coffee",
+    "address": "宜蘭縣宜蘭市擺厘路9-8號",
+    "url": "https://www.facebook.com/FullHouseCoffee/",
+    "findPlace": {
+      "place_id": "ChIJw5xYRu_kZzQRBZRoGlSpUnE",
+      "name": "Full House Coffee",
+      "formatted_address": "擺厘路9-8號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e526bfd5-abc6-4667-bf27-a14fafc02ac1",
+    "name": "之間；",
+    "address": "宜蘭縣宜蘭市武營街72號一樓",
+    "url": "https://www.facebook.com/zhijianbookscafe",
+    "findPlace": {
+      "place_id": "ChIJVwm1U8TkZzQRe4V_GEXEGAk",
+      "name": "之間",
+      "formatted_address": "武營街72號一樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ea989c8d-b177-4ac7-bf9a-9e24a93a2688",
+    "name": "里海咖啡",
+    "address": "宜蘭縣礁溪鄉和平路107號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJfZ16wkz6ZzQRCweZrN2ohpE",
+      "name": "里海咖啡",
+      "formatted_address": "262宜蘭縣礁溪鄉玉龍路二段406號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "eea24637-a454-4067-9771-5393a93b0839",
+    "name": "Café SoDavid",
+    "address": "宜蘭縣羅東鎮中華路255號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJb_IbDdTlZzQR-E2HSpo4Nw0",
+      "name": "CAFÉ SoDavid",
+      "formatted_address": "中華路255號26541 Lotung",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "eef9222f-0210-48c9-872d-46bd65828a79",
+    "name": "Link88",
+    "address": "宜蘭縣蘇澳鎮中山路一段88號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJvwEsiDboZzQR8rqSG04FhIE",
+      "name": "Link88咖啡廳（寵物友善）",
+      "formatted_address": "中山路一段88號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "f4d501f2-71a9-4de8-a1f7-c477c9c684f1",
+    "name": "登出咖啡",
+    "address": "260宜蘭縣宜蘭市民權路二段7號",
+    "url": "https://www.facebook.com/Logout_workshop-106581557628671/",
+    "findPlace": {
+      "place_id": "ChIJk_L4Bg3lZzQRVNIaL1V-_ak",
+      "name": "一藍茶坊",
+      "formatted_address": "神農路二段100號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "fab4d0b8-114a-4459-b5cf-f415ab35a1bf",
+    "name": "熊來了",
+    "address": "宜蘭縣宜蘭市民權路二段178號",
+    "url": "https://www.facebook.com/wemacafe/",
+    "findPlace": {
+      "place_id": "ChIJC2aes-3kZzQR6V2mAxStjZc",
+      "name": "熊與喵咖啡(永久歇業)｜活動需求請搜尋［好時光派對企劃］",
+      "formatted_address": "260宜蘭縣宜蘭市嵐峰路二段20號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  }
+]

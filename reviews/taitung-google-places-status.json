@@ -1,0 +1,578 @@
+[
+  {
+    "id": "082afd44-fe5e-4877-8d24-b82f82945ced",
+    "name": "目目咖啡",
+    "address": "台東市更生路404巷8號",
+    "url": "https://www.facebook.com/mumucoffeeshop/",
+    "findPlace": {
+      "place_id": "ChIJuQHZlmu5bzQR2m_37BVb6ZI",
+      "name": "目目咖啡【自家烘培｜咖啡豆專賣 | 整模蛋糕預定 】",
+      "formatted_address": "更生路404巷8號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0853e6a6-af48-4edb-95e5-ebe49f875e8c",
+    "name": "黑手咖啡 HeySoul Cafe",
+    "address": "太麻里鄉金崙路422號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ0d2orYPTbzQRzOUGbpOBcmM",
+      "name": "黑手咖啡 HeySoul Cafe",
+      "formatted_address": "金崙路422號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "08d36447-2cbe-4bc5-9c01-ef8303760f2f",
+    "name": "黑孩子黑咖啡",
+    "address": "台東市知本路一段766號",
+    "url": "https://www.facebook.com/black.kid.cafe/",
+    "findPlace": {
+      "place_id": "ChIJ_70HdMO3bzQR_904PMC5N_A",
+      "name": "黑孩子黑咖啡",
+      "formatted_address": "知本路一段766號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "091210c1-2090-47f2-8426-adbc8c9c1131",
+    "name": "小曼咖啡店",
+    "address": "台東縣台東市中華路一段376巷33號",
+    "url": "https://www.facebook.com/%E5%B0%8F%E6%9B%BC%E5%92%96%E5%95%A1-195900670429323",
+    "findPlace": {
+      "place_id": "ChIJPVosPT-5bzQRwTnv5Hj4vHM",
+      "name": "小曼咖啡店",
+      "formatted_address": "中華路一段376巷33號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0912f5ae-aa71-43e7-be5a-dde65c046b69",
+    "name": "Mese Coffee 草月咖啡館/自家烘焙精品咖啡",
+    "address": " 臺東市仁德街60號",
+    "url": "https://www.facebook.com/mese.coffee/",
+    "findPlace": {
+      "place_id": "ChIJ1YcUOEe5bzQRY84I4kBSneQ",
+      "name": "Mese Coffee 草月咖啡館",
+      "formatted_address": "仁德街54號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "1bc51fea-4bee-46a0-88b6-4a9b830392e6",
+    "name": "4.5公里咖啡",
+    "address": "台東縣池上鄉3鄰33號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ_-TGh3QLbzQRCGL18COapyo",
+      "name": "4.5公里咖啡",
+      "formatted_address": "3鄰33號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "1f0599af-cfef-49c7-9b42-603810444b63",
+    "name": "洛恩米薩克 Roen Misak",
+    "address": "959台東縣東河鄉號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJQUR2iO-ibzQRpU1s2iwxwyM",
+      "name": "洛恩米薩克 Roen Misak",
+      "formatted_address": "959臺東縣東河鄉號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "256ddf53-d1e6-4f53-a031-f649214b7cea",
+    "name": "咖啡淵緣",
+    "address": "950 臺東市新生路608巷4號",
+    "url": "https://www.facebook.com/coffeeyuanyuan/",
+    "findPlace": {
+      "place_id": "ChIJBY8Qb225bzQRI5wqAspiMtc",
+      "name": "咖啡淵緣 台東精品咖啡",
+      "formatted_address": "新生路608巷4號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "382bb93b-60b9-4493-a920-7e3080b10521",
+    "name": "蘭嶼海很藍咖啡",
+    "address": "台東蘭嶼鄉紅頭村4號",
+    "url": "https://www.facebook.com/filmbluecafe/about/?ref=page_internal&locale=zh_TW",
+    "findPlace": {
+      "place_id": "ChIJ_____0AJcDQR6leWtmPBpDI",
+      "name": "海很藍咖啡/手作選物",
+      "formatted_address": "紅頭4號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "40ebad36-9d8b-4d73-9dde-d5a8927347bf",
+    "name": "石在有人咖啡館",
+    "address": "台東縣綠島鄉公館村60號",
+    "url": "https://www.facebook.com/TheReefsCafe60/",
+    "findPlace": {
+      "place_id": "ChIJ28ZI07KNbzQR1IWxFYoGM28",
+      "name": "石在有人咖啡館",
+      "formatted_address": "60號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "43a5da84-34a2-430c-8e5c-c8230cfde045",
+    "name": "墾墨咖啡館",
+    "address": "台東市更生路1208號",
+    "url": "https://www.facebook.com/communitytaitung/",
+    "findPlace": {
+      "place_id": "ChIJ9Z2UBnm5bzQR1xN0aERJF7I",
+      "name": "墾墨咖啡 Community Cafe'（Last Order 17:00)",
+      "formatted_address": "更生路1208號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "5b940f3f-0769-40bc-a12a-84cc4b00c304",
+    "name": "Deep Coffee",
+    "address": "台東縣台東市豐榮路24巷1號",
+    "url": "https://www.facebook.com/deepcoffee241/",
+    "findPlace": {
+      "place_id": "ChIJk_ZWVRq5bzQRGIYKlv4gwIc",
+      "name": "Deep Coffee",
+      "formatted_address": "豐榮路24巷1號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "740a665b-83f8-4baa-8033-1dfd91904e49",
+    "name": "逗留豆遊",
+    "address": "台東市東河鄉都蘭村都蘭121-1號",
+    "url": "https://www.facebook.com/mjcafe.dulan/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJUefvQOaibzQRgkPE6ae_xL4",
+      "name": "逗留豆遊",
+      "formatted_address": "121-1",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "873bb691-13d2-48d1-87eb-7adcc44d1d2a",
+    "name": "食冊café書店",
+    "address": "台東市洛陽街265號",
+    "url": " https://www.facebook.com/diningbooks/",
+    "findPlace": {
+      "place_id": "ChIJd9DlXmy5bzQRJE7OARderag",
+      "name": "食冊cafe書店",
+      "formatted_address": "洛陽街265號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "8d25448c-4762-4873-a810-c81de1f1e0cc",
+    "name": "Flight cafe 福來東咖啡",
+    "address": "台東市傳廣路457-1號",
+    "url": "https://www.facebook.com/flight457/",
+    "findPlace": {
+      "place_id": "ChIJGxYOIGm5bzQR3LFMYMJgEl4",
+      "name": "福來東咖啡-Flight Cafe",
+      "formatted_address": "傳廣路457-1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "8fce43d2-9b7d-4f05-b537-71b38f555c9d",
+    "name": "Wow’s邦查（波浪屋2號倉庫）",
+    "address": "台東縣新生路105號",
+    "url": "https://www.facebook.com/Wowspangcha/",
+    "findPlace": {
+      "place_id": "ChIJLeAZ5xW5bzQRdwkrQJN7xPk",
+      "name": "台東波浪屋-原民文創產業聚落 TTstyle Arts & Crafts-Wavy Roof Crafts",
+      "formatted_address": "新生路105號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "9bbb12a1-0ce5-493d-871e-919bc7dc4283",
+    "name": "Wave coffee 浪頭咖啡",
+    "address": "台東縣蘭嶼鄉東清村",
+    "url": "@Laiyu.Wavecoffee",
+    "findPlace": {
+      "place_id": "ChIJUV5daSOxcTQRbFv_rPgJ700",
+      "name": "The Wave 等浪咖啡衝浪店",
+      "formatted_address": "946屏東縣恆春鎮南灣路64號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a31a624e-f517-4d2f-9306-18a0746617ad",
+    "name": "走走池上",
+    "address": "台東縣池上鄉中山路99號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJGZIGjGEMbzQR0_iAaAAeyBg",
+      "name": "走走池上",
+      "formatted_address": "中山路99號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a346d174-e99d-49c9-b038-064f0266d8db",
+    "name": "默默珈琲手沖館",
+    "address": "台東縣池上鄉中華路61號",
+    "url": "沒有, 但在GoogleMap上可找到",
+    "findPlace": {
+      "place_id": "ChIJQ3oC7loNbzQR27XmktbaqTU",
+      "name": "默默珈琲手沖館 (租約到期囉~房東收回自用~The rent is due, see ya somewhere! Thanks all!)",
+      "formatted_address": "中華路61號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "a7e8fecb-51ae-424e-bd46-23eb77c9d307",
+    "name": "太麻里文創咖啡館",
+    "address": "950台東縣台東市福建路307號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJv0lZpD25bzQRbfQpg2BhZXo",
+      "name": "太麻里文創咖啡館",
+      "formatted_address": "福建路307號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b1eb66c2-9fd2-4269-9e06-e67db079d79e",
+    "name": "Coffeeloft-咖啡工寓",
+    "address": "台東市浙江路36號",
+    "url": "https://www.facebook.com/coffeeloftapartment/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJ09NnNEC5bzQRLCt2axHt8_4",
+      "name": "咖啡工寓｜台東民宿1569號 咖啡店固定週二店休",
+      "formatted_address": "浙江路36號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b8fdea1c-b2f7-45cf-b811-2cd8398fb18c",
+    "name": "台東2號咖啡館",
+    "address": "台東市福建路178號",
+    "url": "https://www.facebook.com/2%E8%99%9F%E5%92%96%E5%95%A1%E9%A4%A8-108716764052781/?eid=ARAH29fXPuMijVIwcMoi9dzwcSMEVOmm_EmOn_QDUmc_4AW8f-DzLgyhDv7o8fuRJift5fG3TCCVXsAV",
+    "findPlace": {
+      "place_id": "ChIJ6bzDR8O5bzQRtUGw9W0SVQM",
+      "name": "2號咖啡館",
+      "formatted_address": "福建路178號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c61193cf-be30-42d5-92ab-e556042ef631",
+    "name": "友蛇咖啡",
+    "address": "台東市岩灣路298號",
+    "url": "https://www.facebook.com/profile.php?id=100089101092965",
+    "findPlace": {
+      "place_id": "ChIJqbngCW67bzQRtcACLUSEI0g",
+      "name": "Snake Cafe",
+      "formatted_address": "岩灣路298號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c8a9c49c-03dd-420d-b673-2c7ade0246ac",
+    "name": "怪豆咖啡",
+    "address": "台東市更生路504號",
+    "url": "https://www.facebook.com/ODDO.COFFEE/",
+    "findPlace": {
+      "place_id": "ChIJf15OPmy5bzQRonSf1Rv-dTI",
+      "name": "怪豆咖啡 ODDO COFFEE",
+      "formatted_address": "更生路504號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d26d6524-0a2a-48fc-801c-b533c4b7cd9f",
+    "name": "佐佑品有機咖啡莊園",
+    "address": "963台東縣太麻里乡太麻里鄉89之1號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJdf3wGWbJbzQR7u8eCHQTdZM",
+      "name": "佐佑品咖啡",
+      "formatted_address": "963臺東縣太麻里鄉89之1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d7621396-d07e-44e0-9f05-30b0e5c67e9a",
+    "name": "青蔦菓子咖啡",
+    "address": "台東縣台東市中正路251巷19號",
+    "url": "https://www.facebook.com/nicolenicklovelycafe2017/?locale2=zh_TW",
+    "findPlace": {
+      "place_id": "ChIJuf-UOz-5bzQRVwTao8ohYMA",
+      "name": "青蔦菓子咖啡",
+      "formatted_address": "950臺東縣台東市中華路一段559巷4號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d86983d2-6e7a-47c7-99f5-51299606a4f3",
+    "name": "193咖啡館",
+    "address": "95052台東縣台東市洛陽街193號",
+    "url": "https://www.facebook.com/193cafe/",
+    "findPlace": {
+      "place_id": "ChIJK0jsnWy5bzQReMeAkRwQFx4",
+      "name": "193咖啡館",
+      "formatted_address": "洛陽街193號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "dafd0066-d029-4730-b5fc-3ca22f431450",
+    "name": "山木咖啡",
+    "address": "台東市中華路四段99號",
+    "url": "https://www.facebook.com/sunmoon0201/",
+    "findPlace": {
+      "place_id": "ChIJQybbQw65bzQRq9DJ6nZzwGw",
+      "name": "山木 SunMoon",
+      "formatted_address": "中華路四段99號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "dbaecc7e-463e-4bc3-98c9-89f22733add3",
+    "name": "Cheela小屋",
+    "address": "台東縣台東市新生路395-1號",
+    "url": "https://www.facebook.com/pages/Cheela%E5%B0%8F%E5%B1%8B/196715477024822?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJbclONxO5bzQRCIR3IUQBGsQ",
+      "name": "cheela 小屋咖啡館",
+      "formatted_address": "新生路395-1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e68f1b6c-a355-40b3-9c5e-3af2297104dd",
+    "name": "九號咖啡館 NO.9 Gourmet Coffee",
+    "address": "台東縣池上鄉慶豐村6鄰56號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ-8ZzrIwMbzQRbpJGX0qBjAQ",
+      "name": "九號咖啡館 NO.9 Gourmet Coffee",
+      "formatted_address": "56號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f3a77b2b-fc01-4870-9a5f-f836dd6042b5",
+    "name": "AU cafe 鷗咖啡台東店",
+    "address": "950台東縣台東市新生路25號",
+    "url": "https://m.facebook.com/profile.php/?id=100064027297947&name=xhp_nt__fblite__profile__tab_bar&profile_tab_item_selected=about",
+    "findPlace": {
+      "place_id": "ChIJoWMFNx-5bzQRzXbBfTQQ9iA",
+      "name": "AU CAFÉ-鷗咖啡台東店",
+      "formatted_address": "新生路25號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "fa0f10c0-6e80-4c98-8a29-c1c46772405a",
+    "name": "林道咖啡烘豆工作室",
+    "address": "台東縣卑南鄉溫泉村鎮樂36-8號",
+    "url": "https://leadingcoffeetw.com/",
+    "findPlace": {
+      "place_id": "ChIJZ1hKc87JbzQRdC3yNTeVLAM",
+      "name": "林道咖啡烘豆工作室 LEADING COFFEE",
+      "formatted_address": "溫泉村鎮樂36-8號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  }
+]

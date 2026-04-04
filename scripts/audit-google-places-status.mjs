@@ -28,6 +28,12 @@ const DATASETS = {
   taichung: createCafeNomadDataset("taichung", "Taichung"),
   tainan: createCafeNomadDataset("tainan", "Tainan"),
   kaohsiung: createCafeNomadDataset("kaohsiung", "Kaohsiung"),
+  hsinchu: createCafeNomadDataset("hsinchu", "Hsinchu"),
+  taoyuan: createCafeNomadDataset("taoyuan", "Taoyuan"),
+  yilan: createCafeNomadDataset("yilan", "Yilan"),
+  hualien: createCafeNomadDataset("hualien", "Hualien"),
+  taitung: createCafeNomadDataset("taitung", "Taitung"),
+  keelung: createCafeNomadDataset("keelung", "Keelung"),
 };
 
 async function getApiKey() {

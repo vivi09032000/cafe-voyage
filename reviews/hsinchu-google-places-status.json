@@ -1,0 +1,5067 @@
+[
+  {
+    "id": "0062ffd1-162d-4630-8c23-5ad3f14e265a",
+    "name": "ドキドキ珈啡Doki Doki Cafe",
+    "address": "新竹市東區北大路92巷40弄1號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJx3xzVAA1aDQRk2dymcqZBT4",
+      "name": "ドキドキ珈啡 ｜純植 • 寵物友善歡迎落地奔跑",
+      "formatted_address": "1樓, No. 1號北大路92巷40弄",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "01256204-116c-430f-ad33-163a5f7f24e7",
+    "name": "問號咖啡 Why Coffee Bar",
+    "address": "300新竹市東區光復路二段960號",
+    "url": "https://www.instagram.com/whycoffeebar",
+    "findPlace": {
+      "place_id": "ChIJ01ZgzAc1aDQRqRg7eaJAycg",
+      "name": "問號咖啡 Why Coffee Bar",
+      "formatted_address": "光復路二段960號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "02333e1c-c7ab-4cd1-8797-10e20a8c2be0",
+    "name": "ARTROOM14藝室",
+    "address": "300新竹市北區勝利路300號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ9xFNNuA1aDQRny7YMzClbBI",
+      "name": "Artroom14藝室二店",
+      "formatted_address": "南門街102號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "040bbb17-b33a-497a-8241-51344a536140",
+    "name": "Mr.Moon 月亮先生咖啡館",
+    "address": "新竹縣竹北市嘉豐五路二段29號",
+    "url": "https://www.facebook.com/mr.mooncoffee/",
+    "findPlace": {
+      "place_id": "ChIJd3wez5Q2aDQRHjbvsKUhSKI",
+      "name": "Mr.Moon月亮先生-假日無提供訂位",
+      "formatted_address": "嘉豐五路二段29號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0556dad9-1487-4c94-8736-13342ead0e65",
+    "name": "KURUMI哭哭咖啡二店",
+    "address": "新竹縣竹北市嘉豐六路二段88號",
+    "url": "https://m.facebook.com/kurumi2021/",
+    "findPlace": {
+      "place_id": "ChIJxfsWkOg3aDQRALzhOx_-rh0",
+      "name": "KURUMI",
+      "formatted_address": "嘉豐六路二段88號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "068bde72-3e54-4e06-9ab3-ef79385b98eb",
+    "name": "橋恩咖啡竹北店",
+    "address": "新竹縣竹北市文信路297號",
+    "url": "https://cafe-20146.business.site/",
+    "findPlace": {
+      "place_id": "ChIJP3GKDes2aDQR-yf7OSpWNzo",
+      "name": "橋恩咖啡",
+      "formatted_address": "文信路297號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "06e678fd-17cc-43f6-8bbd-f5cf9605de3c",
+    "name": "HILA BASECAMP",
+    "address": "新竹市北區新竹市長安街107號",
+    "url": "https://www.facebook.com/HILA.BASECAMP",
+    "findPlace": {
+      "place_id": "ChIJTUUsnMA1aDQRiTH5lcM94RA",
+      "name": "HILA BASECAMP",
+      "formatted_address": "長安街107號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "075eb467-5231-483f-a774-2af1fdb8a10f",
+    "name": "一天咖啡ONEDAY",
+    "address": "新竹市東區東門街27號",
+    "url": "https://mybzplus.tw/om3qoq27.html",
+    "findPlace": {
+      "place_id": "ChIJK6xv-cI1aDQRQ-Wo9cpNPyQ",
+      "name": "一天咖啡ONEDAYCOFFEE",
+      "formatted_address": "東門街27號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "0895e66b-12ce-4876-a0b7-87cb2f1fb33e",
+    "name": "溫島Wen Dao café",
+    "address": "300新竹市東區自由路66巷15號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJYRBRQQA1aDQRyTTEWsTmtJA",
+      "name": "溫島 Wen Dao café│店休日不固定，請參考IG公告",
+      "formatted_address": "自由路66巷15號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "097c4c4d-0dd8-48ed-8c91-4b9dfea07b4b",
+    "name": "咖啡．候機室The Departure Lounge新竹光復店",
+    "address": "新竹市東區光復路一段360-8號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJCzGL4oA3aDQRrIH82PEZ834",
+      "name": "咖啡候機室 新竹光復店",
+      "formatted_address": "光復路一段360-8號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0bc55009-f12a-4387-acbe-bad7dacba17c",
+    "name": "葉月舍",
+    "address": "300新竹市北區仁德街78號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJtZXQXgA1aDQRaM_FE0o9Jp8",
+      "name": "小日和（公休IG公告為主）",
+      "formatted_address": "仁德街78號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0e7ed56e-c572-4625-a657-7202c1c71890",
+    "name": "客棧咖啡日式早午餐",
+    "address": "新竹市信義街82號",
+    "url": "https://www.facebook.com/%E5%AE%A2%E6%A3%A7%E5%92%96%E5%95%A1%E6%97%A5%E5%BC%8F%E6%97%A9%E5%8D%88%E9%A4%90-%E3%82%B3%E3%83%BC%E3%83%92%E3%83%BC%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81-616179038555121/",
+    "findPlace": {
+      "place_id": "ChIJqzjP--k1aDQRf-5XvrT8h9E",
+      "name": "克蔓莉珈琲餐館",
+      "formatted_address": "林森路2號四樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0f43df3d-d859-4aba-b2f5-15f8ac2de64c",
+    "name": "咖啡的家",
+    "address": "新竹科學園路72號",
+    "url": "https://www.coffeehome.com.tw",
+    "findPlace": {
+      "place_id": "ChIJVWnppBU2aDQRkE9frakGqPw",
+      "name": "咖啡的家",
+      "formatted_address": "科學園路72號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0f550e0e-0c28-496a-b500-64fedf552b9a",
+    "name": "木耳生活藝術之Family Pizza",
+    "address": "新竹縣竹北市高鐵二路65號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJn2Jgrqs3aDQRZ3QzIrgPdSA",
+      "name": "Family Pizza",
+      "formatted_address": "302新竹縣竹北市高鐵二路65號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0f8c100a-4d43-44ba-a06e-d279d751b944",
+    "name": "SUSUMU",
+    "address": "325桃園市龍潭區中興路317巷30弄7號",
+    "url": "https://instagram.com/susumu_240?utm_medium=copy_link",
+    "findPlace": {
+      "place_id": "ChIJ1S0bmAU9aDQRwOGvPA1lSus",
+      "name": "舒舒福-SUSUMU-楊梅咖啡甜點 蛋糕/甜點 新址:楊梅新農街84號",
+      "formatted_address": "326桃園市楊梅區新農街84號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "103a0b62-0e24-449e-8c5a-dfe6227cb511",
+    "name": "謐謐甜點",
+    "address": "新竹市民富街151號",
+    "url": "https://www.facebook.com/SecretPatisserie/",
+    "findPlace": {
+      "place_id": "ChIJCcq6EaI1aDQRHBs0FxIPmO0",
+      "name": "The Secret 謐謐（竹北嘉豐店）",
+      "formatted_address": "302新竹縣竹北市嘉豐南路二段11號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "11741de6-c6e6-4c7d-b795-10d8886fd168",
+    "name": "沐咖啡",
+    "address": "300新竹市東區光復路一段89巷131號",
+    "url": "https://www.facebook.com/mu.cafe131/",
+    "findPlace": {
+      "place_id": "ChIJ20DmMy42aDQRdTN_lTS2EuA",
+      "name": "沐 咖啡",
+      "formatted_address": "光復路一段89巷131號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "11cb3652-13fa-4494-9976-818fbfe85738",
+    "name": "Cafe On Air",
+    "address": "新竹市東區民族路33巷55號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJR15FysM1aDQR5u32c5nJTXs",
+      "name": "吉惡咖啡",
+      "formatted_address": "大同路110號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "137d229e-b1bc-4239-b122-6f6db72c8dfc",
+    "name": "Chez Fen",
+    "address": "竹北市嘉豐五路二段30號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ2ysGF1Y2aDQRpjmLQRZG3SI",
+      "name": "(營業時間請看IG、FB)Chez Fen",
+      "formatted_address": "嘉豐五路二段30號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "1404a9b1-d017-4704-99f4-3f8568846f07",
+    "name": "I'mmat cafe 小墊子",
+    "address": "新竹市東區三民路154號",
+    "url": "https://www.facebook.com/CafeImMat",
+    "findPlace": {
+      "place_id": "ChIJB48r8do1aDQRzTgEg63wN7w",
+      "name": "小墊子咖啡甜點 ImMat Cafe",
+      "formatted_address": "三民路154號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "1438b2a3-de57-4fd9-9944-28dbd3530571",
+    "name": "棲息地咖啡",
+    "address": "新竹縣竹東鎮中興路二段49號",
+    "url": "https://m.facebook.com/habitatcafe0802/",
+    "findPlace": {
+      "place_id": "ChIJ8ZaIwIxJaDQRMPKBBY8LI9E",
+      "name": "Habitat Café 棲息地自烘精品咖啡",
+      "formatted_address": "中興路二段49號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "149b58e9-a9cf-49b2-955b-ff674fe1e456",
+    "name": "握咖啡 OH cafe - 新竹金山店",
+    "address": "新竹市東區金山八街48號",
+    "url": "https://www.facebook.com/ohcafe.Hsinchu/",
+    "findPlace": {
+      "place_id": "ChIJgWGNoCU2aDQRm8Qb4tYu6Mo",
+      "name": "握咖啡 Oh!Cafe - 新竹金山店",
+      "formatted_address": "金山八街48號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "172bf2f7-78f5-48bb-bae7-502fe350a02d",
+    "name": "boring coffee",
+    "address": "新竹市東區世傑路228號",
+    "url": "https://www.instagram.com/coffeeboring/",
+    "findPlace": {
+      "place_id": "ChIJI62wbIc3aDQREOemzNdN5o4",
+      "name": "( boring coffee )",
+      "formatted_address": "世傑路228號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "17ec1927-10cb-41e5-b7f7-688d909336ab",
+    "name": "見域Kendama",
+    "address": "新竹市北門街74號",
+    "url": "www.facebook.com/kendamahsinchu/",
+    "findPlace": {
+      "place_id": "ChIJ2y13nzo1aDQRX_jxRBWhzug",
+      "name": "見域",
+      "formatted_address": "北門街54-78號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "1a16858b-75a6-49ff-be89-b4bb3b4cad31",
+    "name": "綠禾塘。翔頂咖啡",
+    "address": "新竹縣竹北市文興路一段123-12號",
+    "url": "https://www.facebook.com/綠禾塘翔頂咖啡-332162806915678",
+    "findPlace": {
+      "place_id": "ChIJob7ivPg2aDQRJRL_C_g5PR8",
+      "name": "翔頂咖啡",
+      "formatted_address": "文興路一段121號號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "1bca01b9-c2da-4a9b-b59c-0dc41bb24d71",
+    "name": "莯Mu cafe&dessert",
+    "address": "300新竹市東區光復路二段199號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ-UKJ63Q2aDQRJXlRwsQXKlU",
+      "name": "莯mu cafe dessert",
+      "formatted_address": "光復路二段199號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "1d715a3c-24a1-45e6-ba10-8844b43998ef",
+    "name": " Hollatte馥拿鐵",
+    "address": "新竹市東區金山七街70號",
+    "url": "https://www.facebook.com/Hollatte/?ref=ts&fref=ts",
+    "findPlace": {
+      "place_id": "ChIJreUDFSU2aDQRbx-qMJHvrvI",
+      "name": "Hollatte馥拿鐵 自烘咖啡 金山總店",
+      "formatted_address": "金山七街70號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "204498f6-ba66-4a66-90ef-c85b08a1a8dd",
+    "name": "布蕾咖啡 Cafe Brûlée",
+    "address": "新竹市東區長春街64巷2號",
+    "url": "https://www.facebook.com/BruLeeCafe/",
+    "findPlace": null,
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "No Google Places candidate found"
+    }
+  },
+  {
+    "id": "21cfcb9b-9b23-43d6-bb66-f16090ce07de",
+    "name": "赤狐咖啡 Red Fox Coffee",
+    "address": "300新竹市東區東山街32巷2號1樓",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJxzjIFJI1aDQR4Xypw31h36s",
+      "name": "赤狐咖啡 Red Fox Coffee",
+      "formatted_address": "東山街32巷2號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "22288c61-4cc3-4d79-b64d-466a48d92e8d",
+    "name": "Piccolo Coffee",
+    "address": "新竹市東區建中路101號",
+    "url": "https://www.facebook.com/Piccolo-Coffee-151877254822450/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJ6Qg3-Ws2aDQRvUUx2sSZhBg",
+      "name": "Script Coffee",
+      "formatted_address": "建中路101號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "23b285e7-d5f5-47bf-9308-9a138bc8374a",
+    "name": "Princeken Coffee 普林斯肯咖啡館 竹北",
+    "address": "302053新竹縣竹北市高鐵八路188號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJD_bbULw3aDQRFVgKAGPZwSg",
+      "name": "Princeken Coffee 普林斯肯咖啡館 竹北",
+      "formatted_address": "高鐵八路188號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "244c0247-1b9b-44a9-b728-570fc3752476",
+    "name": "Cafe De La Fleur 十畝香手作烘培",
+    "address": "Cafe De La Fleur 十畝香手作烘培",
+    "url": "https://cafe-de-la-fleur.business.site/",
+    "findPlace": {
+      "place_id": "ChIJPeQceaY3aDQRGVH3A1wGi8E",
+      "name": "樹瓅咖啡 St. Tree Cafe",
+      "formatted_address": "隘口三街22號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "255c3c3b-c691-4513-8d7c-93e97bafcd0e",
+    "name": "歐客佬咖啡農場竹北店",
+    "address": "新竹縣竹北市光明一路367號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJU0PxXJQ2aDQRgJVwPWYGDQM",
+      "name": "OKLAO歐客佬精品咖啡(竹北店)",
+      "formatted_address": "光明一路339號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "25801a20-c09d-49f2-a6f0-c46fb3d294a6",
+    "name": "HILA STEP COFFEE TAKE OUT",
+    "address": "300新竹市東區光復路二段382號",
+    "url": "https://www.facebook.com/hilastep",
+    "findPlace": {
+      "place_id": "ChIJM_5VtXI2aDQRA9PNkbdNguY",
+      "name": "HILA STEP",
+      "formatted_address": "光復路二段382號300",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "26bf266b-ec6d-4a32-800d-2e616e0271c4",
+    "name": "Oh！樂咖啡",
+    "address": "新竹縣湖口鄉中華路26號",
+    "url": "Oh！caffe樂咖啡",
+    "findPlace": {
+      "place_id": "ChIJA_pclfsxaDQRPxvjkqRaVPY",
+      "name": "歐浮找餐 Oops! Foody - 新竹湖口店",
+      "formatted_address": "中華路42號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "2757ea6f-ec5c-4bf8-82e6-4f2afc10d66f",
+    "name": "KNOCK KNOCK COFFEE",
+    "address": "300新竹市東區南大路375號",
+    "url": "https://instagram.com/knockknockcoffeebar?utm_medium=copy_link",
+    "findPlace": {
+      "place_id": "ChIJlztlJ2Q1aDQRRGtQQeon4qc",
+      "name": "諾可咖啡·早午餐 Knock Knock Coffee With Brunch",
+      "formatted_address": "南大路375號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "292f8829-e823-4207-9565-d8f570af9a21",
+    "name": "Laid Back Cafe",
+    "address": "新竹市東區關新東路321號",
+    "url": "https://www.facebook.com/LAIDBACKCAFESTUDIO",
+    "findPlace": {
+      "place_id": "ChIJLc1iVpw3aDQRpoweZ_ESZ3k",
+      "name": "來杯咖啡【關新門市】",
+      "formatted_address": "關新東路321號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "2b3ae3eb-1e5e-4f08-a2ee-963ed4219ded",
+    "name": "三羊所在",
+    "address": "新竹市北區勝利路223號",
+    "url": "https://www.facebook.com/WhereGoats/",
+    "findPlace": {
+      "place_id": "ChIJ1chtBMA1aDQRg41-cUvrhag",
+      "name": "西市汕頭館總店",
+      "formatted_address": "西安街70號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "2c5eb795-a9a5-4629-943e-5befd7ab93f0",
+    "name": "泥巴水",
+    "address": "300新竹市東區建中路118號",
+    "url": "https://instagram.com/muddywater118",
+    "findPlace": {
+      "place_id": "ChIJgwFSFK03aDQRFExDvZ3EU-E",
+      "name": "泥巴水咖啡",
+      "formatted_address": "建中路118號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "2ce0247a-bd03-4576-a043-e85b816a8519",
+    "name": "Oven Coffee sisi竹北店",
+    "address": "新竹縣竹北市勝利八街一段185號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJkVv1E-Q2aDQRd9Xqd8rGHw8",
+      "name": "sisi COFFEE",
+      "formatted_address": "勝利八街一段185號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "2d1152ea-aa03-4173-be4e-b5182b731db7",
+    "name": "巷弄田園休閒農村廚房",
+    "address": "新竹市北區東大路二段605巷50號",
+    "url": "https://www.facebook.com/farmcoffee.tw/",
+    "findPlace": {
+      "place_id": "ChIJ_VB56LM1aDQRF4H3imYfBq4",
+      "name": "巷弄田園烤肉區",
+      "formatted_address": "東大路二段605巷50號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "2db081ec-b943-4077-889f-689b98c97356",
+    "name": "somewhere cafe",
+    "address": "30041新竹市東區中央路310號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ5cL1WnU1aDQRy_vhXLpu_2o",
+      "name": "somewhere cafe",
+      "formatted_address": "中央路310號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "2df69f82-4f41-4a53-a6ad-6059c7c0cc7e",
+    "name": "日遲DIDcoffee",
+    "address": "302新竹縣竹北市嘉豐六路一段62號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ18foYNk3aDQR6bydy1yNgWw",
+      "name": "日遲DIDcoffee（可電話訂位）",
+      "formatted_address": "嘉豐六路一段62號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "2e245509-12e4-4103-ac92-38510caa56dc",
+    "name": "客美多咖啡-新竹公道店",
+    "address": "新竹市東區公道五路三段1號",
+    "url": "https://komeda.com.tw/",
+    "findPlace": {
+      "place_id": "ChIJ_eJcZ_c3aDQRW9HJsKYFO08",
+      "name": "客美多咖啡 Komeda‘s Coffee - 新竹公道店",
+      "formatted_address": "公道五路三段1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "2f2879a9-ffa3-4ef5-972f-9cc9dd88989f",
+    "name": "夜餘製豆",
+    "address": "300新竹市東區南門街63號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJpzLYgoM1aDQRz5yVxHxfcAs",
+      "name": "夜餘製豆咖啡館",
+      "formatted_address": "南門街63號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "2f8b3d3d-0e42-475c-928b-e95b8b676562",
+    "name": "有田咖啡 Youtian Cafe",
+    "address": "302新竹縣竹北市東興路二段2巷82號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJbbnAe-83aDQR48WCiPqtVZU",
+      "name": "有田咖啡 Youtian Cafe",
+      "formatted_address": "82號, No. 82號東興路二段2巷",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "31cda686-3d0f-46e1-b272-1c139558a468",
+    "name": "歲月靜好咖啡館abrazamoslavida cafe",
+    "address": "302新竹縣竹北市嘉興路239號",
+    "url": "https://www.facebook.com/abrazamoslavida1020?mibextid=LQQJ4d",
+    "findPlace": {
+      "place_id": "ChIJ-2ky1RI3aDQRreRRvp9q2Zk",
+      "name": "歲月靜好咖啡館(一組最多4位/無訂位)",
+      "formatted_address": "嘉興路239號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3265c123-f5be-4ef7-89f8-291986718f57",
+    "name": "六十一巷咖啡",
+    "address": "新竹市東區東山街61巷7號",
+    "url": "https://www.facebook.com/61巷咖啡工房河馬咖啡-503882569699697/",
+    "findPlace": {
+      "place_id": "ChIJXYyPXuY1aDQR3iHE56BGUIU",
+      "name": "61巷咖啡工房-河馬咖啡",
+      "formatted_address": "東山街61巷7號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "340832b8-6eb9-463c-9ea6-5197d8bf7f74",
+    "name": "果子咖啡清大店",
+    "address": "新竹市東區大學路1001號（國立清華大學南校區創新育成大樓1樓）",
+    "url": "http://www.gozcafe.com/",
+    "findPlace": {
+      "place_id": "ChIJw0pCKnM2aDQRO3M-yqssUWA",
+      "name": "果子咖啡新竹清大店",
+      "formatted_address": "光復路二段101號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "34507d23-3e0c-4903-9e89-8c4d7ffe2ea4",
+    "name": "喜歡咖啡",
+    "address": "新竹市北區和福街115號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJMz-c-EM1aDQRJq4szavWmrM",
+      "name": "喜歡咖啡館 Like Cafes",
+      "formatted_address": "和福街115號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "34e2d865-01bb-4385-a9d0-4c8f003c3edb",
+    "name": "結構咖啡所（目前為工作室型態，請來電預約）",
+    "address": "新竹市延平路二段447巷13弄27號",
+    "url": "https://www.facebook.com/thepeoplecoffee/",
+    "findPlace": {
+      "place_id": "ChIJERCaccA1aDQRvUfI10zqcKg",
+      "name": "結構咖啡所（目前為工作室，親洽請先訊息聯絡",
+      "formatted_address": "延平路二段",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "358240d9-0deb-4345-a393-d57714338987",
+    "name": "O.ops Café",
+    "address": "300新竹市東區信義街76號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJARfczG81aDQRkIayEuDA3rQ",
+      "name": "O.ops Café",
+      "formatted_address": "信義街76號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "35c492f5-67b2-4341-a687-14aba2a0b1e4",
+    "name": "Canimama點心舖",
+    "address": "300新竹市東區東大路一段39巷21號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJBQJd4d6pQjQRl5HJBgMuqqs",
+      "name": "Canimama點心舖",
+      "formatted_address": "東大路一段39巷21號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "36b008ed-749c-4286-87d2-669df95a695f",
+    "name": "曲嶺商行",
+    "address": "300新竹市北區光華東街22巷5號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ2YV1aDM1aDQRwITRN2dMDyc",
+      "name": "曲嶺Chuling. 熟成咖啡&甜點",
+      "formatted_address": "光華東街22巷5號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "378fac13-3761-48a6-8de1-107b52eea249",
+    "name": "轉角726、手工咖啡",
+    "address": "新竹市東區明湖路726號",
+    "url": "https://www.facebook.com/726cape/",
+    "findPlace": {
+      "place_id": "ChIJCwS5bw1KaDQRDMgvDsZ435Q",
+      "name": "轉角726, 手工咖啡",
+      "formatted_address": "明湖路726號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "37a60f3d-0607-4efb-aa6e-a2036cbc7d55",
+    "name": "路菓·if",
+    "address": "303新竹縣湖口鄉中興街181號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJd1FiuBsxaDQRH1fILE4qHN4",
+      "name": "路菓·if",
+      "formatted_address": "302新竹縣竹北市嘉興路215號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "37d46e7a-d6fc-4b80-a381-8dd20b6bae13",
+    "name": "三隻貓",
+    "address": "300新竹市北區平和街29號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJmzZfixc1aDQRthBExvabpGs",
+      "name": "三隻貓",
+      "formatted_address": "平和街29號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "386c4e7c-b3be-4a08-88e0-3691c0818707",
+    "name": "亞爾咖啡 Café d'Arles",
+    "address": "新竹市東區東大路一段81巷6號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ9V9BAAA1aDQRHH8gpHljk-M",
+      "name": "ARBAN COFFEE✦阿爾班咖啡",
+      "formatted_address": "300新竹市東區世界街12號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "38c9cfbf-6032-48e0-9b0d-4c61497a3b97",
+    "name": "Pain de mie 胖多米咖啡館",
+    "address": "新竹市北區世界街148號2樓",
+    "url": "http://www.facebook.com/paindemiecafe",
+    "findPlace": {
+      "place_id": "ChIJ-brL58A1aDQRzgLXG_f59L8",
+      "name": "Pain de mie 胖多米咖啡館",
+      "formatted_address": "2樓, No. 148號世界街",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "38d8f98a-6aca-4ff6-8583-d526bf7796db",
+    "name": "森川咖啡",
+    "address": "302新竹縣竹北市光明六路東一段245號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJzXtiQfs2aDQRp8mu80UPeUY",
+      "name": "COFFEE OBJECT咖啡曜日（外帶咖啡bar、植感飲食、寵物友善）",
+      "formatted_address": "光明六路東一段245號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3a0280bd-7375-455d-b920-9ac9e4c24c4b",
+    "name": "春芽豆逗 自家烘焙咖啡",
+    "address": "302新竹縣竹北市新光街230號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJif9-65c2aDQRLAscUH27PYc",
+      "name": "春芽豆逗 自家烘焙咖啡",
+      "formatted_address": "新光街230號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3b06f709-dfa3-4da8-a6a8-be693eacb401",
+    "name": "hsïa (café) 夏．咖啡",
+    "address": "30042新竹市東區仁愛街103號",
+    "url": "https://www.instagram.com/hsia_cafe?igsh=NmJyOXJ5cWR5NXhw",
+    "findPlace": {
+      "place_id": "ChIJkQMoFwA1aDQRS8B3p0j6IE0",
+      "name": "hsïa (café) 夏．咖啡",
+      "formatted_address": "仁愛街103號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3b5340f4-ea6a-4373-b0f2-6939e7813820",
+    "name": "ca va 小日和",
+    "address": "300新竹市北區江山街17巷之4號",
+    "url": "https://m.facebook.com/cava0811/",
+    "findPlace": {
+      "place_id": "ChIJtZXQXgA1aDQRaM_FE0o9Jp8",
+      "name": "小日和（公休IG公告為主）",
+      "formatted_address": "仁德街78號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3dca8c93-eb4b-4e67-933b-9562d1ff9cce",
+    "name": "Lambkin Cafe",
+    "address": "302新竹縣竹北市嘉豐七街143號",
+    "url": "https://m.facebook.com/Lambkincafe2011/",
+    "findPlace": {
+      "place_id": "ChIJifYVzeVHaDQR-nLiZcxdFCM",
+      "name": "Lambkin Cafe' (無麩質蛋糕專賣.12點供應)",
+      "formatted_address": "嘉豐七街143號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "3f1ea453-6ecc-4eab-bbe8-61bdc632713e",
+    "name": "Over the moon璽月咖啡-北大館",
+    "address": "300新竹市北區北大路184號",
+    "url": "https://www.facebook.com/LU.Coffee184",
+    "findPlace": {
+      "place_id": "ChIJvWNCrzM1aDQRfZzRhRNMAqY",
+      "name": "璽月咖啡-城隍館｜早午餐下午茶｜自助洗衣24H｜代客洗烘摺｜寵物友善可落地",
+      "formatted_address": "中山路34號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3f1f08ac-91e6-4ccf-9239-2f46a0034035",
+    "name": "江山藝改所 Jiang Shan Yi Gai Suo",
+    "address": "新竹市東區興達街1號",
+    "url": "https://www.jsygs-artcafe.com/",
+    "findPlace": {
+      "place_id": "ChIJM0Lg9r81aDQRXu55xK2YaM8",
+      "name": "江山藝改所",
+      "formatted_address": "興達街1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "40288b7f-94d0-490f-8a3b-d5618c0f2df0",
+    "name": "李宅Not Only Café",
+    "address": "300新竹市東區金山九街29號",
+    "url": "https://www.facebook.com/notonlycafe.bar/",
+    "findPlace": {
+      "place_id": "ChIJSfaQrus1aDQR6QNV30Em2Bg",
+      "name": "李宅Not Only Café",
+      "formatted_address": "金山九街29號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "40a02125-a93d-41db-ab98-4b2ec4396b31",
+    "name": "Shmily cafe",
+    "address": "302新竹縣竹北市六家五路一段147號",
+    "url": "https://www.facebook.com/shmilycafe/",
+    "findPlace": {
+      "place_id": "ChIJ0Z0YCgc3aDQRP8aH21fyJTY",
+      "name": "Shmily Coffee Roasters｜興利咖啡",
+      "formatted_address": "六家五路一段147號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "40c924fb-6b2d-42fb-b511-fb1cb21c493d",
+    "name": "海米咖啡HIMI COFFEE",
+    "address": "30061新竹市東區西大路183號",
+    "url": "https://www.facebook.com/HimiCoffee183/",
+    "findPlace": {
+      "place_id": "ChIJXXQH_A01aDQR_5xxf4SJKB0",
+      "name": "海米咖啡HIMI COFFEE AI挑豆",
+      "formatted_address": "西大路183號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4198306a-311e-4482-ad38-e75a7384dec2",
+    "name": "Coffee SHOT 珈琲夏特",
+    "address": "新竹市中正路67巷內 / 東門市場1樓1049室 ",
+    "url": "https://www.facebook.com/Coffee-SHOT-%E7%8F%88%E7%90%B2%E5%A4%8F%E7%89%B9-131973000635960/",
+    "findPlace": {
+      "place_id": "ChIJOwzCvcE1aDQRQraJA0k6n1E",
+      "name": "Coffee SHOT 珈琲夏特",
+      "formatted_address": "300新竹市東區東門市場1049攤號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "43d999ef-ee21-495f-97c7-c7271aa9634e",
+    "name": "依日咖啡",
+    "address": "新竹市東區仁愛街73號",
+    "url": "https://www.facebook.com/easygabee/",
+    "findPlace": {
+      "place_id": "ChIJu8VdSJQ1aDQRlOW-NmqM0Tk",
+      "name": "依日烘焙",
+      "formatted_address": "300新竹市東區民族路82-1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "467ec2f6-a19c-4606-8eac-70a893c44682",
+    "name": "石尚自然探索屋【綠世界店】",
+    "address": "新竹縣北埔鄉大湖村7鄰20號",
+    "url": "https://www.facebook.com/shishangGW/",
+    "findPlace": {
+      "place_id": "ChIJ52shdJlIaDQRP-kaQBhiEMg",
+      "name": "石尚自然探索屋(綠世界店)",
+      "formatted_address": "新竹縣北埔鄉大湖村尾隘子20號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "47691343-6354-4545-88ab-b21c05fcd01d",
+    "name": "自然產販豆所 coffee & roaster",
+    "address": "300新竹市北區長安街79號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJp4blgSI3aDQR2QmIK23XL9g",
+      "name": "自然產販豆所 coffee & roaster (無訂位／營業時間依IG為主)",
+      "formatted_address": "長安街79號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4ac12cf3-2809-42a5-8ff9-c3b7616deb64",
+    "name": "馬雅咖啡烘焙館",
+    "address": "新竹市北區中正路485巷4號",
+    "url": "http://mayaroast.pixnet.net/blog",
+    "findPlace": {
+      "place_id": "ChIJLQwyD7o1aDQRJjdugvtKT3I",
+      "name": "馬雅烘焙咖啡館",
+      "formatted_address": "300新竹市北區中正路485巷4號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "4b5463f1-b920-43b7-9d67-bb8d2be71741",
+    "name": "光粼 Shine Bright",
+    "address": "300新竹市東區民權路96巷8號1樓",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ1Q5J0kA1aDQRWt2w3h3EfQ8",
+      "name": "光粼 Shine Bright(營業時間請參考IG限動)",
+      "formatted_address": "民權路96巷8號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4cd23e3a-d1ae-45bf-bee5-b8872cfa2f12",
+    "name": "城市精品咖啡Hold Mind Coffee",
+    "address": "302新竹縣竹北市嘉豐六路一段59號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJfQSpTf42aDQRX0D_JXwxejA",
+      "name": "城市精品咖啡Hold Mind Coffee",
+      "formatted_address": "嘉豐六路一段59號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "4d932c30-06de-4810-b599-5f9c644cc2a2",
+    "name": "Linger131．滯在咖啡所",
+    "address": "302新竹縣竹北市六家一路一段233號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJX50f83Y3aDQRZiT09K2FO8k",
+      "name": "Linger131．滯在咖啡所｜無訂位｜入所降低音量｜",
+      "formatted_address": "六家一路一段233號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4f44f366-28f8-42bc-95ca-605f71352676",
+    "name": "井井",
+    "address": "新竹市新源街136號",
+    "url": "https://www.facebook.com/%E4%BA%95%E4%BA%95-294605067379718/",
+    "findPlace": {
+      "place_id": "ChIJP6kZBnQ2aDQR9SVY40LruLU",
+      "name": "井井咖啡廳",
+      "formatted_address": "建功一路170號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4fa1488b-0b08-4b6c-b3bf-ff32612f28b0",
+    "name": "風徐徐 homebibi",
+    "address": "新竹市東區民權路102號",
+    "url": "https://www.facebook.com/homebibicafe/",
+    "findPlace": {
+      "place_id": "ChIJO-8-t8Q1aDQRI6sdHBeVcEU",
+      "name": "風徐徐 homebibi",
+      "formatted_address": "民權路102號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "50c046b5-f779-4191-8c45-d4e01850baa3",
+    "name": "百花草園",
+    "address": "台灣新竹市東區金城一路71巷13號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ55DBQQA3aDQRhgPOUccjGBM",
+      "name": "百花草園",
+      "formatted_address": "金城一路71巷13號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "512cf3a0-befc-4f52-b423-211fab5ad64d",
+    "name": "東河咖啡",
+    "address": "新竹市三民路140號1樓",
+    "url": "https://www.instagram.com/donghe_coffee?igsh=MWZxb25maGNnd2o0Mw==",
+    "findPlace": {
+      "place_id": "ChIJwyWQ0kM1aDQRFAH_KQmeaWs",
+      "name": "東河咖啡Donghe（不定期公休，請看IG公告）",
+      "formatted_address": "三民路140號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "51b26e23-e1ca-4439-8461-2a71d3517f43",
+    "name": "辛志平校長故居",
+    "address": "新竹市東區東門街32號",
+    "url": "https://www.facebook.com/AK.museum/",
+    "findPlace": {
+      "place_id": "ChIJgQJ9bqM1aDQRJcvuSbkJMcg",
+      "name": "辛志平校長故居本館(前棟)",
+      "formatted_address": "東門街32號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "52fe23f1-993c-4964-ba0b-72ca7c9ce429",
+    "name": "Hollatte馥拿鐵 自烘咖啡 竹北店",
+    "address": "30264新竹縣竹北市勝利三街150號",
+    "url": "https://m.facebook.com/hollatte5",
+    "findPlace": {
+      "place_id": "ChIJO_pZjoo3aDQRs1yTvYiq0TI",
+      "name": "Hollatte馥拿鐵 自烘咖啡 竹北店",
+      "formatted_address": "勝利三街150號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "5339e84c-b063-414f-8610-0f4464b55802",
+    "name": "過日子 宅咖啡",
+    "address": "新竹縣竹北市新泰路10-2號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJldNeuL42aDQRpZ_pxi20l7A",
+      "name": "過日子。宅咖啡",
+      "formatted_address": "新泰路10-2號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "53ce82d3-c893-4782-8bd3-9c7030a4b282",
+    "name": "陳宅CAFE",
+    "address": "300新竹市東區西大路72巷71號",
+    "url": "https://www.instagram.com/tsenchen_cafe/",
+    "findPlace": {
+      "place_id": "ChIJAx5KlfmnQjQR6FaJWQBJ5Ok",
+      "name": "陳宅CAFE",
+      "formatted_address": "西大路72巷71號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "53d98b33-4648-4c46-badf-8ff4df2a5267",
+    "name": "福星咖啡",
+    "address": "300新竹市東區武昌街11號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJw0kfUOo1aDQRnKDWGxdOXHk",
+      "name": "福星咖啡",
+      "formatted_address": "武昌街11號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "53e07d7d-e17e-4dba-bcf0-906e56984314",
+    "name": "臺階咖啡Stage Café",
+    "address": "300新竹市北區經國路一段838巷4號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ5c3ABMc1aDQR3i09__cKvwk",
+      "name": "臺階咖啡Stage Café 無限時 * 一人作業店家*晚上7點後若無客人則提早於晚上8點打烊*無訂位服務*",
+      "formatted_address": "經國路一段838巷4號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "54f12803-a1bc-49fd-82e4-bf86f3bab6b4",
+    "name": "Daily Ping 平日",
+    "address": "300新竹市東區民權路269號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJCwYzbhg1aDQR8-lOP3e88PE",
+      "name": "Daily Ping 平日",
+      "formatted_address": "民權路269號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "558ec847-b436-49ab-89c5-58a6bc940924",
+    "name": "有圓甜點 you&_Pâtisserie",
+    "address": "300新竹市東區博愛街97巷1-1號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJn-6YDgA1aDQRbY8SsNTniG4",
+      "name": "有圓甜點 you&_Pâtisserie",
+      "formatted_address": "博愛街97巷1-1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "57506a59-b89c-4143-8b11-cf6018c05eb1",
+    "name": "barback cafe",
+    "address": "新竹市民權路111巷1號",
+    "url": "https://www.instagram.com/bar_barback_cafe/",
+    "findPlace": {
+      "place_id": "ChIJZ9W7H6E1aDQRdUGHsG6IKsM",
+      "name": "Bar Back Cafe 新竹甜點酒吧 #你所不知道的調酒 #深夜甜點咖啡廳",
+      "formatted_address": "民權路111巷1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "5808979d-8e8d-43d8-bc87-72a2708d8ce0",
+    "name": "鐵道87",
+    "address": "新竹市北區鐵道路2段87號",
+    "url": "https://www.facebook.com/railway87cafe/",
+    "findPlace": {
+      "place_id": "ChIJaby4KdI1aDQR36si3Y-q0Po",
+      "name": "鐵道87咖啡",
+      "formatted_address": "鐵道路二段87號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "5809ebac-04a3-4fe4-9c86-fed72e457fd3",
+    "name": "慕溪園 Mercy Cafe",
+    "address": "新竹縣竹北市復興三路二段82號",
+    "url": "https://www.facebook.com/mercycafe.asthedeer/",
+    "findPlace": {
+      "place_id": "ChIJEVhxnKo3aDQRAE1s60U62fI",
+      "name": "慕溪園高鐵共享空間（自助式共同工作空間，日租不限時，咖啡茶飲無限供應）",
+      "formatted_address": "高鐵一路13號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "585a5caf-097f-4d9a-b1be-095ce2860a5c",
+    "name": "H cafe",
+    "address": "新竹市民族路43號1樓",
+    "url": "https://www.facebook.com/Hcafe035335350?mibextid=LQQJ4d",
+    "findPlace": {
+      "place_id": "ChIJu7UuacM1aDQRyMGZZUN0BUg",
+      "name": "H・Cafe（營業時間以粉專為主，最後點餐時間17:30。無提供訂位服務。平日客滿限時2小時，假日限時2小時）",
+      "formatted_address": "民族路43號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "58844abf-cef4-4eac-85d6-4c8457424e6e",
+    "name": "152cafe",
+    "address": "新竹市東區埔頂路17號",
+    "url": "https://www.facebook.com/lisa.152cafe/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJVYaH8oM3aDQRowl9-50ZFYY",
+      "name": "Laid Back Lounge Bar 來杯酒吧 |新竹| 水煙|",
+      "formatted_address": "300新竹市東區埔頂路3號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "59010828-9322-43d3-b877-c71c59575595",
+    "name": "三角咖啡館 Café Triangle",
+    "address": "新竹縣竹北市莊敬北路286號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJW68b6eY2aDQRX4qewjHXEX0",
+      "name": "Spot Coffee Roasters",
+      "formatted_address": "莊敬北路286號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "590b1781-ae1d-4d72-87ed-5df8cf7310dc",
+    "name": "生生Kapi",
+    "address": "302新竹縣竹北市勝利八街二段117號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJS2Q5Wqc3aDQRxxzfNs-CKkI",
+      "name": "生生Kapi• （公休、營業時間可以至IG、FB貼文查看）",
+      "formatted_address": "勝利八街二段117號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "5956a750-7725-4697-81d1-2a4ba7e6c296",
+    "name": "歐爹 全日早午餐 簡餐",
+    "address": "300新竹市北區中華路三段88號",
+    "url": "https://www.facebook.com/adlmeals/",
+    "findPlace": {
+      "place_id": "ChIJ04g8Bz01aDQRCD_5-FcMWlk",
+      "name": "歐爹 (中華店)",
+      "formatted_address": "中華路三段88號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "5aad854e-0051-4094-9897-3d3d1dad1ec7",
+    "name": "早點出發",
+    "address": "300新竹市北區大同路93號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJQ3h1cKY1aDQRvhke8009eYg",
+      "name": "早點出發 / EATWITHGO /早午餐喫茶店 /貝果/ 神奇寶貝主題",
+      "formatted_address": "大同路93號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "5ad62caa-0cf1-4ff4-bb78-1569f99035c3",
+    "name": "Coffee SHOT 珈琲夏特",
+    "address": "新竹市中正路67巷內 / 東門市場1樓1049室 (影像博物館旁巷內)",
+    "url": "https://www.facebook.com/Coffee-SHOT-%E7%8F%88%E7%90%B2%E5%A4%8F%E7%89%B9-131973000635960/",
+    "findPlace": {
+      "place_id": "ChIJOwzCvcE1aDQRQraJA0k6n1E",
+      "name": "Coffee SHOT 珈琲夏特",
+      "formatted_address": "東門市場1049攤號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "5b06cde0-5ad7-43dc-9f3a-3a269e8246d2",
+    "name": "百分之二咖啡 （2/100 Café）",
+    "address": " 北區石坊街14號",
+    "url": "https://www.facebook.com/2.100Cafe/",
+    "findPlace": {
+      "place_id": "ChIJASR-N5U1aDQR5OnPyt0zoBU",
+      "name": "一百種味道 總店外帶店 .連假正常營業.4/7公休",
+      "formatted_address": "勝利路183號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "5caa87c7-61a2-418f-ad85-da4b5a24523a",
+    "name": "Bisou Bisou Pâtisserie café",
+    "address": "新竹縣竹北市嘉豐五路二段18號",
+    "url": "https://www.facebook.com/BISOUBISOU018/",
+    "findPlace": {
+      "place_id": "ChIJ5-9NoPg2aDQRMf5CvYgj-8g",
+      "name": "Bisou Bisou 甜點店",
+      "formatted_address": "嘉豐五路二段18號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "5cd42620-7259-4551-a808-0c602a94f5aa",
+    "name": "一想一響ReEcho Coffee ",
+    "address": "300新竹市東區民生路58巷8號",
+    "url": "https://www.facebook.com/reecho.coffee/",
+    "findPlace": {
+      "place_id": "ChIJFxGEqts1aDQRDnK9lzSSAMU",
+      "name": "一想一響咖啡 | 無提供訂位 | Last Order 21:00",
+      "formatted_address": "民生路58巷8號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "5dd20a54-8f53-472c-9583-49c4fce9f07a",
+    "name": "藍豆咖啡",
+    "address": "新竹縣竹北市文興路205號",
+    "url": "https://www.facebook.com/bluebeanscafe/",
+    "findPlace": {
+      "place_id": "ChIJRdGAKEA3aDQRAeUYchcOu3U",
+      "name": "道禾三代塾",
+      "formatted_address": "文興路205號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "5e1c03e8-cf9f-4b1d-aa63-0a0ed0ebd0db",
+    "name": "拾月捌號",
+    "address": "310新竹縣竹東鎮東寧路一段119號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ8Vrjc_9HaDQRU9U1-mqexYI",
+      "name": "拾月捌號 （請看IG資訊，所有資訊以IG為主Google為輔）不要情勒 、不要靠邀 謝謝疼愛",
+      "formatted_address": "東寧路一段119號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "5edebd40-c92e-48f6-8bc4-0b8269d477d1",
+    "name": "貳參咖啡二店",
+    "address": "貳參咖啡二店",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJEV24gJU1aDQRyUb2-9aQUV8",
+      "name": "貳參咖啡二店",
+      "formatted_address": "東大路一段196號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "5edec626-ebe6-4f1c-9ffd-b1def0bd3cca",
+    "name": "萃萃咖啡TsuiCafe",
+    "address": "313新竹縣尖石鄉三鄰151號",
+    "url": "https://www.facebook.com/TsuiCafe2020/",
+    "findPlace": {
+      "place_id": "ChIJs67E1CBBaDQRMCER1D4gTI8",
+      "name": "萃萃咖啡TsuiCafe",
+      "formatted_address": "313新竹縣尖石鄉竹60鄉道151號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "60ebaafb-af51-49e1-87ef-e78e904e799a",
+    "name": "HILA FOOLS 咖啡外帶吧",
+    "address": "300新竹市東區光復路一段89巷95號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJRbU2Ky42aDQRNnTDKLknh6s",
+      "name": "HILA FOOLS",
+      "formatted_address": "300新竹市東區光復路一段89巷95號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "61674645-ed9a-4e4b-900d-1dc30a5a9252",
+    "name": "三島sum:dao",
+    "address": "302新竹縣竹北市科大一路185號",
+    "url": "https://instagram.com/sum_dao?utm_medium=copy_link",
+    "findPlace": {
+      "place_id": "ChIJU9w2Bw43aDQRMgYZIsQpauk",
+      "name": "sumdao café",
+      "formatted_address": "302新竹縣竹北市科大一路36號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "617f6ae4-a1b2-4fd7-8fef-1ed80316d62b",
+    "name": "飛行樹屋咖啡",
+    "address": "新竹市東區光復路二段18巷17號",
+    "url": "www.flytreehouse.com",
+    "findPlace": {
+      "place_id": "ChIJP9oYfxM2aDQRt6wpWu7Juj8",
+      "name": "飛行樹屋咖啡 Treehouse Cafe&Bisto 貓村裏的藝術餐酒館",
+      "formatted_address": "光復路二段18巷17號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "61b254e6-13cb-4143-a957-d708865bca8b",
+    "name": "Choccy Metal Cafe' 敲敲金工",
+    "address": "新竹市大同路140號",
+    "url": "https://www.facebook.com/choccymetal/",
+    "findPlace": {
+      "place_id": "ChIJyys_AsE1aDQRi2DQdm8VqO4",
+      "name": "CHOCCY Metal Cafe' 敲敲金工",
+      "formatted_address": "大同路140號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "62994f2f-a3bd-47c9-bab4-1ffe549f3cc0",
+    "name": "樹瓅咖啡 St. Tree Cafe",
+    "address": "新竹縣竹北市隘口三街22號",
+    "url": "https://www.instagram.com/st.tree_cafe?igsh=MWk4YnYwMWh4bWt6cA%3D%3D&utm_source=qr",
+    "findPlace": {
+      "place_id": "ChIJPeQceaY3aDQRGVH3A1wGi8E",
+      "name": "樹瓅咖啡 St. Tree Cafe",
+      "formatted_address": "隘口三街22號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "62997e0d-a462-45cf-8335-dd65e1d2bf32",
+    "name": "fikarast coffee啡卡瑞斯 北歐咖啡館",
+    "address": "新竹市北大路166巷1弄5號1F",
+    "url": "http://www.fikarast.com.tw",
+    "findPlace": {
+      "place_id": "ChIJEfselmGpQjQR7yaK-dqDBJ4",
+      "name": "啡卡咖啡",
+      "formatted_address": "104臺北市中山區伊通街33號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "630d1a48-f514-4d9f-8403-d009022fed33",
+    "name": "三角咖啡館 貳店 Café Triangle 2",
+    "address": "新竹縣竹北市嘉豐南路二段11號1樓",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJMaJX4L43aDQRhr-RMbsm-Tc",
+      "name": "三角咖啡館 貳店 Café Triangle 2",
+      "formatted_address": "嘉豐南路二段11號1樓",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "63187be2-5aa1-4975-8c33-541e605ce832",
+    "name": "山穴",
+    "address": "310新竹縣竹東鎮柯湖路一段121號",
+    "url": "https://www.instagram.com/xxcoffee_roast?igsh=bmRnMHNtamExNTNp",
+    "findPlace": {
+      "place_id": "ChIJMaSlSKQ3aDQRrQiU04Ac3j0",
+      "name": "山穴XXCoffee（營業時間依IG為主）",
+      "formatted_address": "柯湖路一段121巷10號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "6353e7ab-9838-442b-b734-60a68bfe5512",
+    "name": "九慕手烘咖啡 Mooor coffee",
+    "address": "東區中正路60號",
+    "url": "https://www.facebook.com/mooorcoffee/",
+    "findPlace": {
+      "place_id": "ChIJ79WFgsE1aDQRsaZRQgF4H6g",
+      "name": "Jiumu Coffee Roasters九慕咖啡",
+      "formatted_address": "中正路60號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "657b8e15-1441-4e94-a725-e427efde527d",
+    "name": "SEjR 22 勝利咖啡",
+    "address": "302新竹縣竹北市勝利七街二段22號1樓",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJAQ4IgGo3aDQRCXyNWbGC7bA",
+      "name": "SEjR 22 勝利咖啡",
+      "formatted_address": "勝利七街二段22號1樓, No",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "65aa47e0-b1ea-4918-9356-1e5c307eda2d",
+    "name": "城咖URBAN TRIBE",
+    "address": "新竹市北區武陵路22號號 1 樓",
+    "url": "https://www.facebook.com/urbantribetw/",
+    "findPlace": {
+      "place_id": "ChIJR_CPk7c1aDQRAL5aqaYaeAY",
+      "name": "Urban Tribe 城咖牛排餐酒館｜VIP ROOM @489fyzoj",
+      "formatted_address": "武陵路22號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "65f48c66-6b84-4ae3-aed2-adf34a6732d3",
+    "name": "Deer Nana cafe",
+    "address": "304新竹縣新豐鄉崁頭5鄰81-6號",
+    "url": "https://www.facebook.com/pg/Deernanacafe/about/?ref=page_internal",
+    "findPlace": {
+      "place_id": "ChIJj1YnNaIxaDQRsz3WhuevxWU",
+      "name": "Deer Nana Cafe",
+      "formatted_address": "崁頭5鄰81-6號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "672a6e1c-3e0b-4baf-9672-f8c8e941a066",
+    "name": "孚日 VOSGES",
+    "address": "302新竹縣竹北市六家七路158號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJq-yCeOw3aDQR-N5H5YaCqFw",
+      "name": "孚日 VOSGES",
+      "formatted_address": "六家七路158號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "67a3ccb4-8f78-4667-b7a7-0831393e2e16",
+    "name": "咖喀角甜點",
+    "address": "304新竹縣新豐鄉坪頂三街88號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJlcUUiCgzaDQRBc_Jwshdz7I",
+      "name": "咖喀角甜點",
+      "formatted_address": "坪頂三街88號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "67b2c27e-6b9d-41ca-9d70-0621f15c7b69",
+    "name": "怡客咖啡 新竹光復店",
+    "address": "新竹市光復路二段738號1樓",
+    "url": "http://www.ikari.com.tw",
+    "findPlace": {
+      "place_id": "ChIJzwU4c3U2aDQRg01SrOGIEJ0",
+      "name": "怡客咖啡 新竹光復店",
+      "formatted_address": "光復路二段738號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "685678e2-b6b4-4891-bccc-758f50fa1329",
+    "name": "墨咖啡",
+    "address": "新竹市東區林森路180號",
+    "url": "https://www.facebook.com/inkcoffee99/",
+    "findPlace": {
+      "place_id": "ChIJ3dnarZQ1aDQR9cqxIVNQxcM",
+      "name": "墨咖啡 INK COFFEE",
+      "formatted_address": "林森路180號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "68cb26bc-c2eb-411d-a0ae-334ad63c9f33",
+    "name": "貳參咖啡23COFFEEROASTERS",
+    "address": "新竹市北區西門街152號",
+    "url": "https://www.facebook.com/23cafe23/",
+    "findPlace": {
+      "place_id": "ChIJg1aZ5ZQ1aDQRxib5yEmSpr8",
+      "name": "貳參咖啡-西門店「無訂位服務」",
+      "formatted_address": "西門街152號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "69160df8-f490-48c8-a048-12a3b659c602",
+    "name": "Coffee onwer",
+    "address": "新竹縣竹北市福興東路二段109號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJFTlFx_42aDQRqXOL0ti3-7E",
+      "name": "COFFEE OWNER",
+      "formatted_address": "福興東路二段109號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "692181f4-370b-4087-855c-a6b0e3295e90",
+    "name": "JOTTO Pastry and Records",
+    "address": "300新竹市東區仁愛街91號1F",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJXVn5_FM1aDQRiw4Bl0t_YBY",
+      "name": "JOTTO",
+      "formatted_address": "仁愛街91號1F",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "6972dc77-48b2-48e6-be71-93fd6fc9e40c",
+    "name": "Funk Sugar 放ㄎ糖",
+    "address": "310新竹縣竹東鎮北興路二段81巷2號",
+    "url": "https://www.facebook.com/funksugar1983/",
+    "findPlace": {
+      "place_id": "ChIJY0txsRBHaDQR3v__fY5hlPY",
+      "name": "Floruka 花菓空間｜咖啡｜港點｜乾燥花｜甜點",
+      "formatted_address": "310新竹縣竹東鎮北興路三段80號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "69c21b4b-4dc9-4637-afc1-809c0467c04e",
+    "name": "達利自家烘焙精品咖啡館",
+    "address": "竹北市建國街37號",
+    "url": "https://www.facebook.com/DALI.Specialty.Cafe/",
+    "findPlace": {
+      "place_id": "ChIJzXGkEOs2aDQRkyoAAMLqgWs",
+      "name": "達利自家烘焙咖啡館",
+      "formatted_address": "建國街37號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "6a77ac07-e807-41a7-a0cb-b67edf53479e",
+    "name": "覺咖啡",
+    "address": "302新竹縣竹北市文采街22號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJwXYixAI3aDQRqS_uj_i9kyA",
+      "name": "覺咖啡 現實存在的解惑咖啡廳 靈感特調籤詩提點專門店 問事查解請預約",
+      "formatted_address": "文采街22號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "6aeca9d4-8792-4deb-b71b-55276b7b7883",
+    "name": "家族咖啡café de famille",
+    "address": "新竹縣竹北市嘉興路456號",
+    "url": "https://www.facebook.com/cafedefamillekazoku/",
+    "findPlace": {
+      "place_id": "ChIJzTIQqvs2aDQRA9RFQgbnm54",
+      "name": "家族咖啡cafe de famille",
+      "formatted_address": "嘉興路456號號1f",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "6b49cf20-bda0-4d7f-92be-71cc285fba17",
+    "name": "J.eat caf'e",
+    "address": "新竹縣竹北市成功8路285號",
+    "url": "https://www.facebook.com/j.eat.cafe/",
+    "findPlace": {
+      "place_id": "ChIJVdh77WA3aDQRV3daC6NIlio",
+      "name": "桃司廚鐵板早午餐 竹北店丨抓周活動丨性別派對丨活動包場丨親友聚餐丨早餐丨早午餐丨遠百美食",
+      "formatted_address": "302新竹縣竹北市成功八路285號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "706ac44c-bfb1-4e44-bfbc-e658740133c3",
+    "name": "This Cafe",
+    "address": "新竹縣竹東鎮三民街61號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJxQcyS-RHaDQRhT1oH7ceA50",
+      "name": "This.Cafe 咖啡甜點店",
+      "formatted_address": "三民街61號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "7102e97e-f3e9-4cbb-8fe8-fbe641e92ca6",
+    "name": "Deja vu即視感咖啡店",
+    "address": "300台灣新竹市東區東大路一段37號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJd5wWdUA1aDQRGGpzvPLICso",
+      "name": "Deja vu即視感咖啡店",
+      "formatted_address": "東大路一段37號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "71ebabe1-0725-40f1-ab94-262c5f3b1b5d",
+    "name": "馥 Fu Cafe",
+    "address": "新竹縣竹北市十興三街75號",
+    "url": "https://www.facebook.com/fucafes/",
+    "findPlace": {
+      "place_id": "ChIJ794IWUA_aDQRlsWxR52spXI",
+      "name": "（預約制）Fudu Cafe’ 福杜咖啡 1/31起恢復營業",
+      "formatted_address": "306新竹縣關西鎮竹28鄉道臨9鄰5-2號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "750d1d9c-1775-4528-bdc6-b34a7816b622",
+    "name": "招財咖啡",
+    "address": "300新竹市北區英明街6-1號",
+    "url": "https://www.facebook.com/successcafe21",
+    "findPlace": {
+      "place_id": "ChIJe8VtwBw1aDQRgk0e3DIGfd8",
+      "name": "招財咖啡",
+      "formatted_address": "英明街6-1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "758a5254-c216-45a2-94e1-f90faada483c",
+    "name": "恆星咖啡EDS Coffee Roaster",
+    "address": "300新竹市北區民富街140號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJZbEdJgA1aDQRFsj_n_Y1Iok",
+      "name": "恆星咖啡 EDS Coffee Roaster",
+      "formatted_address": "民富街140號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "762f9473-8f04-445d-9363-1bc1c6edb3d6",
+    "name": "叉子咖啡Fork Cafe",
+    "address": "300新竹市東區公園路133號",
+    "url": "https://www.facebook.com/forkcafe0303?mibextid=LQQJ4d",
+    "findPlace": {
+      "place_id": "ChIJDYrxeFA1aDQR_g9x7Lzk5wo",
+      "name": "叉子咖啡Fork Cafe",
+      "formatted_address": "公園路273號新竹公園內-湖畔料亭",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "773a57e1-881d-4e39-8dfa-b0512ae5de47",
+    "name": "WULI lsland咖啡廳",
+    "address": "300新竹市東區自由路27巷69號",
+    "url": "https://www.instagram.com/wuli_island?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    "findPlace": {
+      "place_id": "ChIJ0Zbuyuo1aDQRX0pCIjSf3_8",
+      "name": "WULI lsland咖啡廳(公休請看ig)",
+      "formatted_address": "自由路27巷69號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "7926daa6-565e-47d0-9f25-79c553eab598",
+    "name": "拾穗咖啡",
+    "address": "新竹市東區長春街105巷1號",
+    "url": "https://www.facebook.com/GleanerCoffee/",
+    "findPlace": {
+      "place_id": "ChIJVZlApj42aDQRoME-SpuhmWQ",
+      "name": "拾穗精品咖啡",
+      "formatted_address": "長春街105巷1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "7964bd2c-88f1-4cc4-8a20-0ec58a0cf66d",
+    "name": "李克承博士故居 a-moom",
+    "address": "300新竹市東區勝利路199號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJER_q15Q1aDQRt9yJcjbx0rU",
+      "name": "李克承博士故居 a-moom(新竹市)",
+      "formatted_address": "勝利路199號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "7b3217ac-b92d-4654-b649-723cbed3c25a",
+    "name": "月之耀咖啡",
+    "address": "30056新竹市北區新竹市延平路1段161巷24號",
+    "url": "https://www.facebook.com/yesyoucafe/",
+    "findPlace": {
+      "place_id": "ChIJdzLNoJU1aDQRFASXMxkESek",
+      "name": "月之耀咖啡坊",
+      "formatted_address": "300新竹市北區延平路一段161巷24號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "7c4b4459-f867-436b-bb89-126fa63dd5a5",
+    "name": "GB5 用心的咖啡",
+    "address": "新竹市東區興學街96號",
+    "url": "https://www.facebook.com/GB5-%E7%94%A8%E5%BF%83%E7%9A%84%E5%92%96%E5%95%A1-104962639583557/",
+    "findPlace": {
+      "place_id": "ChIJH5ZZwuo1aDQRKSidfogK5zg",
+      "name": "GB5用心的咖啡",
+      "formatted_address": "興學街96號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "7d8c423d-9c8e-4bf5-b0aa-54d4a5d8f8a9",
+    "name": "小南瓜咖啡館 Little Pumpkin Cafe",
+    "address": "302054新竹縣竹北市六家五路一段207號",
+    "url": "https://www.facebook.com/littlepumpkincafe/",
+    "findPlace": {
+      "place_id": "ChIJgQAziKM3aDQR7tR_IYk_hiA",
+      "name": "小南瓜咖啡館 Little Pumpkin Cafe",
+      "formatted_address": "六家五路一段207號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "7f397bb6-b61c-45da-b08c-9d4d154df97a",
+    "name": "逆勢咖啡",
+    "address": "新竹市國華街61號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ5cL1WnU1aDQRy_vhXLpu_2o",
+      "name": "somewhere cafe",
+      "formatted_address": "30041新竹市東區中央路310號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "7fc54951-ab1e-4d27-91a0-013c900c6855",
+    "name": "種甜",
+    "address": "300新竹市東區民族路66巷4號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ3ToX1qE1aDQRtjq2jmwoJ48",
+      "name": "種甜(週三、週四公休，不定休可查詢IG或FB公告）",
+      "formatted_address": "民族路66巷4號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "80df04b6-60f1-43df-9224-cb0565c7b5e3",
+    "name": "蘇寓",
+    "address": "300新竹市東區西大路135巷30號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJJzjEUwA1aDQRHeWNYneFk1w",
+      "name": "蘇寓",
+      "formatted_address": "西大路135巷30號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "810a0a7a-a0fc-4889-886a-5640050cbec5",
+    "name": "二十四分之一早午餐 手作麵包",
+    "address": "302新竹縣竹北市文興路51號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJx8HTV-s3aDQRk6D25gljeSg",
+      "name": "二十四分之一早午餐 手作麵包",
+      "formatted_address": "文興路51號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "82bf56c3-47c5-4c22-b6cd-2e4a5d4c94d0",
+    "name": "屬孰 belong to",
+    "address": "300新竹市北區大同路220號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJPSZUFhI1aDQR-d9hl3ljCx4",
+      "name": "屬孰 belong to",
+      "formatted_address": "大同路220號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "836cf978-1b67-4648-b1e8-ede05a11b122",
+    "name": "Titta Cafe提塔咖啡",
+    "address": "300新竹市東區民族路158-3號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJUQIARKc1aDQRlFTELp0jJYQ",
+      "name": "Mita CAFE Bistro-新竹巨城店",
+      "formatted_address": "300新竹市東區中央路229號B1",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "84f6d8ae-4e98-49a9-bfe9-ebfe9536a3fe",
+    "name": "攝影師的咖啡店",
+    "address": "300新竹市北區北大路166巷2號2樓",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJMx0yEOQ1aDQRjuCil7L7CAA",
+      "name": "攝影師的咖啡店(營業時間1點-6點，營業日期請參考IG公告)",
+      "formatted_address": "北大路166巷2號2樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "852d44e4-a6f9-454e-8f36-210905550a03",
+    "name": "Midori cafe",
+    "address": "300新竹市東區民族路127巷5號1樓",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJJ1DmqlE1aDQRh63OSScbUrg",
+      "name": "Midori cafe",
+      "formatted_address": "民族路127巷5號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "853e345f-c790-4055-a492-773a21620d36",
+    "name": "PHOENIXCAFE 菲尼咖啡",
+    "address": "300新竹市北區北門街132號",
+    "url": "https://imenu.com.tw/Phoenixcoffee/Phoenixcoffee_BM/menu",
+    "findPlace": {
+      "place_id": "ChIJGUCh-Jg1aDQR1AXqBNpPFMc",
+      "name": "PHOENIXCAFE 菲尼咖啡",
+      "formatted_address": "北門街132號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "85744ea6-1aaf-4139-95c6-3dc7725938ee",
+    "name": "COVER CAFE",
+    "address": "300新竹市東區文昌街73號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJf-zJD341aDQRhzOX-UzNgYc",
+      "name": "COVER CAFE",
+      "formatted_address": "文昌街73號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "86dad326-f9fe-462a-9584-b209e670074a",
+    "name": "Coffee Owner",
+    "address": "新竹縣竹北市福興東路二段109號1樓",
+    "url": "https://www.facebook.com/CoffeeOwner109/",
+    "findPlace": {
+      "place_id": "ChIJFTlFx_42aDQRqXOL0ti3-7E",
+      "name": "COFFEE OWNER",
+      "formatted_address": "福興東路二段109號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "8728ef04-ed63-4116-acc1-bcd1f15e4732",
+    "name": "波斯卡德列日鬆餅",
+    "address": "新竹縣竹北市光明九路197號",
+    "url": "https://www.facebook.com/postcardofrick/",
+    "findPlace": {
+      "place_id": "ChIJXdCEbZI2aDQRJ5pejSKI0BE",
+      "name": "波斯卡德列日鬆餅咖啡館",
+      "formatted_address": "光明九路197號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "8754a32d-27cf-43b4-b0d0-e36c850f719f",
+    "name": "Redness coffee",
+    "address": "新竹市金山12街11號",
+    "url": "https://www.facebook.com/rednesscoffee/",
+    "findPlace": {
+      "place_id": "ChIJNf7ZsIc3aDQR0yd64IZZbho",
+      "name": "任性紅豆餅（任性公休→ 看IG）",
+      "formatted_address": "300新竹市東區金山十五街10號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "89ac2ed7-1707-4c45-80ff-11a48900b9be",
+    "name": "Leonana 黎歐娜娜藝廊咖啡",
+    "address": "新竹縣竹北市光明六路東二段212號",
+    "url": "https://www.facebook.com/leonana.cafe/",
+    "findPlace": {
+      "place_id": "ChIJsQ4AD_42aDQRX6bus7sg7pw",
+      "name": "黎歐娜娜美學中心",
+      "formatted_address": "光明六路東二段200號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "8a565cb5-a7d0-4561-9ce1-95f2d2996a89",
+    "name": "In Joy漫咖啡",
+    "address": "307新竹縣芎林鄉富林路一段133號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJZ58ccStHaDQRN1tTA4i6E7g",
+      "name": "In Joy 漫咖啡烘焙&手沖教學工作室",
+      "formatted_address": "富林路一段133號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "8b28834c-04d7-4108-a861-85c4c8075b57",
+    "name": "沒有名字的甜點專賣Noname Dessert",
+    "address": "新竹市香山區中華路六段331巷335號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJRT4qqCNLaDQRPeUIHXbAdjs",
+      "name": "中華路六段331巷335號",
+      "formatted_address": "300新竹市香山區中華路六段331巷335號",
+      "business_status": "",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places returned no business status"
+    }
+  },
+  {
+    "id": "8b5e5b7c-86a6-4049-b02f-6f645f00e4e3",
+    "name": "美味番地・珈琲製作所",
+    "address": "300新竹市東區水源街66號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJOWmnlkc3aDQR3li7FZwcXj0",
+      "name": "美味番地・珈琲製作所",
+      "formatted_address": "水源街66號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "8b60b433-ec31-4654-a50d-104131ecc49b",
+    "name": "蕨蕨 ｜植栽咖啡店",
+    "address": "300017新竹市北區中正路284巷18號1樓",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJbSnt5Gs1aDQRfRCDgZ5uKjc",
+      "name": "蕨蕨｜植栽咖啡店(營業時間見IG)",
+      "formatted_address": "中正路284巷18號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "8e240d82-4321-4823-8a77-486a2b794701",
+    "name": "好日。新竹",
+    "address": " 300新竹市三民路12號",
+    "url": "https://www.facebook.com/GoodDay0903/",
+    "findPlace": {
+      "place_id": "ChIJdWcggMQ1aDQRVNWQ2BIKSg0",
+      "name": "好日。新竹",
+      "formatted_address": "三民路12號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "8e404d97-0695-4c53-a4f4-d49a95baa846",
+    "name": "日常咖啡 Le café quotidien",
+    "address": "新竹市學府路61巷5-1號1樓",
+    "url": "https://www.facebook.com/pg/lecafequotidien/about/?ref=page_internal",
+    "findPlace": {
+      "place_id": "ChIJd_CC3OU1aDQRsi_nCcRju9M",
+      "name": "日常咖啡 Le café quotidien/無訂位服務/每人消費滿220元不限時",
+      "formatted_address": "学府路61巷5-1號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "8f66d080-d07c-4f4b-abc4-2d1db7b511dd",
+    "name": "Tiny House 小房子咖啡",
+    "address": "新竹市光復路1段163巷15號",
+    "url": "https://www.facebook.com/tinyhousedessert/?locale2=zh_TW",
+    "findPlace": {
+      "place_id": "ChIJr3frCzA2aDQRoo6ReYXeo88",
+      "name": "Tiny House 小房子 · 咖啡 甜點",
+      "formatted_address": "光復路一段163巷15號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "8fd8fec8-449e-433c-9f87-dd5992ab814f",
+    "name": "POLO CAFE",
+    "address": "新竹縣竹北市環北路一段105號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJGdN7Q8M2aDQRt0pgoKANOeE",
+      "name": "WillHsu Cafe 竹北旗艦店 (POLO主題餐廳)",
+      "formatted_address": "環北路一段105號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "90ccd44b-d202-4cd8-ba52-47402d542e1e",
+    "name": "Fumi手作烘焙Cafe",
+    "address": "新竹縣竹北市文義街245號",
+    "url": "https://www.facebook.com/fumicafe035586631/",
+    "findPlace": {
+      "place_id": "ChIJm2ONdes2aDQRsAo3hPjGWWM",
+      "name": "Fumi福咪手作烘焙咖啡",
+      "formatted_address": "文義街245號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "9277e330-b234-452c-96cf-06f98a71be24",
+    "name": "野人山丘",
+    "address": "新竹縣橫山鄉內灣村內灣38-2號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJy-bgTMVAaDQR0OdMpNl8s7I",
+      "name": "內灣野人山丘咖啡館",
+      "formatted_address": "312新竹縣橫山鄉38-2 號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "92a4c05e-740d-4e59-a3f4-316a19d6e0d9",
+    "name": "Migration 遷徙 l 咖啡&民宿",
+    "address": "橫山鄉內灣村和平街18號",
+    "url": "https://www.facebook.com/migrationbb2015/",
+    "findPlace": {
+      "place_id": "ChIJ0TM60shAaDQRmvPQ5ezH3Nw",
+      "name": "遷徙咖啡 Migration Coffee",
+      "formatted_address": "和平街6號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "93251f3d-dbcc-46e4-914f-dc177bf28020",
+    "name": "RD Cafe",
+    "address": "台灣新竹市東區光復路二段221號",
+    "url": "https://www.facebook.com/rdcafe2015/",
+    "findPlace": {
+      "place_id": "ChIJc9Km6HQ2aDQRWGlINk1OYLg",
+      "name": "RD cafe",
+      "formatted_address": "光復路二段221號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "93738233-ab2f-48e2-a0ce-2c0d3a245e64",
+    "name": "豆居咖啡",
+    "address": "新竹市新莊街141號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJRz97RTk2aDQRDxTcEWPt1WQ",
+      "name": "豆居咖啡",
+      "formatted_address": "新莊街141號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "939f7682-5994-4b2d-9127-0590993b6ffa",
+    "name": "ARVO AVO",
+    "address": "300新竹市東區金山六街8巷8號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJV5YbUEs3aDQRp_vtnThHFlo",
+      "name": "澳式早午餐",
+      "formatted_address": "300新竹市東區金山六街8巷8號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "951992c6-3104-4cbc-a0d2-e83db932066b",
+    "name": "小丹咖啡",
+    "address": "北區鐵道路二段95號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJWdwXJtI1aDQR4lx1_q5YPu8",
+      "name": "小丹咖啡-早餐/午餐/咖啡",
+      "formatted_address": "鐵道路二段95號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "96654e38-33ba-444c-94fd-bd8f9650749e",
+    "name": "樂樂長咖啡",
+    "address": "芎林鄉下山村七鄰82-2號",
+    "url": "www.facebook.com/everejoice.CAFE/",
+    "findPlace": {
+      "place_id": "ChIJ76cw-ww3aDQRtSHLHRDd5YU",
+      "name": "樂樂長甘蔗屋已經在金山八街108號重新開始營業",
+      "formatted_address": "七鄰82號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "967b0ccf-275c-4879-b520-d345bc118ae0",
+    "name": "暗室微光",
+    "address": "新竹市東區勝利路97號",
+    "url": "https://www.facebook.com/%E6%9A%97%E5%AE%A4%E5%BE%AE%E5%85%89-1635926836645979/",
+    "findPlace": {
+      "place_id": "ChIJW4nJGus1aDQR_uaQZjogRh0",
+      "name": "暗室微光",
+      "formatted_address": "勝利路97號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "995960fc-6b94-4fca-b649-033177698dbd",
+    "name": "竹科車庫餐廳",
+    "address": "新竹市東區新安路2-2號",
+    "url": "https://m.facebook.com/%E7%AB%B9%E7%A7%91%E8%BB%8A%E5%BA%AB%E9%A4%90%E5%BB%B3-1611168985820398/?ref=page_internal&mt_nav=1",
+    "findPlace": {
+      "place_id": "ChIJ09pvkRk2aDQRPir_dOfhn6M",
+      "name": "Garage Hub 車庫餐廳",
+      "formatted_address": "新安路2-2號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "99e470e7-de7a-44a0-b813-df6fada8e5ef",
+    "name": "日出咖啡SUNRISE CAFE",
+    "address": "300新竹市東區金城二路4號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ-wfjv9s3aDQR8dNL3DEilJ0",
+      "name": "日出咖啡sunrise cafe",
+      "formatted_address": "金城二路4號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "9a266bb5-9798-4990-aba0-9a337a3e604d",
+    "name": "米日客",
+    "address": "新竹市北區北大路166巷1弄6",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJacrVI8c1aDQRWgMKU563SQQ",
+      "name": "米日客輕食坊",
+      "formatted_address": "北大路166巷1弄6號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "9e323d5d-2c86-4adc-8fe1-ea16c1103d14",
+    "name": "Jin Coffee",
+    "address": "302新竹縣竹北市文采街133號",
+    "url": "https://zh-tw.facebook.com/JinCoffee0201/",
+    "findPlace": {
+      "place_id": "ChIJK6An1-k2aDQRwo2hDrWZvYI",
+      "name": "Jin Coffee",
+      "formatted_address": "文采街133號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "9e89b551-1f81-4fc2-81a8-29fcb9b184e7",
+    "name": "波藤甜點",
+    "address": "300新竹市北區北大路323號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJJR4vtuw1aDQRC80D9gFy1YY",
+      "name": "波藤甜點（不定休以ig及fb公告為主)",
+      "formatted_address": "北大路323號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "9f396814-f26a-4558-9f58-b85f3a11eae1",
+    "name": "新銳咖啡竹北縣政店(若木深夜咖啡廳)",
+    "address": "302新竹縣竹北市縣政二路70號",
+    "url": "https://www.facebook.com/新銳咖啡竹北縣政店-332894730613367/",
+    "findPlace": {
+      "place_id": "ChIJI1is5yo3aDQRMRk2B0UhqvA",
+      "name": "若木深夜咖啡廳",
+      "formatted_address": "縣政二路70號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "9f5fcb65-42b9-46ac-a87a-8e07ebf8389d",
+    "name": "那顆桔子 l 瓏之陶咖啡",
+    "address": "300新竹市北區中山路40巷26號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJS2D8I5U1aDQRSYmtKJETUy8",
+      "name": "那顆桔子",
+      "formatted_address": "中山路40巷26號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "9f6442a5-f90e-4749-8443-9bd257dfc981",
+    "name": "房角石",
+    "address": "新竹縣竹北市文孝街53號",
+    "url": "https://www.facebook.com/GuDao01/",
+    "findPlace": {
+      "place_id": "ChIJZ3eOtek2aDQRHtY2Bcgi2MM",
+      "name": "房角石 麵包 咖啡 手作",
+      "formatted_address": "文忠路37號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "a030dd22-80d8-4d0b-9828-e1351f36fe84",
+    "name": "木柘MU JHE",
+    "address": "300新竹市北區世界街132號",
+    "url": "https://www.instagram.com/mu__jhe?igsh=MXNpa3ljdmhteGs4dA==",
+    "findPlace": {
+      "place_id": "ChIJJeHeNkI1aDQRdFmamR02nUc",
+      "name": "木柘MU JHE (無開放10歲以下孩童)",
+      "formatted_address": "世界街132號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a0bede4e-1c1d-400f-a5ed-e6a91d3c1f27",
+    "name": "米諾瓦咖啡｜Minerva Café 展望門市",
+    "address": "300004新竹市東區民族路176號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJUcPz8iY1aDQRlRYEiCeuZ1I",
+      "name": "米諾瓦咖啡｜Minerva Café 展望門市",
+      "formatted_address": "民族路176號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a1532235-9ec1-4c29-82bb-b49e08726b99",
+    "name": "inBush",
+    "address": "300新竹市東區長春街60號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJHa118Bw3aDQRuUs2gb_b5YY",
+      "name": "inBush - Bar, Cafe, Flower｜花店、花束｜咖啡、甜點、輕食｜精緻調酒｜",
+      "formatted_address": "長春街60號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a1a39ed4-ff36-4790-a0f2-18a1709211db",
+    "name": "MANO MANO",
+    "address": "300新竹市東區長春街77號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJTzpmKC03aDQRmt2gIcs4Gps",
+      "name": "MANO MANO | 竹科門市",
+      "formatted_address": "長春街77號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a2602339-53ec-459c-a742-0c513d080661",
+    "name": "愛吃魚的狗",
+    "address": "竹北市東海一街95巷48號",
+    "url": "https://www.facebook.com/DogLoveFish/",
+    "findPlace": {
+      "place_id": "ChIJN_Jv_ug1aDQRTs-c092dQu4",
+      "name": "愛吃魚的狗",
+      "formatted_address": "300新竹市東區東南街81-1號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "a28f3128-5ebb-4587-8bbb-d027dee6920a",
+    "name": "Kiwi to go",
+    "address": "300新竹市東區竹蓮街115號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJE3vv4CA1aDQRSzy8qc47O7A",
+      "name": "Kiwi to go",
+      "formatted_address": "竹蓮街115號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "a35ed585-7aec-481a-b3db-cf15eb83a827",
+    "name": "醜小鴨咖啡",
+    "address": "新竹縣新埔鎮上樟路一段291巷6號",
+    "url": "https://www.facebook.com/%E9%86%9C%E5%B0%8F%E9%B4%A8%E5%92%96%E5%95%A1%E5%B8%AB%E8%A8%93%E7%B7%B4%E4%B8%AD%E5%BF%83-158397670840017/",
+    "findPlace": {
+      "place_id": "ChIJ5x1BTFk3aDQRtMd3gXY9T6s",
+      "name": "醜小鴨手沖咖啡外帶吧",
+      "formatted_address": "305新竹縣新埔鎮廣和路25號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a3b54447-7388-4fe1-8591-a34b063239b5",
+    "name": "台灣水鹿咖啡館 Sambar Café",
+    "address": "新竹市大同路202號",
+    "url": "https://www.facebook.com/pg/%E5%8F%B0%E7%81%A3%E6%B0%B4%E9%B9%BF%E5%92%96%E5%95%A1%E9%A4%A8-Sambar-Caf%C3%A9-564813097002379/about/?ref=page_internal",
+    "findPlace": {
+      "place_id": "ChIJY9aWw8A1aDQRE4lw6nGck44",
+      "name": "台灣水鹿咖啡館",
+      "formatted_address": "大同路202號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "a53e1c55-383d-4211-8014-03c40d8190de",
+    "name": "Jazz Coffee咖啡師推廣中心Barista Education Center",
+    "address": "新竹縣竹北市嘉豐五路一段179號",
+    "url": "https://www.facebook.com/JAZZDINER/",
+    "findPlace": {
+      "place_id": "ChIJ_zOVDUc1aDQR9xqhYJMoIWU",
+      "name": "洞心咖啡廳Heartbeat Cafe-新竹深夜咖啡廳/下午茶/手作甜點 手沖/精品/義式咖啡 輕食/蛋糕 咖啡課程體驗 桌遊/親子/包場/約會/網美/打卡 人氣熱門好評推薦 PTT Dcard",
+      "formatted_address": "300新竹市東區学府路61巷5-1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a6981139-139c-48ed-ba68-c1cd0a858bef",
+    "name": "安奕咖啡",
+    "address": "新竹縣竹北市六家五路一段339號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJN2empik1aDQRD3H2UQCkWsU",
+      "name": "亦奕咖啡店（不定期公休，請洽粉專）",
+      "formatted_address": "300新竹市東區中南街49號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a6ee8554-d177-4bb7-8eaa-bb35333e6923",
+    "name": "Cama-巨城店",
+    "address": "新竹市東區民生路129號1樓",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJb2akxdo1aDQRZBbecavuPOc",
+      "name": "CAMA CAFE 新竹巨城店",
+      "formatted_address": "民生路129號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a71b1536-336e-4bbf-ba56-08fd9a245fd4",
+    "name": "一百種味道",
+    "address": " 300新竹市北區石坊街36-3號",
+    "url": "https://www.facebook.com/100tastes/",
+    "findPlace": {
+      "place_id": "ChIJASR-N5U1aDQR5OnPyt0zoBU",
+      "name": "一百種味道 總店外帶店 .連假正常營業.4/7公休",
+      "formatted_address": "勝利路183號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a74d64e4-b688-42ac-8077-89804086c2b8",
+    "name": "日入甜點",
+    "address": "300新竹市北區大同路155號",
+    "url": "https://www.instagram.com/sunset__155/",
+    "findPlace": {
+      "place_id": "ChIJt5Ozomc1aDQR14LHfl211M4",
+      "name": "日入甜點",
+      "formatted_address": "大同路155號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "a7bd6268-b2ea-4bf9-89ee-1a530097e36d",
+    "name": "some in café商隱咖啡",
+    "address": "302新竹縣竹北市十興路305巷13弄81號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ6ZPbUmY3aDQRj0iBRApA-BQ",
+      "name": "some in café (商隱咖啡）",
+      "formatted_address": "十興路305巷13弄81號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a8343e56-3916-4d77-8d03-243f6a195b73",
+    "name": "凸鼻子現烘咖啡坊",
+    "address": "台灣新竹市東區中華路二段211號",
+    "url": "https://www.facebook.com/bignosecafe/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJkTXuu9w1aDQR0_TEXFVntsk",
+      "name": "凸鼻子現烘咖啡坊",
+      "formatted_address": "中華路二段211號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a923a74c-89a9-4ee8-bb49-f51f8da9759d",
+    "name": "FOX.CONE coffee & bakes",
+    "address": "新竹市東區南門街12號",
+    "url": "https://www.facebook.com/foxdotcone",
+    "findPlace": {
+      "place_id": "ChIJI2VDEgo1aDQR4a7L4rIRjSw",
+      "name": "THE FOX COFFEE CLUB",
+      "formatted_address": "300新竹市东区仁爱街74號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a9c8c631-446f-4a80-b9b0-46b57fac4f33",
+    "name": "卡比咖啡Catbii",
+    "address": "300新竹市東區東大路一段232巷6-2號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJOVx7A-g1aDQRxe0cRko5TYo",
+      "name": "卡比咖啡（14：30若清場會提早打烊，建議訂位）",
+      "formatted_address": "東大路一段232巷6-2號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "aaa75638-b619-42b1-90d3-9c7d5306bb9a",
+    "name": "菡萏咖啡",
+    "address": "新竹市東區花園街67號",
+    "url": "https://www.facebook.com/菡萏咖啡-46967157198",
+    "findPlace": {
+      "place_id": "ChIJEeS5J901aDQRDx_ts2QOpPg",
+      "name": "菡萏咖啡",
+      "formatted_address": "花園街67號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ab2075e3-337c-40a1-be32-76ef49cc3338",
+    "name": "源典咖啡",
+    "address": "新竹市大同路155號1F",
+    "url": "https://www.facebook.com/%E6%BA%90%E5%85%B8%E5%92%96%E5%95%A1-419676308237925/",
+    "findPlace": {
+      "place_id": "ChIJ8btF5cA1aDQR41DCy1fBGeM",
+      "name": "源典咖啡",
+      "formatted_address": "大同路155號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "acc277d6-615c-4436-9f9c-52d5bcff281b",
+    "name": "AMOS bagel cafe 耶莫斯烘焙坊/參拾穗咖啡",
+    "address": "300新竹市東區民族路127巷3號",
+    "url": "https://amos-bagel-cafe.business.site/",
+    "findPlace": {
+      "place_id": "ChIJ4apDIts1aDQRKFIpaNfuapg",
+      "name": "AMOS bagel cafe 耶莫斯烘焙坊",
+      "formatted_address": "民族路127巷3號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ad3ae090-8a15-4e83-a352-3fd1944f23e2",
+    "name": "我的悠閒時光",
+    "address": "300新竹市北區育英路49巷1號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJKWep4U81aDQR8aVVriK2--4",
+      "name": "我的悠閒時光下午茶",
+      "formatted_address": "育英路49巷1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b0517e6c-b9e2-4109-8446-943b85c21989",
+    "name": "蜜糖1990",
+    "address": "302新竹縣竹北市中華路343號之9號二樓",
+    "url": "https://www.facebook.com/hotsugar1990/",
+    "findPlace": {
+      "place_id": "ChIJqYQk0h83aDQRWSj-jK9GCjs",
+      "name": "Mitsu 蜜",
+      "formatted_address": "302新竹縣竹北市文義街171號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b0733689-8290-4b12-bb2c-2b25ac1f5564",
+    "name": "次胃甜點",
+    "address": "300新竹市東區建中路89號",
+    "url": "https://www.facebook.com/secondstomachdessert/",
+    "findPlace": {
+      "place_id": "ChIJb0pNMfo1aDQR4E4uVgWL58k",
+      "name": "一百種味道 -三民店 連假正常營業.4/7公休",
+      "formatted_address": "300新竹市東區三民路35號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b0a104d8-985c-4b14-a3e6-5c8eb68c6979",
+    "name": "冪 La Miette Cafe",
+    "address": "新竹市經國路二段352號",
+    "url": "https://www.facebook.com/lamiettecafe/",
+    "findPlace": {
+      "place_id": "ChIJd7eAy701aDQRpcLoedSl-s0",
+      "name": "冪 La Miette-新竹歐陸餐廳",
+      "formatted_address": "經國路二段352號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b146e168-18a0-45b0-9b7e-3141bc1c8392",
+    "name": "瓏之陶咖啡",
+    "address": "新竹市東區大同路86號3樓3115室",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJS2-FkB41aDQRK1Bo4f7nUU8",
+      "name": "瓏之陶咖啡 | 自家陶鍋烘焙 (東門市場三樓手扶梯旁)",
+      "formatted_address": "大同路86號3樓3115室",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b42d6b1b-c3fa-4f4c-a37f-41c140069ad9",
+    "name": "Hollatte馥拿鐵 自烘咖啡 竹東店",
+    "address": "310新竹縣竹東鎮中興路二段240號",
+    "url": "https://m.facebook.com/hollatte4/?locale2=zh_TW",
+    "findPlace": {
+      "place_id": "ChIJta6vkuE3aDQRK0k0SOmzH1g",
+      "name": "Hollatte馥拿鐵 自烘咖啡 竹東店（營業時間google map為準，平日不定期公休，可來電詢問）",
+      "formatted_address": "中興路二段240號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b479f766-8839-46f1-b92e-d80f19f1a2a9",
+    "name": "扣子商行",
+    "address": "302新竹縣竹北市博愛街319號",
+    "url": "",
+    "findPlace": null,
+    "details": null,
+    "error": "fetch failed",
+    "audit": {
+      "category": "review",
+      "reason": "fetch failed"
+    }
+  },
+  {
+    "id": "b73a3d11-818b-4947-ac26-0531381530b7",
+    "name": "示畐",
+    "address": "300新竹市香山區東華路71號1樓",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJz-d7fQA1aDQR1OXI_K_qBhk",
+      "name": "示畐",
+      "formatted_address": "東華路71號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b8453ec6-48cc-4b3c-8096-25bc2174d1ac",
+    "name": "克蔓莉咖啡館",
+    "address": "300新竹市東區林森路2號四樓",
+    "url": "https://www.facebook.com/k.memory1525/",
+    "findPlace": {
+      "place_id": "ChIJqzjP--k1aDQRf-5XvrT8h9E",
+      "name": "克蔓莉珈琲餐館",
+      "formatted_address": "林森路2號四樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ba2075f3-e749-4547-8e0d-d90863b024d5",
+    "name": "Casa Cafe",
+    "address": "新竹市東區振興路82號",
+    "url": "https://www.facebook.com/Casa-Cafe-364132916954532/",
+    "findPlace": {
+      "place_id": "ChIJHR_9-5I1aDQRvc2VXAZts6Q",
+      "name": "Casa Cafe",
+      "formatted_address": "振興路82號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "bae727ba-aea7-47e2-a892-bdf8a2f222a9",
+    "name": "COFFEE LOVER's PLANET (SOGO新竹Big City館)",
+    "address": "新竹市東區中央路239號1樓",
+    "url": "https://www.coffee-lovers-planet.com.tw/",
+    "findPlace": {
+      "place_id": "ChIJ5eSgKcU1aDQRDBxSTOcK6qQ",
+      "name": "COFFEE LOVER's PLANET",
+      "formatted_address": "中央路239號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "bc52f1ad-3d38-4e08-a0b1-77b473579de1",
+    "name": " 胖達咖啡Panda Caf'e&Tea",
+    "address": "新竹市東區光復路二段101號水木餐廳二樓",
+    "url": "https://www.facebook.com/Panda-CafeTea-%E8%83%96%E9%81%94%E5%92%96%E5%95%A1%E8%8C%B6%E5%B0%88%E8%B3%A3%E5%BA%97-173826559367749/",
+    "findPlace": {
+      "place_id": "ChIJB1wzGww2aDQR_n8tN4jQ2hU",
+      "name": "胖達咖啡",
+      "formatted_address": "新竹市東區光復路二段101號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "bcb62128-ab39-4913-a2fd-620d82764db0",
+    "name": "frontier 13",
+    "address": "南大路525號",
+    "url": "https://www.facebook.com/frontier13/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJ4dKNMY01aDQRQkllAJCFl_o",
+      "name": "邊境黑白切咖啡",
+      "formatted_address": "南大路525號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "bd6acc93-9e59-4d93-987a-8a0d0abd50e2",
+    "name": "寶地咖啡店 baodi treasureland",
+    "address": "300新竹市東區東前街18號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJD7uiCiM1aDQRnTjQt9GSB8M",
+      "name": "寶地咖啡甜點店 ⛁ Baodi Coffee Bar",
+      "formatted_address": "東前街18號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "bdc0c8db-5633-45a6-bfbf-322f5c40e00c",
+    "name": "Hidden off",
+    "address": "300新竹市北區建興街13號",
+    "url": "https://www.instagram.com/hiddenoff.off/",
+    "findPlace": {
+      "place_id": "ChIJ74RKjLE1aDQRmppg4eWQnRY",
+      "name": "Hidden off",
+      "formatted_address": "300新竹市北區建興街13號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "bf8dd99f-6629-4149-821c-8e6b9940b061",
+    "name": "Oaf coffee stand",
+    "address": "300新竹市東區中央路294號",
+    "url": "https://www.instagram.com/oafcoffeestand",
+    "findPlace": {
+      "place_id": "ChIJ88Arb9I1aDQRsj4RnNxTvBI",
+      "name": "Oaf coffee stand",
+      "formatted_address": "中央路294號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c0563278-0b3d-495e-ad9a-acb8d91f6491",
+    "name": "小稻甜'cafe",
+    "address": "新竹市北區北大路166巷1弄1號",
+    "url": "https://www.facebook.com/%E5%B0%8F%E7%A8%BB%E7%94%9Ccafe-1759074137656305/",
+    "findPlace": {
+      "place_id": "ChIJ_9ABIMc1aDQRCO1p9dxKbCo",
+      "name": "小稻甜 Cafe",
+      "formatted_address": "北大路166巷1弄1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c0f1ce23-a8a9-4064-be8e-febbc6699512",
+    "name": "李來 LEE LÂI",
+    "address": "300新竹市東區水源街79號",
+    "url": "https://app.omceanbooking.com/LEELAI/home",
+    "findPlace": {
+      "place_id": "ChIJW3tkh_o3aDQRKh2jZHaP27o",
+      "name": "李來 LEE LÂI",
+      "formatted_address": "水源街79號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "c266e207-fff8-450c-9666-178503d0143c",
+    "name": "佈拉諾咖啡館",
+    "address": "新竹市東區三民路40號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJoaIXm8Q1aDQRKSQLkFHtOZI",
+      "name": "佈拉諾咖啡館",
+      "formatted_address": "三民路40號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c2e92077-3b86-426e-818c-cde2bcfe01a9",
+    "name": "鹿可咖啡 ",
+    "address": "新竹市南門街96號",
+    "url": "https://www.facebook.com/lookcafe/",
+    "findPlace": {
+      "place_id": "ChIJ1SC0i-o1aDQRhv8pkHF1pok",
+      "name": "鹿可咖啡（無訂位服務/無接待六歲以下兒童）",
+      "formatted_address": "南門街98號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c558e5c3-6f38-4347-946e-7824558accb2",
+    "name": "橘時咖啡新竹關新店",
+    "address": "300新竹市東區關新路45號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJV2LUlv83aDQRGypi8009PJs",
+      "name": "橘時咖啡 Orange time coffee 新竹關新店",
+      "formatted_address": "關新路45號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c5f492bc-e6b9-4c55-89f3-ef84a5ca818c",
+    "name": "微生Float Dept.",
+    "address": "30043新竹市民權路111巷23號",
+    "url": "https://www.facebook.com/Floatdept/",
+    "findPlace": {
+      "place_id": "ChIJk7BAC9E1aDQRcKhHolfreyo",
+      "name": "Float Dept.微生咖啡「沒有訂位服務」「無室內候位空間」",
+      "formatted_address": "民權路111巷23號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c8ca9d73-59c9-4e85-8477-3ab390729817",
+    "name": "意若思咖啡",
+    "address": "新竹縣竹北市嘉政七街82號",
+    "url": "https://www.facebook.com/pg/erised.coffee",
+    "findPlace": {
+      "place_id": "ChIJ20o9l1Q2aDQRts696yiINMg",
+      "name": "意若思咖啡",
+      "formatted_address": "嘉政七街82 號1 樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c958b817-87dd-42dc-8b61-f1356fdc924a",
+    "name": "Mr Book Cafe月讀。書咖",
+    "address": "新竹市竹北市成功十街105號",
+    "url": "https://www.facebook.com/MuMoonReader",
+    "findPlace": {
+      "place_id": "ChIJd3wez5Q2aDQRHjbvsKUhSKI",
+      "name": "Mr.Moon月亮先生-假日無提供訂位",
+      "formatted_address": "302新竹縣竹北市嘉豐五路二段29號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ca50820d-4a7d-4437-8902-baf4978c38c3",
+    "name": "FOXLOVE COFFEE",
+    "address": "新竹市林森路281號",
+    "url": "https://www.facebook.com/profile.php?id=100092210340676",
+    "findPlace": {
+      "place_id": "ChIJbwZJKgM1aDQRRtqXN7hekJg",
+      "name": "FOXLOVE COFFEE 咖啡廳",
+      "formatted_address": "林森路281號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "cb89a352-d638-44d0-8197-b5e8bf7ce690",
+    "name": "最初咖啡",
+    "address": "312新竹縣橫山鄉中正路46號",
+    "url": "https://www.facebook.com/profile.php?id=100064214495124&mibextid=LQQJ4d",
+    "findPlace": {
+      "place_id": "ChIJAbmu9MVAaDQRE21Z29nw9aw",
+      "name": "最初咖啡甜點（已無販售鹹食）",
+      "formatted_address": "300新竹市东区光华街9號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ccc90eec-d7d2-459c-8c22-f7829623c02b",
+    "name": "階段甜點",
+    "address": "新竹市北區長安街89號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJwRKferU1aDQRcqM-H7UIJgI",
+      "name": "階段甜點（無內用，提供外帶客訂蛋糕）",
+      "formatted_address": "長安街89號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "ce4cc7a3-af3f-497f-96e0-7f5307f1db71",
+    "name": "Hollatte馥拿鐵 自烘咖啡 馬階店",
+    "address": "300新竹市東區忠孝路27巷9號",
+    "url": "https://m.facebook.com/hollatte3/",
+    "findPlace": {
+      "place_id": "ChIJ09yvu3U2aDQRXpn-mU67acY",
+      "name": "Hollatte馥拿鐵 自烘咖啡 馬偕店",
+      "formatted_address": "忠孝路27巷9號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "cecb7299-e95e-4625-9c12-cc06c015c62d",
+    "name": "Midori Pastry 綠境甜點工作室",
+    "address": "新竹市中南街45號",
+    "url": "https://www.facebook.com/midoripastry",
+    "findPlace": {
+      "place_id": "ChIJweaS9hI1aDQRE9-Y-26Hf14",
+      "name": "Midori Pastry 綠境甜點工作室(僅供取貨，無對外營業)",
+      "formatted_address": "300新竹市東區中山路312巷",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "cf02205c-a730-4261-a84d-d12a7d6abcf2",
+    "name": "羅塔仕咖啡",
+    "address": "新竹市東區西大路72巷97號",
+    "url": "https://www.facebook.com/LotusCafeCoffee/",
+    "findPlace": {
+      "place_id": "ChIJy9SqUOk1aDQRWLYQSosLx5s",
+      "name": "羅塔仕咖啡",
+      "formatted_address": "西大路72巷97號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "cfb4b3ac-054a-427a-b584-3b9288fe3fc2",
+    "name": "WIRED CHAYA 茶屋 新竹湳雅店",
+    "address": "300新竹市北區湳雅街91-2號B1",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJwUIbJ_k1aDQRZQ5gn20f3aI",
+      "name": "WIRED CHAYA 茶屋湳雅店",
+      "formatted_address": "大雅路88號B1",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d0659595-c6d9-4f24-ba1e-dbe7a3384054",
+    "name": "KB kaffe boutique",
+    "address": "300新竹市東區民權路111巷26號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJfQEQmcQ1aDQRLxjRGr-a-kU",
+      "name": "KB kaffe boutique(無內用，蛋糕需事先預訂）",
+      "formatted_address": "民權路111巷26號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d082f8f4-8f8a-4d42-a778-abc9e570437b",
+    "name": "十點十分咖啡",
+    "address": "新竹縣關西鎮石光里石岡子76巷3-1號",
+    "url": "https://www.facebook.com/tick1010coffe/",
+    "findPlace": {
+      "place_id": "ChIJm01k7Zw5aDQRqhMdj6KQ2WI",
+      "name": "十點十分cafe",
+      "formatted_address": "306台灣新竹縣關西鎮",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d0c24f86-8c25-4e17-8011-f258cbc4823f",
+    "name": "春室 SPRING POOL GLASS STUDIO + The POOL",
+    "address": "300新竹市東區東大路一段2號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJBxRPBI41aDQRYs7u-Oq4Pm4",
+      "name": "春室 SPRING POOL GLASS STUDIO + The POOL",
+      "formatted_address": "東大路一段2號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d1884f9b-ff85-4956-afd6-5f9d95ac2b51",
+    "name": "丸義咖啡WANTIT COFFEE",
+    "address": "300新竹市東區南門街125號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJNdoKA6E1aDQR5YDi2mx1xZg",
+      "name": "丸義咖啡 WANTIT COFFEE（早上7點開門｜外帶咖啡&自家烘豆）",
+      "formatted_address": "南門街125號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d1e574b4-2f27-4611-bc0f-9fc97b696ec1",
+    "name": "直達咖啡演藝店",
+    "address": "新竹市北區北大路166巷8弄2號1 樓",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJO3wIAhY2aDQRJbOArAG9IvI",
+      "name": "直達咖啡",
+      "formatted_address": "307新竹縣芎林鄉文化街22號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d2658e1b-279d-4c3a-8397-adafd0a05de6",
+    "name": "V．cafe 微咖啡 微幸福",
+    "address": "新竹市三民路99號",
+    "url": "https://www.facebook.com/Vcafe.WEhappy?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJC7-6hgCGDhQR-NuR6NgEpNw",
+      "name": "微咖啡",
+      "formatted_address": "三民路99號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "d2774cc0-211e-42ff-809b-1ac8fb1bc0f9",
+    "name": "Goen",
+    "address": "竹北市縣政九路",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJVTJvSRE3aDQRhj8oi1Y_qvg",
+      "name": "goen (croissant and coffee)",
+      "formatted_address": "31號, 縣政九路",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d27a7c0f-0a12-42a7-84eb-d25693b7945b",
+    "name": "東風南喃 咖啡 甜點",
+    "address": "新竹縣竹東鎮東峰路66巷17弄2號",
+    "url": "https://www.facebook.com/eastwindcafe",
+    "findPlace": {
+      "place_id": "ChIJB48r8do1aDQRzTgEg63wN7w",
+      "name": "小墊子咖啡甜點 ImMat Cafe",
+      "formatted_address": "300新竹市東區三民路154號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d305a1fc-8896-4c12-91a1-9b6005c00926",
+    "name": "COCA COFFEE",
+    "address": "30264新竹縣竹北市文興路二段300號旁空地",
+    "url": "https://www.facebook.com/cocacoffeeshop/",
+    "findPlace": {
+      "place_id": "ChIJ64lQS603aDQR3p_mXMb3vII",
+      "name": "COCA COFFEE 渴口手沖咖啡",
+      "formatted_address": "文興路二段300號旁空地",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d3c5eed8-5b72-482b-b075-d9e437cd90e7",
+    "name": "MERRY CAFE",
+    "address": "新竹縣竹北市六家七路6號",
+    "url": "https://www.facebook.com/TaiwanMerryCafe/",
+    "findPlace": {
+      "place_id": "ChIJzaQEeo03aDQR9U0AvU2sGQQ",
+      "name": "石工夫日麵 台灣地雞沖繩麵",
+      "formatted_address": "六家七路6號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d3fa794d-04f8-4dbb-9470-b3154e41bb53",
+    "name": "Wooli Cafe",
+    "address": "新竹縣新豐鄉康樂路一段416號",
+    "url": "https://www.instagram.com/wooli_cafe/",
+    "findPlace": {
+      "place_id": "ChIJKQQXI_0zaDQRnX1YKXenE1k",
+      "name": "WOOLI_CAFE",
+      "formatted_address": "康樂路一段416號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d46f6b29-b057-4e89-8027-381796315523",
+    "name": " 梧桐貝貝咖啡Brunch—竹北店",
+    "address": "新竹縣竹北市縣政七街一號二樓",
+    "url": "https://www.facebook.com/cafe.platane/",
+    "findPlace": {
+      "place_id": "ChIJxflJTY02aDQRxloJrt4dmjE",
+      "name": "梧桐貝貝咖啡輕食館",
+      "formatted_address": "縣政七街1號2樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d4b36ea7-9e9a-4545-b7d1-843b9a748d62",
+    "name": "貓嶼Cat Island Cafe",
+    "address": "300新竹市北區北新街39巷34號",
+    "url": "https://www.facebook.com/%E8%B2%93%E5%B6%BC-Cat-Island-106064568639381/",
+    "findPlace": {
+      "place_id": "ChIJe6ZimIM1aDQRLn7U9psCoZM",
+      "name": "The Secret 謐謐 新竹鐵道店 x 貓嶼",
+      "formatted_address": "300新竹市東區鐵道路一段100號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d4c21f3a-c1bc-4544-9ee1-f9c0fcbcbc03",
+    "name": "或者咖啡OR Coffee",
+    "address": "300新竹市北區大同路177號",
+    "url": "https://www.facebook.com/ORCoffee.HC",
+    "findPlace": {
+      "place_id": "ChIJ7xoBEN41aDQRv_bWRtesppk",
+      "name": "或者咖啡 OR Coffee｜手沖單品・甜點・早午餐",
+      "formatted_address": "大同路177號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d7b9df8f-12ea-4d24-beba-211efe50b04d",
+    "name": "喜木咖啡",
+    "address": "302新竹縣竹北市鳳岡路二段422號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ4aNqvgs0aDQRODUDMlvt0vE",
+      "name": "喜木咖啡",
+      "formatted_address": "鳳岡路二段422號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d8011864-6194-449d-9e86-c819f0cec52d",
+    "name": "THERE CAFÉ 那家咖啡館",
+    "address": "300新竹市北區西大路465號",
+    "url": "https://www.facebook.com/%E6%B7%B1%E5%A4%9C%E5%92%96%E5%95%A1%E5%BB%B39014-287136731886974/",
+    "findPlace": {
+      "place_id": "ChIJk_PFy1o1aDQRMZU7rTZEmsQ",
+      "name": "那家咖啡館 再等等！裝潢快好了，近期會試營業，再公告！",
+      "formatted_address": "西門街1號３樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d9260058-fd6e-407d-8d3c-baa5ae3fec2a",
+    "name": "明日咖啡店",
+    "address": "新竹市北區東大路三段303號",
+    "url": "https://www.facebook.com/tomorrow303/",
+    "findPlace": {
+      "place_id": "ChIJnbDtglY0aDQR0SZ9uPwjns0",
+      "name": "明日咖啡店",
+      "formatted_address": "東大路三段374號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "db17fab7-d9f6-4595-ac7b-8280f8c88d44",
+    "name": "咕啵啵咖啡下午茶",
+    "address": "300新竹市北區中和路17號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ5aVMypY1aDQRCcd6DvGdI5o",
+      "name": "咕啵啵咖啡下午茶",
+      "formatted_address": "中和路17號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "dc294d06-80fe-4877-9fd9-019252297f97",
+    "name": "心尚咖啡",
+    "address": "新竹縣竹北市光明六路東二段56號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJF07tXes1aDQR50HlGaqSilo",
+      "name": "心尚咖啡館",
+      "formatted_address": "302新竹縣竹北市光明六路東二段50號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "dd441f32-075f-4037-838e-4a9ba05a0288",
+    "name": "feacor coffee 非可咖啡",
+    "address": "300新竹市北區大同路121號一樓",
+    "url": "https://www.instagram.com/feacor_coffee?igsh=M2ZndGFkazFwNTRx",
+    "findPlace": {
+      "place_id": "ChIJ4wUGQPw1aDQR9jC3pZnqWcE",
+      "name": "feacor coffee 非可咖啡",
+      "formatted_address": "大同路121號一樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "dfad6098-51ac-4b25-a615-b8f3755819b7",
+    "name": "赤子 justkids",
+    "address": "300新竹市東區東前街55號(從武昌街112巷進入)",
+    "url": "https://www.facebook.com/JUSTKIDS.vintage/",
+    "findPlace": {
+      "place_id": "ChIJRbbZrIc1aDQRM-pwQ3A19ek",
+      "name": "赤子 justkids",
+      "formatted_address": "東前街55號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e2584f74-b6b3-4ece-bd12-9101e0f6889c",
+    "name": "昀熙咖啡",
+    "address": "新竹市東區新竹市三民路9-3號1樓",
+    "url": "https://www.facebook.com/purplegolden",
+    "findPlace": {
+      "place_id": "ChIJW4N16cQ1aDQRDBeVmIDIFl0",
+      "name": "昀熙咖啡",
+      "formatted_address": "三民路9-3號入口在可不可紅茶對面",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "e535b107-9ca9-476c-9847-b49e54c1974c",
+    "name": "舊是經典咖啡館 Absolut Klassik",
+    "address": "新竹市東區建美路5號",
+    "url": "https://www.facebook.com/ak.healthjam/",
+    "findPlace": {
+      "place_id": "ChIJL0ze83E2aDQRP3DaTTQ9JEs",
+      "name": "舊是經典",
+      "formatted_address": "建美路5號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e6985742-c47e-4262-b42c-43f74c283a1f",
+    "name": "昭日咖啡",
+    "address": "300新竹市東區民生路170巷13號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJPWbnGeI1aDQRvJfV_Slq1Rg",
+      "name": "昭日咖啡",
+      "formatted_address": "民生路170巷13號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e8ff2e1f-1235-47e8-9b4e-df43c2d1f699",
+    "name": "山崎家咖啡",
+    "address": "304新竹縣新豐鄉建興路一段127號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJDQBT93oxaDQR9KTCgbm90pU",
+      "name": "山崎家咖啡",
+      "formatted_address": "建興路一段127號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e9b22e6d-2688-4af3-8430-f761da556381",
+    "name": "11鹿",
+    "address": "新竹縣竹北市嘉豐十一路二段52號",
+    "url": "https://www.facebook.com/11deer/",
+    "findPlace": {
+      "place_id": "ChIJM3nDkQw3aDQRe4ZPqM_2RAY",
+      "name": "11鹿 x 餡寶王",
+      "formatted_address": "嘉豐十一路二段52號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "eab8deda-842c-43c6-b60a-8a25b8117303",
+    "name": "Louisa Coffee 路易．莎咖啡(新竹武陵店)",
+    "address": "300 新竹市北區武陵路173-3號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJo9k3pcs1aDQRYNVP64ej0Ik",
+      "name": "Louisa Coffee 路易莎咖啡(新竹武陵店)",
+      "formatted_address": "武陵路173-3號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "ec324316-e999-4b34-ba60-d716af480d31",
+    "name": "踏踏咖啡 x 養憩動物血液中心",
+    "address": "新竹縣竹北市嘉興路98號",
+    "url": "https://www.facebook.com/taTAcoffeeroasterxraiserest",
+    "findPlace": {
+      "place_id": "ChIJLcoAKpw3aDQRkTvecv83Miw",
+      "name": "踏踏咖啡x養憩動物血液中心（營業時間以ig粉絲團公告為主）",
+      "formatted_address": "嘉興路98號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "edebc41d-0a8a-4fab-b0d5-d8d34a22a46c",
+    "name": "簡單咖啡",
+    "address": "新竹市東區民權路111巷54號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJk7BAC9E1aDQRcKhHolfreyo",
+      "name": "Float Dept.微生咖啡「沒有訂位服務」「無室內候位空間」",
+      "formatted_address": "民權路111巷23號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "eeb34d41-636e-4e9b-8042-25076d16ce6a",
+    "name": "Smile Cafe 斯麥爾咖啡館",
+    "address": "新竹市光復路二段101號清華大學旺宏館",
+    "url": "https://www.facebook.com/smilecafetea/",
+    "findPlace": {
+      "place_id": "ChIJg7dPvgw2aDQRliEuhHael7w",
+      "name": "旺宏館 國際會議廳",
+      "formatted_address": "300新竹市東區光明里",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "eecda6e8-9848-4294-9fbe-8c56df1c0afa",
+    "name": "吉十Godspeed Café ",
+    "address": "新竹市北門街36號",
+    "url": "https://www.facebook.com/godspeedlucky10/",
+    "findPlace": {
+      "place_id": "ChIJo2TYFRY1aDQRAOIRCJ4lAqk",
+      "name": "吉十咖啡 CAFÉ GODSPEED(無使用谷歌，請透過IG聯絡）",
+      "formatted_address": "北門街36號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ef83191b-df50-4263-8587-827d3058ddab",
+    "name": "掬熙商行 G.C Brunch & Coffee",
+    "address": "30042新竹市東區仁愛街78號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJOSW0lxg1aDQR_UkVK-4YYso",
+      "name": "掬熙商行 G.C Brunch & Coffee",
+      "formatted_address": "仁愛街78號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "efc9d9ec-0c9b-4b80-88e9-ab534dd2fc0b",
+    "name": "Plunge Cafe 墣玉咖啡-新竹高鐵",
+    "address": "新竹縣竹北市復興二路203號",
+    "url": "https://www.facebook.com/plungecafe/",
+    "findPlace": {
+      "place_id": "ChIJnWFO6wA3aDQReZ2c6yXKDZo",
+      "name": "Plunge Cafe 墣玉咖啡",
+      "formatted_address": "復興二路203號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "f01c9fa8-e2b5-44d7-bb15-db7fe20c7646",
+    "name": "Dig in comfort food&coffee癮 . 舒 .食",
+    "address": "302新竹縣竹北市六家一路一段7號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJIT9a8_k3aDQRcYsaFIcvOhs",
+      "name": "癮 . 舒 .食",
+      "formatted_address": "六家一路一段7號1樓",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "f01dc47e-259e-4eab-99b7-213c1e7f59bb",
+    "name": "二街咖啡 2nd St Cafe",
+    "address": "新竹縣竹北市嘉政二街118號",
+    "url": "https://www.facebook.com/2ndStCafeee/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJc7A4HVQ2aDQRroRJItIw2Ws",
+      "name": "二街咖啡 2nd st. cafe",
+      "formatted_address": "嘉政二街118號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f0525400-dd18-475f-a720-8aae99cb0494",
+    "name": "Lim Coffee咖啡館",
+    "address": "300新竹市東區展業一路11號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJoRAKjho2aDQRyTO0-JxnIf4",
+      "name": "Lim Coffee咖啡館",
+      "formatted_address": "展業一路11號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f116f2e8-5ad5-43e0-b9ba-d4e5c0f93ac7",
+    "name": "Flow Into",
+    "address": "300新竹市東區八德路196號",
+    "url": "https://www.facebook.com/FLOWINTOcafe/",
+    "findPlace": {
+      "place_id": "ChIJsXkFqFI1aDQRlIKFriuDcQI",
+      "name": "FLOW INTO cafe & select.co",
+      "formatted_address": "八德路196號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f1207a33-0ce8-4b7a-b16e-b56da195d844",
+    "name": "HILA SPIRIT 咖啡吧",
+    "address": "300新竹市北區光華二街54號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJaTS-fBs1aDQRzfduRXp4n2Y",
+      "name": "HILA SPIRIT",
+      "formatted_address": "光華二街54號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "f22b8784-94ce-4020-aeba-78c4a349021f",
+    "name": "Pow!Con 充電瓶 coffee & bar",
+    "address": "300新竹市北區中央路3巷66號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJowU69cQ1aDQRQbFwlrqBOnI",
+      "name": "Pow!Con 充電瓶 coffee & bar",
+      "formatted_address": "中央路3巷66號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f2477678-d15a-4a76-b5c8-1f12a3eebba2",
+    "name": "上山喝咖啡",
+    "address": "312新竹縣橫山鄉120號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJVWPIApJHaDQR_-G4jNF9z3Y",
+      "name": "上山喝咖啡",
+      "formatted_address": "312新竹縣橫山鄉1-20號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f2d34dcd-4980-446e-bb28-ebefae466121",
+    "name": "La Kaffa 六角咖啡",
+    "address": "新竹縣竹北市自強五路239號1F",
+    "url": "https://www.facebook.com/lakaffa.tw/",
+    "findPlace": {
+      "place_id": "ChIJi-984Pk2aDQRg0lxhlT5I3U",
+      "name": "La Kaffa六角咖啡",
+      "formatted_address": "自強五路239號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f426db8f-9b80-4b14-a00f-380f5ad1bff1",
+    "name": "想要分享咖啡",
+    "address": "新竹市北區光華二街6號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ91LcoNc1aDQRE7m815F7jKo",
+      "name": "想要分享。咖啡",
+      "formatted_address": "300新竹市東區花園街56號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f5f425b4-db20-46b4-bfef-d8149a5eba43",
+    "name": "貓禾咖啡",
+    "address": "302新竹縣竹北市環北路五段410號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJI2sUVD83aDQRiH4OxelF4VY",
+      "name": "貓禾咖啡",
+      "formatted_address": "302新竹縣竹北市環北路五段410號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "f647dcbb-fd66-4b0f-8d57-d4dae3820147",
+    "name": "Moringa 象腳樹",
+    "address": "新竹市東區光華街12號",
+    "url": "https://www.facebook.com/moringasince2016/",
+    "findPlace": {
+      "place_id": "ChIJvT77cM81aDQRAx_SFblosLM",
+      "name": "Moringa象腳樹",
+      "formatted_address": "光華街12號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "f7654e4b-d4e5-46b0-9948-6fbc910d7c8a",
+    "name": "B . COFFEE dax",
+    "address": "302新竹縣竹北市華興街142巷5號",
+    "url": "https://instagram.com/b.coffeedax?igshid=NTc4MTIwNjQ2YQ==",
+    "findPlace": {
+      "place_id": "ChIJSys5B3o3aDQR7UpA1Wom3Eo",
+      "name": "B . COFFEE dax",
+      "formatted_address": "華興街142巷5號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f787731f-3a06-4085-86b7-218b9e5fe6d1",
+    "name": "聽說Listen to Cafe",
+    "address": "新竹市中央路312巷1號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJXfKtAbY1aDQRiNr9D3fPPqM",
+      "name": "聽說 Listen to Cafe",
+      "formatted_address": "中央路312巷1號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "f7d80344-f8f7-46dd-8f94-5c62a368010b",
+    "name": "水工鳥義美式餐廳",
+    "address": "新竹市金城一路77-1號",
+    "url": "https://www.facebook.com/%E6%B0%B4%E5%B7%A5%E9%B3%A5-901760609847035/",
+    "findPlace": {
+      "place_id": "ChIJcUu5uv02aDQRKoRjuLrFyI8",
+      "name": "厚食聚落 以及其他共15棟獨立建物不同營運內容，和戶外寬闊空間。",
+      "formatted_address": "金城一路69號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f7dfa7d7-5483-49c7-b3af-b0c20b1c1533",
+    "name": "陶匠咖啡",
+    "address": "300新竹市東區鐵道路一段58號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ5SyyUww1aDQRYK3J10BtkeQ",
+      "name": "陶匠咖啡",
+      "formatted_address": "鐵道路一段53號2樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f92d2976-10ec-48c1-9169-5db8faa16b1d",
+    "name": "偶然",
+    "address": "300新竹市東區新莊街53巷11號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ2bqGdb43aDQR4WFKRTxtIME",
+      "name": "偶然展覽、文創咖啡廳",
+      "formatted_address": "新莊街53巷11號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "fdc4df17-c9fa-4f1d-8040-588e092cd3a7",
+    "name": "過日子咖啡館",
+    "address": "新竹市北區水田街91巷9號",
+    "url": "https://www.facebook.com/livelifecafe/",
+    "findPlace": {
+      "place_id": "ChIJH3dDD0o1aDQRJludesquIXg",
+      "name": "DoDidDone Coffee Cottage",
+      "formatted_address": "水田街91巷9號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  }
+]

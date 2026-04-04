@@ -1,0 +1,897 @@
+[
+  {
+    "id": "0236e2db-6597-41a9-aaf5-f53fe7539611",
+    "name": "Eye Cafe",
+    "address": "花蓮市中華路70號",
+    "url": "https://www.facebook.com/eye.cafe2015/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJUfC7IMCfaDQRD7WTOHFlX18",
+      "name": "Eye Cafe",
+      "formatted_address": "中華路68號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "05ac2c81-b167-43ba-a890-52cbb246ad01",
+    "name": "Cabra Coffee",
+    "address": "970花蓮縣花蓮市中山路416-6號 970",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJoxNZTbifaDQR-SkKRPofdTs",
+      "name": "Cabra Coffee 山羊咖啡",
+      "formatted_address": "中山路416-6號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0f42727c-c285-4c37-a3d1-b9a165c7f2c0",
+    "name": "無設限咖啡 Unconditional Coffee",
+    "address": "花蓮市林政街44號",
+    "url": "https://www.facebook.com/unconditionalcoffee",
+    "findPlace": {
+      "place_id": "ChIJEf_Z15efaDQRYrA_sAeq75k",
+      "name": "UNCONDITIONAL COFFEE ROASTERY【無攝限咖啡】",
+      "formatted_address": "國風街84號 由林政街進入",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0fbb70e8-1521-41f0-958e-ffffc8ac03c4",
+    "name": "歪歪歪甜點 yyy dessert",
+    "address": "970花蓮縣花蓮市南京街328號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ_-IHd5SfaDQRSbkaAM3-bPg",
+      "name": "歪歪歪甜點 YYY Dessert",
+      "formatted_address": "南京街328號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "10cbb92a-29aa-46e5-9bb1-4f429f91559d",
+    "name": "回春工作室",
+    "address": "花蓮市光復街91-1號",
+    "url": "https://www.facebook.com/回春工作室-850842031609095/",
+    "findPlace": {
+      "place_id": "ChIJ2TsYcgmfaDQRjpd93J12nlI",
+      "name": "回春工作室",
+      "formatted_address": "建國路75巷16弄26號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "1a7b507f-d8df-482f-b599-4e4f7de21716",
+    "name": "花蓮秘密海咖啡",
+    "address": "花蓮縣花蓮市海濱街66號",
+    "url": "https://www.facebook.com/secretseacoffee/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJsU1rOeifaDQR56W01brD6xc",
+      "name": "秘密海小館",
+      "formatted_address": "海濱街66號1樓",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "1eb93783-85a9-4184-aa74-3b0baf54939d",
+    "name": "Caffe Fiore 珈琲花",
+    "address": "花蓮市忠孝街79號",
+    "url": "https://www.facebook.com/profile.php?id=100076840345347",
+    "findPlace": {
+      "place_id": "ChIJGbGUTJWfaDQRkyKj0_S1zlQ",
+      "name": "Caffe Fiore珈琲花",
+      "formatted_address": "忠孝街79號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "397c217c-bb35-4325-b8a9-cc342b92d0e9",
+    "name": "木子家咖啡民宿 (咖啡喝到飽)",
+    "address": "花蓮縣花蓮市民權九街1巷5號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJgUrW89WfaDQRS8C6K0s7xDA",
+      "name": "木子家咖啡民宿",
+      "formatted_address": "民權九街一巷5號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4f322786-44e7-4630-9aa3-324a11d2e98f",
+    "name": "OliTree",
+    "address": "花蓮市節約街19號",
+    "url": "https://m.facebook.com/loveolitree/?locale2=zh_TW",
+    "findPlace": {
+      "place_id": "ChIJa8ZDZsCfaDQRZTphTNWIgzY",
+      "name": "Olitree 工作室 /週日店休",
+      "formatted_address": "970花蓮縣花蓮市成功街185號2樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "54424e5b-8cda-4874-9dc1-e88d33e9090f",
+    "name": "太魯閣光覺 Lighten Cafe Taroko",
+    "address": "花蓮縣秀林鄉崇德村159號",
+    "url": "https://www.facebook.com/Tarokocafe",
+    "findPlace": {
+      "place_id": "ChIJ9QIm6yUpZjQRZXGcwou4zJ8",
+      "name": "光覺咖啡太魯閣店Taroko Lighten Cafe（預約制）",
+      "formatted_address": "159號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "565f9e9b-7790-4b59-869d-9f82a44e2dcd",
+    "name": "伊諾咖啡館",
+    "address": "花蓮市光復街130號",
+    "url": "https://www.facebook.com/%E4%BC%8A%E8%AB%BE%E5%92%96%E5%95%A1%E9%A4%A8-112011755504621/",
+    "findPlace": {
+      "place_id": "ChIJAejIQ7-faDQR8heN-Khex6o",
+      "name": "伊諾咖啡館",
+      "formatted_address": "光復街130號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "57546594-eaee-4938-8e29-33f61c48127c",
+    "name": "安娜咖啡",
+    "address": "花蓮市國聯5路137號",
+    "url": "https://www.facebook.com/cafeanna",
+    "findPlace": null,
+    "details": null,
+    "error": "fetch failed",
+    "audit": {
+      "category": "review",
+      "reason": "fetch failed"
+    }
+  },
+  {
+    "id": "59033f51-068d-4c67-990a-c3194c2a328e",
+    "name": "夏比安咖啡",
+    "address": "花蓮縣光復鄉民治街15巷28號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJj_dWllVNbzQRiWWUMnZ5kFg",
+      "name": "Sapientia Cafe 夏比安咖啡",
+      "formatted_address": "976花蓮縣光復鄉民治街15巷28號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "60a3c32c-5011-48c1-8ad0-31e0395a840f",
+    "name": "亞瑟的王座",
+    "address": "花蓮市中興路81號",
+    "url": "https://www.facebook.com/arthursthrone",
+    "findPlace": {
+      "place_id": "ChIJq_-gyCEhZjQRyJ6OmOUj_SM",
+      "name": "亞瑟的王座 AT Cafe",
+      "formatted_address": "中興路81號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "68e92ced-19bf-422d-afaa-dc5dd26bff05",
+    "name": "來+奇想咖啡",
+    "address": "970花蓮縣花蓮市中山路131巷5號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJox3fCeqfaDQRGfrhkYr8964",
+      "name": "來+奇想咖啡",
+      "formatted_address": "中山路131巷5號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "7070f1eb-a497-40e7-8706-c346176f8fdf",
+    "name": "斗宅。揀茶舍",
+    "address": "花蓮市三民街23號(花蓮縣縣定古蹟檢察長宿舍)",
+    "url": "https://www.facebook.com/ShibaInuCafeRoasters",
+    "findPlace": {
+      "place_id": "ChIJvyyCkVafaDQRafDuV1g5Gr0",
+      "name": "咖逼小売所 ｜ 斗宅。揀茶舍",
+      "formatted_address": "三民街23號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "72838829-ec7a-46f4-97ea-0de4a32a2d9d",
+    "name": "小室集合空間",
+    "address": "花蓮市有恆街3號",
+    "url": "https://www.facebook.com/花蓮-咖啡-小室集合空間-1605452359481678",
+    "findPlace": {
+      "place_id": "ChIJr-LtlKOfaDQRyU1fEqJK_2o",
+      "name": "小室咖啡 花蓮總店",
+      "formatted_address": "有恆街3號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "7b351894-7351-4f50-b643-9fa8097caf71",
+    "name": "阿莫咖啡 A-more Coffee",
+    "address": "花蓮市國民一街46號",
+    "url": "https://www.facebook.com/amore168/",
+    "findPlace": {
+      "place_id": "ChIJYUdb17mfaDQRYdNZlNSCWnI",
+      "name": "阿莫咖啡 A-more coffee",
+      "formatted_address": "國民一街46號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "7e2604e2-0bd1-42bc-9c4d-6893fe75fe5f",
+    "name": "咖啡舍 Seven Beans",
+    "address": "花蓮市建林街132號",
+    "url": "https://www.facebook.com/LeoSpaceCafeBar",
+    "findPlace": {
+      "place_id": "ChIJkYAmhL6faDQRrC2AtGcLcxg",
+      "name": "咖啡舍（營業時間有臨時變動請搜尋臉書及IG)",
+      "formatted_address": "建林街132號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "7ea3887d-ade8-4adc-8b7a-0c1e1b4a90e1",
+    "name": "9803",
+    "address": "花蓮縣壽豐鄉志學村榮光街22號",
+    "url": "https://www.facebook.com/9803cafe/",
+    "findPlace": {
+      "place_id": "ChIJM-ZhY-CjaDQR2FBqlTSdcyE",
+      "name": "9803咖啡館",
+      "formatted_address": "榮光街22號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "816bfc49-e3e1-476a-b562-3b224f2ce426",
+    "name": "正當冰",
+    "address": "花蓮市中福路147號 ",
+    "url": "https://www.facebook.com/JusticeIceCream.FanClub/",
+    "findPlace": {
+      "place_id": "ChIJgVW4iumfaDQRa1MOYRdCneg",
+      "name": "正當冰 花蓮東大門夜市店",
+      "formatted_address": "970花蓮縣花蓮市中山路50號 福町夜市區 B46 攤",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "84edc540-0242-4dad-8f37-5d6fcb4a1f00",
+    "name": "惦惦 lab:tiamtiam",
+    "address": "花蓮縣吉安鄉中興路345號",
+    "url": "https://www.facebook.com/2015tiamtiam",
+    "findPlace": {
+      "place_id": "ChIJx9KgDWafaDQR-C-3AZHCGaM",
+      "name": "惦惦 lab:tiamtiam",
+      "formatted_address": "中興路345號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "852b4fa3-8427-4b04-80e3-b598237916a4",
+    "name": "众咖啡",
+    "address": "花蓮市中山路624號",
+    "url": "https://www.facebook.com/peopleofcoffee",
+    "findPlace": {
+      "place_id": "ChIJZ5_7nbGfaDQRzm9WkUEB2KU",
+      "name": "众蔬食3.0 - 心滿義足 People's Cafe（義大利主廚，正念素食(全素/蛋奶素） Italian Chef, Vegetarian and Vegan）",
+      "formatted_address": "中山路624號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "8a4cae29-2410-48fd-b4d2-769d84c25e34",
+    "name": "咖啡月（浅野）",
+    "address": "花蓮縣花蓮市復興街65-2號",
+    "url": "https://www.facebook.com/%E5%92%96%E5%95%A1%E6%9C%88%E6%B5%85%E9%87%8E-577269992304115",
+    "findPlace": {
+      "place_id": "ChIJ78h2tcCfaDQRVNWpuDMjtrM",
+      "name": "咖啡月",
+      "formatted_address": "復興街65-2號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a1363506-c83e-4433-96a0-b1cc1efbeb3d",
+    "name": "單行道咖啡",
+    "address": "970花蓮縣花蓮市國聯五路250號",
+    "url": "https://www.facebook.com/onewaycoffee.250/",
+    "findPlace": {
+      "place_id": "ChIJOblsaYCfaDQRpJDMgIIIgdc",
+      "name": "單行道咖啡",
+      "formatted_address": "國聯五路250號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a6cbb007-50f4-4a3c-911b-bb6269f85dde",
+    "name": "真澤Coffee ＆ Ice cream",
+    "address": "970花蓮縣花蓮市中華路325-9號",
+    "url": "https://www.facebook.com/%E7%9C%9F%E6%BE%A4%E5%92%96%E5%95%A1Ice-cream-127441087972698",
+    "findPlace": {
+      "place_id": "ChIJYTS-HFafaDQReXLRLs4zAcs",
+      "name": "宸誼咖啡館",
+      "formatted_address": "973花蓮縣吉安鄉自強路576號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a6df7233-5a3b-4ee7-9feb-50fe64e73f6f",
+    "name": "色香貓精品咖啡",
+    "address": "花蓮市建國路75巷16弄19號",
+    "url": "https://www.facebook.com/SHE.XIANG.MAO.COFFEE/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJNz4E176faDQRnpvnzlokHFY",
+      "name": "色香貓咖啡",
+      "formatted_address": "建國路75巷16弄19號號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "b6aab84f-a2de-4aa5-9fa6-e188dbe36e5b",
+    "name": "KŌHI宅 (珈琲宅)",
+    "address": "花蓮縣花蓮市成功街298號",
+    "url": "https://www.facebook.com/kohi.rejidensu",
+    "findPlace": {
+      "place_id": "ChIJabY88-qfaDQRd4oZ2BFhAGc",
+      "name": "珈琲宅",
+      "formatted_address": "成功街298號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b74299e5-2387-4d5d-81c1-9fa2e90cdf7b",
+    "name": "giocare義式.手沖咖啡",
+    "address": "花蓮縣花蓮市樹人街7號",
+    "url": "https://www.facebook.com/giocare.cafe/",
+    "findPlace": {
+      "place_id": "ChIJ28XcQ8KfaDQRoxnG6pDsjao",
+      "name": "Giocare義式.手沖咖啡",
+      "formatted_address": "樹人街7號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "bc937057-a552-48b8-a0da-d1d3b0bfb62c",
+    "name": "Choco Choco 手工巧克力咖啡館",
+    "address": "花蓮市忠孝街70號",
+    "url": "http://choco2.com.tw/",
+    "findPlace": {
+      "place_id": "ChIJSZWJD76faDQR_0dySE8qs3s",
+      "name": "Stroll散步咖啡",
+      "formatted_address": "忠孝街70號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "bdb16a4d-1275-4781-b745-e94a20f33ed9",
+    "name": " 秋朝咖啡館",
+    "address": "970花蓮縣花蓮市花崗街5號",
+    "url": "https://www.facebook.com/QiuChaocafe",
+    "findPlace": {
+      "place_id": "ChIJ19QG4-mfaDQRAw87840Vwpo",
+      "name": "秋朝咖啡館",
+      "formatted_address": "花崗街5號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c451e1c0-2f8c-4cbe-a038-5e89f98c2781",
+    "name": "吉野精品咖啡烘焙室",
+    "address": "970花蓮縣花蓮市成功街206號",
+    "url": "https://www.coffeeman.com.tw/",
+    "findPlace": {
+      "place_id": "ChIJ5yt3LeufaDQRGfUEVg_Us04",
+      "name": "吉野咖啡",
+      "formatted_address": "成功街206號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c7554ef5-2eff-4c4c-a002-a3cf9dd6ebbb",
+    "name": "羅伯咖啡國聯店",
+    "address": "花蓮市國聯五路69號",
+    "url": "http://www.rob-cafe.com.tw",
+    "findPlace": {
+      "place_id": "ChIJRRe48eyfaDQRII0jUmcQ7Cc",
+      "name": "羅伯咖啡國聯店",
+      "formatted_address": "國聯五路11號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "cb5cf5a7-f45e-49b6-a4fa-14c5bbd00b05",
+    "name": "週六郊區",
+    "address": "花蓮市民權7街22號",
+    "url": "週六郊區",
+    "findPlace": {
+      "place_id": "ChIJ5QktjhGfaDQRA_oA-nPCKmc",
+      "name": "週六郊區咖啡豆專賣店",
+      "formatted_address": "民權七街22號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "cda7ad4b-3f1a-4a7e-8417-bfdb071f6e9d",
+    "name": "杯點咖啡 Bad Day Coffee",
+    "address": "花蓮市富祥街58號",
+    "url": "https://www.facebook.com/baddaycoffee/",
+    "findPlace": {
+      "place_id": "ChIJWQUpptKfaDQRBRg5qYpJ6qo",
+      "name": "充電咖啡Budaily cafe (花蓮林森店)",
+      "formatted_address": "970花蓮縣花蓮市林森路383號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d4c5194c-9a6b-4e68-9d3c-17475a798b26",
+    "name": "半寓咖啡giocare 1店",
+    "address": "花蓮市成功街316號",
+    "url": "https://www.facebook.com/apartment.giocare/",
+    "findPlace": {
+      "place_id": "ChIJe3Khi-qfaDQR_hY8tRU9r5M",
+      "name": "半寓咖啡",
+      "formatted_address": "成功街316號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d8834684-2728-46e4-830d-b3b15bf1c323",
+    "name": "泥巴咖啡",
+    "address": "花蓮縣花蓮市中正路561號",
+    "url": "https://www.facebook.com/cafemud",
+    "findPlace": {
+      "place_id": "ChIJtwVJixifaDQRNMmvw17FIHs",
+      "name": "槑力場 2nerds_cafe (呆呆力場/泥巴咖啡/深夜咖啡廳)",
+      "formatted_address": "中正路557號2樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d8d852c7-73cd-4d8a-a674-87d85712a55f",
+    "name": "伯揚咖啡吉安總店",
+    "address": "吉安鄉永興7街72號",
+    "url": "https://www.facebook.com/BoYangCafe/",
+    "findPlace": {
+      "place_id": "ChIJJyP3GNuhaDQRDNcJkTee4SI",
+      "name": "伯揚咖啡吉安總店",
+      "formatted_address": "永興七街72-1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "dcd0a7e1-a10a-4e0c-8511-e13064ec6cc7",
+    "name": "黑鯨咖啡",
+    "address": "花蓮市林森路255之1號",
+    "url": "https://www.facebook.com/%E9%BB%91%E9%AF%A8%E5%92%96%E5%95%A1%E9%A4%A8-Black-Whale-Cafe-225521334305344/",
+    "findPlace": {
+      "place_id": "ChIJFZgsRL6faDQRgXHSKtQ5AwU",
+      "name": "黑鯨咖啡館",
+      "formatted_address": "林森路255-1號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "dd4dca91-7f4a-4910-a2f9-2d14ec1b2a77",
+    "name": "波米咖啡",
+    "address": "花蓮市民國路 45 號",
+    "url": "https://www.facebook.com/Pommecafe/",
+    "findPlace": {
+      "place_id": "ChIJB9fzcDmfaDQRBWA1M9VbccE",
+      "name": "波米咖啡館",
+      "formatted_address": "2F, No. 581號和平路",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "df53e2af-dad1-4c29-a4f7-76d94b648399",
+    "name": "正德愛心咖啡館",
+    "address": "花蓮市海岸路9號",
+    "url": "https://www.facebook.com/pages/%E6%AD%A3%E5%BE%B7%E6%84%9B%E5%BF%83%E5%92%96%E5%95%A1%E9%A4%A8/106142295324633/",
+    "findPlace": {
+      "place_id": "ChIJlTPOic2faDQRqbxh4IkPXW4",
+      "name": "正德愛心咖啡館",
+      "formatted_address": "海岸路9號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "dfd85d0f-5ca6-4e16-ab5c-ffa32b7ff456",
+    "name": "珈琲鋪子 (咖啡鋪子)",
+    "address": "花蓮市節約街8號",
+    "url": "https://www.facebook.com/gabepuze",
+    "findPlace": {
+      "place_id": "ChIJeRybDMCfaDQRvsjS_5FO1Vw",
+      "name": "珈琲舖子(咖啡舖子)",
+      "formatted_address": "節約街8號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "e0f7dd8f-3152-47e0-85be-3992f5298dfa",
+    "name": "卡本特",
+    "address": "花蓮市花蓮市尚志路5-2號",
+    "url": "https://www.facebook.com/hualiencarpenter",
+    "findPlace": {
+      "place_id": "ChIJo0kJ79WfaDQRn6_Hwo2v8dk",
+      "name": "木子家咖啡烘焙坊",
+      "formatted_address": "970花蓮縣花蓮市府前路570號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e1af95d8-9d07-483f-86df-56ca0bd1156b",
+    "name": "Koukouvagia 咕咕發芽咖啡驛棧",
+    "address": "花蓮縣玉里鎮大同路58號",
+    "url": "https://www.facebook.com/koukouvagiacafe/",
+    "findPlace": {
+      "place_id": "ChIJAWylgWRqbzQRgdv-FT89I2o",
+      "name": "Koukouvagia 咕咕發芽咖啡驛棧",
+      "formatted_address": "大同路58號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "e433a385-ce45-4778-a23f-2280febb0c8c",
+    "name": "月荷塘鄉村廚房",
+    "address": "花蓮縣富里鄉983花蓮縣富里鄉羅山村東湖39號",
+    "url": "https://www.facebook.com/lsmoon39/",
+    "findPlace": {
+      "place_id": "ChIJhwNSKThtbzQRF86UBteeXV0",
+      "name": "月荷塘鄉村廚房",
+      "formatted_address": "983台灣花蓮縣富里鄉",
+      "business_status": "CLOSED_PERMANENTLY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "e6a61a0f-63a6-4476-8473-b1428968b512",
+    "name": "浮室 soave plan",
+    "address": "花蓮縣花蓮市成功街280號",
+    "url": "https://www.facebook.com/soaveplan/",
+    "findPlace": {
+      "place_id": "ChIJu2LE7uqfaDQR2IRMRTln9PY",
+      "name": "浮室咖啡 soave plan",
+      "formatted_address": "成功街280號1樓",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ec611d48-7dcb-41d8-a919-619005a8a94e",
+    "name": "斗。宅商社 Cafe & Bar",
+    "address": "花蓮市福建街460號 (鐵道文化園區二館內)",
+    "url": "https://www.facebook.com/Shibainu159.7",
+    "findPlace": {
+      "place_id": "ChIJG0Ns5hCfaDQRPb_Cyv2ywZI",
+      "name": "花聲客廳（咖啡&酒吧&週末現場演出）",
+      "formatted_address": "福建街460號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "eeaaf76a-f16f-4ca9-ac4b-93579cbcacae",
+    "name": "金湯達人咖啡館",
+    "address": "花蓮市中山路431號",
+    "url": "https://www.facebook.com/kingtangcafe",
+    "findPlace": {
+      "place_id": "ChIJE0wVu7ifaDQRvDX62zBHDhY",
+      "name": "金湯達人咖啡館",
+      "formatted_address": "中山路431號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "fb3cbf38-b7ad-43d0-9453-2451d3a4c7fa",
+    "name": "花蓮恩典咖啡",
+    "address": "花蓮縣花蓮市民運里中美一街74號",
+    "url": "https://www.facebook.com/%E8%8A%B1%E8%93%AE%E6%81%A9%E5%85%B8%E5%92%96%E5%95%A1-748440858570985/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJVXJ8rIEgZjQRUz2qzC1pKDI",
+      "name": "恩典咖啡",
+      "formatted_address": "中美一街74號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "fc702163-13f9-4bdf-81cd-dd50979106cf",
+    "name": "Cafe Copita",
+    "address": "花蓮市博愛街105號",
+    "url": "https://www.facebook.com/Cafe-Copita-259896267771364",
+    "findPlace": {
+      "place_id": "ChIJo0ygHVmfaDQRU0527Ouyy0o",
+      "name": "Cafe Copita",
+      "formatted_address": "博愛街105號",
+      "business_status": "OPERATIONAL",
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  }
+]
