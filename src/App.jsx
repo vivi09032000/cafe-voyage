@@ -7,6 +7,7 @@ import "leaflet/dist/leaflet.css";
 const SUPABASE_URL = "https://dmymcnmsyhppwstpwmal.supabase.co";
 const SUPABASE_KEY = "sb_publishable_2mlstxr8qtRrybaIyBIB8Q_oS_Im60Q";
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+const ADMIN_EMAIL = "vivi09032000@gmail.com";
 
 async function getCrowdReport(cafeId) {
   const since = new Date(Date.now() - 3 * 60 * 60 * 1000).toISOString();
@@ -1440,11 +1441,13 @@ const CrowdReport = ({ cafeId, onReport }) => {
 };
 
 // ── Page: Detail ──
-const DetailPage = ({ cafe, onBack, fav, onFav, onReport }) => {
+const DetailPage = ({ cafe, onBack, fav, onFav, onReport, canManageCafe, onHideCafe }) => {
   const touchStartX = useRef(0);
   const touchStartY = useRef(0);
   const swipeActive = useRef(false);
   const [swipeX, setSwipeX] = useState(0);
+  const [hideBusy, setHideBusy] = useState(false);
+  const [hideError, setHideError] = useState("");
 
   const handleTouchStart = (e) => {
     const touch = e.touches[0];
@@ -1481,6 +1484,18 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport }) => {
     }
     swipeActive.current = false;
     setSwipeX(0);
+  };
+
+  const handleHideCafe = async () => {
+    if (!canManageCafe || !onHideCafe || hideBusy) return;
+    setHideBusy(true);
+    setHideError("");
+    try {
+      await onHideCafe(cafe);
+    } catch (error) {
+      setHideError(error.message || "目前無法隱藏這家店，請稍後再試。");
+      setHideBusy(false);
+    }
   };
 
   return (
@@ -1554,6 +1569,32 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport }) => {
             📍 在 Google Maps 開啟
           </a>
         )}
+        {canManageCafe && (
+          <>
+            <button
+              onClick={handleHideCafe}
+              disabled={hideBusy}
+              style={{
+                display: "block",
+                width: "100%",
+                background: "#fff",
+                color: T.brown,
+                borderRadius: 10,
+                padding: "12px",
+                textAlign: "center",
+                border: `1px solid ${T.beige}`,
+                fontSize: 14,
+                fontWeight: 700,
+                marginBottom: 10,
+                cursor: hideBusy ? "default" : "pointer",
+                fontFamily: "inherit",
+              }}
+            >
+              {hideBusy ? "處理中..." : "🙈 隱藏這家店"}
+            </button>
+            {hideError && <div style={{ fontSize: 12, color: "#9b2335", marginBottom: 10 }}>{hideError}</div>}
+          </>
+        )}
       </div>
     </div>
   );
@@ -1598,6 +1639,7 @@ export default function App() {
   const [emptyCafeIds, setEmptyCafeIds] = useState(new Set());
   const [mapView, setMapView] = useState({ center: null, zoom: null });
   const [mapQuery, setMapQuery] = useState("");
+  const isAdminUser = authUser?.email === ADMIN_EMAIL;
   const fetchAllCafes = useCallback(async () => {
     let cacheLoaded = false;
     try {
@@ -1733,6 +1775,49 @@ export default function App() {
     }
   }, []);
 
+  const handleHideCafe = useCallback(async (cafe) => {
+    const { data, error } = await supabase.auth.getSession();
+    if (error) throw error;
+    const session = data.session;
+    const email = session?.user?.email || "";
+    if (!session?.access_token || email !== ADMIN_EMAIL) {
+      throw new Error("只有管理帳號可以隱藏店家。");
+    }
+
+    const countryCode = getCafeCountryKey(cafe) === "vietnam" ? "VN" : "TW";
+    const cityKey = getCafeCountryKey(cafe) === "vietnam"
+      ? (cafe.city_key || "hoi_an")
+      : (getCafeRegionGroupKey(cafe) || "");
+
+    const response = await fetch(`${SUPABASE_URL}/rest/v1/cafe_overrides?on_conflict=cafe_source,cafe_source_id`, {
+      method: "POST",
+      headers: {
+        apikey: SUPABASE_KEY,
+        Authorization: `Bearer ${session.access_token}`,
+        "Content-Type": "application/json",
+        Prefer: "resolution=merge-duplicates,return=representation",
+      },
+      body: JSON.stringify([{
+        cafe_source: "cafenomad",
+        cafe_source_id: String(cafe.id),
+        country_code: countryCode,
+        city_key: cityKey,
+        is_hidden: true,
+        sort_penalty: 999,
+        note: "從詳細頁手動隱藏",
+        is_active: true,
+      }]),
+    });
+
+    if (!response.ok) {
+      const text = await response.text();
+      throw new Error(text || `Supabase request failed: ${response.status}`);
+    }
+
+    await fetchAllCafes();
+    setSelected(null);
+  }, [fetchAllCafes]);
+
   const toggleFav = (id) => setFavs(prev => { const key = String(id); const s = new Set(prev); s.has(key) ? s.delete(key) : s.add(key); return s; });
   const favoriteLookup = useMemo(() => ({ has: (id) => favs.has(String(id)) }), [favs]);
   const availableCountries = useMemo(() => {
@@ -1819,7 +1904,7 @@ export default function App() {
   };
 
   const renderPage = () => {
-    if (selected) return <DetailPage cafe={selected} onBack={() => setSelected(null)} fav={favoriteLookup.has(selected.id)} onFav={toggleFav} onReport={handleReportAndUpdateMap} />;
+    if (selected) return <DetailPage cafe={selected} onBack={() => setSelected(null)} fav={favoriteLookup.has(selected.id)} onFav={toggleFav} onReport={handleReportAndUpdateMap} canManageCafe={isAdminUser} onHideCafe={handleHideCafe} />;
     switch (tab) {
       case "home": return <HomePage cafes={homeCafes} loading={loading} hasRegionSelection={hasRegionSelection} onOpenRegionPicker={() => setMenuOpen(true)} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} emptyCafeIds={emptyCafeIds} />;
       case "search": return <SearchPage cafes={searchCafes} loading={loading} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} />;
