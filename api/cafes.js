@@ -88,6 +88,44 @@ async function fetchCafeStatusReviews(cityKey) {
   );
 }
 
+async function fetchCafeOverrides(cafeSource, countryCode, cityKey) {
+  const url = new URL(`${SUPABASE_URL}/rest/v1/cafe_overrides`);
+  url.searchParams.set(
+    "select",
+    "cafe_source_id,display_name_override,address_override,is_hidden,sort_penalty,note"
+  );
+  url.searchParams.set("is_active", "eq.true");
+  url.searchParams.set("cafe_source", `eq.${cafeSource}`);
+  if (countryCode) {
+    url.searchParams.set("country_code", `eq.${countryCode}`);
+  }
+  if (cityKey) {
+    url.searchParams.set("city_key", `eq.${cityKey}`);
+  }
+  const response = await fetch(url, {
+    headers: {
+      apikey: SUPABASE_KEY,
+      Authorization: `Bearer ${SUPABASE_KEY}`,
+    },
+  });
+  if (!response.ok) {
+    throw new Error(`cafe_overrides request failed: ${response.status}`);
+  }
+  const rows = await response.json();
+  return new Map(
+    rows.map((row) => [
+      row.cafe_source_id,
+      {
+        displayName: row.display_name_override || "",
+        address: row.address_override || "",
+        isHidden: Boolean(row.is_hidden),
+        sortPenalty: Number(row.sort_penalty || 0),
+        note: row.note || "",
+      },
+    ])
+  );
+}
+
 function applyStatusReviewMap(cafes, statusMap) {
   if (!statusMap || statusMap.size === 0) return cafes;
   return cafes
@@ -104,6 +142,30 @@ function applyStatusReviewMap(cafes, statusMap) {
         google_business_note: status.note || "Google 顯示暫停營業",
       };
     });
+}
+
+function applyCafeOverrides(cafes, overrideMap) {
+  if (!overrideMap || overrideMap.size === 0) return cafes;
+  return cafes
+    .map((cafe, index) => {
+      const override = overrideMap.get(cafe.id);
+      if (override?.isHidden) return null;
+      return {
+        ...cafe,
+        name: override?.displayName || cafe.name,
+        address: override?.address || cafe.address,
+        _sortPenalty: override?.sortPenalty || 0,
+        _sortIndex: index,
+      };
+    })
+    .filter(Boolean)
+    .sort((a, b) => {
+      if (a._sortPenalty !== b._sortPenalty) {
+        return a._sortPenalty - b._sortPenalty;
+      }
+      return a._sortIndex - b._sortIndex;
+    })
+    .map(({ _sortPenalty, _sortIndex, ...cafe }) => cafe);
 }
 
 async function fetchCustomCafes(cityKey) {
@@ -182,6 +244,14 @@ export default async function handler(req, res) {
   }
   if (!applied) {
     data = await applyTaipeiClosureReview(data, normalizedCity);
+  }
+  try {
+    const overrideMap = await fetchCafeOverrides("cafenomad", "TW", normalizedCity || undefined);
+    if (overrideMap.size > 0) {
+      data = applyCafeOverrides(data, overrideMap);
+    }
+  } catch (error) {
+    console.error(error);
   }
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.json(data);
