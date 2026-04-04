@@ -13,8 +13,7 @@ if (!INPUT || !CITY_KEY || !OUTPUT) {
 const rows = JSON.parse(await readFile(INPUT, "utf8"));
 const kept = rows.filter((row) => {
   const reason = row.audit?.reason || "";
-  return row.audit?.category === "suspected_closed"
-    || reason === "Google Places businessStatus = CLOSED_PERMANENTLY"
+  return reason === "Google Places businessStatus = CLOSED_PERMANENTLY"
     || reason === "Google Places businessStatus = CLOSED_TEMPORARILY";
 });
 
