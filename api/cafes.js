@@ -24,7 +24,7 @@ async function readTaipeiClosureReview() {
   const temporarilyClosedIds = new Set();
 
   for (const row of rows) {
-    if (row.audit?.reason === "Google Places businessStatus = CLOSED_PERMANENTLY") {
+    if (row.audit?.category === "suspected_closed" || row.audit?.reason === "Google Places businessStatus = CLOSED_PERMANENTLY") {
       permanentlyClosedIds.add(row.id);
     } else if (row.audit?.reason === "Google Places businessStatus = CLOSED_TEMPORARILY") {
       temporarilyClosedIds.add(row.id);
@@ -57,7 +57,7 @@ async function fetchCafeStatusReviews(cityKey) {
   const url = new URL(`${SUPABASE_URL}/rest/v1/cafe_status_reviews`);
   url.searchParams.set(
     "select",
-    "cafe_source_id,google_business_status,manual_override_status,manual_note,review_reason"
+    "cafe_source_id,google_business_status,manual_override_status,manual_note,review_reason,review_category"
   );
   url.searchParams.set("is_current", "eq.true");
   url.searchParams.set("cafe_source", "eq.cafenomad");
@@ -82,6 +82,7 @@ async function fetchCafeStatusReviews(cityKey) {
         status: row.manual_override_status || row.google_business_status || "",
         note: row.manual_note || "",
         reviewReason: row.review_reason || "",
+        reviewCategory: row.review_category || "",
       },
     ])
   );
@@ -90,7 +91,10 @@ async function fetchCafeStatusReviews(cityKey) {
 function applyStatusReviewMap(cafes, statusMap) {
   if (!statusMap || statusMap.size === 0) return cafes;
   return cafes
-    .filter((cafe) => statusMap.get(cafe.id)?.status !== "CLOSED_PERMANENTLY")
+    .filter((cafe) => {
+      const status = statusMap.get(cafe.id);
+      return status?.status !== "CLOSED_PERMANENTLY" && status?.reviewCategory !== "suspected_closed";
+    })
     .map((cafe) => {
       const status = statusMap.get(cafe.id);
       if (!status || status.status !== "CLOSED_TEMPORARILY") return cafe;

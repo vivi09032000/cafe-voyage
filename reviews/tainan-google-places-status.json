@@ -157,8 +157,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -319,8 +319,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -463,8 +463,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -607,8 +607,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -709,8 +709,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -727,8 +727,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -992,8 +992,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -1136,8 +1136,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -1208,8 +1208,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -1406,8 +1406,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -1568,8 +1568,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -1586,8 +1586,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -1604,8 +1604,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -1694,8 +1694,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -1820,8 +1820,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -1838,8 +1838,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -1874,8 +1874,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -1892,8 +1892,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -1982,8 +1982,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -2018,8 +2018,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -2072,8 +2072,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -2216,8 +2216,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -2270,8 +2270,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -2324,8 +2324,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -2342,8 +2342,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -2360,8 +2360,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -2414,8 +2414,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -2702,8 +2702,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -2720,8 +2720,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -2810,8 +2810,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -2972,8 +2972,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -3260,8 +3260,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -3314,8 +3314,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -3368,8 +3368,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -3404,8 +3404,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -3440,8 +3440,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -3512,8 +3512,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -3800,8 +3800,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -4100,8 +4100,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -4118,8 +4118,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -4154,8 +4154,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -4244,8 +4244,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -4280,8 +4280,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -4334,8 +4334,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {
@@ -4478,8 +4478,8 @@
     },
     "details": null,
     "audit": {
-      "category": "ok",
-      "reason": "Google Places businessStatus = OPERATIONAL"
+      "category": "suspected_closed",
+      "reason": "Google matched a different active business at the same address"
     }
   },
   {

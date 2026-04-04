@@ -55,6 +55,97 @@ function normalizeName(value) {
     .replace(/[()（）［］【】「」『』'"`~!@#$%^&*+=:;,.?/\\|<>_\-\s]/g, "");
 }
 
+function tokenizeName(value) {
+  const normalized = normalizeName(value);
+  return (normalized.match(/[a-z0-9]+|[\u3400-\u9fff]+/g) || [normalized]).filter(Boolean).sort();
+}
+
+function canonicalName(value) {
+  return tokenizeName(value).join("|");
+}
+
+function levenshtein(a, b) {
+  const aa = Array.from(a);
+  const bb = Array.from(b);
+  const dp = Array.from({ length: aa.length + 1 }, (_, i) =>
+    Array.from({ length: bb.length + 1 }, (_, j) => (i === 0 ? j : j === 0 ? i : 0))
+  );
+
+  for (let i = 1; i <= aa.length; i += 1) {
+    for (let j = 1; j <= bb.length; j += 1) {
+      const cost = aa[i - 1] === bb[j - 1] ? 0 : 1;
+      dp[i][j] = Math.min(
+        dp[i - 1][j] + 1,
+        dp[i][j - 1] + 1,
+        dp[i - 1][j - 1] + cost
+      );
+    }
+  }
+
+  return dp[aa.length][bb.length];
+}
+
+function tokenJaccard(aTokens, bTokens) {
+  const aSet = new Set(aTokens);
+  const bSet = new Set(bTokens);
+  const union = new Set([...aSet, ...bSet]).size;
+  if (!union) return 0;
+  let intersection = 0;
+  for (const token of aSet) {
+    if (bSet.has(token)) intersection += 1;
+  }
+  return intersection / union;
+}
+
+function nameSimilarity(sourceName, matchedName) {
+  const source = normalizeName(sourceName);
+  const matched = normalizeName(matchedName);
+  if (!source || !matched) return 0;
+  if (source === matched) return 1;
+  if (source.includes(matched) || matched.includes(source)) return 0.92;
+
+  const sourceCanonical = canonicalName(sourceName);
+  const matchedCanonical = canonicalName(matchedName);
+  if (sourceCanonical && sourceCanonical === matchedCanonical) return 1;
+
+  const maxLen = Math.max(Array.from(sourceCanonical).length, Array.from(matchedCanonical).length, 1);
+  const editScore = 1 - (levenshtein(sourceCanonical, matchedCanonical) / maxLen);
+  const tokenScore = tokenJaccard(tokenizeName(sourceName), tokenizeName(matchedName));
+
+  return Math.max(editScore, tokenScore);
+}
+
+function normalizeAddress(value) {
+  return String(value || "")
+    .replace(/\s+/g, "")
+    .replace(/臺/g, "台")
+    .replace(/^\d{3,5}/, "");
+}
+
+function extractDoorToken(address) {
+  return normalizeAddress(address).match(/\d+(?:-\d+)?號/)?.[0] || "";
+}
+
+function hasStrongNameMatch(sourceName, matchedName) {
+  return nameSimilarity(sourceName, matchedName) >= 0.72;
+}
+
+function hasStrongAddressMatch(sourceAddress, matchedAddress) {
+  const source = normalizeAddress(sourceAddress);
+  const matched = normalizeAddress(matchedAddress);
+  if (!source || !matched) return false;
+
+  const sourceDoor = extractDoorToken(source);
+  const matchedDoor = extractDoorToken(matched);
+  if (sourceDoor && matchedDoor && sourceDoor === matchedDoor) return true;
+
+  const sourcePrefix = source.slice(0, 10);
+  const matchedPrefix = matched.slice(0, 10);
+  if (sourcePrefix.length >= 6 && matched.includes(sourcePrefix)) return true;
+  if (matchedPrefix.length >= 6 && source.includes(matchedPrefix)) return true;
+  return false;
+}
+
 function distanceMeters(aLat, aLng, bLat, bLng) {
   const toRad = (deg) => (deg * Math.PI) / 180;
   const R = 6371000;
@@ -78,21 +169,19 @@ function mapLegacyPlace(place, addressField = "formatted_address") {
 }
 
 function chooseBestNearbyResult(cafe, places) {
-  const wanted = normalizeName(cafe.name);
   const originLat = Number(cafe.latitude);
   const originLng = Number(cafe.longitude);
 
   return places
     .map((place) => {
-      const candidate = normalizeName(place.name);
+      const similarity = nameSimilarity(cafe.name, place.name);
       const lat = Number(place.geometry?.location?.lat);
       const lng = Number(place.geometry?.location?.lng);
       const distance = Number.isFinite(lat) && Number.isFinite(lng)
         ? distanceMeters(originLat, originLng, lat, lng)
         : 999999;
       let score = -distance / 10;
-      if (candidate === wanted) score += 200;
-      else if (candidate.includes(wanted) || wanted.includes(candidate)) score += 120;
+      score += similarity * 180;
       if ((place.vicinity || place.formatted_address || "").includes(String(cafe.address || "").slice(0, 6))) {
         score += 20;
       }
@@ -155,6 +244,15 @@ async function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+function looksReplacedByAnotherBusiness(result) {
+  const status = result.details?.businessStatus || result.findPlace?.business_status || "";
+  if (!result.findPlace || !status) return false;
+  if (status === "CLOSED_PERMANENTLY" || status === "CLOSED_TEMPORARILY") return false;
+  if (hasStrongNameMatch(result.name, result.findPlace.name)) return false;
+  if (!hasStrongAddressMatch(result.address, result.findPlace.formatted_address || "")) return false;
+  return true;
+}
+
 function classify(result) {
   if (result.error) {
     return {
@@ -190,6 +288,13 @@ function classify(result) {
     return {
       category: "review",
       reason: "Google Places businessStatus = CLOSED_TEMPORARILY",
+    };
+  }
+
+  if (looksReplacedByAnotherBusiness(result)) {
+    return {
+      category: "suspected_closed",
+      reason: "Google matched a different active business at the same address",
     };
   }
 
@@ -416,6 +521,10 @@ async function main() {
 
   if (renderOnly) {
     rows = JSON.parse(await readFile(dataset.outputJson, "utf8"));
+    rows = rows.map((row) => ({
+      ...row,
+      audit: classify(row),
+    }));
   } else {
     const apiKey = await getApiKey();
     const cafes = await dataset.loadCafes();
@@ -453,6 +562,7 @@ async function main() {
   }
 
   await mkdir(new URL("../reviews/", import.meta.url), { recursive: true });
+  await writeFile(dataset.outputJson, `${JSON.stringify(rows, null, 2)}\n`);
   await writeFile(dataset.outputMd, toMarkdown(dataset.label, rows));
   const flagged = rows.filter((row) => row.audit.category !== "ok");
   const permanentlyClosed = rows.filter((row) => row.audit.category === "suspected_closed");
