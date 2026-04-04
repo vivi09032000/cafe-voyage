@@ -53,6 +53,55 @@ async function applyTaipeiClosureReview(cafes, normalizedCity) {
     });
 }
 
+async function fetchCafeStatusReviews(cityKey) {
+  const url = new URL(`${SUPABASE_URL}/rest/v1/cafe_status_reviews`);
+  url.searchParams.set(
+    "select",
+    "cafe_source_id,google_business_status,manual_override_status,manual_note,review_reason"
+  );
+  url.searchParams.set("is_current", "eq.true");
+  url.searchParams.set("cafe_source", "eq.cafenomad");
+  url.searchParams.set("country_code", "eq.TW");
+  if (cityKey) {
+    url.searchParams.set("city_key", `eq.${cityKey}`);
+  }
+  const response = await fetch(url, {
+    headers: {
+      apikey: SUPABASE_KEY,
+      Authorization: `Bearer ${SUPABASE_KEY}`,
+    },
+  });
+  if (!response.ok) {
+    throw new Error(`cafe_status_reviews request failed: ${response.status}`);
+  }
+  const rows = await response.json();
+  return new Map(
+    rows.map((row) => [
+      row.cafe_source_id,
+      {
+        status: row.manual_override_status || row.google_business_status || "",
+        note: row.manual_note || "",
+        reviewReason: row.review_reason || "",
+      },
+    ])
+  );
+}
+
+function applyStatusReviewMap(cafes, statusMap) {
+  if (!statusMap || statusMap.size === 0) return cafes;
+  return cafes
+    .filter((cafe) => statusMap.get(cafe.id)?.status !== "CLOSED_PERMANENTLY")
+    .map((cafe) => {
+      const status = statusMap.get(cafe.id);
+      if (!status || status.status !== "CLOSED_TEMPORARILY") return cafe;
+      return {
+        ...cafe,
+        google_business_status: "CLOSED_TEMPORARILY",
+        google_business_note: status.note || "Google 顯示暫停營業",
+      };
+    });
+}
+
 async function fetchCustomCafes(cityKey) {
   const url = new URL(`${SUPABASE_URL}/rest/v1/custom_cafes`);
   url.searchParams.set("select", "id,slug,name,city,wifi,seat,quiet,tasty,cheap,music,url,address,latitude,longitude,limited_time,socket,standing_desk,mrt,open_time,country_code,country_name,city_key,city_label");
@@ -117,7 +166,19 @@ export default async function handler(req, res) {
     : 'https://cafenomad.tw/api/v1.2/cafes';
   const response = await fetch(endpoint);
   let data = await response.json();
-  data = await applyTaipeiClosureReview(data, normalizedCity);
+  let applied = false;
+  try {
+    const statusMap = await fetchCafeStatusReviews(normalizedCity || undefined);
+    if (statusMap.size > 0) {
+      data = applyStatusReviewMap(data, statusMap);
+      applied = true;
+    }
+  } catch (error) {
+    console.error(error);
+  }
+  if (!applied) {
+    data = await applyTaipeiClosureReview(data, normalizedCity);
+  }
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.json(data);
 }
