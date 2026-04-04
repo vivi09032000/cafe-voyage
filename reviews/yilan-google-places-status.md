@@ -1,20 +1,16 @@
 # Yilan Google Places Closure Review
 
-Checked at: 2026-04-04T10:17:03.783Z
+Checked at: 2026-04-04T10:31:02.579Z
 
 Google Places was used as the primary signal for closure review.
 
-這份報表已經改成 review-friendly 版本：先看總覽，再分成幾個需要人工確認的群組。
+這份報表目前只保留兩類：永久歇業與暫停營業。
 
 ## 總覽
 
 - 總店數：78
-- Google 判定仍在營業：53
 - 疑似永久歇業：12
 - 疑似暫停營業：9
-- 找不到 Google Places 候選：0
-- API / 權限 / 配額問題：0
-- Google 有回店家但沒有 business status：0
 
 ## 1. 疑似永久歇業
 
@@ -24,17 +20,13 @@ Google Places was used as the primary signal for closure review.
 | 日吉咖啡gooddaycafe' | 宜蘭縣宜蘭市東港路59-11號 | 東港路二段431號 | CLOSED_PERMANENTLY |  |
 | 合盛太平咖啡 | 宜蘭縣宜蘭市中山路三段145號 | 26044宜蘭縣宜蘭市中山路三段145號 | CLOSED_PERMANENTLY |  |
 | 老房子咖啡 | 羅東鎮文化街53號 | 265宜蘭縣羅東鎮文化街53號 | CLOSED_PERMANENTLY |  |
-| 品品99 咖啡 輕食 | 268宜蘭縣五結鄉鎮安路63巷2號 | 鎮安路63巷2號 | OPERATIONAL |  |
-| 香草景觀咖啡 Vanilla Cafe-宜蘭頭城店 | 宜蘭縣頭城鎮北宜路一段398號 | 北宜路一段398號 | OPERATIONAL |  |
 | 舒室咖啡 | 宜蘭市慈安路61號 | 260宜蘭縣宜蘭市慈安路61號 | CLOSED_PERMANENTLY |  |
 | 熊來了 | 宜蘭縣宜蘭市民權路二段178號 | 260宜蘭縣宜蘭市嵐峰路二段20號 | CLOSED_PERMANENTLY |  |
 | 歐麟咖啡館 | 宜蘭市女中路二段389號1樓 | 女中路二段389號1 樓 | CLOSED_PERMANENTLY |  |
-| dew 36 綻露 coffee elite | 宜蘭市女中路二段385號 | 260宜蘭縣宜蘭市女中路二段385號 | OPERATIONAL |  |
 | GOROGORO | 宜蘭縣宜蘭市中山路二段187巷25號 | 中山路二段187巷25號 | CLOSED_PERMANENTLY |  |
 | HaoHaoKaffe(行口文旅店) | 宜蘭縣宜蘭市康樂路14號 | 康樂路14號一樓 | CLOSED_PERMANENTLY |  |
 | PonPon 乓乓雜貨咖啡 | 宜蘭縣礁溪鄉信義路71號 | 信義路71號 | CLOSED_PERMANENTLY |  |
 | Resort Brew Coffee Co. | 宜蘭市農權路二段30號 | 農權路二段30號 | CLOSED_PERMANENTLY |  |
-| Stay旅人書店 | 宜蘭市碧霞街14號、宜蘭市康樂路14號行口文旅 | 260宜蘭縣宜蘭市康樂路14號 | OPERATIONAL |  |
 | ZeraCafe 頭城站舍 | 宜蘭縣頭城鎮站舍巷1號 | 站舍巷1號 | CLOSED_PERMANENTLY |  |
 
 ## 2. 疑似暫停營業
@@ -50,15 +42,3 @@ Google Places was used as the primary signal for closure review.
 | 語後咖啡 Ameagari Cafe | 宜蘭市延平路42巷6號 | 延平路42巷6號 | CLOSED_TEMPORARILY |  |
 | Café SoDavid | 宜蘭縣羅東鎮中華路255號 | 中華路255號26541 Lotung | CLOSED_TEMPORARILY |  |
 | Link88 | 宜蘭縣蘇澳鎮中山路一段88號 | 中山路一段88號 | CLOSED_TEMPORARILY |  |
-
-## 3. 找不到 Google 候選
-
-無。
-
-## 4. API / 權限 / 配額問題
-
-無。
-
-## 5. Google 有回店家但沒有 business status
-
-無。

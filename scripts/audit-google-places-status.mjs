@@ -360,25 +360,6 @@ async function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-function looksReplacedByAnotherBusiness(result) {
-  const status = result.details?.businessStatus || result.findPlace?.business_status || "";
-  if (!result.findPlace || !status) return false;
-  if (status === "CLOSED_PERMANENTLY" || status === "CLOSED_TEMPORARILY") return false;
-  if (hasStrongNameMatch(result.name, result.findPlace.name)) return false;
-  if (!hasStrongAddressMatch(result.address, result.findPlace.formatted_address || "")) return false;
-  return true;
-}
-
-function looksMatchedToNonCafeReplacement(result) {
-  const status = result.details?.businessStatus || result.findPlace?.business_status || "";
-  if (!result.findPlace || !status) return false;
-  if (status === "CLOSED_PERMANENTLY" || status === "CLOSED_TEMPORARILY") return false;
-  if (!isExplicitNonCafePlace(result.findPlace)) return false;
-  if (!hasLooseNameOverlap(result.name, result.findPlace.name)) return false;
-  if (!hasStrongAddressMatch(result.address, result.findPlace.formatted_address || "")) return false;
-  return true;
-}
-
 function classify(result) {
   if (result.error) {
     return {
@@ -414,20 +395,6 @@ function classify(result) {
     return {
       category: "review",
       reason: "Google Places businessStatus = CLOSED_TEMPORARILY",
-    };
-  }
-
-  if (looksMatchedToNonCafeReplacement(result)) {
-    return {
-      category: "suspected_closed",
-      reason: "Google matched a non-cafe business at the same address",
-    };
-  }
-
-  if (looksReplacedByAnotherBusiness(result)) {
-    return {
-      category: "suspected_closed",
-      reason: "Google matched a different active business at the same address",
     };
   }
 
@@ -502,19 +469,6 @@ function toMarkdown(label, rows) {
   const temporarilyClosed = rows
     .filter((row) => row.audit.reason === "Google Places businessStatus = CLOSED_TEMPORARILY")
     .sort((a, b) => a.name.localeCompare(b.name, "zh-Hant"));
-  const noCandidate = rows
-    .filter((row) => row.audit.reason === "No Google Places candidate found")
-    .sort((a, b) => a.name.localeCompare(b.name, "zh-Hant"));
-  const apiIssues = rows
-    .filter((row) =>
-      row.audit.reason.includes("denied") ||
-      row.audit.reason.includes("failed") ||
-      row.audit.reason.includes("limit")
-    )
-    .sort((a, b) => a.name.localeCompare(b.name, "zh-Hant"));
-  const noStatus = rows
-    .filter((row) => row.audit.reason === "Google Places returned no business status")
-    .sort((a, b) => a.name.localeCompare(b.name, "zh-Hant"));
 
   const lines = [
     `# ${label} Google Places Closure Review`,
@@ -523,17 +477,13 @@ function toMarkdown(label, rows) {
     "",
     "Google Places was used as the primary signal for closure review.",
     "",
-    "這份報表已經改成 review-friendly 版本：先看總覽，再分成幾個需要人工確認的群組。",
+    "這份報表目前只保留兩類：永久歇業與暫停營業。",
     "",
     "## 總覽",
     "",
     `- 總店數：${summary.total}`,
-    `- Google 判定仍在營業：${summary.ok}`,
     `- 疑似永久歇業：${summary.permanently_closed}`,
     `- 疑似暫停營業：${summary.temporarily_closed}`,
-    `- 找不到 Google Places 候選：${summary.no_candidate}`,
-    `- API / 權限 / 配額問題：${summary.api_issues}`,
-    `- Google 有回店家但沒有 business status：${summary.no_status}`,
     "",
     "## 1. 疑似永久歇業",
     "",
@@ -560,42 +510,6 @@ function toMarkdown(label, rows) {
       row.address || "",
       row.findPlace?.formatted_address || "",
       rowStatus(row),
-      row.details?.googleMapsUri || row.findPlace?.google_maps_uri || "",
-    ])
-  );
-
-  lines.push("## 3. 找不到 Google 候選", "");
-  pushTable(
-    lines,
-    ["店名", "資料地址", "來源網址", "原因"],
-    noCandidate.map((row) => [
-      row.name,
-      row.address || "",
-      row.url || "",
-      row.audit.reason,
-    ])
-  );
-
-  lines.push("## 4. API / 權限 / 配額問題", "");
-  pushTable(
-    lines,
-    ["店名", "資料地址", "來源網址", "原因"],
-    apiIssues.map((row) => [
-      row.name,
-      row.address || "",
-      row.url || "",
-      row.audit.reason,
-    ])
-  );
-
-  lines.push("## 5. Google 有回店家但沒有 business status", "");
-  pushTable(
-    lines,
-    ["店名", "資料地址", "Google 比對地址", "Google Maps"],
-    noStatus.map((row) => [
-      row.name,
-      row.address || "",
-      row.findPlace?.formatted_address || "",
       row.details?.googleMapsUri || row.findPlace?.google_maps_uri || "",
     ])
   );
@@ -697,7 +611,10 @@ async function main() {
   await mkdir(new URL("../reviews/", import.meta.url), { recursive: true });
   await writeFile(dataset.outputJson, `${JSON.stringify(rows, null, 2)}\n`);
   await writeFile(dataset.outputMd, toMarkdown(dataset.label, rows));
-  const flagged = rows.filter((row) => row.audit.category !== "ok");
+  const flagged = rows.filter((row) =>
+    row.audit.reason === "Google Places businessStatus = CLOSED_PERMANENTLY"
+    || row.audit.reason === "Google Places businessStatus = CLOSED_TEMPORARILY"
+  );
   const permanentlyClosed = rows.filter((row) => row.audit.category === "suspected_closed");
   await writeFile(dataset.outputCsv, toCsv(flagged));
   await writeFile(dataset.outputClosedCsv, toCsv(permanentlyClosed));

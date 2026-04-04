@@ -24,10 +24,7 @@ async function readTaipeiClosureReview() {
   const temporarilyClosedIds = new Set();
 
   for (const row of rows) {
-    if (
-      row.audit?.reason === "Google Places businessStatus = CLOSED_PERMANENTLY"
-      || row.audit?.reason === "Google matched a non-cafe business at the same address"
-    ) {
+    if (row.audit?.reason === "Google Places businessStatus = CLOSED_PERMANENTLY") {
       permanentlyClosedIds.add(row.id);
     } else if (row.audit?.reason === "Google Places businessStatus = CLOSED_TEMPORARILY") {
       temporarilyClosedIds.add(row.id);
@@ -96,8 +93,7 @@ function applyStatusReviewMap(cafes, statusMap) {
   return cafes
     .filter((cafe) => {
       const status = statusMap.get(cafe.id);
-      return status?.status !== "CLOSED_PERMANENTLY"
-        && status?.reviewReason !== "Google matched a non-cafe business at the same address";
+      return status?.status !== "CLOSED_PERMANENTLY";
     })
     .map((cafe) => {
       const status = statusMap.get(cafe.id);

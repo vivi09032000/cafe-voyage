@@ -1,10 +1,3 @@
--- Combined Taiwan cafe status seed
--- Generated from Google Places status audits.
--- Includes: taipei, taichung, tainan, kaohsiung, hsinchu, taoyuan, yilan, hualien, taitung, keelung.
-
-
--- taipei
-
 insert into public.cafe_status_reviews (
   status_source, cafe_source, cafe_source_id, country_code, city_key,
   cafe_name, cafe_address, google_place_id, google_business_status, google_maps_url,
@@ -454,10 +447,6 @@ on conflict (status_source, cafe_source, cafe_source_id) do update set
   review_reason = excluded.review_reason,
   status_checked_at = excluded.status_checked_at,
   is_current = excluded.is_current;
-
-
--- taichung
-
 insert into public.cafe_status_reviews (
   status_source, cafe_source, cafe_source_id, country_code, city_key,
   cafe_name, cafe_address, google_place_id, google_business_status, google_maps_url,
@@ -566,10 +555,6 @@ on conflict (status_source, cafe_source, cafe_source_id) do update set
   review_reason = excluded.review_reason,
   status_checked_at = excluded.status_checked_at,
   is_current = excluded.is_current;
-
-
--- tainan
-
 insert into public.cafe_status_reviews (
   status_source, cafe_source, cafe_source_id, country_code, city_key,
   cafe_name, cafe_address, google_place_id, google_business_status, google_maps_url,
@@ -645,10 +630,6 @@ on conflict (status_source, cafe_source, cafe_source_id) do update set
   review_reason = excluded.review_reason,
   status_checked_at = excluded.status_checked_at,
   is_current = excluded.is_current;
-
-
--- kaohsiung
-
 insert into public.cafe_status_reviews (
   status_source, cafe_source, cafe_source_id, country_code, city_key,
   cafe_name, cafe_address, google_place_id, google_business_status, google_maps_url,
@@ -731,10 +712,6 @@ on conflict (status_source, cafe_source, cafe_source_id) do update set
   review_reason = excluded.review_reason,
   status_checked_at = excluded.status_checked_at,
   is_current = excluded.is_current;
-
-
--- hsinchu
-
 insert into public.cafe_status_reviews (
   status_source, cafe_source, cafe_source_id, country_code, city_key,
   cafe_name, cafe_address, google_place_id, google_business_status, google_maps_url,
@@ -808,10 +785,6 @@ on conflict (status_source, cafe_source, cafe_source_id) do update set
   review_reason = excluded.review_reason,
   status_checked_at = excluded.status_checked_at,
   is_current = excluded.is_current;
-
-
--- taoyuan
-
 insert into public.cafe_status_reviews (
   status_source, cafe_source, cafe_source_id, country_code, city_key,
   cafe_name, cafe_address, google_place_id, google_business_status, google_maps_url,
@@ -872,10 +845,6 @@ on conflict (status_source, cafe_source, cafe_source_id) do update set
   review_reason = excluded.review_reason,
   status_checked_at = excluded.status_checked_at,
   is_current = excluded.is_current;
-
-
--- yilan
-
 insert into public.cafe_status_reviews (
   status_source, cafe_source, cafe_source_id, country_code, city_key,
   cafe_name, cafe_address, google_place_id, google_business_status, google_maps_url,
@@ -916,10 +885,6 @@ on conflict (status_source, cafe_source, cafe_source_id) do update set
   review_reason = excluded.review_reason,
   status_checked_at = excluded.status_checked_at,
   is_current = excluded.is_current;
-
-
--- hualien
-
 insert into public.cafe_status_reviews (
   status_source, cafe_source, cafe_source_id, country_code, city_key,
   cafe_name, cafe_address, google_place_id, google_business_status, google_maps_url,
@@ -952,10 +917,6 @@ on conflict (status_source, cafe_source, cafe_source_id) do update set
   review_reason = excluded.review_reason,
   status_checked_at = excluded.status_checked_at,
   is_current = excluded.is_current;
-
-
--- taitung
-
 insert into public.cafe_status_reviews (
   status_source, cafe_source, cafe_source_id, country_code, city_key,
   cafe_name, cafe_address, google_place_id, google_business_status, google_maps_url,
@@ -980,10 +941,6 @@ on conflict (status_source, cafe_source, cafe_source_id) do update set
   review_reason = excluded.review_reason,
   status_checked_at = excluded.status_checked_at,
   is_current = excluded.is_current;
-
-
--- keelung
-
 insert into public.cafe_status_reviews (
   status_source, cafe_source, cafe_source_id, country_code, city_key,
   cafe_name, cafe_address, google_place_id, google_business_status, google_maps_url,
@@ -1013,4 +970,3 @@ on conflict (status_source, cafe_source, cafe_source_id) do update set
   review_reason = excluded.review_reason,
   status_checked_at = excluded.status_checked_at,
   is_current = excluded.is_current;
-
