@@ -138,10 +138,10 @@ const MAP_CACHE_KEY = "cafe-voyage:map-cafes:v2";
 const MAP_CACHE_TTL = 1000 * 60 * 60 * 12;
 const REGION_PATTERN = /(台北市|新北市|桃園市|台中市|臺中市|台南市|臺南市|高雄市|基隆市|新竹市|新竹縣|苗栗縣|彰化縣|南投縣|雲林縣|嘉義市|嘉義縣|屏東縣|宜蘭縣|花蓮縣|台東縣|臺東縣)/;
 const COUNTRY_OPTIONS = [
-  { key: "taiwan", label: "台灣", flag: "🇹🇼" },
-  { key: "vietnam", label: "越南", flag: "🇻🇳" },
-  { key: "thailand", label: "泰國", flag: "🇹🇭", comingSoon: true },
-  { key: "japan", label: "日本", flag: "🇯🇵", comingSoon: true },
+  { key: "taiwan", label: "台灣", code: "TW" },
+  { key: "vietnam", label: "越南", code: "VN" },
+  { key: "thailand", label: "泰國", code: "TH", comingSoon: true },
+  { key: "japan", label: "日本", code: "JP", comingSoon: true },
 ];
 const REGION_GROUPS = [
   { key: "taipei", label: "台北", country: "taiwan", members: ["台北市", "新北市"] },
@@ -224,7 +224,90 @@ const scorePill = (label, val) => {
   );
 };
 
-const Tag = ({ label, type = "green", onClick }) => {
+const Icon = ({ name, size = 16, strokeWidth = 2, style }) => {
+  const common = {
+    width: size,
+    height: size,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    "aria-hidden": true,
+    focusable: false,
+    style: { display: "inline-block", flexShrink: 0, ...style },
+  };
+
+  if (name === "starFilled") {
+    return (
+      <svg {...common} fill="currentColor" stroke="none">
+        <path d="m12 3.2 2.62 5.32 5.88.86-4.25 4.14 1 5.86L12 16.62 6.75 19.38l1-5.86L3.5 9.38l5.88-.86L12 3.2Z" />
+      </svg>
+    );
+  }
+
+  const paths = {
+    check: <path d="m5 12 4 4 10-10" />,
+    plug: <><path d="M8 2v6" /><path d="M16 2v6" /><path d="M7 8h10v3a5 5 0 0 1-10 0V8Z" /><path d="M12 16v6" /></>,
+    clock: <><circle cx="12" cy="12" r="8.5" /><path d="M12 7.5V12l3 2" /></>,
+    pause: <><circle cx="12" cy="12" r="8.5" /><path d="M10 8.5v7" /><path d="M14 8.5v7" /></>,
+    status: <circle cx="12" cy="12" r="5.5" fill="currentColor" stroke="none" />,
+    train: <><rect x="6" y="4" width="12" height="12" rx="3" /><path d="M9 20h6" /><path d="M9 16l-2 4" /><path d="M15 16l2 4" /><path d="M9 8h6" /><path d="M9 12h.01" /><path d="M15 12h.01" /></>,
+    pin: <><path d="M12 21s7-5.4 7-12a7 7 0 0 0-14 0c0 6.6 7 12 7 12Z" /><circle cx="12" cy="9" r="2.2" /></>,
+    star: <path d="m12 3.2 2.62 5.32 5.88.86-4.25 4.14 1 5.86L12 16.62 6.75 19.38l1-5.86L3.5 9.38l5.88-.86L12 3.2Z" />,
+    coffee: <><path d="M6 8h10v5a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V8Z" /><path d="M16 10h1.5a2 2 0 0 1 0 4H16" /><path d="M5 20h13" /><path d="M8 4v1" /><path d="M12 4v1" /></>,
+    user: <><circle cx="12" cy="8" r="3.2" /><path d="M5.5 20a6.5 6.5 0 0 1 13 0" /></>,
+    wifi: <><path d="M5 10a10 10 0 0 1 14 0" /><path d="M8.5 13.5a5 5 0 0 1 7 0" /><path d="M12 17h.01" /></>,
+    quiet: <><path d="M4 14h3l5 4V6L7 10H4v4Z" /><path d="M17 9l4 4" /><path d="M21 9l-4 4" /></>,
+    seat: <><path d="M7 11V7a4 4 0 0 1 8 0v4" /><path d="M5 11h14v5H5z" /><path d="M7 16v4" /><path d="M17 16v4" /></>,
+    price: <><path d="M12 3v18" /><path d="M17 7.5c-.8-1.2-2.2-2-4.2-2-2.3 0-3.8 1-3.8 2.6 0 4 8.5 1.8 8.5 6.5 0 1.8-1.7 3-4.4 3-2 0-3.8-.7-5-2" /></>,
+    music: <><path d="M9 18V5l10-2v13" /><circle cx="7" cy="18" r="2" /><circle cx="17" cy="16" r="2" /></>,
+    external: <><path d="M14 4h6v6" /><path d="M20 4 10 14" /><path d="M11 5H6a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-5" /></>,
+    hide: <><path d="M3 3l18 18" /><path d="M10.6 10.6A2 2 0 0 0 13.4 13.4" /><path d="M9.2 5.3A10.8 10.8 0 0 1 12 5c5 0 8.5 4.2 9.5 7-0.4 1.1-1.4 2.6-2.8 3.9" /><path d="M6.7 6.8C4.6 8.2 3.2 10.3 2.5 12c1 2.8 4.5 7 9.5 7 1.6 0 3.1-.4 4.4-1.2" /></>,
+    heart: <path d="M20.5 8.5c0 5-8.5 10-8.5 10S3.5 13.5 3.5 8.5A4.5 4.5 0 0 1 12 6a4.5 4.5 0 0 1 8.5 2.5Z" />,
+    chevronUp: <path d="m7 14 5-5 5 5" />,
+    chevronDown: <path d="m7 10 5 5 5-5" />,
+    map: <><path d="M9 18 3 21V6l6-3 6 3 6-3v15l-6 3-6-3Z" /><path d="M9 3v15" /><path d="M15 6v15" /></>,
+    checkCircle: <><circle cx="12" cy="12" r="8.5" /><path d="m8.5 12.2 2.3 2.3 4.8-5" /></>,
+  };
+
+  return (
+    <svg {...common}>
+      {paths[name] || paths.coffee}
+    </svg>
+  );
+};
+
+const InlineIcon = ({ name, size = 14, color = "currentColor", style }) => (
+  <Icon name={name} size={size} style={{ color, verticalAlign: "-0.18em", ...style }} />
+);
+
+const CountryMark = ({ code }) => (
+  <span
+    aria-hidden="true"
+    style={{
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      width: 24,
+      height: 18,
+      borderRadius: 6,
+      background: UI.oat,
+      border: `1px solid ${UI.line}`,
+      color: T.brown,
+      fontSize: 9,
+      fontWeight: 760,
+      letterSpacing: "0.04em",
+      lineHeight: 1,
+      fontFamily: FONT.body,
+    }}
+  >
+    {code}
+  </span>
+);
+
+const Tag = ({ label, type = "green", onClick, icon }) => {
   const styles = {
     green: { bg: T.green, color: UI.onDark },
     amber: { bg: UI.warning, color: UI.onDark },
@@ -255,6 +338,7 @@ const Tag = ({ label, type = "green", onClick }) => {
           fontFamily: "inherit",
         }}
       >
+        {icon && <Icon name={icon} size={12} strokeWidth={2.2} style={{ marginRight: 4, verticalAlign: "-0.12em" }} />}
         {label}
       </button>
     );
@@ -262,27 +346,28 @@ const Tag = ({ label, type = "green", onClick }) => {
 
   return (
     <span style={style}>
+      {icon && <Icon name={icon} size={12} strokeWidth={2.2} style={{ marginRight: 4, verticalAlign: "-0.12em" }} />}
       {label}
     </span>
   );
 };
 
 const limitedTag = (v, onNoLimitClick) => {
-  if (v === "no") return <Tag label="✓ 不限時" type="green" onClick={onNoLimitClick} />;
+  if (v === "no") return <Tag label="不限時" type="green" icon="check" onClick={onNoLimitClick} />;
   if (v === "maybe") return <Tag label="△ 假日限時" type="amber" />;
   if (v === "yes") return <Tag label="✗ 有限時" type="red" />;
   return null;
 };
 
 const socketTag = (v, onSocketClick) => {
-  if (v === "yes") return <Tag label="⚡ 插座多" type="green" onClick={onSocketClick} />;
-  if (v === "maybe") return <Tag label="⚡ 插座少" type="amber" />;
+  if (v === "yes") return <Tag label="插座多" type="green" icon="plug" onClick={onSocketClick} />;
+  if (v === "maybe") return <Tag label="插座少" type="amber" icon="plug" />;
   return null;
 };
 
 const temporaryClosureTag = (cafe) => {
   if (cafe.google_business_status === "CLOSED_TEMPORARILY") {
-    return <Tag label="⏸ 暫停營業" type="amber" />;
+    return <Tag label="暫停營業" type="amber" icon="pause" />;
   }
   return null;
 };
@@ -290,7 +375,7 @@ const temporaryClosureTag = (cafe) => {
 // ── Crowd helpers ──
 const crowdTagFromIds = (cafeId, emptyCafeIds, onEmptyClick) => {
   if (emptyCafeIds && emptyCafeIds.has && emptyCafeIds.has(cafeId)) {
-    return <Tag label="🟢 很空" type="green" onClick={onEmptyClick} />;
+    return <Tag label="很空" type="green" icon="status" onClick={onEmptyClick} />;
   }
   return null;
 };
@@ -363,7 +448,9 @@ const FilterChip = ({ active, label, onClick, icon }) => (
     boxShadow: active ? UI.greenShadow : "none",
     transition: "background 160ms ease, border-color 160ms ease, color 160ms ease",
   }}>
-    {active ? "✓ " : ""}{icon ? `${icon} ` : ""}{label}
+    {active && <Icon name="check" size={12} strokeWidth={2.4} style={{ marginRight: 4, verticalAlign: "-0.12em" }} />}
+    {icon && <Icon name={icon} size={12} strokeWidth={2.2} style={{ marginRight: 4, verticalAlign: "-0.12em" }} />}
+    {label}
   </button>
 );
 
@@ -391,7 +478,7 @@ const FilterSection = ({ filters, toggle }) => (
       {
         title: "即時狀態",
         items: [
-          { key: "empty", label: "目前人少", icon: "🟢" },
+          { key: "empty", label: "目前人少", icon: "status" },
         ],
       },
     ].map((section, index) => (
@@ -603,7 +690,7 @@ const SettingsPanel = ({
                 flexShrink: 0,
               }}
             >
-              {user ? "☕" : "👤"}
+              <Icon name={user ? "coffee" : "user"} size={19} strokeWidth={2.2} style={{ color: T.brown }} />
             </div>
             <div>
               <div style={{ ...TYPE.cardTitle, color: T.text }}>
@@ -685,10 +772,10 @@ const SettingsPanel = ({
               }}
             >
               <span style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, fontWeight: 650 }}>
-                <span>{selectedCountry.flag}</span>
+                <CountryMark code={selectedCountry.code} />
                 <span>{selectedCountry.label}</span>
               </span>
-              <span style={{ fontSize: 10, color: T.sub, transform: countryMenuOpen ? "rotate(180deg)" : "none" }}>▲</span>
+              <Icon name={countryMenuOpen ? "chevronUp" : "chevronDown"} size={14} strokeWidth={2.2} style={{ color: T.sub }} />
             </button>
             {countryMenuOpen && (
               <div>
@@ -720,7 +807,7 @@ const SettingsPanel = ({
                       }}
                     >
                       <span style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, fontWeight: 600 }}>
-                        <span>{item.flag}</span>
+                        <CountryMark code={item.code} />
                         <span>{item.label}</span>
                       </span>
                       {item.comingSoon ? (
@@ -928,16 +1015,16 @@ const CafeCard = ({ cafe, onClick, fav, onFav, emptyCafeIds }) => (
         <div style={{ flex: 1, marginRight: 8 }}>
           <div style={{ ...TYPE.cardTitle, color: T.text }}>{cafe.name}</div>
           <div style={{ marginTop: 4 }}>
-            {cafe.mrt && <div style={{ ...TYPE.meta, color: T.sub }}>🚇 {cafe.mrt}</div>}
-            <div style={{ ...TYPE.meta, color: T.sub, marginTop: cafe.mrt ? 1 : 0 }}>📍 {cafe.address}</div>
+            {cafe.mrt && <div style={{ ...TYPE.meta, color: T.sub }}><InlineIcon name="train" size={13} color={T.sub} /> {cafe.mrt}</div>}
+            <div style={{ ...TYPE.meta, color: T.sub, marginTop: cafe.mrt ? 1 : 0 }}><InlineIcon name="pin" size={13} color={T.sub} /> {cafe.address}</div>
           </div>
         </div>
         <button
           aria-label={fav ? `取消收藏 ${cafe.name}` : `收藏 ${cafe.name}`}
           onClick={e => { e.stopPropagation(); onFav(cafe.id); }}
-          style={{ background: UI.oat, border: `1px solid ${UI.softLine}`, borderRadius: 999, cursor: "pointer", fontSize: 18, width: 34, height: 34, flexShrink: 0, color: T.text }}
+          style={{ background: UI.oat, border: `1px solid ${UI.softLine}`, borderRadius: 999, cursor: "pointer", width: 34, height: 34, flexShrink: 0, color: fav ? T.brown : T.sub, display: "inline-flex", alignItems: "center", justifyContent: "center" }}
         >
-          {fav ? "⭐" : "☆"}
+          <Icon name={fav ? "starFilled" : "star"} size={18} strokeWidth={2.1} />
         </button>
       </div>
 
@@ -954,7 +1041,7 @@ const CafeCard = ({ cafe, onClick, fav, onFav, emptyCafeIds }) => (
         {limitedTag(cafe.limited_time)}
         {socketTag(cafe.socket)}
         {crowdTagFromIds(cafe.id, emptyCafeIds)}
-        {cafe.open_time && <Tag label={`🕐 ${cafe.open_time.slice(0, 20)}${cafe.open_time.length > 20 ? "..." : ""}`} type="gray" />}
+        {cafe.open_time && <Tag label={`${cafe.open_time.slice(0, 20)}${cafe.open_time.length > 20 ? "..." : ""}`} type="gray" icon="clock" />}
       </div>
     </div>
   </div>
@@ -1029,7 +1116,7 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
               onClick={() => setFiltersOpen(true)}
               style={{ marginLeft: "auto", background: "none", border: "none", color: T.brown, fontSize: 13, fontWeight: 700, cursor: "pointer", textDecoration: "underline", textUnderlineOffset: 4, fontFamily: "inherit" }}
             >
-              {activeFilterCount > 0 ? "篩選 ▾" : "篩選"}
+              篩選 {activeFilterCount > 0 && <Icon name="chevronDown" size={12} strokeWidth={2.4} style={{ marginLeft: 2, verticalAlign: "-0.12em" }} />}
             </button>
           </div>
         ) : (
@@ -1040,7 +1127,7 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
                 onClick={() => setFiltersOpen(false)}
                 style={{ background: "none", border: "none", color: T.brown, fontSize: 13, fontWeight: 700, cursor: "pointer", textDecoration: "underline", textUnderlineOffset: 4, fontFamily: "inherit" }}
               >
-                收起篩選 ▴
+                收起篩選 <Icon name="chevronUp" size={12} strokeWidth={2.4} style={{ marginLeft: 2, verticalAlign: "-0.12em" }} />
               </button>
             </div>
           </>
@@ -1122,7 +1209,7 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
         )}
         {loading ? (
           <div style={{ textAlign: "center", padding: "60px 0", color: T.sub }}>
-            <div style={{ fontSize: 32, marginBottom: 10 }}>☕</div>
+            <Icon name="coffee" size={34} strokeWidth={1.9} style={{ color: T.brown, marginBottom: 10 }} />
             <div>載入咖啡廳...</div>
           </div>
         ) : (
@@ -1251,7 +1338,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
           {userLocation ? "依距離由近到遠" : locationLoading ? "正在取得位置" : "允許定位後依距離排序"}・共 {total} 間{total > PER_PAGE ? `（第 ${start + 1}-${Math.min(start + PER_PAGE, total)} 間）` : ""}
         </div>
         {loading ? (
-          <div style={{ textAlign: "center", padding: "60px 0", color: T.sub }}><div style={{ fontSize: 32, marginBottom: 10 }}>☕</div><div>載入咖啡廳...</div></div>
+          <div style={{ textAlign: "center", padding: "60px 0", color: T.sub }}><Icon name="coffee" size={34} strokeWidth={1.9} style={{ color: T.brown, marginBottom: 10 }} /><div>載入咖啡廳...</div></div>
         ) : (
           <>
             {sorted.map((c, i) => (
@@ -1281,7 +1368,7 @@ const FavoritesPage = ({ cafes, favs, onSelect, onFav }) => {
       {/* 固定區 */}
       <div style={{ flexShrink: 0, padding: "14px 16px 4px", background: T.cream, borderBottom: `1px solid ${T.beige}` }}>
         <div style={{ display: "flex", alignItems: "center", gap: 7 }}>
-          <span style={{ fontSize: 20 }}>❤️</span>
+          <Icon name="heart" size={21} strokeWidth={2.1} style={{ color: T.brown }} />
           <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, color: T.text }}>我的收藏</div>
         </div>
       </div>
@@ -1291,9 +1378,9 @@ const FavoritesPage = ({ cafes, favs, onSelect, onFav }) => {
         <div style={{ fontSize: 12, color: T.sub, margin: "10px 0" }}>已收藏 {list.length} 間</div>
         {list.length === 0 ? (
           <div style={{ textAlign: "center", padding: "60px 0", color: T.sub }}>
-            <div style={{ fontSize: 40, marginBottom: 10 }}>☕</div>
+            <Icon name="coffee" size={42} strokeWidth={1.8} style={{ color: T.brown, marginBottom: 10 }} />
             <div>還沒有收藏</div>
-            <div style={{ fontSize: 12, marginTop: 4 }}>點擊 ☆ 加入收藏</div>
+            <div style={{ fontSize: 12, marginTop: 4 }}>點收藏圖示加入</div>
           </div>
         ) : list.map(c => <CafeCard key={c.id} cafe={c} onClick={() => onSelect(c)} fav={true} onFav={onFav} emptyCafeIds={new Set()} />)}
       </div>
@@ -1643,13 +1730,13 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
           {flyTarget && <FlyTo center={flyTarget} offsetY={120} />}
           {(!mapQuery || locateRequest.mode === "manual") && <FlyToBySignal center={userPos} seq={locateRequest.seq} zoom={locateRequest.zoom} />}
           {userPos && <Marker position={userPos} icon={userIcon}>
-            <Popup><span style={{ ...TYPE.control }}>📍 你的位置</span></Popup>
+            <Popup><span style={{ ...TYPE.control }}><InlineIcon name="pin" size={13} color={T.brown} /> 你的位置</span></Popup>
           </Marker>}
           {searchMarker && (
             <Marker position={searchMarker.position} icon={stationIcon}>
               <Popup className="map-popup" minWidth={160} maxWidth={220} autoPan={false}>
                 <div style={{ fontFamily: FONT.body }}>
-                  <div style={{ ...TYPE.cardTitle, marginBottom: 4, color: T.text }}>🚇 搜尋站點</div>
+                  <div style={{ ...TYPE.cardTitle, marginBottom: 4, color: T.text }}><InlineIcon name="train" size={14} color={T.brown} /> 搜尋站點</div>
                   <div style={{ ...TYPE.caption, color: T.sub }}>{searchMarker.label}</div>
                 </div>
               </Popup>
@@ -1678,13 +1765,13 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
               >
                 <div style={{ fontFamily: FONT.body }}>
                   <div style={{ ...TYPE.cardTitle, marginBottom: 4, color: T.text }}>{c.name}</div>
-                  {c.mrt && <div style={{ ...TYPE.caption, color: T.sub, marginBottom: 2 }}>🚇 {c.mrt}</div>}
-                  <div style={{ ...TYPE.caption, color: T.sub, marginBottom: 6 }}>📍 {c.address}</div>
+                  {c.mrt && <div style={{ ...TYPE.caption, color: T.sub, marginBottom: 2 }}><InlineIcon name="train" size={12} color={T.sub} /> {c.mrt}</div>}
+                  <div style={{ ...TYPE.caption, color: T.sub, marginBottom: 6 }}><InlineIcon name="pin" size={12} color={T.sub} /> {c.address}</div>
                   <div style={{ display: "flex", gap: 4, flexWrap: "wrap", marginBottom: 10 }}>
                     {temporaryClosureTag(c)}
-                    {c.wifi > 0 && <span style={{ ...TYPE.caption, background: T.beige, borderRadius: 10, padding: "2px 7px" }}>📶 {c.wifi.toFixed(1)}</span>}
-                    {c.quiet > 0 && <span style={{ ...TYPE.caption, background: T.beige, borderRadius: 10, padding: "2px 7px" }}>🔇 {c.quiet.toFixed(1)}</span>}
-                    {c.limited_time === "no" && <span style={{ ...TYPE.caption, background: T.green, color: UI.onDark, borderRadius: 10, padding: "2px 7px" }}>✓ 不限時</span>}
+                    {c.wifi > 0 && <span style={{ ...TYPE.caption, background: T.beige, borderRadius: 10, padding: "2px 7px" }}><InlineIcon name="wifi" size={11} color={T.sub} /> {c.wifi.toFixed(1)}</span>}
+                    {c.quiet > 0 && <span style={{ ...TYPE.caption, background: T.beige, borderRadius: 10, padding: "2px 7px" }}><InlineIcon name="quiet" size={11} color={T.sub} /> {c.quiet.toFixed(1)}</span>}
+                    {c.limited_time === "no" && <span style={{ ...TYPE.caption, background: T.green, color: UI.onDark, borderRadius: 10, padding: "2px 7px" }}><InlineIcon name="check" size={11} color={UI.onDark} /> 不限時</span>}
                   </div>
                   <button
                     onClick={(e) => { e.stopPropagation(); onSelect(c); }}
@@ -1783,18 +1870,29 @@ const CrowdReport = ({ cafeId, onReport }) => {
   };
 
   const statusLabel = {
-    empty: "🟢 很空，快來",
-    normal: "🟡 普通",
-    crowded: "🔴 很擠，慎入",
+    empty: "很空，快來",
+    normal: "普通",
+    crowded: "很擠，慎入",
   };
+  const statusTone = {
+    empty: "#20B02F",
+    normal: "#D7A817",
+    crowded: "#D83A34",
+  };
+  const StatusLabel = ({ status, children }) => (
+    <span style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
+      <Icon name="status" size={11} style={{ color: statusTone[status] || T.sub }} />
+      {children}
+    </span>
+  );
 
   const buttons = (
     <div style={{ display: "flex", gap: 8 }}>
-      {[["empty","🟢 很空"],["normal","🟡 普通"],["crowded","🔴 很擠"]].map(([val, label]) => (
+      {[["empty","很空"],["normal","普通"],["crowded","很擠"]].map(([val, label]) => (
         <button key={val} onClick={() => handleReport(val)} style={{
           flex: 1, padding: "10px 4px", borderRadius: 10, border: `1px solid ${T.beige}`,
           background: T.cream, ...TYPE.control, cursor: "pointer", fontFamily: "inherit"
-        }}>{label}</button>
+        }}><StatusLabel status={val}>{label}</StatusLabel></button>
       ))}
     </div>
   );
@@ -1806,8 +1904,8 @@ const CrowdReport = ({ cafeId, onReport }) => {
         <div style={{ ...TYPE.meta, color: T.sub }}>載入狀態...</div>
       ) : submitted && !editing ? (
         <>
-          <div style={{ ...TYPE.body, color: T.green, marginBottom: 4 }}>✅ 已收到，謝謝！</div>
-          <div style={{ ...TYPE.body, color: T.text, marginBottom: 8 }}>{statusLabel[report?.status]}</div>
+          <div style={{ ...TYPE.body, color: T.green, marginBottom: 4 }}><InlineIcon name="checkCircle" size={14} color={T.green} /> 已收到，謝謝！</div>
+          <div style={{ ...TYPE.body, color: T.text, marginBottom: 8 }}><StatusLabel status={report?.status}>{statusLabel[report?.status]}</StatusLabel></div>
           <button onClick={() => setEditing(true)} style={{ ...TYPE.control, color: T.brown, background: "none", border: "none", cursor: "pointer", textDecoration: "underline" }}>更新狀態</button>
         </>
       ) : editing || !report ? (
@@ -1817,7 +1915,7 @@ const CrowdReport = ({ cafeId, onReport }) => {
         </>
       ) : (
         <>
-          <div style={{ ...TYPE.body, color: T.text, marginBottom: 6 }}>{statusLabel[report.status]}</div>
+          <div style={{ ...TYPE.body, color: T.text, marginBottom: 6 }}><StatusLabel status={report.status}>{statusLabel[report.status]}</StatusLabel></div>
           <div style={{ ...TYPE.caption, color: T.sub, marginBottom: 10 }}>{timeAgo(report.reported_at)}</div>
           <button onClick={() => setEditing(true)} style={{ ...TYPE.control, color: T.brown, background: "none", border: "none", cursor: "pointer", textDecoration: "underline" }}>更新狀態</button>
         </>
@@ -1908,7 +2006,9 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={UI.onDark} strokeWidth="2.5" strokeLinecap="round"><polyline points="15 18 9 12 15 6" /></svg>
         </button>
         <span style={{ ...TYPE.cardTitle, color: UI.onDark, flex: 1 }}>{cafe.name}</span>
-        <button aria-label={fav ? `取消收藏 ${cafe.name}` : `收藏 ${cafe.name}`} onClick={() => onFav(cafe.id)} style={{ background: "none", border: "none", cursor: "pointer", fontSize: 20 }}>{fav ? "⭐" : "☆"}</button>
+        <button aria-label={fav ? `取消收藏 ${cafe.name}` : `收藏 ${cafe.name}`} onClick={() => onFav(cafe.id)} style={{ background: "none", border: "none", cursor: "pointer", color: UI.onDark, display: "inline-flex", alignItems: "center", justifyContent: "center", padding: 2 }}>
+          <Icon name={fav ? "starFilled" : "star"} size={22} strokeWidth={2.1} />
+        </button>
       </div>
       <div style={{ padding: `${SPACE.pageX}px ${SPACE.pageX + 2}px` }}>
         <div style={{ display: "flex", alignItems: "center", gap: SPACE.chipGap + 1, marginBottom: 4 }}>
@@ -1916,15 +2016,15 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
             {cafe.name}
           </div>
           {cafe.url && (
-            <a href={cafe.url} target="_blank" rel="noreferrer" style={{ color: T.sub, fontSize: 13, lineHeight: 1, textDecoration: "none" }}>
-              🔗
+            <a aria-label="開啟店家連結" href={cafe.url} target="_blank" rel="noreferrer" style={{ color: T.sub, lineHeight: 1, textDecoration: "none", display: "inline-flex" }}>
+              <Icon name="external" size={16} strokeWidth={2.1} />
             </a>
           )}
         </div>
-        {cafe.mrt && <div style={{ ...TYPE.body, color: T.sub, marginBottom: 3 }}>🚇 {cafe.mrt}</div>}
-        <div style={{ ...TYPE.body, color: T.sub, marginBottom: SPACE.cardGap }}>📍 {cafe.address}</div>
-        {cafe.google_business_note && <div style={{ ...TYPE.body, color: UI.warning, marginBottom: 8, fontWeight: 650 }}>⏸ {cafe.google_business_note}</div>}
-        {cafe.open_time && <div style={{ ...TYPE.body, color: T.text, marginBottom: 8 }}>🕐 {cafe.open_time}</div>}
+        {cafe.mrt && <div style={{ ...TYPE.body, color: T.sub, marginBottom: 3 }}><InlineIcon name="train" size={14} color={T.sub} /> {cafe.mrt}</div>}
+        <div style={{ ...TYPE.body, color: T.sub, marginBottom: SPACE.cardGap }}><InlineIcon name="pin" size={14} color={T.sub} /> {cafe.address}</div>
+        {cafe.google_business_note && <div style={{ ...TYPE.body, color: UI.warning, marginBottom: 8, fontWeight: 650 }}><InlineIcon name="pause" size={14} color={UI.warning} /> {cafe.google_business_note}</div>}
+        {cafe.open_time && <div style={{ ...TYPE.body, color: T.text, marginBottom: 8 }}><InlineIcon name="clock" size={14} color={T.text} /> {cafe.open_time}</div>}
 
         <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: SPACE.chipGap + 1 }}>
           {temporaryClosureTag(cafe)}
@@ -1942,13 +2042,13 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
             <div style={{ ...TYPE.sectionTitle, marginBottom: SPACE.cardGap, color: T.text }}>環境評分</div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: SPACE.chipGap + 1 }}>
               {[
-                ["📶 WiFi", "穩定", cafe.wifi, cafe.wifi >= 4 ? "wifi" : null],
-                ["🔇 安靜", "程度", cafe.quiet, cafe.quiet >= 4 ? "quiet" : null],
-                ["☕ 咖啡", "好喝", cafe.tasty, cafe.tasty >= 4 ? "tasty" : null],
-                ["💺 座位", "通常有位", cafe.seat, null],
-                ["💰 價格", "便宜", cafe.cheap, cafe.cheap >= 4 ? "cheap" : null],
-                ["🎵 氛圍", "裝潢音樂", cafe.music, cafe.music >= 4 ? "music" : null],
-              ].map(([label, subLabel, val, filterKey]) =>
+                ["wifi", "WiFi", "穩定", cafe.wifi, cafe.wifi >= 4 ? "wifi" : null],
+                ["quiet", "安靜", "程度", cafe.quiet, cafe.quiet >= 4 ? "quiet" : null],
+                ["coffee", "咖啡", "好喝", cafe.tasty, cafe.tasty >= 4 ? "tasty" : null],
+                ["seat", "座位", "通常有位", cafe.seat, null],
+                ["price", "價格", "便宜", cafe.cheap, cafe.cheap >= 4 ? "cheap" : null],
+                ["music", "氛圍", "裝潢音樂", cafe.music, cafe.music >= 4 ? "music" : null],
+              ].map(([iconName, label, subLabel, val, filterKey]) =>
                 val > 0 ? (
                   <button
                     key={label}
@@ -1967,7 +2067,7 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
                       opacity: 1,
                     }}
                   >
-                    <div style={{ ...TYPE.control, fontWeight: 760, marginBottom: 5 }}>{label}</div>
+                    <div style={{ ...TYPE.control, fontWeight: 760, marginBottom: 5, display: "flex", alignItems: "center", gap: 5 }}><Icon name={iconName} size={13} /> {label}</div>
                     <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 6 }}>
                       <span style={{ ...TYPE.caption, color: T.sub }}>{subLabel}</span>
                       <span style={{ fontSize: "1.08rem", lineHeight: 1, fontWeight: 760, fontVariantNumeric: "tabular-nums" }}>{Number(val).toFixed(1)}</span>
@@ -1986,7 +2086,7 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
             rel="noreferrer"
             style={{ display: "block", background: T.brown, color: UI.onDark, borderRadius: 14, padding: "12px", textAlign: "center", textDecoration: "none", ...TYPE.control, marginBottom: 10, boxShadow: UI.activeShadow }}
           >
-            📍 在 Google Maps 開啟
+            <InlineIcon name="map" size={14} color={UI.onDark} /> 在 Google Maps 開啟
           </a>
         )}
         {canManageCafe && (
@@ -2010,7 +2110,7 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
                 fontFamily: "inherit",
               }}
             >
-              {hideBusy ? "隱藏中..." : "🙈 隱藏這家店"}
+              {hideBusy ? "隱藏中..." : <><InlineIcon name="hide" size={14} color={T.brown} /> 隱藏這家店</>}
             </button>
             {hideError && <div style={{ fontSize: 12, color: UI.danger, marginBottom: 10 }}>{hideError}</div>}
           </>
@@ -2350,8 +2450,8 @@ export default function App() {
   const headerSubtitle = tab === "map" || tab === "favorites"
     ? ""
     : hasRegionSelection
-      ? `📍 ${regionLabel}・${homeCafes.filter(isOpen).length} 間`
-      : `📍 ${selectedCountry.label}・選地區`;
+      ? <><InlineIcon name="pin" size={12} color={UI.onDarkMuted} /> {regionLabel}・{homeCafes.filter(isOpen).length} 間</>
+      : <><InlineIcon name="pin" size={12} color={UI.onDarkMuted} /> {selectedCountry.label}・選地區</>;
 
   return (
     <>
