@@ -129,7 +129,7 @@ const scoreBar = (val, max = 5) => {
   );
 };
 
-const Tag = ({ label, type = "green" }) => {
+const Tag = ({ label, type = "green", onClick }) => {
   const styles = {
     green: { bg: T.green, color: "#fff" },
     amber: { bg: "#b7791f", color: "#fff" },
@@ -137,22 +137,49 @@ const Tag = ({ label, type = "green" }) => {
     gray: { bg: T.beige, color: T.sub },
   };
   const s = styles[type] || styles.gray;
+  const style = {
+    background: s.bg,
+    color: s.color,
+    borderRadius: 14,
+    padding: "3px 10px",
+    fontSize: 11,
+    fontWeight: 500,
+    whiteSpace: "nowrap",
+  };
+
+  if (onClick) {
+    return (
+      <button
+        type="button"
+        onClick={onClick}
+        style={{
+          ...style,
+          border: "none",
+          cursor: "pointer",
+          fontFamily: "inherit",
+        }}
+      >
+        {label}
+      </button>
+    );
+  }
+
   return (
-    <span style={{ background: s.bg, color: s.color, borderRadius: 14, padding: "3px 10px", fontSize: 11, fontWeight: 500, whiteSpace: "nowrap" }}>
+    <span style={style}>
       {label}
     </span>
   );
 };
 
-const limitedTag = (v) => {
-  if (v === "no") return <Tag label="✓ 不限時" type="green" />;
+const limitedTag = (v, onNoLimitClick) => {
+  if (v === "no") return <Tag label="✓ 不限時" type="green" onClick={onNoLimitClick} />;
   if (v === "maybe") return <Tag label="△ 假日限時" type="amber" />;
   if (v === "yes") return <Tag label="✗ 有限時" type="red" />;
   return null;
 };
 
-const socketTag = (v) => {
-  if (v === "yes") return <Tag label="⚡ 插座多" type="green" />;
+const socketTag = (v, onSocketClick) => {
+  if (v === "yes") return <Tag label="⚡ 插座多" type="green" onClick={onSocketClick} />;
   if (v === "maybe") return <Tag label="⚡ 插座少" type="amber" />;
   return null;
 };
@@ -165,9 +192,9 @@ const temporaryClosureTag = (cafe) => {
 };
 
 // ── Crowd helpers ──
-const crowdTagFromIds = (cafeId, emptyCafeIds) => {
+const crowdTagFromIds = (cafeId, emptyCafeIds, onEmptyClick) => {
   if (emptyCafeIds && emptyCafeIds.has && emptyCafeIds.has(cafeId)) {
-    return <Tag label="🟢 很空" type="green" />;
+    return <Tag label="🟢 很空" type="green" onClick={onEmptyClick} />;
   }
   return null;
 };
@@ -182,6 +209,16 @@ const FILTER_LABELS = {
   tasty: "咖啡好喝",
   cheap: "價格實惠",
   empty: "目前人少",
+};
+const DEFAULT_HOME_FILTERS = {
+  noLimit: false,
+  socket: false,
+  standing: false,
+  wifi: false,
+  quiet: false,
+  tasty: false,
+  cheap: false,
+  empty: false,
 };
 
 const FilterChip = ({ active, label, onClick, icon }) => (
@@ -742,15 +779,10 @@ const CafeCard = ({ cafe, onClick, fav, onFav, emptyCafeIds }) => (
 );
 
 // ── Page: Home ──
-const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSelect, favs, onFav, emptyCafeIds }) => {
+const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSelect, favs, onFav, emptyCafeIds, filters, setFilters }) => {
   const [q, setQ] = useState("");
   const [page, setPage] = useState(1);
   const [filtersOpen, setFiltersOpen] = useState(false);
-  const [filters, setFilters] = useState({
-    noLimit: false, socket: false, standing: false,
-    wifi: false, quiet: false, tasty: false, cheap: false,
-    empty: false,
-  });
 
   const toggle = (key) => { setFilters(prev => ({ ...prev, [key]: !prev[key] })); setPage(1); };
 
@@ -1513,7 +1545,7 @@ const CrowdReport = ({ cafeId, onReport }) => {
 };
 
 // ── Page: Detail ──
-const DetailPage = ({ cafe, onBack, fav, onFav, onReport, canManageCafe, onHideCafe }) => {
+const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilterTag, canManageCafe, onHideCafe }) => {
   const touchStartX = useRef(0);
   const touchStartY = useRef(0);
   const swipeActive = useRef(false);
@@ -1569,6 +1601,10 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, canManageCafe, onHideC
       setHideBusy(false);
     }
   };
+  const applyTagFilter = (filterKey) => {
+    if (!onFilterTag) return undefined;
+    return () => onFilterTag(filterKey, cafe);
+  };
 
   return (
     <div
@@ -1612,18 +1648,48 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, canManageCafe, onHideC
 
         <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 20 }}>
           {temporaryClosureTag(cafe)}
-          {limitedTag(cafe.limited_time)}
-          {socketTag(cafe.socket)}
-          {cafe.standing_desk === "yes" && <Tag label="站立桌" type="gray" />}
+          {limitedTag(cafe.limited_time, applyTagFilter("noLimit"))}
+          {socketTag(cafe.socket, applyTagFilter("socket"))}
+          {cafe.standing_desk === "yes" && <Tag label="站立桌" type="gray" onClick={applyTagFilter("standing")} />}
+          {crowdTagFromIds(cafe.id, emptyCafeIds, applyTagFilter("empty"))}
         </div>
 
         {cafe.wifi > 0 && (
           <div style={{ background: "#fff", borderRadius: 12, border: `1px solid ${T.beige}`, padding: 16, marginBottom: 16 }}>
             <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 16, fontWeight: 700, marginBottom: 12, color: T.text }}>環境評分</div>
-            {[["📶 WiFi 穩定", cafe.wifi], ["🔇 安靜程度", cafe.quiet], ["☕ 咖啡好喝", cafe.tasty], ["💺 通常有位", cafe.seat], ["💰 價格便宜", cafe.cheap], ["🎵 裝潢音樂", cafe.music]].map(([label, val]) =>
+            {[
+              ["📶 WiFi 穩定", cafe.wifi, cafe.wifi >= 4 ? "wifi" : null],
+              ["🔇 安靜程度", cafe.quiet, cafe.quiet >= 4 ? "quiet" : null],
+              ["☕ 咖啡好喝", cafe.tasty, cafe.tasty >= 4 ? "tasty" : null],
+              ["💺 通常有位", cafe.seat, null],
+              ["💰 價格便宜", cafe.cheap, cafe.cheap >= 4 ? "cheap" : null],
+              ["🎵 裝潢音樂", cafe.music, null],
+            ].map(([label, val, filterKey]) =>
               val > 0 ? (
                 <div key={label} style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
-                  <span style={{ fontSize: 13, color: T.text, width: 90, flexShrink: 0 }}>{label}</span>
+                  {filterKey ? (
+                    <button
+                      type="button"
+                      onClick={applyTagFilter(filterKey)}
+                      style={{
+                        background: "none",
+                        border: "none",
+                        padding: 0,
+                        textAlign: "left",
+                        fontSize: 13,
+                        color: T.text,
+                        width: 90,
+                        flexShrink: 0,
+                        cursor: "pointer",
+                        fontFamily: "inherit",
+                        fontWeight: 600,
+                      }}
+                    >
+                      {label}
+                    </button>
+                  ) : (
+                    <span style={{ fontSize: 13, color: T.text, width: 90, flexShrink: 0 }}>{label}</span>
+                  )}
                   {scoreBar(val)}
                 </div>
               ) : null
@@ -1698,6 +1764,7 @@ export default function App() {
   const [allCafes, setAllCafes] = useState([]);
   const [loading, setLoading] = useState(false);
   const [selected, setSelected] = useState(null);
+  const [homeFilters, setHomeFilters] = useState(DEFAULT_HOME_FILTERS);
   const [favs, setFavs] = useState(() => {
     try {
       const raw = localStorage.getItem("cafe-voyage:favs");
@@ -1975,10 +2042,22 @@ export default function App() {
     }
   };
 
+  const handleDetailTagFilter = useCallback((filterKey, cafe) => {
+    if (!filterKey || !cafe) return;
+    const cafeCountry = getCafeCountryKey(cafe);
+    const cafeRegion = getCafeRegionGroupKey(cafe);
+
+    setHomeFilters({ ...DEFAULT_HOME_FILTERS, [filterKey]: true });
+    setCountry(cafeCountry);
+    setRegion(cafeRegion || REGION_PROMPT_KEY);
+    setSelected(null);
+    setTab("home");
+  }, []);
+
   const renderPage = () => {
-    if (selected) return <DetailPage cafe={selected} onBack={() => setSelected(null)} fav={favoriteLookup.has(selected.id)} onFav={toggleFav} onReport={handleReportAndUpdateMap} canManageCafe={isAdminUser} onHideCafe={handleHideCafe} />;
+    if (selected) return <DetailPage cafe={selected} onBack={() => setSelected(null)} fav={favoriteLookup.has(selected.id)} onFav={toggleFav} onReport={handleReportAndUpdateMap} emptyCafeIds={emptyCafeIds} onFilterTag={handleDetailTagFilter} canManageCafe={isAdminUser} onHideCafe={handleHideCafe} />;
     switch (tab) {
-      case "home": return <HomePage cafes={homeCafes} loading={loading} hasRegionSelection={hasRegionSelection} onOpenRegionPicker={() => setMenuOpen(true)} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} emptyCafeIds={emptyCafeIds} />;
+      case "home": return <HomePage cafes={homeCafes} loading={loading} hasRegionSelection={hasRegionSelection} onOpenRegionPicker={() => setMenuOpen(true)} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} emptyCafeIds={emptyCafeIds} filters={homeFilters} setFilters={setHomeFilters} />;
       case "search": return <SearchPage cafes={searchCafes} loading={loading} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} />;
       case "map": return <MapPage cafes={countryScopedCafes} onSelect={setSelected} mapView={mapView} setMapView={setMapView} mapQuery={mapQuery} setMapQuery={setMapQuery} loading={loading} />;
       case "favorites": return <FavoritesPage cafes={favoritesCafes} favs={favoriteLookup} onSelect={setSelected} onFav={toggleFav} />;
