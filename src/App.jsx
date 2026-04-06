@@ -887,8 +887,6 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
     .map((c) => ({ ...c, _workScore: c.wifi + c.quiet + c.tasty, _distanceKm: distanceKm(userLocation, c) }))
     .sort((a, b) => {
       if (sortMode === "nearby" && userLocation) {
-        const scoreDiff = b._workScore - a._workScore;
-        if (Math.abs(scoreDiff) > 0.5) return scoreDiff;
         return a._distanceKm - b._distanceKm;
       }
       return b._workScore - a._workScore;
@@ -905,7 +903,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
       {/* 固定區 */}
       <div style={{ flexShrink: 0, padding: "14px 16px 0", background: T.cream, borderBottom: `1px solid ${T.beige}` }}>
         <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, marginBottom: 5, color: T.text }}>工作友善精選</div>
-        <div style={{ fontSize: 12, color: T.sub, marginBottom: 10 }}>分數接近時，優先看離你最近的店。</div>
+        <div style={{ fontSize: 12, color: T.sub, marginBottom: 10 }}>可依綜合條件或目前距離挑選。</div>
         <div style={{ position: "relative", marginBottom: 14 }}>
           <svg style={{ position: "absolute", left: 11, top: "50%", transform: "translateY(-50%)" }} width="15" height="15" viewBox="0 0 24 24" fill="none" stroke={T.sub} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
           <input value={q} onChange={e => setQ(e.target.value)} placeholder="搜尋..."
@@ -953,7 +951,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
       {/* 滾動區 */}
       <div style={{ flex: 1, overflowY: "auto", padding: "0 16px 16px" }}>
         <div style={{ fontSize: 12, color: T.sub, margin: "10px 0" }}>
-          {sortMode === "nearby" && userLocation ? "同分優先離你最近" : "依 WiFi + 安靜 + 咖啡 綜合排序"}・共 {total} 間{total > PER_PAGE ? `（第 ${start + 1}-${Math.min(start + PER_PAGE, total)} 間）` : ""}
+          {sortMode === "nearby" && userLocation ? "依距離由近到遠" : "依 WiFi + 安靜 + 咖啡 綜合排序"}・共 {total} 間{total > PER_PAGE ? `（第 ${start + 1}-${Math.min(start + PER_PAGE, total)} 間）` : ""}
         </div>
         {loading ? (
           <div style={{ textAlign: "center", padding: "60px 0", color: T.sub }}><div style={{ fontSize: 32, marginBottom: 10 }}>☕</div><div>載入中...</div></div>
