@@ -927,8 +927,7 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
           <div style={{ margin: "14px 0 12px" }}>
             <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 12, marginBottom: 10 }}>
               <div>
-                <div style={{ fontSize: 15, color: T.text, fontWeight: 700, marginBottom: 3 }}>依需求找咖啡廳</div>
-                <div style={{ fontSize: 11.5, color: T.sub }}>快速套用常用情境篩選</div>
+                <div style={{ fontSize: 15, color: T.text, fontWeight: 700 }}>依需求找咖啡廳</div>
               </div>
               {activeFilterCount > 0 && (
                 <button
@@ -1062,26 +1061,6 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
           <svg style={{ position: "absolute", left: 11, top: "50%", transform: "translateY(-50%)" }} width="15" height="15" viewBox="0 0 24 24" fill="none" stroke={T.sub} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
           <input value={q} onChange={e => setQ(e.target.value)} placeholder="搜尋..."
             style={{ width: "100%", padding: "9px 14px 9px 34px", borderRadius: 22, border: `1px solid ${T.beige}`, background: "#fff", fontSize: 16, outline: "none", boxSizing: "border-box", color: T.text }} />
-        </div>
-        <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 12 }}>
-          <button
-            onClick={requestSortLocation}
-            disabled={locationLoading}
-            style={{
-              border: `1px solid ${userLocation ? T.brown : T.beige}`,
-              background: userLocation ? T.brown : "#fff",
-              color: userLocation ? "#fff" : T.sub,
-              borderRadius: 12,
-              padding: "9px 12px",
-              fontSize: 12,
-              fontWeight: 700,
-              fontFamily: "inherit",
-              cursor: locationLoading ? "default" : "pointer",
-              opacity: locationLoading ? 0.7 : 1,
-            }}
-          >
-            {locationLoading ? "定位中..." : userLocation ? "重新定位" : "使用目前位置"}
-          </button>
         </div>
         <div style={{ display: "flex", gap: 7, overflowX: "auto", paddingBottom: 12 }}>
           {[{ key: "all", title: "全部" }, ...FILTER_PRESETS].map((preset) => {
