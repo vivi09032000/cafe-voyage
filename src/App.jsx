@@ -220,6 +220,28 @@ const DEFAULT_HOME_FILTERS = {
   cheap: false,
   empty: false,
 };
+const FILTER_PRESETS = [
+  {
+    title: "安靜工作",
+    subtitle: "WiFi 穩、安靜",
+    filters: { wifi: true, quiet: true },
+  },
+  {
+    title: "插座長待",
+    subtitle: "插座多、不限時",
+    filters: { socket: true, noLimit: true },
+  },
+  {
+    title: "WiFi 穩定",
+    subtitle: "遠端工作安心",
+    filters: { wifi: true },
+  },
+  {
+    title: "不限時慢坐",
+    subtitle: "讀書、工作、久聊",
+    filters: { noLimit: true },
+  },
+];
 
 const FilterChip = ({ active, label, onClick, icon }) => (
   <button onClick={onClick} style={{
@@ -638,7 +660,7 @@ const SettingsPanel = ({
 // ── Bottom Nav ──
 const NAV_ITEMS = [
   { key: "home", label: "首頁", d: "M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" },
-  { key: "search", label: "搜索", circle: true },
+  { key: "search", label: "附近", circle: true },
   { key: "map", label: "地圖", pin: true },
   { key: "favorites", label: "收藏", heart: true },
 ];
@@ -785,6 +807,17 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
   const [filtersOpen, setFiltersOpen] = useState(false);
 
   const toggle = (key) => { setFilters(prev => ({ ...prev, [key]: !prev[key] })); setPage(1); };
+  const applyPreset = (presetFilters) => {
+    setQ("");
+    setPage(1);
+    setFilters({ ...DEFAULT_HOME_FILTERS, ...presetFilters });
+    setFiltersOpen(false);
+  };
+  const isPresetActive = (presetFilters) => {
+    const activeKeys = Object.entries(filters).filter(([, value]) => value).map(([key]) => key);
+    const presetKeys = Object.entries(presetFilters).filter(([, value]) => value).map(([key]) => key);
+    return activeKeys.length === presetKeys.length && presetKeys.every((key) => filters[key]);
+  };
 
   const allFiltered = cafes
     .filter(isOpen)
@@ -873,6 +906,51 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
             </button>
           </div>
         )}
+        {hasRegionSelection && (
+          <div style={{ margin: "14px 0 12px" }}>
+            <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 12, marginBottom: 10 }}>
+              <div>
+                <div style={{ fontSize: 15, color: T.text, fontWeight: 700, marginBottom: 3 }}>依需求找咖啡廳</div>
+                <div style={{ fontSize: 11.5, color: T.sub }}>快速套用常用情境篩選</div>
+              </div>
+              {activeFilterCount > 0 && (
+                <button
+                  type="button"
+                  onClick={() => { setFilters({ ...DEFAULT_HOME_FILTERS }); setPage(1); }}
+                  style={{ background: "none", border: "none", color: T.brown, fontSize: 12, fontWeight: 700, cursor: "pointer", fontFamily: "inherit", textDecoration: "underline", textUnderlineOffset: 3 }}
+                >
+                  清除
+                </button>
+              )}
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
+              {FILTER_PRESETS.map((preset) => {
+                const active = isPresetActive(preset.filters);
+                return (
+                  <button
+                    key={preset.title}
+                    type="button"
+                    onClick={() => applyPreset(preset.filters)}
+                    style={{
+                      background: active ? T.brown : "#fff",
+                      color: active ? "#fff" : T.text,
+                      border: `1px solid ${active ? T.brown : T.beige}`,
+                      borderRadius: 14,
+                      padding: "11px 12px",
+                      textAlign: "left",
+                      cursor: "pointer",
+                      fontFamily: "inherit",
+                      boxShadow: active ? "none" : "0 8px 20px rgba(92,61,46,0.05)",
+                    }}
+                  >
+                    <div style={{ fontSize: 13, fontWeight: 800, marginBottom: 4 }}>{preset.title}</div>
+                    <div style={{ fontSize: 11, color: active ? "rgba(255,255,255,0.78)" : T.sub, lineHeight: 1.35 }}>{preset.subtitle}</div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
         {loading ? (
           <div style={{ textAlign: "center", padding: "60px 0", color: T.sub }}>
             <div style={{ fontSize: 32, marginBottom: 10 }}>☕</div>
@@ -891,13 +969,14 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
   );
 };
 
-// ── Page: Search (sorted by work-friendly score) ──
+// ── Page: Nearby ──
 const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
   const [q, setQ] = useState("");
   const [page, setPage] = useState(1);
-  const [sortMode, setSortMode] = useState("smart");
   const [userLocation, setUserLocation] = useState(null);
+  const [locationLoading, setLocationLoading] = useState(false);
   const [locationError, setLocationError] = useState("");
+  const requestedLocation = useRef(false);
 
   const requestSortLocation = useCallback(() => {
     setLocationError("");
@@ -905,12 +984,16 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
       setLocationError("目前瀏覽器無法使用定位。");
       return;
     }
+    setLocationLoading(true);
     navigator.geolocation.getCurrentPosition(
       (pos) => {
         setUserLocation({ lat: pos.coords.latitude, lng: pos.coords.longitude });
-        setSortMode("nearby");
+        setLocationLoading(false);
       },
-      () => setLocationError("無法取得位置，先用預設排序。"),
+      () => {
+        setLocationError("無法取得位置，先用預設排序。");
+        setLocationLoading(false);
+      },
       { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 },
     );
   }, []);
@@ -920,7 +1003,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
     .filter(c => !q || c.name.includes(q) || c.address.includes(q) || (c.mrt && c.mrt.includes(q)))
     .map((c) => ({ ...c, _workScore: workScore(c), _distanceKm: distanceKm(userLocation, c) }))
     .sort((a, b) => {
-      if (sortMode === "nearby" && userLocation) {
+      if (userLocation) {
         return a._distanceKm - b._distanceKm;
       }
       return b._workScore - a._workScore;
@@ -931,12 +1014,17 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
   const sorted = allSorted.slice(start, start + PER_PAGE);
 
   useEffect(() => { setPage(1); }, [q]);
+  useEffect(() => {
+    if (requestedLocation.current) return;
+    requestedLocation.current = true;
+    requestSortLocation();
+  }, [requestSortLocation]);
 
   return (
     <div style={{ display: "flex", flexDirection: "column", flex: 1, minHeight: 0, overflow: "hidden" }}>
       {/* 固定區 */}
       <div style={{ flexShrink: 0, padding: "14px 16px 0", background: T.cream, borderBottom: `1px solid ${T.beige}` }}>
-        <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, marginBottom: 10, color: T.text }}>工作友善精選</div>
+        <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, marginBottom: 10, color: T.text }}>附近咖啡廳</div>
         <div style={{ position: "relative", marginBottom: 14 }}>
           <svg style={{ position: "absolute", left: 11, top: "50%", transform: "translateY(-50%)" }} width="15" height="15" viewBox="0 0 24 24" fill="none" stroke={T.sub} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
           <input value={q} onChange={e => setQ(e.target.value)} placeholder="搜尋..."
@@ -944,20 +1032,22 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
         </div>
         <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 12 }}>
           <button
-            onClick={sortMode === "nearby" ? () => setSortMode("smart") : userLocation ? () => setSortMode("nearby") : requestSortLocation}
+            onClick={requestSortLocation}
+            disabled={locationLoading}
             style={{
-              border: `1px solid ${sortMode === "nearby" ? T.brown : T.beige}`,
-              background: sortMode === "nearby" ? T.brown : "#fff",
-              color: sortMode === "nearby" ? "#fff" : T.sub,
+              border: `1px solid ${userLocation ? T.brown : T.beige}`,
+              background: userLocation ? T.brown : "#fff",
+              color: userLocation ? "#fff" : T.sub,
               borderRadius: 12,
               padding: "9px 12px",
               fontSize: 12,
               fontWeight: 700,
               fontFamily: "inherit",
-              cursor: "pointer",
+              cursor: locationLoading ? "default" : "pointer",
+              opacity: locationLoading ? 0.7 : 1,
             }}
           >
-            {sortMode === "nearby" ? "取消距離排序" : "距離我最近"}
+            {locationLoading ? "定位中..." : userLocation ? "重新定位" : "使用目前位置"}
           </button>
         </div>
         {locationError && <div style={{ fontSize: 11, color: "#9b2335", marginBottom: 10 }}>{locationError}</div>}
@@ -966,7 +1056,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
       {/* 滾動區 */}
       <div style={{ flex: 1, overflowY: "auto", padding: "0 16px 16px" }}>
         <div style={{ fontSize: 12, color: T.sub, margin: "10px 0" }}>
-          {sortMode === "nearby" && userLocation ? "依距離由近到遠・" : ""}共 {total} 間{total > PER_PAGE ? `（第 ${start + 1}-${Math.min(start + PER_PAGE, total)} 間）` : ""}
+          {userLocation ? "依距離由近到遠" : locationLoading ? "正在取得目前位置" : "開啟定位後可查看附近咖啡廳"}・共 {total} 間{total > PER_PAGE ? `（第 ${start + 1}-${Math.min(start + PER_PAGE, total)} 間）` : ""}
         </div>
         {loading ? (
           <div style={{ textAlign: "center", padding: "60px 0", color: T.sub }}><div style={{ fontSize: 32, marginBottom: 10 }}>☕</div><div>載入中...</div></div>
@@ -974,7 +1064,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
           <>
             {sorted.map((c, i) => (
               <div key={c.id} style={{ display: "flex", alignItems: "flex-start", gap: 8 }}>
-                {sortMode === "nearby" && userLocation && (
+                {userLocation && (
                   <div style={{ width: 42, minHeight: 24, borderRadius: 14, background: T.beige, color: T.sub, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10.5, fontWeight: 700, flexShrink: 0, marginTop: 14, padding: "3px 5px", textAlign: "center", lineHeight: 1.15 }}>
                     {formatDistance(c._distanceKm)}
                   </div>
