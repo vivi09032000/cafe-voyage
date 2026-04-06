@@ -208,6 +208,7 @@ const FILTER_LABELS = {
   quiet: "超安靜",
   tasty: "咖啡好喝",
   cheap: "價格實惠",
+  music: "舒服氛圍",
   empty: "目前人少",
 };
 const DEFAULT_HOME_FILTERS = {
@@ -218,28 +219,37 @@ const DEFAULT_HOME_FILTERS = {
   quiet: false,
   tasty: false,
   cheap: false,
+  music: false,
   empty: false,
 };
 const FILTER_PRESETS = [
   {
-    title: "安靜工作",
-    subtitle: "WiFi 穩、安靜",
+    key: "focus",
+    title: "專心工作",
+    subtitle: "安靜、網路穩，適合打開電腦",
     filters: { wifi: true, quiet: true },
+    score: (cafe) => (Number(cafe.wifi) || 0) * 0.4 + (Number(cafe.quiet) || 0) * 0.4 + (Number(cafe.seat) || 0) * 0.2,
   },
   {
-    title: "插座長待",
-    subtitle: "插座多、不限時",
+    key: "longStay",
+    title: "久坐友善",
+    subtitle: "不趕時間，也不用擔心沒電",
     filters: { socket: true, noLimit: true },
+    score: (cafe) => (Number(cafe.seat) || 0) * 0.4 + (Number(cafe.wifi) || 0) * 0.35 + (Number(cafe.quiet) || 0) * 0.25,
   },
   {
-    title: "咖啡好喝",
-    subtitle: "先把風味放前面",
+    key: "coffee",
+    title: "好咖啡",
+    subtitle: "想認真喝一杯的時候",
     filters: { tasty: true },
+    score: (cafe) => (Number(cafe.tasty) || 0) * 0.7 + (Number(cafe.cheap) || 0) * 0.15 + (Number(cafe.seat) || 0) * 0.15,
   },
   {
-    title: "價格實惠",
-    subtitle: "預算友善、輕鬆坐",
-    filters: { cheap: true },
+    key: "vibe",
+    title: "舒服氛圍",
+    subtitle: "適合聊天、約會、放慢一點",
+    filters: { music: true },
+    score: (cafe) => (Number(cafe.music) || 0) * 0.5 + (Number(cafe.quiet) || 0) * 0.25 + (Number(cafe.tasty) || 0) * 0.25,
   },
 ];
 
@@ -805,12 +815,14 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
   const [q, setQ] = useState("");
   const [page, setPage] = useState(1);
   const [filtersOpen, setFiltersOpen] = useState(false);
+  const [activePresetKey, setActivePresetKey] = useState(null);
 
-  const toggle = (key) => { setFilters(prev => ({ ...prev, [key]: !prev[key] })); setPage(1); };
-  const applyPreset = (presetFilters) => {
+  const toggle = (key) => { setFilters(prev => ({ ...prev, [key]: !prev[key] })); setActivePresetKey(null); setPage(1); };
+  const applyPreset = (preset) => {
     setQ("");
     setPage(1);
-    setFilters({ ...DEFAULT_HOME_FILTERS, ...presetFilters });
+    setActivePresetKey(preset.key);
+    setFilters({ ...DEFAULT_HOME_FILTERS, ...preset.filters });
     setFiltersOpen(false);
   };
   const isPresetActive = (presetFilters) => {
@@ -829,8 +841,13 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
     .filter(c => !filters.quiet || c.quiet >= 4)
     .filter(c => !filters.tasty || c.tasty >= 4)
     .filter(c => !filters.cheap || c.cheap >= 4)
+    .filter(c => !filters.music || c.music >= 4)
     .filter(c => !filters.empty || emptyCafeIds.has(c.id))
-    .sort((a, b) => workScore(b) - workScore(a));
+    .sort((a, b) => {
+      const preset = FILTER_PRESETS.find((item) => item.key === activePresetKey);
+      if (preset?.score) return preset.score(b) - preset.score(a);
+      return workScore(b) - workScore(a);
+    });
 
   const total = allFiltered.length;
   const start = (page - 1) * PER_PAGE;
@@ -916,7 +933,7 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
               {activeFilterCount > 0 && (
                 <button
                   type="button"
-                  onClick={() => { setFilters({ ...DEFAULT_HOME_FILTERS }); setPage(1); }}
+                  onClick={() => { setFilters({ ...DEFAULT_HOME_FILTERS }); setActivePresetKey(null); setPage(1); }}
                   style={{ background: "none", border: "none", color: T.brown, fontSize: 12, fontWeight: 700, cursor: "pointer", fontFamily: "inherit", textDecoration: "underline", textUnderlineOffset: 3 }}
                 >
                   清除
@@ -930,7 +947,7 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
                   <button
                     key={preset.title}
                     type="button"
-                    onClick={() => applyPreset(preset.filters)}
+                    onClick={() => applyPreset(preset)}
                     style={{
                       background: active ? T.brown : "#fff",
                       color: active ? "#fff" : T.text,
@@ -1753,7 +1770,7 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
               ["☕ 咖啡好喝", cafe.tasty, cafe.tasty >= 4 ? "tasty" : null],
               ["💺 通常有位", cafe.seat, null],
               ["💰 價格便宜", cafe.cheap, cafe.cheap >= 4 ? "cheap" : null],
-              ["🎵 裝潢音樂", cafe.music, null],
+              ["🎵 裝潢音樂", cafe.music, cafe.music >= 4 ? "music" : null],
             ].map(([label, val, filterKey]) =>
               val > 0 ? (
                 <div key={label} style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
