@@ -232,14 +232,14 @@ const FILTER_PRESETS = [
     filters: { socket: true, noLimit: true },
   },
   {
-    title: "WiFi 穩定",
-    subtitle: "遠端工作安心",
-    filters: { wifi: true },
+    title: "咖啡好喝",
+    subtitle: "先把風味放前面",
+    filters: { tasty: true },
   },
   {
-    title: "不限時慢坐",
-    subtitle: "讀書、工作、久聊",
-    filters: { noLimit: true },
+    title: "價格實惠",
+    subtitle: "預算友善、輕鬆坐",
+    filters: { cheap: true },
   },
 ];
 
