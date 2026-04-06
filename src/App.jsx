@@ -265,6 +265,26 @@ const timeAgo = (ts) => {
   return `今天 ${timeStr}・${Math.floor(mins / 60)} 小時前`;
 };
 
+const distanceKm = (from, cafe) => {
+  if (!from || !cafe.latitude || !cafe.longitude) return Infinity;
+  const lat = Number(cafe.latitude);
+  const lng = Number(cafe.longitude);
+  if (!Number.isFinite(lat) || !Number.isFinite(lng)) return Infinity;
+  const toRad = (deg) => (deg * Math.PI) / 180;
+  const earthKm = 6371;
+  const dLat = toRad(lat - from.lat);
+  const dLng = toRad(lng - from.lng);
+  const a = Math.sin(dLat / 2) ** 2
+    + Math.cos(toRad(from.lat)) * Math.cos(toRad(lat)) * Math.sin(dLng / 2) ** 2;
+  return earthKm * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+};
+
+const formatDistance = (km) => {
+  if (!Number.isFinite(km)) return "";
+  if (km < 1) return `${Math.round(km * 1000)} m`;
+  return `${km.toFixed(km < 10 ? 1 : 0)} km`;
+};
+
 // ── Header ──
 const Header = ({ title = "Cafe Voyage", cityLabel, subtitle, onOpenMenu }) => {
   const metaText = subtitle ?? cityLabel;
@@ -840,12 +860,39 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
 const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
   const [q, setQ] = useState("");
   const [page, setPage] = useState(1);
+  const [sortMode, setSortMode] = useState("smart");
+  const [userLocation, setUserLocation] = useState(null);
+  const [locationError, setLocationError] = useState("");
+
+  const requestSortLocation = useCallback(() => {
+    setLocationError("");
+    if (!navigator.geolocation || !window.isSecureContext) {
+      setLocationError("目前瀏覽器無法使用定位。");
+      return;
+    }
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        setUserLocation({ lat: pos.coords.latitude, lng: pos.coords.longitude });
+        setSortMode("nearby");
+      },
+      () => setLocationError("無法取得位置，先用綜合分數排序。"),
+      { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 },
+    );
+  }, []);
 
   const allSorted = cafes
     .filter(isOpen)
     .filter(c => c.wifi > 0 || c.quiet > 0)
     .filter(c => !q || c.name.includes(q) || c.address.includes(q) || (c.mrt && c.mrt.includes(q)))
-    .sort((a, b) => (b.wifi + b.quiet + b.tasty) - (a.wifi + a.quiet + a.tasty));
+    .map((c) => ({ ...c, _workScore: c.wifi + c.quiet + c.tasty, _distanceKm: distanceKm(userLocation, c) }))
+    .sort((a, b) => {
+      if (sortMode === "nearby" && userLocation) {
+        const scoreDiff = b._workScore - a._workScore;
+        if (Math.abs(scoreDiff) > 0.5) return scoreDiff;
+        return a._distanceKm - b._distanceKm;
+      }
+      return b._workScore - a._workScore;
+    });
 
   const total = allSorted.length;
   const start = (page - 1) * PER_PAGE;
@@ -857,24 +904,66 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
     <div style={{ display: "flex", flexDirection: "column", flex: 1, minHeight: 0, overflow: "hidden" }}>
       {/* 固定區 */}
       <div style={{ flexShrink: 0, padding: "14px 16px 0", background: T.cream, borderBottom: `1px solid ${T.beige}` }}>
-        <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, marginBottom: 10, color: T.text }}>工作友善排行</div>
+        <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, marginBottom: 5, color: T.text }}>工作友善精選</div>
+        <div style={{ fontSize: 12, color: T.sub, marginBottom: 10 }}>分數接近時，優先看離你最近的店。</div>
         <div style={{ position: "relative", marginBottom: 14 }}>
           <svg style={{ position: "absolute", left: 11, top: "50%", transform: "translateY(-50%)" }} width="15" height="15" viewBox="0 0 24 24" fill="none" stroke={T.sub} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
           <input value={q} onChange={e => setQ(e.target.value)} placeholder="搜尋..."
             style={{ width: "100%", padding: "9px 14px 9px 34px", borderRadius: 22, border: `1px solid ${T.beige}`, background: "#fff", fontSize: 16, outline: "none", boxSizing: "border-box", color: T.text }} />
         </div>
+        <div style={{ display: "flex", gap: 8, marginBottom: 12 }}>
+          <button
+            onClick={() => setSortMode("smart")}
+            style={{
+              flex: 1,
+              border: `1px solid ${sortMode === "smart" ? T.brown : T.beige}`,
+              background: sortMode === "smart" ? T.brown : "#fff",
+              color: sortMode === "smart" ? "#fff" : T.sub,
+              borderRadius: 12,
+              padding: "9px 10px",
+              fontSize: 12,
+              fontWeight: 700,
+              fontFamily: "inherit",
+              cursor: "pointer",
+            }}
+          >
+            綜合推薦
+          </button>
+          <button
+            onClick={userLocation ? () => setSortMode("nearby") : requestSortLocation}
+            style={{
+              flex: 1,
+              border: `1px solid ${sortMode === "nearby" ? T.brown : T.beige}`,
+              background: sortMode === "nearby" ? T.brown : "#fff",
+              color: sortMode === "nearby" ? "#fff" : T.sub,
+              borderRadius: 12,
+              padding: "9px 10px",
+              fontSize: 12,
+              fontWeight: 700,
+              fontFamily: "inherit",
+              cursor: "pointer",
+            }}
+          >
+            距離我最近
+          </button>
+        </div>
+        {locationError && <div style={{ fontSize: 11, color: "#9b2335", marginBottom: 10 }}>{locationError}</div>}
       </div>
 
       {/* 滾動區 */}
       <div style={{ flex: 1, overflowY: "auto", padding: "0 16px 16px" }}>
-        <div style={{ fontSize: 12, color: T.sub, margin: "10px 0" }}>依 WiFi + 安靜 + 咖啡 綜合排序・共 {total} 間{total > PER_PAGE ? `（第 ${start + 1}-${Math.min(start + PER_PAGE, total)} 間）` : ""}</div>
+        <div style={{ fontSize: 12, color: T.sub, margin: "10px 0" }}>
+          {sortMode === "nearby" && userLocation ? "同分優先離你最近" : "依 WiFi + 安靜 + 咖啡 綜合排序"}・共 {total} 間{total > PER_PAGE ? `（第 ${start + 1}-${Math.min(start + PER_PAGE, total)} 間）` : ""}
+        </div>
         {loading ? (
           <div style={{ textAlign: "center", padding: "60px 0", color: T.sub }}><div style={{ fontSize: 32, marginBottom: 10 }}>☕</div><div>載入中...</div></div>
         ) : (
           <>
             {sorted.map((c, i) => (
               <div key={c.id} style={{ display: "flex", alignItems: "flex-start", gap: 8 }}>
-                <div style={{ width: 24, height: 24, borderRadius: "50%", background: (start + i) < 3 ? T.brown : T.beige, color: (start + i) < 3 ? "#fff" : T.sub, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontWeight: 700, flexShrink: 0, marginTop: 14 }}>{start + i + 1}</div>
+                <div style={{ width: 42, minHeight: 24, borderRadius: 14, background: T.beige, color: T.sub, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10.5, fontWeight: 700, flexShrink: 0, marginTop: 14, padding: "3px 5px", textAlign: "center", lineHeight: 1.15 }}>
+                  {sortMode === "nearby" && userLocation ? formatDistance(c._distanceKm) : `#${start + i + 1}`}
+                </div>
                 <div style={{ flex: 1 }}><CafeCard cafe={c} onClick={() => onSelect(c)} fav={favs.has(c.id)} onFav={onFav} emptyCafeIds={new Set()} /></div>
               </div>
             ))}
