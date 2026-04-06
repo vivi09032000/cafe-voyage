@@ -735,14 +735,14 @@ const BottomNav = ({ active, onChange }) => (
     }}>
       {NAV_ITEMS.map(({ key, label, d, circle, pin, heart }) => {
         const on = active === key;
-        const c = on ? T.brown : T.sub;
+        const c = on ? "#fff" : T.sub;
         return (
           <button
             key={key}
             aria-label={label}
             onClick={() => onChange(key)}
             style={{
-              background: on ? "rgba(92, 61, 46, 0.08)" : "transparent",
+              background: on ? T.brown : "transparent",
               border: "none",
               borderRadius: 18,
               cursor: "pointer",
@@ -758,7 +758,7 @@ const BottomNav = ({ active, onChange }) => (
               transition: "background 160ms ease, color 160ms ease",
             }}
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill={heart && on ? c : "none"} stroke={c} strokeWidth={on ? "2.25" : "2"} strokeLinecap="round">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill={heart && on ? c : "none"} stroke={c} strokeWidth="2" strokeLinecap="round">
               {d && <path d={d} />}
               {circle && <><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></>}
               {pin && <><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" /><circle cx="12" cy="10" r="3" /></>}
@@ -1039,18 +1039,20 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
                       background: active ? T.brown : UI.paper,
                       color: active ? "#fff" : T.text,
                       border: `1px solid ${active ? T.brown : UI.line}`,
-                      borderRadius: 999,
-                      padding: "9px 13px",
-                      flex: "0 0 auto",
-                      textAlign: "center",
+                      borderRadius: 16,
+                      padding: "10px 11px",
+                      width: 150,
+                      flex: "0 0 150px",
+                      textAlign: "left",
                       cursor: "pointer",
                       fontFamily: "inherit",
-                      boxShadow: active ? "0 8px 18px rgba(92,61,46,0.10)" : "none",
-                      minHeight: 0,
+                      boxShadow: active ? "0 10px 22px rgba(92,61,46,0.10)" : UI.shadow,
+                      minHeight: 76,
                       transition: "background 160ms ease, transform 160ms ease, box-shadow 160ms ease",
                     }}
                   >
-                    <span style={{ fontSize: 13, fontWeight: 760, letterSpacing: "-0.02em", whiteSpace: "nowrap" }}>{preset.title}</span>
+                    <div style={{ fontSize: 13.5, fontWeight: 760, marginBottom: 4, letterSpacing: "-0.02em" }}>{preset.title}</div>
+                    <div style={{ fontSize: 11.5, color: active ? "rgba(255,255,255,0.80)" : T.sub, lineHeight: 1.35 }}>{preset.subtitle}</div>
                   </button>
                 );
               })}
