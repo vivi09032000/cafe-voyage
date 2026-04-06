@@ -962,7 +962,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
             {sorted.map((c, i) => (
               <div key={c.id} style={{ display: "flex", alignItems: "flex-start", gap: 8 }}>
                 <div style={{ width: 42, minHeight: 24, borderRadius: 14, background: T.beige, color: T.sub, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10.5, fontWeight: 700, flexShrink: 0, marginTop: 14, padding: "3px 5px", textAlign: "center", lineHeight: 1.15 }}>
-                  {sortMode === "nearby" && userLocation ? formatDistance(c._distanceKm) : `#${start + i + 1}`}
+                  {sortMode === "nearby" && userLocation ? formatDistance(c._distanceKm) : "精選"}
                 </div>
                 <div style={{ flex: 1 }}><CafeCard cafe={c} onClick={() => onSelect(c)} fav={favs.has(c.id)} onFav={onFav} emptyCafeIds={new Set()} /></div>
               </div>
