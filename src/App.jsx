@@ -878,7 +878,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
         setUserLocation({ lat: pos.coords.latitude, lng: pos.coords.longitude });
         setSortMode("nearby");
       },
-      () => setLocationError("無法取得位置，先用綜合分數排序。"),
+      () => setLocationError("無法取得位置，先用預設排序。"),
       { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 },
     );
   }, []);
@@ -910,40 +910,22 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
           <input value={q} onChange={e => setQ(e.target.value)} placeholder="搜尋..."
             style={{ width: "100%", padding: "9px 14px 9px 34px", borderRadius: 22, border: `1px solid ${T.beige}`, background: "#fff", fontSize: 16, outline: "none", boxSizing: "border-box", color: T.text }} />
         </div>
-        <div style={{ display: "flex", gap: 8, marginBottom: 12 }}>
+        <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 12 }}>
           <button
-            onClick={() => setSortMode("smart")}
+            onClick={sortMode === "nearby" ? () => setSortMode("smart") : userLocation ? () => setSortMode("nearby") : requestSortLocation}
             style={{
-              flex: 1,
-              border: `1px solid ${sortMode === "smart" ? T.brown : T.beige}`,
-              background: sortMode === "smart" ? T.brown : "#fff",
-              color: sortMode === "smart" ? "#fff" : T.sub,
-              borderRadius: 12,
-              padding: "9px 10px",
-              fontSize: 12,
-              fontWeight: 700,
-              fontFamily: "inherit",
-              cursor: "pointer",
-            }}
-          >
-            綜合推薦
-          </button>
-          <button
-            onClick={userLocation ? () => setSortMode("nearby") : requestSortLocation}
-            style={{
-              flex: 1,
               border: `1px solid ${sortMode === "nearby" ? T.brown : T.beige}`,
               background: sortMode === "nearby" ? T.brown : "#fff",
               color: sortMode === "nearby" ? "#fff" : T.sub,
               borderRadius: 12,
-              padding: "9px 10px",
+              padding: "9px 12px",
               fontSize: 12,
               fontWeight: 700,
               fontFamily: "inherit",
               cursor: "pointer",
             }}
           >
-            距離我最近
+            {sortMode === "nearby" ? "取消距離排序" : "距離我最近"}
           </button>
         </div>
         {locationError && <div style={{ fontSize: 11, color: "#9b2335", marginBottom: 10 }}>{locationError}</div>}
@@ -952,7 +934,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
       {/* 滾動區 */}
       <div style={{ flex: 1, overflowY: "auto", padding: "0 16px 16px" }}>
         <div style={{ fontSize: 12, color: T.sub, margin: "10px 0" }}>
-          {sortMode === "nearby" && userLocation ? "依距離由近到遠" : "依 WiFi + 安靜 + 咖啡 綜合排序"}・共 {total} 間{total > PER_PAGE ? `（第 ${start + 1}-${Math.min(start + PER_PAGE, total)} 間）` : ""}
+          {sortMode === "nearby" && userLocation ? "依距離由近到遠・" : ""}共 {total} 間{total > PER_PAGE ? `（第 ${start + 1}-${Math.min(start + PER_PAGE, total)} 間）` : ""}
         </div>
         {loading ? (
           <div style={{ textAlign: "center", padding: "60px 0", color: T.sub }}><div style={{ fontSize: 32, marginBottom: 10 }}>☕</div><div>載入中...</div></div>
