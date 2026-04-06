@@ -902,8 +902,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
     <div style={{ display: "flex", flexDirection: "column", flex: 1, minHeight: 0, overflow: "hidden" }}>
       {/* 固定區 */}
       <div style={{ flexShrink: 0, padding: "14px 16px 0", background: T.cream, borderBottom: `1px solid ${T.beige}` }}>
-        <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, marginBottom: 5, color: T.text }}>工作友善精選</div>
-        <div style={{ fontSize: 12, color: T.sub, marginBottom: 10 }}>可依綜合條件或目前距離挑選。</div>
+        <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, marginBottom: 10, color: T.text }}>工作友善精選</div>
         <div style={{ position: "relative", marginBottom: 14 }}>
           <svg style={{ position: "absolute", left: 11, top: "50%", transform: "translateY(-50%)" }} width="15" height="15" viewBox="0 0 24 24" fill="none" stroke={T.sub} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
           <input value={q} onChange={e => setQ(e.target.value)} placeholder="搜尋..."
