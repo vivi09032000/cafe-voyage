@@ -139,6 +139,28 @@ const scoreBar = (val, max = 5) => {
   );
 };
 
+const scorePill = (label, val) => {
+  if (!val || val === 0) return null;
+  return (
+    <span style={{
+      display: "inline-flex",
+      alignItems: "center",
+      gap: 5,
+      padding: "5px 8px",
+      borderRadius: 999,
+      background: "rgba(246,239,231,0.86)",
+      border: `1px solid ${UI.softLine}`,
+      color: T.sub,
+      fontSize: 11,
+      fontWeight: 650,
+      whiteSpace: "nowrap",
+    }}>
+      <span>{label}</span>
+      <span style={{ color: T.text, fontVariantNumeric: "tabular-nums" }}>{Number(val).toFixed(1)}</span>
+    </span>
+  );
+};
+
 const Tag = ({ label, type = "green", onClick }) => {
   const styles = {
     green: { bg: T.green, color: "#fff" },
@@ -284,38 +306,42 @@ const FilterChip = ({ active, label, onClick, icon }) => (
 );
 
 const FilterSection = ({ filters, toggle }) => (
-  <div style={{ marginBottom: 14 }}>
-    <div style={{ fontSize: 11, color: T.sub, marginBottom: 8, fontWeight: 700 }}>工作環境</div>
-    <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 10 }}>
-      {[
-        { key: "noLimit", label: "不限時" },
-        { key: "socket", label: "插座多" },
-        { key: "standing", label: "站立桌" },
-      ].map(({ key, label }) => (
-        <FilterChip key={key} active={filters[key]} label={label} onClick={() => toggle(key)} />
-      ))}
-    </div>
-
-    <div style={{ fontSize: 11, color: T.sub, marginBottom: 8, fontWeight: 700 }}>網路 & 環境</div>
-    <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 10 }}>
-      {[
-        { key: "wifi", label: "WiFi 穩" },
-        { key: "quiet", label: "超安靜" },
-        { key: "tasty", label: "咖啡好喝" },
-        { key: "cheap", label: "價格實惠" },
-      ].map(({ key, label }) => (
-        <FilterChip key={key} active={filters[key]} label={label} onClick={() => toggle(key)} />
-      ))}
-    </div>
-
-    <div style={{ fontSize: 11, color: T.sub, marginBottom: 8, fontWeight: 700 }}>即時狀態</div>
-    <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
-      {[
-        { key: "empty", label: "目前人少", icon: "🟢" },
-      ].map(({ key, label }) => (
-        <FilterChip key={key} active={filters[key]} label={label} icon="🟢" onClick={() => toggle(key)} />
-      ))}
-    </div>
+  <div style={{ marginBottom: 14, background: "rgba(255,253,248,0.78)", border: `1px solid ${UI.line}`, borderRadius: 18, padding: 12 }}>
+    {[
+      {
+        title: "工作環境",
+        items: [
+          { key: "noLimit", label: "不限時" },
+          { key: "socket", label: "插座多" },
+          { key: "standing", label: "站立桌" },
+        ],
+      },
+      {
+        title: "網路與氛圍",
+        items: [
+          { key: "wifi", label: "WiFi 穩" },
+          { key: "quiet", label: "超安靜" },
+          { key: "tasty", label: "咖啡好喝" },
+          { key: "cheap", label: "價格實惠" },
+          { key: "music", label: "舒服氛圍" },
+        ],
+      },
+      {
+        title: "即時狀態",
+        items: [
+          { key: "empty", label: "目前人少", icon: "🟢" },
+        ],
+      },
+    ].map((section, index) => (
+      <div key={section.title} style={{ marginBottom: index === 2 ? 0 : 12 }}>
+        <div style={{ fontSize: 11, color: T.sub, marginBottom: 8, fontWeight: 760, letterSpacing: "0.08em" }}>{section.title}</div>
+        <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
+          {section.items.map(({ key, label, icon }) => (
+            <FilterChip key={key} active={filters[key]} label={label} icon={icon} onClick={() => toggle(key)} />
+          ))}
+        </div>
+      </div>
+    ))}
   </div>
 );
 
@@ -691,31 +717,58 @@ const NAV_ITEMS = [
 ];
 const BottomNav = ({ active, onChange }) => (
   <div style={{
-    background: T.beige,
-    borderTop: `1px solid ${T.brown}22`,
-    display: "flex",
-    justifyContent: "space-around",
-    padding: "9px 0 calc(13px + env(safe-area-inset-bottom, 0px))",
+    background: "linear-gradient(180deg, rgba(250,246,240,0), rgba(232,221,208,0.96) 34%)",
+    padding: "8px 12px calc(10px + env(safe-area-inset-bottom, 0px))",
     flexShrink: 0,
     position: "sticky",
     bottom: 0,
     zIndex: 20,
   }}>
-    {NAV_ITEMS.map(({ key, label, d, circle, pin, heart }) => {
-      const on = active === key;
-      const c = on ? T.brown : T.sub;
-      return (
-        <button key={key} aria-label={label} onClick={() => onChange(key)} style={{ background: "none", border: "none", cursor: "pointer", display: "flex", flexDirection: "column", alignItems: "center", gap: 3, color: c, minWidth: 48, minHeight: 44, fontFamily: "inherit" }}>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill={heart && on ? c : "none"} stroke={c} strokeWidth="2" strokeLinecap="round">
-            {d && <path d={d} />}
-            {circle && <><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></>}
-            {pin && <><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" /><circle cx="12" cy="10" r="3" /></>}
-            {heart && <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />}
-          </svg>
-          <span style={{ fontSize: 11, fontWeight: on ? 700 : 400 }}>{label}</span>
-        </button>
-      );
-    })}
+    <div style={{
+      background: "rgba(255,253,248,0.96)",
+      border: `1px solid ${UI.line}`,
+      borderRadius: 24,
+      boxShadow: "0 14px 34px rgba(62,39,35,0.14)",
+      display: "flex",
+      justifyContent: "space-around",
+      padding: "7px 6px",
+    }}>
+      {NAV_ITEMS.map(({ key, label, d, circle, pin, heart }) => {
+        const on = active === key;
+        const c = on ? "#fff" : T.sub;
+        return (
+          <button
+            key={key}
+            aria-label={label}
+            onClick={() => onChange(key)}
+            style={{
+              background: on ? T.brown : "transparent",
+              border: "none",
+              borderRadius: 18,
+              cursor: "pointer",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: 3,
+              color: c,
+              minWidth: 58,
+              minHeight: 48,
+              fontFamily: "inherit",
+              transition: "background 160ms ease, color 160ms ease",
+            }}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill={heart && on ? c : "none"} stroke={c} strokeWidth="2" strokeLinecap="round">
+              {d && <path d={d} />}
+              {circle && <><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></>}
+              {pin && <><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" /><circle cx="12" cy="10" r="3" /></>}
+              {heart && <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />}
+            </svg>
+            <span style={{ fontSize: 10.5, fontWeight: on ? 760 : 600 }}>{label}</span>
+          </button>
+        );
+      })}
+    </div>
   </div>
 );
 
@@ -826,17 +879,11 @@ const CafeCard = ({ cafe, onClick, fav, onFav, emptyCafeIds }) => (
         </button>
       </div>
 
-      {/* Score bars */}
       {cafe.wifi > 0 && (
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5px 12px", marginBottom: 10, padding: "9px 10px", borderRadius: 12, background: "rgba(246,239,231,0.72)" }}>
-          {[["WiFi", cafe.wifi], ["安靜", cafe.quiet], ["咖啡", cafe.tasty], ["座位", cafe.seat]].map(([label, val]) =>
-            val > 0 ? (
-              <div key={label} style={{ display: "flex", alignItems: "center", gap: 6 }}>
-                <span style={{ fontSize: 11, color: T.sub, width: 28, flexShrink: 0, fontWeight: 600 }}>{label}</span>
-                {scoreBar(val)}
-              </div>
-            ) : null
-          )}
+        <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 10 }}>
+          {scorePill("WiFi", cafe.wifi)}
+          {scorePill("安靜", cafe.quiet)}
+          {scorePill("咖啡", cafe.tasty)}
         </div>
       )}
 
@@ -980,7 +1027,7 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
                 </button>
               )}
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
+            <div style={{ display: "flex", gap: 9, overflowX: "auto", padding: "2px 1px 8px", margin: "0 -1px" }}>
               {FILTER_PRESETS.map((preset) => {
                 const active = isPresetActive(preset.filters);
                 return (
@@ -994,6 +1041,8 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
                       border: `1px solid ${active ? T.brown : UI.line}`,
                       borderRadius: 16,
                       padding: "10px 11px",
+                      width: 150,
+                      flex: "0 0 150px",
                       textAlign: "left",
                       cursor: "pointer",
                       fontFamily: "inherit",
@@ -1804,7 +1853,7 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
       </div>
       <div style={{ padding: "16px 18px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
-          <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 20, fontWeight: 700, color: T.text }}>
+          <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 23, fontWeight: 700, color: T.text, lineHeight: 1.18, letterSpacing: "-0.03em" }}>
             {cafe.name}
           </div>
           {cafe.url && (
@@ -1818,56 +1867,56 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
         {cafe.google_business_note && <div style={{ fontSize: 13, color: "#b7791f", marginBottom: 8, fontWeight: 600 }}>⏸ {cafe.google_business_note}</div>}
         {cafe.open_time && <div style={{ fontSize: 13, color: T.text, marginBottom: 8 }}>🕐 {cafe.open_time}</div>}
 
-        <CrowdReport cafeId={cafe.id} onReport={onReport} />
-
-        <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 20 }}>
+        <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 8 }}>
           {temporaryClosureTag(cafe)}
           {limitedTag(cafe.limited_time, applyTagFilter("noLimit"))}
           {socketTag(cafe.socket, applyTagFilter("socket"))}
           {cafe.standing_desk === "yes" && <Tag label="站立桌" type="gray" onClick={applyTagFilter("standing")} />}
           {crowdTagFromIds(cafe.id, emptyCafeIds, applyTagFilter("empty"))}
         </div>
+        <div style={{ fontSize: 11, color: T.sub, marginBottom: 16 }}>點標籤找相似店</div>
+
+        <CrowdReport cafeId={cafe.id} onReport={onReport} />
 
         {cafe.wifi > 0 && (
           <div style={{ background: UI.paper, borderRadius: 16, border: `1px solid ${UI.line}`, padding: 16, marginBottom: 16, boxShadow: UI.shadow }}>
             <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 16, fontWeight: 700, marginBottom: 12, color: T.text }}>環境評分</div>
-            {[
-              ["📶 WiFi 穩定", cafe.wifi, cafe.wifi >= 4 ? "wifi" : null],
-              ["🔇 安靜程度", cafe.quiet, cafe.quiet >= 4 ? "quiet" : null],
-              ["☕ 咖啡好喝", cafe.tasty, cafe.tasty >= 4 ? "tasty" : null],
-              ["💺 通常有位", cafe.seat, null],
-              ["💰 價格便宜", cafe.cheap, cafe.cheap >= 4 ? "cheap" : null],
-              ["🎵 裝潢音樂", cafe.music, cafe.music >= 4 ? "music" : null],
-            ].map(([label, val, filterKey]) =>
-              val > 0 ? (
-                <div key={label} style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
-                  {filterKey ? (
-                    <button
-                      type="button"
-                      onClick={applyTagFilter(filterKey)}
-                      style={{
-                        background: "none",
-                        border: "none",
-                        padding: 0,
-                        textAlign: "left",
-                        fontSize: 13,
-                        color: T.text,
-                        width: 90,
-                        flexShrink: 0,
-                        cursor: "pointer",
-                        fontFamily: "inherit",
-                        fontWeight: 600,
-                      }}
-                    >
-                      {label}
-                    </button>
-                  ) : (
-                    <span style={{ fontSize: 13, color: T.text, width: 90, flexShrink: 0 }}>{label}</span>
-                  )}
-                  {scoreBar(val)}
-                </div>
-              ) : null
-            )}
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
+              {[
+                ["📶 WiFi", "穩定", cafe.wifi, cafe.wifi >= 4 ? "wifi" : null],
+                ["🔇 安靜", "程度", cafe.quiet, cafe.quiet >= 4 ? "quiet" : null],
+                ["☕ 咖啡", "好喝", cafe.tasty, cafe.tasty >= 4 ? "tasty" : null],
+                ["💺 座位", "通常有位", cafe.seat, null],
+                ["💰 價格", "便宜", cafe.cheap, cafe.cheap >= 4 ? "cheap" : null],
+                ["🎵 氛圍", "裝潢音樂", cafe.music, cafe.music >= 4 ? "music" : null],
+              ].map(([label, subLabel, val, filterKey]) =>
+                val > 0 ? (
+                  <button
+                    key={label}
+                    type="button"
+                    onClick={filterKey ? applyTagFilter(filterKey) : undefined}
+                    disabled={!filterKey}
+                    style={{
+                      background: "rgba(246,239,231,0.72)",
+                      border: `1px solid ${UI.softLine}`,
+                      borderRadius: 14,
+                      padding: "10px 10px",
+                      textAlign: "left",
+                      cursor: filterKey ? "pointer" : "default",
+                      fontFamily: "inherit",
+                      color: T.text,
+                      opacity: 1,
+                    }}
+                  >
+                    <div style={{ fontSize: 12, fontWeight: 760, marginBottom: 5 }}>{label}</div>
+                    <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 6 }}>
+                      <span style={{ fontSize: 11, color: T.sub }}>{subLabel}</span>
+                      <span style={{ fontSize: 17, fontWeight: 760, fontVariantNumeric: "tabular-nums" }}>{Number(val).toFixed(1)}</span>
+                    </div>
+                  </button>
+                ) : null
+              )}
+            </div>
           </div>
         )}
 
