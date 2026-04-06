@@ -1,0 +1,936 @@
+[
+  {
+    "id": "06044732-8a40-4487-b0dc-6f848bc0dd9e",
+    "name": "Easy Coffee 現烘手沖咖啡店",
+    "address": "雲林縣麥寮鄉中正路89號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ89uYcVOvbjQRWpfhoVdtygk",
+      "name": "Easy Coffee 現烘手沖咖啡店",
+      "formatted_address": "中正路89號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "types": [
+        "cafe",
+        "book_store",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "0a647b97-6de9-4889-bb30-03014f827df9",
+    "name": "鴻豆王國-台灣精品咖啡館",
+    "address": "640雲林縣斗六市仁義路3之10號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJYel6DgLJbjQRKsU2yTi12FA",
+      "name": "江鳥咖啡- 斗六中華店",
+      "formatted_address": "640雲林縣斗六市中華路82號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "store"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "12af0fb3-2b5f-4ef2-be45-f2c7d022151e",
+    "name": "AJ CAFE",
+    "address": "632雲林縣虎尾鎮民主路18-7號",
+    "url": "https://www.facebook.com/pages/AJ-Cafe/155461324567731?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJBXC4r6qwbjQRyXmPW41ES94",
+      "name": "雲林100碗-AJ CAFE",
+      "formatted_address": "民主路18-7號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "1711ef87-8c56-4948-a52f-da323477d542",
+    "name": "季節咖啡",
+    "address": "雲林縣北港鎮文昌路93號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJA6lTr4mibjQRwu2yTLyjq64",
+      "name": "季節咖啡(休假日請參考FB粉絲專頁)",
+      "formatted_address": "文昌路93號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "176c71a3-fb15-4bc2-b1be-29a2ab42aab2",
+    "name": "樺鄉咖啡莊園",
+    "address": "雲林縣古坑鄉桃源1-5號",
+    "url": "http://blog.xuite.net/mr.coffee/cafe",
+    "findPlace": {
+      "place_id": "ChIJVWJ4s73GbjQRHv4vxNVneu8",
+      "name": "樺鄉咖啡莊園",
+      "formatted_address": "1號之5",
+      "business_status": "CLOSED_PERMANENTLY",
+      "types": [
+        "cafe",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "store",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "1f65d6de-2f73-4f04-9b92-8ce2ac9b6156",
+    "name": "福斯咖啡",
+    "address": "632雲林縣虎尾鎮中正路396號",
+    "url": "https://m.facebook.com/758892514154266/",
+    "findPlace": {
+      "place_id": "ChIJeQpaEAe6bjQRQp-iK8D9-d4",
+      "name": "福斯咖啡",
+      "formatted_address": "中正路396號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "restaurant",
+        "food",
+        "store",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "23bb15d0-47a9-4dbe-8645-d0d3d2d3e470",
+    "name": "吾愛吾家",
+    "address": "雲林縣斗六市大同路59號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJWzZ2TzrIbjQRKTafHv8pvBY",
+      "name": "吾愛吾家咖啡專賣店",
+      "formatted_address": "大同路59號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "store",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "2c486934-7d1a-459f-bdd4-e0a9bf26987e",
+    "name": "海宴休閒農莊",
+    "address": "雲林縣古坑鄉桂林村桃源路1-8好",
+    "url": "http://www.hiya218.com.tw",
+    "findPlace": {
+      "place_id": "ChIJx1U1ibvGbjQRt9WN2zjzwvQ",
+      "name": "海宴休閒農莊",
+      "formatted_address": "646台灣雲林縣古坑鄉",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "lodging",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "2f1eec58-f99f-48ae-b95b-487e3c891514",
+    "name": "山妍慕夏莊園咖啡",
+    "address": "646雲林縣古坑鄉華山村55之1號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJGyZnV8bGbjQRKNoiG3ZlCjQ",
+      "name": "山妍慕夏莊園咖啡",
+      "formatted_address": "華山村55之1號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "35e35216-0b10-4272-9fd4-6312121737fc",
+    "name": "檬榕MonRon",
+    "address": "雲林縣北港鎮民享路33-5號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJqU0JCImibjQRNDjtuluujlA",
+      "name": "檬榕ᴍᴏɴʀᴏɴ（鮮奶油蛋糕 鮮奶油三明治専門店 ）",
+      "formatted_address": "民享路33-5號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "376398c1-42d2-4501-a503-4abd1afbd7a5",
+    "name": "騷咖啡",
+    "address": "雲林縣斗六市文化路15號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ4UqGEjrIbjQROdCq2npusoc",
+      "name": "騷咖啡",
+      "formatted_address": "文化路15號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4e24cc72-7ab3-41b4-bf39-9916142e225b",
+    "name": "AOKI咖啡",
+    "address": "雲林縣北港鎮太平路89號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ9xbj4IyibjQR6B8RAR7F588",
+      "name": "AOKI CAFE",
+      "formatted_address": "太平路89號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "4e52bb1f-c9b9-4583-a832-d01976ede1b2",
+    "name": "魔術帽自家烘焙咖啡",
+    "address": "雲林縣北港鎮興隆街56號",
+    "url": "https://m.facebook.com/magichatcafe/?locale2=zh_TW",
+    "findPlace": {
+      "place_id": "ChIJXdgQqvSibjQRmYpCa0-a7ZM",
+      "name": "魔術帽自家烘焙咖啡",
+      "formatted_address": "興隆街56號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "57c03c3e-fbf6-4d7b-8b99-f43188428cdd",
+    "name": "阿部昭珈琲莊園",
+    "address": "646雲林縣古坑鄉607號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ20FnEx3HbjQRu69mvyxMJV0",
+      "name": "阿部昭珈琲莊園（特斯拉Tesla充電站）",
+      "formatted_address": "646云林县古坑乡60號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "5f51f637-d035-4771-b58b-ede546e96619",
+    "name": "永光故事屋-隨興沖咖啡",
+    "address": "雲林縣古坑鄉文昌路58-4號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJV0G2PA3HbjQRW112NMwQwvQ",
+      "name": "永光故事屋-隨興沖咖啡",
+      "formatted_address": "文昌路58號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "tourist_attraction",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "store",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "68a86d0c-5c4a-405e-a035-ebda486133ef",
+    "name": "貳月 February Drink&Food",
+    "address": "雲林縣虎尾鎮中山里新興路30號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ9wYzUquwbjQR6ywiiYU1o_4",
+      "name": "虎日 Tiger Bean (營業時間看ig、丼飯沒賣了)",
+      "formatted_address": "新興路30號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "6cc61c66-dc59-43ae-b291-4c8b28ea3da2",
+    "name": "兔子の窩 Coffee House",
+    "address": "雲林縣虎尾鎮新興路23號",
+    "url": "https://www.facebook.com/%E5%85%94%E5%AD%90%E3%81%AE%E7%AA%A9-Coffee-House-1390857114468380/",
+    "findPlace": {
+      "place_id": "ChIJvzweTquwbjQR7sXkhE7vV28",
+      "name": "兔子の窩 Coffee House",
+      "formatted_address": "新興路23號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "6cd8ea22-803e-463a-9a57-046e253c46cf",
+    "name": "原域咖啡",
+    "address": "雲林縣斗六市府前街103號",
+    "url": "https://www.facebook.com/cafeoriginalzone/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJi2UuLgPIbjQRU-p2VBB3TWA",
+      "name": "原域咖啡-雲科二店",
+      "formatted_address": "640雲林縣斗六市龍潭路3-1 號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "7a432294-9b7a-4a64-bea0-f171ecbaeb2e",
+    "name": "玉津咖啡虎尾店",
+    "address": "632雲林縣虎尾鎮自強街29號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJhRl8uROxbjQRJZoV6WEZeAQ",
+      "name": "Y.J COFFEE 玉津咖啡-雲林虎尾店",
+      "formatted_address": "自強街29號1樓",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "8334a2bb-6708-4a95-a7c5-4fe6a8a263d0",
+    "name": "隨興沖。咖啡",
+    "address": "雲林縣古坑鄉永昌村永興路38號",
+    "url": "https://m.facebook.com/Casual0314/",
+    "findPlace": {
+      "place_id": "ChIJV0G2PA3HbjQRW112NMwQwvQ",
+      "name": "永光故事屋-隨興沖咖啡",
+      "formatted_address": "文昌路58號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "tourist_attraction",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "store",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "8e28a373-64a2-4a7b-98fc-587a4e233d9a",
+    "name": "布里吉咖啡",
+    "address": "651雲林縣北港鎮民主路120-122號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ-cvxVIaibjQR8sfbkSRIByo",
+      "name": "布里吉咖啡 - Bridge Coffee Roast",
+      "formatted_address": "文化路37-6號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "973d2de3-daa5-4bd0-ab54-a55fbb016df5",
+    "name": "芒果咖啡 莿桐本店",
+    "address": "雲林縣莿桐鄉中山路114號",
+    "url": "https://www.facebook.com/mango5841987/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJbdpx92u2bjQRnzpMtC0pyHs",
+      "name": "芒果咖啡教室",
+      "formatted_address": "中山路173號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a2372763-8000-4d72-8c85-5d0f6158bdcf",
+    "name": "Maimenla Café",
+    "address": "雲林縣斗六市警民街38-1號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ5Rsnu0nIbjQRX2qNCIawpRo",
+      "name": "Maimenla Café",
+      "formatted_address": "警民街38-1號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ace5a2a3-2d6e-46b7-abfb-7891c5424ccc",
+    "name": "手厚商號 / Soohome ",
+    "address": "雲林縣北港鎮華興街41號",
+    "url": "https://www.facebook.com/SooHomeCafe",
+    "findPlace": {
+      "place_id": "ChIJ5XWIG4mibjQRbaUL-Q_m-m8",
+      "name": "手厚商號 / Soo Home",
+      "formatted_address": "華興街41號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "lodging",
+        "store",
+        "restaurant",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ad0b2726-0f06-4042-8e4b-1fd211178226",
+    "name": "原域咖啡館雲科二店",
+    "address": "雲林縣斗六市龍潭路3-1號",
+    "url": "https://www.facebook.com/cafeoriginalzone/",
+    "findPlace": {
+      "place_id": "ChIJi2UuLgPIbjQRU-p2VBB3TWA",
+      "name": "原域咖啡-雲科二店",
+      "formatted_address": "龍潭路3-1 號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b5ece7f5-488e-4689-bceb-b5846112cdfb",
+    "name": "Kohimomento-一瞬咖啡(已歇業)",
+    "address": "雲林縣斗六市中堅西路270號",
+    "url": "https://www.facebook.com/Kohimomento/",
+    "findPlace": {
+      "place_id": "ChIJG7u7zBjIbjQRGY_2yeO2Dh8",
+      "name": "一瞬咖啡",
+      "formatted_address": "中堅西路270號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b9c65d59-c16b-4fd4-969d-0eeb396b1b70",
+    "name": "西螺老街鐘樓",
+    "address": "雲林縣西螺鎮延平路76號",
+    "url": "https://www.facebook.com/%E8%A5%BF%E8%9E%BA%E8%80%81%E8%A1%97%E9%90%98%E6%A8%93-469228256502278/",
+    "findPlace": {
+      "place_id": "ChIJ72NYFz-0bjQRZtI0120Gfww",
+      "name": "金玉成鐘樓",
+      "formatted_address": "延平路76號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "bd1ba60c-7543-449c-8000-0f2a6b02028e",
+    "name": "江鳥咖啡豆專賣店- 斗六中華店",
+    "address": "640雲林縣斗六市中華路82號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJYel6DgLJbjQRKsU2yTi12FA",
+      "name": "江鳥咖啡- 斗六中華店",
+      "formatted_address": "中華路82號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "store",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "be392db7-3f16-4476-abbe-3c33641cd66b",
+    "name": "霍姆斯庫咖啡館",
+    "address": "雲林縣斗六市武昌路158號",
+    "url": "https://www.facebook.com/homes158cafe",
+    "findPlace": {
+      "place_id": "ChIJmYv4DpXJbjQR0DY8wmwVKWM",
+      "name": "霍姆斯庫咖啡館",
+      "formatted_address": "武昌路158號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "store",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c3ffd7e5-f544-4f02-a55b-7e22c6ac763b",
+    "name": "Mr. Lobby Coffee Project",
+    "address": "雲林縣斗六市雲中街18號",
+    "url": "https://www.facebook.com/lobbyhandmade/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJCQQpSjvIbjQRdqA5pAviXbw",
+      "name": "Mr. Lobby Coffee Company（大堂咖啡企業社）",
+      "formatted_address": "府前街117號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d475c8d4-8604-4f37-8a59-1427f9c8127e",
+    "name": "映星園咖啡自家烘培 instarland coffee",
+    "address": "雲林縣北港鎮中華路2-9號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJg6gSyFGjbjQRvXtcMl9AGQ8",
+      "name": "映星園咖啡自家烘焙 instarland coffee",
+      "formatted_address": "中華路2之9號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "types": [
+        "restaurant",
+        "store",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "db490895-824b-44e8-8d77-41d09048d0ec",
+    "name": "斗南尚豆咖啡",
+    "address": "雲林縣斗南鎮新生三路128號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJE2fDK8q5bjQRGmRXgctiMwg",
+      "name": "尚豆咖啡 x Plus+&-Minus Coffee",
+      "formatted_address": "630雲林縣斗南鎮新生三路128號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "store"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e461f62d-090f-440e-b399-1ffde391c2a8",
+    "name": "紅果精品咖啡",
+    "address": "雲林縣斗六市府中街13號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ60Qi-R3IbjQR7DqTinWNAbs",
+      "name": "紅果精品咖啡",
+      "formatted_address": "府文路19-6號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "store",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ee81c5f4-2d0b-4111-8d23-0aaeaffd49a2",
+    "name": "芒果咖啡 斗六店",
+    "address": "雲林縣斗六市大學路三段310號",
+    "url": "http://www.mangocafegroup.com/",
+    "findPlace": {
+      "place_id": "ChIJ58ix7mu2bjQRwE_LRtn5UBo",
+      "name": "芒果咖啡-雲林自家烘焙精品咖啡館（無餐點，提供精緻法式蛋糕）過年期間正常營業",
+      "formatted_address": "647雲林縣莿桐鄉中山路114號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f29cb3d0-ce07-4dce-accf-03efcf3c9b4e",
+    "name": "睦咖啡",
+    "address": "雲林縣斗六市安和街73號",
+    "url": "https://www.facebook.com/pages/%E7%9D%A6-%E5%92%96%E5%95%A1/1551835121809040?pnref=story",
+    "findPlace": {
+      "place_id": "ChIJOUPWthjIbjQRXGU_qAxzc6A",
+      "name": "睦咖啡",
+      "formatted_address": "安和街73號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f68bfb75-b52a-4a0e-8e19-bed9c19416a7",
+    "name": "Wow cafe 窩斗六咖啡烘豆所",
+    "address": "雲林縣斗六市民生南路雲林溪美食廣場2號 ",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJGRBzEyPIbjQRVmfydQn0cSo",
+      "name": "窩斗六咖啡烘豆所",
+      "formatted_address": "民生南路 雲林溪美食, 廣場",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f9fb54ec-d208-48ae-870b-0707ab8b17b8",
+    "name": "Mishka Coffee & Antique 咖啡 古董傢俱",
+    "address": "雲林縣虎尾鎮光明路111號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJGeM63VC3bjQRKv8VD03iWig",
+      "name": "米嘻咖 咖啡 古董傢俱",
+      "formatted_address": "光明路111號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "furniture_store",
+        "home_goods_store",
+        "food",
+        "point_of_interest",
+        "store",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "fbed1424-d5d4-4be9-ba65-6fcc8d37986d",
+    "name": "後街咖啡",
+    "address": "雲林縣麥寮鄉中山路279號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJcz1dElOvbjQRZEoBrDmgkKE",
+      "name": "後街咖啡",
+      "formatted_address": "中山路279號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "food",
+        "point_of_interest",
+        "store",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  }
+]

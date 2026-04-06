@@ -1,0 +1,6 @@
+"category","reason","business_status","name","address","source_url","google_match_name","google_match_address","google_place_id","google_maps_url","moved_place_id"
+"suspected_closed","Google Places businessStatus = CLOSED_PERMANENTLY","CLOSED_PERMANENTLY","小苗苗。精品咖啡 ","屏東縣屏東市華山街2號","https://www.facebook.com/littlemiaocoffee/","小苗苗。精品咖啡","華山街2號","ChIJKbH_Ub4XbjQRsyCWAbFiMus","",""
+"suspected_closed","Google Places businessStatus = CLOSED_PERMANENTLY","CLOSED_PERMANENTLY","厚厚一片-東港旗艦店","928屏東縣東港鎮明德路90號","","厚厚一片東港旗艦店","明德路90號","ChIJgwSneNLhcTQRoIPvxbURAXA","",""
+"review","Google Places businessStatus = CLOSED_TEMPORARILY","CLOSED_TEMPORARILY","Eske Place Coffee House","屏東縣屏東市民享路142號","https://www.facebook.com/eskeplace","Eske Place Coffee House","民享路142號","ChIJp0jF3ZMXbjQRXLjEBBiM6CQ","",""
+"suspected_closed","Google Places businessStatus = CLOSED_PERMANENTLY","CLOSED_PERMANENTLY","半島咖啡 Fangliao Café","屏東縣枋寮鄉儲運路7號","https://www.facebook.com/FANGLIAOCAFE/","半島咖啡 Fangliao Café","儲運路7號","ChIJTRczdT7ccTQRqaX_XrWwBoA","",""
+"review","Google Places businessStatus = CLOSED_TEMPORARILY","CLOSED_TEMPORARILY","小白咖啡店","屏東縣屏東市豐榮街209號旁邊空地","","小白咖啡店","豐榮街209號旁邊空地","ChIJUfj8_L8XbjQR-_yXywZwzyo","",""

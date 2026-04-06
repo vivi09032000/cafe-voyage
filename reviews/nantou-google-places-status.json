@@ -1,0 +1,606 @@
+[
+  {
+    "id": "0bd1257d-7492-4eb9-a810-e01dfbd81b46",
+    "name": "MOST木思埔里店",
+    "address": "南投縣埔里鎮民有三街11號",
+    "url": "https://www.facebook.com/MOSTPULI/",
+    "findPlace": {
+      "place_id": "ChIJUfFtJ5HZaDQRxsvFk-uj-4E",
+      "name": "木思MOST全新健康廚房",
+      "formatted_address": "民有三街11號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "types": [
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "16ead8f6-c91c-4d23-b6b4-1d5e342e3479",
+    "name": "映古子咖啡",
+    "address": "542南投縣草屯鎮育才巷54號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJR_mgrW0waTQR6id9gdWAbBE",
+      "name": "映古子自家烘焙咖啡 in good hands cafe 外帶請用下方連結預訂，營業時間請參照IG公告",
+      "formatted_address": "育才巷54號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "store",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "1cd29358-ad4e-4886-8230-ff38223bf5e3",
+    "name": "老故事 The Goose",
+    "address": "南投縣埔里鎮中山路二段436號",
+    "url": "https://www.facebook.com/pulithegoose/",
+    "findPlace": {
+      "place_id": "ChIJNU4si0TYaDQRKupJXMlLpzw",
+      "name": "愛情故事館",
+      "formatted_address": "545南投縣埔里鎮中山路四段219號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "store"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "30510cf4-c886-48ad-b2ae-f0e8ab84bc43",
+    "name": "河松咖啡",
+    "address": "南投縣南投市祖祠路142巷17號",
+    "url": "https://www.facebook.com/riverpinecoffee/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJYYCwvPQxaTQRvNJa6k7owes",
+      "name": "河松咖啡自家烘焙館",
+      "formatted_address": "540南投縣南投市祖祠路142巷17號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "store"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "42126cf9-b055-43ed-861a-66c0843bb346",
+    "name": "家綻咖啡&紅茶（大山水晶）",
+    "address": "555南投縣魚池鄉瓊文巷39-33號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJgTx7-qXXaDQRK_eUNG8HQWI",
+      "name": "家綻咖啡&紅茶（大山水晶）",
+      "formatted_address": "瓊文巷39-33號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "6464bac2-b96a-4d5e-83af-1266a4dbd28a",
+    "name": "木莫-caf'e丶皮革丶雜貨",
+    "address": "南投縣南投市三和一路22之2號",
+    "url": "https://www.facebook.com/mocafeleather/",
+    "findPlace": {
+      "place_id": "ChIJi7HQiR8yaTQRk1QAF-jVYnQ",
+      "name": "木莫皮革工作室",
+      "formatted_address": "三和一路22-2號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "point_of_interest",
+        "store",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "651b29e9-0428-4d3e-910e-0d0773b51813",
+    "name": "Starbucks星巴克 草屯門市",
+    "address": "南投縣草屯鎮中正路857-1號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJFwB5r3MwaTQRd7RlN2fQte8",
+      "name": "STARBUCKS 星巴克 (草屯門市)",
+      "formatted_address": "中正路857-1號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "store",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "69d5274d-3e5b-46ec-b7d6-8158dab4a4af",
+    "name": "92向陽高山咖啡",
+    "address": "544南投縣國姓鄉中正路一段206之5號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJXTCP2IgmaTQRgQd2cSiSy_0",
+      "name": "92向陽高山咖啡",
+      "formatted_address": "中正路一段206之5號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "store",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "7c718e34-5c3d-4b78-9c28-db199cd6f6fd",
+    "name": "272巷弄咖啡",
+    "address": "南投縣埔里鎮中山路二段272巷9-1號",
+    "url": "272巷弄咖啡",
+    "findPlace": {
+      "place_id": "ChIJfY9sxZ7ZaDQR89Pe-2nhG4s",
+      "name": "272巷弄咖啡",
+      "formatted_address": "中山路二段272巷9之1號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "84f42b67-aaff-4598-882c-7423f02c297b",
+    "name": "甜客思",
+    "address": "南投縣草屯鎮虎山路851號",
+    "url": "https://www.facebook.com/%E7%94%9C%E5%AE%A2%E6%80%9D-Thanks-731322017002114/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJe2mFUGwwaTQRge6xKb8KM9E",
+      "name": "THAnKS 甜客思.草屯乳酪派專門店",
+      "formatted_address": "虎山路851號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "store",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "867da681-362b-4abb-9359-43abe047fda6",
+    "name": "e92 依舊愛咖啡",
+    "address": "54260南投縣草屯鎮中興路222號",
+    "url": "https://m.facebook.com/e92coffee",
+    "findPlace": {
+      "place_id": "ChIJBbhHvs0XaTQRXxIvxwuJZms",
+      "name": "［中興新村］e92coffee 依舊愛咖啡",
+      "formatted_address": "54060南投縣南投市光明一路45號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "8eb26039-4cdc-4148-9fe3-49ad1ba9d096",
+    "name": "麥子鄉村咖啡屋 My Coffee",
+    "address": "南投縣草屯鎮信義街25號",
+    "url": "https://www.facebook.com/pages/category/Cafe/%E9%BA%A5%E5%AD%90%E9%84%89%E6%9D%91%E5%92%96%E5%95%A1%E5%B1%8B-My-Coffee-346908279117377/",
+    "findPlace": {
+      "place_id": "ChIJIzfKomUwaTQRjDP3B-zG9gQ",
+      "name": "麥子鄉村咖啡屋 My Coffee",
+      "formatted_address": "信義街25號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "types": [
+        "cafe",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "944319db-013a-43e5-a341-3172e22bbf85",
+    "name": "Coffee Reflections OLD 工作室",
+    "address": "545南投縣埔里鎮中山路二段60巷2號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJu6CkKHjZaDQRx7E36iYoDJo",
+      "name": "Coffee Reflections OLD 工作室（Reservation 預約制）",
+      "formatted_address": "中山路二段60巷2號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "99ed2648-2078-4d50-a8cd-32842fa5febb",
+    "name": "山豬衝吧coffee",
+    "address": "南投縣魚池鄉永川巷12-8號",
+    "url": "www.coffeeshen.com",
+    "findPlace": {
+      "place_id": "ChIJP2BQWvjWaDQRWFAo9uGyWrY",
+      "name": "山豬衝吧咖啡 三冠王 全國咖啡烘豆冠軍",
+      "formatted_address": "555南投县鱼池乡通文巷6-25號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ad1c2314-703c-44d0-b1be-47d4117cad38",
+    "name": "Desolatecoffee 蠻荒咖啡",
+    "address": "南投縣魚池鄉文化巷41號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJP14PBazXaDQROsRsiRnHOFg",
+      "name": "蠻荒咖啡",
+      "formatted_address": "555南投縣魚池鄉文化巷41號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "store"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b55ed43b-9f1d-43e9-aba7-f7f06b43cfd0",
+    "name": "JULU Coffee 鉅鹿莊園",
+    "address": "南投縣埔里鎮東榮路155號",
+    "url": "https://www.facebook.com/julucafe/",
+    "findPlace": {
+      "place_id": "ChIJl-8ZPJnZaDQRFlt_GCaMHlA",
+      "name": "JULU Cafe（鉅鹿咖啡館 ）精品咖啡專賣店 不接受訂位",
+      "formatted_address": "東榮路155號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b6bcc811-adc3-445e-83dc-87eb6ed172ec",
+    "name": "攝香咖啡館",
+    "address": "南投縣草屯鎮文化街68巷11號",
+    "url": "https://www.facebook.com/SheXiangCafe/",
+    "findPlace": {
+      "place_id": "ChIJWYMzynMwaTQRLxxPDPKnvOA",
+      "name": "攝香咖啡館",
+      "formatted_address": "文化街68巷11號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b745a725-b63e-4daa-a368-aa810da3f560",
+    "name": "光影正好LStudio",
+    "address": "南投縣草屯鎮南埔里中正路247號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ_Y7aFfgvaTQRHNQHn9w1wog",
+      "name": "光影正好Light Studio（自家烘焙/精品咖啡專賣店）南投2024國姓全國咖啡烘焙賽第三名",
+      "formatted_address": "542南投縣草屯鎮中正路247號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "establishment",
+        "food",
+        "point_of_interest",
+        "store"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c32de2d4-764d-49ae-a0eb-ade5258e6bfc",
+    "name": "督賀咖啡",
+    "address": "南投縣草屯鎮墩煌路三段168號",
+    "url": "https://www.facebook.com/DOHOCAFE/?__tn__=%2Cd%2CP-R&eid=ARAatq2tvEje9h_IPK_9XbhDnjWpAYPuxLwsJmMh9YTTTRu7imTgXMyUwvwGQ9SlLFKrfG9kbE2E0i0c",
+    "findPlace": {
+      "place_id": "ChIJB6-mtX86aTQRABRUpgXzXCk",
+      "name": "督賀咖啡｜1店｜書院Home",
+      "formatted_address": "墩煌路三段168號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "store",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "db9c392a-c681-4d22-93c4-a2ef7a8f7a65",
+    "name": "咖啡。反思Coffee Reflections OLD",
+    "address": "545南投縣埔里鎮中山路二段60巷2號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJu6CkKHjZaDQRx7E36iYoDJo",
+      "name": "Coffee Reflections OLD 工作室（Reservation 預約制）",
+      "formatted_address": "中山路二段60巷2號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "dc2f46a9-cbbe-4455-947d-d691c186ff18",
+    "name": "Next Door Cafe 隔壁咖啡",
+    "address": "南投縣草屯鎮明賢街一段15號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJRUF5IHkxaTQRq07vcUtnKFw",
+      "name": "SUNDaWN COFFEE ROASTER",
+      "formatted_address": "542019南投縣草屯鎮草溪路906號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "bakery",
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "store"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "dfbe73bc-9dff-4dbb-b972-398d3f8b02f7",
+    "name": "不靠海工作室",
+    "address": "南投縣埔里鎮育樂路8號",
+    "url": "https://www.facebook.com/BSMochi/",
+    "findPlace": {
+      "place_id": "ChIJH2O1MaLZaDQRKuLVtKWdGlI",
+      "name": "不靠海工作室",
+      "formatted_address": "育樂路8號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "types": [
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "efb91548-fc1a-46f8-8f37-352632784c38",
+    "name": "大利大古米",
+    "address": "南投縣南投市集賢路58號",
+    "url": "https://www.facebook.com/talitha110/",
+    "findPlace": {
+      "place_id": "ChIJfQazWu03aTQRoKp8Fb6XgGc",
+      "name": "吉利港式甜品（原燕麥荳荳）",
+      "formatted_address": "540南投縣南投市彰南路一段975號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "establishment",
+        "food",
+        "grocery_or_supermarket",
+        "point_of_interest",
+        "restaurant",
+        "store"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f6b1b6e1-228e-4a94-b31c-daf3bc547761",
+    "name": "60#CAFE",
+    "address": "南投縣草屯鎮敦和路自立巷60號",
+    "url": "https://www.facebook.com/60coffee",
+    "findPlace": {
+      "place_id": "ChIJAeg2H5kxaTQRgl_wNMXb4KA",
+      "name": "Lazy Cafe 雷記咖啡",
+      "formatted_address": "542南投縣草屯鎮碧山路996-11號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "fb6f4511-bc6c-4ec8-88c5-9eb65bca0992",
+    "name": "Feeling18.18度C巧克力工房",
+    "address": "南投縣埔里鎮慈恩街20號",
+    "url": "http://www.feeling18c.com",
+    "findPlace": {
+      "place_id": "ChIJodngPpDZaDQRO4VQ1NvWoMk",
+      "name": "Feeling18巧克力工房",
+      "formatted_address": "慈恩街20號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "food",
+        "point_of_interest",
+        "store",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  }
+]

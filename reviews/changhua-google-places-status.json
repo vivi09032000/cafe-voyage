@@ -1,0 +1,1376 @@
+[
+  {
+    "id": "007d1a99-a204-4300-9301-02f01a16b390",
+    "name": "右舍咖啡 vicinocafe",
+    "address": "彰化縣員林市萬年路三段67號",
+    "url": "https://www.facebook.com/taiwanvicinocafe/",
+    "findPlace": {
+      "place_id": "ChIJNZSHp1g2aTQRrTTzw-oZres",
+      "name": "右舍咖啡",
+      "formatted_address": "萬年路三段67號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0173d45f-0bc4-4b64-98ac-c238bd1b81c5",
+    "name": "老鼠尾巴",
+    "address": "521彰化縣北斗鎮興農路二段247-1號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ0zrSVFg1aTQREUYiBcEJknY",
+      "name": "老鼠尾巴COFFEE ROASTERS",
+      "formatted_address": "興農路二段247-1號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "017b8ca7-7116-41a9-8e36-e590ef94cc3f",
+    "name": "星巴克-曉陽門市",
+    "address": "彰化縣彰化市曉陽路358號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ0S1c7IM4aTQRqcq3QK6foW8",
+      "name": "星巴克典藏 彰化曉陽門市",
+      "formatted_address": "曉陽路358號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "store",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0ca410ca-5edc-4cbf-b170-b997f5ae58c8",
+    "name": "敘杯Sobremesa",
+    "address": "彰化縣彰化市旭光路221號",
+    "url": "https://m.facebook.com/coffeesobremesa/?ref=bookmarks",
+    "findPlace": {
+      "place_id": "ChIJf9xN0dQ5aTQR1d-qOn0Sps4",
+      "name": "敘杯Sobremesa",
+      "formatted_address": "旭光路221號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "17cbb8d3-4d47-4e57-b122-ad134b8a887f",
+    "name": "小街咖啡",
+    "address": "彰化縣員林市僑信街70號",
+    "url": "https://www.facebook.com/MinervaCafe.Yuanlin/",
+    "findPlace": {
+      "place_id": "ChIJGYQK71U2aTQRsxUNsZxEzaU",
+      "name": "小街咖啡",
+      "formatted_address": "僑信街70號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "18e98010-98fb-4302-ade2-5c60a03d4946",
+    "name": "咪咖啡",
+    "address": "彰化縣彰化市陳稜路189號之1號",
+    "url": "https://www.facebook.com/micafeshop/",
+    "findPlace": {
+      "place_id": "ChIJPZz8-YQ5aTQRhEFMDwJto2M",
+      "name": "咪咖啡 Mi_cafe'外帶專門（5/23開始休息，會盡快滿血回歸）",
+      "formatted_address": "189號之, No. 1陳稜路",
+      "business_status": "CLOSED_TEMPORARILY",
+      "types": [
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "1cc09415-5c6e-48da-ab71-c571877b6e1c",
+    "name": "秋瀾號",
+    "address": "彰化縣員林市大同路二段129巷27弄6號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJXbHb5v42aTQR-5UdIh51zEo",
+      "name": "秋瀾號 咖啡專賣所",
+      "formatted_address": "No. 6號, 大同路二段129巷27弄",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "2ec53c31-4806-4025-b911-bc309f2dfaa1",
+    "name": "喵思咖啡",
+    "address": "彰化縣福興鄉沿海路五段18號",
+    "url": "https://www.facebook.com/muse.cofe",
+    "findPlace": {
+      "place_id": "ChIJ88mw5FZPaTQR7yU-jx2DsMY",
+      "name": "喵思咖啡",
+      "formatted_address": "沿海路五段18號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3052164d-3999-4426-97ea-edcc5f27a597",
+    "name": "All in coffee",
+    "address": "510彰化縣員林市和平東街60-1號",
+    "url": "https://www.facebook.com/AllInCoffee.tw/",
+    "findPlace": {
+      "place_id": "ChIJ6w75-_Y2aTQRaLXRVH8OSBk",
+      "name": "All In Coffee （安靜空間，同組只接待2位入座）",
+      "formatted_address": "510彰化縣員林市和平東街60-1號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "store"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "317e934d-04f0-444d-b5fc-d037518268db",
+    "name": "金水咖啡",
+    "address": "彰化縣員林市惠明街15號",
+    "url": "https://www.facebook.com/jinshuicafe/",
+    "findPlace": {
+      "place_id": "ChIJi_7NzDU3aTQRlLxURihsNy0",
+      "name": "玖玐（98) cafe & sandwich",
+      "formatted_address": "光明南街80號510",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "31fe3e0b-bf61-4264-b283-b0f94ef9e37f",
+    "name": "花舒哿精品咖啡",
+    "address": "彰化縣花壇鄉花壇街186號",
+    "url": "https://m.facebook.com/forcecafe7863286/",
+    "findPlace": {
+      "place_id": "ChIJb2FoqAI4aTQRS8KhM-XfdxA",
+      "name": "花舒哿精品咖啡",
+      "formatted_address": "花壇街186號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "320bb5f3-d6b7-4bb1-8607-fd1743021965",
+    "name": "二本咖啡-URBAN CAFE",
+    "address": "彰化縣員林鎮南昌路119號",
+    "url": "https://www.facebook.com/yuanlin.urbancafe/",
+    "findPlace": {
+      "place_id": "ChIJM7zEUF42aTQRt1573dePEO4",
+      "name": "二本咖啡Urban Cafe",
+      "formatted_address": "南昌路119號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "types": [
+        "cafe",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "32ac4b3e-f793-4296-ac8a-0f1617466302",
+    "name": "circus cafe 圓圈咖啡",
+    "address": "彰化縣員林市員東路二段351巷1號",
+    "url": "https://www.facebook.com/circusparkcafe/",
+    "findPlace": {
+      "place_id": "ChIJH-0IB1o2aTQR7ZF-_775F-s",
+      "name": "Circus Cafe 圓圈咖啡",
+      "formatted_address": "員東路二段351巷1號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "types": [
+        "bar",
+        "store",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "3501cb44-3268-4802-b4ac-804403d875ed",
+    "name": "Beginning Cafe 人之初·手作咖啡",
+    "address": "彰化縣彰化市彰化市中山路二段72號之 1 號",
+    "url": "https://www.facebook.com/beginning150530",
+    "findPlace": {
+      "place_id": "ChIJuwH5VUw5aTQRe5hPtvCKqto",
+      "name": "蜂蜜媽媽",
+      "formatted_address": "500彰化縣彰化市南郭路一段381巷25號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "store"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "371239b3-9e8e-40e7-9a98-9f3c4ccec631",
+    "name": "Origin cafe",
+    "address": "彰化縣彰化市太平街16號",
+    "url": "https://www.facebook.com/origincafe/",
+    "findPlace": {
+      "place_id": "ChIJD88b3ZA4aTQRgrvIRan4FEg",
+      "name": "天空藍咖啡館CafeAozora",
+      "formatted_address": "成功路222號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "restaurant",
+        "store",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "37144277-b52e-4439-a6e0-e7c778a24389",
+    "name": "一帖咖啡",
+    "address": "彰化縣花壇鄉花南路",
+    "url": "https://www.facebook.com/theonecoffee2017/",
+    "findPlace": {
+      "place_id": "ChIJX5RZAP45aTQRh6hrl0t0ijE",
+      "name": "一帖咖啡 The One Coffee(無現場販售)",
+      "formatted_address": "中橋街528號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3d9d0338-4929-4eb4-9c2f-f30edd7bf236",
+    "name": "天外啡鮮",
+    "address": "彰化縣秀水鄉彰水路二段321號",
+    "url": "https://www.facebook.com/%E5%A4%A9%E5%A4%96%E5%95%A1%E9%AE%AE-%E6%89%8B%E4%BD%9C%E5%92%96%E5%95%A1%E8%B1%86%E5%B0%88%E9%96%80-815921811870373/",
+    "findPlace": {
+      "place_id": "ChIJrca5cXpIaTQR5TupcHQQKAg",
+      "name": "天外啡鮮",
+      "formatted_address": "彰水路二段321號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "types": [
+        "cafe",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "45264ff3-9b00-4b2c-bbfe-011183b3d216",
+    "name": "Tzemdas Kaffa 手作.獨立思考咖啡",
+    "address": "彰化縣彰化市自強路248號",
+    "url": "https://www.facebook.com/Tzemdaskaffa",
+    "findPlace": {
+      "place_id": "ChIJpySFoL44aTQRCPg082aAFEk",
+      "name": "Tzemdas Kaffa 手作.獨立思考咖啡",
+      "formatted_address": "自強路248號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "florist",
+        "food",
+        "store",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4b36a3d1-5a41-4866-be34-fc126bc0aac9",
+    "name": "La Coma Café & Brunch",
+    "address": "彰化縣彰化市旭光路72號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJaz338o04aTQRuKeX5vYtR2w",
+      "name": "La Coma Café &Brunch（1月有異動公告已po文)",
+      "formatted_address": "旭光路72號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4c42bd65-8b51-43ea-90f9-331c8a2a8b45",
+    "name": "Ace Café",
+    "address": "彰化縣彰化市中正路一段218號",
+    "url": "https://www.facebook.com/aceacecafe",
+    "findPlace": {
+      "place_id": "ChIJv3EOpJU4aTQRnrJXgSfmB00",
+      "name": "Ace Café",
+      "formatted_address": "中正路一段152號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4c9766e2-f0dd-4b18-bd1b-07ceeb3c524f",
+    "name": "典藏家咖啡",
+    "address": "彰化縣彰化市民族路129巷54號",
+    "url": "https://www.facebook.com/cafeclassicosince2005/",
+    "findPlace": {
+      "place_id": "ChIJz_tgqoc4aTQRcAZkXIYWI04",
+      "name": "典藏家精品咖啡館",
+      "formatted_address": "民族路129巷54號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4cf30e10-b28e-43d6-b68f-64d8c0b7156a",
+    "name": "白色方塊咖啡&工作室",
+    "address": "彰化縣彰化市公園路一段50號",
+    "url": "https://www.facebook.com/whitecube23/",
+    "findPlace": {
+      "place_id": "ChIJmc4jI5I4aTQRjDizYakngD8",
+      "name": "白色方塊咖啡工作室",
+      "formatted_address": "公園路一段50號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4f8f50ea-2b72-454f-a9fc-d970dbca3066",
+    "name": "米德咖啡坊",
+    "address": "彰化縣鹿港鎮永安二路105號",
+    "url": "https://www.facebook.com/MEDECAFE888/",
+    "findPlace": {
+      "place_id": "ChIJAUzk6gtGaTQRLayGPU4Y_rc",
+      "name": "米德咖啡坊",
+      "formatted_address": "永安二路105號505",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "553116b1-cc51-40e0-9f40-34269145410e",
+    "name": " Skinny Cafe 瘦子咖啡",
+    "address": "彰化縣彰化市光復路143巷4號",
+    "url": "www.skinnycafe.tw",
+    "findPlace": {
+      "place_id": "ChIJq0gGBJQ4aTQR6huFxtC3wgI",
+      "name": "Skinny Cafe 瘦子咖啡｜彰化店",
+      "formatted_address": "光復路143巷4號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "store",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "55c08e35-4fd9-4de2-a948-e8bbda8daf8a",
+    "name": "Eagle Valley cafe 老鷹咖啡 員林店",
+    "address": "彰化縣員林市大勇街83號一樓",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJzyCh6Vw3aTQRw-Z40NTmb_w",
+      "name": "Eagle Valley Cafe｜老鷹咖啡 藝伎咖啡專賣",
+      "formatted_address": "大勇街83號一樓",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "food",
+        "point_of_interest",
+        "store",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "56594cea-b8c8-41a2-9b37-e2d75562d984",
+    "name": "天空藍咖啡",
+    "address": "彰化縣彰化市成功路222號",
+    "url": "https://www.facebook.com/%E5%A4%A9%E7%A9%BA%E8%97%8D%E5%92%96%E5%95%A1CafeAozora-153822047994497/",
+    "findPlace": {
+      "place_id": "ChIJD88b3ZA4aTQRgrvIRan4FEg",
+      "name": "天空藍咖啡館CafeAozora",
+      "formatted_address": "成功路222號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "restaurant",
+        "food",
+        "store",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "62253131-3a5b-4970-b39f-2a3fb92e6edc",
+    "name": "美寶",
+    "address": "彰化縣花壇鄉中正路186號",
+    "url": "https://www.facebook.com/RubyCafe186/",
+    "findPlace": {
+      "place_id": "ChIJO5aHihw4aTQRYkJ9D67YyoY",
+      "name": "美寶精品咖啡",
+      "formatted_address": "中正路186號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "types": [
+        "cafe",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "64bac1da-558b-4353-b903-b709bf45b4a7",
+    "name": "Free Will啡嚐自由",
+    "address": "彰化縣彰化市雲長路95號",
+    "url": "https://www.facebook.com/Free-Will%E5%95%A1%E5%9A%90%E8%87%AA%E7%94%B1-431925970499757",
+    "findPlace": {
+      "place_id": "ChIJOVGwfns4aTQRs5WWeTbAXtM",
+      "name": "Free Will啡嚐自由(不限時間,只要有客人就不打烊)",
+      "formatted_address": "雲長路95號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "bar",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "6de512d9-48d3-41e6-941a-cb14cf35a55e",
+    "name": "cama café -彰化中正店",
+    "address": "500彰化縣彰化市中正路二段642號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ3fMDQIc4aTQRWkz9NTkRmBc",
+      "name": "CAMA CAFE 彰化中正店",
+      "formatted_address": "中正路二段642號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "store",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "6f9882d3-d68c-4478-9294-1114953c9e01",
+    "name": "樂居咖啡",
+    "address": "彰化縣員林市萬年路四段",
+    "url": "https://www.facebook.com/lovestaycafe",
+    "findPlace": {
+      "place_id": "ChIJbYgABFc2aTQRfZNqXsq7zjc",
+      "name": "樂居咖啡",
+      "formatted_address": "510彰化縣員林市萬年路四段82號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "71ef6e0b-0aa9-405e-b4ee-32dd320b724a",
+    "name": "卡夫瓦咖啡 Kahve Coffee Roaster",
+    "address": "彰化縣鹿港鎮公園三路69巷68號",
+    "url": "https://www.facebook.com/KahveCoffeeRoaster/",
+    "findPlace": {
+      "place_id": "ChIJr91GnfxFaTQRHGA7gi9YaDs",
+      "name": "卡夫瓦咖啡",
+      "formatted_address": "公園三路69巷68號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "7a4fc96d-680a-44fa-9459-b1a225a3f651",
+    "name": "硬巷咖啡 Hard Ln, cafe'",
+    "address": "510彰化縣員林市溝皂北三街70號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJqwuzom83aTQRe8UMCp3VmjA",
+      "name": "HardLn Cafe",
+      "formatted_address": "溝皂北三街70號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "types": [
+        "cafe",
+        "store",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "7fd03039-61c0-4ab7-b43a-006fba76c2ea",
+    "name": "DeerHer甜點廚坊",
+    "address": "彰化縣和美鎮線東路二段712號",
+    "url": "https://www.facebook.com/deerherbakery/",
+    "findPlace": {
+      "place_id": "ChIJz3v8fGdHaTQROGanpW8IJUo",
+      "name": "DeerHer甜點廚坊 和美店",
+      "formatted_address": "線東路二段712號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "bakery",
+        "food",
+        "point_of_interest",
+        "store",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "894e0471-438b-40dd-af36-d0779ad2b842",
+    "name": "松果咖啡",
+    "address": "彰化縣員林市成功東路162-1號",
+    "url": "https://www.facebook.com/SungoCaffe/",
+    "findPlace": {
+      "place_id": "ChIJbTDNbvo2aTQRv395KtPII5o",
+      "name": "松果咖啡（Sungo Caffe’）",
+      "formatted_address": "成功東路162-1號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "8f08a06a-791d-4aaa-a1d8-31526653d6ae",
+    "name": "加負咖啡",
+    "address": " 514彰化縣溪湖鎮民生街1號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJy9ES3XhJaTQR_Q9fmPP0Dnw",
+      "name": "加負咖啡",
+      "formatted_address": "514彰化縣溪湖鎮培英路80號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "911f300c-afdb-4e27-b483-df4d612d9332",
+    "name": "豪珈琲",
+    "address": "彰化縣社頭鄉社斗路一段355號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJcSnQXzQ0aTQRlAPcitjrR78",
+      "name": "豪珈琲",
+      "formatted_address": "社斗路一段355號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "store",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "924f80e8-9ce2-4743-b431-58ba35f2e16b",
+    "name": "Dreasist Coffee Roasters®",
+    "address": "彰化縣員林市惠明街168巷72號",
+    "url": "https://www.facebook.com/dreasistcoffee/",
+    "findPlace": {
+      "place_id": "ChIJjUVmqWA2aTQRSdMq9qbdNhU",
+      "name": "Dreasist Coffee Roasters 郡‧瑟斯特咖啡烘焙者",
+      "formatted_address": "惠明街168巷72號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "9c1b23f6-53c1-42a2-bf60-facc9ddec5ea",
+    "name": "Sean's cafe享樂玩咖",
+    "address": "500彰化縣彰化市長壽街157號",
+    "url": "Sean's cafe享樂玩咖",
+    "findPlace": {
+      "place_id": "ChIJnYubPbg4aTQRFiFYEkTB628",
+      "name": "Sean's cafe享樂玩咖",
+      "formatted_address": "長壽街157號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "types": [
+        "cafe",
+        "store",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "9f31d449-14d6-4044-b0cc-e90f78330b72",
+    "name": "Loca Caf'e",
+    "address": "彰化縣二林鎮南光里南安路454號",
+    "url": "https://m.facebook.com/Loca-Caf%C3%A9-1779070185720438/",
+    "findPlace": {
+      "place_id": "ChIJhzZeqI9NaTQR0oXGQmsIH5o",
+      "name": "Loca café",
+      "formatted_address": "南安路454號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a07584ba-94c0-4393-93b9-6a2203d5b6ef",
+    "name": "熙舍咖啡 CICILIANO CAFE",
+    "address": "彰化縣員林市中山路2段121號",
+    "url": "https://www.facebook.com/CicilianoCafe",
+    "findPlace": {
+      "place_id": "ChIJP679eFc2aTQRWyibUELJAZY",
+      "name": "熙舍精品咖啡Ciciliano Specialty Cafe",
+      "formatted_address": "510彰化縣員林市育英路523號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "store"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a09ce260-76b9-49e5-8f07-ec6b14ec17c5",
+    "name": "土丿匕木十豆寸Caf'e",
+    "address": "510彰化縣員林市浮圳巷224號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJa7N48eE2aTQR5f3xnCa9cbg",
+      "name": "土丿匕木十豆寸（訊息預約）",
+      "formatted_address": "浮圳巷224號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "bar",
+        "store",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a4d0b220-8790-4593-97fb-06ec21c85465",
+    "name": "法莫拉咖啡",
+    "address": "500彰化縣彰化市四維路69巷2號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJPY8PCn84aTQRyTvjCbya0p8",
+      "name": "法莫拉 valvola-肌膚的止水閥",
+      "formatted_address": "500彰化縣彰化市中央路184號4樓-1",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "store"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a62ea40b-7f5a-443f-9c06-719dbc1ea5b9",
+    "name": "All In Coffee",
+    "address": "510彰化縣員林市和平東街60-1號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ6w75-_Y2aTQRaLXRVH8OSBk",
+      "name": "All In Coffee （安靜空間，同組只接待2位入座）",
+      "formatted_address": "和平東街60-1號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "aa029a72-e7e9-4c65-9d80-e3bf2e488170",
+    "name": "coco鬆餅屋",
+    "address": "彰化縣員林鎮中正路581號",
+    "url": "https://www.facebook.com/cocoffee579/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJN8xHSlg2aTQRBtxatsnzcpw",
+      "name": "COCO鬆餅屋",
+      "formatted_address": "中正路581號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "food",
+        "point_of_interest",
+        "store",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c4d04d52-cdda-4c32-8368-157a2e0dbdec",
+    "name": "kisweet coffee",
+    "address": "彰化縣彰化市彰新路一段52號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ8QH2wMo5aTQRdQTcHl3vVaE",
+      "name": "椛十 Kahju（店休日以IG公告為主）",
+      "formatted_address": "500彰化縣彰化市力行路97巷39號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c776edf3-c1a3-465d-9c47-aab2d6bc54f7",
+    "name": "sokoso手勾手咖啡館",
+    "address": "彰化縣彰化市華山路9號",
+    "url": "https://www.facebook.com/Sokosocafe/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJG_DJRo44aTQRJ0NnEMKeKx8",
+      "name": "Sokoso Cafe手勾手咖啡",
+      "formatted_address": "華山路9號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c89a99c5-95ae-4909-93e5-59bebaf876d1",
+    "name": "Yolo cafe",
+    "address": "彰化縣彰化市中正路一段430號",
+    "url": "https://www.facebook.com/yolocafe.tw/",
+    "findPlace": {
+      "place_id": "ChIJT1cx55Y4aTQRpG7mHMJTPX8",
+      "name": "Yolo Moment 彰化店｜新美式烘焙坊・輕食",
+      "formatted_address": "中正路一段430號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "bakery",
+        "restaurant",
+        "food",
+        "store",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c99622aa-bbc8-4153-9c63-6034c62ba34b",
+    "name": "摩露啡 MoLuFi Cafe",
+    "address": "510彰化縣員林市成功東路317巷22號",
+    "url": "https://www.facebook.com/moluficafe/",
+    "findPlace": {
+      "place_id": "ChIJidG9rCo3aTQRYS3pCfVGV3U",
+      "name": "豆太郎珈琲｜自家焙煎｜咖啡豆·虹吸·專門店",
+      "formatted_address": "510012彰化縣員林市員林大道五段112號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "store"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "cf4efb0a-7693-4c25-83f6-3b0d1374edcc",
+    "name": "與咖啡 And. Coffee",
+    "address": "彰化縣北斗鎮斗苑路一段379號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ1_S2kEE1aTQR6KLXOscTkgg",
+      "name": "與咖啡 And. Coffee Roastery",
+      "formatted_address": "521彰化縣北斗鎮興農路二段485號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d4078620-766a-4c05-8b33-a959d859a926",
+    "name": "Golden Lumiére Café 金莎時光咖啡館",
+    "address": "彰化縣和美鎮彰美路五段159號",
+    "url": "https://www.facebook.com/glcafe/",
+    "findPlace": {
+      "place_id": "ChIJ2aYnCTdHaTQRcz7uDbQqgTk",
+      "name": "Golden Lumiére Café 金莎時光咖啡館",
+      "formatted_address": "彰美路五段159號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d41ebeed-a6f4-4205-b815-fcf9fa039b98",
+    "name": "頂客來咖啡",
+    "address": "彰化縣埤頭鄉文鄉南街103號",
+    "url": "https://m.facebook.com/Dinkeleycafe",
+    "findPlace": {
+      "place_id": "ChIJn3stZUBLaTQRumGKO1gU0Z4",
+      "name": "頂客來咖啡",
+      "formatted_address": "文鄉南街103號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "types": [
+        "cafe",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "ebb1b04f-8f62-4d92-83e9-5e79ad4ebb29",
+    "name": "迥畫廊咖啡",
+    "address": "彰化縣員林市台鳳路2號",
+    "url": "https://www.facebook.com/ChanghuaLanCafe",
+    "findPlace": {
+      "place_id": "ChIJhYi8VVc2aTQRvNde0WN25G0",
+      "name": "迥畫廊咖啡 / 自家烘焙咖啡。",
+      "formatted_address": "台鳳路2號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f533573a-3a1b-4183-8834-b142bdc29185",
+    "name": "Stable Fly 穩定飛行模式",
+    "address": "彰化縣彰化市永樂街44巷2號",
+    "url": "https://www.facebook.com/StableFly",
+    "findPlace": {
+      "place_id": "ChIJwY1h55E4aTQR6fL7rXbrbFU",
+      "name": "Stable Fly 穩定飛行模式",
+      "formatted_address": "永樂街44巷2號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "restaurant",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f8d26034-0353-4034-8e5e-a3918a2c3003",
+    "name": "The Planet 星球咖啡",
+    "address": "彰化縣彰化市中華路260號",
+    "url": "https://www.facebook.com/THEplanet8/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJuwU4z5o4aTQRpp_MfGVlagc",
+      "name": "THE planet 星球咖啡",
+      "formatted_address": "50046彰化縣彰化市卦山路8-1號36室",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "fd53a7eb-c299-42f7-86f3-7be84a1cc318",
+    "name": "本心咖啡",
+    "address": "彰化縣員林市靜修路64號1樓",
+    "url": "https://www.facebook.com/followyourheart.tw/",
+    "findPlace": {
+      "place_id": "ChIJc8YxPFo2aTQR0_EbIka-fDA",
+      "name": "本心咖啡自家烘焙館（內用時段10點～18點）",
+      "formatted_address": "靜修路64號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "store",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "ffcf66fd-7044-4b51-9c67-406488ffd976",
+    "name": "Bruce Coffee自家焙煎咖啡",
+    "address": "彰化縣伸港鄉中山東路119號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJt450mOZAaTQRIdhswo5nakc",
+      "name": "Bruce Coffee布魯斯自家焙煎咖啡（自家烘焙咖啡豆/拿鐵/美式/親子咖啡店/寵物乖乖Ok/KEYA JAM/柯亞果醬/媽媽娘惹醬/錦茂行專業茶/彰化500甜/彰化友善店家/昊翰商行/",
+      "formatted_address": "中山東路119號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "bakery",
+        "store",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  }
+]

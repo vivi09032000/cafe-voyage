@@ -15,6 +15,22 @@ function createCafeNomadDataset(cityKey, label) {
   };
 }
 
+function createCafeNomadRegionDataset(regionKey, label, patterns) {
+  return {
+    label,
+    outputJson: new URL(`../reviews/${regionKey}-google-places-status.json`, import.meta.url),
+    outputMd: new URL(`../reviews/${regionKey}-google-places-status.md`, import.meta.url),
+    outputCsv: new URL(`../reviews/${regionKey}-google-places-review.csv`, import.meta.url),
+    outputClosedCsv: new URL(`../reviews/${regionKey}-google-places-permanently-closed.csv`, import.meta.url),
+    loadCafes: async () => {
+      const res = await fetch("https://cafenomad.tw/api/v1.2/cafes");
+      if (!res.ok) throw new Error(`Cafe Nomad request failed: ${res.status}`);
+      const rows = await res.json();
+      return rows.filter((cafe) => patterns.some((pattern) => String(cafe.address || "").includes(pattern)));
+    },
+  };
+}
+
 const DATASETS = {
   "hoi-an": {
     label: "Hoi An",
@@ -34,6 +50,12 @@ const DATASETS = {
   hualien: createCafeNomadDataset("hualien", "Hualien"),
   taitung: createCafeNomadDataset("taitung", "Taitung"),
   keelung: createCafeNomadDataset("keelung", "Keelung"),
+  miaoli: createCafeNomadRegionDataset("miaoli", "Miaoli", ["苗栗縣"]),
+  changhua: createCafeNomadRegionDataset("changhua", "Changhua", ["彰化縣"]),
+  nantou: createCafeNomadRegionDataset("nantou", "Nantou", ["南投縣"]),
+  yunlin: createCafeNomadRegionDataset("yunlin", "Yunlin", ["雲林縣"]),
+  chiayi: createCafeNomadRegionDataset("chiayi", "Chiayi", ["嘉義市", "嘉義縣"]),
+  pingtung: createCafeNomadRegionDataset("pingtung", "Pingtung", ["屏東縣"]),
 };
 
 async function getApiKey() {

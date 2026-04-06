@@ -1,0 +1,432 @@
+[
+  {
+    "id": "0676e926-6da7-4ff3-9f81-52132b75e8ef",
+    "name": "Coffee Cellar窖咖啡",
+    "address": "苗栗縣苗栗市長春街2號",
+    "url": "https://www.facebook.com/Coffee-Cellar%E7%AA%96%E5%92%96%E5%95%A1-1062697057094888/",
+    "findPlace": {
+      "place_id": "ChIJ_XfZegmsaTQRAO0UKFngcIs",
+      "name": "窖咖啡",
+      "formatted_address": "長春街2號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "11ca7fac-cfa5-4923-9044-fff488b8dd26",
+    "name": "重成商號",
+    "address": "356苗栗縣後龍鎮5鄰56-1號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJxz2V_-CzaTQRoTK3YWS-TiY",
+      "name": "重成商號（營業時間依FB為主）",
+      "formatted_address": "356苗栗縣後龍鎮海寶里56-1號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "establishment",
+        "food",
+        "point_of_interest",
+        "store"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "193f0fa3-b515-4676-bb89-040519058da5",
+    "name": "12咖啡館",
+    "address": "苗栗縣竹南鎮立達街125號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJC12auj6zaTQRYjjeMo99bZ0",
+      "name": "竹南12咖啡館自家烘焙",
+      "formatted_address": "立達街125號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "1a6319ee-bf68-4ff2-8c63-abd570068de2",
+    "name": "ㄧ人子艸青 Caocing_coffee&tea",
+    "address": "350苗栗縣竹南鎮龍山路二段32巷20號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJlxlnSzGzaTQRtwgjk-3Pxpw",
+      "name": "ㄧ人子艸青 Caocing_coffee&tea（預約制，4月休息日，2.7.9.13.16.21.23.27.30）",
+      "formatted_address": "龍山路二段32巷20號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "26f8d81e-05b7-4be8-8de1-c8032daaeeb1",
+    "name": "沛克咖啡店 Pergram Coffee Roasters",
+    "address": "苗栗縣苗栗市中山路108號1樓",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJEepA_0ataTQR9xdNYTjG3uc",
+      "name": "沛克咖啡店 Pergram Coffee Roasters",
+      "formatted_address": "中山路108號1樓",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "store",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "2e006046-4cf9-40e4-b0d3-83d512e3cf99",
+    "name": "拾·好時foodimemory",
+    "address": "350苗栗縣竹南鎮照南路116號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJOeDiU2azaTQRQocH9seml0o",
+      "name": "拾·好時foodimemory",
+      "formatted_address": "照南路116號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "store",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "55ee878d-f982-4c79-8920-fefb27aca5df",
+    "name": "甜宅 cafe'",
+    "address": "苗栗縣苗栗市忠孝路142號",
+    "url": "https://www.facebook.com/momo.sweet.house.cafe/",
+    "findPlace": {
+      "place_id": "ChIJGxx5UQisaTQRorVfoPrIvLI",
+      "name": "甜宅 Cafe'",
+      "formatted_address": "忠孝路142號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "types": [
+        "cafe",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "641e60f2-7c85-4ff6-9339-da22310c9de9",
+    "name": "OLULU Cafe & 傑恩咖啡工廠(苑裡店)",
+    "address": "苗栗縣苑裡鎮上館里九鄰上館180-1號",
+    "url": "https://www.facebook.com/JustGoCoffee/",
+    "findPlace": {
+      "place_id": "ChIJ-35dhJ0PaTQRjr84hDzrMhU",
+      "name": "OLULU Cafe & 傑恩咖啡工廠（OLULU Cafe暫時歇業啦～轉換型態中！新模式還請待後續公告🙏）",
+      "formatted_address": "火炎山七路180號358",
+      "business_status": "CLOSED_TEMPORARILY",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "75fd0640-a1a6-4bc2-8203-62f1dc3bfe2f",
+    "name": "植感咖啡_Botanical Café",
+    "address": "苗栗縣苗栗市英才路55號",
+    "url": "https://www.facebook.com/BotanicalCafe.888/",
+    "findPlace": {
+      "place_id": "ChIJx0RCfg6saTQRrqP6zvbEciI",
+      "name": "植感咖啡 BotanicalCafe",
+      "formatted_address": "360苗栗縣苗栗市英才路55號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "9282bebe-1780-45d9-afb2-857b283db072",
+    "name": "老陳爸爸的餅舖",
+    "address": "苗栗縣泰安鄉洗水坑18號",
+    "url": "https://www.facebook.com/%E8%80%81%E9%99%B3%E7%88%B8%E7%88%B8%E7%9A%84%E9%A4%85%E8%88%96-107840250751506/",
+    "findPlace": {
+      "place_id": "ChIJxWbUsMX_aDQRWK2ade7Fql0",
+      "name": "老陳爸爸的餅舖",
+      "formatted_address": "18號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "bakery",
+        "health",
+        "food",
+        "point_of_interest",
+        "store",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a496db99-f8b6-4439-9eed-95a59c754bf8",
+    "name": "醲咖啡",
+    "address": "苗栗縣頭份市信義路43號",
+    "url": "https://www.facebook.com/Known.Cafe.Bistro/",
+    "findPlace": {
+      "place_id": "ChIJPcmwasZMaDQRl3Bmj48Cwu0",
+      "name": "醲咖啡 頭份咖啡 教學 咖啡豆 色選機",
+      "formatted_address": "信義路43號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "bar",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a51968ac-0ec0-4e74-be0d-4cee8bc8e9c8",
+    "name": "檸‧咖啡",
+    "address": "苗栗縣頭份市建國路二段178號",
+    "url": "https://www.facebook.com/Ning-Cafe-%E6%AA%B8-%E5%92%96%E5%95%A1-517697078387341/",
+    "findPlace": {
+      "place_id": "ChIJweU9tVNNaDQRpoJTOIM7ppc",
+      "name": "樂妮咖啡",
+      "formatted_address": "351苗栗縣頭份市建國路二段69號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a57471f1-8646-4ffd-95bb-2cc49047dd77",
+    "name": "cafe'32",
+    "address": "苗栗縣頭份市東民五街32號",
+    "url": "https://m.facebook.com/cafe32-966883283442109/",
+    "findPlace": null,
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "No Google Places candidate found"
+    }
+  },
+  {
+    "id": "aca8d082-0ec8-4079-8476-d2a748e95e16",
+    "name": "轉轉 ZONZON",
+    "address": "苗栗縣公館鄉尖山村尖山245-13號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ-f6XC2CraTQRJ-lY8C9EKCA",
+      "name": "轉轉農園",
+      "formatted_address": "363苗栗縣公館鄉尖山245之13號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b5a6abf0-d282-4da8-b3cb-e4bf7b80a340",
+    "name": "高海拔咖啡",
+    "address": "苗栗縣苗栗市新庄街48巷1號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJu9boFfSraTQRy5C_C9heuOE",
+      "name": "高海拔咖啡",
+      "formatted_address": "新庄街48巷1號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d7332c6a-2183-4b06-acc9-d58cd75c710d",
+    "name": "東海咖啡",
+    "address": "苗栗縣苗栗市日新街1號",
+    "url": "https://www.facebook.com/cafeth2016/",
+    "findPlace": {
+      "place_id": "ChIJx8rL6vCraTQRnAo1UOjGsrs",
+      "name": "東海徐咖啡",
+      "formatted_address": "日新街1號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "liquor_store",
+        "meal_delivery",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "store",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "deca324c-cd04-4b74-9a7f-b476337d4bc9",
+    "name": "Me Coffee Shop",
+    "address": "苗栗縣苗栗市天雲街57號",
+    "url": "https://www.facebook.com/M.E.CoffeeShop/",
+    "findPlace": {
+      "place_id": "ChIJA-nLuQmtaTQR2RjCTXTm_n0",
+      "name": "墨湘咖啡｜MO COFFEE｜苗栗咖啡烘焙店｜咖啡禮盒專賣店 | 場地租借｜包場服務｜ (提供專屬停車場～來電預約)",
+      "formatted_address": "360苗栗縣苗栗市縣府路102號進來青年創業指揮部大樓『最後方左側有顆一甲子大榕樹』1f",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant",
+        "store"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e0e99d5d-46f5-4bb2-8916-612e805fc230",
+    "name": "老家",
+    "address": "苗栗縣苗栗市建台街1巷13號",
+    "url": "https://www.facebook.com/soulxfamily/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJeSm7c_araTQRfc_AwW-jjN4",
+      "name": "老家生活藝文空間（預約制）｜手作線香。慢活教育。",
+      "formatted_address": "建台街1巷13號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  }
+]

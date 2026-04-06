@@ -1,0 +1,1661 @@
+[
+  {
+    "id": "00014645-38c8-4eb4-ad9b-faa871d7e511",
+    "name": "R5小餐館",
+    "address": "嘉義市東區忠孝路205號",
+    "url": "https://www.facebook.com/r5.bistro",
+    "findPlace": {
+      "place_id": "ChIJn5-gsZGVbjQRqnfpga7UJPc",
+      "name": "JASC杰斯克小餐館",
+      "formatted_address": "忠孝路205號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "types": [
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "051b007e-6b16-45f3-a034-d38846f08dd7",
+    "name": "胡永泰咖啡店(仁愛)",
+    "address": "嘉義市西區仁愛路149號1樓",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJE3-uxiOUbjQRfZkcZqHkFR4",
+      "name": "胡永泰自家烘焙咖啡",
+      "formatted_address": "600嘉義市西區八德路330號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "061efc0b-2b3a-4174-9d24-f12ecd757b2f",
+    "name": "藏.咖啡嘉義中山店 CANG CAFE",
+    "address": "600嘉義市東區中山路233號 ",
+    "url": "https://www.facebook.com/cangcoffee/",
+    "findPlace": {
+      "place_id": "ChIJDfif6TOUbjQRbnU5apxOWR0",
+      "name": "藏.咖啡 嘉義中山店",
+      "formatted_address": "中山路233號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "store",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "06e08ad7-6445-489c-8b09-985450c1c2fb",
+    "name": "秘氏咖啡嘉義店",
+    "address": "600嘉義市西區延平街288號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ4ejIPTCUbjQRgE5YCc3IjI4",
+      "name": "嘉義-秘氏咖啡(休假日與菜單請參考IG)",
+      "formatted_address": "延平街288號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "store",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0ad49d07-623f-4fda-975e-edf97185b966",
+    "name": "Morikoohii森咖啡",
+    "address": "嘉義市東區共和路199巷1號",
+    "url": "https://www.facebook.com/morikoohii/",
+    "findPlace": {
+      "place_id": "ChIJdVv-QcuVbjQRgRyFggf7pjM",
+      "name": "Morikoohii 森 咖啡",
+      "formatted_address": "共和路199巷1號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "0bacad72-eab5-46b7-bd22-289ed8c7af2f",
+    "name": "正方芳Cafe",
+    "address": "600嘉義市東區林森東路103號",
+    "url": "https://www.facebook.com/PositiveFengFeng/",
+    "findPlace": {
+      "place_id": "ChIJj9aa1lOVbjQRKHlnXa_Iz_w",
+      "name": "正方芳Cafe",
+      "formatted_address": "林森東路103號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "bakery",
+        "store",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "105e0bb1-34f2-4ce9-a3c9-6efc356200b1",
+    "name": "Louisa Coffee 路易．莎咖啡(嘉義圓環門市)",
+    "address": "600嘉義市西區中山路294號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJLy7l_-mVbjQRYg54iOOvoUg",
+      "name": "Louisa Coffee 路易莎咖啡(嘉義圓環門市)",
+      "formatted_address": "中山路294號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "128e428b-c609-419e-a3e2-29f7a596aa76",
+    "name": "小口品S",
+    "address": "嘉義市光彩街453號",
+    "url": "https://www.facebook.com/xiaokoupin/",
+    "findPlace": {
+      "place_id": "ChIJL_iG1S-UbjQRCcYCXqloXkU",
+      "name": "小口品s",
+      "formatted_address": "光彩街453號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "15c26d3a-e1b9-477b-b8a0-dddfc5c04c98",
+    "name": "慢靈魂 Slow Soul Coffee",
+    "address": "嘉義市民雄鄉西安村復興路93號",
+    "url": "https://www.facebook.com/slowsoulcoffee/",
+    "findPlace": {
+      "place_id": "ChIJXWUDSNy9bjQRLhzUbM8ru0Q",
+      "name": "慢靈魂咖啡館",
+      "formatted_address": "復興路93號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "17f21982-63ac-4f66-9167-fce5389bf016",
+    "name": "VR 文森家小茶館",
+    "address": "嘉義市西區重慶路322號",
+    "url": "https://m.facebook.com/vr.tea.house/?locale2=zh_TW",
+    "findPlace": {
+      "place_id": "ChIJ38ntDSKUbjQRZP2sEKVwqz0",
+      "name": "VR文森家 小茶館",
+      "formatted_address": "600嘉義市東區東洋新村36號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant",
+        "store"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "185290e1-8333-4b9a-8f48-0890dabe8a98",
+    "name": "Picgather吾友野事",
+    "address": "嘉義縣中埔鄉和興村公館97-20號",
+    "url": "https://www.facebook.com/picgather",
+    "findPlace": {
+      "place_id": "ChIJv-8ZWuSTbjQR1n8uKdI-Pmg",
+      "name": "Picgather 吾友野事",
+      "formatted_address": "公館97-20號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "types": [
+        "cafe",
+        "restaurant",
+        "food",
+        "store",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "191f2fcf-4e60-407c-b4f9-bcffbbbc6a5d",
+    "name": "玖咖啡",
+    "address": "嘉義市東區興業東路387號",
+    "url": "https://www.facebook.com/jioucafe/",
+    "findPlace": {
+      "place_id": "ChIJGwCNgziUbjQRaT_u_j-Z_5E",
+      "name": "玖CAFÉ",
+      "formatted_address": "興業東路387號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "1a09f263-5d9e-44df-857b-106f7ac646b2",
+    "name": "Coffeeology咖啡學",
+    "address": "嘉義縣民雄鄉文化路30-25號",
+    "url": "https://www.facebook.com/coffeeologylove/",
+    "findPlace": {
+      "place_id": "ChIJjz94N-G9bjQRMpOgWIr_oIE",
+      "name": "Coffeeology咖啡學",
+      "formatted_address": "文化路30-25號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "1e48f4fa-8a3a-4616-9b80-ce811185dacf",
+    "name": "簡單咖啡",
+    "address": "嘉義市民權路55號",
+    "url": "https://www.facebook.com/cafesimplecafe/",
+    "findPlace": {
+      "place_id": "ChIJy55TlbSVbjQR5S0p7gd76k0",
+      "name": "簡單咖啡",
+      "formatted_address": "民權路55號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "23d131fd-881b-4e4b-92b1-fcb8470cfe3d",
+    "name": "奇喚咖啡",
+    "address": "600嘉義市西區保安一路保安市場29號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJk2vraaSXbjQRokBNAgH79jk",
+      "name": "奇喚咖啡",
+      "formatted_address": "600嘉義市東區民權路254號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "2871bf0f-b1e3-4317-88d6-10b9faade4b8",
+    "name": "幸福原在",
+    "address": "嘉義市維新路135號",
+    "url": "https://m.facebook.com/%E5%B9%B8%E7%A6%8F%E5%8E%9F%E5%9C%A8-503529266441072/timeline/",
+    "findPlace": {
+      "place_id": "ChIJoSB_pcqVbjQR5IC8TEIU5w0",
+      "name": "幸福原在咖啡",
+      "formatted_address": "維新路195號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "2a06c50a-5b33-4528-917a-f94e7e28373f",
+    "name": "山多斯咖啡",
+    "address": "嘉義縣民雄鄉保生街67號",
+    "url": "https://www.facebook.com/%E5%B1%B1%E5%A4%9A%E6%96%AF%E5%92%96%E5%95%A1%E7%83%98%E7%84%99-148269725185422/notifications/",
+    "findPlace": {
+      "place_id": "ChIJs9IxEue9bjQROr6wqYxukrY",
+      "name": "山多斯咖啡烘焙",
+      "formatted_address": "保生街67號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "store",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "2cb45737-4dd8-4231-b280-f7e881622add",
+    "name": "豆讚咖啡莊園",
+    "address": "606嘉義縣中埔鄉2鄰7號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJzbERCsaSbjQRugIG-mVZlwA",
+      "name": "豆讚咖啡莊園",
+      "formatted_address": "7號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3a211ab5-5876-4413-8d25-3606c5d034a1",
+    "name": "Sumi Apron Coffee",
+    "address": "60077嘉義市東區東洋新邨136號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJaRORbwSVbjQRh4-kZ3d4H8s",
+      "name": "Sumi Apron Coffee Roasters（目前未對外營運）",
+      "formatted_address": "東洋新邨136號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3ab5c987-da35-4930-abc2-40966c3bb4a6",
+    "name": "木木彡 mumushan.dessert",
+    "address": "嘉義市西區西榮街267號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJwcllssiVbjQRD7QqrKd4o4Y",
+      "name": "私人蛋糕烘焙工作室",
+      "formatted_address": "西榮街267號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "bakery",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "3df93a47-1d47-47ae-b8b2-ee035140293f",
+    "name": "33號咖啡店",
+    "address": "600嘉義市東區義教東路49號600",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJ4ybIe7CVbjQRprY8yzhl2Ts",
+      "name": "33號咖啡店",
+      "formatted_address": "東義路33號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "428467d4-f65b-466b-bb69-0fe04f62f582",
+    "name": "草侍咖啡烘焙工坊",
+    "address": "嘉義市西區湖美二路395號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJla5Q9IwPbjQRcXzmlYrPUok",
+      "name": "草侍咖啡烘焙工坊 Kuanz Coffee Roaster（預約制）",
+      "formatted_address": "湖美二路395號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "470c4807-af38-45fd-9c87-2f933102715a",
+    "name": "Mimico cafe 秘密客咖啡館",
+    "address": "600嘉義市東區興中街200-1號",
+    "url": "https://www.facebook.com/mimicocafe/",
+    "findPlace": {
+      "place_id": "ChIJhdCLmCaUbjQRPgiPTqAa6SU",
+      "name": "MIMICO COFFEE 秘密客咖啡館",
+      "formatted_address": "興中街200號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4b39f2a2-c43d-4bce-9d3c-ec17c43c9460",
+    "name": "拾旬咖啡",
+    "address": "嘉義縣中埔鄉和美村220-10",
+    "url": "https://shuncoffee.com",
+    "findPlace": {
+      "place_id": "ChIJzbERCsaSbjQRugIG-mVZlwA",
+      "name": "豆讚咖啡莊園",
+      "formatted_address": "606嘉义县中埔乡7號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "4b5f9588-e75c-43d6-952d-e5caca1caf6d",
+    "name": "Baron Scones",
+    "address": "600嘉義市東區康樂街36號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJA3VoPP6VbjQRKQTeTZNYr3Q",
+      "name": "巴倫司康",
+      "formatted_address": "600嘉義市東區公明路297號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "514cc9cd-5d41-473e-aa70-3e591b7b9865",
+    "name": "霜空咖啡",
+    "address": "600嘉義市西區國華街132號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJkSo_GFqVbjQRLuleHyhEMk8",
+      "name": "霜空珈琲",
+      "formatted_address": "國華街132號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "5cdc727b-700f-420a-9bff-ace6252d7edb",
+    "name": "假日咖啡-自家烘焙",
+    "address": "嘉義市東區垂楊路167號",
+    "url": "https://m.facebook.com/JiaRihCafe/",
+    "findPlace": {
+      "place_id": "ChIJPSPGJ6aVbjQRiPSecEcfxPI",
+      "name": "嘉藝咖啡121cafe",
+      "formatted_address": "600嘉義市東區興中街121號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "store"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "6321fe7c-5b33-47e1-a7c6-1a97ab7405c6",
+    "name": "AMON 咖啡所",
+    "address": "嘉義市市宅街22巷5弄5號",
+    "url": "https://www.facebook.com/AMONCafe666/",
+    "findPlace": {
+      "place_id": "ChIJofjUHEiUbjQRUP0dDVwDTOw",
+      "name": "AMON 咖啡所-僅供外帶",
+      "formatted_address": "市宅街22巷5弄5號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "home_goods_store",
+        "point_of_interest",
+        "store",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "641a2f0a-945f-45c4-8d92-f446815719f7",
+    "name": "二通672",
+    "address": "嘉義市西區中正路672號",
+    "url": "https://www.facebook.com/Niton672/",
+    "findPlace": {
+      "place_id": "ChIJwwB0KC6UbjQR4aMtkmeKH_o",
+      "name": "阿肥肥二通食堂",
+      "formatted_address": "中正路556號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "654d93d8-30bd-46da-a606-e40224676a2b",
+    "name": "木更咖啡 Mugeneration 檜意店",
+    "address": "嘉義市共和路356巷5號",
+    "url": "https://m.facebook.com/mugeneration189/",
+    "findPlace": {
+      "place_id": "ChIJoVLXijaUbjQRoXGuYmsPr0Q",
+      "name": "木更 MUGENERATION",
+      "formatted_address": "600嘉義市東區成仁街189號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "store"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "65f18bfd-95c7-4932-85e7-bfef5add789a",
+    "name": "Daisy的雜貨店",
+    "address": "嘉義市東區維新路73號",
+    "url": "https://www.facebook.com/fuxiaxdaisy/",
+    "findPlace": {
+      "place_id": "ChIJ9-a0iMqVbjQRqrlXj3zFgfQ",
+      "name": "Daisy的雜貨店",
+      "formatted_address": "維新路73號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "restaurant",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "701fc291-5bf4-4dca-a3d9-3510c1150ff8",
+    "name": "FERNS蕨醒咖啡",
+    "address": "嘉義市忠義街138號",
+    "url": "https://www.facebook.com/FernsCoffee.138/",
+    "findPlace": {
+      "place_id": "ChIJPaJ5_TGUbjQRWTB6pKNi7NY",
+      "name": "蕨醒咖啡",
+      "formatted_address": "忠義街138號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "751fcb18-a285-4545-9e60-fcf758c67b8e",
+    "name": "鄒築園觀光休閒農莊",
+    "address": "605嘉義縣阿里山鄉",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJeVOnOP7nbjQRB0-rAC9d5a4",
+      "name": "鄒築園咖啡 Zouzhouyuan Specialty Coffee",
+      "formatted_address": "605嘉義縣阿里山鄉71號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "store"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "7ad3de68-2d10-4f29-a37c-4b012cef7feb",
+    "name": "Yoi傢俱樂窩",
+    "address": "嘉義市體育路51號",
+    "url": "https://zh-tw.facebook.com/yoitheworld/",
+    "findPlace": {
+      "place_id": "ChIJj-P1fUiUbjQR8rrycXGm6Xc",
+      "name": "Yoi傢俱",
+      "formatted_address": "體育路51號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "types": [
+        "furniture_store",
+        "cafe",
+        "home_goods_store",
+        "food",
+        "store",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "82137813-b2c5-4678-96e0-a30d32d23e0f",
+    "name": "慕 珈琲館",
+    "address": "嘉義市東區安樂街156號",
+    "url": "https://www.facebook.com/%E6%85%95-%E7%8F%88%E7%90%B2%E5%BA%97-405533529883077",
+    "findPlace": {
+      "place_id": "ChIJ9WYiGTWUbjQR9BxLSmfCqBE",
+      "name": "慕 珈琲店",
+      "formatted_address": "安樂街156號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "8765e0be-68ce-4d44-b470-e6d9022b61ad",
+    "name": "暮森咖啡",
+    "address": "嘉義市興業東路115巷12號",
+    "url": "https://www.facebook.com/Musencoffee/",
+    "findPlace": {
+      "place_id": "ChIJgdBpDOWVbjQR9ti3WbttH_s",
+      "name": "暮森咖啡",
+      "formatted_address": "600嘉義市東區興業東路115巷12號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "8b8bc93e-96d1-4384-bf79-5b279b66dd05",
+    "name": "後站 漫時光",
+    "address": "嘉義市遠東街2號",
+    "url": "https://www.facebook.com/time.truth/",
+    "findPlace": {
+      "place_id": "ChIJY32QLyuUbjQRwmpQPqt5ujA",
+      "name": "後站。漫時光",
+      "formatted_address": "自由路101號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "8f5bd357-04cf-4391-a574-ff1c5c51e922",
+    "name": "OWL COFFEE 貓頭鷹咖啡",
+    "address": "600嘉義市東區民權路369-3號",
+    "url": "https://www.facebook.com/owlcoffee2014",
+    "findPlace": {
+      "place_id": "ChIJU6G05jKUbjQRKliHNVe0Y-0",
+      "name": "往前咖啡製作所 / Forward roasters",
+      "formatted_address": "興中街205號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "93fbedad-e6c2-48eb-b5e6-48f305fc81a2",
+    "name": "初咖啡-The Origin Specialty Coffee Roaster ",
+    "address": "嘉義市西區力行街15號",
+    "url": "http://www.facebook.com/theorigincoffee ",
+    "findPlace": {
+      "place_id": "ChIJEYAekdAVaTQRL4znkLQgqI0",
+      "name": "初咖啡",
+      "formatted_address": "433臺中市沙鹿區四平街43-1號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "959f5610-a09f-45b2-ae6c-8407a3a76526",
+    "name": "寒溪呢咖啡廳",
+    "address": "603嘉義縣梅山鄉太和村社後坪2附11",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJbVuvpmPbbjQRt7Jn-GteJAk",
+      "name": "寒溪呢咖啡館",
+      "formatted_address": "603嘉義縣梅山鄉社後坪11號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "973665e6-207f-4d85-9d87-dc0a4813301b",
+    "name": "832 Coffee Roasters_捌參貳焙煎所",
+    "address": "嘉義市東區成仁街228號",
+    "url": "https://www.facebook.com/832coffee/",
+    "findPlace": {
+      "place_id": "ChIJsQKLCTOUbjQRs3DlYAZ7pBw",
+      "name": "832 Coffee Roasters 捌參貳焙煎所",
+      "formatted_address": "成仁街228號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "99e9983b-5ca4-4514-8167-f7f7de068db1",
+    "name": "融合度咖啡",
+    "address": "嘉義市中山路223號",
+    "url": "https://www.facebook.com/%E8%9E%8D%E5%90%88%E5%BA%A6%E5%92%96%E5%95%A1-%E5%98%89%E7%BE%A9%E4%BA%BA%E6%83%85%E5%91%B3-619704534780616/?ref=ts&fref=ts",
+    "findPlace": {
+      "place_id": "ChIJ1Z5j7DOUbjQRk9AGYpeKO5Y",
+      "name": "融合度咖啡館",
+      "formatted_address": "中山路223號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "meal_takeaway",
+        "restaurant",
+        "food",
+        "store",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "9b98f0ad-a880-42b6-9070-d4537ad001bc",
+    "name": "咖啡人自家烘焙",
+    "address": "嘉義市民國路170號",
+    "url": "https://m.facebook.com/profile.php?id=1384396911787087",
+    "findPlace": {
+      "place_id": "ChIJUaLajEqUbjQRcK6z-uBAvi8",
+      "name": "咖啡人自家烘焙",
+      "formatted_address": "民國路170號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "types": [
+        "cafe",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "9e5450ee-f870-42ad-98cc-d07d519132c2",
+    "name": "卓武咖啡",
+    "address": "嘉義市西區民生北路194號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJIbDIDyKUbjQRykvCkESaYY4",
+      "name": "卓武咖啡",
+      "formatted_address": "民生北路194號192號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a2446808-4456-4172-9429-a8a671db0d52",
+    "name": "仙井咖啡館",
+    "address": "嘉義縣番路鄉公田村",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJy6A9zxvpbjQRpqL01JyZS5Y",
+      "name": "仙井咖啡館 XianJing Café / 二延平景觀咖啡廳 / 現場候位無訂位",
+      "formatted_address": "602嘉義縣番路鄉80號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a8cbe7dd-0d6a-4234-82c0-d823dc924db3",
+    "name": "新銳咖啡嘉義民生店",
+    "address": "600嘉義市西區民生北路126號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJk5BHbeWVbjQRvRM9kHUbuN8",
+      "name": "IN COFFEE",
+      "formatted_address": "忠義街50號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "a9e477c2-236b-401e-abd1-f99a9c6cbf7f",
+    "name": "江鳥咖啡- 嘉義吳鳳北路店",
+    "address": "600嘉義市東區吳鳳北路132號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJiWQEo9uVbjQRGmijyA5G2TE",
+      "name": "江鳥咖啡- 嘉義吳鳳北路店",
+      "formatted_address": "吳鳳北路132號",
+      "business_status": "CLOSED_PERMANENTLY",
+      "types": [
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "suspected_closed",
+      "reason": "Google Places businessStatus = CLOSED_PERMANENTLY"
+    }
+  },
+  {
+    "id": "ace2a1e9-d5da-4c11-bd71-f7c724924365",
+    "name": "Paseo 西文‧咖啡 Estudio",
+    "address": "600嘉義市東區忠孝路223號",
+    "url": "https://www.facebook.com/PaseoEstudio/",
+    "findPlace": {
+      "place_id": "ChIJa3iirzSUbjQRnwzKdSz1voc",
+      "name": "Paseo 西文‧咖啡 Estudio",
+      "formatted_address": "600嘉義市東區維新路112-1號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b57cb33d-ebe3-44a4-939f-1ea503fce9cc",
+    "name": "往前咖啡",
+    "address": "600嘉義市東區興中街203號",
+    "url": "https://m.facebook.com/FORWARD.COFFEE.TW/?locale2=zh_TW",
+    "findPlace": {
+      "place_id": "ChIJU6G05jKUbjQRKliHNVe0Y-0",
+      "name": "往前咖啡製作所 / Forward roasters",
+      "formatted_address": "興中街205號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "store",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "b81672e2-9877-4262-8554-108a4535fcfb",
+    "name": "聖塔咖啡",
+    "address": "嘉義市東區興中街10號",
+    "url": "http://www.stcoffee.tw",
+    "findPlace": {
+      "place_id": "ChIJ-RrSvDCUbjQRBs0I8OaMNiY",
+      "name": "聖塔咖啡",
+      "formatted_address": "興中街10號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "store",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "bb74f82b-f054-4dce-a8db-add26e1c28de",
+    "name": "岱coffee",
+    "address": "600嘉義市東區民國路179號",
+    "url": "https://www.facebook.com/%E5%B2%B1coffee-235250100569757/",
+    "findPlace": {
+      "place_id": "ChIJ7SwQRYGVbjQRmOdwSvP-oiY",
+      "name": "岱Coffee",
+      "formatted_address": "民國路179號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "bed52108-4d2a-4432-b888-2b75808ae745",
+    "name": "花磚咖啡。淺嚐館",
+    "address": "嘉義市東區公明路59號之1",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJkSndeEqUbjQRj6o-KJuqk3s",
+      "name": "花磚咖啡。淺嚐館",
+      "formatted_address": "公明路59-1號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c4c93aae-b594-4c97-a26f-f36a0883f700",
+    "name": "山茶花與鹿",
+    "address": "嘉義市東區成仁街226號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJqc00pzOUbjQRH-N6D4sSUGY",
+      "name": "山茶花與鹿之森",
+      "formatted_address": "成仁街226號1樓",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c7677b82-8848-408a-8f3f-dc49b3d692de",
+    "name": "木更MUGENERATION",
+    "address": "600嘉義市東區成仁街189號",
+    "url": "https://www.facebook.com/mugeneration191",
+    "findPlace": {
+      "place_id": "ChIJoVLXijaUbjQRoXGuYmsPr0Q",
+      "name": "木更 MUGENERATION",
+      "formatted_address": "成仁街189號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "c9d1d4e3-8ab8-4c7d-a6c8-6cd80ff20ca4",
+    "name": "賣私咖啡",
+    "address": "嘉義市東區吳鳳南路15號",
+    "url": "https://www.facebook.com/mys.coffeeroast/?fref=ts",
+    "findPlace": {
+      "place_id": "ChIJK1qv8EqUbjQRq8aPBbZH-z8",
+      "name": "賣私咖啡",
+      "formatted_address": "吳鳳南路15號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "cf83bc86-02e1-4b70-842b-3253d30cd513",
+    "name": "33+V. Cafe",
+    "address": "嘉義市東區東義路160-2號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJk7JB15V2bjQRSNaC5Zmb7o8",
+      "name": "33+V.咖啡工作室（濃縮供應 預約個人席）",
+      "formatted_address": "義教東路49號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "d21acc3a-80ac-4bb4-8e52-da8f4d757af7",
+    "name": "翌莎精品咖啡 ISA COFFEE & CO.",
+    "address": "嘉義縣朴子市朴子七路16號",
+    "url": "https://www.facebook.com/ISACoffeeCompany/",
+    "findPlace": {
+      "place_id": "ChIJsVyUey6dbjQREw4UkxnQ5_U",
+      "name": "翌莎咖啡 水道頭店 ISA COFFEE｜北歐式淺焙．阿里山咖啡",
+      "formatted_address": "613嘉義縣朴子市中正路17號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "df54f85b-26c3-4c24-83f4-a70e256dbeb9",
+    "name": "福友咖啡 總統咖啡",
+    "address": "嘉義縣中埔鄉606683鄰十一號之十六",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJxbZ1uKvsbjQR9pWiLbJXYVQ",
+      "name": "福友台灣咖啡莊園 ForyouTaiwanCoffee | 五星級嘉義咖啡莊園評鑑",
+      "formatted_address": "606台灣嘉義縣中埔鄉",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "store",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e189af6d-e803-45f3-91e4-3696d596a5d0",
+    "name": "路易莎(博愛店)",
+    "address": "嘉義市博愛路二段864號",
+    "url": "https://www.facebook.com/louisa.chiayi.fraternite/",
+    "findPlace": {
+      "place_id": "ChIJZxzWqryWbjQR9CuIVBk9ZZs",
+      "name": "Louisa Coffee 路易莎咖啡(嘉義博愛門市)",
+      "formatted_address": "博愛路二段864號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e29b5f97-74eb-4663-abe4-0a6734fac5d4",
+    "name": "cama cafe 嘉義中山店",
+    "address": "嘉義市西區中山路441號",
+    "url": "https://www.facebook.com/CamaCafeCyi/",
+    "findPlace": {
+      "place_id": "ChIJxUUDdyyVbjQRRl5r_ulHrSQ",
+      "name": "cama café 嘉義中山店",
+      "formatted_address": "中山路441號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "store",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e54a9c55-d57e-4975-900e-07e686c576b7",
+    "name": "Evie's Cafe 伊米咖啡",
+    "address": "嘉義市東區共和路418號(北門車站旁)",
+    "url": "https://m.facebook.com/eviescafe88/",
+    "findPlace": {
+      "place_id": "ChIJHWNPsTCUbjQRTMRsb50lSFE",
+      "name": "Evie's Cafe' 伊米咖啡｜濾掛咖啡&咖啡豆專賣｜冰滴咖啡｜提拉米蘇｜北門驛",
+      "formatted_address": "共和路418號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "e76cfb49-217b-4195-b0a0-64bd574fc475",
+    "name": "Blues藍調咖啡",
+    "address": "嘉義市長榮街278號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJy5M1jy2UbjQRrxERunH9GJQ",
+      "name": "BES coffee",
+      "formatted_address": "長榮街278號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "eb2b1a4c-37f7-4269-9d75-0d17af0d0210",
+    "name": "Dadala cafe",
+    "address": "600嘉義市東區延平街219號",
+    "url": "",
+    "findPlace": {
+      "place_id": "ChIJoyTdcgCVbjQRuHdmU4hTqeE",
+      "name": "DADALA Cafe & Stationery",
+      "formatted_address": "延平街219號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "store",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "ef4fb4af-523f-44ad-a749-b66aec9c9c1c",
+    "name": "美好咖啡",
+    "address": "嘉義市東區啟明路146號",
+    "url": "https://www.facebook.com/mihocoffee/",
+    "findPlace": {
+      "place_id": "ChIJiwuxhQOVbjQRwMXkB0tfybw",
+      "name": "美好咖啡店ＭihoCoffee 最後營業日2024/06/30",
+      "formatted_address": "啟明路146號",
+      "business_status": "CLOSED_TEMPORARILY",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "store",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "review",
+      "reason": "Google Places businessStatus = CLOSED_TEMPORARILY"
+    }
+  },
+  {
+    "id": "f06ec8d1-e6ec-4227-9959-0eece09d158b",
+    "name": "呈咖啡",
+    "address": "600嘉義市東區忠孝路611號",
+    "url": "https://www.chengcoffee.com.tw/",
+    "findPlace": {
+      "place_id": "ChIJJ7MFn8SVbjQR5T8Ltgaw270",
+      "name": "呈咖啡 Cheng Coffee Roasters",
+      "formatted_address": "忠孝路611號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f3175c1d-e750-4902-a7c0-f5da9b7ae7e0",
+    "name": "花磚咖啡",
+    "address": "嘉義市東區大雅路二段648號",
+    "url": "https://www.facebook.com/%E8%8A%B1%E7%A3%9A%E5%92%96%E5%95%A1-103705373320238/",
+    "findPlace": {
+      "place_id": "ChIJRxe5MUyUbjQRt5lbajCbLmg",
+      "name": "花磚咖啡。北歐主義",
+      "formatted_address": "600嘉義市東區大雅路二段66號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "f379f0aa-c725-47c9-bb98-4e0938f7e22a",
+    "name": "Coffee Room 咖啡倫",
+    "address": "嘉義市西區仁愛路21號1F",
+    "url": "https://www.facebook.com/coffeeroomtw/",
+    "findPlace": {
+      "place_id": "ChIJAeHq-SGUbjQRPOt4Fs_k3_o",
+      "name": "咖啡倫",
+      "formatted_address": "仁愛路21號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  },
+  {
+    "id": "fa38cb13-dbfd-46b3-8042-5d90fa3f7f6e",
+    "name": "月咖啡",
+    "address": "嘉義縣中埔鄉忠義路315號",
+    "url": "月 cafe",
+    "findPlace": {
+      "place_id": "ChIJlQNZ8WeUbjQR3iRmIW518Fk",
+      "name": "月朔 Luna Caf'e & Bar",
+      "formatted_address": "忠義路315 號",
+      "business_status": "OPERATIONAL",
+      "types": [
+        "bar",
+        "point_of_interest",
+        "establishment"
+      ],
+      "google_maps_uri": ""
+    },
+    "details": null,
+    "audit": {
+      "category": "ok",
+      "reason": "Google Places businessStatus = OPERATIONAL"
+    }
+  }
+]

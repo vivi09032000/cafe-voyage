@@ -970,3 +970,152 @@ on conflict (status_source, cafe_source, cafe_source_id) do update set
   review_reason = excluded.review_reason,
   status_checked_at = excluded.status_checked_at,
   is_current = excluded.is_current;
+insert into public.cafe_status_reviews (
+  status_source, cafe_source, cafe_source_id, country_code, city_key,
+  cafe_name, cafe_address, google_place_id, google_business_status, google_maps_url,
+  matched_name, matched_address, review_category, review_reason, status_checked_at, is_current
+) values
+  ('google_places', 'cafenomad', '55ee878d-f982-4c79-8920-fefb27aca5df', 'TW', 'miaoli', '甜宅 cafe''', '苗栗縣苗栗市忠孝路142號', 'ChIJGxx5UQisaTQRorVfoPrIvLI', 'CLOSED_PERMANENTLY', '', '甜宅 Cafe''', '忠孝路142號', 'suspected_closed', 'Google Places businessStatus = CLOSED_PERMANENTLY', now(), true),
+  ('google_places', 'cafenomad', '641e60f2-7c85-4ff6-9339-da22310c9de9', 'TW', 'miaoli', 'OLULU Cafe & 傑恩咖啡工廠(苑裡店)', '苗栗縣苑裡鎮上館里九鄰上館180-1號', 'ChIJ-35dhJ0PaTQRjr84hDzrMhU', 'CLOSED_TEMPORARILY', '', 'OLULU Cafe & 傑恩咖啡工廠（OLULU Cafe暫時歇業啦～轉換型態中！新模式還請待後續公告🙏）', '火炎山七路180號358', 'review', 'Google Places businessStatus = CLOSED_TEMPORARILY', now(), true)
+on conflict (status_source, cafe_source, cafe_source_id) do update set
+  country_code = excluded.country_code,
+  city_key = excluded.city_key,
+  cafe_name = excluded.cafe_name,
+  cafe_address = excluded.cafe_address,
+  google_place_id = excluded.google_place_id,
+  google_business_status = excluded.google_business_status,
+  google_maps_url = excluded.google_maps_url,
+  matched_name = excluded.matched_name,
+  matched_address = excluded.matched_address,
+  review_category = excluded.review_category,
+  review_reason = excluded.review_reason,
+  status_checked_at = excluded.status_checked_at,
+  is_current = excluded.is_current;
+insert into public.cafe_status_reviews (
+  status_source, cafe_source, cafe_source_id, country_code, city_key,
+  cafe_name, cafe_address, google_place_id, google_business_status, google_maps_url,
+  matched_name, matched_address, review_category, review_reason, status_checked_at, is_current
+) values
+  ('google_places', 'cafenomad', '0ca410ca-5edc-4cbf-b170-b997f5ae58c8', 'TW', 'changhua', '敘杯Sobremesa', '彰化縣彰化市旭光路221號', 'ChIJf9xN0dQ5aTQR1d-qOn0Sps4', 'CLOSED_PERMANENTLY', '', '敘杯Sobremesa', '旭光路221號', 'suspected_closed', 'Google Places businessStatus = CLOSED_PERMANENTLY', now(), true),
+  ('google_places', 'cafenomad', '18e98010-98fb-4302-ade2-5c60a03d4946', 'TW', 'changhua', '咪咖啡', '彰化縣彰化市陳稜路189號之1號', 'ChIJPZz8-YQ5aTQRhEFMDwJto2M', 'CLOSED_TEMPORARILY', '', '咪咖啡 Mi_cafe''外帶專門（5/23開始休息，會盡快滿血回歸）', '189號之, No. 1陳稜路', 'review', 'Google Places businessStatus = CLOSED_TEMPORARILY', now(), true),
+  ('google_places', 'cafenomad', '320bb5f3-d6b7-4bb1-8607-fd1743021965', 'TW', 'changhua', '二本咖啡-URBAN CAFE', '彰化縣員林鎮南昌路119號', 'ChIJM7zEUF42aTQRt1573dePEO4', 'CLOSED_PERMANENTLY', '', '二本咖啡Urban Cafe', '南昌路119號', 'suspected_closed', 'Google Places businessStatus = CLOSED_PERMANENTLY', now(), true),
+  ('google_places', 'cafenomad', '32ac4b3e-f793-4296-ac8a-0f1617466302', 'TW', 'changhua', 'circus cafe 圓圈咖啡', '彰化縣員林市員東路二段351巷1號', 'ChIJH-0IB1o2aTQR7ZF-_775F-s', 'CLOSED_PERMANENTLY', '', 'Circus Cafe 圓圈咖啡', '員東路二段351巷1號', 'suspected_closed', 'Google Places businessStatus = CLOSED_PERMANENTLY', now(), true),
+  ('google_places', 'cafenomad', '3d9d0338-4929-4eb4-9c2f-f30edd7bf236', 'TW', 'changhua', '天外啡鮮', '彰化縣秀水鄉彰水路二段321號', 'ChIJrca5cXpIaTQR5TupcHQQKAg', 'CLOSED_PERMANENTLY', '', '天外啡鮮', '彰水路二段321號', 'suspected_closed', 'Google Places businessStatus = CLOSED_PERMANENTLY', now(), true),
+  ('google_places', 'cafenomad', '62253131-3a5b-4970-b39f-2a3fb92e6edc', 'TW', 'changhua', '美寶', '彰化縣花壇鄉中正路186號', 'ChIJO5aHihw4aTQRYkJ9D67YyoY', 'CLOSED_PERMANENTLY', '', '美寶精品咖啡', '中正路186號', 'suspected_closed', 'Google Places businessStatus = CLOSED_PERMANENTLY', now(), true),
+  ('google_places', 'cafenomad', '6f9882d3-d68c-4478-9294-1114953c9e01', 'TW', 'changhua', '樂居咖啡', '彰化縣員林市萬年路四段', 'ChIJbYgABFc2aTQRfZNqXsq7zjc', 'CLOSED_PERMANENTLY', '', '樂居咖啡', '510彰化縣員林市萬年路四段82號', 'suspected_closed', 'Google Places businessStatus = CLOSED_PERMANENTLY', now(), true),
+  ('google_places', 'cafenomad', '7a4fc96d-680a-44fa-9459-b1a225a3f651', 'TW', 'changhua', '硬巷咖啡 Hard Ln, cafe''', '510彰化縣員林市溝皂北三街70號', 'ChIJqwuzom83aTQRe8UMCp3VmjA', 'CLOSED_TEMPORARILY', '', 'HardLn Cafe', '溝皂北三街70號', 'review', 'Google Places businessStatus = CLOSED_TEMPORARILY', now(), true),
+  ('google_places', 'cafenomad', '9c1b23f6-53c1-42a2-bf60-facc9ddec5ea', 'TW', 'changhua', 'Sean''s cafe享樂玩咖', '500彰化縣彰化市長壽街157號', 'ChIJnYubPbg4aTQRFiFYEkTB628', 'CLOSED_PERMANENTLY', '', 'Sean''s cafe享樂玩咖', '長壽街157號', 'suspected_closed', 'Google Places businessStatus = CLOSED_PERMANENTLY', now(), true),
+  ('google_places', 'cafenomad', 'd41ebeed-a6f4-4205-b815-fcf9fa039b98', 'TW', 'changhua', '頂客來咖啡', '彰化縣埤頭鄉文鄉南街103號', 'ChIJn3stZUBLaTQRumGKO1gU0Z4', 'CLOSED_PERMANENTLY', '', '頂客來咖啡', '文鄉南街103號', 'suspected_closed', 'Google Places businessStatus = CLOSED_PERMANENTLY', now(), true)
+on conflict (status_source, cafe_source, cafe_source_id) do update set
+  country_code = excluded.country_code,
+  city_key = excluded.city_key,
+  cafe_name = excluded.cafe_name,
+  cafe_address = excluded.cafe_address,
+  google_place_id = excluded.google_place_id,
+  google_business_status = excluded.google_business_status,
+  google_maps_url = excluded.google_maps_url,
+  matched_name = excluded.matched_name,
+  matched_address = excluded.matched_address,
+  review_category = excluded.review_category,
+  review_reason = excluded.review_reason,
+  status_checked_at = excluded.status_checked_at,
+  is_current = excluded.is_current;
+insert into public.cafe_status_reviews (
+  status_source, cafe_source, cafe_source_id, country_code, city_key,
+  cafe_name, cafe_address, google_place_id, google_business_status, google_maps_url,
+  matched_name, matched_address, review_category, review_reason, status_checked_at, is_current
+) values
+  ('google_places', 'cafenomad', '0bd1257d-7492-4eb9-a810-e01dfbd81b46', 'TW', 'nantou', 'MOST木思埔里店', '南投縣埔里鎮民有三街11號', 'ChIJUfFtJ5HZaDQRxsvFk-uj-4E', 'CLOSED_PERMANENTLY', '', '木思MOST全新健康廚房', '民有三街11號', 'suspected_closed', 'Google Places businessStatus = CLOSED_PERMANENTLY', now(), true),
+  ('google_places', 'cafenomad', '8eb26039-4cdc-4148-9fe3-49ad1ba9d096', 'TW', 'nantou', '麥子鄉村咖啡屋 My Coffee', '南投縣草屯鎮信義街25號', 'ChIJIzfKomUwaTQRjDP3B-zG9gQ', 'CLOSED_PERMANENTLY', '', '麥子鄉村咖啡屋 My Coffee', '信義街25號', 'suspected_closed', 'Google Places businessStatus = CLOSED_PERMANENTLY', now(), true),
+  ('google_places', 'cafenomad', 'dfbe73bc-9dff-4dbb-b972-398d3f8b02f7', 'TW', 'nantou', '不靠海工作室', '南投縣埔里鎮育樂路8號', 'ChIJH2O1MaLZaDQRKuLVtKWdGlI', 'CLOSED_PERMANENTLY', '', '不靠海工作室', '育樂路8號', 'suspected_closed', 'Google Places businessStatus = CLOSED_PERMANENTLY', now(), true)
+on conflict (status_source, cafe_source, cafe_source_id) do update set
+  country_code = excluded.country_code,
+  city_key = excluded.city_key,
+  cafe_name = excluded.cafe_name,
+  cafe_address = excluded.cafe_address,
+  google_place_id = excluded.google_place_id,
+  google_business_status = excluded.google_business_status,
+  google_maps_url = excluded.google_maps_url,
+  matched_name = excluded.matched_name,
+  matched_address = excluded.matched_address,
+  review_category = excluded.review_category,
+  review_reason = excluded.review_reason,
+  status_checked_at = excluded.status_checked_at,
+  is_current = excluded.is_current;
+insert into public.cafe_status_reviews (
+  status_source, cafe_source, cafe_source_id, country_code, city_key,
+  cafe_name, cafe_address, google_place_id, google_business_status, google_maps_url,
+  matched_name, matched_address, review_category, review_reason, status_checked_at, is_current
+) values
+  ('google_places', 'cafenomad', '06044732-8a40-4487-b0dc-6f848bc0dd9e', 'TW', 'yunlin', 'Easy Coffee 現烘手沖咖啡店', '雲林縣麥寮鄉中正路89號', 'ChIJ89uYcVOvbjQRWpfhoVdtygk', 'CLOSED_TEMPORARILY', '', 'Easy Coffee 現烘手沖咖啡店', '中正路89號', 'review', 'Google Places businessStatus = CLOSED_TEMPORARILY', now(), true),
+  ('google_places', 'cafenomad', '176c71a3-fb15-4bc2-b1be-29a2ab42aab2', 'TW', 'yunlin', '樺鄉咖啡莊園', '雲林縣古坑鄉桃源1-5號', 'ChIJVWJ4s73GbjQRHv4vxNVneu8', 'CLOSED_PERMANENTLY', '', '樺鄉咖啡莊園', '1號之5', 'suspected_closed', 'Google Places businessStatus = CLOSED_PERMANENTLY', now(), true),
+  ('google_places', 'cafenomad', '4e24cc72-7ab3-41b4-bf39-9916142e225b', 'TW', 'yunlin', 'AOKI咖啡', '雲林縣北港鎮太平路89號', 'ChIJ9xbj4IyibjQR6B8RAR7F588', 'CLOSED_TEMPORARILY', '', 'AOKI CAFE', '太平路89號', 'review', 'Google Places businessStatus = CLOSED_TEMPORARILY', now(), true),
+  ('google_places', 'cafenomad', 'd475c8d4-8604-4f37-8a59-1427f9c8127e', 'TW', 'yunlin', '映星園咖啡自家烘培 instarland coffee', '雲林縣北港鎮中華路2-9號', 'ChIJg6gSyFGjbjQRvXtcMl9AGQ8', 'CLOSED_PERMANENTLY', '', '映星園咖啡自家烘焙 instarland coffee', '中華路2之9號', 'suspected_closed', 'Google Places businessStatus = CLOSED_PERMANENTLY', now(), true)
+on conflict (status_source, cafe_source, cafe_source_id) do update set
+  country_code = excluded.country_code,
+  city_key = excluded.city_key,
+  cafe_name = excluded.cafe_name,
+  cafe_address = excluded.cafe_address,
+  google_place_id = excluded.google_place_id,
+  google_business_status = excluded.google_business_status,
+  google_maps_url = excluded.google_maps_url,
+  matched_name = excluded.matched_name,
+  matched_address = excluded.matched_address,
+  review_category = excluded.review_category,
+  review_reason = excluded.review_reason,
+  status_checked_at = excluded.status_checked_at,
+  is_current = excluded.is_current;
+insert into public.cafe_status_reviews (
+  status_source, cafe_source, cafe_source_id, country_code, city_key,
+  cafe_name, cafe_address, google_place_id, google_business_status, google_maps_url,
+  matched_name, matched_address, review_category, review_reason, status_checked_at, is_current
+) values
+  ('google_places', 'cafenomad', '00014645-38c8-4eb4-ad9b-faa871d7e511', 'TW', 'chiayi', 'R5小餐館', '嘉義市東區忠孝路205號', 'ChIJn5-gsZGVbjQRqnfpga7UJPc', 'CLOSED_PERMANENTLY', '', 'JASC杰斯克小餐館', '忠孝路205號', 'suspected_closed', 'Google Places businessStatus = CLOSED_PERMANENTLY', now(), true),
+  ('google_places', 'cafenomad', '185290e1-8333-4b9a-8f48-0890dabe8a98', 'TW', 'chiayi', 'Picgather吾友野事', '嘉義縣中埔鄉和興村公館97-20號', 'ChIJv-8ZWuSTbjQR1n8uKdI-Pmg', 'CLOSED_TEMPORARILY', '', 'Picgather 吾友野事', '公館97-20號', 'review', 'Google Places businessStatus = CLOSED_TEMPORARILY', now(), true),
+  ('google_places', 'cafenomad', '23d131fd-881b-4e4b-92b1-fcb8470cfe3d', 'TW', 'chiayi', '奇喚咖啡', '600嘉義市西區保安一路保安市場29號', 'ChIJk2vraaSXbjQRokBNAgH79jk', 'CLOSED_TEMPORARILY', '', '奇喚咖啡', '600嘉義市東區民權路254號', 'review', 'Google Places businessStatus = CLOSED_TEMPORARILY', now(), true),
+  ('google_places', 'cafenomad', '3df93a47-1d47-47ae-b8b2-ee035140293f', 'TW', 'chiayi', '33號咖啡店', '600嘉義市東區義教東路49號600', 'ChIJ4ybIe7CVbjQRprY8yzhl2Ts', 'CLOSED_PERMANENTLY', '', '33號咖啡店', '東義路33號', 'suspected_closed', 'Google Places businessStatus = CLOSED_PERMANENTLY', now(), true),
+  ('google_places', 'cafenomad', '7ad3de68-2d10-4f29-a37c-4b012cef7feb', 'TW', 'chiayi', 'Yoi傢俱樂窩', '嘉義市體育路51號', 'ChIJj-P1fUiUbjQR8rrycXGm6Xc', 'CLOSED_PERMANENTLY', '', 'Yoi傢俱', '體育路51號', 'suspected_closed', 'Google Places businessStatus = CLOSED_PERMANENTLY', now(), true),
+  ('google_places', 'cafenomad', '8b8bc93e-96d1-4384-bf79-5b279b66dd05', 'TW', 'chiayi', '後站 漫時光', '嘉義市遠東街2號', 'ChIJY32QLyuUbjQRwmpQPqt5ujA', 'CLOSED_PERMANENTLY', '', '後站。漫時光', '自由路101號', 'suspected_closed', 'Google Places businessStatus = CLOSED_PERMANENTLY', now(), true),
+  ('google_places', 'cafenomad', '973665e6-207f-4d85-9d87-dc0a4813301b', 'TW', 'chiayi', '832 Coffee Roasters_捌參貳焙煎所', '嘉義市東區成仁街228號', 'ChIJsQKLCTOUbjQRs3DlYAZ7pBw', 'CLOSED_PERMANENTLY', '', '832 Coffee Roasters 捌參貳焙煎所', '成仁街228號', 'suspected_closed', 'Google Places businessStatus = CLOSED_PERMANENTLY', now(), true),
+  ('google_places', 'cafenomad', '9b98f0ad-a880-42b6-9070-d4537ad001bc', 'TW', 'chiayi', '咖啡人自家烘焙', '嘉義市民國路170號', 'ChIJUaLajEqUbjQRcK6z-uBAvi8', 'CLOSED_PERMANENTLY', '', '咖啡人自家烘焙', '民國路170號', 'suspected_closed', 'Google Places businessStatus = CLOSED_PERMANENTLY', now(), true),
+  ('google_places', 'cafenomad', 'a9e477c2-236b-401e-abd1-f99a9c6cbf7f', 'TW', 'chiayi', '江鳥咖啡- 嘉義吳鳳北路店', '600嘉義市東區吳鳳北路132號', 'ChIJiWQEo9uVbjQRGmijyA5G2TE', 'CLOSED_PERMANENTLY', '', '江鳥咖啡- 嘉義吳鳳北路店', '吳鳳北路132號', 'suspected_closed', 'Google Places businessStatus = CLOSED_PERMANENTLY', now(), true),
+  ('google_places', 'cafenomad', 'eb2b1a4c-37f7-4269-9d75-0d17af0d0210', 'TW', 'chiayi', 'Dadala cafe', '600嘉義市東區延平街219號', 'ChIJoyTdcgCVbjQRuHdmU4hTqeE', 'CLOSED_TEMPORARILY', '', 'DADALA Cafe & Stationery', '延平街219號', 'review', 'Google Places businessStatus = CLOSED_TEMPORARILY', now(), true),
+  ('google_places', 'cafenomad', 'ef4fb4af-523f-44ad-a749-b66aec9c9c1c', 'TW', 'chiayi', '美好咖啡', '嘉義市東區啟明路146號', 'ChIJiwuxhQOVbjQRwMXkB0tfybw', 'CLOSED_TEMPORARILY', '', '美好咖啡店ＭihoCoffee 最後營業日2024/06/30', '啟明路146號', 'review', 'Google Places businessStatus = CLOSED_TEMPORARILY', now(), true)
+on conflict (status_source, cafe_source, cafe_source_id) do update set
+  country_code = excluded.country_code,
+  city_key = excluded.city_key,
+  cafe_name = excluded.cafe_name,
+  cafe_address = excluded.cafe_address,
+  google_place_id = excluded.google_place_id,
+  google_business_status = excluded.google_business_status,
+  google_maps_url = excluded.google_maps_url,
+  matched_name = excluded.matched_name,
+  matched_address = excluded.matched_address,
+  review_category = excluded.review_category,
+  review_reason = excluded.review_reason,
+  status_checked_at = excluded.status_checked_at,
+  is_current = excluded.is_current;
+insert into public.cafe_status_reviews (
+  status_source, cafe_source, cafe_source_id, country_code, city_key,
+  cafe_name, cafe_address, google_place_id, google_business_status, google_maps_url,
+  matched_name, matched_address, review_category, review_reason, status_checked_at, is_current
+) values
+  ('google_places', 'cafenomad', '1832f5fa-4706-4856-854d-3d08bbc104b2', 'TW', 'pingtung', '小苗苗。精品咖啡 ', '屏東縣屏東市華山街2號', 'ChIJKbH_Ub4XbjQRsyCWAbFiMus', 'CLOSED_PERMANENTLY', '', '小苗苗。精品咖啡', '華山街2號', 'suspected_closed', 'Google Places businessStatus = CLOSED_PERMANENTLY', now(), true),
+  ('google_places', 'cafenomad', '39ec33a9-2fc1-4c53-9a7c-7840b77e480c', 'TW', 'pingtung', '厚厚一片-東港旗艦店', '928屏東縣東港鎮明德路90號', 'ChIJgwSneNLhcTQRoIPvxbURAXA', 'CLOSED_PERMANENTLY', '', '厚厚一片東港旗艦店', '明德路90號', 'suspected_closed', 'Google Places businessStatus = CLOSED_PERMANENTLY', now(), true),
+  ('google_places', 'cafenomad', '49e55c60-3beb-4b36-a6ea-886f0905b220', 'TW', 'pingtung', 'Eske Place Coffee House', '屏東縣屏東市民享路142號', 'ChIJp0jF3ZMXbjQRXLjEBBiM6CQ', 'CLOSED_TEMPORARILY', '', 'Eske Place Coffee House', '民享路142號', 'review', 'Google Places businessStatus = CLOSED_TEMPORARILY', now(), true),
+  ('google_places', 'cafenomad', '833cddcb-c503-4c21-a87f-2c3be6902bb8', 'TW', 'pingtung', '半島咖啡 Fangliao Café', '屏東縣枋寮鄉儲運路7號', 'ChIJTRczdT7ccTQRqaX_XrWwBoA', 'CLOSED_PERMANENTLY', '', '半島咖啡 Fangliao Café', '儲運路7號', 'suspected_closed', 'Google Places businessStatus = CLOSED_PERMANENTLY', now(), true),
+  ('google_places', 'cafenomad', 'b91de885-ddee-4e98-9b67-c16da918a7df', 'TW', 'pingtung', '小白咖啡店', '屏東縣屏東市豐榮街209號旁邊空地', 'ChIJUfj8_L8XbjQR-_yXywZwzyo', 'CLOSED_TEMPORARILY', '', '小白咖啡店', '豐榮街209號旁邊空地', 'review', 'Google Places businessStatus = CLOSED_TEMPORARILY', now(), true)
+on conflict (status_source, cafe_source, cafe_source_id) do update set
+  country_code = excluded.country_code,
+  city_key = excluded.city_key,
+  cafe_name = excluded.cafe_name,
+  cafe_address = excluded.cafe_address,
+  google_place_id = excluded.google_place_id,
+  google_business_status = excluded.google_business_status,
+  google_maps_url = excluded.google_maps_url,
+  matched_name = excluded.matched_name,
+  matched_address = excluded.matched_address,
+  review_category = excluded.review_category,
+  review_reason = excluded.review_reason,
+  status_checked_at = excluded.status_checked_at,
+  is_current = excluded.is_current;
