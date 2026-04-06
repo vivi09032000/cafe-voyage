@@ -67,6 +67,21 @@ const UI = {
   sage: "#6F7F62",
   shadow: "0 10px 24px rgba(62, 39, 35, 0.06)",
 };
+const FONT = {
+  display: "'Playfair Display', Georgia, serif",
+  body: "-apple-system, BlinkMacSystemFont, 'PingFang TC', 'Noto Sans TC', sans-serif",
+};
+const TYPE = {
+  brand: { fontFamily: FONT.display, fontSize: "1.18rem", lineHeight: 1.08, fontWeight: 700, letterSpacing: "-0.012em" },
+  pageTitle: { fontFamily: FONT.display, fontSize: "1.42rem", lineHeight: 1.14, fontWeight: 700, letterSpacing: "-0.032em" },
+  sectionTitle: { fontSize: "0.98rem", lineHeight: 1.28, fontWeight: 760, letterSpacing: "-0.018em" },
+  cardTitle: { fontSize: "0.95rem", lineHeight: 1.36, fontWeight: 760, letterSpacing: "-0.018em" },
+  body: { fontSize: "0.875rem", lineHeight: 1.52, fontWeight: 500 },
+  meta: { fontSize: "0.78rem", lineHeight: 1.48, fontWeight: 500 },
+  caption: { fontSize: "0.72rem", lineHeight: 1.42, fontWeight: 600 },
+  control: { fontSize: "0.78rem", lineHeight: 1, fontWeight: 720 },
+  nav: { fontSize: "0.68rem", lineHeight: 1.1, fontWeight: 680 },
+};
 
 const REGION_PROMPT_KEY = "prompt";
 const REGION_STORAGE_KEY = "cafe-voyage:region";
@@ -134,7 +149,7 @@ const scoreBar = (val, max = 5) => {
       <div style={{ flex: 1, height: 4, background: "rgba(92,61,46,0.12)", borderRadius: 999, overflow: "hidden" }}>
         <div style={{ width: `${pct}%`, height: "100%", background: color, borderRadius: 4 }} />
       </div>
-      <span style={{ fontSize: 11, color: UI.muted, minWidth: 24, fontVariantNumeric: "tabular-nums" }}>{val.toFixed(1)}</span>
+      <span style={{ ...TYPE.caption, color: UI.muted, minWidth: 24, fontVariantNumeric: "tabular-nums" }}>{val.toFixed(1)}</span>
     </div>
   );
 };
@@ -151,8 +166,8 @@ const scorePill = (label, val) => {
       background: "rgba(246,239,231,0.86)",
       border: `1px solid ${UI.softLine}`,
       color: T.sub,
-      fontSize: 11,
-      fontWeight: 650,
+      ...TYPE.caption,
+      fontWeight: 680,
       whiteSpace: "nowrap",
     }}>
       <span>{label}</span>
@@ -174,8 +189,8 @@ const Tag = ({ label, type = "green", onClick }) => {
     color: s.color,
     borderRadius: 999,
     padding: "4px 9px",
-    fontSize: 11,
-    fontWeight: 650,
+    ...TYPE.caption,
+    fontWeight: 680,
     whiteSpace: "nowrap",
     letterSpacing: "-0.01em",
   };
@@ -293,11 +308,10 @@ const FilterChip = ({ active, label, onClick, icon }) => (
     border: `1px solid ${active ? T.green : UI.line}`,
     borderRadius: 18,
     padding: "8px 14px",
-    fontSize: 12,
+    ...TYPE.control,
     cursor: "pointer",
     fontWeight: active ? 700 : 600,
     fontFamily: "inherit",
-    lineHeight: 1,
     boxShadow: active ? "0 8px 18px rgba(45, 74, 62, 0.12)" : "none",
     transition: "background 160ms ease, border-color 160ms ease, color 160ms ease",
   }}>
@@ -334,7 +348,7 @@ const FilterSection = ({ filters, toggle }) => (
       },
     ].map((section, index) => (
       <div key={section.title} style={{ marginBottom: index === 2 ? 0 : 12 }}>
-        <div style={{ fontSize: 11, color: T.sub, marginBottom: 8, fontWeight: 760, letterSpacing: "0.08em" }}>{section.title}</div>
+        <div style={{ ...TYPE.caption, color: T.sub, marginBottom: 8, fontWeight: 760, letterSpacing: "0.08em" }}>{section.title}</div>
         <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
           {section.items.map(({ key, label, icon }) => (
             <FilterChip key={key} active={filters[key]} label={label} icon={icon} onClick={() => toggle(key)} />
@@ -401,8 +415,8 @@ const Header = ({ title = "Cafe Voyage", cityLabel, subtitle, onOpenMenu }) => {
   return (
   <div style={{ background: T.brown, padding: "18px 22px 22px", display: "flex", justifyContent: "space-between", alignItems: "center", flexShrink: 0 }}>
     <div>
-      <div style={{ color: "#fff", fontFamily: "'Playfair Display', serif", fontSize: 18, fontWeight: 700, letterSpacing: 0.3 }}>{title}</div>
-      {metaText !== "" && <div style={{ color: "#f1e5d6", fontSize: 12, marginTop: 5 }}>{metaText}</div>}
+      <div style={{ ...TYPE.brand, color: "#fff" }}>{title}</div>
+      {metaText !== "" && <div style={{ ...TYPE.meta, color: "#f1e5d6", marginTop: 5 }}>{metaText}</div>}
     </div>
     <button aria-label="開啟設定選單" onClick={onOpenMenu} style={{ background: "none", border: "none", cursor: "pointer", padding: 4 }}>
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.2" strokeLinecap="round">
@@ -480,8 +494,8 @@ const SettingsPanel = ({
     const content = (
       <>
         <div>
-          <div style={{ fontSize: 14, fontWeight: 650, color: T.text, marginBottom: subtitle ? 1 : 0, letterSpacing: "-0.01em" }}>{title}</div>
-          {subtitle && <div style={{ fontSize: 10.5, lineHeight: 1.45, color: "rgba(122, 102, 82, 0.86)" }}>{subtitle}</div>}
+          <div style={{ ...TYPE.body, fontWeight: 680, color: T.text, marginBottom: subtitle ? 1 : 0, letterSpacing: "-0.01em" }}>{title}</div>
+          {subtitle && <div style={{ ...TYPE.caption, color: "rgba(122, 102, 82, 0.86)" }}>{subtitle}</div>}
         </div>
         <div style={{ fontSize: 15, color: "rgba(122, 102, 82, 0.7)", flexShrink: 0, paddingTop: 1 }}>{href ? "›" : ""}</div>
       </>
@@ -516,7 +530,7 @@ const SettingsPanel = ({
         onClick={(e) => e.stopPropagation()}
       >
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "18px 18px 12px", flexShrink: 0 }}>
-          <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 21, color: T.text, letterSpacing: "-0.02em" }}>設定</div>
+          <div style={{ ...TYPE.pageTitle, fontSize: "1.32rem", color: T.text }}>設定</div>
           <button
             aria-label="關閉設定"
             onClick={onClose}
@@ -544,10 +558,10 @@ const SettingsPanel = ({
               {user ? "☕" : "👤"}
             </div>
             <div>
-              <div style={{ fontSize: 15, fontWeight: 700, color: T.text, lineHeight: 1.15, letterSpacing: "-0.01em" }}>
+              <div style={{ ...TYPE.cardTitle, color: T.text }}>
                 {user ? "已登入" : "尚未登入"}
               </div>
-              <div style={{ fontSize: 10.5, color: "rgba(122, 102, 82, 0.88)", marginTop: 2, lineHeight: 1.35 }}>
+              <div style={{ ...TYPE.caption, color: "rgba(122, 102, 82, 0.88)", marginTop: 2 }}>
                 {user ? (user.email || "已連接 Google 帳號") : "用 Google 同步收藏"}
               </div>
             </div>
@@ -565,8 +579,7 @@ const SettingsPanel = ({
                 borderRadius: 14,
                 padding: "11px 12px",
                 textAlign: "center",
-                fontSize: 13,
-                fontWeight: 700,
+                ...TYPE.control,
                 cursor: authBusy ? "default" : "pointer",
                 fontFamily: "inherit",
                 opacity: authBusy ? 0.7 : 1,
@@ -587,8 +600,7 @@ const SettingsPanel = ({
                 borderRadius: 14,
                 padding: "11px 12px",
                 textAlign: "center",
-                fontSize: 13,
-                fontWeight: 700,
+                ...TYPE.control,
                 cursor: authBusy ? "default" : "pointer",
                 fontFamily: "inherit",
                 opacity: authBusy ? 0.7 : 1,
@@ -599,12 +611,12 @@ const SettingsPanel = ({
             </button>
           )}
 
-          {authMessage && <div style={{ fontSize: 10, color: T.green, marginTop: 6, lineHeight: 1.45 }}>{authMessage}</div>}
-          {authError && <div style={{ fontSize: 10, color: "#9b2335", marginTop: 6, lineHeight: 1.45 }}>{authError}</div>}
+          {authMessage && <div style={{ ...TYPE.caption, color: T.green, marginTop: 6 }}>{authMessage}</div>}
+          {authError && <div style={{ ...TYPE.caption, color: "#9b2335", marginTop: 6 }}>{authError}</div>}
         </div>
 
         <div style={{ background: "rgba(255,255,255,0.92)", border: "1px solid rgba(232, 221, 208, 0.75)", borderRadius: 16, padding: 12, margin: "0 16px 10px" }}>
-          <div style={{ fontSize: 10.5, color: "rgba(122, 102, 82, 0.82)", marginBottom: 8 }}>地區選擇</div>
+          <div style={{ ...TYPE.caption, color: "rgba(122, 102, 82, 0.82)", marginBottom: 8 }}>地區選擇</div>
           <div style={{ border: "1px solid rgba(92, 61, 46, 0.12)", borderRadius: 14, overflow: "hidden", marginBottom: 10, background: "#fff" }}>
             <button
               aria-label="切換國家選單"
@@ -764,7 +776,7 @@ const BottomNav = ({ active, onChange }) => (
               {pin && <><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" /><circle cx="12" cy="10" r="3" /></>}
               {heart && <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />}
             </svg>
-            <span style={{ fontSize: 10.5, fontWeight: on ? 760 : 600 }}>{label}</span>
+            <span style={{ ...TYPE.nav, fontWeight: on ? 760 : 620 }}>{label}</span>
           </button>
         );
       })}
@@ -866,9 +878,9 @@ const CafeCard = ({ cafe, onClick, fav, onFav, emptyCafeIds }) => (
     <div style={{ padding: "14px 15px 13px" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 6 }}>
         <div style={{ flex: 1, marginRight: 8 }}>
-          <div style={{ fontWeight: 760, fontSize: 14.5, color: T.text, lineHeight: 1.32, letterSpacing: "-0.02em" }}>{cafe.name}</div>
-          {cafe.mrt && <div style={{ fontSize: 12, color: T.sub, marginTop: 3 }}>🚇 {cafe.mrt}</div>}
-          <div style={{ fontSize: 12, color: T.sub, marginTop: 2, lineHeight: 1.35 }}>📍 {cafe.address}</div>
+          <div style={{ ...TYPE.cardTitle, color: T.text }}>{cafe.name}</div>
+          {cafe.mrt && <div style={{ ...TYPE.meta, color: T.sub, marginTop: 3 }}>🚇 {cafe.mrt}</div>}
+          <div style={{ ...TYPE.meta, color: T.sub, marginTop: 2 }}>📍 {cafe.address}</div>
         </div>
         <button
           aria-label={fav ? `取消收藏 ${cafe.name}` : `收藏 ${cafe.name}`}
@@ -989,8 +1001,8 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
       <div style={{ flex: 1, overflowY: "auto", padding: "0 16px 16px" }}>
         {!hasRegionSelection && (
           <div style={{ margin: "12px 0", background: "#fff", border: `1px solid ${T.beige}`, borderRadius: 14, padding: "14px 14px 12px" }}>
-            <div style={{ fontSize: 14, color: T.text, fontWeight: 700, marginBottom: 6 }}>先選一個地區開始看</div>
-            <div style={{ fontSize: 12, color: T.sub, lineHeight: 1.6, marginBottom: 10 }}>
+            <div style={{ ...TYPE.sectionTitle, color: T.text, marginBottom: 6 }}>先選一個地區開始看</div>
+            <div style={{ ...TYPE.body, color: T.sub, marginBottom: 10 }}>
               右上角可以切換地區。首頁先聚焦在單一城市，列表會比較清楚。
             </div>
             <button
@@ -1001,8 +1013,7 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
                 border: "none",
                 borderRadius: 10,
                 padding: "10px 14px",
-                fontSize: 13,
-                fontWeight: 700,
+                ...TYPE.control,
                 cursor: "pointer",
                 fontFamily: "inherit",
               }}
@@ -1015,13 +1026,13 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
           <div style={{ margin: "14px 0 12px" }}>
             <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 12, marginBottom: 10 }}>
               <div>
-                <div style={{ fontSize: 15, color: T.text, fontWeight: 700 }}>依需求找咖啡廳</div>
+                <div style={{ ...TYPE.sectionTitle, color: T.text }}>依需求找咖啡廳</div>
               </div>
               {activeFilterCount > 0 && (
                 <button
                   type="button"
                   onClick={() => { setFilters({ ...DEFAULT_HOME_FILTERS }); setActivePresetKey(null); setPage(1); }}
-                  style={{ background: "none", border: "none", color: T.brown, fontSize: 12, fontWeight: 700, cursor: "pointer", fontFamily: "inherit", textDecoration: "underline", textUnderlineOffset: 3 }}
+                  style={{ background: "none", border: "none", color: T.brown, ...TYPE.control, cursor: "pointer", fontFamily: "inherit", textDecoration: "underline", textUnderlineOffset: 3 }}
                 >
                   清除
                 </button>
@@ -1051,8 +1062,8 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
                       transition: "background 160ms ease, transform 160ms ease, box-shadow 160ms ease",
                     }}
                   >
-                    <div style={{ fontSize: 13.5, fontWeight: 760, marginBottom: 4, letterSpacing: "-0.02em" }}>{preset.title}</div>
-                    <div style={{ fontSize: 11.5, color: active ? "rgba(255,255,255,0.80)" : T.sub, lineHeight: 1.35 }}>{preset.subtitle}</div>
+                    <div style={{ ...TYPE.cardTitle, fontSize: "0.9rem", marginBottom: 4 }}>{preset.title}</div>
+                    <div style={{ ...TYPE.caption, color: active ? "rgba(255,255,255,0.82)" : T.sub }}>{preset.subtitle}</div>
                   </button>
                 );
               })}
@@ -1066,7 +1077,7 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
           </div>
         ) : (
           <>
-            <div style={{ fontSize: 12, color: T.sub, margin: "10px 0 12px" }}>共 {total} 間{total > PER_PAGE ? `（顯示第 ${start + 1}-${Math.min(start + PER_PAGE, total)} 間）` : ""}</div>
+            <div style={{ ...TYPE.meta, color: T.sub, margin: "10px 0 12px" }}>共 {total} 間{total > PER_PAGE ? `（顯示第 ${start + 1}-${Math.min(start + PER_PAGE, total)} 間）` : ""}</div>
             {filtered.map(c => <CafeCard key={c.id} cafe={c} onClick={() => onSelect(c)} fav={favs.has(c.id)} onFav={onFav} emptyCafeIds={emptyCafeIds} />)}
             {filtered.length === 0 && <div style={{ textAlign: "center", padding: "40px 0", color: T.sub }}>找不到符合條件的咖啡廳</div>}
             <Pagination page={page} total={total} onPage={setPage} />
@@ -1148,7 +1159,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
     <div style={{ display: "flex", flexDirection: "column", flex: 1, minHeight: 0, overflow: "hidden" }}>
       {/* 固定區 */}
       <div style={{ flexShrink: 0, padding: "14px 16px 0", background: T.cream, borderBottom: `1px solid ${T.beige}` }}>
-        <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, marginBottom: 10, color: T.text, letterSpacing: "-0.02em" }}>附近咖啡廳</div>
+        <div style={{ ...TYPE.pageTitle, marginBottom: 10, color: T.text }}>附近咖啡廳</div>
         <div style={{ position: "relative", marginBottom: 14 }}>
           <svg style={{ position: "absolute", left: 11, top: "50%", transform: "translateY(-50%)" }} width="15" height="15" viewBox="0 0 24 24" fill="none" stroke={T.sub} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
           <input aria-label="搜尋附近咖啡廳" value={q} onChange={e => setQ(e.target.value)} placeholder="搜尋..."
@@ -1168,8 +1179,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
                   color: active ? "#fff" : T.sub,
                   borderRadius: 999,
                   padding: "7px 12px",
-                  fontSize: 12,
-                  fontWeight: 700,
+                  ...TYPE.control,
                   whiteSpace: "nowrap",
                   cursor: "pointer",
                   fontFamily: "inherit",
@@ -1182,12 +1192,12 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
             );
           })}
         </div>
-        {locationError && <div style={{ fontSize: 11, color: "#9b2335", marginBottom: 10 }}>{locationError}</div>}
+        {locationError && <div style={{ ...TYPE.caption, color: "#9b2335", marginBottom: 10 }}>{locationError}</div>}
       </div>
 
       {/* 滾動區 */}
       <div style={{ flex: 1, overflowY: "auto", padding: "0 16px 16px" }}>
-        <div style={{ fontSize: 12, color: T.sub, margin: "10px 0" }}>
+        <div style={{ ...TYPE.meta, color: T.sub, margin: "10px 0" }}>
           {userLocation ? "依距離由近到遠" : locationLoading ? "正在取得目前位置" : "開啟定位後可查看附近咖啡廳"}・共 {total} 間{total > PER_PAGE ? `（第 ${start + 1}-${Math.min(start + PER_PAGE, total)} 間）` : ""}
         </div>
         {loading ? (
@@ -1197,7 +1207,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
             {sorted.map((c, i) => (
               <div key={c.id} style={{ display: "flex", alignItems: "flex-start", gap: 8 }}>
                 {userLocation && (
-                  <div style={{ width: 42, minHeight: 24, borderRadius: 14, background: T.beige, color: T.sub, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10.5, fontWeight: 700, flexShrink: 0, marginTop: 14, padding: "3px 5px", textAlign: "center", lineHeight: 1.15 }}>
+                  <div style={{ width: 42, minHeight: 24, borderRadius: 14, background: T.beige, color: T.sub, display: "flex", alignItems: "center", justifyContent: "center", ...TYPE.nav, fontWeight: 720, flexShrink: 0, marginTop: 14, padding: "3px 5px", textAlign: "center" }}>
                     {formatDistance(c._distanceKm)}
                   </div>
                 )}
@@ -1547,7 +1557,7 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
   return (
     <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", overflow: "hidden" }}>
       <div style={{ display: "flex", justifyContent: "flex-end", padding: "10px 16px 6px" }}>
-        <div style={{ fontSize: 12, color: T.sub }}>{loading ? "載入全台資料..." : `${visibleMapCafes.length} 間咖啡廳`}</div>
+        <div style={{ ...TYPE.meta, color: T.sub }}>{loading ? "載入全台資料..." : `${visibleMapCafes.length} 間咖啡廳`}</div>
       </div>
 
       {/* Search */}
@@ -1583,14 +1593,14 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
           {flyTarget && <FlyTo center={flyTarget} offsetY={120} />}
           {(!mapQuery || locateRequest.mode === "manual") && <FlyToBySignal center={userPos} seq={locateRequest.seq} zoom={locateRequest.zoom} />}
           {userPos && <Marker position={userPos} icon={userIcon}>
-            <Popup><span style={{ fontSize: 13, fontWeight: 700 }}>📍 你的位置</span></Popup>
+            <Popup><span style={{ ...TYPE.control }}>📍 你的位置</span></Popup>
           </Marker>}
           {searchMarker && (
             <Marker position={searchMarker.position} icon={stationIcon}>
               <Popup className="map-popup" minWidth={160} maxWidth={220} autoPan={false}>
-                <div style={{ fontFamily: "-apple-system, 'PingFang TC', sans-serif" }}>
-                  <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 4, color: T.text }}>🚇 搜尋站點</div>
-                  <div style={{ fontSize: 11, color: T.sub }}>{searchMarker.label}</div>
+                <div style={{ fontFamily: FONT.body }}>
+                  <div style={{ ...TYPE.cardTitle, marginBottom: 4, color: T.text }}>🚇 搜尋站點</div>
+                  <div style={{ ...TYPE.caption, color: T.sub }}>{searchMarker.label}</div>
                 </div>
               </Popup>
             </Marker>
@@ -1616,15 +1626,15 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
                 maxWidth={220}
                 autoPan={false}
               >
-                <div style={{ fontFamily: "-apple-system, 'PingFang TC', sans-serif" }}>
-                  <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 4, color: T.text }}>{c.name}</div>
-                  {c.mrt && <div style={{ fontSize: 11, color: T.sub, marginBottom: 2 }}>🚇 {c.mrt}</div>}
-                  <div style={{ fontSize: 11, color: T.sub, marginBottom: 6 }}>📍 {c.address}</div>
+                <div style={{ fontFamily: FONT.body }}>
+                  <div style={{ ...TYPE.cardTitle, marginBottom: 4, color: T.text }}>{c.name}</div>
+                  {c.mrt && <div style={{ ...TYPE.caption, color: T.sub, marginBottom: 2 }}>🚇 {c.mrt}</div>}
+                  <div style={{ ...TYPE.caption, color: T.sub, marginBottom: 6 }}>📍 {c.address}</div>
                   <div style={{ display: "flex", gap: 4, flexWrap: "wrap", marginBottom: 10 }}>
                     {temporaryClosureTag(c)}
-                    {c.wifi > 0 && <span style={{ fontSize: 11, background: T.beige, borderRadius: 10, padding: "2px 7px" }}>📶 {c.wifi.toFixed(1)}</span>}
-                    {c.quiet > 0 && <span style={{ fontSize: 11, background: T.beige, borderRadius: 10, padding: "2px 7px" }}>🔇 {c.quiet.toFixed(1)}</span>}
-                    {c.limited_time === "no" && <span style={{ fontSize: 11, background: T.green, color: "#fff", borderRadius: 10, padding: "2px 7px" }}>✓ 不限時</span>}
+                    {c.wifi > 0 && <span style={{ ...TYPE.caption, background: T.beige, borderRadius: 10, padding: "2px 7px" }}>📶 {c.wifi.toFixed(1)}</span>}
+                    {c.quiet > 0 && <span style={{ ...TYPE.caption, background: T.beige, borderRadius: 10, padding: "2px 7px" }}>🔇 {c.quiet.toFixed(1)}</span>}
+                    {c.limited_time === "no" && <span style={{ ...TYPE.caption, background: T.green, color: "#fff", borderRadius: 10, padding: "2px 7px" }}>✓ 不限時</span>}
                   </div>
                   <button
                     onClick={(e) => { e.stopPropagation(); onSelect(c); }}
@@ -1635,8 +1645,7 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
                       color: "#fff",
                       border: "none",
                       borderRadius: 10,
-                      fontSize: 13,
-                      fontWeight: 700,
+                      ...TYPE.control,
                       cursor: "pointer",
                       fontFamily: "inherit",
                     }}
@@ -1734,7 +1743,7 @@ const CrowdReport = ({ cafeId, onReport }) => {
       {[["empty","🟢 很空"],["normal","🟡 普通"],["crowded","🔴 很擠"]].map(([val, label]) => (
         <button key={val} onClick={() => handleReport(val)} style={{
           flex: 1, padding: "10px 4px", borderRadius: 10, border: `1px solid ${T.beige}`,
-          background: T.cream, fontSize: 12, cursor: "pointer", fontFamily: "inherit"
+          background: T.cream, ...TYPE.control, cursor: "pointer", fontFamily: "inherit"
         }}>{label}</button>
       ))}
     </div>
@@ -1742,25 +1751,25 @@ const CrowdReport = ({ cafeId, onReport }) => {
 
   return (
     <div style={{ background: "#fff", borderRadius: 12, border: `1px solid ${T.beige}`, padding: 16, marginBottom: 14 }}>
-      <div style={{ fontWeight: 700, fontSize: 14, color: T.text, marginBottom: 10 }}>現在人多嗎？</div>
+      <div style={{ ...TYPE.sectionTitle, color: T.text, marginBottom: 10 }}>現在人多嗎？</div>
       {loading ? (
-        <div style={{ fontSize: 12, color: T.sub }}>載入中...</div>
+        <div style={{ ...TYPE.meta, color: T.sub }}>載入中...</div>
       ) : submitted && !editing ? (
         <>
-          <div style={{ fontSize: 13, color: T.green, marginBottom: 4 }}>✅ 感謝你的回報！</div>
-          <div style={{ fontSize: 13, color: T.text, marginBottom: 8 }}>{statusLabel[report?.status]}</div>
-          <button onClick={() => setEditing(true)} style={{ fontSize: 12, color: T.brown, background: "none", border: "none", cursor: "pointer", textDecoration: "underline" }}>更新回報</button>
+          <div style={{ ...TYPE.body, color: T.green, marginBottom: 4 }}>✅ 感謝你的回報！</div>
+          <div style={{ ...TYPE.body, color: T.text, marginBottom: 8 }}>{statusLabel[report?.status]}</div>
+          <button onClick={() => setEditing(true)} style={{ ...TYPE.control, color: T.brown, background: "none", border: "none", cursor: "pointer", textDecoration: "underline" }}>更新回報</button>
         </>
       ) : editing || !report ? (
         <>
-          {editing && <div style={{ fontSize: 12, color: T.sub, marginBottom: 8 }}>選擇目前狀況：</div>}
+          {editing && <div style={{ ...TYPE.meta, color: T.sub, marginBottom: 8 }}>選擇目前狀況：</div>}
           {buttons}
         </>
       ) : (
         <>
-          <div style={{ fontSize: 14, color: T.text, marginBottom: 6 }}>{statusLabel[report.status]}</div>
-          <div style={{ fontSize: 11, color: T.sub, marginBottom: 10 }}>{timeAgo(report.reported_at)}</div>
-          <button onClick={() => setEditing(true)} style={{ fontSize: 12, color: T.brown, background: "none", border: "none", cursor: "pointer", textDecoration: "underline" }}>更新回報</button>
+          <div style={{ ...TYPE.body, color: T.text, marginBottom: 6 }}>{statusLabel[report.status]}</div>
+          <div style={{ ...TYPE.caption, color: T.sub, marginBottom: 10 }}>{timeAgo(report.reported_at)}</div>
+          <button onClick={() => setEditing(true)} style={{ ...TYPE.control, color: T.brown, background: "none", border: "none", cursor: "pointer", textDecoration: "underline" }}>更新回報</button>
         </>
       )}
     </div>
@@ -1848,12 +1857,12 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
         <button aria-label="返回上一頁" onClick={onBack} style={{ background: "none", border: "none", cursor: "pointer" }}>
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round"><polyline points="15 18 9 12 15 6" /></svg>
         </button>
-        <span style={{ color: "#fff", fontWeight: 700, fontSize: 15, flex: 1 }}>{cafe.name}</span>
+        <span style={{ ...TYPE.cardTitle, color: "#fff", flex: 1 }}>{cafe.name}</span>
         <button aria-label={fav ? `取消收藏 ${cafe.name}` : `收藏 ${cafe.name}`} onClick={() => onFav(cafe.id)} style={{ background: "none", border: "none", cursor: "pointer", fontSize: 20 }}>{fav ? "⭐" : "☆"}</button>
       </div>
       <div style={{ padding: "16px 18px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
-          <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 23, fontWeight: 700, color: T.text, lineHeight: 1.18, letterSpacing: "-0.03em" }}>
+          <div style={{ ...TYPE.pageTitle, color: T.text }}>
             {cafe.name}
           </div>
           {cafe.url && (
@@ -1862,10 +1871,10 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
             </a>
           )}
         </div>
-        {cafe.mrt && <div style={{ fontSize: 13, color: T.sub, marginBottom: 3 }}>🚇 {cafe.mrt}</div>}
-        <div style={{ fontSize: 13, color: T.sub, marginBottom: 12 }}>📍 {cafe.address}</div>
-        {cafe.google_business_note && <div style={{ fontSize: 13, color: "#b7791f", marginBottom: 8, fontWeight: 600 }}>⏸ {cafe.google_business_note}</div>}
-        {cafe.open_time && <div style={{ fontSize: 13, color: T.text, marginBottom: 8 }}>🕐 {cafe.open_time}</div>}
+        {cafe.mrt && <div style={{ ...TYPE.body, color: T.sub, marginBottom: 3 }}>🚇 {cafe.mrt}</div>}
+        <div style={{ ...TYPE.body, color: T.sub, marginBottom: 12 }}>📍 {cafe.address}</div>
+        {cafe.google_business_note && <div style={{ ...TYPE.body, color: "#b7791f", marginBottom: 8, fontWeight: 650 }}>⏸ {cafe.google_business_note}</div>}
+        {cafe.open_time && <div style={{ ...TYPE.body, color: T.text, marginBottom: 8 }}>🕐 {cafe.open_time}</div>}
 
         <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 8 }}>
           {temporaryClosureTag(cafe)}
@@ -1874,13 +1883,13 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
           {cafe.standing_desk === "yes" && <Tag label="站立桌" type="gray" onClick={applyTagFilter("standing")} />}
           {crowdTagFromIds(cafe.id, emptyCafeIds, applyTagFilter("empty"))}
         </div>
-        <div style={{ fontSize: 11, color: T.sub, marginBottom: 16 }}>點標籤找相似店</div>
+        <div style={{ ...TYPE.caption, color: T.sub, marginBottom: 16 }}>點標籤找相似店</div>
 
         <CrowdReport cafeId={cafe.id} onReport={onReport} />
 
         {cafe.wifi > 0 && (
           <div style={{ background: UI.paper, borderRadius: 16, border: `1px solid ${UI.line}`, padding: 16, marginBottom: 16, boxShadow: UI.shadow }}>
-            <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 16, fontWeight: 700, marginBottom: 12, color: T.text }}>環境評分</div>
+            <div style={{ ...TYPE.sectionTitle, marginBottom: 12, color: T.text }}>環境評分</div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
               {[
                 ["📶 WiFi", "穩定", cafe.wifi, cafe.wifi >= 4 ? "wifi" : null],
@@ -1908,10 +1917,10 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
                       opacity: 1,
                     }}
                   >
-                    <div style={{ fontSize: 12, fontWeight: 760, marginBottom: 5 }}>{label}</div>
+                    <div style={{ ...TYPE.control, fontWeight: 760, marginBottom: 5 }}>{label}</div>
                     <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 6 }}>
-                      <span style={{ fontSize: 11, color: T.sub }}>{subLabel}</span>
-                      <span style={{ fontSize: 17, fontWeight: 760, fontVariantNumeric: "tabular-nums" }}>{Number(val).toFixed(1)}</span>
+                      <span style={{ ...TYPE.caption, color: T.sub }}>{subLabel}</span>
+                      <span style={{ fontSize: "1.08rem", lineHeight: 1, fontWeight: 760, fontVariantNumeric: "tabular-nums" }}>{Number(val).toFixed(1)}</span>
                     </div>
                   </button>
                 ) : null
@@ -1925,7 +1934,7 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
             href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${cafe.name} ${cafe.address}`)}`}
             target="_blank"
             rel="noreferrer"
-            style={{ display: "block", background: T.brown, color: "#fff", borderRadius: 14, padding: "12px", textAlign: "center", textDecoration: "none", fontSize: 14, fontWeight: 700, marginBottom: 10, boxShadow: "0 10px 22px rgba(92,61,46,0.12)" }}
+            style={{ display: "block", background: T.brown, color: "#fff", borderRadius: 14, padding: "12px", textAlign: "center", textDecoration: "none", ...TYPE.control, marginBottom: 10, boxShadow: "0 10px 22px rgba(92,61,46,0.12)" }}
           >
             📍 在 Google Maps 開啟
           </a>
@@ -2296,7 +2305,7 @@ export default function App() {
 
   return (
     <>
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');html,body,#root{height:100%}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,'PingFang TC',sans-serif;background:#f0ebe4}input::placeholder{color:#A89880;opacity:1}button:focus-visible,[role="button"]:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid ${UI.sage} !important;outline-offset:3px}::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:${T.beige};border-radius:3px}.map-popup .leaflet-popup-content-wrapper{border-radius:16px;border:1px solid ${UI.line};box-shadow:0 12px 28px rgba(62,39,35,0.16)}.map-popup .leaflet-popup-content{margin:10px 12px;min-width:0 !important;width:min(220px,calc(100vw - 88px)) !important}.map-popup .leaflet-popup-close-button{padding:8px 10px 0 0;font-size:18px}`}</style>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap');html,body,#root{height:100%}*{margin:0;padding:0;box-sizing:border-box}body{font-family:${FONT.body};font-kerning:normal;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;background:#f0ebe4}input,button,textarea,select{font:inherit}input::placeholder{color:#A89880;opacity:1}button:focus-visible,[role="button"]:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid ${UI.sage} !important;outline-offset:3px}::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:${T.beige};border-radius:3px}.map-popup .leaflet-popup-content-wrapper{border-radius:16px;border:1px solid ${UI.line};box-shadow:0 12px 28px rgba(62,39,35,0.16)}.map-popup .leaflet-popup-content{margin:10px 12px;min-width:0 !important;width:min(220px,calc(100vw - 88px)) !important}.map-popup .leaflet-popup-close-button{padding:8px 10px 0 0;font-size:18px}`}</style>
       <div style={{ maxWidth: 430, margin: "0 auto", width: "100%", height: "100svh", minHeight: "100dvh", display: "flex", flexDirection: "column", background: T.cream, overflow: "hidden", boxShadow: "0 0 40px rgba(0,0,0,0.15)" }}>
         {!selected && <Header cityLabel={hasRegionSelection ? regionLabel : selectedCountry.label} subtitle={headerSubtitle} onOpenMenu={() => setMenuOpen(true)} />}
         {selected ? (
