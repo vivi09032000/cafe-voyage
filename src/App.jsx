@@ -57,6 +57,16 @@ const T = {
   beige: "#E8DDD0", green: "#2D4A3E", gold: "#C9A84C",
   text: "#2C2016", sub: "#7A6652", tag: "#2D4A3E",
 };
+const UI = {
+  paper: "#FFFDF8",
+  oat: "#F6EFE7",
+  latte: "#EFE4D5",
+  line: "rgba(92, 61, 46, 0.14)",
+  softLine: "rgba(92, 61, 46, 0.08)",
+  muted: "rgba(122, 102, 82, 0.88)",
+  sage: "#6F7F62",
+  shadow: "0 10px 24px rgba(62, 39, 35, 0.06)",
+};
 
 const REGION_PROMPT_KEY = "prompt";
 const REGION_STORAGE_KEY = "cafe-voyage:region";
@@ -118,13 +128,13 @@ const isOpen = (c) => !CLOSED_KW.some(kw => c.name.includes(kw));
 const scoreBar = (val, max = 5) => {
   if (!val || val === 0) return null;
   const pct = (val / max) * 100;
-  const color = pct >= 70 ? T.green : pct >= 40 ? T.gold : "#c0392b";
+  const color = pct >= 70 ? T.green : pct >= 40 ? "#C8A96D" : "#B9785F";
   return (
-    <div style={{ display: "flex", alignItems: "center", gap: 6, flex: 1 }}>
-      <div style={{ flex: 1, height: 5, background: T.beige, borderRadius: 4, overflow: "hidden" }}>
+    <div style={{ display: "flex", alignItems: "center", gap: 7, flex: 1 }}>
+      <div style={{ flex: 1, height: 4, background: "rgba(92,61,46,0.12)", borderRadius: 999, overflow: "hidden" }}>
         <div style={{ width: `${pct}%`, height: "100%", background: color, borderRadius: 4 }} />
       </div>
-      <span style={{ fontSize: 11, color: T.sub, minWidth: 24 }}>{val.toFixed(1)}</span>
+      <span style={{ fontSize: 11, color: UI.muted, minWidth: 24, fontVariantNumeric: "tabular-nums" }}>{val.toFixed(1)}</span>
     </div>
   );
 };
@@ -140,11 +150,12 @@ const Tag = ({ label, type = "green", onClick }) => {
   const style = {
     background: s.bg,
     color: s.color,
-    borderRadius: 14,
-    padding: "3px 10px",
+    borderRadius: 999,
+    padding: "4px 9px",
     fontSize: 11,
-    fontWeight: 500,
+    fontWeight: 650,
     whiteSpace: "nowrap",
+    letterSpacing: "-0.01em",
   };
 
   if (onClick) {
@@ -254,17 +265,19 @@ const FILTER_PRESETS = [
 ];
 
 const FilterChip = ({ active, label, onClick, icon }) => (
-  <button onClick={onClick} style={{
-    background: active ? T.green : "#e7dccd",
-    color: active ? "#fff" : "#8a745f",
-    border: "none",
+  <button type="button" onClick={onClick} style={{
+    background: active ? T.green : UI.oat,
+    color: active ? "#fff" : T.sub,
+    border: `1px solid ${active ? T.green : UI.line}`,
     borderRadius: 18,
-    padding: "9px 16px",
+    padding: "8px 14px",
     fontSize: 12,
     cursor: "pointer",
-    fontWeight: active ? 700 : 500,
+    fontWeight: active ? 700 : 600,
     fontFamily: "inherit",
     lineHeight: 1,
+    boxShadow: active ? "0 8px 18px rgba(45, 74, 62, 0.12)" : "none",
+    transition: "background 160ms ease, border-color 160ms ease, color 160ms ease",
   }}>
     {active ? "✓ " : ""}{icon ? `${icon} ` : ""}{label}
   </button>
@@ -365,7 +378,7 @@ const Header = ({ title = "Cafe Voyage", cityLabel, subtitle, onOpenMenu }) => {
       <div style={{ color: "#fff", fontFamily: "'Playfair Display', serif", fontSize: 18, fontWeight: 700, letterSpacing: 0.3 }}>{title}</div>
       {metaText !== "" && <div style={{ color: "#f1e5d6", fontSize: 12, marginTop: 5 }}>{metaText}</div>}
     </div>
-    <button onClick={onOpenMenu} style={{ background: "none", border: "none", cursor: "pointer", padding: 4 }}>
+    <button aria-label="開啟設定選單" onClick={onOpenMenu} style={{ background: "none", border: "none", cursor: "pointer", padding: 4 }}>
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.2" strokeLinecap="round">
         <line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" />
       </svg>
@@ -479,6 +492,7 @@ const SettingsPanel = ({
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "18px 18px 12px", flexShrink: 0 }}>
           <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 21, color: T.text, letterSpacing: "-0.02em" }}>設定</div>
           <button
+            aria-label="關閉設定"
             onClick={onClose}
             style={{ background: "none", border: "none", cursor: "pointer", color: T.sub, fontSize: 23, lineHeight: 1 }}
           >
@@ -567,6 +581,7 @@ const SettingsPanel = ({
           <div style={{ fontSize: 10.5, color: "rgba(122, 102, 82, 0.82)", marginBottom: 8 }}>地區選擇</div>
           <div style={{ border: "1px solid rgba(92, 61, 46, 0.12)", borderRadius: 14, overflow: "hidden", marginBottom: 10, background: "#fff" }}>
             <button
+              aria-label="切換國家選單"
               onClick={() => setCountryMenuOpen((openState) => !openState)}
               style={{
                 width: "100%",
@@ -690,7 +705,7 @@ const BottomNav = ({ active, onChange }) => (
       const on = active === key;
       const c = on ? T.brown : T.sub;
       return (
-        <button key={key} onClick={() => onChange(key)} style={{ background: "none", border: "none", cursor: "pointer", display: "flex", flexDirection: "column", alignItems: "center", gap: 3, color: c }}>
+        <button key={key} aria-label={label} onClick={() => onChange(key)} style={{ background: "none", border: "none", cursor: "pointer", display: "flex", flexDirection: "column", alignItems: "center", gap: 3, color: c, minWidth: 48, minHeight: 44, fontFamily: "inherit" }}>
           <svg width="20" height="20" viewBox="0 0 24 24" fill={heart && on ? c : "none"} stroke={c} strokeWidth="2" strokeLinecap="round">
             {d && <path d={d} />}
             {circle && <><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></>}
@@ -772,26 +787,52 @@ const SwipeBackShell = ({ enabled, onBack, children }) => {
 
 // ── Cafe Card ──
 const CafeCard = ({ cafe, onClick, fav, onFav, emptyCafeIds }) => (
-  <div style={{ background: "#fff", borderRadius: 12, border: `1px solid ${T.beige}`, marginBottom: 12, overflow: "hidden", cursor: "pointer" }} onClick={onClick}>
-    <div style={{ padding: "13px 14px" }}>
+  <div
+    role="button"
+    tabIndex={0}
+    aria-label={`查看 ${cafe.name} 詳情`}
+    style={{
+      background: UI.paper,
+      borderRadius: 16,
+      border: `1px solid ${UI.line}`,
+      marginBottom: 12,
+      overflow: "hidden",
+      cursor: "pointer",
+      boxShadow: UI.shadow,
+      outlineOffset: 3,
+    }}
+    onClick={onClick}
+    onKeyDown={(e) => {
+      if (e.target !== e.currentTarget) return;
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        onClick();
+      }
+    }}
+  >
+    <div style={{ padding: "14px 15px 13px" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 6 }}>
         <div style={{ flex: 1, marginRight: 8 }}>
-          <div style={{ fontWeight: 700, fontSize: 14, color: T.text, lineHeight: 1.3 }}>{cafe.name}</div>
-          {cafe.mrt && <div style={{ fontSize: 11, color: T.sub, marginTop: 2 }}>🚇 {cafe.mrt}</div>}
-          <div style={{ fontSize: 11, color: T.sub, marginTop: 1 }}>📍 {cafe.address}</div>
+          <div style={{ fontWeight: 760, fontSize: 14.5, color: T.text, lineHeight: 1.32, letterSpacing: "-0.02em" }}>{cafe.name}</div>
+          {cafe.mrt && <div style={{ fontSize: 12, color: T.sub, marginTop: 3 }}>🚇 {cafe.mrt}</div>}
+          <div style={{ fontSize: 12, color: T.sub, marginTop: 2, lineHeight: 1.35 }}>📍 {cafe.address}</div>
         </div>
-        <button onClick={e => { e.stopPropagation(); onFav(cafe.id); }} style={{ background: "none", border: "none", cursor: "pointer", fontSize: 18, padding: 0, flexShrink: 0 }}>
+        <button
+          aria-label={fav ? `取消收藏 ${cafe.name}` : `收藏 ${cafe.name}`}
+          onClick={e => { e.stopPropagation(); onFav(cafe.id); }}
+          style={{ background: "rgba(250,246,240,0.78)", border: `1px solid ${UI.softLine}`, borderRadius: 999, cursor: "pointer", fontSize: 18, width: 34, height: 34, flexShrink: 0, color: T.text }}
+        >
           {fav ? "⭐" : "☆"}
         </button>
       </div>
 
       {/* Score bars */}
       {cafe.wifi > 0 && (
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4px 12px", marginBottom: 8 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5px 12px", marginBottom: 10, padding: "9px 10px", borderRadius: 12, background: "rgba(246,239,231,0.72)" }}>
           {[["WiFi", cafe.wifi], ["安靜", cafe.quiet], ["咖啡", cafe.tasty], ["座位", cafe.seat]].map(([label, val]) =>
             val > 0 ? (
               <div key={label} style={{ display: "flex", alignItems: "center", gap: 6 }}>
-                <span style={{ fontSize: 11, color: T.sub, width: 28, flexShrink: 0 }}>{label}</span>
+                <span style={{ fontSize: 11, color: T.sub, width: 28, flexShrink: 0, fontWeight: 600 }}>{label}</span>
                 {scoreBar(val)}
               </div>
             ) : null
@@ -863,8 +904,8 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
       <div style={{ flexShrink: 0, padding: "18px 16px 12px", background: T.cream, borderBottom: `1px solid ${T.beige}` }}>
         <div style={{ position: "relative", marginBottom: 16 }}>
           <svg style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)" }} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A89880" strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
-          <input value={q} onChange={e => setQ(e.target.value)} placeholder="搜尋店名、地址..."
-            style={{ width: "100%", padding: "10px 14px 10px 36px", borderRadius: 12, border: "1px solid #C8BFB5", background: "#fff", fontSize: 16, outline: "none", boxSizing: "border-box", color: T.text, fontWeight: 500 }} />
+          <input aria-label="搜尋店名或地址" value={q} onChange={e => setQ(e.target.value)} placeholder="搜尋店名、地址..."
+            style={{ width: "100%", padding: "10px 14px 10px 36px", borderRadius: 12, border: "1px solid #C8BFB5", background: "#fff", fontSize: 16, outline: "none", boxSizing: "border-box", color: T.text, fontWeight: 500, boxShadow: "0 6px 16px rgba(62,39,35,0.04)" }} />
         </div>
 
         {!filtersOpen ? (
@@ -948,19 +989,21 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
                     type="button"
                     onClick={() => applyPreset(preset)}
                     style={{
-                      background: active ? T.brown : "#fff",
+                      background: active ? T.brown : UI.paper,
                       color: active ? "#fff" : T.text,
-                      border: `1px solid ${active ? T.brown : T.beige}`,
-                      borderRadius: 14,
-                      padding: "11px 12px",
+                      border: `1px solid ${active ? T.brown : UI.line}`,
+                      borderRadius: 16,
+                      padding: "10px 11px",
                       textAlign: "left",
                       cursor: "pointer",
                       fontFamily: "inherit",
-                      boxShadow: active ? "none" : "0 8px 20px rgba(92,61,46,0.05)",
+                      boxShadow: active ? "0 10px 22px rgba(92,61,46,0.10)" : UI.shadow,
+                      minHeight: 76,
+                      transition: "background 160ms ease, transform 160ms ease, box-shadow 160ms ease",
                     }}
                   >
-                    <div style={{ fontSize: 13, fontWeight: 800, marginBottom: 4 }}>{preset.title}</div>
-                    <div style={{ fontSize: 11, color: active ? "rgba(255,255,255,0.78)" : T.sub, lineHeight: 1.35 }}>{preset.subtitle}</div>
+                    <div style={{ fontSize: 13.5, fontWeight: 760, marginBottom: 4, letterSpacing: "-0.02em" }}>{preset.title}</div>
+                    <div style={{ fontSize: 11.5, color: active ? "rgba(255,255,255,0.80)" : T.sub, lineHeight: 1.35 }}>{preset.subtitle}</div>
                   </button>
                 );
               })}
@@ -1056,11 +1099,11 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
     <div style={{ display: "flex", flexDirection: "column", flex: 1, minHeight: 0, overflow: "hidden" }}>
       {/* 固定區 */}
       <div style={{ flexShrink: 0, padding: "14px 16px 0", background: T.cream, borderBottom: `1px solid ${T.beige}` }}>
-        <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, marginBottom: 10, color: T.text }}>附近咖啡廳</div>
+        <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, marginBottom: 10, color: T.text, letterSpacing: "-0.02em" }}>附近咖啡廳</div>
         <div style={{ position: "relative", marginBottom: 14 }}>
           <svg style={{ position: "absolute", left: 11, top: "50%", transform: "translateY(-50%)" }} width="15" height="15" viewBox="0 0 24 24" fill="none" stroke={T.sub} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
-          <input value={q} onChange={e => setQ(e.target.value)} placeholder="搜尋..."
-            style={{ width: "100%", padding: "9px 14px 9px 34px", borderRadius: 22, border: `1px solid ${T.beige}`, background: "#fff", fontSize: 16, outline: "none", boxSizing: "border-box", color: T.text }} />
+          <input aria-label="搜尋附近咖啡廳" value={q} onChange={e => setQ(e.target.value)} placeholder="搜尋..."
+            style={{ width: "100%", padding: "9px 14px 9px 34px", borderRadius: 14, border: `1px solid ${UI.line}`, background: UI.paper, fontSize: 16, outline: "none", boxSizing: "border-box", color: T.text, boxShadow: "0 6px 16px rgba(62,39,35,0.04)" }} />
         </div>
         <div style={{ display: "flex", gap: 7, overflowX: "auto", paddingBottom: 12 }}>
           {[{ key: "all", title: "全部" }, ...FILTER_PRESETS].map((preset) => {
@@ -1071,17 +1114,18 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
                 type="button"
                 onClick={() => setActivePresetKey(preset.key)}
                 style={{
-                  border: `1px solid ${active ? T.brown : T.beige}`,
-                  background: active ? T.brown : "#fff",
+                  border: `1px solid ${active ? T.brown : UI.line}`,
+                  background: active ? T.brown : UI.paper,
                   color: active ? "#fff" : T.sub,
                   borderRadius: 999,
-                  padding: "7px 11px",
+                  padding: "7px 12px",
                   fontSize: 12,
                   fontWeight: 700,
                   whiteSpace: "nowrap",
                   cursor: "pointer",
                   fontFamily: "inherit",
                   flexShrink: 0,
+                  boxShadow: active ? "0 8px 18px rgba(92,61,46,0.12)" : "none",
                 }}
               >
                 {preset.title}
@@ -1460,8 +1504,8 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
       {/* Search */}
       <div style={{ padding: "0 16px 8px", position: "relative", width: "100%", boxSizing: "border-box" }}>
         <svg style={{ position: "absolute", left: 27, top: "50%", transform: "translateY(-60%)" }} width="15" height="15" viewBox="0 0 24 24" fill="none" stroke={T.sub} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
-        <input value={mapQuery} onFocus={closeSearchPopup} onClick={closeSearchPopup} onChange={e => setMapQuery(e.target.value)} placeholder="搜尋店名、地址、捷運站..."
-          style={{ width: "100%", padding: "9px 14px 9px 34px", borderRadius: 22, border: `1px solid ${T.beige}`, background: "#fff", fontSize: 16, outline: "none", boxSizing: "border-box", color: T.text }} />
+        <input aria-label="搜尋地圖上的店名、地址或捷運站" value={mapQuery} onFocus={closeSearchPopup} onClick={closeSearchPopup} onChange={e => setMapQuery(e.target.value)} placeholder="搜尋店名、地址、捷運站..."
+          style={{ width: "100%", padding: "9px 14px 9px 34px", borderRadius: 14, border: `1px solid ${UI.line}`, background: UI.paper, fontSize: 16, outline: "none", boxSizing: "border-box", color: T.text, boxShadow: "0 6px 16px rgba(62,39,35,0.04)" }} />
       </div>
 
       <div style={{ flex: 1, minHeight: 0, position: "relative", borderTop: `1px solid ${T.beige}`, overflow: "hidden" }}>
@@ -1558,6 +1602,7 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
 
         {/* Locate me button */}
         <button
+          aria-label={locating ? "定位中" : "回到我的位置"}
           onClick={() => {
             setLocateError("");
             requestUserLocation({ silent: false, zoom: 15, mode: "manual" });
@@ -1566,8 +1611,8 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
           style={{
             position: "absolute", bottom: 20, right: 16, zIndex: 1000,
             width: 40, height: 40, borderRadius: "50%",
-            background: "#fff", border: `1px solid ${T.beige}`,
-            boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
+            background: UI.paper, border: `1px solid ${UI.line}`,
+            boxShadow: "0 8px 22px rgba(62,39,35,0.13)",
             display: "flex", alignItems: "center", justifyContent: "center",
             cursor: locating ? "default" : "pointer",
             opacity: locating ? 0.7 : 1,
@@ -1751,11 +1796,11 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
       onTouchCancel={handleTouchEnd}
     >
       <div style={{ background: T.brown, padding: "13px 18px", display: "flex", alignItems: "center", gap: 10 }}>
-        <button onClick={onBack} style={{ background: "none", border: "none", cursor: "pointer" }}>
+        <button aria-label="返回上一頁" onClick={onBack} style={{ background: "none", border: "none", cursor: "pointer" }}>
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round"><polyline points="15 18 9 12 15 6" /></svg>
         </button>
         <span style={{ color: "#fff", fontWeight: 700, fontSize: 15, flex: 1 }}>{cafe.name}</span>
-        <button onClick={() => onFav(cafe.id)} style={{ background: "none", border: "none", cursor: "pointer", fontSize: 20 }}>{fav ? "⭐" : "☆"}</button>
+        <button aria-label={fav ? `取消收藏 ${cafe.name}` : `收藏 ${cafe.name}`} onClick={() => onFav(cafe.id)} style={{ background: "none", border: "none", cursor: "pointer", fontSize: 20 }}>{fav ? "⭐" : "☆"}</button>
       </div>
       <div style={{ padding: "16px 18px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
@@ -1784,7 +1829,7 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
         </div>
 
         {cafe.wifi > 0 && (
-          <div style={{ background: "#fff", borderRadius: 12, border: `1px solid ${T.beige}`, padding: 16, marginBottom: 16 }}>
+          <div style={{ background: UI.paper, borderRadius: 16, border: `1px solid ${UI.line}`, padding: 16, marginBottom: 16, boxShadow: UI.shadow }}>
             <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 16, fontWeight: 700, marginBottom: 12, color: T.text }}>環境評分</div>
             {[
               ["📶 WiFi 穩定", cafe.wifi, cafe.wifi >= 4 ? "wifi" : null],
@@ -1831,7 +1876,7 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
             href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${cafe.name} ${cafe.address}`)}`}
             target="_blank"
             rel="noreferrer"
-            style={{ display: "block", background: "#4285F4", color: "#fff", borderRadius: 10, padding: "12px", textAlign: "center", textDecoration: "none", fontSize: 14, fontWeight: 700, marginBottom: 10 }}
+            style={{ display: "block", background: T.brown, color: "#fff", borderRadius: 14, padding: "12px", textAlign: "center", textDecoration: "none", fontSize: 14, fontWeight: 700, marginBottom: 10, boxShadow: "0 10px 22px rgba(92,61,46,0.12)" }}
           >
             📍 在 Google Maps 開啟
           </a>
@@ -2202,7 +2247,7 @@ export default function App() {
 
   return (
     <>
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');html,body,#root{height:100%}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,'PingFang TC',sans-serif;background:#f0ebe4}input::placeholder{color:#A89880;opacity:1}::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:${T.beige};border-radius:3px}.map-popup .leaflet-popup-content-wrapper{border-radius:14px}.map-popup .leaflet-popup-content{margin:10px 12px;min-width:0 !important;width:min(220px,calc(100vw - 88px)) !important}.map-popup .leaflet-popup-close-button{padding:8px 10px 0 0;font-size:18px}`}</style>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');html,body,#root{height:100%}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,'PingFang TC',sans-serif;background:#f0ebe4}input::placeholder{color:#A89880;opacity:1}button:focus-visible,[role="button"]:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid ${UI.sage} !important;outline-offset:3px}::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:${T.beige};border-radius:3px}.map-popup .leaflet-popup-content-wrapper{border-radius:16px;border:1px solid ${UI.line};box-shadow:0 12px 28px rgba(62,39,35,0.16)}.map-popup .leaflet-popup-content{margin:10px 12px;min-width:0 !important;width:min(220px,calc(100vw - 88px)) !important}.map-popup .leaflet-popup-close-button{padding:8px 10px 0 0;font-size:18px}`}</style>
       <div style={{ maxWidth: 430, margin: "0 auto", width: "100%", height: "100svh", minHeight: "100dvh", display: "flex", flexDirection: "column", background: T.cream, overflow: "hidden", boxShadow: "0 0 40px rgba(0,0,0,0.15)" }}>
         {!selected && <Header cityLabel={hasRegionSelection ? regionLabel : selectedCountry.label} subtitle={headerSubtitle} onOpenMenu={() => setMenuOpen(true)} />}
         {selected ? (
