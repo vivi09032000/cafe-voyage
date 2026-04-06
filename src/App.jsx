@@ -993,7 +993,22 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
   const [userLocation, setUserLocation] = useState(null);
   const [locationLoading, setLocationLoading] = useState(false);
   const [locationError, setLocationError] = useState("");
+  const [activePresetKey, setActivePresetKey] = useState("all");
   const requestedLocation = useRef(false);
+  const activePreset = FILTER_PRESETS.find((preset) => preset.key === activePresetKey);
+  const matchesPreset = (cafe) => {
+    if (!activePreset) return true;
+    const presetFilters = activePreset.filters;
+    if (presetFilters.noLimit && cafe.limited_time !== "no") return false;
+    if (presetFilters.socket && cafe.socket !== "yes") return false;
+    if (presetFilters.standing && cafe.standing_desk !== "yes") return false;
+    if (presetFilters.wifi && cafe.wifi < 4) return false;
+    if (presetFilters.quiet && cafe.quiet < 4) return false;
+    if (presetFilters.tasty && cafe.tasty < 4) return false;
+    if (presetFilters.cheap && cafe.cheap < 4) return false;
+    if (presetFilters.music && cafe.music < 4) return false;
+    return true;
+  };
 
   const requestSortLocation = useCallback(() => {
     setLocationError("");
@@ -1018,6 +1033,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
   const allSorted = cafes
     .filter(isOpen)
     .filter(c => !q || c.name.includes(q) || c.address.includes(q) || (c.mrt && c.mrt.includes(q)))
+    .filter(matchesPreset)
     .map((c) => ({ ...c, _workScore: workScore(c), _distanceKm: distanceKm(userLocation, c) }))
     .sort((a, b) => {
       if (userLocation) {
@@ -1030,7 +1046,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
   const start = (page - 1) * PER_PAGE;
   const sorted = allSorted.slice(start, start + PER_PAGE);
 
-  useEffect(() => { setPage(1); }, [q]);
+  useEffect(() => { setPage(1); }, [q, activePresetKey]);
   useEffect(() => {
     if (requestedLocation.current) return;
     requestedLocation.current = true;
@@ -1066,6 +1082,33 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
           >
             {locationLoading ? "定位中..." : userLocation ? "重新定位" : "使用目前位置"}
           </button>
+        </div>
+        <div style={{ display: "flex", gap: 7, overflowX: "auto", paddingBottom: 12 }}>
+          {[{ key: "all", title: "全部" }, ...FILTER_PRESETS].map((preset) => {
+            const active = activePresetKey === preset.key;
+            return (
+              <button
+                key={preset.key}
+                type="button"
+                onClick={() => setActivePresetKey(preset.key)}
+                style={{
+                  border: `1px solid ${active ? T.brown : T.beige}`,
+                  background: active ? T.brown : "#fff",
+                  color: active ? "#fff" : T.sub,
+                  borderRadius: 999,
+                  padding: "7px 11px",
+                  fontSize: 12,
+                  fontWeight: 700,
+                  whiteSpace: "nowrap",
+                  cursor: "pointer",
+                  fontFamily: "inherit",
+                  flexShrink: 0,
+                }}
+              >
+                {preset.title}
+              </button>
+            );
+          })}
         </div>
         {locationError && <div style={{ fontSize: 11, color: "#9b2335", marginBottom: 10 }}>{locationError}</div>}
       </div>
