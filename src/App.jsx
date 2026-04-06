@@ -501,12 +501,12 @@ const SettingsPanel = ({
     },
     {
       title: "意見回饋",
-      subtitle: "功能建議與錯誤回報。",
+      subtitle: "建議或錯誤回報",
       href: null,
     },
     {
       title: "Buy me a coffee",
-      subtitle: "喜歡 Cafe Voyage 的話可以支持我們。",
+      subtitle: "支持 Cafe Voyage",
       href: null,
     },
   ];
@@ -634,7 +634,7 @@ const SettingsPanel = ({
                 letterSpacing: "-0.01em",
               }}
             >
-              {authBusy ? "處理中..." : "登出"}
+              {authBusy ? "登出中..." : "登出"}
             </button>
           ) : (
             <button
@@ -655,7 +655,7 @@ const SettingsPanel = ({
                 letterSpacing: "-0.01em",
               }}
             >
-              {authBusy ? "跳轉中..." : "Google 登入"}
+              {authBusy ? "前往 Google..." : "用 Google 登入"}
             </button>
           )}
 
@@ -664,7 +664,7 @@ const SettingsPanel = ({
         </div>
 
         <div style={{ background: UI.panel, border: `1px solid ${UI.cardBorder}`, borderRadius: 16, padding: 12, margin: "0 16px 10px" }}>
-          <div style={{ ...TYPE.caption, color: UI.muted, marginBottom: 8 }}>地區選擇</div>
+          <div style={{ ...TYPE.caption, color: UI.muted, marginBottom: 8 }}>地區</div>
           <div style={{ border: `1px solid ${UI.scoreTrack}`, borderRadius: 14, overflow: "hidden", marginBottom: 10, background: UI.surface }}>
             <button
               aria-label="切換國家選單"
@@ -1051,9 +1051,9 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
       <div style={{ flex: 1, overflowY: "auto", padding: `0 ${SPACE.pageX}px ${SPACE.pageX}px` }}>
         {!hasRegionSelection && (
           <div style={{ margin: `${SPACE.cardGap}px 0`, background: UI.surface, border: `1px solid ${UI.line}`, borderRadius: 14, padding: `${SPACE.cardPad}px ${SPACE.cardPad}px 12px` }}>
-            <div style={{ ...TYPE.sectionTitle, color: T.text, marginBottom: 6 }}>先選一個地區開始看</div>
+            <div style={{ ...TYPE.sectionTitle, color: T.text, marginBottom: 6 }}>先選地區</div>
             <div style={{ ...TYPE.body, color: T.sub, marginBottom: 10 }}>
-              右上角可以切換地區。首頁先聚焦在單一城市，列表會比較清楚。
+              選一個城市，列表會更準。
             </div>
             <button
               onClick={onOpenRegionPicker}
@@ -1068,7 +1068,7 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
                 fontFamily: "inherit",
               }}
             >
-              選擇地區
+              選地區
             </button>
           </div>
         )}
@@ -1123,13 +1123,13 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
         {loading ? (
           <div style={{ textAlign: "center", padding: "60px 0", color: T.sub }}>
             <div style={{ fontSize: 32, marginBottom: 10 }}>☕</div>
-            <div>載入中...</div>
+            <div>載入咖啡廳...</div>
           </div>
         ) : (
           <>
             <div style={{ ...TYPE.meta, color: T.sub, margin: `${SPACE.groupGap}px 0 ${SPACE.cardGap}px` }}>共 {total} 間{total > PER_PAGE ? `（顯示第 ${start + 1}-${Math.min(start + PER_PAGE, total)} 間）` : ""}</div>
             {filtered.map(c => <CafeCard key={c.id} cafe={c} onClick={() => onSelect(c)} fav={favs.has(c.id)} onFav={onFav} emptyCafeIds={emptyCafeIds} />)}
-            {filtered.length === 0 && <div style={{ textAlign: "center", padding: "40px 0", color: T.sub }}>找不到符合條件的咖啡廳</div>}
+            {filtered.length === 0 && <div style={{ textAlign: "center", padding: "40px 0", color: T.sub }}>沒有符合條件的咖啡廳</div>}
             <Pagination page={page} total={total} onPage={setPage} />
           </>
         )}
@@ -1165,7 +1165,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
   const requestSortLocation = useCallback(() => {
     setLocationError("");
     if (!navigator.geolocation || !window.isSecureContext) {
-      setLocationError("目前瀏覽器無法使用定位。");
+      setLocationError("這個瀏覽器無法定位。");
       return;
     }
     setLocationLoading(true);
@@ -1175,7 +1175,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
         setLocationLoading(false);
       },
       () => {
-        setLocationError("無法取得位置，先用預設排序。");
+        setLocationError("定位失敗，先用預設排序。");
         setLocationLoading(false);
       },
       { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 },
@@ -1248,10 +1248,10 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
       {/* 滾動區 */}
       <div style={{ flex: 1, overflowY: "auto", padding: `0 ${SPACE.pageX}px ${SPACE.pageX}px` }}>
         <div style={{ ...TYPE.meta, color: T.sub, margin: `${SPACE.groupGap}px 0` }}>
-          {userLocation ? "依距離由近到遠" : locationLoading ? "正在取得目前位置" : "開啟定位後可查看附近咖啡廳"}・共 {total} 間{total > PER_PAGE ? `（第 ${start + 1}-${Math.min(start + PER_PAGE, total)} 間）` : ""}
+          {userLocation ? "依距離由近到遠" : locationLoading ? "正在取得位置" : "允許定位後依距離排序"}・共 {total} 間{total > PER_PAGE ? `（第 ${start + 1}-${Math.min(start + PER_PAGE, total)} 間）` : ""}
         </div>
         {loading ? (
-          <div style={{ textAlign: "center", padding: "60px 0", color: T.sub }}><div style={{ fontSize: 32, marginBottom: 10 }}>☕</div><div>載入中...</div></div>
+          <div style={{ textAlign: "center", padding: "60px 0", color: T.sub }}><div style={{ fontSize: 32, marginBottom: 10 }}>☕</div><div>載入咖啡廳...</div></div>
         ) : (
           <>
             {sorted.map((c, i) => (
@@ -1264,7 +1264,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
                 <div style={{ flex: 1 }}><CafeCard cafe={c} onClick={() => onSelect(c)} fav={favs.has(c.id)} onFav={onFav} emptyCafeIds={new Set()} /></div>
               </div>
             ))}
-            {sorted.length === 0 && <div style={{ textAlign: "center", padding: "40px 0", color: T.sub }}>找不到符合條件的咖啡廳</div>}
+            {sorted.length === 0 && <div style={{ textAlign: "center", padding: "40px 0", color: T.sub }}>沒有符合條件的咖啡廳</div>}
             <Pagination page={page} total={total} onPage={setPage} />
           </>
         )}
@@ -1475,11 +1475,11 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
 
   const requestUserLocation = useCallback(async ({ silent = false, zoom = 15, mode = "manual" } = {}) => {
     if (!navigator.geolocation) {
-      if (!silent) setLocateError("目前瀏覽器不支援定位。");
+      if (!silent) setLocateError("這個瀏覽器不支援定位。");
       return;
     }
     if (!window.isSecureContext) {
-      if (!silent) setLocateError("定位需要在 HTTPS 或 localhost 環境下使用。");
+      if (!silent) setLocateError("定位需要 HTTPS 才能使用。");
       return;
     }
 
@@ -1508,11 +1508,11 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
   const handleLocateError = useCallback((err) => {
     const code = err?.code;
     if (code === 1) {
-      setLocateError("定位權限被拒絕，請在瀏覽器允許位置權限後再試一次。");
+      setLocateError("請在瀏覽器設定允許位置權限。");
     } else if (code === 3) {
-      setLocateError("定位逾時，請移動到訊號較好的地方再試一次。");
+      setLocateError("定位逾時，請到訊號較好的地方再試。");
     } else {
-      setLocateError("目前無法取得位置，請稍後再試。");
+      setLocateError("暫時無法取得位置，請稍後再試。");
     }
     setLocating(false);
   }, []);
@@ -1607,7 +1607,7 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
   return (
     <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", overflow: "hidden" }}>
       <div style={{ display: "flex", justifyContent: "flex-end", padding: "10px 16px 6px" }}>
-        <div style={{ ...TYPE.meta, color: T.sub }}>{loading ? "載入全台資料..." : `${visibleMapCafes.length} 間咖啡廳`}</div>
+        <div style={{ ...TYPE.meta, color: T.sub }}>{loading ? "載入地圖資料..." : `${visibleMapCafes.length} 間咖啡廳`}</div>
       </div>
 
       {/* Search */}
@@ -1803,23 +1803,23 @@ const CrowdReport = ({ cafeId, onReport }) => {
     <div style={{ background: UI.surface, borderRadius: 12, border: `1px solid ${UI.line}`, padding: 16, marginBottom: 14 }}>
       <div style={{ ...TYPE.sectionTitle, color: T.text, marginBottom: 10 }}>現在人多嗎？</div>
       {loading ? (
-        <div style={{ ...TYPE.meta, color: T.sub }}>載入中...</div>
+        <div style={{ ...TYPE.meta, color: T.sub }}>載入狀態...</div>
       ) : submitted && !editing ? (
         <>
-          <div style={{ ...TYPE.body, color: T.green, marginBottom: 4 }}>✅ 感謝你的回報！</div>
+          <div style={{ ...TYPE.body, color: T.green, marginBottom: 4 }}>✅ 已收到，謝謝！</div>
           <div style={{ ...TYPE.body, color: T.text, marginBottom: 8 }}>{statusLabel[report?.status]}</div>
-          <button onClick={() => setEditing(true)} style={{ ...TYPE.control, color: T.brown, background: "none", border: "none", cursor: "pointer", textDecoration: "underline" }}>更新回報</button>
+          <button onClick={() => setEditing(true)} style={{ ...TYPE.control, color: T.brown, background: "none", border: "none", cursor: "pointer", textDecoration: "underline" }}>更新狀態</button>
         </>
       ) : editing || !report ? (
         <>
-          {editing && <div style={{ ...TYPE.meta, color: T.sub, marginBottom: 8 }}>選擇目前狀況：</div>}
+          {editing && <div style={{ ...TYPE.meta, color: T.sub, marginBottom: 8 }}>現在狀況</div>}
           {buttons}
         </>
       ) : (
         <>
           <div style={{ ...TYPE.body, color: T.text, marginBottom: 6 }}>{statusLabel[report.status]}</div>
           <div style={{ ...TYPE.caption, color: T.sub, marginBottom: 10 }}>{timeAgo(report.reported_at)}</div>
-          <button onClick={() => setEditing(true)} style={{ ...TYPE.control, color: T.brown, background: "none", border: "none", cursor: "pointer", textDecoration: "underline" }}>更新回報</button>
+          <button onClick={() => setEditing(true)} style={{ ...TYPE.control, color: T.brown, background: "none", border: "none", cursor: "pointer", textDecoration: "underline" }}>更新狀態</button>
         </>
       )}
     </div>
@@ -1879,7 +1879,7 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
     try {
       await onHideCafe(cafe);
     } catch (error) {
-      setHideError(error.message || "目前無法隱藏這家店，請稍後再試。");
+      setHideError(error.message || "隱藏失敗，請稍後再試。");
       setHideBusy(false);
     }
   };
@@ -1933,7 +1933,7 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
           {cafe.standing_desk === "yes" && <Tag label="站立桌" type="gray" onClick={applyTagFilter("standing")} />}
           {crowdTagFromIds(cafe.id, emptyCafeIds, applyTagFilter("empty"))}
         </div>
-        <div style={{ ...TYPE.caption, color: T.sub, marginBottom: SPACE.pageX }}>點標籤找相似店</div>
+        <div style={{ ...TYPE.caption, color: T.sub, marginBottom: SPACE.pageX }}>點標籤看相似店</div>
 
         <CrowdReport cafeId={cafe.id} onReport={onReport} />
 
@@ -2010,7 +2010,7 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
                 fontFamily: "inherit",
               }}
             >
-              {hideBusy ? "處理中..." : "🙈 隱藏這家店"}
+              {hideBusy ? "隱藏中..." : "🙈 隱藏這家店"}
             </button>
             {hideError && <div style={{ fontSize: 12, color: UI.danger, marginBottom: 10 }}>{hideError}</div>}
           </>
@@ -2170,9 +2170,9 @@ export default function App() {
       });
       if (error) throw error;
       redirectStarted = true;
-      setAuthMessage("即將跳轉到 Google 完成登入。");
+      setAuthMessage("正在前往 Google 登入。");
     } catch (error) {
-      setAuthError(error.message || "目前無法登入，請稍後再試。");
+      setAuthError(error.message || "登入失敗，請稍後再試。");
     } finally {
       if (redirectStarted) return;
       window.setTimeout(() => {
@@ -2190,7 +2190,7 @@ export default function App() {
       if (error) throw error;
       setAuthMessage("已登出。");
     } catch (error) {
-      setAuthError(error.message || "目前無法登出，請稍後再試。");
+      setAuthError(error.message || "登出失敗，請稍後再試。");
     } finally {
       setAuthBusy(false);
     }
@@ -2266,8 +2266,8 @@ export default function App() {
   const regionOptionKeys = useMemo(() => new Set(availableRegions.map((item) => item.key)), [availableRegions]);
   const hasRegionSelection = region !== REGION_PROMPT_KEY;
   const regionLabel = region === REGION_PROMPT_KEY
-    ? "請選擇地區"
-    : (availableRegions.find((item) => item.key === region)?.label || "請選擇地區");
+    ? "選地區"
+    : (availableRegions.find((item) => item.key === region)?.label || "選地區");
   const regionScopedCafes = useMemo(() => {
     if (region === REGION_PROMPT_KEY) return [];
     return countryScopedCafes.filter((cafe) => getCafeRegionGroupKey(cafe) === region);
@@ -2351,7 +2351,7 @@ export default function App() {
     ? ""
     : hasRegionSelection
       ? `📍 ${regionLabel}・${homeCafes.filter(isOpen).length} 間`
-      : `📍 ${selectedCountry.label}・請選擇地區`;
+      : `📍 ${selectedCountry.label}・選地區`;
 
   return (
     <>
