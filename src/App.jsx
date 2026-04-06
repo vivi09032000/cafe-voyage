@@ -136,6 +136,7 @@ const REGION_STORAGE_KEY = "cafe-voyage:region";
 const COUNTRY_STORAGE_KEY = "cafe-voyage:country";
 const MAP_CACHE_KEY = "cafe-voyage:map-cafes:v2";
 const MAP_CACHE_TTL = 1000 * 60 * 60 * 12;
+const SEARCH_PLACEHOLDER = "搜尋店名、地址或站點";
 const REGION_PATTERN = /(台北市|新北市|桃園市|台中市|臺中市|台南市|臺南市|高雄市|基隆市|新竹市|新竹縣|苗栗縣|彰化縣|南投縣|雲林縣|嘉義市|嘉義縣|屏東縣|宜蘭縣|花蓮縣|台東縣|臺東縣)/;
 const COUNTRY_OPTIONS = [
   { key: "taiwan", label: "台灣", code: "TW" },
@@ -435,7 +436,7 @@ const FILTER_PRESETS = [
 ];
 
 const FilterChip = ({ active, label, onClick, icon }) => (
-  <button type="button" onClick={onClick} style={{
+  <button type="button" className="soft-press" aria-pressed={active} onClick={onClick} style={{
     background: active ? T.green : UI.oat,
     color: active ? UI.onDark : T.sub,
     border: `1px solid ${active ? T.green : UI.line}`,
@@ -886,6 +887,7 @@ const BottomNav = ({ active, onChange }) => (
         return (
           <button
             key={key}
+            className="soft-press nav-item"
             aria-label={label}
             onClick={() => onChange(key)}
             style={{
@@ -988,6 +990,7 @@ const SwipeBackShell = ({ enabled, onBack, children }) => {
 // ── Cafe Card ──
 const CafeCard = ({ cafe, onClick, fav, onFav, emptyCafeIds }) => (
   <div
+    className="cafe-card-shell"
     role="button"
     tabIndex={0}
     aria-label={`查看 ${cafe.name} 詳情`}
@@ -1020,6 +1023,7 @@ const CafeCard = ({ cafe, onClick, fav, onFav, emptyCafeIds }) => (
           </div>
         </div>
         <button
+          className="soft-press favorite-button"
           aria-label={fav ? `取消收藏 ${cafe.name}` : `收藏 ${cafe.name}`}
           onClick={e => { e.stopPropagation(); onFav(cafe.id); }}
           style={{ background: UI.oat, border: `1px solid ${UI.softLine}`, borderRadius: 999, cursor: "pointer", width: 34, height: 34, flexShrink: 0, color: fav ? T.brown : T.sub, display: "inline-flex", alignItems: "center", justifyContent: "center" }}
@@ -1100,7 +1104,7 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
       <div style={{ flexShrink: 0, padding: `${SPACE.headerTop + 2}px ${SPACE.pageX}px ${SPACE.headerBottom}px`, background: T.cream, borderBottom: `1px solid ${T.beige}` }}>
         <div style={{ position: "relative", marginBottom: SPACE.sectionGap + 2 }}>
           <svg style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)" }} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={UI.placeholder} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
-          <input aria-label="搜尋店名或地址" value={q} onChange={e => setQ(e.target.value)} placeholder="搜尋店名、地址..."
+          <input className="search-input" aria-label={SEARCH_PLACEHOLDER} value={q} onChange={e => setQ(e.target.value)} placeholder={SEARCH_PLACEHOLDER}
             style={{ width: "100%", padding: "10px 14px 10px 36px", borderRadius: 12, border: `1px solid ${UI.inputBorder}`, background: UI.surface, fontSize: 16, outline: "none", boxSizing: "border-box", color: T.text, fontWeight: 500, boxShadow: UI.shadowSoft }} />
         </div>
 
@@ -1113,6 +1117,7 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
               <span style={{ background: UI.chipNeutral, color: UI.chipNeutralText, borderRadius: 18, padding: "9px 14px", fontSize: 12, fontWeight: 700, lineHeight: 1 }}>+{activeFilterCount - 2}</span>
             )}
             <button
+              className="soft-press"
               onClick={() => setFiltersOpen(true)}
               style={{ marginLeft: "auto", background: "none", border: "none", color: T.brown, fontSize: 13, fontWeight: 700, cursor: "pointer", textDecoration: "underline", textUnderlineOffset: 4, fontFamily: "inherit" }}
             >
@@ -1124,6 +1129,7 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
             <FilterSection filters={filters} toggle={toggle} />
             <div style={{ display: "flex", justifyContent: "flex-end" }}>
               <button
+                className="soft-press"
                 onClick={() => setFiltersOpen(false)}
                 style={{ background: "none", border: "none", color: T.brown, fontSize: 13, fontWeight: 700, cursor: "pointer", textDecoration: "underline", textUnderlineOffset: 4, fontFamily: "inherit" }}
               >
@@ -1143,6 +1149,7 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
               選一個城市，列表會更準。
             </div>
             <button
+              className="soft-press"
               onClick={onOpenRegionPicker}
               style={{
                 background: T.brown,
@@ -1167,6 +1174,7 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
               </div>
               {activeFilterCount > 0 && (
                 <button
+                  className="soft-press"
                   type="button"
                   onClick={() => { setFilters({ ...DEFAULT_HOME_FILTERS }); setActivePresetKey(null); setPage(1); }}
                   style={{ background: "none", border: "none", color: T.brown, ...TYPE.control, cursor: "pointer", fontFamily: "inherit", textDecoration: "underline", textUnderlineOffset: 3 }}
@@ -1180,8 +1188,10 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
                 const active = isPresetActive(preset.filters);
                 return (
                   <button
+                    className="soft-press preset-card"
                     key={preset.title}
                     type="button"
+                    aria-pressed={active}
                     onClick={() => applyPreset(preset)}
                     style={{
                       background: active ? T.brown : UI.paper,
@@ -1299,7 +1309,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
         <div style={{ ...TYPE.pageTitle, marginBottom: SPACE.groupGap, color: T.text }}>附近咖啡廳</div>
         <div style={{ position: "relative", marginBottom: SPACE.sectionGap }}>
           <svg style={{ position: "absolute", left: 11, top: "50%", transform: "translateY(-50%)" }} width="15" height="15" viewBox="0 0 24 24" fill="none" stroke={T.sub} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
-          <input aria-label="搜尋附近咖啡廳" value={q} onChange={e => setQ(e.target.value)} placeholder="搜尋..."
+          <input className="search-input" aria-label={SEARCH_PLACEHOLDER} value={q} onChange={e => setQ(e.target.value)} placeholder={SEARCH_PLACEHOLDER}
             style={{ width: "100%", padding: "9px 14px 9px 34px", borderRadius: 14, border: `1px solid ${UI.line}`, background: UI.paper, fontSize: 16, outline: "none", boxSizing: "border-box", color: T.text, boxShadow: UI.shadowSoft }} />
         </div>
         <div style={{ display: "flex", gap: SPACE.chipGap, overflowX: "auto", paddingBottom: SPACE.cardGap }}>
@@ -1309,6 +1319,8 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
               <button
                 key={preset.key}
                 type="button"
+                className="soft-press"
+                aria-pressed={active}
                 onClick={() => setActivePresetKey(preset.key)}
                 style={{
                   border: `1px solid ${active ? T.brown : UI.line}`,
@@ -1700,7 +1712,7 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
       {/* Search */}
       <div style={{ padding: "0 16px 8px", position: "relative", width: "100%", boxSizing: "border-box" }}>
         <svg style={{ position: "absolute", left: 27, top: "50%", transform: "translateY(-60%)" }} width="15" height="15" viewBox="0 0 24 24" fill="none" stroke={T.sub} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
-        <input aria-label="搜尋地圖上的店名、地址或捷運站" value={mapQuery} onFocus={closeSearchPopup} onClick={closeSearchPopup} onChange={e => setMapQuery(e.target.value)} placeholder="搜尋店名、地址、捷運站..."
+        <input className="search-input" aria-label={SEARCH_PLACEHOLDER} value={mapQuery} onFocus={closeSearchPopup} onClick={closeSearchPopup} onChange={e => setMapQuery(e.target.value)} placeholder={SEARCH_PLACEHOLDER}
           style={{ width: "100%", padding: "9px 14px 9px 34px", borderRadius: 14, border: `1px solid ${UI.line}`, background: UI.paper, fontSize: 16, outline: "none", boxSizing: "border-box", color: T.text, boxShadow: UI.shadowSoft }} />
       </div>
 
@@ -1889,7 +1901,7 @@ const CrowdReport = ({ cafeId, onReport }) => {
   const buttons = (
     <div style={{ display: "flex", gap: 8 }}>
       {[["empty","很空"],["normal","普通"],["crowded","很擠"]].map(([val, label]) => (
-        <button key={val} onClick={() => handleReport(val)} style={{
+        <button key={val} className="soft-press" onClick={() => handleReport(val)} style={{
           flex: 1, padding: "10px 4px", borderRadius: 10, border: `1px solid ${T.beige}`,
           background: T.cream, ...TYPE.control, cursor: "pointer", fontFamily: "inherit"
         }}><StatusLabel status={val}>{label}</StatusLabel></button>
@@ -1904,9 +1916,9 @@ const CrowdReport = ({ cafeId, onReport }) => {
         <div style={{ ...TYPE.meta, color: T.sub }}>載入狀態...</div>
       ) : submitted && !editing ? (
         <>
-          <div style={{ ...TYPE.body, color: T.green, marginBottom: 4 }}><InlineIcon name="checkCircle" size={14} color={T.green} /> 已收到，謝謝！</div>
+          <div className="success-pop" style={{ ...TYPE.body, color: T.green, marginBottom: 4 }}><InlineIcon name="checkCircle" size={14} color={T.green} /> 已收到，謝謝！</div>
           <div style={{ ...TYPE.body, color: T.text, marginBottom: 8 }}><StatusLabel status={report?.status}>{statusLabel[report?.status]}</StatusLabel></div>
-          <button onClick={() => setEditing(true)} style={{ ...TYPE.control, color: T.brown, background: "none", border: "none", cursor: "pointer", textDecoration: "underline" }}>更新狀態</button>
+          <button className="soft-press" onClick={() => setEditing(true)} style={{ ...TYPE.control, color: T.brown, background: "none", border: "none", cursor: "pointer", textDecoration: "underline" }}>更新狀態</button>
         </>
       ) : editing || !report ? (
         <>
@@ -1917,7 +1929,7 @@ const CrowdReport = ({ cafeId, onReport }) => {
         <>
           <div style={{ ...TYPE.body, color: T.text, marginBottom: 6 }}><StatusLabel status={report.status}>{statusLabel[report.status]}</StatusLabel></div>
           <div style={{ ...TYPE.caption, color: T.sub, marginBottom: 10 }}>{timeAgo(report.reported_at)}</div>
-          <button onClick={() => setEditing(true)} style={{ ...TYPE.control, color: T.brown, background: "none", border: "none", cursor: "pointer", textDecoration: "underline" }}>更新狀態</button>
+          <button className="soft-press" onClick={() => setEditing(true)} style={{ ...TYPE.control, color: T.brown, background: "none", border: "none", cursor: "pointer", textDecoration: "underline" }}>更新狀態</button>
         </>
       )}
     </div>
@@ -2084,6 +2096,7 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
             href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${cafe.name} ${cafe.address}`)}`}
             target="_blank"
             rel="noreferrer"
+            className="soft-press"
             style={{ display: "block", background: T.brown, color: UI.onDark, borderRadius: 14, padding: "12px", textAlign: "center", textDecoration: "none", ...TYPE.control, marginBottom: 10, boxShadow: UI.activeShadow }}
           >
             <InlineIcon name="map" size={14} color={UI.onDark} /> 在 Google Maps 開啟
@@ -2092,6 +2105,7 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
         {canManageCafe && (
           <>
             <button
+              className="soft-press"
               onClick={handleHideCafe}
               disabled={hideBusy}
               style={{
@@ -2455,7 +2469,7 @@ export default function App() {
 
   return (
     <>
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap');html,body,#root{height:100%}*{margin:0;padding:0;box-sizing:border-box}body{font-family:${FONT.body};font-kerning:normal;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;background:${UI.pageBg}}input,button,textarea,select{font:inherit}input::placeholder{color:${UI.placeholder};opacity:1}button:focus-visible,[role="button"]:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid ${UI.sage} !important;outline-offset:3px}::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:${T.beige};border-radius:3px}.map-popup .leaflet-popup-content-wrapper{border-radius:16px;border:1px solid ${UI.line};box-shadow:${UI.popupShadow}}.map-popup .leaflet-popup-content{margin:10px 12px;min-width:0 !important;width:min(220px,calc(100vw - 88px)) !important}.map-popup .leaflet-popup-close-button{padding:8px 10px 0 0;font-size:18px}`}</style>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap');html,body,#root{height:100%}*{margin:0;padding:0;box-sizing:border-box}body{font-family:${FONT.body};font-kerning:normal;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;background:${UI.pageBg}}input,button,textarea,select{font:inherit}input::placeholder{color:${UI.placeholder};opacity:1}button:focus-visible,[role="button"]:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid ${UI.sage} !important;outline-offset:3px}::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:${T.beige};border-radius:3px}.soft-press,.cafe-card-shell,.nav-item{-webkit-tap-highlight-color:transparent;transform:translateZ(0)}.search-input{transition:border-color 160ms ease,box-shadow 160ms ease,background 160ms ease}.search-input:focus{border-color:${T.brown}!important;box-shadow:0 0 0 3px rgba(92,61,46,.10),0 8px 18px rgba(62,39,35,.05)!important}.map-popup .leaflet-popup-content-wrapper{border-radius:16px;border:1px solid ${UI.line};box-shadow:${UI.popupShadow}}.map-popup .leaflet-popup-content{margin:10px 12px;min-width:0 !important;width:min(220px,calc(100vw - 88px)) !important}.map-popup .leaflet-popup-close-button{padding:8px 10px 0 0;font-size:18px}@media (prefers-reduced-motion:no-preference){.soft-press,.cafe-card-shell{transition:transform 150ms cubic-bezier(.22,1,.36,1),filter 150ms ease,background-color 150ms ease,border-color 150ms ease,color 150ms ease,box-shadow 150ms ease}.soft-press:active,.cafe-card-shell:active{transform:translateY(1px) scale(.99)}.nav-item:active{transform:translateY(1px) scale(.98)}@media (hover:hover){.soft-press:hover,.cafe-card-shell:hover{transform:translateY(-1px)}}.preset-card[aria-pressed="true"]{animation:soft-settle 220ms cubic-bezier(.22,1,.36,1)}.success-pop{animation:success-pop 260ms cubic-bezier(.22,1,.36,1)}@keyframes soft-settle{from{transform:scale(.985)}to{transform:scale(1)}}@keyframes success-pop{0%{transform:translateY(2px);opacity:.72}100%{transform:translateY(0);opacity:1}}}`}</style>
       <div style={{ maxWidth: 430, margin: "0 auto", width: "100%", height: "100svh", minHeight: "100dvh", display: "flex", flexDirection: "column", background: T.cream, overflow: "hidden", boxShadow: UI.shellShadow }}>
         {!selected && <Header cityLabel={hasRegionSelection ? regionLabel : selectedCountry.label} subtitle={headerSubtitle} onOpenMenu={() => setMenuOpen(true)} />}
         {selected ? (
