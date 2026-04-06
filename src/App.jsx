@@ -285,6 +285,8 @@ const formatDistance = (km) => {
   return `${km.toFixed(km < 10 ? 1 : 0)} km`;
 };
 
+const workScore = (cafe) => (Number(cafe.wifi) || 0) + (Number(cafe.quiet) || 0) + (Number(cafe.tasty) || 0);
+
 // ── Header ──
 const Header = ({ title = "Cafe Voyage", cityLabel, subtitle, onOpenMenu }) => {
   const metaText = subtitle ?? cityLabel;
@@ -745,8 +747,8 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
   const [page, setPage] = useState(1);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [filters, setFilters] = useState({
-    noLimit: true, socket: false, standing: false,
-    wifi: true, quiet: false, tasty: false, cheap: false,
+    noLimit: false, socket: false, standing: false,
+    wifi: false, quiet: false, tasty: false, cheap: false,
     empty: false,
   });
 
@@ -762,7 +764,8 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
     .filter(c => !filters.quiet || c.quiet >= 4)
     .filter(c => !filters.tasty || c.tasty >= 4)
     .filter(c => !filters.cheap || c.cheap >= 4)
-    .filter(c => !filters.empty || emptyCafeIds.has(c.id));
+    .filter(c => !filters.empty || emptyCafeIds.has(c.id))
+    .sort((a, b) => workScore(b) - workScore(a));
 
   const total = allFiltered.length;
   const start = (page - 1) * PER_PAGE;
@@ -794,7 +797,7 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
               onClick={() => setFiltersOpen(true)}
               style={{ marginLeft: "auto", background: "none", border: "none", color: T.brown, fontSize: 13, fontWeight: 700, cursor: "pointer", textDecoration: "underline", textUnderlineOffset: 4, fontFamily: "inherit" }}
             >
-              篩選 ▾
+              {activeFilterCount > 0 ? "篩選 ▾" : "篩選"}
             </button>
           </div>
         ) : (
@@ -884,7 +887,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
     .filter(isOpen)
     .filter(c => c.wifi > 0 || c.quiet > 0)
     .filter(c => !q || c.name.includes(q) || c.address.includes(q) || (c.mrt && c.mrt.includes(q)))
-    .map((c) => ({ ...c, _workScore: c.wifi + c.quiet + c.tasty, _distanceKm: distanceKm(userLocation, c) }))
+    .map((c) => ({ ...c, _workScore: workScore(c), _distanceKm: distanceKm(userLocation, c) }))
     .sort((a, b) => {
       if (sortMode === "nearby" && userLocation) {
         return a._distanceKm - b._distanceKm;
