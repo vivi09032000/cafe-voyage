@@ -61,11 +61,48 @@ const UI = {
   paper: "#FFFDF8",
   oat: "#F6EFE7",
   latte: "#EFE4D5",
+  surface: "#FFFDF8",
+  panel: "rgba(255, 253, 248, 0.92)",
   line: "rgba(92, 61, 46, 0.14)",
   softLine: "rgba(92, 61, 46, 0.08)",
+  hairline: "rgba(92, 61, 46, 0.08)",
   muted: "rgba(122, 102, 82, 0.88)",
+  subtle: "rgba(122, 102, 82, 0.72)",
+  onDark: "#FFF8EE",
+  onDarkMuted: "#F1E5D6",
+  placeholder: "#A89880",
+  inputBorder: "#C8BFB5",
+  chipNeutral: "#E7DCCD",
+  chipNeutralText: "#8A745F",
+  warning: "#B7791F",
+  danger: "#9B2335",
+  scoreWarm: "#C8A96D",
+  scoreClay: "#B9785F",
+  scoreTrack: "rgba(92, 61, 46, 0.12)",
+  overlay: "rgba(32, 24, 18, 0.26)",
   sage: "#6F7F62",
   shadow: "0 10px 24px rgba(62, 39, 35, 0.06)",
+  shadowMedium: "0 14px 34px rgba(62, 39, 35, 0.14)",
+  shadowStrong: "0 18px 40px rgba(62, 39, 35, 0.18)",
+  drawerShadow: "-18px 0 40px rgba(62, 39, 35, 0.18)",
+  shadowSoft: "0 6px 16px rgba(62, 39, 35, 0.04)",
+  activeShadow: "0 10px 22px rgba(92, 61, 46, 0.10)",
+  activeShadowSmall: "0 8px 18px rgba(92, 61, 46, 0.12)",
+  controlShadow: "0 8px 22px rgba(62, 39, 35, 0.13)",
+  popupShadow: "0 12px 28px rgba(62, 39, 35, 0.16)",
+  shellShadow: "0 0 40px rgba(62, 39, 35, 0.15)",
+  greenShadow: "0 8px 18px rgba(45, 74, 62, 0.12)",
+  navFade: "linear-gradient(180deg, rgba(250, 246, 240, 0), rgba(232, 221, 208, 0.96) 34%)",
+  avatarGradient: "linear-gradient(180deg, #F1E7DA 0%, #EADCCC 100%)",
+  selectedTint: "rgba(92, 61, 46, 0.04)",
+  selectedHairline: "rgba(92, 61, 46, 0.06)",
+  cardBorder: "rgba(232, 221, 208, 0.75)",
+  regionBorder: "rgba(232, 221, 208, 0.92)",
+  activeSubtitle: "rgba(255, 248, 238, 0.82)",
+  pageBg: "#F0EBE4",
+  mapUser: "#4285F4",
+  mapStation: "#C84C31",
+  mapPinInner: "#FFF8EE",
 };
 const FONT = {
   display: "'Playfair Display', Georgia, serif",
@@ -143,10 +180,10 @@ const isOpen = (c) => !CLOSED_KW.some(kw => c.name.includes(kw));
 const scoreBar = (val, max = 5) => {
   if (!val || val === 0) return null;
   const pct = (val / max) * 100;
-  const color = pct >= 70 ? T.green : pct >= 40 ? "#C8A96D" : "#B9785F";
+  const color = pct >= 70 ? T.green : pct >= 40 ? UI.scoreWarm : UI.scoreClay;
   return (
     <div style={{ display: "flex", alignItems: "center", gap: 7, flex: 1 }}>
-      <div style={{ flex: 1, height: 4, background: "rgba(92,61,46,0.12)", borderRadius: 999, overflow: "hidden" }}>
+      <div style={{ flex: 1, height: 4, background: UI.scoreTrack, borderRadius: 999, overflow: "hidden" }}>
         <div style={{ width: `${pct}%`, height: "100%", background: color, borderRadius: 4 }} />
       </div>
       <span style={{ ...TYPE.caption, color: UI.muted, minWidth: 24, fontVariantNumeric: "tabular-nums" }}>{val.toFixed(1)}</span>
@@ -163,7 +200,7 @@ const scorePill = (label, val) => {
       gap: 5,
       padding: "5px 8px",
       borderRadius: 999,
-      background: "rgba(246,239,231,0.86)",
+      background: UI.oat,
       border: `1px solid ${UI.softLine}`,
       color: T.sub,
       ...TYPE.caption,
@@ -178,9 +215,9 @@ const scorePill = (label, val) => {
 
 const Tag = ({ label, type = "green", onClick }) => {
   const styles = {
-    green: { bg: T.green, color: "#fff" },
-    amber: { bg: "#b7791f", color: "#fff" },
-    red: { bg: "#9b2335", color: "#fff" },
+    green: { bg: T.green, color: UI.onDark },
+    amber: { bg: UI.warning, color: UI.onDark },
+    red: { bg: UI.danger, color: UI.onDark },
     gray: { bg: T.beige, color: T.sub },
   };
   const s = styles[type] || styles.gray;
@@ -304,7 +341,7 @@ const FILTER_PRESETS = [
 const FilterChip = ({ active, label, onClick, icon }) => (
   <button type="button" onClick={onClick} style={{
     background: active ? T.green : UI.oat,
-    color: active ? "#fff" : T.sub,
+    color: active ? UI.onDark : T.sub,
     border: `1px solid ${active ? T.green : UI.line}`,
     borderRadius: 18,
     padding: "8px 14px",
@@ -312,7 +349,7 @@ const FilterChip = ({ active, label, onClick, icon }) => (
     cursor: "pointer",
     fontWeight: active ? 700 : 600,
     fontFamily: "inherit",
-    boxShadow: active ? "0 8px 18px rgba(45, 74, 62, 0.12)" : "none",
+    boxShadow: active ? UI.greenShadow : "none",
     transition: "background 160ms ease, border-color 160ms ease, color 160ms ease",
   }}>
     {active ? "✓ " : ""}{icon ? `${icon} ` : ""}{label}
@@ -320,7 +357,7 @@ const FilterChip = ({ active, label, onClick, icon }) => (
 );
 
 const FilterSection = ({ filters, toggle }) => (
-  <div style={{ marginBottom: 14, background: "rgba(255,253,248,0.78)", border: `1px solid ${UI.line}`, borderRadius: 18, padding: 12 }}>
+  <div style={{ marginBottom: 14, background: UI.panel, border: `1px solid ${UI.line}`, borderRadius: 18, padding: 12 }}>
     {[
       {
         title: "工作環境",
@@ -366,12 +403,12 @@ const Pagination = ({ page, total, onPage }) => {
   return (
     <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 12, padding: "14px 0 4px" }}>
       <button onClick={() => onPage(page - 1)} disabled={page <= 1} style={{
-        background: page <= 1 ? T.beige : T.brown, color: page <= 1 ? T.sub : "#fff",
+        background: page <= 1 ? T.beige : T.brown, color: page <= 1 ? T.sub : UI.onDark,
         border: "none", borderRadius: 8, padding: "6px 14px", fontSize: 12, cursor: page <= 1 ? "default" : "pointer", fontFamily: "inherit",
       }}>← 上一頁</button>
       <span style={{ fontSize: 12, color: T.sub }}>{page} / {maxPage}</span>
       <button onClick={() => onPage(page + 1)} disabled={page >= maxPage} style={{
-        background: page >= maxPage ? T.beige : T.brown, color: page >= maxPage ? T.sub : "#fff",
+        background: page >= maxPage ? T.beige : T.brown, color: page >= maxPage ? T.sub : UI.onDark,
         border: "none", borderRadius: 8, padding: "6px 14px", fontSize: 12, cursor: page >= maxPage ? "default" : "pointer", fontFamily: "inherit",
       }}>下一頁 →</button>
     </div>
@@ -415,11 +452,11 @@ const Header = ({ title = "Cafe Voyage", cityLabel, subtitle, onOpenMenu }) => {
   return (
   <div style={{ background: T.brown, padding: "18px 22px 22px", display: "flex", justifyContent: "space-between", alignItems: "center", flexShrink: 0 }}>
     <div>
-      <div style={{ ...TYPE.brand, color: "#fff" }}>{title}</div>
-      {metaText !== "" && <div style={{ ...TYPE.meta, color: "#f1e5d6", marginTop: 5 }}>{metaText}</div>}
+      <div style={{ ...TYPE.brand, color: UI.onDark }}>{title}</div>
+      {metaText !== "" && <div style={{ ...TYPE.meta, color: UI.onDarkMuted, marginTop: 5 }}>{metaText}</div>}
     </div>
     <button aria-label="開啟設定選單" onClick={onOpenMenu} style={{ background: "none", border: "none", cursor: "pointer", padding: 4 }}>
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.2" strokeLinecap="round">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={UI.onDark} strokeWidth="2.2" strokeLinecap="round">
         <line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" />
       </svg>
     </button>
@@ -478,7 +515,7 @@ const SettingsPanel = ({
       width: "100%",
       background: "none",
       border: "none",
-      borderBottom: `1px solid rgba(92, 61, 46, 0.08)`,
+      borderBottom: `1px solid ${UI.hairline}`,
       padding: "10px 0",
       display: "flex",
       alignItems: "flex-start",
@@ -495,9 +532,9 @@ const SettingsPanel = ({
       <>
         <div>
           <div style={{ ...TYPE.body, fontWeight: 680, color: T.text, marginBottom: subtitle ? 1 : 0, letterSpacing: "-0.01em" }}>{title}</div>
-          {subtitle && <div style={{ ...TYPE.caption, color: "rgba(122, 102, 82, 0.86)" }}>{subtitle}</div>}
+          {subtitle && <div style={{ ...TYPE.caption, color: UI.muted }}>{subtitle}</div>}
         </div>
-        <div style={{ fontSize: 15, color: "rgba(122, 102, 82, 0.7)", flexShrink: 0, paddingTop: 1 }}>{href ? "›" : ""}</div>
+        <div style={{ fontSize: 15, color: UI.subtle, flexShrink: 0, paddingTop: 1 }}>{href ? "›" : ""}</div>
       </>
     );
 
@@ -513,7 +550,7 @@ const SettingsPanel = ({
   };
 
   return (
-    <div style={{ position: "absolute", inset: 0, zIndex: 40, background: "rgba(32, 24, 18, 0.26)" }} onClick={onClose}>
+    <div style={{ position: "absolute", inset: 0, zIndex: 40, background: UI.overlay }} onClick={onClose}>
       <div
         style={{
           position: "absolute",
@@ -521,8 +558,8 @@ const SettingsPanel = ({
           right: 0,
           width: "min(84vw, 312px)",
           height: "100%",
-          background: "#fffaf4",
-          boxShadow: "-18px 0 40px rgba(0,0,0,0.18)",
+          background: UI.oat,
+          boxShadow: UI.drawerShadow,
           display: "flex",
           flexDirection: "column",
           overflowY: "auto",
@@ -540,14 +577,14 @@ const SettingsPanel = ({
           </button>
         </div>
 
-        <div style={{ background: "rgba(255,255,255,0.92)", border: "1px solid rgba(232, 221, 208, 0.75)", borderRadius: 16, padding: 12, margin: "0 16px 10px" }}>
+        <div style={{ background: UI.panel, border: `1px solid ${UI.cardBorder}`, borderRadius: 16, padding: 12, margin: "0 16px 10px" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
             <div
               style={{
                 width: 40,
                 height: 40,
                 borderRadius: "50%",
-                background: "linear-gradient(180deg, #f1e7da 0%, #eadccc 100%)",
+                background: UI.avatarGradient,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -561,7 +598,7 @@ const SettingsPanel = ({
               <div style={{ ...TYPE.cardTitle, color: T.text }}>
                 {user ? "已登入" : "尚未登入"}
               </div>
-              <div style={{ ...TYPE.caption, color: "rgba(122, 102, 82, 0.88)", marginTop: 2 }}>
+              <div style={{ ...TYPE.caption, color: UI.muted, marginTop: 2 }}>
                 {user ? (user.email || "已連接 Google 帳號") : "用 Google 同步收藏"}
               </div>
             </div>
@@ -574,7 +611,7 @@ const SettingsPanel = ({
               style={{
                 width: "100%",
                 background: T.brown,
-                color: "#fff",
+                color: UI.onDark,
                 border: "none",
                 borderRadius: 14,
                 padding: "11px 12px",
@@ -595,7 +632,7 @@ const SettingsPanel = ({
               style={{
                 width: "100%",
                 background: T.brown,
-                color: "#fff",
+                color: UI.onDark,
                 border: "none",
                 borderRadius: 14,
                 padding: "11px 12px",
@@ -612,12 +649,12 @@ const SettingsPanel = ({
           )}
 
           {authMessage && <div style={{ ...TYPE.caption, color: T.green, marginTop: 6 }}>{authMessage}</div>}
-          {authError && <div style={{ ...TYPE.caption, color: "#9b2335", marginTop: 6 }}>{authError}</div>}
+          {authError && <div style={{ ...TYPE.caption, color: UI.danger, marginTop: 6 }}>{authError}</div>}
         </div>
 
-        <div style={{ background: "rgba(255,255,255,0.92)", border: "1px solid rgba(232, 221, 208, 0.75)", borderRadius: 16, padding: 12, margin: "0 16px 10px" }}>
-          <div style={{ ...TYPE.caption, color: "rgba(122, 102, 82, 0.82)", marginBottom: 8 }}>地區選擇</div>
-          <div style={{ border: "1px solid rgba(92, 61, 46, 0.12)", borderRadius: 14, overflow: "hidden", marginBottom: 10, background: "#fff" }}>
+        <div style={{ background: UI.panel, border: `1px solid ${UI.cardBorder}`, borderRadius: 16, padding: 12, margin: "0 16px 10px" }}>
+          <div style={{ ...TYPE.caption, color: UI.muted, marginBottom: 8 }}>地區選擇</div>
+          <div style={{ border: `1px solid ${UI.scoreTrack}`, borderRadius: 14, overflow: "hidden", marginBottom: 10, background: UI.surface }}>
             <button
               aria-label="切換國家選單"
               onClick={() => setCountryMenuOpen((openState) => !openState)}
@@ -625,7 +662,7 @@ const SettingsPanel = ({
                 width: "100%",
                 background: "none",
                 border: "none",
-                borderBottom: countryMenuOpen ? "1px solid rgba(92, 61, 46, 0.08)" : "none",
+                borderBottom: countryMenuOpen ? `1px solid ${UI.hairline}` : "none",
                 padding: "12px 12px",
                 display: "flex",
                 alignItems: "center",
@@ -657,9 +694,9 @@ const SettingsPanel = ({
                       disabled={!item.enabled}
                       style={{
                         width: "100%",
-                        background: isSelected ? "rgba(92, 61, 46, 0.04)" : "none",
+                        background: isSelected ? UI.selectedTint : "none",
                         border: "none",
-                        borderBottom: "1px solid rgba(92, 61, 46, 0.06)",
+                        borderBottom: `1px solid ${UI.selectedHairline}`,
                         padding: "12px 12px",
                         display: "flex",
                         alignItems: "center",
@@ -693,8 +730,8 @@ const SettingsPanel = ({
                 onClick={() => { setRegion(item.key); onClose(); }}
                 style={{
                   background: region === item.key ? T.brown : T.cream,
-                  color: region === item.key ? "#fff" : T.text,
-                  border: `1px solid ${region === item.key ? T.brown : "rgba(232, 221, 208, 0.92)"}`,
+                  color: region === item.key ? UI.onDark : T.text,
+                  border: `1px solid ${region === item.key ? T.brown : UI.regionBorder}`,
                   borderRadius: 14,
                   padding: "8px 4px",
                   fontSize: 11,
@@ -729,7 +766,7 @@ const NAV_ITEMS = [
 ];
 const BottomNav = ({ active, onChange }) => (
   <div style={{
-    background: "linear-gradient(180deg, rgba(250,246,240,0), rgba(232,221,208,0.96) 34%)",
+    background: UI.navFade,
     padding: "8px 12px calc(10px + env(safe-area-inset-bottom, 0px))",
     flexShrink: 0,
     position: "sticky",
@@ -737,17 +774,17 @@ const BottomNav = ({ active, onChange }) => (
     zIndex: 20,
   }}>
     <div style={{
-      background: "rgba(255,253,248,0.96)",
+      background: UI.panel,
       border: `1px solid ${UI.line}`,
       borderRadius: 24,
-      boxShadow: "0 14px 34px rgba(62,39,35,0.14)",
+      boxShadow: UI.shadowMedium,
       display: "flex",
       justifyContent: "space-around",
       padding: "7px 6px",
     }}>
       {NAV_ITEMS.map(({ key, label, d, circle, pin, heart }) => {
         const on = active === key;
-        const c = on ? "#fff" : T.sub;
+        const c = on ? UI.onDark : T.sub;
         return (
           <button
             key={key}
@@ -885,7 +922,7 @@ const CafeCard = ({ cafe, onClick, fav, onFav, emptyCafeIds }) => (
         <button
           aria-label={fav ? `取消收藏 ${cafe.name}` : `收藏 ${cafe.name}`}
           onClick={e => { e.stopPropagation(); onFav(cafe.id); }}
-          style={{ background: "rgba(250,246,240,0.78)", border: `1px solid ${UI.softLine}`, borderRadius: 999, cursor: "pointer", fontSize: 18, width: 34, height: 34, flexShrink: 0, color: T.text }}
+          style={{ background: UI.oat, border: `1px solid ${UI.softLine}`, borderRadius: 999, cursor: "pointer", fontSize: 18, width: 34, height: 34, flexShrink: 0, color: T.text }}
         >
           {fav ? "⭐" : "☆"}
         </button>
@@ -962,9 +999,9 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
     <div style={{ display: "flex", flexDirection: "column", flex: 1, minHeight: 0, overflow: "hidden" }}>
       <div style={{ flexShrink: 0, padding: "18px 16px 12px", background: T.cream, borderBottom: `1px solid ${T.beige}` }}>
         <div style={{ position: "relative", marginBottom: 16 }}>
-          <svg style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)" }} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A89880" strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
+          <svg style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)" }} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={UI.placeholder} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
           <input aria-label="搜尋店名或地址" value={q} onChange={e => setQ(e.target.value)} placeholder="搜尋店名、地址..."
-            style={{ width: "100%", padding: "10px 14px 10px 36px", borderRadius: 12, border: "1px solid #C8BFB5", background: "#fff", fontSize: 16, outline: "none", boxSizing: "border-box", color: T.text, fontWeight: 500, boxShadow: "0 6px 16px rgba(62,39,35,0.04)" }} />
+            style={{ width: "100%", padding: "10px 14px 10px 36px", borderRadius: 12, border: `1px solid ${UI.inputBorder}`, background: UI.surface, fontSize: 16, outline: "none", boxSizing: "border-box", color: T.text, fontWeight: 500, boxShadow: UI.shadowSoft }} />
         </div>
 
         {!filtersOpen ? (
@@ -973,7 +1010,7 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
               <FilterChip key={label} active={true} label={label} onClick={() => setFiltersOpen(true)} />
             ))}
             {activeFilterCount > 2 && (
-              <span style={{ background: "#e7dccd", color: "#8a745f", borderRadius: 18, padding: "9px 14px", fontSize: 12, fontWeight: 700, lineHeight: 1 }}>+{activeFilterCount - 2}</span>
+              <span style={{ background: UI.chipNeutral, color: UI.chipNeutralText, borderRadius: 18, padding: "9px 14px", fontSize: 12, fontWeight: 700, lineHeight: 1 }}>+{activeFilterCount - 2}</span>
             )}
             <button
               onClick={() => setFiltersOpen(true)}
@@ -1000,7 +1037,7 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
       {/* 滾動區：咖啡廳列表 */}
       <div style={{ flex: 1, overflowY: "auto", padding: "0 16px 16px" }}>
         {!hasRegionSelection && (
-          <div style={{ margin: "12px 0", background: "#fff", border: `1px solid ${T.beige}`, borderRadius: 14, padding: "14px 14px 12px" }}>
+          <div style={{ margin: "12px 0", background: UI.surface, border: `1px solid ${UI.line}`, borderRadius: 14, padding: "14px 14px 12px" }}>
             <div style={{ ...TYPE.sectionTitle, color: T.text, marginBottom: 6 }}>先選一個地區開始看</div>
             <div style={{ ...TYPE.body, color: T.sub, marginBottom: 10 }}>
               右上角可以切換地區。首頁先聚焦在單一城市，列表會比較清楚。
@@ -1009,7 +1046,7 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
               onClick={onOpenRegionPicker}
               style={{
                 background: T.brown,
-                color: "#fff",
+                color: UI.onDark,
                 border: "none",
                 borderRadius: 10,
                 padding: "10px 14px",
@@ -1048,7 +1085,7 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
                     onClick={() => applyPreset(preset)}
                     style={{
                       background: active ? T.brown : UI.paper,
-                      color: active ? "#fff" : T.text,
+                      color: active ? UI.onDark : T.text,
                       border: `1px solid ${active ? T.brown : UI.line}`,
                       borderRadius: 16,
                       padding: "10px 11px",
@@ -1057,13 +1094,13 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
                       textAlign: "left",
                       cursor: "pointer",
                       fontFamily: "inherit",
-                      boxShadow: active ? "0 10px 22px rgba(92,61,46,0.10)" : UI.shadow,
+                      boxShadow: active ? UI.activeShadow : UI.shadow,
                       minHeight: 76,
                       transition: "background 160ms ease, transform 160ms ease, box-shadow 160ms ease",
                     }}
                   >
                     <div style={{ ...TYPE.cardTitle, fontSize: "0.9rem", marginBottom: 4 }}>{preset.title}</div>
-                    <div style={{ ...TYPE.caption, color: active ? "rgba(255,255,255,0.82)" : T.sub }}>{preset.subtitle}</div>
+                    <div style={{ ...TYPE.caption, color: active ? UI.activeSubtitle : T.sub }}>{preset.subtitle}</div>
                   </button>
                 );
               })}
@@ -1163,7 +1200,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
         <div style={{ position: "relative", marginBottom: 14 }}>
           <svg style={{ position: "absolute", left: 11, top: "50%", transform: "translateY(-50%)" }} width="15" height="15" viewBox="0 0 24 24" fill="none" stroke={T.sub} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
           <input aria-label="搜尋附近咖啡廳" value={q} onChange={e => setQ(e.target.value)} placeholder="搜尋..."
-            style={{ width: "100%", padding: "9px 14px 9px 34px", borderRadius: 14, border: `1px solid ${UI.line}`, background: UI.paper, fontSize: 16, outline: "none", boxSizing: "border-box", color: T.text, boxShadow: "0 6px 16px rgba(62,39,35,0.04)" }} />
+            style={{ width: "100%", padding: "9px 14px 9px 34px", borderRadius: 14, border: `1px solid ${UI.line}`, background: UI.paper, fontSize: 16, outline: "none", boxSizing: "border-box", color: T.text, boxShadow: UI.shadowSoft }} />
         </div>
         <div style={{ display: "flex", gap: 7, overflowX: "auto", paddingBottom: 12 }}>
           {[{ key: "all", title: "全部" }, ...FILTER_PRESETS].map((preset) => {
@@ -1176,7 +1213,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
                 style={{
                   border: `1px solid ${active ? T.brown : UI.line}`,
                   background: active ? T.brown : UI.paper,
-                  color: active ? "#fff" : T.sub,
+                  color: active ? UI.onDark : T.sub,
                   borderRadius: 999,
                   padding: "7px 12px",
                   ...TYPE.control,
@@ -1184,7 +1221,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
                   cursor: "pointer",
                   fontFamily: "inherit",
                   flexShrink: 0,
-                  boxShadow: active ? "0 8px 18px rgba(92,61,46,0.12)" : "none",
+                  boxShadow: active ? UI.activeShadowSmall : "none",
                 }}
               >
                 {preset.title}
@@ -1192,7 +1229,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
             );
           })}
         </div>
-        {locationError && <div style={{ ...TYPE.caption, color: "#9b2335", marginBottom: 10 }}>{locationError}</div>}
+        {locationError && <div style={{ ...TYPE.caption, color: UI.danger, marginBottom: 10 }}>{locationError}</div>}
       </div>
 
       {/* 滾動區 */}
@@ -1260,20 +1297,20 @@ const cafeIcon = new L.Icon({
 });
 
 const userIcon = new L.Icon({
-  iconUrl: "data:image/svg+xml," + encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><circle cx='12' cy='12' r='8' fill='%234285F4' stroke='white' stroke-width='3'/></svg>`),
+  iconUrl: "data:image/svg+xml," + encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><circle cx='12' cy='12' r='8' fill='${UI.mapUser}' stroke='${UI.mapPinInner}' stroke-width='3'/></svg>`),
   iconSize: [24, 24], iconAnchor: [12, 12],
 });
 
 const stationIcon = new L.Icon({
   iconUrl: "data:image/svg+xml," + encodeURIComponent(
     `<svg xmlns='http://www.w3.org/2000/svg' width='30' height='42' viewBox='0 0 30 42'>
-      <path d='M15 1C8 1 2.5 6.5 2.5 13.4c0 10.2 12.5 27.6 12.5 27.6s12.5-17.4 12.5-27.6C27.5 6.5 22 1 15 1z' fill='#C84C31' stroke='white' stroke-width='2'/>
-      <circle cx='15' cy='14' r='8' fill='white'/>
-      <path d='M10 12h10v5a5 5 0 0 1-10 0z' fill='#C84C31'/>
-      <rect x='12.5' y='18' width='1.6' height='5' rx='0.8' fill='#C84C31'/>
-      <rect x='15.9' y='18' width='1.6' height='5' rx='0.8' fill='#C84C31'/>
-      <circle cx='12.5' cy='14' r='1' fill='white'/>
-      <circle cx='17.5' cy='14' r='1' fill='white'/>
+      <path d='M15 1C8 1 2.5 6.5 2.5 13.4c0 10.2 12.5 27.6 12.5 27.6s12.5-17.4 12.5-27.6C27.5 6.5 22 1 15 1z' fill='${UI.mapStation}' stroke='${UI.mapPinInner}' stroke-width='2'/>
+      <circle cx='15' cy='14' r='8' fill='${UI.mapPinInner}'/>
+      <path d='M10 12h10v5a5 5 0 0 1-10 0z' fill='${UI.mapStation}'/>
+      <rect x='12.5' y='18' width='1.6' height='5' rx='0.8' fill='${UI.mapStation}'/>
+      <rect x='15.9' y='18' width='1.6' height='5' rx='0.8' fill='${UI.mapStation}'/>
+      <circle cx='12.5' cy='14' r='1' fill='${UI.mapPinInner}'/>
+      <circle cx='17.5' cy='14' r='1' fill='${UI.mapPinInner}'/>
     </svg>`
   ),
   iconSize: [30, 42],
@@ -1564,7 +1601,7 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
       <div style={{ padding: "0 16px 8px", position: "relative", width: "100%", boxSizing: "border-box" }}>
         <svg style={{ position: "absolute", left: 27, top: "50%", transform: "translateY(-60%)" }} width="15" height="15" viewBox="0 0 24 24" fill="none" stroke={T.sub} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
         <input aria-label="搜尋地圖上的店名、地址或捷運站" value={mapQuery} onFocus={closeSearchPopup} onClick={closeSearchPopup} onChange={e => setMapQuery(e.target.value)} placeholder="搜尋店名、地址、捷運站..."
-          style={{ width: "100%", padding: "9px 14px 9px 34px", borderRadius: 14, border: `1px solid ${UI.line}`, background: UI.paper, fontSize: 16, outline: "none", boxSizing: "border-box", color: T.text, boxShadow: "0 6px 16px rgba(62,39,35,0.04)" }} />
+          style={{ width: "100%", padding: "9px 14px 9px 34px", borderRadius: 14, border: `1px solid ${UI.line}`, background: UI.paper, fontSize: 16, outline: "none", boxSizing: "border-box", color: T.text, boxShadow: UI.shadowSoft }} />
       </div>
 
       <div style={{ flex: 1, minHeight: 0, position: "relative", borderTop: `1px solid ${T.beige}`, overflow: "hidden" }}>
@@ -1634,7 +1671,7 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
                     {temporaryClosureTag(c)}
                     {c.wifi > 0 && <span style={{ ...TYPE.caption, background: T.beige, borderRadius: 10, padding: "2px 7px" }}>📶 {c.wifi.toFixed(1)}</span>}
                     {c.quiet > 0 && <span style={{ ...TYPE.caption, background: T.beige, borderRadius: 10, padding: "2px 7px" }}>🔇 {c.quiet.toFixed(1)}</span>}
-                    {c.limited_time === "no" && <span style={{ ...TYPE.caption, background: T.green, color: "#fff", borderRadius: 10, padding: "2px 7px" }}>✓ 不限時</span>}
+                    {c.limited_time === "no" && <span style={{ ...TYPE.caption, background: T.green, color: UI.onDark, borderRadius: 10, padding: "2px 7px" }}>✓ 不限時</span>}
                   </div>
                   <button
                     onClick={(e) => { e.stopPropagation(); onSelect(c); }}
@@ -1642,7 +1679,7 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
                       width: "100%",
                       padding: "10px 0",
                       background: T.brown,
-                      color: "#fff",
+                      color: UI.onDark,
                       border: "none",
                       borderRadius: 10,
                       ...TYPE.control,
@@ -1670,7 +1707,7 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
             position: "absolute", bottom: 20, right: 16, zIndex: 1000,
             width: 40, height: 40, borderRadius: "50%",
             background: UI.paper, border: `1px solid ${UI.line}`,
-            boxShadow: "0 8px 22px rgba(62,39,35,0.13)",
+            boxShadow: UI.controlShadow,
             display: "flex", alignItems: "center", justifyContent: "center",
             cursor: locating ? "default" : "pointer",
             opacity: locating ? 0.7 : 1,
@@ -1688,8 +1725,8 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
         {locateError && (
           <div style={{
             position: "absolute", right: 16, bottom: 68, zIndex: 1000,
-            maxWidth: 260, background: "#fff", color: T.text, border: `1px solid ${T.beige}`,
-            borderRadius: 10, boxShadow: "0 4px 12px rgba(0,0,0,0.12)", padding: "8px 10px",
+            maxWidth: 260, background: UI.surface, color: T.text, border: `1px solid ${UI.line}`,
+            borderRadius: 10, boxShadow: UI.shadow, padding: "8px 10px",
             fontSize: 12, lineHeight: 1.35,
           }}>
             {locateError}
@@ -1750,7 +1787,7 @@ const CrowdReport = ({ cafeId, onReport }) => {
   );
 
   return (
-    <div style={{ background: "#fff", borderRadius: 12, border: `1px solid ${T.beige}`, padding: 16, marginBottom: 14 }}>
+    <div style={{ background: UI.surface, borderRadius: 12, border: `1px solid ${UI.line}`, padding: 16, marginBottom: 14 }}>
       <div style={{ ...TYPE.sectionTitle, color: T.text, marginBottom: 10 }}>現在人多嗎？</div>
       {loading ? (
         <div style={{ ...TYPE.meta, color: T.sub }}>載入中...</div>
@@ -1855,9 +1892,9 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
     >
       <div style={{ background: T.brown, padding: "13px 18px", display: "flex", alignItems: "center", gap: 10 }}>
         <button aria-label="返回上一頁" onClick={onBack} style={{ background: "none", border: "none", cursor: "pointer" }}>
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round"><polyline points="15 18 9 12 15 6" /></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={UI.onDark} strokeWidth="2.5" strokeLinecap="round"><polyline points="15 18 9 12 15 6" /></svg>
         </button>
-        <span style={{ ...TYPE.cardTitle, color: "#fff", flex: 1 }}>{cafe.name}</span>
+        <span style={{ ...TYPE.cardTitle, color: UI.onDark, flex: 1 }}>{cafe.name}</span>
         <button aria-label={fav ? `取消收藏 ${cafe.name}` : `收藏 ${cafe.name}`} onClick={() => onFav(cafe.id)} style={{ background: "none", border: "none", cursor: "pointer", fontSize: 20 }}>{fav ? "⭐" : "☆"}</button>
       </div>
       <div style={{ padding: "16px 18px" }}>
@@ -1873,7 +1910,7 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
         </div>
         {cafe.mrt && <div style={{ ...TYPE.body, color: T.sub, marginBottom: 3 }}>🚇 {cafe.mrt}</div>}
         <div style={{ ...TYPE.body, color: T.sub, marginBottom: 12 }}>📍 {cafe.address}</div>
-        {cafe.google_business_note && <div style={{ ...TYPE.body, color: "#b7791f", marginBottom: 8, fontWeight: 650 }}>⏸ {cafe.google_business_note}</div>}
+        {cafe.google_business_note && <div style={{ ...TYPE.body, color: UI.warning, marginBottom: 8, fontWeight: 650 }}>⏸ {cafe.google_business_note}</div>}
         {cafe.open_time && <div style={{ ...TYPE.body, color: T.text, marginBottom: 8 }}>🕐 {cafe.open_time}</div>}
 
         <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 8 }}>
@@ -1906,7 +1943,7 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
                     onClick={filterKey ? applyTagFilter(filterKey) : undefined}
                     disabled={!filterKey}
                     style={{
-                      background: "rgba(246,239,231,0.72)",
+                      background: UI.oat,
                       border: `1px solid ${UI.softLine}`,
                       borderRadius: 14,
                       padding: "10px 10px",
@@ -1934,7 +1971,7 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
             href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${cafe.name} ${cafe.address}`)}`}
             target="_blank"
             rel="noreferrer"
-            style={{ display: "block", background: T.brown, color: "#fff", borderRadius: 14, padding: "12px", textAlign: "center", textDecoration: "none", ...TYPE.control, marginBottom: 10, boxShadow: "0 10px 22px rgba(92,61,46,0.12)" }}
+            style={{ display: "block", background: T.brown, color: UI.onDark, borderRadius: 14, padding: "12px", textAlign: "center", textDecoration: "none", ...TYPE.control, marginBottom: 10, boxShadow: UI.activeShadow }}
           >
             📍 在 Google Maps 開啟
           </a>
@@ -1947,7 +1984,7 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
               style={{
                 display: "block",
                 width: "100%",
-                background: "#fff",
+                background: UI.surface,
                 color: T.brown,
                 borderRadius: 10,
                 padding: "12px",
@@ -1962,7 +1999,7 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
             >
               {hideBusy ? "處理中..." : "🙈 隱藏這家店"}
             </button>
-            {hideError && <div style={{ fontSize: 12, color: "#9b2335", marginBottom: 10 }}>{hideError}</div>}
+            {hideError && <div style={{ fontSize: 12, color: UI.danger, marginBottom: 10 }}>{hideError}</div>}
           </>
         )}
       </div>
@@ -2305,8 +2342,8 @@ export default function App() {
 
   return (
     <>
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap');html,body,#root{height:100%}*{margin:0;padding:0;box-sizing:border-box}body{font-family:${FONT.body};font-kerning:normal;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;background:#f0ebe4}input,button,textarea,select{font:inherit}input::placeholder{color:#A89880;opacity:1}button:focus-visible,[role="button"]:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid ${UI.sage} !important;outline-offset:3px}::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:${T.beige};border-radius:3px}.map-popup .leaflet-popup-content-wrapper{border-radius:16px;border:1px solid ${UI.line};box-shadow:0 12px 28px rgba(62,39,35,0.16)}.map-popup .leaflet-popup-content{margin:10px 12px;min-width:0 !important;width:min(220px,calc(100vw - 88px)) !important}.map-popup .leaflet-popup-close-button{padding:8px 10px 0 0;font-size:18px}`}</style>
-      <div style={{ maxWidth: 430, margin: "0 auto", width: "100%", height: "100svh", minHeight: "100dvh", display: "flex", flexDirection: "column", background: T.cream, overflow: "hidden", boxShadow: "0 0 40px rgba(0,0,0,0.15)" }}>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap');html,body,#root{height:100%}*{margin:0;padding:0;box-sizing:border-box}body{font-family:${FONT.body};font-kerning:normal;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;background:${UI.pageBg}}input,button,textarea,select{font:inherit}input::placeholder{color:${UI.placeholder};opacity:1}button:focus-visible,[role="button"]:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid ${UI.sage} !important;outline-offset:3px}::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:${T.beige};border-radius:3px}.map-popup .leaflet-popup-content-wrapper{border-radius:16px;border:1px solid ${UI.line};box-shadow:${UI.popupShadow}}.map-popup .leaflet-popup-content{margin:10px 12px;min-width:0 !important;width:min(220px,calc(100vw - 88px)) !important}.map-popup .leaflet-popup-close-button{padding:8px 10px 0 0;font-size:18px}`}</style>
+      <div style={{ maxWidth: 430, margin: "0 auto", width: "100%", height: "100svh", minHeight: "100dvh", display: "flex", flexDirection: "column", background: T.cream, overflow: "hidden", boxShadow: UI.shellShadow }}>
         {!selected && <Header cityLabel={hasRegionSelection ? regionLabel : selectedCountry.label} subtitle={headerSubtitle} onOpenMenu={() => setMenuOpen(true)} />}
         {selected ? (
           <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", overflow: "hidden" }}>
