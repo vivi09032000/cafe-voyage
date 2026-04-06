@@ -859,7 +859,7 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
   );
 };
 
-// ── Page: Search (sorted by wifi+quiet) ──
+// ── Page: Search (sorted by work-friendly score) ──
 const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
   const [q, setQ] = useState("");
   const [page, setPage] = useState(1);
@@ -885,7 +885,6 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
 
   const allSorted = cafes
     .filter(isOpen)
-    .filter(c => c.wifi > 0 || c.quiet > 0)
     .filter(c => !q || c.name.includes(q) || c.address.includes(q) || (c.mrt && c.mrt.includes(q)))
     .map((c) => ({ ...c, _workScore: workScore(c), _distanceKm: distanceKm(userLocation, c) }))
     .sort((a, b) => {
