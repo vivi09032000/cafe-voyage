@@ -119,6 +119,17 @@ const TYPE = {
   control: { fontSize: "0.78rem", lineHeight: 1, fontWeight: 720 },
   nav: { fontSize: "0.68rem", lineHeight: 1.1, fontWeight: 680 },
 };
+const SPACE = {
+  pageX: 16,
+  headerTop: 16,
+  headerBottom: 12,
+  sectionGap: 14,
+  groupGap: 10,
+  chipGap: 7,
+  cardGap: 12,
+  cardPad: 14,
+  cardPadX: 15,
+};
 
 const REGION_PROMPT_KEY = "prompt";
 const REGION_STORAGE_KEY = "cafe-voyage:region";
@@ -357,7 +368,7 @@ const FilterChip = ({ active, label, onClick, icon }) => (
 );
 
 const FilterSection = ({ filters, toggle }) => (
-  <div style={{ marginBottom: 14, background: UI.panel, border: `1px solid ${UI.line}`, borderRadius: 18, padding: 12 }}>
+  <div style={{ marginBottom: SPACE.sectionGap, background: UI.panel, border: `1px solid ${UI.line}`, borderRadius: 18, padding: SPACE.cardPad }}>
     {[
       {
         title: "工作環境",
@@ -384,9 +395,9 @@ const FilterSection = ({ filters, toggle }) => (
         ],
       },
     ].map((section, index) => (
-      <div key={section.title} style={{ marginBottom: index === 2 ? 0 : 12 }}>
-        <div style={{ ...TYPE.caption, color: T.sub, marginBottom: 8, fontWeight: 760, letterSpacing: "0.08em" }}>{section.title}</div>
-        <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
+      <div key={section.title} style={{ marginBottom: index === 2 ? 0 : SPACE.groupGap + 2 }}>
+        <div style={{ ...TYPE.caption, color: T.sub, marginBottom: SPACE.chipGap + 1, fontWeight: 760, letterSpacing: "0.08em" }}>{section.title}</div>
+        <div style={{ display: "flex", gap: SPACE.chipGap, flexWrap: "wrap" }}>
           {section.items.map(({ key, label, icon }) => (
             <FilterChip key={key} active={filters[key]} label={label} icon={icon} onClick={() => toggle(key)} />
           ))}
@@ -897,7 +908,7 @@ const CafeCard = ({ cafe, onClick, fav, onFav, emptyCafeIds }) => (
       background: UI.paper,
       borderRadius: 16,
       border: `1px solid ${UI.line}`,
-      marginBottom: 12,
+      marginBottom: SPACE.cardGap,
       overflow: "hidden",
       cursor: "pointer",
       boxShadow: UI.shadow,
@@ -912,12 +923,14 @@ const CafeCard = ({ cafe, onClick, fav, onFav, emptyCafeIds }) => (
       }
     }}
   >
-    <div style={{ padding: "14px 15px 13px" }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 6 }}>
+    <div style={{ padding: `${SPACE.cardPad}px ${SPACE.cardPadX}px 13px` }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: SPACE.chipGap }}>
         <div style={{ flex: 1, marginRight: 8 }}>
           <div style={{ ...TYPE.cardTitle, color: T.text }}>{cafe.name}</div>
-          {cafe.mrt && <div style={{ ...TYPE.meta, color: T.sub, marginTop: 3 }}>🚇 {cafe.mrt}</div>}
-          <div style={{ ...TYPE.meta, color: T.sub, marginTop: 2 }}>📍 {cafe.address}</div>
+          <div style={{ marginTop: 4 }}>
+            {cafe.mrt && <div style={{ ...TYPE.meta, color: T.sub }}>🚇 {cafe.mrt}</div>}
+            <div style={{ ...TYPE.meta, color: T.sub, marginTop: cafe.mrt ? 1 : 0 }}>📍 {cafe.address}</div>
+          </div>
         </div>
         <button
           aria-label={fav ? `取消收藏 ${cafe.name}` : `收藏 ${cafe.name}`}
@@ -929,14 +942,14 @@ const CafeCard = ({ cafe, onClick, fav, onFav, emptyCafeIds }) => (
       </div>
 
       {cafe.wifi > 0 && (
-        <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 10 }}>
+        <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: SPACE.groupGap }}>
           {scorePill("WiFi", cafe.wifi)}
           {scorePill("安靜", cafe.quiet)}
           {scorePill("咖啡", cafe.tasty)}
         </div>
       )}
 
-      <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
+      <div style={{ display: "flex", gap: 5, flexWrap: "wrap", alignItems: "center" }}>
         {temporaryClosureTag(cafe)}
         {limitedTag(cafe.limited_time)}
         {socketTag(cafe.socket)}
@@ -997,15 +1010,15 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
 
   return (
     <div style={{ display: "flex", flexDirection: "column", flex: 1, minHeight: 0, overflow: "hidden" }}>
-      <div style={{ flexShrink: 0, padding: "18px 16px 12px", background: T.cream, borderBottom: `1px solid ${T.beige}` }}>
-        <div style={{ position: "relative", marginBottom: 16 }}>
+      <div style={{ flexShrink: 0, padding: `${SPACE.headerTop + 2}px ${SPACE.pageX}px ${SPACE.headerBottom}px`, background: T.cream, borderBottom: `1px solid ${T.beige}` }}>
+        <div style={{ position: "relative", marginBottom: SPACE.sectionGap + 2 }}>
           <svg style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)" }} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={UI.placeholder} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
           <input aria-label="搜尋店名或地址" value={q} onChange={e => setQ(e.target.value)} placeholder="搜尋店名、地址..."
             style={{ width: "100%", padding: "10px 14px 10px 36px", borderRadius: 12, border: `1px solid ${UI.inputBorder}`, background: UI.surface, fontSize: 16, outline: "none", boxSizing: "border-box", color: T.text, fontWeight: 500, boxShadow: UI.shadowSoft }} />
         </div>
 
         {!filtersOpen ? (
-          <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: SPACE.chipGap + 1, flexWrap: "wrap" }}>
             {activeFilterLabels.slice(0, 2).map((label) => (
               <FilterChip key={label} active={true} label={label} onClick={() => setFiltersOpen(true)} />
             ))}
@@ -1035,9 +1048,9 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
       </div>
 
       {/* 滾動區：咖啡廳列表 */}
-      <div style={{ flex: 1, overflowY: "auto", padding: "0 16px 16px" }}>
+      <div style={{ flex: 1, overflowY: "auto", padding: `0 ${SPACE.pageX}px ${SPACE.pageX}px` }}>
         {!hasRegionSelection && (
-          <div style={{ margin: "12px 0", background: UI.surface, border: `1px solid ${UI.line}`, borderRadius: 14, padding: "14px 14px 12px" }}>
+          <div style={{ margin: `${SPACE.cardGap}px 0`, background: UI.surface, border: `1px solid ${UI.line}`, borderRadius: 14, padding: `${SPACE.cardPad}px ${SPACE.cardPad}px 12px` }}>
             <div style={{ ...TYPE.sectionTitle, color: T.text, marginBottom: 6 }}>先選一個地區開始看</div>
             <div style={{ ...TYPE.body, color: T.sub, marginBottom: 10 }}>
               右上角可以切換地區。首頁先聚焦在單一城市，列表會比較清楚。
@@ -1060,8 +1073,8 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
           </div>
         )}
         {hasRegionSelection && (
-          <div style={{ margin: "14px 0 12px" }}>
-            <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 12, marginBottom: 10 }}>
+          <div style={{ margin: `${SPACE.sectionGap}px 0 ${SPACE.cardGap}px` }}>
+            <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: SPACE.cardGap, marginBottom: SPACE.groupGap }}>
               <div>
                 <div style={{ ...TYPE.sectionTitle, color: T.text }}>依需求找咖啡廳</div>
               </div>
@@ -1075,7 +1088,7 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
                 </button>
               )}
             </div>
-            <div style={{ display: "flex", gap: 9, overflowX: "auto", padding: "2px 1px 8px", margin: "0 -1px" }}>
+            <div style={{ display: "flex", gap: SPACE.groupGap - 1, overflowX: "auto", padding: "2px 1px 8px", margin: "0 -1px" }}>
               {FILTER_PRESETS.map((preset) => {
                 const active = isPresetActive(preset.filters);
                 return (
@@ -1088,7 +1101,7 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
                       color: active ? UI.onDark : T.text,
                       border: `1px solid ${active ? T.brown : UI.line}`,
                       borderRadius: 16,
-                      padding: "10px 11px",
+                      padding: "10px 12px",
                       width: 150,
                       flex: "0 0 150px",
                       textAlign: "left",
@@ -1114,7 +1127,7 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
           </div>
         ) : (
           <>
-            <div style={{ ...TYPE.meta, color: T.sub, margin: "10px 0 12px" }}>共 {total} 間{total > PER_PAGE ? `（顯示第 ${start + 1}-${Math.min(start + PER_PAGE, total)} 間）` : ""}</div>
+            <div style={{ ...TYPE.meta, color: T.sub, margin: `${SPACE.groupGap}px 0 ${SPACE.cardGap}px` }}>共 {total} 間{total > PER_PAGE ? `（顯示第 ${start + 1}-${Math.min(start + PER_PAGE, total)} 間）` : ""}</div>
             {filtered.map(c => <CafeCard key={c.id} cafe={c} onClick={() => onSelect(c)} fav={favs.has(c.id)} onFav={onFav} emptyCafeIds={emptyCafeIds} />)}
             {filtered.length === 0 && <div style={{ textAlign: "center", padding: "40px 0", color: T.sub }}>找不到符合條件的咖啡廳</div>}
             <Pagination page={page} total={total} onPage={setPage} />
@@ -1195,14 +1208,14 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
   return (
     <div style={{ display: "flex", flexDirection: "column", flex: 1, minHeight: 0, overflow: "hidden" }}>
       {/* 固定區 */}
-      <div style={{ flexShrink: 0, padding: "14px 16px 0", background: T.cream, borderBottom: `1px solid ${T.beige}` }}>
-        <div style={{ ...TYPE.pageTitle, marginBottom: 10, color: T.text }}>附近咖啡廳</div>
-        <div style={{ position: "relative", marginBottom: 14 }}>
+      <div style={{ flexShrink: 0, padding: `${SPACE.headerTop}px ${SPACE.pageX}px 0`, background: T.cream, borderBottom: `1px solid ${T.beige}` }}>
+        <div style={{ ...TYPE.pageTitle, marginBottom: SPACE.groupGap, color: T.text }}>附近咖啡廳</div>
+        <div style={{ position: "relative", marginBottom: SPACE.sectionGap }}>
           <svg style={{ position: "absolute", left: 11, top: "50%", transform: "translateY(-50%)" }} width="15" height="15" viewBox="0 0 24 24" fill="none" stroke={T.sub} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
           <input aria-label="搜尋附近咖啡廳" value={q} onChange={e => setQ(e.target.value)} placeholder="搜尋..."
             style={{ width: "100%", padding: "9px 14px 9px 34px", borderRadius: 14, border: `1px solid ${UI.line}`, background: UI.paper, fontSize: 16, outline: "none", boxSizing: "border-box", color: T.text, boxShadow: UI.shadowSoft }} />
         </div>
-        <div style={{ display: "flex", gap: 7, overflowX: "auto", paddingBottom: 12 }}>
+        <div style={{ display: "flex", gap: SPACE.chipGap, overflowX: "auto", paddingBottom: SPACE.cardGap }}>
           {[{ key: "all", title: "全部" }, ...FILTER_PRESETS].map((preset) => {
             const active = activePresetKey === preset.key;
             return (
@@ -1233,8 +1246,8 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
       </div>
 
       {/* 滾動區 */}
-      <div style={{ flex: 1, overflowY: "auto", padding: "0 16px 16px" }}>
-        <div style={{ ...TYPE.meta, color: T.sub, margin: "10px 0" }}>
+      <div style={{ flex: 1, overflowY: "auto", padding: `0 ${SPACE.pageX}px ${SPACE.pageX}px` }}>
+        <div style={{ ...TYPE.meta, color: T.sub, margin: `${SPACE.groupGap}px 0` }}>
           {userLocation ? "依距離由近到遠" : locationLoading ? "正在取得目前位置" : "開啟定位後可查看附近咖啡廳"}・共 {total} 間{total > PER_PAGE ? `（第 ${start + 1}-${Math.min(start + PER_PAGE, total)} 間）` : ""}
         </div>
         {loading ? (
@@ -1242,7 +1255,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
         ) : (
           <>
             {sorted.map((c, i) => (
-              <div key={c.id} style={{ display: "flex", alignItems: "flex-start", gap: 8 }}>
+              <div key={c.id} style={{ display: "flex", alignItems: "flex-start", gap: SPACE.chipGap + 1 }}>
                 {userLocation && (
                   <div style={{ width: 42, minHeight: 24, borderRadius: 14, background: T.beige, color: T.sub, display: "flex", alignItems: "center", justifyContent: "center", ...TYPE.nav, fontWeight: 720, flexShrink: 0, marginTop: 14, padding: "3px 5px", textAlign: "center" }}>
                     {formatDistance(c._distanceKm)}
@@ -1890,15 +1903,15 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
       onTouchEnd={handleTouchEnd}
       onTouchCancel={handleTouchEnd}
     >
-      <div style={{ background: T.brown, padding: "13px 18px", display: "flex", alignItems: "center", gap: 10 }}>
+      <div style={{ background: T.brown, padding: `13px ${SPACE.pageX + 2}px`, display: "flex", alignItems: "center", gap: SPACE.groupGap }}>
         <button aria-label="返回上一頁" onClick={onBack} style={{ background: "none", border: "none", cursor: "pointer" }}>
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={UI.onDark} strokeWidth="2.5" strokeLinecap="round"><polyline points="15 18 9 12 15 6" /></svg>
         </button>
         <span style={{ ...TYPE.cardTitle, color: UI.onDark, flex: 1 }}>{cafe.name}</span>
         <button aria-label={fav ? `取消收藏 ${cafe.name}` : `收藏 ${cafe.name}`} onClick={() => onFav(cafe.id)} style={{ background: "none", border: "none", cursor: "pointer", fontSize: 20 }}>{fav ? "⭐" : "☆"}</button>
       </div>
-      <div style={{ padding: "16px 18px" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
+      <div style={{ padding: `${SPACE.pageX}px ${SPACE.pageX + 2}px` }}>
+        <div style={{ display: "flex", alignItems: "center", gap: SPACE.chipGap + 1, marginBottom: 4 }}>
           <div style={{ ...TYPE.pageTitle, color: T.text }}>
             {cafe.name}
           </div>
@@ -1909,25 +1922,25 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
           )}
         </div>
         {cafe.mrt && <div style={{ ...TYPE.body, color: T.sub, marginBottom: 3 }}>🚇 {cafe.mrt}</div>}
-        <div style={{ ...TYPE.body, color: T.sub, marginBottom: 12 }}>📍 {cafe.address}</div>
+        <div style={{ ...TYPE.body, color: T.sub, marginBottom: SPACE.cardGap }}>📍 {cafe.address}</div>
         {cafe.google_business_note && <div style={{ ...TYPE.body, color: UI.warning, marginBottom: 8, fontWeight: 650 }}>⏸ {cafe.google_business_note}</div>}
         {cafe.open_time && <div style={{ ...TYPE.body, color: T.text, marginBottom: 8 }}>🕐 {cafe.open_time}</div>}
 
-        <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 8 }}>
+        <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: SPACE.chipGap + 1 }}>
           {temporaryClosureTag(cafe)}
           {limitedTag(cafe.limited_time, applyTagFilter("noLimit"))}
           {socketTag(cafe.socket, applyTagFilter("socket"))}
           {cafe.standing_desk === "yes" && <Tag label="站立桌" type="gray" onClick={applyTagFilter("standing")} />}
           {crowdTagFromIds(cafe.id, emptyCafeIds, applyTagFilter("empty"))}
         </div>
-        <div style={{ ...TYPE.caption, color: T.sub, marginBottom: 16 }}>點標籤找相似店</div>
+        <div style={{ ...TYPE.caption, color: T.sub, marginBottom: SPACE.pageX }}>點標籤找相似店</div>
 
         <CrowdReport cafeId={cafe.id} onReport={onReport} />
 
         {cafe.wifi > 0 && (
-          <div style={{ background: UI.paper, borderRadius: 16, border: `1px solid ${UI.line}`, padding: 16, marginBottom: 16, boxShadow: UI.shadow }}>
-            <div style={{ ...TYPE.sectionTitle, marginBottom: 12, color: T.text }}>環境評分</div>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
+          <div style={{ background: UI.paper, borderRadius: 16, border: `1px solid ${UI.line}`, padding: SPACE.pageX, marginBottom: SPACE.pageX, boxShadow: UI.shadow }}>
+            <div style={{ ...TYPE.sectionTitle, marginBottom: SPACE.cardGap, color: T.text }}>環境評分</div>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: SPACE.chipGap + 1 }}>
               {[
                 ["📶 WiFi", "穩定", cafe.wifi, cafe.wifi >= 4 ? "wifi" : null],
                 ["🔇 安靜", "程度", cafe.quiet, cafe.quiet >= 4 ? "quiet" : null],
