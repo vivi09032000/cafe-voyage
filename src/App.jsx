@@ -57,6 +57,16 @@ const T = {
   beige: "#E8DDD0", green: "#2D4A3E", gold: "#C9A84C",
   text: "#2C2016", sub: "#7A6652", tag: "#2D4A3E",
 };
+const LUXE = {
+  paper: "#FFFDF8",
+  milk: "#F6EFE5",
+  latte: "#EFE3D2",
+  line: "rgba(92, 61, 46, 0.16)",
+  softLine: "rgba(92, 61, 46, 0.10)",
+  sage: "#6F7F62",
+  moss: "#3F5B47",
+  shadow: "0 14px 32px rgba(62, 39, 35, 0.08)",
+};
 
 const REGION_PROMPT_KEY = "prompt";
 const REGION_STORAGE_KEY = "cafe-voyage:region";
@@ -118,13 +128,13 @@ const isOpen = (c) => !CLOSED_KW.some(kw => c.name.includes(kw));
 const scoreBar = (val, max = 5) => {
   if (!val || val === 0) return null;
   const pct = (val / max) * 100;
-  const color = pct >= 70 ? T.green : pct >= 40 ? T.gold : "#c0392b";
+  const color = pct >= 70 ? LUXE.moss : pct >= 40 ? "#C8A96D" : "#B9785F";
   return (
-    <div style={{ display: "flex", alignItems: "center", gap: 6, flex: 1 }}>
-      <div style={{ flex: 1, height: 5, background: T.beige, borderRadius: 4, overflow: "hidden" }}>
+    <div style={{ display: "flex", alignItems: "center", gap: 7, flex: 1 }}>
+      <div style={{ flex: 1, height: 4, background: "rgba(92,61,46,0.12)", borderRadius: 999, overflow: "hidden" }}>
         <div style={{ width: `${pct}%`, height: "100%", background: color, borderRadius: 4 }} />
       </div>
-      <span style={{ fontSize: 11, color: T.sub, minWidth: 24 }}>{val.toFixed(1)}</span>
+      <span style={{ fontSize: 10.5, color: "rgba(122,102,82,0.86)", minWidth: 24, fontVariantNumeric: "tabular-nums" }}>{val.toFixed(1)}</span>
     </div>
   );
 };
@@ -140,11 +150,12 @@ const Tag = ({ label, type = "green", onClick }) => {
   const style = {
     background: s.bg,
     color: s.color,
-    borderRadius: 14,
-    padding: "3px 10px",
-    fontSize: 11,
-    fontWeight: 500,
+    borderRadius: 999,
+    padding: "4px 9px",
+    fontSize: 10.5,
+    fontWeight: 650,
     whiteSpace: "nowrap",
+    letterSpacing: "-0.01em",
   };
 
   if (onClick) {
@@ -255,16 +266,17 @@ const FILTER_PRESETS = [
 
 const FilterChip = ({ active, label, onClick, icon }) => (
   <button onClick={onClick} style={{
-    background: active ? T.green : "#e7dccd",
-    color: active ? "#fff" : "#8a745f",
-    border: "none",
-    borderRadius: 18,
-    padding: "9px 16px",
+    background: active ? LUXE.moss : "rgba(255,253,248,0.88)",
+    color: active ? "#fff" : T.sub,
+    border: `1px solid ${active ? LUXE.moss : LUXE.line}`,
+    borderRadius: 999,
+    padding: "8px 14px",
     fontSize: 12,
     cursor: "pointer",
-    fontWeight: active ? 700 : 500,
+    fontWeight: active ? 700 : 560,
     fontFamily: "inherit",
     lineHeight: 1,
+    boxShadow: active ? "0 8px 18px rgba(63,91,71,0.16)" : "none",
   }}>
     {active ? "✓ " : ""}{icon ? `${icon} ` : ""}{label}
   </button>
@@ -772,26 +784,39 @@ const SwipeBackShell = ({ enabled, onBack, children }) => {
 
 // ── Cafe Card ──
 const CafeCard = ({ cafe, onClick, fav, onFav, emptyCafeIds }) => (
-  <div style={{ background: "#fff", borderRadius: 12, border: `1px solid ${T.beige}`, marginBottom: 12, overflow: "hidden", cursor: "pointer" }} onClick={onClick}>
-    <div style={{ padding: "13px 14px" }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 6 }}>
+  <div
+    style={{
+      background: `linear-gradient(145deg, ${LUXE.paper} 0%, #fff 64%, ${LUXE.milk} 100%)`,
+      borderRadius: 18,
+      border: `1px solid ${LUXE.line}`,
+      marginBottom: 12,
+      overflow: "hidden",
+      cursor: "pointer",
+      boxShadow: LUXE.shadow,
+      position: "relative",
+    }}
+    onClick={onClick}
+  >
+    <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(90deg, rgba(111,127,98,0.58), rgba(201,168,76,0.2), rgba(92,61,46,0.14))" }} />
+    <div style={{ padding: "15px 15px 14px" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 9 }}>
         <div style={{ flex: 1, marginRight: 8 }}>
-          <div style={{ fontWeight: 700, fontSize: 14, color: T.text, lineHeight: 1.3 }}>{cafe.name}</div>
-          {cafe.mrt && <div style={{ fontSize: 11, color: T.sub, marginTop: 2 }}>🚇 {cafe.mrt}</div>}
-          <div style={{ fontSize: 11, color: T.sub, marginTop: 1 }}>📍 {cafe.address}</div>
+          <div style={{ fontWeight: 760, fontSize: 15, color: T.text, lineHeight: 1.3, letterSpacing: "-0.02em" }}>{cafe.name}</div>
+          {cafe.mrt && <div style={{ fontSize: 11, color: T.sub, marginTop: 4 }}>🚇 {cafe.mrt}</div>}
+          <div style={{ fontSize: 11, color: T.sub, marginTop: 2, lineHeight: 1.45 }}>📍 {cafe.address}</div>
         </div>
-        <button onClick={e => { e.stopPropagation(); onFav(cafe.id); }} style={{ background: "none", border: "none", cursor: "pointer", fontSize: 18, padding: 0, flexShrink: 0 }}>
+        <button onClick={e => { e.stopPropagation(); onFav(cafe.id); }} style={{ background: "rgba(255,253,248,0.76)", border: `1px solid ${LUXE.softLine}`, borderRadius: 999, cursor: "pointer", fontSize: 18, padding: "3px 7px", flexShrink: 0, lineHeight: 1 }}>
           {fav ? "⭐" : "☆"}
         </button>
       </div>
 
       {/* Score bars */}
       {cafe.wifi > 0 && (
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4px 12px", marginBottom: 8 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5px 14px", marginBottom: 10, padding: "9px 10px", background: "rgba(246,239,229,0.54)", borderRadius: 14, border: `1px solid ${LUXE.softLine}` }}>
           {[["WiFi", cafe.wifi], ["安靜", cafe.quiet], ["咖啡", cafe.tasty], ["座位", cafe.seat]].map(([label, val]) =>
             val > 0 ? (
               <div key={label} style={{ display: "flex", alignItems: "center", gap: 6 }}>
-                <span style={{ fontSize: 11, color: T.sub, width: 28, flexShrink: 0 }}>{label}</span>
+                <span style={{ fontSize: 10.5, color: T.sub, width: 28, flexShrink: 0, fontWeight: 650 }}>{label}</span>
                 {scoreBar(val)}
               </div>
             ) : null
@@ -799,7 +824,7 @@ const CafeCard = ({ cafe, onClick, fav, onFav, emptyCafeIds }) => (
         </div>
       )}
 
-      <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
+      <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
         {temporaryClosureTag(cafe)}
         {limitedTag(cafe.limited_time)}
         {socketTag(cafe.socket)}
@@ -924,10 +949,10 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
           </div>
         )}
         {hasRegionSelection && (
-          <div style={{ margin: "14px 0 12px" }}>
+          <div style={{ margin: "14px 0 14px" }}>
             <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 12, marginBottom: 10 }}>
               <div>
-                <div style={{ fontSize: 15, color: T.text, fontWeight: 700 }}>依需求找咖啡廳</div>
+                <div style={{ fontSize: 15, color: T.text, fontWeight: 740, letterSpacing: "-0.02em" }}>依需求找咖啡廳</div>
               </div>
               {activeFilterCount > 0 && (
                 <button
@@ -939,28 +964,36 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
                 </button>
               )}
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
-              {FILTER_PRESETS.map((preset) => {
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 9 }}>
+              {FILTER_PRESETS.map((preset, index) => {
                 const active = isPresetActive(preset.filters);
+                const accent = ["#6F7F62", "#B98954", "#7B553F", "#83916D"][index % 4];
                 return (
                   <button
                     key={preset.title}
                     type="button"
                     onClick={() => applyPreset(preset)}
                     style={{
-                      background: active ? T.brown : "#fff",
+                      background: active
+                        ? `linear-gradient(135deg, ${T.brown}, ${T.darkBrown})`
+                        : `linear-gradient(145deg, ${LUXE.paper}, ${LUXE.milk})`,
                       color: active ? "#fff" : T.text,
-                      border: `1px solid ${active ? T.brown : T.beige}`,
-                      borderRadius: 14,
-                      padding: "11px 12px",
+                      border: `1px solid ${active ? T.brown : LUXE.line}`,
+                      borderRadius: 18,
+                      padding: "13px 13px 12px",
                       textAlign: "left",
                       cursor: "pointer",
                       fontFamily: "inherit",
-                      boxShadow: active ? "none" : "0 8px 20px rgba(92,61,46,0.05)",
+                      boxShadow: active ? "0 12px 24px rgba(62,39,35,0.18)" : "0 10px 24px rgba(92,61,46,0.07)",
+                      minHeight: 92,
+                      position: "relative",
+                      overflow: "hidden",
                     }}
                   >
-                    <div style={{ fontSize: 13, fontWeight: 800, marginBottom: 4 }}>{preset.title}</div>
-                    <div style={{ fontSize: 11, color: active ? "rgba(255,255,255,0.78)" : T.sub, lineHeight: 1.35 }}>{preset.subtitle}</div>
+                    <span style={{ position: "absolute", right: -18, top: -26, width: 72, height: 72, borderRadius: "50%", border: `1px solid ${active ? "rgba(255,255,255,0.18)" : "rgba(111,127,98,0.18)"}` }} />
+                    <span style={{ position: "absolute", right: 14, top: 14, width: 7, height: 18, borderRadius: "50% 50% 50% 0", background: active ? "rgba(255,255,255,0.45)" : accent, transform: "rotate(38deg)", opacity: active ? 0.72 : 0.68 }} />
+                    <div style={{ fontSize: 13.5, fontWeight: 780, marginBottom: 5, letterSpacing: "-0.02em", position: "relative" }}>{preset.title}</div>
+                    <div style={{ fontSize: 11, color: active ? "rgba(255,255,255,0.78)" : T.sub, lineHeight: 1.5, maxWidth: "86%", position: "relative" }}>{preset.subtitle}</div>
                   </button>
                 );
               })}
@@ -1055,12 +1088,12 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
   return (
     <div style={{ display: "flex", flexDirection: "column", flex: 1, minHeight: 0, overflow: "hidden" }}>
       {/* 固定區 */}
-      <div style={{ flexShrink: 0, padding: "14px 16px 0", background: T.cream, borderBottom: `1px solid ${T.beige}` }}>
-        <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, marginBottom: 10, color: T.text }}>附近咖啡廳</div>
+      <div style={{ flexShrink: 0, padding: "14px 16px 0", background: `linear-gradient(180deg, ${T.cream} 0%, ${LUXE.milk} 100%)`, borderBottom: `1px solid ${LUXE.line}` }}>
+        <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, marginBottom: 10, color: T.text, letterSpacing: "-0.02em" }}>附近咖啡廳</div>
         <div style={{ position: "relative", marginBottom: 14 }}>
           <svg style={{ position: "absolute", left: 11, top: "50%", transform: "translateY(-50%)" }} width="15" height="15" viewBox="0 0 24 24" fill="none" stroke={T.sub} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
           <input value={q} onChange={e => setQ(e.target.value)} placeholder="搜尋..."
-            style={{ width: "100%", padding: "9px 14px 9px 34px", borderRadius: 22, border: `1px solid ${T.beige}`, background: "#fff", fontSize: 16, outline: "none", boxSizing: "border-box", color: T.text }} />
+            style={{ width: "100%", padding: "9px 14px 9px 34px", borderRadius: 14, border: `1px solid ${LUXE.line}`, background: LUXE.paper, fontSize: 16, outline: "none", boxSizing: "border-box", color: T.text, boxShadow: "0 8px 18px rgba(92,61,46,0.05)" }} />
         </div>
         <div style={{ display: "flex", gap: 7, overflowX: "auto", paddingBottom: 12 }}>
           {[{ key: "all", title: "全部" }, ...FILTER_PRESETS].map((preset) => {
@@ -1071,17 +1104,18 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
                 type="button"
                 onClick={() => setActivePresetKey(preset.key)}
                 style={{
-                  border: `1px solid ${active ? T.brown : T.beige}`,
-                  background: active ? T.brown : "#fff",
+                  border: `1px solid ${active ? T.brown : LUXE.line}`,
+                  background: active ? T.brown : "rgba(255,253,248,0.82)",
                   color: active ? "#fff" : T.sub,
                   borderRadius: 999,
-                  padding: "7px 11px",
-                  fontSize: 12,
-                  fontWeight: 700,
+                  padding: "7px 12px",
+                  fontSize: 11.5,
+                  fontWeight: active ? 760 : 640,
                   whiteSpace: "nowrap",
                   cursor: "pointer",
                   fontFamily: "inherit",
                   flexShrink: 0,
+                  boxShadow: active ? "0 8px 18px rgba(92,61,46,0.18)" : "none",
                 }}
               >
                 {preset.title}
