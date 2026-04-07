@@ -137,7 +137,20 @@ const REGION_STORAGE_KEY = "cafe-voyage:region";
 const COUNTRY_STORAGE_KEY = "cafe-voyage:country";
 const MAP_CACHE_KEY = "cafe-voyage:map-cafes:v2";
 const MAP_CACHE_TTL = 1000 * 60 * 60 * 12;
-const SEARCH_PLACEHOLDER = "搜尋店名、地址或站點";
+const SEARCH_PLACEHOLDER = "搜尋店名、地址、地標";
+const SEARCH_INPUT_STYLE = {
+  width: "100%",
+  padding: "10px 14px 10px 36px",
+  borderRadius: 14,
+  border: `1px solid ${UI.inputBorder}`,
+  background: UI.surface,
+  fontSize: 16,
+  outline: "none",
+  boxSizing: "border-box",
+  color: T.text,
+  fontWeight: 500,
+  boxShadow: UI.shadowSoft,
+};
 const REGION_PATTERN = /(台北市|新北市|桃園市|台中市|臺中市|台南市|臺南市|高雄市|基隆市|新竹市|新竹縣|苗栗縣|彰化縣|南投縣|雲林縣|嘉義市|嘉義縣|屏東縣|宜蘭縣|花蓮縣|台東縣|臺東縣)/;
 const COUNTRY_OPTIONS = [
   { key: "taiwan", label: "台灣", code: "TW" },
@@ -1106,7 +1119,7 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
         <div style={{ position: "relative", marginBottom: SPACE.sectionGap + 2 }}>
           <svg style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)" }} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={UI.placeholder} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
           <input className="search-input" aria-label={SEARCH_PLACEHOLDER} value={q} onChange={e => setQ(e.target.value)} placeholder={SEARCH_PLACEHOLDER}
-            style={{ width: "100%", padding: "10px 14px 10px 36px", borderRadius: 12, border: `1px solid ${UI.inputBorder}`, background: UI.surface, fontSize: 16, outline: "none", boxSizing: "border-box", color: T.text, fontWeight: 500, boxShadow: UI.shadowSoft }} />
+            style={SEARCH_INPUT_STYLE} />
         </div>
 
         {!filtersOpen ? (
@@ -1145,9 +1158,9 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
       <div style={{ flex: 1, overflowY: "auto", padding: `0 ${SPACE.pageX}px ${SPACE.pageX}px` }}>
         {!hasRegionSelection && (
           <div style={{ margin: `${SPACE.cardGap}px 0`, background: UI.surface, border: `1px solid ${UI.line}`, borderRadius: 14, padding: `${SPACE.cardPad}px ${SPACE.cardPad}px 12px` }}>
-            <div style={{ ...TYPE.sectionTitle, color: T.text, marginBottom: 6 }}>先選地區</div>
+            <div style={{ ...TYPE.sectionTitle, color: T.text, marginBottom: 6 }}>先選一個城市</div>
             <div style={{ ...TYPE.body, color: T.sub, marginBottom: 10 }}>
-              選一個城市，列表會更準。
+              我們會先用地區整理列表，之後也能在設定裡切換。
             </div>
             <button
               className="soft-press"
@@ -1163,7 +1176,7 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
                 fontFamily: "inherit",
               }}
             >
-              選地區
+              選擇城市
             </button>
           </div>
         )}
@@ -1227,7 +1240,13 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
           <>
             <div style={{ ...TYPE.meta, color: T.sub, margin: `${SPACE.groupGap}px 0 ${SPACE.cardGap}px` }}>共 {total} 間{total > PER_PAGE ? `（顯示第 ${start + 1}-${Math.min(start + PER_PAGE, total)} 間）` : ""}</div>
             {filtered.map(c => <CafeCard key={c.id} cafe={c} onClick={() => onSelect(c)} fav={favs.has(c.id)} onFav={onFav} emptyCafeIds={emptyCafeIds} />)}
-            {filtered.length === 0 && <div style={{ textAlign: "center", padding: "40px 0", color: T.sub }}>沒有符合條件的咖啡廳</div>}
+            {filtered.length === 0 && (
+              <div style={{ textAlign: "center", padding: "42px 18px", color: T.sub }}>
+                <Icon name="coffee" size={32} strokeWidth={1.9} style={{ color: T.brown, marginBottom: 10 }} />
+                <div style={{ ...TYPE.sectionTitle, color: T.text, marginBottom: 6 }}>找不到符合的店</div>
+                <div style={{ ...TYPE.body, color: T.sub }}>試試店名、路名或地標，或清除篩選看看。</div>
+              </div>
+            )}
             <Pagination page={page} total={total} onPage={setPage} />
           </>
         )}
@@ -1309,9 +1328,9 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
       <div style={{ flexShrink: 0, padding: `${SPACE.headerTop}px ${SPACE.pageX}px 0`, background: T.cream, borderBottom: `1px solid ${T.beige}` }}>
         <div style={{ ...TYPE.pageTitle, marginBottom: SPACE.groupGap, color: T.text }}>附近咖啡廳</div>
         <div style={{ position: "relative", marginBottom: SPACE.sectionGap }}>
-          <svg style={{ position: "absolute", left: 11, top: "50%", transform: "translateY(-50%)" }} width="15" height="15" viewBox="0 0 24 24" fill="none" stroke={T.sub} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
+          <svg style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)" }} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={UI.placeholder} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
           <input className="search-input" aria-label={SEARCH_PLACEHOLDER} value={q} onChange={e => setQ(e.target.value)} placeholder={SEARCH_PLACEHOLDER}
-            style={{ width: "100%", padding: "9px 14px 9px 34px", borderRadius: 14, border: `1px solid ${UI.line}`, background: UI.paper, fontSize: 16, outline: "none", boxSizing: "border-box", color: T.text, boxShadow: UI.shadowSoft }} />
+            style={SEARCH_INPUT_STYLE} />
         </div>
         <div style={{ display: "flex", gap: SPACE.chipGap, overflowX: "auto", paddingBottom: SPACE.cardGap }}>
           {[{ key: "all", title: "全部" }, ...FILTER_PRESETS].map((preset) => {
@@ -1364,7 +1383,13 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
                 <div style={{ flex: 1 }}><CafeCard cafe={c} onClick={() => onSelect(c)} fav={favs.has(c.id)} onFav={onFav} emptyCafeIds={new Set()} /></div>
               </div>
             ))}
-            {sorted.length === 0 && <div style={{ textAlign: "center", padding: "40px 0", color: T.sub }}>沒有符合條件的咖啡廳</div>}
+            {sorted.length === 0 && (
+              <div style={{ textAlign: "center", padding: "42px 18px", color: T.sub }}>
+                <Icon name="coffee" size={32} strokeWidth={1.9} style={{ color: T.brown, marginBottom: 10 }} />
+                <div style={{ ...TYPE.sectionTitle, color: T.text, marginBottom: 6 }}>附近沒有符合的店</div>
+                <div style={{ ...TYPE.body, color: T.sub }}>可以切回「全部」，或改用店名、路名搜尋。</div>
+              </div>
+            )}
             <Pagination page={page} total={total} onPage={setPage} />
           </>
         )}
@@ -1712,9 +1737,9 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
 
       {/* Search */}
       <div style={{ padding: "0 16px 8px", position: "relative", width: "100%", boxSizing: "border-box" }}>
-        <svg style={{ position: "absolute", left: 27, top: "50%", transform: "translateY(-60%)" }} width="15" height="15" viewBox="0 0 24 24" fill="none" stroke={T.sub} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
+        <svg style={{ position: "absolute", left: 28, top: "50%", transform: "translateY(-50%)" }} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={UI.placeholder} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
         <input className="search-input" aria-label={SEARCH_PLACEHOLDER} value={mapQuery} onFocus={closeSearchPopup} onClick={closeSearchPopup} onChange={e => setMapQuery(e.target.value)} placeholder={SEARCH_PLACEHOLDER}
-          style={{ width: "100%", padding: "9px 14px 9px 34px", borderRadius: 14, border: `1px solid ${UI.line}`, background: UI.paper, fontSize: 16, outline: "none", boxSizing: "border-box", color: T.text, boxShadow: UI.shadowSoft }} />
+          style={SEARCH_INPUT_STYLE} />
       </div>
 
       <div style={{ flex: 1, minHeight: 0, position: "relative", borderTop: `1px solid ${T.beige}`, overflow: "hidden" }}>
@@ -1749,7 +1774,7 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
             <Marker position={searchMarker.position} icon={stationIcon}>
               <Popup className="map-popup" minWidth={160} maxWidth={220} autoPan={false}>
                 <div style={{ fontFamily: FONT.body }}>
-                  <div style={{ ...TYPE.cardTitle, marginBottom: 4, color: T.text }}><InlineIcon name="train" size={14} color={T.brown} /> 搜尋站點</div>
+                  <div style={{ ...TYPE.cardTitle, marginBottom: 4, color: T.text }}><InlineIcon name="train" size={14} color={T.brown} /> 搜尋位置</div>
                   <div style={{ ...TYPE.caption, color: T.sub }}>{searchMarker.label}</div>
                 </div>
               </Popup>
