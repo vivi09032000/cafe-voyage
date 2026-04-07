@@ -110,7 +110,8 @@ const FONT = {
 };
 const TYPE = {
   brand: { fontFamily: FONT.display, fontSize: "1.18rem", lineHeight: 1.08, fontWeight: 700, letterSpacing: "-0.012em" },
-  pageTitle: { fontFamily: FONT.display, fontSize: "1.42rem", lineHeight: 1.14, fontWeight: 700, letterSpacing: "-0.032em" },
+  pageTitle: { fontFamily: FONT.body, fontSize: "1.18rem", lineHeight: 1.2, fontWeight: 780, letterSpacing: "-0.024em" },
+  detailTitle: { fontFamily: FONT.display, fontSize: "1.46rem", lineHeight: 1.12, fontWeight: 700, letterSpacing: "-0.034em" },
   sectionTitle: { fontSize: "0.98rem", lineHeight: 1.28, fontWeight: 760, letterSpacing: "-0.018em" },
   cardTitle: { fontSize: "0.95rem", lineHeight: 1.36, fontWeight: 760, letterSpacing: "-0.018em" },
   body: { fontSize: "0.875rem", lineHeight: 1.52, fontWeight: 500 },
@@ -1381,7 +1382,7 @@ const FavoritesPage = ({ cafes, favs, onSelect, onFav }) => {
       <div style={{ flexShrink: 0, padding: "14px 16px 4px", background: T.cream, borderBottom: `1px solid ${T.beige}` }}>
         <div style={{ display: "flex", alignItems: "center", gap: 7 }}>
           <Icon name="heart" size={21} strokeWidth={2.1} style={{ color: T.brown }} />
-          <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, color: T.text }}>我的收藏</div>
+          <div style={{ ...TYPE.pageTitle, color: T.text }}>我的收藏</div>
         </div>
       </div>
 
@@ -2014,17 +2015,17 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
       onTouchCancel={handleTouchEnd}
     >
       <div style={{ background: T.brown, padding: `13px ${SPACE.pageX + 2}px`, display: "flex", alignItems: "center", gap: SPACE.groupGap }}>
-        <button aria-label="返回上一頁" onClick={onBack} style={{ background: "none", border: "none", cursor: "pointer" }}>
+        <button className="soft-press" aria-label="返回上一頁" onClick={onBack} style={{ background: "none", border: "none", cursor: "pointer", color: UI.onDark, display: "inline-flex", alignItems: "center", justifyContent: "center", padding: 2 }}>
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={UI.onDark} strokeWidth="2.5" strokeLinecap="round"><polyline points="15 18 9 12 15 6" /></svg>
         </button>
-        <span style={{ ...TYPE.cardTitle, color: UI.onDark, flex: 1 }}>{cafe.name}</span>
-        <button aria-label={fav ? `取消收藏 ${cafe.name}` : `收藏 ${cafe.name}`} onClick={() => onFav(cafe.id)} style={{ background: "none", border: "none", cursor: "pointer", color: UI.onDark, display: "inline-flex", alignItems: "center", justifyContent: "center", padding: 2 }}>
+        <span aria-hidden="true" style={{ flex: 1 }} />
+        <button className="soft-press" aria-label={fav ? `取消收藏 ${cafe.name}` : `收藏 ${cafe.name}`} onClick={() => onFav(cafe.id)} style={{ background: "none", border: "none", cursor: "pointer", color: UI.onDark, display: "inline-flex", alignItems: "center", justifyContent: "center", padding: 2 }}>
           <Icon name={fav ? "starFilled" : "star"} size={22} strokeWidth={2.1} />
         </button>
       </div>
       <div style={{ padding: `${SPACE.pageX}px ${SPACE.pageX + 2}px` }}>
         <div style={{ display: "flex", alignItems: "center", gap: SPACE.chipGap + 1, marginBottom: 4 }}>
-          <div style={{ ...TYPE.pageTitle, color: T.text }}>
+          <div style={{ ...TYPE.detailTitle, color: T.text }}>
             {cafe.name}
           </div>
           {cafe.url && (
