@@ -665,11 +665,12 @@ const SettingsPanel = ({
   return (
     <div style={{ position: "absolute", inset: 0, zIndex: 40, background: UI.overlay }} onClick={onClose}>
       <div
+        className="settings-drawer"
         style={{
           position: "absolute",
           top: 0,
           right: 0,
-          width: "min(84vw, 312px)",
+          width: "min(88vw, 360px)",
           height: "100%",
           background: UI.oat,
           boxShadow: UI.drawerShadow,
@@ -1213,8 +1214,8 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
                       border: `1px solid ${active ? T.brown : UI.line}`,
                       borderRadius: 16,
                       padding: "10px 12px",
-                      width: 150,
-                      flex: "0 0 150px",
+                      width: "clamp(136px, 38vw, 168px)",
+                      flex: "0 0 clamp(136px, 38vw, 168px)",
                       textAlign: "left",
                       cursor: "pointer",
                       fontFamily: "inherit",
@@ -1376,7 +1377,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
             {sorted.map((c, i) => (
               <div key={c.id} style={{ display: "flex", alignItems: "flex-start", gap: SPACE.chipGap + 1 }}>
                 {userLocation && (
-                  <div style={{ width: 42, minHeight: 24, borderRadius: 14, background: T.beige, color: T.sub, display: "flex", alignItems: "center", justifyContent: "center", ...TYPE.nav, fontWeight: 720, flexShrink: 0, marginTop: 14, padding: "3px 5px", textAlign: "center" }}>
+                  <div style={{ minWidth: 46, minHeight: 24, borderRadius: 14, background: T.beige, color: T.sub, display: "flex", alignItems: "center", justifyContent: "center", ...TYPE.nav, fontWeight: 720, flexShrink: 0, marginTop: 14, padding: "3px 6px", textAlign: "center" }}>
                     {formatDistance(c._distanceKm)}
                   </div>
                 )}
@@ -2495,8 +2496,8 @@ export default function App() {
 
   return (
     <>
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap');html,body,#root{height:100%}*{margin:0;padding:0;box-sizing:border-box}body{font-family:${FONT.body};font-kerning:normal;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;background:${UI.pageBg}}input,button,textarea,select{font:inherit}input::placeholder{color:${UI.placeholder};opacity:1}button:focus-visible,[role="button"]:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid ${UI.sage} !important;outline-offset:3px}::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:${T.beige};border-radius:3px}.soft-press,.cafe-card-shell,.nav-item{-webkit-tap-highlight-color:transparent;transform:translateZ(0)}.search-input{transition:border-color 160ms ease,box-shadow 160ms ease,background 160ms ease}.search-input:focus{border-color:${T.brown}!important;box-shadow:0 0 0 3px rgba(92,61,46,.10),0 8px 18px rgba(62,39,35,.05)!important}.map-popup .leaflet-popup-content-wrapper{border-radius:16px;border:1px solid ${UI.line};box-shadow:${UI.popupShadow}}.map-popup .leaflet-popup-content{margin:10px 12px;min-width:0 !important;width:min(220px,calc(100vw - 88px)) !important}.map-popup .leaflet-popup-close-button{padding:8px 10px 0 0;font-size:18px}@media (prefers-reduced-motion:no-preference){.soft-press,.cafe-card-shell{transition:transform 150ms cubic-bezier(.22,1,.36,1),filter 150ms ease,background-color 150ms ease,border-color 150ms ease,color 150ms ease,box-shadow 150ms ease}.soft-press:active,.cafe-card-shell:active{transform:translateY(1px) scale(.99)}.nav-item:active{transform:translateY(1px) scale(.98)}@media (hover:hover){.soft-press:hover,.cafe-card-shell:hover{transform:translateY(-1px)}}.preset-card[aria-pressed="true"]{animation:soft-settle 220ms cubic-bezier(.22,1,.36,1)}.success-pop{animation:success-pop 260ms cubic-bezier(.22,1,.36,1)}@keyframes soft-settle{from{transform:scale(.985)}to{transform:scale(1)}}@keyframes success-pop{0%{transform:translateY(2px);opacity:.72}100%{transform:translateY(0);opacity:1}}}`}</style>
-      <div style={{ maxWidth: 430, margin: "0 auto", width: "100%", height: "100svh", minHeight: "100dvh", display: "flex", flexDirection: "column", background: T.cream, overflow: "hidden", boxShadow: UI.shellShadow }}>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap');html,body,#root{height:100%}*{margin:0;padding:0;box-sizing:border-box}body{font-family:${FONT.body};font-kerning:normal;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;background:${UI.pageBg}}input,button,textarea,select{font:inherit}input::placeholder{color:${UI.placeholder};opacity:1}button:focus-visible,[role="button"]:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid ${UI.sage} !important;outline-offset:3px}::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:${T.beige};border-radius:3px}.app-shell{container-type:inline-size}.soft-press,.cafe-card-shell,.nav-item{-webkit-tap-highlight-color:transparent;transform:translateZ(0)}.search-input{transition:border-color 160ms ease,box-shadow 160ms ease,background 160ms ease}.search-input:focus{border-color:${T.brown}!important;box-shadow:0 0 0 3px rgba(92,61,46,.10),0 8px 18px rgba(62,39,35,.05)!important}.map-popup .leaflet-popup-content-wrapper{border-radius:16px;border:1px solid ${UI.line};box-shadow:${UI.popupShadow}}.map-popup .leaflet-popup-content{margin:10px 12px;min-width:0 !important;width:min(220px,calc(100vw - 88px)) !important}.map-popup .leaflet-popup-close-button{padding:8px 10px 0 0;font-size:18px}@media (max-width:480px){.app-shell{box-shadow:none!important}}@media (min-width:768px){body{padding:16px}.app-shell{height:calc(100dvh - 32px)!important;min-height:calc(100dvh - 32px)!important;border-radius:28px}.settings-drawer{width:min(42vw,360px)!important}}@media (orientation:landscape) and (max-height:520px){.app-shell{max-width:720px!important}.nav-item{min-height:42px!important}}@media (prefers-reduced-motion:no-preference){.soft-press,.cafe-card-shell{transition:transform 150ms cubic-bezier(.22,1,.36,1),filter 150ms ease,background-color 150ms ease,border-color 150ms ease,color 150ms ease,box-shadow 150ms ease}.soft-press:active,.cafe-card-shell:active{transform:translateY(1px) scale(.99)}.nav-item:active{transform:translateY(1px) scale(.98)}@media (hover:hover){.soft-press:hover,.cafe-card-shell:hover{transform:translateY(-1px)}}.preset-card[aria-pressed="true"]{animation:soft-settle 220ms cubic-bezier(.22,1,.36,1)}.success-pop{animation:success-pop 260ms cubic-bezier(.22,1,.36,1)}@keyframes soft-settle{from{transform:scale(.985)}to{transform:scale(1)}}@keyframes success-pop{0%{transform:translateY(2px);opacity:.72}100%{transform:translateY(0);opacity:1}}}`}</style>
+      <div className="app-shell" style={{ maxWidth: 480, margin: "0 auto", width: "100%", height: "100svh", minHeight: "100dvh", display: "flex", flexDirection: "column", background: T.cream, overflow: "hidden", boxShadow: UI.shellShadow }}>
         {!selected && <Header cityLabel={hasRegionSelection ? regionLabel : selectedCountry.label} subtitle={headerSubtitle} onOpenMenu={() => setMenuOpen(true)} />}
         {selected ? (
           <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", overflow: "hidden" }}>
