@@ -276,7 +276,9 @@ const COPY = {
       noResultsTitle: "附近沒有符合的店",
       noResultsHint: "可以切回「全部」，或改用店名、路名搜尋。",
       browserNoLocation: "這個瀏覽器無法定位。",
-      locateFailed: "定位失敗，先用預設排序。",
+      allowPermission: "請在瀏覽器允許位置權限。",
+      timeout: "定位逾時，先用預設排序。",
+      locateFailed: "暫時無法取得位置，先用預設排序。",
     },
     favorites: {
       title: "我的收藏",
@@ -437,6 +439,8 @@ const COPY = {
       noResultsTitle: "No nearby match",
       noResultsHint: "Switch back to All, or search by cafe, street, or landmark.",
       browserNoLocation: "This browser can't access location.",
+      allowPermission: "Please allow location access in your browser.",
+      timeout: "Location timed out. Using default sort for now.",
       locateFailed: "Couldn't get your location. Using default sort.",
     },
     favorites: {
@@ -1659,18 +1663,33 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav, lang }) => {
       setLocationError(getCopy(lang, "nearby.browserNoLocation"));
       return;
     }
+
+    const attemptLocate = (options, retried = false) => {
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          setUserLocation({ lat: pos.coords.latitude, lng: pos.coords.longitude });
+          setLocationLoading(false);
+        },
+        (error) => {
+          if (!retried && (error?.code === 2 || error?.code === 3)) {
+            attemptLocate({ enableHighAccuracy: false, timeout: 20000, maximumAge: 600000 }, true);
+            return;
+          }
+          if (error?.code === 1) {
+            setLocationError(getCopy(lang, "nearby.allowPermission"));
+          } else if (error?.code === 3) {
+            setLocationError(getCopy(lang, "nearby.timeout"));
+          } else {
+            setLocationError(getCopy(lang, "nearby.locateFailed"));
+          }
+          setLocationLoading(false);
+        },
+        options,
+      );
+    };
+
     setLocationLoading(true);
-    navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        setUserLocation({ lat: pos.coords.latitude, lng: pos.coords.longitude });
-        setLocationLoading(false);
-      },
-      () => {
-        setLocationError(getCopy(lang, "nearby.locateFailed"));
-        setLocationLoading(false);
-      },
-      { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 },
-    );
+    attemptLocate({ enableHighAccuracy: false, timeout: 12000, maximumAge: 300000 });
   }, [lang]);
 
   const allSorted = cafes
@@ -1942,8 +1961,8 @@ const LocateController = ({ request, onStart, onSuccess, onError }) => {
       setView: false,
       maxZoom: request.zoom,
       enableHighAccuracy: false,
-      timeout: 12000,
-      maximumAge: 300000,
+      timeout: 20000,
+      maximumAge: 600000,
     });
   }, [map, onStart, onSuccess, onError, request]);
 
