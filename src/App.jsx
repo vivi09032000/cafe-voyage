@@ -1655,7 +1655,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav, lang }) => {
 
   const requestSortLocation = useCallback(() => {
     setLocationError("");
-    if (!navigator.geolocation || !window.isSecureContext) {
+    if (!navigator.geolocation) {
       setLocationError(getCopy(lang, "nearby.browserNoLocation"));
       return;
     }
@@ -1979,15 +1979,11 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
       if (!silent) setLocateError(getCopy(lang, "map.locateUnsupported"));
       return;
     }
-    if (!window.isSecureContext) {
-      if (!silent) setLocateError(getCopy(lang, "map.httpsRequired"));
-      return;
-    }
 
     setLocating(true);
     if (!silent) setLocateError("");
     setLocateRequest(prev => ({ seq: prev.seq + 1, zoom, mode }));
-  }, []);
+  }, [lang]);
 
   const closeSearchPopup = useCallback(() => {
     setSearchPopupCafeId(null);
