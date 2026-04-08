@@ -2984,7 +2984,7 @@ export default function App() {
       case "home": return <HomePage cafes={homeCafes} loading={loading} hasRegionSelection={hasRegionSelection} onOpenRegionPicker={() => setMenuOpen(true)} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} emptyCafeIds={emptyCafeIds} filters={homeFilters} setFilters={setHomeFilters} lang={lang} />;
       case "search": return <SearchPage cafes={searchCafes} loading={loading} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} lang={lang} />;
       case "map": return <MapPage cafes={countryScopedCafes} onSelect={setSelected} mapView={mapView} setMapView={setMapView} mapQuery={mapQuery} setMapQuery={setMapQuery} loading={loading} lang={lang} />;
-      case "favorites": return <FavoritesPage cafes={favoritesCafes} favs={favoriteLookup} onSelect={setSelected} onFav={toggleFav} onExplore={() => setPage("home")} lang={lang} />;
+      case "favorites": return <FavoritesPage cafes={favoritesCafes} favs={favoriteLookup} onSelect={setSelected} onFav={toggleFav} onExplore={() => setTab("home")} lang={lang} />;
       default: return null;
     }
   };
