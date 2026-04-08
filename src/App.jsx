@@ -518,6 +518,28 @@ const getCopy = (lang, path, vars = {}) => {
   return Object.entries(vars).reduce((text, [key, replacement]) => text.replaceAll(`{${key}}`, String(replacement)), value);
 };
 
+const GEO_ERROR_LABELS = {
+  zh: {
+    1: "權限被拒絕",
+    2: "無法取得位置來源",
+    3: "定位逾時",
+  },
+  en: {
+    1: "Permission denied",
+    2: "Position unavailable",
+    3: "Timed out",
+  },
+};
+
+const withGeoErrorDetails = (lang, base, error) => {
+  const code = Number(error?.code);
+  if (!code) return base;
+  const labels = GEO_ERROR_LABELS[lang] || GEO_ERROR_LABELS.zh;
+  const fallbackLabels = GEO_ERROR_LABELS.zh;
+  const label = labels[code] || fallbackLabels[code] || `Code ${code}`;
+  return lang === "en" ? `${base} (${label}, code ${code})` : `${base}（${label}，code ${code}）`;
+};
+
 const getCountryLabel = (country, lang) => country?.labels?.[lang] || country?.labels?.zh || "";
 const getRegionLabel = (regionGroup, lang) => regionGroup?.labels?.[lang] || regionGroup?.labels?.zh || "";
 
@@ -1676,11 +1698,11 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav, lang }) => {
             return;
           }
           if (error?.code === 1) {
-            setLocationError(getCopy(lang, "nearby.allowPermission"));
+            setLocationError(withGeoErrorDetails(lang, getCopy(lang, "nearby.allowPermission"), error));
           } else if (error?.code === 3) {
-            setLocationError(getCopy(lang, "nearby.timeout"));
+            setLocationError(withGeoErrorDetails(lang, getCopy(lang, "nearby.timeout"), error));
           } else {
-            setLocationError(getCopy(lang, "nearby.locateFailed"));
+            setLocationError(withGeoErrorDetails(lang, getCopy(lang, "nearby.locateFailed"), error));
           }
           setLocationLoading(false);
         },
@@ -2024,11 +2046,11 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
   const handleLocateError = useCallback((err) => {
     const code = err?.code;
     if (code === 1) {
-      setLocateError(getCopy(lang, "map.allowPermission"));
+      setLocateError(withGeoErrorDetails(lang, getCopy(lang, "map.allowPermission"), err));
     } else if (code === 3) {
-      setLocateError(getCopy(lang, "map.timeout"));
+      setLocateError(withGeoErrorDetails(lang, getCopy(lang, "map.timeout"), err));
     } else {
-      setLocateError(getCopy(lang, "map.genericError"));
+      setLocateError(withGeoErrorDetails(lang, getCopy(lang, "map.genericError"), err));
     }
     setLocating(false);
   }, []);
