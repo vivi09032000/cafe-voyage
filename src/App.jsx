@@ -2055,6 +2055,8 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
   const [visibleBounds, setVisibleBounds] = useState(null);
   const mapRef = useRef(null);
   const markerRefs = useRef(new Map());
+  const userMarkerRef = useRef(null);
+  const searchMarkerRef = useRef(null);
   const hasAutoLocatedRef = useRef(false);
   const lastSearchQueryRef = useRef("");
   const mapLocateTimerRef = useRef(null);
@@ -2094,6 +2096,29 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
     if (mapRef.current) {
       mapRef.current.closePopup();
     }
+  }, []);
+
+  const bindAccessibleMarker = useCallback((marker, label, onActivate) => {
+    const element = marker?.getElement?.();
+    if (!element) return;
+
+    element.setAttribute("role", "button");
+    element.setAttribute("tabindex", "0");
+    element.setAttribute("aria-label", label);
+    element.setAttribute("title", label);
+
+    if (element.__cvMarkerKeyHandler) {
+      element.removeEventListener("keydown", element.__cvMarkerKeyHandler);
+    }
+
+    const handleKeyDown = (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
+      onActivate?.();
+    };
+
+    element.addEventListener("keydown", handleKeyDown);
+    element.__cvMarkerKeyHandler = handleKeyDown;
   }, []);
 
   const handleLocateStart = useCallback(() => {
@@ -2205,6 +2230,37 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
     return () => clearTimeout(timer);
   }, [searchPopupCafeId, visibleMapCafes]);
 
+  useEffect(() => {
+    visibleMapCafes.forEach((cafe) => {
+      const marker = markerRefs.current.get(cafe.id);
+      if (!marker) return;
+      bindAccessibleMarker(
+        marker,
+        lang === "en" ? `Cafe marker: ${cafe.name}` : `店家標記：${cafe.name}`,
+        () => {
+          setSearchPopupCafeId(cafe.id);
+          marker.openPopup();
+        },
+      );
+    });
+
+    if (userMarkerRef.current) {
+      bindAccessibleMarker(
+        userMarkerRef.current,
+        lang === "en" ? "Your location" : "你的位置",
+        () => userMarkerRef.current?.openPopup?.(),
+      );
+    }
+
+    if (searchMarkerRef.current && searchMarker?.label) {
+      bindAccessibleMarker(
+        searchMarkerRef.current,
+        lang === "en" ? `Search result: ${searchMarker.label}` : `搜尋位置：${searchMarker.label}`,
+        () => searchMarkerRef.current?.openPopup?.(),
+      );
+    }
+  }, [bindAccessibleMarker, lang, searchMarker, visibleMapCafes]);
+
   const flyTarget = searchTarget || geoTarget;
 
   // Use saved map view or default
@@ -2251,11 +2307,11 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
           <SaveMapView onMove={setMapView} onBoundsChange={setVisibleBounds} />
           {flyTarget && <FlyTo center={flyTarget} offsetY={120} />}
           {(!mapQuery || locateRequest.mode === "manual") && <FlyToBySignal center={userPos} seq={locateRequest.seq} zoom={locateRequest.zoom} />}
-          {userPos && <Marker position={userPos} icon={userIcon}>
+          {userPos && <Marker position={userPos} icon={userIcon} ref={userMarkerRef}>
             <Popup><span style={{ ...TYPE.control }}><InlineIcon name="pin" size={13} color={T.brown} /> {getCopy(lang, "map.yourLocation")}</span></Popup>
           </Marker>}
           {searchMarker && (
-            <Marker position={searchMarker.position} icon={stationIcon}>
+            <Marker position={searchMarker.position} icon={stationIcon} ref={searchMarkerRef}>
               <Popup className="map-popup" minWidth={160} maxWidth={220} autoPan={false}>
                 <div style={{ fontFamily: FONT.body }}>
                   <div style={{ ...TYPE.cardTitle, marginBottom: 4, color: T.text }}><InlineIcon name="train" size={14} color={T.brown} /> {getCopy(lang, "map.searchLocation")}</div>
