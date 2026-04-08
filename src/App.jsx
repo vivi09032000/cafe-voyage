@@ -1662,6 +1662,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav, lang }) => {
   const [locationError, setLocationError] = useState("");
   const [activePresetKey, setActivePresetKey] = useState("all");
   const requestedLocation = useRef(false);
+  const nearbyLocateTimerRef = useRef(null);
   const filterPresets = getFilterPresets(lang);
   const searchPlaceholder = getCopy(lang, "searchPlaceholder");
   const activePreset = filterPresets.find((preset) => preset.key === activePresetKey);
@@ -1686,11 +1687,24 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav, lang }) => {
       return;
     }
 
+    if (nearbyLocateTimerRef.current) {
+      clearTimeout(nearbyLocateTimerRef.current);
+      nearbyLocateTimerRef.current = null;
+    }
+
+    const finishLocate = () => {
+      if (nearbyLocateTimerRef.current) {
+        clearTimeout(nearbyLocateTimerRef.current);
+        nearbyLocateTimerRef.current = null;
+      }
+      setLocationLoading(false);
+    };
+
     const attemptLocate = (options, retried = false) => {
       navigator.geolocation.getCurrentPosition(
         (pos) => {
           setUserLocation({ lat: pos.coords.latitude, lng: pos.coords.longitude });
-          setLocationLoading(false);
+          finishLocate();
         },
         (error) => {
           if (!retried && (error?.code === 2 || error?.code === 3)) {
@@ -1704,13 +1718,18 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav, lang }) => {
           } else {
             setLocationError(withGeoErrorDetails(lang, getCopy(lang, "nearby.locateFailed"), error));
           }
-          setLocationLoading(false);
+          finishLocate();
         },
         options,
       );
     };
 
     setLocationLoading(true);
+    nearbyLocateTimerRef.current = setTimeout(() => {
+      setLocationError(withGeoErrorDetails(lang, getCopy(lang, "nearby.timeout"), { code: 3 }));
+      setLocationLoading(false);
+      nearbyLocateTimerRef.current = null;
+    }, 23000);
     attemptLocate({ enableHighAccuracy: false, timeout: 12000, maximumAge: 300000 });
   }, [lang]);
 
@@ -2005,6 +2024,7 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
   const markerRefs = useRef(new Map());
   const hasAutoLocatedRef = useRef(false);
   const lastSearchQueryRef = useRef("");
+  const mapLocateTimerRef = useRef(null);
   const allMapCafes = useMemo(() => cafes.filter(isOpen).filter(c => c.latitude && c.longitude), [cafes]);
   const visibleMapCafes = useMemo(() => {
     if (!visibleBounds) return allMapCafes;
@@ -2021,8 +2041,18 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
       return;
     }
 
+    if (mapLocateTimerRef.current) {
+      clearTimeout(mapLocateTimerRef.current);
+      mapLocateTimerRef.current = null;
+    }
+
     setLocating(true);
     if (!silent) setLocateError("");
+    mapLocateTimerRef.current = setTimeout(() => {
+      setLocateError(withGeoErrorDetails(lang, getCopy(lang, "map.timeout"), { code: 3 }));
+      setLocating(false);
+      mapLocateTimerRef.current = null;
+    }, 23000);
     setLocateRequest(prev => ({ seq: prev.seq + 1, zoom, mode }));
   }, [lang]);
 
@@ -2038,12 +2068,20 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
   }, []);
 
   const handleLocateSuccess = useCallback((pos) => {
+    if (mapLocateTimerRef.current) {
+      clearTimeout(mapLocateTimerRef.current);
+      mapLocateTimerRef.current = null;
+    }
     setUserPos(pos);
     setLocating(false);
     setLocateError("");
   }, []);
 
   const handleLocateError = useCallback((err) => {
+    if (mapLocateTimerRef.current) {
+      clearTimeout(mapLocateTimerRef.current);
+      mapLocateTimerRef.current = null;
+    }
     const code = err?.code;
     if (code === 1) {
       setLocateError(withGeoErrorDetails(lang, getCopy(lang, "map.allowPermission"), err));
