@@ -135,9 +135,9 @@ const SPACE = {
 const REGION_PROMPT_KEY = "prompt";
 const REGION_STORAGE_KEY = "cafe-voyage:region";
 const COUNTRY_STORAGE_KEY = "cafe-voyage:country";
+const LANGUAGE_STORAGE_KEY = "cafe-voyage:lang";
 const MAP_CACHE_KEY = "cafe-voyage:map-cafes:v2";
 const MAP_CACHE_TTL = 1000 * 60 * 60 * 12;
-const SEARCH_PLACEHOLDER = "搜尋店名、地址、地標";
 const SEARCH_INPUT_STYLE = {
   width: "100%",
   padding: "10px 14px 10px 36px",
@@ -152,31 +152,370 @@ const SEARCH_INPUT_STYLE = {
   boxShadow: UI.shadowSoft,
 };
 const REGION_PATTERN = /(台北市|新北市|桃園市|台中市|臺中市|台南市|臺南市|高雄市|基隆市|新竹市|新竹縣|苗栗縣|彰化縣|南投縣|雲林縣|嘉義市|嘉義縣|屏東縣|宜蘭縣|花蓮縣|台東縣|臺東縣)/;
+const LANGUAGE_OPTIONS = [
+  { key: "zh", label: "中文" },
+  { key: "en", label: "English" },
+];
 const COUNTRY_OPTIONS = [
-  { key: "taiwan", label: "台灣", code: "TW" },
-  { key: "vietnam", label: "越南", code: "VN" },
-  { key: "thailand", label: "泰國", code: "TH", comingSoon: true },
-  { key: "japan", label: "日本", code: "JP", comingSoon: true },
+  { key: "taiwan", labels: { zh: "台灣", en: "Taiwan" }, code: "TW" },
+  { key: "vietnam", labels: { zh: "越南", en: "Vietnam" }, code: "VN" },
+  { key: "thailand", labels: { zh: "泰國", en: "Thailand" }, code: "TH", comingSoon: true },
+  { key: "japan", labels: { zh: "日本", en: "Japan" }, code: "JP", comingSoon: true },
 ];
 const REGION_GROUPS = [
-  { key: "taipei", label: "台北", country: "taiwan", members: ["台北市", "新北市"] },
-  { key: "taichung", label: "台中", country: "taiwan", members: ["台中市"] },
-  { key: "tainan", label: "台南", country: "taiwan", members: ["台南市"] },
-  { key: "kaohsiung", label: "高雄", country: "taiwan", members: ["高雄市"] },
-  { key: "chiayi", label: "嘉義", country: "taiwan", members: ["嘉義市", "嘉義縣"] },
-  { key: "hsinchu", label: "新竹", country: "taiwan", members: ["新竹市", "新竹縣"] },
-  { key: "taoyuan", label: "桃園", country: "taiwan", members: ["桃園市"] },
-  { key: "keelung", label: "基隆", country: "taiwan", members: ["基隆市"] },
-  { key: "miaoli", label: "苗栗", country: "taiwan", members: ["苗栗縣"] },
-  { key: "changhua", label: "彰化", country: "taiwan", members: ["彰化縣"] },
-  { key: "nantou", label: "南投", country: "taiwan", members: ["南投縣"] },
-  { key: "yunlin", label: "雲林", country: "taiwan", members: ["雲林縣"] },
-  { key: "pingtung", label: "屏東", country: "taiwan", members: ["屏東縣"] },
-  { key: "yilan", label: "宜蘭", country: "taiwan", members: ["宜蘭縣"] },
-  { key: "hualien", label: "花蓮", country: "taiwan", members: ["花蓮縣"] },
-  { key: "taitung", label: "台東", country: "taiwan", members: ["台東縣"] },
-  { key: "hoi_an", label: "會安", country: "vietnam", members: ["Hội An", "Hoi An", "會安"] },
+  { key: "taipei", labels: { zh: "台北", en: "Taipei" }, country: "taiwan", members: ["台北市", "新北市"] },
+  { key: "taichung", labels: { zh: "台中", en: "Taichung" }, country: "taiwan", members: ["台中市"] },
+  { key: "tainan", labels: { zh: "台南", en: "Tainan" }, country: "taiwan", members: ["台南市"] },
+  { key: "kaohsiung", labels: { zh: "高雄", en: "Kaohsiung" }, country: "taiwan", members: ["高雄市"] },
+  { key: "chiayi", labels: { zh: "嘉義", en: "Chiayi" }, country: "taiwan", members: ["嘉義市", "嘉義縣"] },
+  { key: "hsinchu", labels: { zh: "新竹", en: "Hsinchu" }, country: "taiwan", members: ["新竹市", "新竹縣"] },
+  { key: "taoyuan", labels: { zh: "桃園", en: "Taoyuan" }, country: "taiwan", members: ["桃園市"] },
+  { key: "keelung", labels: { zh: "基隆", en: "Keelung" }, country: "taiwan", members: ["基隆市"] },
+  { key: "miaoli", labels: { zh: "苗栗", en: "Miaoli" }, country: "taiwan", members: ["苗栗縣"] },
+  { key: "changhua", labels: { zh: "彰化", en: "Changhua" }, country: "taiwan", members: ["彰化縣"] },
+  { key: "nantou", labels: { zh: "南投", en: "Nantou" }, country: "taiwan", members: ["南投縣"] },
+  { key: "yunlin", labels: { zh: "雲林", en: "Yunlin" }, country: "taiwan", members: ["雲林縣"] },
+  { key: "pingtung", labels: { zh: "屏東", en: "Pingtung" }, country: "taiwan", members: ["屏東縣"] },
+  { key: "yilan", labels: { zh: "宜蘭", en: "Yilan" }, country: "taiwan", members: ["宜蘭縣"] },
+  { key: "hualien", labels: { zh: "花蓮", en: "Hualien" }, country: "taiwan", members: ["花蓮縣"] },
+  { key: "taitung", labels: { zh: "台東", en: "Taitung" }, country: "taiwan", members: ["台東縣"] },
+  { key: "hoi_an", labels: { zh: "會安", en: "Hoi An" }, country: "vietnam", members: ["Hội An", "Hoi An", "會安"] },
 ];
+
+const COPY = {
+  zh: {
+    searchPlaceholder: "搜尋店名、地址、地標",
+    common: {
+      all: "全部",
+      loadingCafes: "載入咖啡廳...",
+      loadingMap: "載入地圖資料...",
+      countUnit: "間",
+      cityPrompt: "選地區",
+      viewDetails: "查看詳情",
+      openInGoogleMaps: "在 Google Maps 開啟",
+      similarTagsHint: "點標籤看相似店",
+      comingSoon: "即將推出",
+      settings: "設定",
+      region: "地區",
+      language: "語言",
+      save: "儲存",
+      clear: "清除",
+      filter: "篩選",
+      collapseFilters: "收起篩選",
+    },
+    nav: { home: "首頁", nearby: "附近", map: "地圖", favorites: "收藏" },
+    settings: {
+      openMenu: "開啟設定選單",
+      close: "關閉設定",
+      loggedIn: "已登入",
+      notLoggedIn: "尚未登入",
+      connectedGoogle: "已連接 Google 帳號",
+      syncFavorites: "用 Google 同步收藏",
+      signIn: "用 Google 登入",
+      signInBusy: "前往 Google...",
+      signOut: "登出",
+      signOutBusy: "登出中...",
+      aboutTitle: "關於 Cafe Voyage",
+      aboutSubtitle: "找工作、放空、約會都剛好的咖啡廳地圖",
+      feedbackTitle: "意見回饋",
+      feedbackSubtitle: "建議或錯誤回報",
+      supportTitle: "Buy me a coffee",
+      supportSubtitle: "支持 Cafe Voyage",
+      switchCountry: "切換國家選單",
+    },
+    tags: {
+      noLimit: "不限時",
+      holidayLimit: "△ 假日限時",
+      limited: "✗ 有限時",
+      socketMany: "插座多",
+      socketFew: "插座少",
+      standing: "站立桌",
+      tempClosed: "暫停營業",
+      empty: "很空",
+    },
+    filters: {
+      noLimit: "不限時",
+      socket: "插座多",
+      standing: "站立桌",
+      wifi: "WiFi穩",
+      quiet: "超安靜",
+      tasty: "咖啡好喝",
+      cheap: "價格實惠",
+      music: "舒服氛圍",
+      empty: "目前人少",
+      sections: {
+        workspace: "工作環境",
+        atmosphere: "網路與氛圍",
+        live: "即時狀態",
+      },
+    },
+    presets: {
+      focus: { title: "專心工作", subtitle: "安靜、網路穩，適合打開電腦" },
+      longStay: { title: "久坐友善", subtitle: "不趕時間，也不用擔心沒電" },
+      coffee: { title: "好咖啡", subtitle: "想認真喝一杯的時候" },
+      vibe: { title: "舒服氛圍", subtitle: "適合聊天、約會、放慢一點" },
+    },
+    pagination: { prev: "← 上一頁", next: "下一頁 →" },
+    home: {
+      chooseCity: "先選一個城市",
+      chooseCityHint: "我們會先用地區整理列表，之後也能在設定裡切換。",
+      chooseCityAction: "選擇城市",
+      byNeed: "依需求找咖啡廳",
+      noResultsTitle: "找不到符合的店",
+      noResultsHint: "試試店名、路名或地標，或清除篩選看看。",
+      total: "共 {count} 間",
+      totalPaged: "共 {count} 間（顯示第 {start}-{end} 間）",
+    },
+    nearby: {
+      title: "附近咖啡廳",
+      distanceSort: "依距離由近到遠",
+      locating: "正在取得位置",
+      allowLocation: "允許定位後依距離排序",
+      total: "{sort}・共 {count} 間",
+      totalPaged: "{sort}・共 {count} 間（第 {start}-{end} 間）",
+      noResultsTitle: "附近沒有符合的店",
+      noResultsHint: "可以切回「全部」，或改用店名、路名搜尋。",
+      browserNoLocation: "這個瀏覽器無法定位。",
+      locateFailed: "定位失敗，先用預設排序。",
+    },
+    favorites: {
+      title: "我的收藏",
+      savedCount: "已收藏 {count} 間",
+      emptyTitle: "還沒有收藏",
+      emptyHint: "點收藏圖示加入",
+    },
+    map: {
+      yourLocation: "你的位置",
+      searchLocation: "搜尋位置",
+      locateUnsupported: "這個瀏覽器不支援定位。",
+      httpsRequired: "定位需要 HTTPS 才能使用。",
+      allowPermission: "請在瀏覽器設定允許位置權限。",
+      timeout: "定位逾時，請到訊號較好的地方再試。",
+      genericError: "暫時無法取得位置，請稍後再試。",
+      locating: "定位中",
+      locatingTitle: "定位中...",
+      backToLocation: "回到我的位置",
+    },
+    crowd: {
+      title: "現在人多嗎？",
+      loading: "載入狀態...",
+      empty: "很空，快來",
+      normal: "普通",
+      crowded: "很擠，慎入",
+      thanks: "已收到，謝謝！",
+      update: "更新狀態",
+      current: "現在狀況",
+    },
+    detail: {
+      back: "返回上一頁",
+      openStoreLink: "開啟店家連結",
+      hideCafe: "隱藏這家店",
+      hidingCafe: "隱藏中...",
+      hideFailed: "隱藏失敗，請稍後再試。",
+      scores: "環境評分",
+      wifi: "WiFi",
+      stable: "穩定",
+      quiet: "安靜",
+      level: "程度",
+      coffee: "咖啡",
+      tasty: "好喝",
+      seat: "座位",
+      seatsAvailable: "通常有位",
+      price: "價格",
+      cheap: "便宜",
+      vibe: "氛圍",
+      music: "裝潢音樂",
+    },
+    auth: {
+      redirecting: "正在前往 Google 登入。",
+      signInFailed: "登入失敗，請稍後再試。",
+      signedOut: "已登出。",
+      signOutFailed: "登出失敗，請稍後再試。",
+      adminOnly: "只有管理帳號可以隱藏店家。",
+    },
+    timeAgo: {
+      justNow: "今天 {time}・剛剛",
+      minsAgo: "今天 {time}・{mins} 分鐘前",
+      hoursAgo: "今天 {time}・{hours} 小時前",
+    },
+    aria: {
+      details: "查看 {name} 詳情",
+      favorite: "收藏 {name}",
+      unfavorite: "取消收藏 {name}",
+    },
+  },
+  en: {
+    searchPlaceholder: "Search cafe name, address, or landmark",
+    common: {
+      all: "All",
+      loadingCafes: "Loading cafes...",
+      loadingMap: "Loading map cafes...",
+      countUnit: "",
+      cityPrompt: "Choose area",
+      viewDetails: "View details",
+      openInGoogleMaps: "Open in Google Maps",
+      similarTagsHint: "Tap a tag to find similar cafes",
+      comingSoon: "Coming soon",
+      settings: "Settings",
+      region: "Region",
+      language: "Language",
+      save: "Save",
+      clear: "Clear",
+      filter: "Filter",
+      collapseFilters: "Hide filters",
+    },
+    nav: { home: "Home", nearby: "Nearby", map: "Map", favorites: "Saved" },
+    settings: {
+      openMenu: "Open settings menu",
+      close: "Close settings",
+      loggedIn: "Signed in",
+      notLoggedIn: "Not signed in",
+      connectedGoogle: "Google account connected",
+      syncFavorites: "Sync favorites with Google",
+      signIn: "Sign in with Google",
+      signInBusy: "Opening Google...",
+      signOut: "Sign out",
+      signOutBusy: "Signing out...",
+      aboutTitle: "About Cafe Voyage",
+      aboutSubtitle: "A cafe map for work, rest, and easy dates.",
+      feedbackTitle: "Feedback",
+      feedbackSubtitle: "Suggestions or bug reports",
+      supportTitle: "Buy me a coffee",
+      supportSubtitle: "Support Cafe Voyage",
+      switchCountry: "Switch country menu",
+    },
+    tags: {
+      noLimit: "No time limit",
+      holidayLimit: "Holiday time limit",
+      limited: "Time limit",
+      socketMany: "Many outlets",
+      socketFew: "Few outlets",
+      standing: "Standing desk",
+      tempClosed: "Temporarily closed",
+      empty: "Quiet now",
+    },
+    filters: {
+      noLimit: "No time limit",
+      socket: "Many outlets",
+      standing: "Standing desk",
+      wifi: "Strong Wi-Fi",
+      quiet: "Very quiet",
+      tasty: "Great coffee",
+      cheap: "Budget-friendly",
+      music: "Good ambiance",
+      empty: "Quiet now",
+      sections: {
+        workspace: "Work setup",
+        atmosphere: "Network & vibe",
+        live: "Live status",
+      },
+    },
+    presets: {
+      focus: { title: "Focus mode", subtitle: "Quiet and reliable for deep work" },
+      longStay: { title: "Long stay", subtitle: "Outlets and time to stay awhile" },
+      coffee: { title: "Great coffee", subtitle: "For when the cup matters most" },
+      vibe: { title: "Cozy vibe", subtitle: "Good for chats, dates, and slow afternoons" },
+    },
+    pagination: { prev: "← Prev", next: "Next →" },
+    home: {
+      chooseCity: "Choose a city first",
+      chooseCityHint: "We organize the list by area first, and you can switch later in Settings.",
+      chooseCityAction: "Choose city",
+      byNeed: "Find cafes by mood",
+      noResultsTitle: "No matching cafes",
+      noResultsHint: "Try a cafe name, street, or landmark, or clear the filters.",
+      total: "{count} cafes",
+      totalPaged: "{count} cafes ({start}-{end})",
+    },
+    nearby: {
+      title: "Nearby cafes",
+      distanceSort: "Sorted by distance",
+      locating: "Finding your location",
+      allowLocation: "Allow location to sort by distance",
+      total: "{sort} · {count} cafes",
+      totalPaged: "{sort} · {count} cafes ({start}-{end})",
+      noResultsTitle: "No nearby match",
+      noResultsHint: "Switch back to All, or search by cafe, street, or landmark.",
+      browserNoLocation: "This browser can't access location.",
+      locateFailed: "Couldn't get your location. Using default sort.",
+    },
+    favorites: {
+      title: "Saved cafes",
+      savedCount: "{count} saved",
+      emptyTitle: "No saved cafes yet",
+      emptyHint: "Tap the star to save one",
+    },
+    map: {
+      yourLocation: "Your location",
+      searchLocation: "Search result",
+      locateUnsupported: "Location isn't supported in this browser.",
+      httpsRequired: "Location requires HTTPS.",
+      allowPermission: "Please allow location permission in your browser settings.",
+      timeout: "Location timed out. Try again with a better signal.",
+      genericError: "We couldn't get your location right now.",
+      locating: "Locating",
+      locatingTitle: "Locating...",
+      backToLocation: "Back to my location",
+    },
+    crowd: {
+      title: "How busy is it now?",
+      loading: "Loading status...",
+      empty: "Quiet and easy",
+      normal: "Normal",
+      crowded: "Crowded",
+      thanks: "Thanks, got it!",
+      update: "Update",
+      current: "Current status",
+    },
+    detail: {
+      back: "Back",
+      openStoreLink: "Open store link",
+      hideCafe: "Hide this cafe",
+      hidingCafe: "Hiding...",
+      hideFailed: "Couldn't hide this cafe. Please try again.",
+      scores: "Cafe profile",
+      wifi: "Wi-Fi",
+      stable: "Stability",
+      quiet: "Quiet",
+      level: "Level",
+      coffee: "Coffee",
+      tasty: "Taste",
+      seat: "Seats",
+      seatsAvailable: "Seat comfort",
+      price: "Price",
+      cheap: "Budget",
+      vibe: "Vibe",
+      music: "Interior & music",
+    },
+    auth: {
+      redirecting: "Opening Google sign-in...",
+      signInFailed: "Sign-in failed. Please try again.",
+      signedOut: "Signed out.",
+      signOutFailed: "Sign-out failed. Please try again.",
+      adminOnly: "Only the admin account can hide cafes.",
+    },
+    timeAgo: {
+      justNow: "Today {time} · Just now",
+      minsAgo: "Today {time} · {mins} min ago",
+      hoursAgo: "Today {time} · {hours} hr ago",
+    },
+    aria: {
+      details: "View details for {name}",
+      favorite: "Save {name}",
+      unfavorite: "Remove {name} from saved",
+    },
+  },
+};
+
+const getCopy = (lang, path, vars = {}) => {
+  const source = COPY[lang] || COPY.zh;
+  const value = path.split(".").reduce((acc, key) => acc?.[key], source);
+  if (typeof value !== "string") return value;
+  return Object.entries(vars).reduce((text, [key, replacement]) => text.replaceAll(`{${key}}`, String(replacement)), value);
+};
+
+const getCountryLabel = (country, lang) => country?.labels?.[lang] || country?.labels?.zh || "";
+const getRegionLabel = (regionGroup, lang) => regionGroup?.labels?.[lang] || regionGroup?.labels?.zh || "";
 
 const normalizeRegionLabel = (label = "") => label
   .replace("臺中市", "台中市")
@@ -367,46 +706,35 @@ const Tag = ({ label, type = "green", onClick, icon }) => {
   );
 };
 
-const limitedTag = (v, onNoLimitClick) => {
-  if (v === "no") return <Tag label="不限時" type="green" icon="check" onClick={onNoLimitClick} />;
-  if (v === "maybe") return <Tag label="△ 假日限時" type="amber" />;
-  if (v === "yes") return <Tag label="✗ 有限時" type="red" />;
+const limitedTag = (v, lang, onNoLimitClick) => {
+  if (v === "no") return <Tag label={getCopy(lang, "tags.noLimit")} type="green" icon="check" onClick={onNoLimitClick} />;
+  if (v === "maybe") return <Tag label={getCopy(lang, "tags.holidayLimit")} type="amber" />;
+  if (v === "yes") return <Tag label={getCopy(lang, "tags.limited")} type="red" />;
   return null;
 };
 
-const socketTag = (v, onSocketClick) => {
-  if (v === "yes") return <Tag label="插座多" type="green" icon="plug" onClick={onSocketClick} />;
-  if (v === "maybe") return <Tag label="插座少" type="amber" icon="plug" />;
+const socketTag = (v, lang, onSocketClick) => {
+  if (v === "yes") return <Tag label={getCopy(lang, "tags.socketMany")} type="green" icon="plug" onClick={onSocketClick} />;
+  if (v === "maybe") return <Tag label={getCopy(lang, "tags.socketFew")} type="amber" icon="plug" />;
   return null;
 };
 
-const temporaryClosureTag = (cafe) => {
+const temporaryClosureTag = (cafe, lang) => {
   if (cafe.google_business_status === "CLOSED_TEMPORARILY") {
-    return <Tag label="暫停營業" type="amber" icon="pause" />;
+    return <Tag label={getCopy(lang, "tags.tempClosed")} type="amber" icon="pause" />;
   }
   return null;
 };
 
 // ── Crowd helpers ──
-const crowdTagFromIds = (cafeId, emptyCafeIds, onEmptyClick) => {
+const crowdTagFromIds = (cafeId, emptyCafeIds, lang, onEmptyClick) => {
   if (emptyCafeIds && emptyCafeIds.has && emptyCafeIds.has(cafeId)) {
-    return <Tag label="很空" type="green" icon="status" onClick={onEmptyClick} />;
+    return <Tag label={getCopy(lang, "tags.empty")} type="green" icon="status" onClick={onEmptyClick} />;
   }
   return null;
 };
 
 // ── Filter Section ──
-const FILTER_LABELS = {
-  noLimit: "不限時",
-  socket: "插座多",
-  standing: "站立桌",
-  wifi: "WiFi穩",
-  quiet: "超安靜",
-  tasty: "咖啡好喝",
-  cheap: "價格實惠",
-  music: "舒服氛圍",
-  empty: "目前人少",
-};
 const DEFAULT_HOME_FILTERS = {
   noLimit: false,
   socket: false,
@@ -418,36 +746,46 @@ const DEFAULT_HOME_FILTERS = {
   music: false,
   empty: false,
 };
-const FILTER_PRESETS = [
+const FILTER_PRESET_DEFS = [
   {
     key: "focus",
-    title: "專心工作",
-    subtitle: "安靜、網路穩，適合打開電腦",
     filters: { wifi: true, quiet: true },
     score: (cafe) => (Number(cafe.wifi) || 0) * 0.4 + (Number(cafe.quiet) || 0) * 0.4 + (Number(cafe.seat) || 0) * 0.2,
   },
   {
     key: "longStay",
-    title: "久坐友善",
-    subtitle: "不趕時間，也不用擔心沒電",
     filters: { socket: true, noLimit: true },
     score: (cafe) => (Number(cafe.seat) || 0) * 0.4 + (Number(cafe.wifi) || 0) * 0.35 + (Number(cafe.quiet) || 0) * 0.25,
   },
   {
     key: "coffee",
-    title: "好咖啡",
-    subtitle: "想認真喝一杯的時候",
     filters: { tasty: true },
     score: (cafe) => (Number(cafe.tasty) || 0) * 0.7 + (Number(cafe.cheap) || 0) * 0.15 + (Number(cafe.seat) || 0) * 0.15,
   },
   {
     key: "vibe",
-    title: "舒服氛圍",
-    subtitle: "適合聊天、約會、放慢一點",
     filters: { music: true },
     score: (cafe) => (Number(cafe.music) || 0) * 0.5 + (Number(cafe.quiet) || 0) * 0.25 + (Number(cafe.tasty) || 0) * 0.25,
   },
 ];
+
+const getFilterLabels = (lang) => ({
+  noLimit: getCopy(lang, "filters.noLimit"),
+  socket: getCopy(lang, "filters.socket"),
+  standing: getCopy(lang, "filters.standing"),
+  wifi: getCopy(lang, "filters.wifi"),
+  quiet: getCopy(lang, "filters.quiet"),
+  tasty: getCopy(lang, "filters.tasty"),
+  cheap: getCopy(lang, "filters.cheap"),
+  music: getCopy(lang, "filters.music"),
+  empty: getCopy(lang, "filters.empty"),
+});
+
+const getFilterPresets = (lang) => FILTER_PRESET_DEFS.map((preset) => ({
+  ...preset,
+  title: getCopy(lang, `presets.${preset.key}.title`),
+  subtitle: getCopy(lang, `presets.${preset.key}.subtitle`),
+}));
 
 const FilterChip = ({ active, label, onClick, icon }) => (
   <button type="button" className="soft-press" aria-pressed={active} onClick={onClick} style={{
@@ -469,31 +807,31 @@ const FilterChip = ({ active, label, onClick, icon }) => (
   </button>
 );
 
-const FilterSection = ({ filters, toggle }) => (
+const FilterSection = ({ filters, toggle, lang }) => (
   <div style={{ marginBottom: SPACE.sectionGap, background: UI.panel, border: `1px solid ${UI.line}`, borderRadius: 18, padding: SPACE.cardPad }}>
     {[
       {
-        title: "工作環境",
+        title: getCopy(lang, "filters.sections.workspace"),
         items: [
-          { key: "noLimit", label: "不限時" },
-          { key: "socket", label: "插座多" },
-          { key: "standing", label: "站立桌" },
+          { key: "noLimit", label: getCopy(lang, "filters.noLimit") },
+          { key: "socket", label: getCopy(lang, "filters.socket") },
+          { key: "standing", label: getCopy(lang, "filters.standing") },
         ],
       },
       {
-        title: "網路與氛圍",
+        title: getCopy(lang, "filters.sections.atmosphere"),
         items: [
-          { key: "wifi", label: "WiFi 穩" },
-          { key: "quiet", label: "超安靜" },
-          { key: "tasty", label: "咖啡好喝" },
-          { key: "cheap", label: "價格實惠" },
-          { key: "music", label: "舒服氛圍" },
+          { key: "wifi", label: getCopy(lang, "filters.wifi") },
+          { key: "quiet", label: getCopy(lang, "filters.quiet") },
+          { key: "tasty", label: getCopy(lang, "filters.tasty") },
+          { key: "cheap", label: getCopy(lang, "filters.cheap") },
+          { key: "music", label: getCopy(lang, "filters.music") },
         ],
       },
       {
-        title: "即時狀態",
+        title: getCopy(lang, "filters.sections.live"),
         items: [
-          { key: "empty", label: "目前人少", icon: "status" },
+          { key: "empty", label: getCopy(lang, "filters.empty"), icon: "status" },
         ],
       },
     ].map((section, index) => (
@@ -510,7 +848,7 @@ const FilterSection = ({ filters, toggle }) => (
 );
 
 const PER_PAGE = 30;
-const Pagination = ({ page, total, onPage }) => {
+const Pagination = ({ page, total, onPage, lang }) => {
   const maxPage = Math.ceil(total / PER_PAGE);
   if (maxPage <= 1) return null;
   return (
@@ -518,23 +856,23 @@ const Pagination = ({ page, total, onPage }) => {
       <button onClick={() => onPage(page - 1)} disabled={page <= 1} style={{
         background: page <= 1 ? T.beige : T.brown, color: page <= 1 ? T.sub : UI.onDark,
         border: "none", borderRadius: 8, padding: "6px 14px", fontSize: 12, cursor: page <= 1 ? "default" : "pointer", fontFamily: "inherit",
-      }}>← 上一頁</button>
+      }}>{getCopy(lang, "pagination.prev")}</button>
       <span style={{ fontSize: 12, color: T.sub }}>{page} / {maxPage}</span>
       <button onClick={() => onPage(page + 1)} disabled={page >= maxPage} style={{
         background: page >= maxPage ? T.beige : T.brown, color: page >= maxPage ? T.sub : UI.onDark,
         border: "none", borderRadius: 8, padding: "6px 14px", fontSize: 12, cursor: page >= maxPage ? "default" : "pointer", fontFamily: "inherit",
-      }}>下一頁 →</button>
+      }}>{getCopy(lang, "pagination.next")}</button>
     </div>
   );
 };
 
-const timeAgo = (ts) => {
+const timeAgo = (ts, lang) => {
   const date = new Date(ts);
   const mins = Math.floor((Date.now() - date) / 60000);
-  const timeStr = date.toLocaleTimeString('zh-TW', { hour: '2-digit', minute: '2-digit', hour12: false });
-  if (mins < 1) return `今天 ${timeStr}・剛剛`;
-  if (mins < 60) return `今天 ${timeStr}・${mins} 分鐘前`;
-  return `今天 ${timeStr}・${Math.floor(mins / 60)} 小時前`;
+  const timeStr = date.toLocaleTimeString(lang === "en" ? "en-US" : "zh-TW", { hour: '2-digit', minute: '2-digit', hour12: false });
+  if (mins < 1) return getCopy(lang, "timeAgo.justNow", { time: timeStr });
+  if (mins < 60) return getCopy(lang, "timeAgo.minsAgo", { time: timeStr, mins });
+  return getCopy(lang, "timeAgo.hoursAgo", { time: timeStr, hours: Math.floor(mins / 60) });
 };
 
 const distanceKm = (from, cafe) => {
@@ -560,7 +898,7 @@ const formatDistance = (km) => {
 const workScore = (cafe) => (Number(cafe.wifi) || 0) + (Number(cafe.quiet) || 0) + (Number(cafe.tasty) || 0);
 
 // ── Header ──
-const Header = ({ title = "Cafe Voyage", cityLabel, subtitle, onOpenMenu }) => {
+const Header = ({ title = "Cafe Voyage", cityLabel, subtitle, onOpenMenu, lang }) => {
   const metaText = subtitle ?? cityLabel;
   return (
   <div style={{ background: T.brown, padding: "18px 22px 22px", display: "flex", justifyContent: "space-between", alignItems: "center", flexShrink: 0 }}>
@@ -568,7 +906,7 @@ const Header = ({ title = "Cafe Voyage", cityLabel, subtitle, onOpenMenu }) => {
       <div style={{ ...TYPE.brand, color: UI.onDark }}>{title}</div>
       {metaText !== "" && <div style={{ ...TYPE.meta, color: UI.onDarkMuted, marginTop: 5 }}>{metaText}</div>}
     </div>
-    <button aria-label="開啟設定選單" onClick={onOpenMenu} style={{ background: "none", border: "none", cursor: "pointer", padding: 4 }}>
+    <button aria-label={getCopy(lang, "settings.openMenu")} onClick={onOpenMenu} style={{ background: "none", border: "none", cursor: "pointer", padding: 4 }}>
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={UI.onDark} strokeWidth="2.2" strokeLinecap="round">
         <line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" />
       </svg>
@@ -592,23 +930,25 @@ const SettingsPanel = ({
   authError,
   onGoogleSignIn,
   onSignOut,
+  lang,
+  setLang,
 }) => {
   if (!open) return null;
   const [countryMenuOpen, setCountryMenuOpen] = useState(false);
   const menuLinks = [
     {
-      title: "關於 Cafe Voyage",
-      subtitle: "找工作、放空、約會都剛好的咖啡廳地圖",
+      title: getCopy(lang, "settings.aboutTitle"),
+      subtitle: getCopy(lang, "settings.aboutSubtitle"),
       href: null,
     },
     {
-      title: "意見回饋",
-      subtitle: "建議或錯誤回報",
+      title: getCopy(lang, "settings.feedbackTitle"),
+      subtitle: getCopy(lang, "settings.feedbackSubtitle"),
       href: null,
     },
     {
-      title: "Buy me a coffee",
-      subtitle: "支持 Cafe Voyage",
+      title: getCopy(lang, "settings.supportTitle"),
+      subtitle: getCopy(lang, "settings.supportSubtitle"),
       href: null,
     },
   ];
@@ -681,9 +1021,9 @@ const SettingsPanel = ({
         onClick={(e) => e.stopPropagation()}
       >
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "18px 18px 12px", flexShrink: 0 }}>
-          <div style={{ ...TYPE.pageTitle, fontSize: "1.32rem", color: T.text }}>設定</div>
+          <div style={{ ...TYPE.pageTitle, fontSize: "1.32rem", color: T.text }}>{getCopy(lang, "common.settings")}</div>
           <button
-            aria-label="關閉設定"
+            aria-label={getCopy(lang, "settings.close")}
             onClick={onClose}
             style={{ background: "none", border: "none", cursor: "pointer", color: T.sub, fontSize: 23, lineHeight: 1 }}
           >
@@ -710,10 +1050,10 @@ const SettingsPanel = ({
             </div>
             <div>
               <div style={{ ...TYPE.cardTitle, color: T.text }}>
-                {user ? "已登入" : "尚未登入"}
+                {user ? getCopy(lang, "settings.loggedIn") : getCopy(lang, "settings.notLoggedIn")}
               </div>
               <div style={{ ...TYPE.caption, color: UI.muted, marginTop: 2 }}>
-                {user ? (user.email || "已連接 Google 帳號") : "用 Google 同步收藏"}
+                {user ? (user.email || getCopy(lang, "settings.connectedGoogle")) : getCopy(lang, "settings.syncFavorites")}
               </div>
             </div>
           </div>
@@ -737,7 +1077,7 @@ const SettingsPanel = ({
                 letterSpacing: "-0.01em",
               }}
             >
-              {authBusy ? "登出中..." : "登出"}
+              {authBusy ? getCopy(lang, "settings.signOutBusy") : getCopy(lang, "settings.signOut")}
             </button>
           ) : (
             <button
@@ -758,7 +1098,7 @@ const SettingsPanel = ({
                 letterSpacing: "-0.01em",
               }}
             >
-              {authBusy ? "前往 Google..." : "用 Google 登入"}
+              {authBusy ? getCopy(lang, "settings.signInBusy") : getCopy(lang, "settings.signIn")}
             </button>
           )}
 
@@ -767,10 +1107,35 @@ const SettingsPanel = ({
         </div>
 
         <div style={{ background: UI.panel, border: `1px solid ${UI.cardBorder}`, borderRadius: 16, padding: 12, margin: "0 16px 10px" }}>
-          <div style={{ ...TYPE.caption, color: UI.muted, marginBottom: 8 }}>地區</div>
+          <div style={{ ...TYPE.caption, color: UI.muted, marginBottom: 8 }}>{getCopy(lang, "common.language")}</div>
+          <div style={{ display: "flex", gap: 7, marginBottom: 12 }}>
+            {LANGUAGE_OPTIONS.map((option) => (
+              <button
+                key={option.key}
+                onClick={() => setLang(option.key)}
+                style={{
+                  background: lang === option.key ? T.brown : T.cream,
+                  color: lang === option.key ? UI.onDark : T.text,
+                  border: `1px solid ${lang === option.key ? T.brown : UI.regionBorder}`,
+                  borderRadius: 14,
+                  padding: "8px 10px",
+                  fontSize: 11,
+                  cursor: "pointer",
+                  fontFamily: "inherit",
+                  fontWeight: lang === option.key ? 700 : 500,
+                  lineHeight: 1.1,
+                  flex: 1,
+                }}
+              >
+                {option.label}
+              </button>
+            ))}
+          </div>
+
+          <div style={{ ...TYPE.caption, color: UI.muted, marginBottom: 8 }}>{getCopy(lang, "common.region")}</div>
           <div style={{ border: `1px solid ${UI.scoreTrack}`, borderRadius: 14, overflow: "hidden", marginBottom: 10, background: UI.surface }}>
             <button
-              aria-label="切換國家選單"
+              aria-label={getCopy(lang, "settings.switchCountry")}
               onClick={() => setCountryMenuOpen((openState) => !openState)}
               style={{
                 width: "100%",
@@ -789,7 +1154,7 @@ const SettingsPanel = ({
             >
               <span style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, fontWeight: 650 }}>
                 <CountryMark code={selectedCountry.code} />
-                <span>{selectedCountry.label}</span>
+                <span>{getCountryLabel(selectedCountry, lang)}</span>
               </span>
               <Icon name={countryMenuOpen ? "chevronUp" : "chevronDown"} size={14} strokeWidth={2.2} style={{ color: T.sub }} />
             </button>
@@ -824,10 +1189,10 @@ const SettingsPanel = ({
                     >
                       <span style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, fontWeight: 600 }}>
                         <CountryMark code={item.code} />
-                        <span>{item.label}</span>
+                        <span>{getCountryLabel(item, lang)}</span>
                       </span>
                       {item.comingSoon ? (
-                        <span style={{ fontSize: 10, color: T.sub, background: T.beige, padding: "3px 7px", borderRadius: 999 }}>即將推出</span>
+                        <span style={{ fontSize: 10, color: T.sub, background: T.beige, padding: "3px 7px", borderRadius: 999 }}>{getCopy(lang, "common.comingSoon")}</span>
                       ) : isSelected ? (
                         <span style={{ width: 9, height: 9, borderRadius: "50%", background: T.brown, display: "inline-block" }} />
                       ) : null}
@@ -855,7 +1220,7 @@ const SettingsPanel = ({
                   lineHeight: 1.1,
                 }}
               >
-                {item.label}
+                {getRegionLabel(REGION_GROUPS.find((group) => group.key === item.key), lang)}
               </button>
             ))}
           </div>
@@ -872,13 +1237,7 @@ const SettingsPanel = ({
 };
 
 // ── Bottom Nav ──
-const NAV_ITEMS = [
-  { key: "home", label: "首頁", d: "M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" },
-  { key: "search", label: "附近", circle: true },
-  { key: "map", label: "地圖", pin: true },
-  { key: "favorites", label: "收藏", heart: true },
-];
-const BottomNav = ({ active, onChange }) => (
+const BottomNav = ({ active, onChange, lang }) => (
   <div style={{
     background: UI.navFade,
     padding: "8px 12px calc(10px + env(safe-area-inset-bottom, 0px))",
@@ -896,7 +1255,12 @@ const BottomNav = ({ active, onChange }) => (
       justifyContent: "space-around",
       padding: "7px 6px",
     }}>
-      {NAV_ITEMS.map(({ key, label, d, circle, pin, heart }) => {
+      {[
+        { key: "home", label: getCopy(lang, "nav.home"), d: "M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" },
+        { key: "search", label: getCopy(lang, "nav.nearby"), circle: true },
+        { key: "map", label: getCopy(lang, "nav.map"), pin: true },
+        { key: "favorites", label: getCopy(lang, "nav.favorites"), heart: true },
+      ].map(({ key, label, d, circle, pin, heart }) => {
         const on = active === key;
         const c = on ? UI.onDark : T.sub;
         return (
@@ -1003,12 +1367,12 @@ const SwipeBackShell = ({ enabled, onBack, children }) => {
 };
 
 // ── Cafe Card ──
-const CafeCard = ({ cafe, onClick, fav, onFav, emptyCafeIds }) => (
+const CafeCard = ({ cafe, onClick, fav, onFav, emptyCafeIds, lang }) => (
   <div
     className="cafe-card-shell"
     role="button"
     tabIndex={0}
-    aria-label={`查看 ${cafe.name} 詳情`}
+    aria-label={getCopy(lang, "aria.details", { name: cafe.name })}
     style={{
       background: UI.paper,
       borderRadius: 16,
@@ -1039,7 +1403,7 @@ const CafeCard = ({ cafe, onClick, fav, onFav, emptyCafeIds }) => (
         </div>
         <button
           className="soft-press favorite-button"
-          aria-label={fav ? `取消收藏 ${cafe.name}` : `收藏 ${cafe.name}`}
+          aria-label={fav ? getCopy(lang, "aria.unfavorite", { name: cafe.name }) : getCopy(lang, "aria.favorite", { name: cafe.name })}
           onClick={e => { e.stopPropagation(); onFav(cafe.id); }}
           style={{ background: UI.oat, border: `1px solid ${UI.softLine}`, borderRadius: 999, cursor: "pointer", width: 34, height: 34, flexShrink: 0, color: fav ? T.brown : T.sub, display: "inline-flex", alignItems: "center", justifyContent: "center" }}
         >
@@ -1050,16 +1414,16 @@ const CafeCard = ({ cafe, onClick, fav, onFav, emptyCafeIds }) => (
       {cafe.wifi > 0 && (
         <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: SPACE.groupGap }}>
           {scorePill("WiFi", cafe.wifi)}
-          {scorePill("安靜", cafe.quiet)}
-          {scorePill("咖啡", cafe.tasty)}
+          {scorePill(getCopy(lang, "detail.quiet"), cafe.quiet)}
+          {scorePill(getCopy(lang, "detail.coffee"), cafe.tasty)}
         </div>
       )}
 
       <div style={{ display: "flex", gap: 5, flexWrap: "wrap", alignItems: "center" }}>
-        {temporaryClosureTag(cafe)}
-        {limitedTag(cafe.limited_time)}
-        {socketTag(cafe.socket)}
-        {crowdTagFromIds(cafe.id, emptyCafeIds)}
+        {temporaryClosureTag(cafe, lang)}
+        {limitedTag(cafe.limited_time, lang)}
+        {socketTag(cafe.socket, lang)}
+        {crowdTagFromIds(cafe.id, emptyCafeIds, lang)}
         {cafe.open_time && <Tag label={`${cafe.open_time.slice(0, 20)}${cafe.open_time.length > 20 ? "..." : ""}`} type="gray" icon="clock" />}
       </div>
     </div>
@@ -1067,11 +1431,14 @@ const CafeCard = ({ cafe, onClick, fav, onFav, emptyCafeIds }) => (
 );
 
 // ── Page: Home ──
-const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSelect, favs, onFav, emptyCafeIds, filters, setFilters }) => {
+const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSelect, favs, onFav, emptyCafeIds, filters, setFilters, lang }) => {
   const [q, setQ] = useState("");
   const [page, setPage] = useState(1);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [activePresetKey, setActivePresetKey] = useState(null);
+  const filterLabels = getFilterLabels(lang);
+  const filterPresets = getFilterPresets(lang);
+  const searchPlaceholder = getCopy(lang, "searchPlaceholder");
 
   const toggle = (key) => { setFilters(prev => ({ ...prev, [key]: !prev[key] })); setActivePresetKey(null); setPage(1); };
   const applyPreset = (preset) => {
@@ -1100,7 +1467,7 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
     .filter(c => !filters.music || c.music >= 4)
     .filter(c => !filters.empty || emptyCafeIds.has(c.id))
     .sort((a, b) => {
-      const preset = FILTER_PRESETS.find((item) => item.key === activePresetKey);
+    const preset = filterPresets.find((item) => item.key === activePresetKey);
       if (preset?.score) return preset.score(b) - preset.score(a);
       return workScore(b) - workScore(a);
     });
@@ -1112,14 +1479,14 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
   // Reset page when search changes
   useEffect(() => { setPage(1); }, [q]);
   const activeFilterCount = Object.values(filters).filter(Boolean).length;
-  const activeFilterLabels = Object.entries(filters).filter(([, value]) => value).map(([key]) => FILTER_LABELS[key]);
+  const activeFilterLabels = Object.entries(filters).filter(([, value]) => value).map(([key]) => filterLabels[key]);
 
   return (
     <div style={{ display: "flex", flexDirection: "column", flex: 1, minHeight: 0, overflow: "hidden" }}>
       <div style={{ flexShrink: 0, padding: `${SPACE.headerTop + 2}px ${SPACE.pageX}px ${SPACE.headerBottom}px`, background: T.cream, borderBottom: `1px solid ${T.beige}` }}>
         <div style={{ position: "relative", marginBottom: SPACE.sectionGap + 2 }}>
           <svg style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)" }} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={UI.placeholder} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
-          <input className="search-input" aria-label={SEARCH_PLACEHOLDER} value={q} onChange={e => setQ(e.target.value)} placeholder={SEARCH_PLACEHOLDER}
+          <input className="search-input" aria-label={searchPlaceholder} value={q} onChange={e => setQ(e.target.value)} placeholder={searchPlaceholder}
             style={SEARCH_INPUT_STYLE} />
         </div>
 
@@ -1136,19 +1503,19 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
               onClick={() => setFiltersOpen(true)}
               style={{ marginLeft: "auto", background: "none", border: "none", color: T.brown, fontSize: 13, fontWeight: 700, cursor: "pointer", textDecoration: "underline", textUnderlineOffset: 4, fontFamily: "inherit" }}
             >
-              篩選 {activeFilterCount > 0 && <Icon name="chevronDown" size={12} strokeWidth={2.4} style={{ marginLeft: 2, verticalAlign: "-0.12em" }} />}
+              {getCopy(lang, "common.filter")} {activeFilterCount > 0 && <Icon name="chevronDown" size={12} strokeWidth={2.4} style={{ marginLeft: 2, verticalAlign: "-0.12em" }} />}
             </button>
           </div>
         ) : (
           <>
-            <FilterSection filters={filters} toggle={toggle} />
+            <FilterSection filters={filters} toggle={toggle} lang={lang} />
             <div style={{ display: "flex", justifyContent: "flex-end" }}>
               <button
                 className="soft-press"
                 onClick={() => setFiltersOpen(false)}
                 style={{ background: "none", border: "none", color: T.brown, fontSize: 13, fontWeight: 700, cursor: "pointer", textDecoration: "underline", textUnderlineOffset: 4, fontFamily: "inherit" }}
               >
-                收起篩選 <Icon name="chevronUp" size={12} strokeWidth={2.4} style={{ marginLeft: 2, verticalAlign: "-0.12em" }} />
+                {getCopy(lang, "common.collapseFilters")} <Icon name="chevronUp" size={12} strokeWidth={2.4} style={{ marginLeft: 2, verticalAlign: "-0.12em" }} />
               </button>
             </div>
           </>
@@ -1159,9 +1526,9 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
       <div style={{ flex: 1, overflowY: "auto", padding: `0 ${SPACE.pageX}px ${SPACE.pageX}px` }}>
         {!hasRegionSelection && (
           <div style={{ margin: `${SPACE.cardGap}px 0`, background: UI.surface, border: `1px solid ${UI.line}`, borderRadius: 14, padding: `${SPACE.cardPad}px ${SPACE.cardPad}px 12px` }}>
-            <div style={{ ...TYPE.sectionTitle, color: T.text, marginBottom: 6 }}>先選一個城市</div>
+            <div style={{ ...TYPE.sectionTitle, color: T.text, marginBottom: 6 }}>{getCopy(lang, "home.chooseCity")}</div>
             <div style={{ ...TYPE.body, color: T.sub, marginBottom: 10 }}>
-              我們會先用地區整理列表，之後也能在設定裡切換。
+              {getCopy(lang, "home.chooseCityHint")}
             </div>
             <button
               className="soft-press"
@@ -1177,7 +1544,7 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
                 fontFamily: "inherit",
               }}
             >
-              選擇城市
+              {getCopy(lang, "home.chooseCityAction")}
             </button>
           </div>
         )}
@@ -1185,7 +1552,7 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
           <div style={{ margin: `${SPACE.sectionGap}px 0 ${SPACE.cardGap}px` }}>
             <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: SPACE.cardGap, marginBottom: SPACE.groupGap }}>
               <div>
-                <div style={{ ...TYPE.sectionTitle, color: T.text }}>依需求找咖啡廳</div>
+                <div style={{ ...TYPE.sectionTitle, color: T.text }}>{getCopy(lang, "home.byNeed")}</div>
               </div>
               {activeFilterCount > 0 && (
                 <button
@@ -1194,12 +1561,12 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
                   onClick={() => { setFilters({ ...DEFAULT_HOME_FILTERS }); setActivePresetKey(null); setPage(1); }}
                   style={{ background: "none", border: "none", color: T.brown, ...TYPE.control, cursor: "pointer", fontFamily: "inherit", textDecoration: "underline", textUnderlineOffset: 3 }}
                 >
-                  清除
+                  {getCopy(lang, "common.clear")}
                 </button>
               )}
             </div>
             <div style={{ display: "flex", gap: SPACE.groupGap - 1, overflowX: "auto", padding: "2px 1px 8px", margin: "0 -1px" }}>
-              {FILTER_PRESETS.map((preset) => {
+              {filterPresets.map((preset) => {
                 const active = isPresetActive(preset.filters);
                 return (
                   <button
@@ -1235,20 +1602,24 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
         {loading ? (
           <div style={{ textAlign: "center", padding: "60px 0", color: T.sub }}>
             <Icon name="coffee" size={34} strokeWidth={1.9} style={{ color: T.brown, marginBottom: 10 }} />
-            <div>載入咖啡廳...</div>
+            <div>{getCopy(lang, "common.loadingCafes")}</div>
           </div>
         ) : (
           <>
-            <div style={{ ...TYPE.meta, color: T.sub, margin: `${SPACE.groupGap}px 0 ${SPACE.cardGap}px` }}>共 {total} 間{total > PER_PAGE ? `（顯示第 ${start + 1}-${Math.min(start + PER_PAGE, total)} 間）` : ""}</div>
-            {filtered.map(c => <CafeCard key={c.id} cafe={c} onClick={() => onSelect(c)} fav={favs.has(c.id)} onFav={onFav} emptyCafeIds={emptyCafeIds} />)}
+            <div style={{ ...TYPE.meta, color: T.sub, margin: `${SPACE.groupGap}px 0 ${SPACE.cardGap}px` }}>
+              {total > PER_PAGE
+                ? getCopy(lang, "home.totalPaged", { count: total, start: start + 1, end: Math.min(start + PER_PAGE, total) })
+                : getCopy(lang, "home.total", { count: total })}
+            </div>
+            {filtered.map(c => <CafeCard key={c.id} cafe={c} onClick={() => onSelect(c)} fav={favs.has(c.id)} onFav={onFav} emptyCafeIds={emptyCafeIds} lang={lang} />)}
             {filtered.length === 0 && (
               <div style={{ textAlign: "center", padding: "42px 18px", color: T.sub }}>
                 <Icon name="coffee" size={32} strokeWidth={1.9} style={{ color: T.brown, marginBottom: 10 }} />
-                <div style={{ ...TYPE.sectionTitle, color: T.text, marginBottom: 6 }}>找不到符合的店</div>
-                <div style={{ ...TYPE.body, color: T.sub }}>試試店名、路名或地標，或清除篩選看看。</div>
+                <div style={{ ...TYPE.sectionTitle, color: T.text, marginBottom: 6 }}>{getCopy(lang, "home.noResultsTitle")}</div>
+                <div style={{ ...TYPE.body, color: T.sub }}>{getCopy(lang, "home.noResultsHint")}</div>
               </div>
             )}
-            <Pagination page={page} total={total} onPage={setPage} />
+            <Pagination page={page} total={total} onPage={setPage} lang={lang} />
           </>
         )}
       </div>
@@ -1257,7 +1628,7 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
 };
 
 // ── Page: Nearby ──
-const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
+const SearchPage = ({ cafes, loading, onSelect, favs, onFav, lang }) => {
   const [q, setQ] = useState("");
   const [page, setPage] = useState(1);
   const [userLocation, setUserLocation] = useState(null);
@@ -1265,7 +1636,9 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
   const [locationError, setLocationError] = useState("");
   const [activePresetKey, setActivePresetKey] = useState("all");
   const requestedLocation = useRef(false);
-  const activePreset = FILTER_PRESETS.find((preset) => preset.key === activePresetKey);
+  const filterPresets = getFilterPresets(lang);
+  const searchPlaceholder = getCopy(lang, "searchPlaceholder");
+  const activePreset = filterPresets.find((preset) => preset.key === activePresetKey);
   const matchesPreset = (cafe) => {
     if (!activePreset) return true;
     const presetFilters = activePreset.filters;
@@ -1283,7 +1656,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
   const requestSortLocation = useCallback(() => {
     setLocationError("");
     if (!navigator.geolocation || !window.isSecureContext) {
-      setLocationError("這個瀏覽器無法定位。");
+      setLocationError(getCopy(lang, "nearby.browserNoLocation"));
       return;
     }
     setLocationLoading(true);
@@ -1293,12 +1666,12 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
         setLocationLoading(false);
       },
       () => {
-        setLocationError("定位失敗，先用預設排序。");
+        setLocationError(getCopy(lang, "nearby.locateFailed"));
         setLocationLoading(false);
       },
       { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 },
     );
-  }, []);
+  }, [lang]);
 
   const allSorted = cafes
     .filter(isOpen)
@@ -1327,14 +1700,14 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
     <div style={{ display: "flex", flexDirection: "column", flex: 1, minHeight: 0, overflow: "hidden" }}>
       {/* 固定區 */}
       <div style={{ flexShrink: 0, padding: `${SPACE.headerTop}px ${SPACE.pageX}px 0`, background: T.cream, borderBottom: `1px solid ${T.beige}` }}>
-        <div style={{ ...TYPE.pageTitle, marginBottom: SPACE.groupGap, color: T.text }}>附近咖啡廳</div>
+        <div style={{ ...TYPE.pageTitle, marginBottom: SPACE.groupGap, color: T.text }}>{getCopy(lang, "nearby.title")}</div>
         <div style={{ position: "relative", marginBottom: SPACE.sectionGap }}>
           <svg style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)" }} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={UI.placeholder} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
-          <input className="search-input" aria-label={SEARCH_PLACEHOLDER} value={q} onChange={e => setQ(e.target.value)} placeholder={SEARCH_PLACEHOLDER}
+          <input className="search-input" aria-label={searchPlaceholder} value={q} onChange={e => setQ(e.target.value)} placeholder={searchPlaceholder}
             style={SEARCH_INPUT_STYLE} />
         </div>
         <div style={{ display: "flex", gap: SPACE.chipGap, overflowX: "auto", paddingBottom: SPACE.cardGap }}>
-          {[{ key: "all", title: "全部" }, ...FILTER_PRESETS].map((preset) => {
+          {[{ key: "all", title: getCopy(lang, "common.all") }, ...filterPresets].map((preset) => {
             const active = activePresetKey === preset.key;
             return (
               <button
@@ -1368,10 +1741,12 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
       {/* 滾動區 */}
       <div style={{ flex: 1, overflowY: "auto", padding: `0 ${SPACE.pageX}px ${SPACE.pageX}px` }}>
         <div style={{ ...TYPE.meta, color: T.sub, margin: `${SPACE.groupGap}px 0` }}>
-          {userLocation ? "依距離由近到遠" : locationLoading ? "正在取得位置" : "允許定位後依距離排序"}・共 {total} 間{total > PER_PAGE ? `（第 ${start + 1}-${Math.min(start + PER_PAGE, total)} 間）` : ""}
+          {total > PER_PAGE
+            ? getCopy(lang, "nearby.totalPaged", { sort: userLocation ? getCopy(lang, "nearby.distanceSort") : locationLoading ? getCopy(lang, "nearby.locating") : getCopy(lang, "nearby.allowLocation"), count: total, start: start + 1, end: Math.min(start + PER_PAGE, total) })
+            : getCopy(lang, "nearby.total", { sort: userLocation ? getCopy(lang, "nearby.distanceSort") : locationLoading ? getCopy(lang, "nearby.locating") : getCopy(lang, "nearby.allowLocation"), count: total })}
         </div>
         {loading ? (
-          <div style={{ textAlign: "center", padding: "60px 0", color: T.sub }}><Icon name="coffee" size={34} strokeWidth={1.9} style={{ color: T.brown, marginBottom: 10 }} /><div>載入咖啡廳...</div></div>
+          <div style={{ textAlign: "center", padding: "60px 0", color: T.sub }}><Icon name="coffee" size={34} strokeWidth={1.9} style={{ color: T.brown, marginBottom: 10 }} /><div>{getCopy(lang, "common.loadingCafes")}</div></div>
         ) : (
           <>
             {sorted.map((c, i) => (
@@ -1381,17 +1756,17 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
                     {formatDistance(c._distanceKm)}
                   </div>
                 )}
-                <div style={{ flex: 1 }}><CafeCard cafe={c} onClick={() => onSelect(c)} fav={favs.has(c.id)} onFav={onFav} emptyCafeIds={new Set()} /></div>
+                <div style={{ flex: 1 }}><CafeCard cafe={c} onClick={() => onSelect(c)} fav={favs.has(c.id)} onFav={onFav} emptyCafeIds={new Set()} lang={lang} /></div>
               </div>
             ))}
             {sorted.length === 0 && (
               <div style={{ textAlign: "center", padding: "42px 18px", color: T.sub }}>
                 <Icon name="coffee" size={32} strokeWidth={1.9} style={{ color: T.brown, marginBottom: 10 }} />
-                <div style={{ ...TYPE.sectionTitle, color: T.text, marginBottom: 6 }}>附近沒有符合的店</div>
-                <div style={{ ...TYPE.body, color: T.sub }}>可以切回「全部」，或改用店名、路名搜尋。</div>
+                <div style={{ ...TYPE.sectionTitle, color: T.text, marginBottom: 6 }}>{getCopy(lang, "nearby.noResultsTitle")}</div>
+                <div style={{ ...TYPE.body, color: T.sub }}>{getCopy(lang, "nearby.noResultsHint")}</div>
               </div>
             )}
-            <Pagination page={page} total={total} onPage={setPage} />
+            <Pagination page={page} total={total} onPage={setPage} lang={lang} />
           </>
         )}
       </div>
@@ -1400,7 +1775,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav }) => {
 };
 
 // ── Page: Favorites ──
-const FavoritesPage = ({ cafes, favs, onSelect, onFav }) => {
+const FavoritesPage = ({ cafes, favs, onSelect, onFav, lang }) => {
   const list = cafes.filter(isOpen).filter(c => favs.has(c.id));
   return (
     <div style={{ display: "flex", flexDirection: "column", flex: 1, minHeight: 0, overflow: "hidden" }}>
@@ -1408,20 +1783,20 @@ const FavoritesPage = ({ cafes, favs, onSelect, onFav }) => {
       <div style={{ flexShrink: 0, padding: "14px 16px 4px", background: T.cream, borderBottom: `1px solid ${T.beige}` }}>
         <div style={{ display: "flex", alignItems: "center", gap: 7 }}>
           <Icon name="heart" size={21} strokeWidth={2.1} style={{ color: T.brown }} />
-          <div style={{ ...TYPE.pageTitle, color: T.text }}>我的收藏</div>
+          <div style={{ ...TYPE.pageTitle, color: T.text }}>{getCopy(lang, "favorites.title")}</div>
         </div>
       </div>
 
       {/* 滾動區 */}
       <div style={{ flex: 1, overflowY: "auto", padding: "0 16px 16px" }}>
-        <div style={{ fontSize: 12, color: T.sub, margin: "10px 0" }}>已收藏 {list.length} 間</div>
+        <div style={{ fontSize: 12, color: T.sub, margin: "10px 0" }}>{getCopy(lang, "favorites.savedCount", { count: list.length })}</div>
         {list.length === 0 ? (
           <div style={{ textAlign: "center", padding: "60px 0", color: T.sub }}>
             <Icon name="coffee" size={42} strokeWidth={1.8} style={{ color: T.brown, marginBottom: 10 }} />
-            <div>還沒有收藏</div>
-            <div style={{ fontSize: 12, marginTop: 4 }}>點收藏圖示加入</div>
+            <div>{getCopy(lang, "favorites.emptyTitle")}</div>
+            <div style={{ fontSize: 12, marginTop: 4 }}>{getCopy(lang, "favorites.emptyHint")}</div>
           </div>
-        ) : list.map(c => <CafeCard key={c.id} cafe={c} onClick={() => onSelect(c)} fav={true} onFav={onFav} emptyCafeIds={new Set()} />)}
+        ) : list.map(c => <CafeCard key={c.id} cafe={c} onClick={() => onSelect(c)} fav={true} onFav={onFav} emptyCafeIds={new Set()} lang={lang} />)}
       </div>
     </div>
   );
@@ -1575,7 +1950,7 @@ const LocateController = ({ request, onStart, onSuccess, onError }) => {
   return null;
 };
 
-const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setMapQuery }) => {
+const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setMapQuery, lang }) => {
   const [userPos, setUserPos] = useState(null);
   const [geoTarget, setGeoTarget] = useState(null);
   const [searchTarget, setSearchTarget] = useState(null);
@@ -1601,11 +1976,11 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
 
   const requestUserLocation = useCallback(async ({ silent = false, zoom = 15, mode = "manual" } = {}) => {
     if (!navigator.geolocation) {
-      if (!silent) setLocateError("這個瀏覽器不支援定位。");
+      if (!silent) setLocateError(getCopy(lang, "map.locateUnsupported"));
       return;
     }
     if (!window.isSecureContext) {
-      if (!silent) setLocateError("定位需要 HTTPS 才能使用。");
+      if (!silent) setLocateError(getCopy(lang, "map.httpsRequired"));
       return;
     }
 
@@ -1634,11 +2009,11 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
   const handleLocateError = useCallback((err) => {
     const code = err?.code;
     if (code === 1) {
-      setLocateError("請在瀏覽器設定允許位置權限。");
+      setLocateError(getCopy(lang, "map.allowPermission"));
     } else if (code === 3) {
-      setLocateError("定位逾時，請到訊號較好的地方再試。");
+      setLocateError(getCopy(lang, "map.timeout"));
     } else {
-      setLocateError("暫時無法取得位置，請稍後再試。");
+      setLocateError(getCopy(lang, "map.genericError"));
     }
     setLocating(false);
   }, []);
@@ -1733,13 +2108,13 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
   return (
     <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", overflow: "hidden" }}>
       <div style={{ display: "flex", justifyContent: "flex-end", padding: "10px 16px 6px" }}>
-        <div style={{ ...TYPE.meta, color: T.sub }}>{loading ? "載入地圖資料..." : `${visibleMapCafes.length} 間咖啡廳`}</div>
+        <div style={{ ...TYPE.meta, color: T.sub }}>{loading ? getCopy(lang, "common.loadingMap") : `${visibleMapCafes.length} ${lang === "en" ? "cafes" : "間咖啡廳"}`}</div>
       </div>
 
       {/* Search */}
       <div style={{ padding: "0 16px 8px", position: "relative", width: "100%", boxSizing: "border-box" }}>
         <svg style={{ position: "absolute", left: 28, top: "50%", transform: "translateY(-50%)" }} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={UI.placeholder} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
-        <input className="search-input" aria-label={SEARCH_PLACEHOLDER} value={mapQuery} onFocus={closeSearchPopup} onClick={closeSearchPopup} onChange={e => setMapQuery(e.target.value)} placeholder={SEARCH_PLACEHOLDER}
+        <input className="search-input" aria-label={getCopy(lang, "searchPlaceholder")} value={mapQuery} onFocus={closeSearchPopup} onClick={closeSearchPopup} onChange={e => setMapQuery(e.target.value)} placeholder={getCopy(lang, "searchPlaceholder")}
           style={SEARCH_INPUT_STYLE} />
       </div>
 
@@ -1769,13 +2144,13 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
           {flyTarget && <FlyTo center={flyTarget} offsetY={120} />}
           {(!mapQuery || locateRequest.mode === "manual") && <FlyToBySignal center={userPos} seq={locateRequest.seq} zoom={locateRequest.zoom} />}
           {userPos && <Marker position={userPos} icon={userIcon}>
-            <Popup><span style={{ ...TYPE.control }}><InlineIcon name="pin" size={13} color={T.brown} /> 你的位置</span></Popup>
+            <Popup><span style={{ ...TYPE.control }}><InlineIcon name="pin" size={13} color={T.brown} /> {getCopy(lang, "map.yourLocation")}</span></Popup>
           </Marker>}
           {searchMarker && (
             <Marker position={searchMarker.position} icon={stationIcon}>
               <Popup className="map-popup" minWidth={160} maxWidth={220} autoPan={false}>
                 <div style={{ fontFamily: FONT.body }}>
-                  <div style={{ ...TYPE.cardTitle, marginBottom: 4, color: T.text }}><InlineIcon name="train" size={14} color={T.brown} /> 搜尋位置</div>
+                  <div style={{ ...TYPE.cardTitle, marginBottom: 4, color: T.text }}><InlineIcon name="train" size={14} color={T.brown} /> {getCopy(lang, "map.searchLocation")}</div>
                   <div style={{ ...TYPE.caption, color: T.sub }}>{searchMarker.label}</div>
                 </div>
               </Popup>
@@ -1807,10 +2182,10 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
                   {c.mrt && <div style={{ ...TYPE.caption, color: T.sub, marginBottom: 2 }}><InlineIcon name="train" size={12} color={T.sub} /> {c.mrt}</div>}
                   <div style={{ ...TYPE.caption, color: T.sub, marginBottom: 6 }}><InlineIcon name="pin" size={12} color={T.sub} /> {c.address}</div>
                   <div style={{ display: "flex", gap: 4, flexWrap: "wrap", marginBottom: 10 }}>
-                    {temporaryClosureTag(c)}
+                    {temporaryClosureTag(c, lang)}
                     {c.wifi > 0 && <span style={{ ...TYPE.caption, background: T.beige, borderRadius: 10, padding: "2px 7px" }}><InlineIcon name="wifi" size={11} color={T.sub} /> {c.wifi.toFixed(1)}</span>}
                     {c.quiet > 0 && <span style={{ ...TYPE.caption, background: T.beige, borderRadius: 10, padding: "2px 7px" }}><InlineIcon name="quiet" size={11} color={T.sub} /> {c.quiet.toFixed(1)}</span>}
-                    {c.limited_time === "no" && <span style={{ ...TYPE.caption, background: T.green, color: UI.onDark, borderRadius: 10, padding: "2px 7px" }}><InlineIcon name="check" size={11} color={UI.onDark} /> 不限時</span>}
+                    {c.limited_time === "no" && <span style={{ ...TYPE.caption, background: T.green, color: UI.onDark, borderRadius: 10, padding: "2px 7px" }}><InlineIcon name="check" size={11} color={UI.onDark} /> {getCopy(lang, "tags.noLimit")}</span>}
                   </div>
                   <button
                     onClick={(e) => { e.stopPropagation(); onSelect(c); }}
@@ -1826,7 +2201,7 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
                       fontFamily: "inherit",
                     }}
                   >
-                    查看詳情
+                    {getCopy(lang, "common.viewDetails")}
                   </button>
                 </div>
               </Popup>
@@ -1836,7 +2211,7 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
 
         {/* Locate me button */}
         <button
-          aria-label={locating ? "定位中" : "回到我的位置"}
+          aria-label={locating ? getCopy(lang, "map.locating") : getCopy(lang, "map.backToLocation")}
           onClick={() => {
             setLocateError("");
             requestUserLocation({ silent: false, zoom: 15, mode: "manual" });
@@ -1851,7 +2226,7 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
             cursor: locating ? "default" : "pointer",
             opacity: locating ? 0.7 : 1,
           }}
-          title={locating ? "定位中..." : "回到我的位置"}
+          title={locating ? getCopy(lang, "map.locatingTitle") : getCopy(lang, "map.backToLocation")}
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={T.brown} strokeWidth="2" strokeLinecap="round">
             <circle cx="12" cy="12" r="4" />
@@ -1877,7 +2252,7 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
 };
 
 // ── CrowdReport ──
-const CrowdReport = ({ cafeId, onReport }) => {
+const CrowdReport = ({ cafeId, onReport, lang }) => {
   const [report, setReport] = useState(null);
   const [loading, setLoading] = useState(true);
   const [submitted, setSubmitted] = useState(false);
@@ -1909,9 +2284,9 @@ const CrowdReport = ({ cafeId, onReport }) => {
   };
 
   const statusLabel = {
-    empty: "很空，快來",
-    normal: "普通",
-    crowded: "很擠，慎入",
+    empty: getCopy(lang, "crowd.empty"),
+    normal: getCopy(lang, "crowd.normal"),
+    crowded: getCopy(lang, "crowd.crowded"),
   };
   const statusTone = {
     empty: "#20B02F",
@@ -1927,7 +2302,7 @@ const CrowdReport = ({ cafeId, onReport }) => {
 
   const buttons = (
     <div style={{ display: "flex", gap: 8 }}>
-      {[["empty","很空"],["normal","普通"],["crowded","很擠"]].map(([val, label]) => (
+      {[["empty", getCopy(lang, "crowd.empty")],["normal", getCopy(lang, "crowd.normal")],["crowded", getCopy(lang, "crowd.crowded")]].map(([val, label]) => (
         <button key={val} className="soft-press" onClick={() => handleReport(val)} style={{
           flex: 1, padding: "10px 4px", borderRadius: 10, border: `1px solid ${T.beige}`,
           background: T.cream, ...TYPE.control, cursor: "pointer", fontFamily: "inherit"
@@ -1938,25 +2313,25 @@ const CrowdReport = ({ cafeId, onReport }) => {
 
   return (
     <div style={{ background: UI.surface, borderRadius: 12, border: `1px solid ${UI.line}`, padding: 16, marginBottom: 14 }}>
-      <div style={{ ...TYPE.sectionTitle, color: T.text, marginBottom: 10 }}>現在人多嗎？</div>
+      <div style={{ ...TYPE.sectionTitle, color: T.text, marginBottom: 10 }}>{getCopy(lang, "crowd.title")}</div>
       {loading ? (
-        <div style={{ ...TYPE.meta, color: T.sub }}>載入狀態...</div>
+        <div style={{ ...TYPE.meta, color: T.sub }}>{getCopy(lang, "crowd.loading")}</div>
       ) : submitted && !editing ? (
         <>
-          <div className="success-pop" style={{ ...TYPE.body, color: T.green, marginBottom: 4 }}><InlineIcon name="checkCircle" size={14} color={T.green} /> 已收到，謝謝！</div>
+          <div className="success-pop" style={{ ...TYPE.body, color: T.green, marginBottom: 4 }}><InlineIcon name="checkCircle" size={14} color={T.green} /> {getCopy(lang, "crowd.thanks")}</div>
           <div style={{ ...TYPE.body, color: T.text, marginBottom: 8 }}><StatusLabel status={report?.status}>{statusLabel[report?.status]}</StatusLabel></div>
-          <button className="soft-press" onClick={() => setEditing(true)} style={{ ...TYPE.control, color: T.brown, background: "none", border: "none", cursor: "pointer", textDecoration: "underline" }}>更新狀態</button>
+          <button className="soft-press" onClick={() => setEditing(true)} style={{ ...TYPE.control, color: T.brown, background: "none", border: "none", cursor: "pointer", textDecoration: "underline" }}>{getCopy(lang, "crowd.update")}</button>
         </>
       ) : editing || !report ? (
         <>
-          {editing && <div style={{ ...TYPE.meta, color: T.sub, marginBottom: 8 }}>現在狀況</div>}
+          {editing && <div style={{ ...TYPE.meta, color: T.sub, marginBottom: 8 }}>{getCopy(lang, "crowd.current")}</div>}
           {buttons}
         </>
       ) : (
         <>
           <div style={{ ...TYPE.body, color: T.text, marginBottom: 6 }}><StatusLabel status={report.status}>{statusLabel[report.status]}</StatusLabel></div>
-          <div style={{ ...TYPE.caption, color: T.sub, marginBottom: 10 }}>{timeAgo(report.reported_at)}</div>
-          <button className="soft-press" onClick={() => setEditing(true)} style={{ ...TYPE.control, color: T.brown, background: "none", border: "none", cursor: "pointer", textDecoration: "underline" }}>更新狀態</button>
+          <div style={{ ...TYPE.caption, color: T.sub, marginBottom: 10 }}>{timeAgo(report.reported_at, lang)}</div>
+          <button className="soft-press" onClick={() => setEditing(true)} style={{ ...TYPE.control, color: T.brown, background: "none", border: "none", cursor: "pointer", textDecoration: "underline" }}>{getCopy(lang, "crowd.update")}</button>
         </>
       )}
     </div>
@@ -1964,7 +2339,7 @@ const CrowdReport = ({ cafeId, onReport }) => {
 };
 
 // ── Page: Detail ──
-const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilterTag, canManageCafe, onHideCafe }) => {
+const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilterTag, canManageCafe, onHideCafe, lang }) => {
   const touchStartX = useRef(0);
   const touchStartY = useRef(0);
   const swipeActive = useRef(false);
@@ -2016,7 +2391,7 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
     try {
       await onHideCafe(cafe);
     } catch (error) {
-      setHideError(error.message || "隱藏失敗，請稍後再試。");
+      setHideError(error.message || getCopy(lang, "detail.hideFailed"));
       setHideBusy(false);
     }
   };
@@ -2041,11 +2416,11 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
       onTouchCancel={handleTouchEnd}
     >
       <div style={{ background: T.brown, padding: `13px ${SPACE.pageX + 2}px`, display: "flex", alignItems: "center", gap: SPACE.groupGap }}>
-        <button className="soft-press" aria-label="返回上一頁" onClick={onBack} style={{ background: "none", border: "none", cursor: "pointer", color: UI.onDark, display: "inline-flex", alignItems: "center", justifyContent: "center", padding: 2 }}>
+        <button className="soft-press" aria-label={getCopy(lang, "detail.back")} onClick={onBack} style={{ background: "none", border: "none", cursor: "pointer", color: UI.onDark, display: "inline-flex", alignItems: "center", justifyContent: "center", padding: 2 }}>
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={UI.onDark} strokeWidth="2.5" strokeLinecap="round"><polyline points="15 18 9 12 15 6" /></svg>
         </button>
         <span aria-hidden="true" style={{ flex: 1 }} />
-        <button className="soft-press" aria-label={fav ? `取消收藏 ${cafe.name}` : `收藏 ${cafe.name}`} onClick={() => onFav(cafe.id)} style={{ background: "none", border: "none", cursor: "pointer", color: UI.onDark, display: "inline-flex", alignItems: "center", justifyContent: "center", padding: 2 }}>
+        <button className="soft-press" aria-label={fav ? getCopy(lang, "aria.unfavorite", { name: cafe.name }) : getCopy(lang, "aria.favorite", { name: cafe.name })} onClick={() => onFav(cafe.id)} style={{ background: "none", border: "none", cursor: "pointer", color: UI.onDark, display: "inline-flex", alignItems: "center", justifyContent: "center", padding: 2 }}>
           <Icon name={fav ? "starFilled" : "star"} size={22} strokeWidth={2.1} />
         </button>
       </div>
@@ -2055,7 +2430,7 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
             {cafe.name}
           </div>
           {cafe.url && (
-            <a aria-label="開啟店家連結" href={cafe.url} target="_blank" rel="noreferrer" style={{ color: T.sub, lineHeight: 1, textDecoration: "none", display: "inline-flex" }}>
+            <a aria-label={getCopy(lang, "detail.openStoreLink")} href={cafe.url} target="_blank" rel="noreferrer" style={{ color: T.sub, lineHeight: 1, textDecoration: "none", display: "inline-flex" }}>
               <Icon name="external" size={16} strokeWidth={2.1} />
             </a>
           )}
@@ -2066,27 +2441,27 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
         {cafe.open_time && <div style={{ ...TYPE.body, color: T.text, marginBottom: 8 }}><InlineIcon name="clock" size={14} color={T.text} /> {cafe.open_time}</div>}
 
         <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: SPACE.chipGap + 1 }}>
-          {temporaryClosureTag(cafe)}
-          {limitedTag(cafe.limited_time, applyTagFilter("noLimit"))}
-          {socketTag(cafe.socket, applyTagFilter("socket"))}
-          {cafe.standing_desk === "yes" && <Tag label="站立桌" type="gray" onClick={applyTagFilter("standing")} />}
-          {crowdTagFromIds(cafe.id, emptyCafeIds, applyTagFilter("empty"))}
+          {temporaryClosureTag(cafe, lang)}
+          {limitedTag(cafe.limited_time, lang, applyTagFilter("noLimit"))}
+          {socketTag(cafe.socket, lang, applyTagFilter("socket"))}
+          {cafe.standing_desk === "yes" && <Tag label={getCopy(lang, "tags.standing")} type="gray" onClick={applyTagFilter("standing")} />}
+          {crowdTagFromIds(cafe.id, emptyCafeIds, lang, applyTagFilter("empty"))}
         </div>
-        <div style={{ ...TYPE.caption, color: T.sub, marginBottom: SPACE.pageX }}>點標籤看相似店</div>
+        <div style={{ ...TYPE.caption, color: T.sub, marginBottom: SPACE.pageX }}>{getCopy(lang, "common.similarTagsHint")}</div>
 
-        <CrowdReport cafeId={cafe.id} onReport={onReport} />
+        <CrowdReport cafeId={cafe.id} onReport={onReport} lang={lang} />
 
         {cafe.wifi > 0 && (
           <div style={{ background: UI.paper, borderRadius: 16, border: `1px solid ${UI.line}`, padding: SPACE.pageX, marginBottom: SPACE.pageX, boxShadow: UI.shadow }}>
-            <div style={{ ...TYPE.sectionTitle, marginBottom: SPACE.cardGap, color: T.text }}>環境評分</div>
+            <div style={{ ...TYPE.sectionTitle, marginBottom: SPACE.cardGap, color: T.text }}>{getCopy(lang, "detail.scores")}</div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: SPACE.chipGap + 1 }}>
               {[
-                ["wifi", "WiFi", "穩定", cafe.wifi, cafe.wifi >= 4 ? "wifi" : null],
-                ["quiet", "安靜", "程度", cafe.quiet, cafe.quiet >= 4 ? "quiet" : null],
-                ["coffee", "咖啡", "好喝", cafe.tasty, cafe.tasty >= 4 ? "tasty" : null],
-                ["seat", "座位", "通常有位", cafe.seat, null],
-                ["price", "價格", "便宜", cafe.cheap, cafe.cheap >= 4 ? "cheap" : null],
-                ["music", "氛圍", "裝潢音樂", cafe.music, cafe.music >= 4 ? "music" : null],
+                ["wifi", getCopy(lang, "detail.wifi"), getCopy(lang, "detail.stable"), cafe.wifi, cafe.wifi >= 4 ? "wifi" : null],
+                ["quiet", getCopy(lang, "detail.quiet"), getCopy(lang, "detail.level"), cafe.quiet, cafe.quiet >= 4 ? "quiet" : null],
+                ["coffee", getCopy(lang, "detail.coffee"), getCopy(lang, "detail.tasty"), cafe.tasty, cafe.tasty >= 4 ? "tasty" : null],
+                ["seat", getCopy(lang, "detail.seat"), getCopy(lang, "detail.seatsAvailable"), cafe.seat, null],
+                ["price", getCopy(lang, "detail.price"), getCopy(lang, "detail.cheap"), cafe.cheap, cafe.cheap >= 4 ? "cheap" : null],
+                ["music", getCopy(lang, "detail.vibe"), getCopy(lang, "detail.music"), cafe.music, cafe.music >= 4 ? "music" : null],
               ].map(([iconName, label, subLabel, val, filterKey]) =>
                 val > 0 ? (
                   <button
@@ -2126,7 +2501,7 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
             className="soft-press"
             style={{ display: "block", background: T.brown, color: UI.onDark, borderRadius: 14, padding: "12px", textAlign: "center", textDecoration: "none", ...TYPE.control, marginBottom: 10, boxShadow: UI.activeShadow }}
           >
-            <InlineIcon name="map" size={14} color={UI.onDark} /> 在 Google Maps 開啟
+            <InlineIcon name="map" size={14} color={UI.onDark} /> {getCopy(lang, "common.openInGoogleMaps")}
           </a>
         )}
         {canManageCafe && (
@@ -2151,7 +2526,7 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
                 fontFamily: "inherit",
               }}
             >
-              {hideBusy ? "隱藏中..." : <><InlineIcon name="hide" size={14} color={T.brown} /> 隱藏這家店</>}
+              {hideBusy ? getCopy(lang, "detail.hidingCafe") : <><InlineIcon name="hide" size={14} color={T.brown} /> {getCopy(lang, "detail.hideCafe")}</>}
             </button>
             {hideError && <div style={{ fontSize: 12, color: UI.danger, marginBottom: 10 }}>{hideError}</div>}
           </>
@@ -2170,6 +2545,18 @@ export default function App() {
   const [authBusy, setAuthBusy] = useState(false);
   const [authMessage, setAuthMessage] = useState("");
   const [authError, setAuthError] = useState("");
+  const [lang, setLang] = useState(() => {
+    try {
+      const saved = localStorage.getItem(LANGUAGE_STORAGE_KEY);
+      if (saved === "zh" || saved === "en") return saved;
+      if (typeof navigator !== "undefined") {
+        return navigator.language?.toLowerCase().startsWith("zh") ? "zh" : "en";
+      }
+      return "zh";
+    } catch {
+      return "zh";
+    }
+  });
   const [country, setCountry] = useState(() => {
     try {
       return localStorage.getItem(COUNTRY_STORAGE_KEY) || "taiwan";
@@ -2282,6 +2669,12 @@ export default function App() {
 
   useEffect(() => {
     try {
+      localStorage.setItem(LANGUAGE_STORAGE_KEY, lang);
+    } catch {}
+  }, [lang]);
+
+  useEffect(() => {
+    try {
       localStorage.setItem(COUNTRY_STORAGE_KEY, country);
     } catch {}
   }, [country]);
@@ -2311,16 +2704,16 @@ export default function App() {
       });
       if (error) throw error;
       redirectStarted = true;
-      setAuthMessage("正在前往 Google 登入。");
+      setAuthMessage(getCopy(lang, "auth.redirecting"));
     } catch (error) {
-      setAuthError(error.message || "登入失敗，請稍後再試。");
+      setAuthError(error.message || getCopy(lang, "auth.signInFailed"));
     } finally {
       if (redirectStarted) return;
       window.setTimeout(() => {
         setAuthBusy(false);
       }, 0);
     }
-  }, []);
+  }, [lang]);
 
   const handleSignOut = useCallback(async () => {
     setAuthBusy(true);
@@ -2329,13 +2722,13 @@ export default function App() {
     try {
       const { error } = await supabase.auth.signOut();
       if (error) throw error;
-      setAuthMessage("已登出。");
+      setAuthMessage(getCopy(lang, "auth.signedOut"));
     } catch (error) {
-      setAuthError(error.message || "登出失敗，請稍後再試。");
+      setAuthError(error.message || getCopy(lang, "auth.signOutFailed"));
     } finally {
       setAuthBusy(false);
     }
-  }, []);
+  }, [lang]);
 
   const handleHideCafe = useCallback(async (cafe) => {
     const { data, error } = await supabase.auth.getSession();
@@ -2343,7 +2736,7 @@ export default function App() {
     const session = data.session;
     const email = session?.user?.email || "";
     if (!session?.access_token || email !== ADMIN_EMAIL) {
-      throw new Error("只有管理帳號可以隱藏店家。");
+      throw new Error(getCopy(lang, "auth.adminOnly"));
     }
 
     const countryCode = getCafeCountryKey(cafe) === "vietnam" ? "VN" : "TW";
@@ -2378,7 +2771,7 @@ export default function App() {
 
     await fetchAllCafes();
     setSelected(null);
-  }, [fetchAllCafes]);
+  }, [fetchAllCafes, lang]);
 
   const toggleFav = (id) => setFavs(prev => { const key = String(id); const s = new Set(prev); s.has(key) ? s.delete(key) : s.add(key); return s; });
   const favoriteLookup = useMemo(() => ({ has: (id) => favs.has(String(id)) }), [favs]);
@@ -2400,15 +2793,15 @@ export default function App() {
     REGION_GROUPS.forEach((group) => {
       if (group.country !== selectedCountry.key) return;
       if (!seen.has(group.key)) return;
-      options.push({ key: group.key, label: group.label });
+      options.push({ key: group.key, label: getRegionLabel(group, lang) });
     });
     return options;
-  }, [countryScopedCafes, selectedCountry.key]);
+  }, [countryScopedCafes, selectedCountry.key, lang]);
   const regionOptionKeys = useMemo(() => new Set(availableRegions.map((item) => item.key)), [availableRegions]);
   const hasRegionSelection = region !== REGION_PROMPT_KEY;
   const regionLabel = region === REGION_PROMPT_KEY
-    ? "選地區"
-    : (availableRegions.find((item) => item.key === region)?.label || "選地區");
+    ? getCopy(lang, "common.cityPrompt")
+    : (availableRegions.find((item) => item.key === region)?.label || getCopy(lang, "common.cityPrompt"));
   const regionScopedCafes = useMemo(() => {
     if (region === REGION_PROMPT_KEY) return [];
     return countryScopedCafes.filter((cafe) => getCafeRegionGroupKey(cafe) === region);
@@ -2478,12 +2871,12 @@ export default function App() {
   }, []);
 
   const renderPage = () => {
-    if (selected) return <DetailPage cafe={selected} onBack={() => setSelected(null)} fav={favoriteLookup.has(selected.id)} onFav={toggleFav} onReport={handleReportAndUpdateMap} emptyCafeIds={emptyCafeIds} onFilterTag={handleDetailTagFilter} canManageCafe={isAdminUser} onHideCafe={handleHideCafe} />;
+    if (selected) return <DetailPage cafe={selected} onBack={() => setSelected(null)} fav={favoriteLookup.has(selected.id)} onFav={toggleFav} onReport={handleReportAndUpdateMap} emptyCafeIds={emptyCafeIds} onFilterTag={handleDetailTagFilter} canManageCafe={isAdminUser} onHideCafe={handleHideCafe} lang={lang} />;
     switch (tab) {
-      case "home": return <HomePage cafes={homeCafes} loading={loading} hasRegionSelection={hasRegionSelection} onOpenRegionPicker={() => setMenuOpen(true)} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} emptyCafeIds={emptyCafeIds} filters={homeFilters} setFilters={setHomeFilters} />;
-      case "search": return <SearchPage cafes={searchCafes} loading={loading} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} />;
-      case "map": return <MapPage cafes={countryScopedCafes} onSelect={setSelected} mapView={mapView} setMapView={setMapView} mapQuery={mapQuery} setMapQuery={setMapQuery} loading={loading} />;
-      case "favorites": return <FavoritesPage cafes={favoritesCafes} favs={favoriteLookup} onSelect={setSelected} onFav={toggleFav} />;
+      case "home": return <HomePage cafes={homeCafes} loading={loading} hasRegionSelection={hasRegionSelection} onOpenRegionPicker={() => setMenuOpen(true)} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} emptyCafeIds={emptyCafeIds} filters={homeFilters} setFilters={setHomeFilters} lang={lang} />;
+      case "search": return <SearchPage cafes={searchCafes} loading={loading} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} lang={lang} />;
+      case "map": return <MapPage cafes={countryScopedCafes} onSelect={setSelected} mapView={mapView} setMapView={setMapView} mapQuery={mapQuery} setMapQuery={setMapQuery} loading={loading} lang={lang} />;
+      case "favorites": return <FavoritesPage cafes={favoritesCafes} favs={favoriteLookup} onSelect={setSelected} onFav={toggleFav} lang={lang} />;
       default: return null;
     }
   };
@@ -2491,14 +2884,14 @@ export default function App() {
   const headerSubtitle = tab === "map" || tab === "favorites"
     ? ""
     : hasRegionSelection
-      ? <><InlineIcon name="pin" size={12} color={UI.onDarkMuted} /> {regionLabel}・{homeCafes.filter(isOpen).length} 間</>
-      : <><InlineIcon name="pin" size={12} color={UI.onDarkMuted} /> {selectedCountry.label}・選地區</>;
+      ? <><InlineIcon name="pin" size={12} color={UI.onDarkMuted} /> {regionLabel}・{homeCafes.filter(isOpen).length} {lang === "en" ? "cafes" : getCopy(lang, "common.countUnit")}</>
+      : <><InlineIcon name="pin" size={12} color={UI.onDarkMuted} /> {getCountryLabel(selectedCountry, lang)}・{getCopy(lang, "common.cityPrompt")}</>;
 
   return (
     <>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap');html,body,#root{height:100%}*{margin:0;padding:0;box-sizing:border-box}body{font-family:${FONT.body};font-kerning:normal;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;background:${UI.pageBg}}input,button,textarea,select{font:inherit}input::placeholder{color:${UI.placeholder};opacity:1}button:focus-visible,[role="button"]:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid ${UI.sage} !important;outline-offset:3px}::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:${T.beige};border-radius:3px}.app-shell{container-type:inline-size}.soft-press,.cafe-card-shell,.nav-item{-webkit-tap-highlight-color:transparent;transform:translateZ(0)}.search-input{transition:border-color 160ms ease,box-shadow 160ms ease,background 160ms ease}.search-input:focus{border-color:${T.brown}!important;box-shadow:0 0 0 3px rgba(92,61,46,.10),0 8px 18px rgba(62,39,35,.05)!important}.map-popup .leaflet-popup-content-wrapper{border-radius:16px;border:1px solid ${UI.line};box-shadow:${UI.popupShadow}}.map-popup .leaflet-popup-content{margin:10px 12px;min-width:0 !important;width:min(220px,calc(100vw - 88px)) !important}.map-popup .leaflet-popup-close-button{padding:8px 10px 0 0;font-size:18px}@media (max-width:480px){.app-shell{box-shadow:none!important}}@media (min-width:768px){body{padding:16px}.app-shell{height:calc(100dvh - 32px)!important;min-height:calc(100dvh - 32px)!important;border-radius:28px}}@media (orientation:landscape) and (max-height:520px){.app-shell{max-width:720px!important}.nav-item{min-height:42px!important}}@media (prefers-reduced-motion:no-preference){.soft-press,.cafe-card-shell{transition:transform 150ms cubic-bezier(.22,1,.36,1),filter 150ms ease,background-color 150ms ease,border-color 150ms ease,color 150ms ease,box-shadow 150ms ease}.soft-press:active,.cafe-card-shell:active{transform:translateY(1px) scale(.99)}.nav-item:active{transform:translateY(1px) scale(.98)}@media (hover:hover){.soft-press:hover,.cafe-card-shell:hover{transform:translateY(-1px)}}.preset-card[aria-pressed="true"]{animation:soft-settle 220ms cubic-bezier(.22,1,.36,1)}.success-pop{animation:success-pop 260ms cubic-bezier(.22,1,.36,1)}@keyframes soft-settle{from{transform:scale(.985)}to{transform:scale(1)}}@keyframes success-pop{0%{transform:translateY(2px);opacity:.72}100%{transform:translateY(0);opacity:1}}}`}</style>
       <div className="app-shell" style={{ maxWidth: 480, margin: "0 auto", width: "100%", height: "100svh", minHeight: "100dvh", display: "flex", flexDirection: "column", background: T.cream, overflow: "hidden", boxShadow: UI.shellShadow }}>
-        {!selected && <Header cityLabel={hasRegionSelection ? regionLabel : selectedCountry.label} subtitle={headerSubtitle} onOpenMenu={() => setMenuOpen(true)} />}
+        {!selected && <Header cityLabel={hasRegionSelection ? regionLabel : getCountryLabel(selectedCountry, lang)} subtitle={headerSubtitle} onOpenMenu={() => setMenuOpen(true)} lang={lang} />}
         {selected ? (
           <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", overflow: "hidden" }}>
             {renderPage()}
@@ -2508,7 +2901,7 @@ export default function App() {
             {renderPage()}
           </SwipeBackShell>
         )}
-        {!selected && <BottomNav active={tab} onChange={handleTabChange} />}
+        {!selected && <BottomNav active={tab} onChange={handleTabChange} lang={lang} />}
         {!selected && (
           <SettingsPanel
             open={menuOpen}
@@ -2525,6 +2918,8 @@ export default function App() {
             authError={authError}
             onGoogleSignIn={handleGoogleSignIn}
             onSignOut={handleSignOut}
+            lang={lang}
+            setLang={setLang}
           />
         )}
       </div>
