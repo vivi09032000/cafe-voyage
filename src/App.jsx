@@ -284,7 +284,8 @@ const COPY = {
       title: "我的收藏",
       savedCount: "已收藏 {count} 間",
       emptyTitle: "還沒有收藏",
-      emptyHint: "點收藏圖示加入",
+      emptyHint: "先去首頁或附近看看，點星號就能收藏喜歡的店。",
+      emptyAction: "去探索咖啡店",
     },
     map: {
       yourLocation: "你的位置",
@@ -447,7 +448,8 @@ const COPY = {
       title: "Saved cafes",
       savedCount: "{count} saved",
       emptyTitle: "No saved cafes yet",
-      emptyHint: "Tap the star to save one",
+      emptyHint: "Browse Home or Nearby, then tap the star to save a cafe you like.",
+      emptyAction: "Explore cafes",
     },
     map: {
       yourLocation: "Your location",
@@ -1835,7 +1837,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav, lang }) => {
 };
 
 // ── Page: Favorites ──
-const FavoritesPage = ({ cafes, favs, onSelect, onFav, lang }) => {
+const FavoritesPage = ({ cafes, favs, onSelect, onFav, onExplore, lang }) => {
   const list = cafes.filter(isOpen).filter(c => favs.has(c.id));
   return (
     <div style={{ display: "flex", flexDirection: "column", flex: 1, minHeight: 0, overflow: "hidden" }}>
@@ -1851,10 +1853,41 @@ const FavoritesPage = ({ cafes, favs, onSelect, onFav, lang }) => {
       <div style={{ flex: 1, overflowY: "auto", padding: "0 16px 16px" }}>
         <div style={{ fontSize: 12, color: T.sub, margin: "10px 0" }}>{getCopy(lang, "favorites.savedCount", { count: list.length })}</div>
         {list.length === 0 ? (
-          <div style={{ textAlign: "center", padding: "60px 0", color: T.sub }}>
-            <Icon name="coffee" size={42} strokeWidth={1.8} style={{ color: T.brown, marginBottom: 10 }} />
-            <div>{getCopy(lang, "favorites.emptyTitle")}</div>
-            <div style={{ fontSize: 12, marginTop: 4 }}>{getCopy(lang, "favorites.emptyHint")}</div>
+          <div style={{ textAlign: "center", padding: "54px 8px", color: T.sub }}>
+            <div
+              style={{
+                maxWidth: 320,
+                margin: "0 auto",
+                background: UI.paper,
+                border: `1px solid ${UI.line}`,
+                borderRadius: 24,
+                boxShadow: UI.shadowSoft,
+                padding: "26px 20px 20px",
+              }}
+            >
+              <Icon name="heart" size={38} strokeWidth={1.9} style={{ color: T.brown, marginBottom: 12 }} />
+              <div style={{ ...TYPE.sectionTitle, color: T.text, marginBottom: 6 }}>{getCopy(lang, "favorites.emptyTitle")}</div>
+              <div style={{ ...TYPE.body, color: T.sub, marginBottom: 16 }}>{getCopy(lang, "favorites.emptyHint")}</div>
+              <button
+                type="button"
+                className="soft-press"
+                onClick={onExplore}
+                style={{
+                  width: "100%",
+                  border: "none",
+                  borderRadius: 16,
+                  background: T.brown,
+                  color: UI.onDark,
+                  padding: "13px 16px",
+                  ...TYPE.controlStrong,
+                  cursor: "pointer",
+                  fontFamily: "inherit",
+                  boxShadow: UI.activeShadowSmall,
+                }}
+              >
+                {getCopy(lang, "favorites.emptyAction")}
+              </button>
+            </div>
           </div>
         ) : list.map(c => <CafeCard key={c.id} cafe={c} onClick={() => onSelect(c)} fav={true} onFav={onFav} emptyCafeIds={new Set()} lang={lang} />)}
       </div>
@@ -2951,7 +2984,7 @@ export default function App() {
       case "home": return <HomePage cafes={homeCafes} loading={loading} hasRegionSelection={hasRegionSelection} onOpenRegionPicker={() => setMenuOpen(true)} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} emptyCafeIds={emptyCafeIds} filters={homeFilters} setFilters={setHomeFilters} lang={lang} />;
       case "search": return <SearchPage cafes={searchCafes} loading={loading} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} lang={lang} />;
       case "map": return <MapPage cafes={countryScopedCafes} onSelect={setSelected} mapView={mapView} setMapView={setMapView} mapQuery={mapQuery} setMapQuery={setMapQuery} loading={loading} lang={lang} />;
-      case "favorites": return <FavoritesPage cafes={favoritesCafes} favs={favoriteLookup} onSelect={setSelected} onFav={toggleFav} lang={lang} />;
+      case "favorites": return <FavoritesPage cafes={favoritesCafes} favs={favoriteLookup} onSelect={setSelected} onFav={toggleFav} onExplore={() => setPage("home")} lang={lang} />;
       default: return null;
     }
   };
