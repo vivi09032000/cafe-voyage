@@ -1873,16 +1873,22 @@ const FavoritesPage = ({ cafes, favs, onSelect, onFav, onExplore, lang }) => {
                 className="soft-press"
                 onClick={onExplore}
                 style={{
-                  width: "100%",
+                  width: "auto",
+                  minWidth: 188,
+                  maxWidth: 240,
                   border: "none",
-                  borderRadius: 16,
+                  borderRadius: 15,
                   background: T.brown,
                   color: UI.onDark,
-                  padding: "13px 16px",
-                  ...TYPE.controlStrong,
+                  padding: "11px 18px",
+                  ...TYPE.control,
+                  fontWeight: 760,
                   cursor: "pointer",
                   fontFamily: "inherit",
                   boxShadow: UI.activeShadowSmall,
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
                 }}
               >
                 {getCopy(lang, "favorites.emptyAction")}
