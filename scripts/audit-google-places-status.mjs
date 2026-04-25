@@ -1,5 +1,24 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 
+const SCRIPT_DISABLED_MESSAGE = `
+[DISABLED] scripts/audit-google-places-status.mjs
+
+This script is intentionally disabled because a previous bulk run against
+Google Places API caused unexpected charges in production billing.
+
+Do not re-enable or run this script casually.
+
+Before any future use, you must:
+1. Review GOOGLE_PLACES_COST_WARNING.md in the repo root.
+2. Confirm quotas, budget alerts, and API restrictions in Google Cloud.
+3. Replace this bulk workflow with a deliberately small, manual sample.
+
+If you truly need to revive this script, do it in a separate branch and add
+strict rate limiting, hard caps, and a dry-run mode first.
+`.trim();
+
+throw new Error(SCRIPT_DISABLED_MESSAGE);
+
 function createCafeNomadDataset(cityKey, label) {
   return {
     label,
