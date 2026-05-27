@@ -203,7 +203,7 @@ const COPY = {
       filter: "篩選",
       collapseFilters: "收起篩選",
     },
-    nav: { home: "首頁", nearby: "附近", map: "地圖", favorites: "收藏" },
+    nav: { explore: "探索", map: "地圖", favorites: "收藏" },
     settings: {
       openMenu: "開啟設定選單",
       close: "關閉設定",
@@ -367,7 +367,7 @@ const COPY = {
       filter: "Filter",
       collapseFilters: "Hide filters",
     },
-    nav: { home: "Home", nearby: "Nearby", map: "Map", favorites: "Saved" },
+    nav: { explore: "Explore", map: "Map", favorites: "Saved" },
     settings: {
       openMenu: "Open settings menu",
       close: "Close settings",
@@ -1284,11 +1284,10 @@ const BottomNav = ({ active, onChange, lang }) => (
       padding: "7px 6px",
     }}>
       {[
-        { key: "home", label: getCopy(lang, "nav.home"), d: "M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" },
-        { key: "search", label: getCopy(lang, "nav.nearby"), circle: true },
+        { key: "search", label: getCopy(lang, "nav.explore"), compass: true },
         { key: "map", label: getCopy(lang, "nav.map"), pin: true },
         { key: "favorites", label: getCopy(lang, "nav.favorites"), heart: true },
-      ].map(({ key, label, d, circle, pin, heart }) => {
+      ].map(({ key, label, compass, pin, heart }) => {
         const on = active === key;
         const c = on ? UI.onDark : T.sub;
         return (
@@ -1315,8 +1314,7 @@ const BottomNav = ({ active, onChange, lang }) => (
             }}
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill={heart && on ? c : "none"} stroke={c} strokeWidth="2" strokeLinecap="round">
-              {d && <path d={d} />}
-              {circle && <><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></>}
+              {compass && <><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></>}
               {pin && <><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" /><circle cx="12" cy="10" r="3" /></>}
               {heart && <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />}
             </svg>
@@ -1458,12 +1456,17 @@ const CafeCard = ({ cafe, onClick, fav, onFav, emptyCafeIds, lang }) => (
   </div>
 );
 
-// ── Page: Home ──
-const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSelect, favs, onFav, emptyCafeIds, filters, setFilters, lang }) => {
+
+const SearchPage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSelect, favs, onFav, emptyCafeIds, filters, setFilters, lang }) => {
   const [q, setQ] = useState("");
   const [page, setPage] = useState(1);
   const [filtersOpen, setFiltersOpen] = useState(false);
+  const [userLocation, setUserLocation] = useState(null);
+  const [locationLoading, setLocationLoading] = useState(false);
+  const [locationError, setLocationError] = useState("");
   const [activePresetKey, setActivePresetKey] = useState(null);
+  const requestedLocation = useRef(false);
+  const nearbyLocateTimerRef = useRef(null);
   const filterLabels = getFilterLabels(lang);
   const filterPresets = getFilterPresets(lang);
   const searchPlaceholder = getCopy(lang, "searchPlaceholder");
@@ -1476,210 +1479,10 @@ const HomePage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSe
     setFilters({ ...DEFAULT_HOME_FILTERS, ...preset.filters });
     setFiltersOpen(false);
   };
-  const isPresetActive = (presetFilters) => {
-    const activeKeys = Object.entries(filters).filter(([, value]) => value).map(([key]) => key);
-    const presetKeys = Object.entries(presetFilters).filter(([, value]) => value).map(([key]) => key);
-    return activeKeys.length === presetKeys.length && presetKeys.every((key) => filters[key]);
-  };
-
-  const allFiltered = cafes
-    .filter(isOpen)
-    .filter(c => !q || c.name.includes(q) || c.address.includes(q) || (c.mrt && c.mrt.includes(q)))
-    .filter(c => !filters.noLimit || c.limited_time === "no")
-    .filter(c => !filters.socket || c.socket === "yes")
-    .filter(c => !filters.standing || c.standing_desk === "yes")
-    .filter(c => !filters.wifi || c.wifi >= 4)
-    .filter(c => !filters.quiet || c.quiet >= 4)
-    .filter(c => !filters.tasty || c.tasty >= 4)
-    .filter(c => !filters.cheap || c.cheap >= 4)
-    .filter(c => !filters.music || c.music >= 4)
-    .filter(c => !filters.empty || emptyCafeIds.has(c.id))
-    .sort((a, b) => {
-    const preset = filterPresets.find((item) => item.key === activePresetKey);
-      if (preset?.score) return preset.score(b) - preset.score(a);
-      return workScore(b) - workScore(a);
-    });
-
-  const total = allFiltered.length;
-  const start = (page - 1) * PER_PAGE;
-  const filtered = allFiltered.slice(start, start + PER_PAGE);
-
-  // Reset page when search changes
-  useEffect(() => { setPage(1); }, [q]);
-  const activeFilterCount = Object.values(filters).filter(Boolean).length;
-  const activeFilterLabels = Object.entries(filters).filter(([, value]) => value).map(([key]) => filterLabels[key]);
-
-  return (
-    <div style={{ display: "flex", flexDirection: "column", flex: 1, minHeight: 0, overflow: "hidden" }}>
-      <div style={{ flexShrink: 0, padding: `${SPACE.headerTop + 2}px ${SPACE.pageX}px ${SPACE.headerBottom}px`, background: T.cream, borderBottom: `1px solid ${T.beige}` }}>
-        <div style={{ position: "relative", marginBottom: SPACE.sectionGap + 2 }}>
-          <svg style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)" }} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={UI.placeholder} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
-          <input className="search-input" aria-label={searchPlaceholder} value={q} onChange={e => setQ(e.target.value)} placeholder={searchPlaceholder}
-            style={SEARCH_INPUT_STYLE} />
-        </div>
-
-        {!filtersOpen ? (
-          <div style={{ display: "flex", alignItems: "center", gap: SPACE.chipGap + 1, flexWrap: "wrap" }}>
-            {activeFilterLabels.slice(0, 2).map((label) => (
-              <FilterChip key={label} active={true} label={label} onClick={() => setFiltersOpen(true)} />
-            ))}
-            {activeFilterCount > 2 && (
-              <span style={{ background: UI.chipNeutral, color: UI.chipNeutralText, borderRadius: 18, padding: "9px 14px", fontSize: 12, fontWeight: 700, lineHeight: 1 }}>+{activeFilterCount - 2}</span>
-            )}
-            <button
-              className="soft-press"
-              onClick={() => setFiltersOpen(true)}
-              style={{ marginLeft: "auto", background: "none", border: "none", color: T.brown, fontSize: 13, fontWeight: 700, cursor: "pointer", textDecoration: "underline", textUnderlineOffset: 4, fontFamily: "inherit" }}
-            >
-              {getCopy(lang, "common.filter")} {activeFilterCount > 0 && <Icon name="chevronDown" size={12} strokeWidth={2.4} style={{ marginLeft: 2, verticalAlign: "-0.12em" }} />}
-            </button>
-          </div>
-        ) : (
-          <>
-            <FilterSection filters={filters} toggle={toggle} lang={lang} />
-            <div style={{ display: "flex", justifyContent: "flex-end" }}>
-              <button
-                className="soft-press"
-                onClick={() => setFiltersOpen(false)}
-                style={{ background: "none", border: "none", color: T.brown, fontSize: 13, fontWeight: 700, cursor: "pointer", textDecoration: "underline", textUnderlineOffset: 4, fontFamily: "inherit" }}
-              >
-                {getCopy(lang, "common.collapseFilters")} <Icon name="chevronUp" size={12} strokeWidth={2.4} style={{ marginLeft: 2, verticalAlign: "-0.12em" }} />
-              </button>
-            </div>
-          </>
-        )}
-      </div>
-
-      {/* 滾動區：咖啡廳列表 */}
-      <div style={{ flex: 1, overflowY: "auto", padding: `0 ${SPACE.pageX}px ${SPACE.pageX}px` }}>
-        {!hasRegionSelection && (
-          <div style={{ margin: `${SPACE.cardGap}px 0`, background: UI.surface, border: `1px solid ${UI.line}`, borderRadius: 14, padding: `${SPACE.cardPad}px ${SPACE.cardPad}px 12px` }}>
-            <div style={{ ...TYPE.sectionTitle, color: T.text, marginBottom: 6 }}>{getCopy(lang, "home.chooseCity")}</div>
-            <div style={{ ...TYPE.body, color: T.sub, marginBottom: 10 }}>
-              {getCopy(lang, "home.chooseCityHint")}
-            </div>
-            <button
-              className="soft-press"
-              onClick={onOpenRegionPicker}
-              style={{
-                background: T.brown,
-                color: UI.onDark,
-                border: "none",
-                borderRadius: 10,
-                padding: "10px 14px",
-                ...TYPE.control,
-                cursor: "pointer",
-                fontFamily: "inherit",
-              }}
-            >
-              {getCopy(lang, "home.chooseCityAction")}
-            </button>
-          </div>
-        )}
-        {hasRegionSelection && (
-          <div style={{ margin: `${SPACE.sectionGap}px 0 ${SPACE.cardGap}px` }}>
-            <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: SPACE.cardGap, marginBottom: SPACE.groupGap }}>
-              <div>
-                <div style={{ ...TYPE.sectionTitle, color: T.text }}>{getCopy(lang, "home.byNeed")}</div>
-              </div>
-              {activeFilterCount > 0 && (
-                <button
-                  className="soft-press"
-                  type="button"
-                  onClick={() => { setFilters({ ...DEFAULT_HOME_FILTERS }); setActivePresetKey(null); setPage(1); }}
-                  style={{ background: "none", border: "none", color: T.brown, ...TYPE.control, cursor: "pointer", fontFamily: "inherit", textDecoration: "underline", textUnderlineOffset: 3 }}
-                >
-                  {getCopy(lang, "common.clear")}
-                </button>
-              )}
-            </div>
-            <div style={{ display: "flex", gap: SPACE.groupGap - 1, overflowX: "auto", padding: "2px 1px 8px", margin: "0 -1px" }}>
-              {filterPresets.map((preset) => {
-                const active = isPresetActive(preset.filters);
-                return (
-                  <button
-                    className="soft-press preset-card"
-                    key={preset.title}
-                    type="button"
-                    aria-pressed={active}
-                    onClick={() => applyPreset(preset)}
-                    style={{
-                      background: active ? T.brown : UI.paper,
-                      color: active ? UI.onDark : T.text,
-                      border: `1px solid ${active ? T.brown : UI.line}`,
-                      borderRadius: 16,
-                      padding: "10px 12px",
-                      width: "clamp(136px, 38vw, 168px)",
-                      flex: "0 0 clamp(136px, 38vw, 168px)",
-                      textAlign: "left",
-                      cursor: "pointer",
-                      fontFamily: "inherit",
-                      boxShadow: active ? UI.activeShadow : UI.shadow,
-                      minHeight: 76,
-                      transition: "background 160ms ease, transform 160ms ease, box-shadow 160ms ease",
-                    }}
-                  >
-                    <div style={{ ...TYPE.cardTitle, fontSize: "0.9rem", marginBottom: 4 }}>{preset.title}</div>
-                    <div style={{ ...TYPE.caption, color: active ? UI.activeSubtitle : T.sub }}>{preset.subtitle}</div>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-        )}
-        {loading ? (
-          <div style={{ textAlign: "center", padding: "60px 0", color: T.sub }}>
-            <Icon name="coffee" size={34} strokeWidth={1.9} style={{ color: T.brown, marginBottom: 10 }} />
-            <div>{getCopy(lang, "common.loadingCafes")}</div>
-          </div>
-        ) : (
-          <>
-            <div style={{ ...TYPE.meta, color: T.sub, margin: `${SPACE.groupGap}px 0 ${SPACE.cardGap}px` }}>
-              {total > PER_PAGE
-                ? getCopy(lang, "home.totalPaged", { count: total, start: start + 1, end: Math.min(start + PER_PAGE, total) })
-                : getCopy(lang, "home.total", { count: total })}
-            </div>
-            {filtered.map(c => <CafeCard key={c.id} cafe={c} onClick={() => onSelect(c)} fav={favs.has(c.id)} onFav={onFav} emptyCafeIds={emptyCafeIds} lang={lang} />)}
-            {filtered.length === 0 && (
-              <div style={{ textAlign: "center", padding: "42px 18px", color: T.sub }}>
-                <Icon name="coffee" size={32} strokeWidth={1.9} style={{ color: T.brown, marginBottom: 10 }} />
-                <div style={{ ...TYPE.sectionTitle, color: T.text, marginBottom: 6 }}>{getCopy(lang, "home.noResultsTitle")}</div>
-                <div style={{ ...TYPE.body, color: T.sub }}>{getCopy(lang, "home.noResultsHint")}</div>
-              </div>
-            )}
-            <Pagination page={page} total={total} onPage={setPage} lang={lang} />
-          </>
-        )}
-      </div>
-    </div>
-  );
-};
-
-// ── Page: Nearby ──
-const SearchPage = ({ cafes, loading, onSelect, favs, onFav, lang }) => {
-  const [q, setQ] = useState("");
-  const [page, setPage] = useState(1);
-  const [userLocation, setUserLocation] = useState(null);
-  const [locationLoading, setLocationLoading] = useState(false);
-  const [locationError, setLocationError] = useState("");
-  const [activePresetKey, setActivePresetKey] = useState("all");
-  const requestedLocation = useRef(false);
-  const nearbyLocateTimerRef = useRef(null);
-  const filterPresets = getFilterPresets(lang);
-  const searchPlaceholder = getCopy(lang, "searchPlaceholder");
-  const activePreset = filterPresets.find((preset) => preset.key === activePresetKey);
-  const matchesPreset = (cafe) => {
-    if (!activePreset) return true;
-    const presetFilters = activePreset.filters;
-    if (presetFilters.noLimit && cafe.limited_time !== "no") return false;
-    if (presetFilters.socket && cafe.socket !== "yes") return false;
-    if (presetFilters.standing && cafe.standing_desk !== "yes") return false;
-    if (presetFilters.wifi && cafe.wifi < 4) return false;
-    if (presetFilters.quiet && cafe.quiet < 4) return false;
-    if (presetFilters.tasty && cafe.tasty < 4) return false;
-    if (presetFilters.cheap && cafe.cheap < 4) return false;
-    if (presetFilters.music && cafe.music < 4) return false;
-    return true;
+  const clearAll = () => {
+    setFilters({ ...DEFAULT_HOME_FILTERS });
+    setActivePresetKey(null);
+    setPage(1);
   };
 
   const requestSortLocation = useCallback(() => {
@@ -1735,15 +1538,28 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav, lang }) => {
     attemptLocate({ enableHighAccuracy: false, timeout: 12000, maximumAge: 300000 });
   }, [lang]);
 
+  const activeFilterCount = Object.values(filters).filter(Boolean).length;
+  const activeFilterLabels = Object.entries(filters).filter(([, value]) => value).map(([key]) => filterLabels[key]);
+
   const allSorted = cafes
     .filter(isOpen)
     .filter(c => !q || c.name.includes(q) || c.address.includes(q) || (c.mrt && c.mrt.includes(q)))
-    .filter(matchesPreset)
+    .filter(c => !filters.noLimit || c.limited_time === "no")
+    .filter(c => !filters.socket || c.socket === "yes")
+    .filter(c => !filters.standing || c.standing_desk === "yes")
+    .filter(c => !filters.wifi || c.wifi >= 4)
+    .filter(c => !filters.quiet || c.quiet >= 4)
+    .filter(c => !filters.tasty || c.tasty >= 4)
+    .filter(c => !filters.cheap || c.cheap >= 4)
+    .filter(c => !filters.music || c.music >= 4)
+    .filter(c => !filters.empty || emptyCafeIds.has(c.id))
     .map((c) => ({ ...c, _workScore: workScore(c), _distanceKm: distanceKm(userLocation, c) }))
     .sort((a, b) => {
       if (userLocation) {
         return a._distanceKm - b._distanceKm;
       }
+      const preset = filterPresets.find((item) => item.key === activePresetKey);
+      if (preset?.score) return preset.score(b) - preset.score(a);
       return b._workScore - a._workScore;
     });
 
@@ -1762,22 +1578,27 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav, lang }) => {
     <div style={{ display: "flex", flexDirection: "column", flex: 1, minHeight: 0, overflow: "hidden" }}>
       {/* 固定區 */}
       <div style={{ flexShrink: 0, padding: `${SPACE.headerTop}px ${SPACE.pageX}px 0`, background: T.cream, borderBottom: `1px solid ${T.beige}` }}>
-        <div style={{ ...TYPE.pageTitle, marginBottom: SPACE.groupGap, color: T.text }}>{getCopy(lang, "nearby.title")}</div>
         <div style={{ position: "relative", marginBottom: SPACE.sectionGap }}>
           <svg style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)" }} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={UI.placeholder} strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
           <input className="search-input" aria-label={searchPlaceholder} value={q} onChange={e => setQ(e.target.value)} placeholder={searchPlaceholder}
             style={SEARCH_INPUT_STYLE} />
         </div>
-        <div style={{ display: "flex", gap: SPACE.chipGap, overflowX: "auto", paddingBottom: SPACE.cardGap }}>
+        <div style={{ display: "flex", gap: SPACE.chipGap, overflowX: "auto", paddingBottom: SPACE.chipGap + 1, margin: "0 -1px", padding: "0 1px" }}>
           {[{ key: "all", title: getCopy(lang, "common.all") }, ...filterPresets].map((preset) => {
-            const active = activePresetKey === preset.key;
+            const active = preset.key === "all" ? !activePresetKey && activeFilterCount === 0 : activePresetKey === preset.key;
             return (
               <button
                 key={preset.key}
                 type="button"
                 className="soft-press"
                 aria-pressed={active}
-                onClick={() => setActivePresetKey(preset.key)}
+                onClick={() => {
+                  if (preset.key === "all") {
+                    clearAll();
+                  } else {
+                    applyPreset(preset);
+                  }
+                }}
                 style={{
                   border: `1px solid ${active ? T.brown : UI.line}`,
                   background: active ? T.brown : UI.paper,
@@ -1797,11 +1618,77 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav, lang }) => {
             );
           })}
         </div>
-        {locationError && <div style={{ ...TYPE.caption, color: UI.danger, marginBottom: 10 }}>{locationError}</div>}
+
+        {/* 篩選展開區 */}
+        {!filtersOpen ? (
+          <div style={{ display: "flex", alignItems: "center", gap: SPACE.chipGap + 1, flexWrap: "wrap", paddingBottom: SPACE.cardGap }}>
+            {activeFilterLabels.slice(0, 2).map((label) => (
+              <FilterChip key={label} active={true} label={label} onClick={() => setFiltersOpen(true)} />
+            ))}
+            {activeFilterCount > 2 && (
+              <span style={{ background: UI.chipNeutral, color: UI.chipNeutralText, borderRadius: 18, padding: "9px 14px", fontSize: 12, fontWeight: 700, lineHeight: 1 }}>+{activeFilterCount - 2}</span>
+            )}
+            <button
+              className="soft-press"
+              onClick={() => setFiltersOpen(true)}
+              style={{ marginLeft: "auto", background: "none", border: "none", color: T.brown, fontSize: 13, fontWeight: 700, cursor: "pointer", textDecoration: "underline", textUnderlineOffset: 4, fontFamily: "inherit" }}
+            >
+              {getCopy(lang, "common.filter")} {activeFilterCount > 0 && <Icon name="chevronDown" size={12} strokeWidth={2.4} style={{ marginLeft: 2, verticalAlign: "-0.12em" }} />}
+            </button>
+          </div>
+        ) : (
+          <div style={{ paddingBottom: SPACE.cardGap }}>
+            <FilterSection filters={filters} toggle={toggle} lang={lang} />
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
+              {activeFilterCount > 0 && (
+                <button
+                  className="soft-press"
+                  type="button"
+                  onClick={clearAll}
+                  style={{ background: "none", border: "none", color: T.brown, ...TYPE.control, cursor: "pointer", fontFamily: "inherit", textDecoration: "underline", textUnderlineOffset: 3 }}
+                >
+                  {getCopy(lang, "common.clear")}
+                </button>
+              )}
+              <button
+                className="soft-press"
+                onClick={() => setFiltersOpen(false)}
+                style={{ marginLeft: "auto", background: "none", border: "none", color: T.brown, fontSize: 13, fontWeight: 700, cursor: "pointer", textDecoration: "underline", textUnderlineOffset: 4, fontFamily: "inherit" }}
+              >
+                {getCopy(lang, "common.collapseFilters")} <Icon name="chevronUp" size={12} strokeWidth={2.4} style={{ marginLeft: 2, verticalAlign: "-0.12em" }} />
+              </button>
+            </div>
+          </div>
+        )}
+        {locationError && <div style={{ ...TYPE.caption, color: UI.danger, paddingBottom: 10 }}>{locationError}</div>}
       </div>
 
       {/* 滾動區 */}
       <div style={{ flex: 1, overflowY: "auto", padding: `0 ${SPACE.pageX}px ${SPACE.pageX}px` }}>
+        {!hasRegionSelection && (
+          <div style={{ margin: `${SPACE.cardGap}px 0`, background: UI.surface, border: `1px solid ${UI.line}`, borderRadius: 14, padding: `${SPACE.cardPad}px ${SPACE.cardPad}px 12px` }}>
+            <div style={{ ...TYPE.sectionTitle, color: T.text, marginBottom: 6 }}>{getCopy(lang, "home.chooseCity")}</div>
+            <div style={{ ...TYPE.body, color: T.sub, marginBottom: 10 }}>
+              {getCopy(lang, "home.chooseCityHint")}
+            </div>
+            <button
+              className="soft-press"
+              onClick={onOpenRegionPicker}
+              style={{
+                background: T.brown,
+                color: UI.onDark,
+                border: "none",
+                borderRadius: 10,
+                padding: "10px 14px",
+                ...TYPE.control,
+                cursor: "pointer",
+                fontFamily: "inherit",
+              }}
+            >
+              {getCopy(lang, "home.chooseCityAction")}
+            </button>
+          </div>
+        )}
         <div style={{ ...TYPE.meta, color: T.sub, margin: `${SPACE.groupGap}px 0` }}>
           {total > PER_PAGE
             ? getCopy(lang, "nearby.totalPaged", { sort: userLocation ? getCopy(lang, "nearby.distanceSort") : locationLoading ? getCopy(lang, "nearby.locating") : getCopy(lang, "nearby.allowLocation"), count: total, start: start + 1, end: Math.min(start + PER_PAGE, total) })
@@ -1811,21 +1698,21 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav, lang }) => {
           <div style={{ textAlign: "center", padding: "60px 0", color: T.sub }}><Icon name="coffee" size={34} strokeWidth={1.9} style={{ color: T.brown, marginBottom: 10 }} /><div>{getCopy(lang, "common.loadingCafes")}</div></div>
         ) : (
           <>
-            {sorted.map((c, i) => (
+            {sorted.map((c) => (
               <div key={c.id} style={{ display: "flex", alignItems: "flex-start", gap: SPACE.chipGap + 1 }}>
                 {userLocation && (
                   <div style={{ minWidth: 46, minHeight: 24, borderRadius: 14, background: T.beige, color: T.sub, display: "flex", alignItems: "center", justifyContent: "center", ...TYPE.nav, fontWeight: 720, flexShrink: 0, marginTop: 14, padding: "3px 6px", textAlign: "center" }}>
                     {formatDistance(c._distanceKm)}
                   </div>
                 )}
-                <div style={{ flex: 1 }}><CafeCard cafe={c} onClick={() => onSelect(c)} fav={favs.has(c.id)} onFav={onFav} emptyCafeIds={new Set()} lang={lang} /></div>
+                <div style={{ flex: 1 }}><CafeCard cafe={c} onClick={() => onSelect(c)} fav={favs.has(c.id)} onFav={onFav} emptyCafeIds={emptyCafeIds} lang={lang} /></div>
               </div>
             ))}
             {sorted.length === 0 && (
               <div style={{ textAlign: "center", padding: "42px 18px", color: T.sub }}>
                 <Icon name="coffee" size={32} strokeWidth={1.9} style={{ color: T.brown, marginBottom: 10 }} />
-                <div style={{ ...TYPE.sectionTitle, color: T.text, marginBottom: 6 }}>{getCopy(lang, "nearby.noResultsTitle")}</div>
-                <div style={{ ...TYPE.body, color: T.sub }}>{getCopy(lang, "nearby.noResultsHint")}</div>
+                <div style={{ ...TYPE.sectionTitle, color: T.text, marginBottom: 6 }}>{getCopy(lang, "home.noResultsTitle")}</div>
+                <div style={{ ...TYPE.body, color: T.sub }}>{getCopy(lang, "home.noResultsHint")}</div>
               </div>
             )}
             <Pagination page={page} total={total} onPage={setPage} lang={lang} />
@@ -2708,7 +2595,7 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
 
 // ── Main App ──
 export default function App() {
-  const [tab, setTab] = useState("home");
+  const [tab, setTab] = useState("search");
   const [tabHistory, setTabHistory] = useState([]);
   const [menuOpen, setMenuOpen] = useState(false);
   const [authUser, setAuthUser] = useState(null);
@@ -2976,8 +2863,7 @@ export default function App() {
     if (region === REGION_PROMPT_KEY) return [];
     return countryScopedCafes.filter((cafe) => getCafeRegionGroupKey(cafe) === region);
   }, [countryScopedCafes, region]);
-  const homeCafes = hasRegionSelection ? regionScopedCafes : [];
-  const searchCafes = hasRegionSelection ? regionScopedCafes : countryScopedCafes;
+  const exploreCafes = hasRegionSelection ? regionScopedCafes : countryScopedCafes;
   const favoritesCafes = allCafes;
 
   useEffect(() => {
@@ -3037,16 +2923,15 @@ export default function App() {
     setCountry(cafeCountry);
     setRegion(cafeRegion || REGION_PROMPT_KEY);
     setSelected(null);
-    setTab("home");
+    setTab("search");
   }, []);
 
   const renderPage = () => {
     if (selected) return <DetailPage cafe={selected} onBack={() => setSelected(null)} fav={favoriteLookup.has(selected.id)} onFav={toggleFav} onReport={handleReportAndUpdateMap} emptyCafeIds={emptyCafeIds} onFilterTag={handleDetailTagFilter} canManageCafe={isAdminUser} onHideCafe={handleHideCafe} lang={lang} />;
     switch (tab) {
-      case "home": return <HomePage cafes={homeCafes} loading={loading} hasRegionSelection={hasRegionSelection} onOpenRegionPicker={() => setMenuOpen(true)} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} emptyCafeIds={emptyCafeIds} filters={homeFilters} setFilters={setHomeFilters} lang={lang} />;
-      case "search": return <SearchPage cafes={searchCafes} loading={loading} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} lang={lang} />;
+      case "search": return <SearchPage cafes={exploreCafes} loading={loading} hasRegionSelection={hasRegionSelection} onOpenRegionPicker={() => setMenuOpen(true)} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} emptyCafeIds={emptyCafeIds} filters={homeFilters} setFilters={setHomeFilters} lang={lang} />;
       case "map": return <MapPage cafes={countryScopedCafes} onSelect={setSelected} mapView={mapView} setMapView={setMapView} mapQuery={mapQuery} setMapQuery={setMapQuery} loading={loading} lang={lang} />;
-      case "favorites": return <FavoritesPage cafes={favoritesCafes} favs={favoriteLookup} onSelect={setSelected} onFav={toggleFav} onExplore={() => setTab("home")} lang={lang} />;
+      case "favorites": return <FavoritesPage cafes={favoritesCafes} favs={favoriteLookup} onSelect={setSelected} onFav={toggleFav} onExplore={() => setTab("search")} lang={lang} />;
       default: return null;
     }
   };
@@ -3054,7 +2939,7 @@ export default function App() {
   const headerSubtitle = tab === "map" || tab === "favorites"
     ? ""
     : hasRegionSelection
-      ? <><InlineIcon name="pin" size={12} color={UI.onDarkMuted} /> {regionLabel}・{homeCafes.filter(isOpen).length} {lang === "en" ? "cafes" : getCopy(lang, "common.countUnit")}</>
+      ? <><InlineIcon name="pin" size={12} color={UI.onDarkMuted} /> {regionLabel}・{regionScopedCafes.filter(isOpen).length} {lang === "en" ? "cafes" : getCopy(lang, "common.countUnit")}</>
       : <><InlineIcon name="pin" size={12} color={UI.onDarkMuted} /> {getCountryLabel(selectedCountry, lang)}・{getCopy(lang, "common.cityPrompt")}</>;
 
   return (
