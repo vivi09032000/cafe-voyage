@@ -2991,11 +2991,15 @@ export default function App() {
     }
   };
 
+  const unselectedHeaderCount = gpsRegion
+    ? countryScopedCafes.filter((c) => getCafeRegionGroupKey(c) === gpsRegion && isOpen(c)).length
+    : countryScopedCafes.filter(isOpen).length;
+
   const headerSubtitle = tab === "map" || tab === "favorites"
     ? ""
     : hasRegionSelection
       ? <><InlineIcon name="pin" size={12} color={UI.onDarkMuted} /> {regionLabel}・{regionScopedCafes.filter(isOpen).length} {lang === "en" ? "cafes" : getCopy(lang, "common.countUnit")}</>
-      : <><InlineIcon name="pin" size={12} color={UI.onDarkMuted} /> {gpsRegion ? getRegionLabel(REGION_GROUPS.find((g) => g.key === gpsRegion), lang) : getCountryLabel(selectedCountry, lang)}・{countryScopedCafes.filter(isOpen).length} {lang === "en" ? "cafes" : getCopy(lang, "common.countUnit")}</>;
+      : <><InlineIcon name="pin" size={12} color={UI.onDarkMuted} /> {gpsRegion ? getRegionLabel(REGION_GROUPS.find((g) => g.key === gpsRegion), lang) : getCountryLabel(selectedCountry, lang)}・{unselectedHeaderCount} {lang === "en" ? "cafes" : getCopy(lang, "common.countUnit")}</>;
 
   return (
     <>
