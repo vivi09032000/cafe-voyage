@@ -1232,6 +1232,23 @@ const SettingsPanel = ({
             )}
           </div>
           <div style={{ display: "grid", gridTemplateColumns: country === "vietnam" ? "repeat(2, minmax(0, 1fr))" : "repeat(4, minmax(0, 1fr))", gap: 7 }}>
+            <button
+              onClick={() => { setRegion(REGION_PROMPT_KEY); onClose(); }}
+              style={{
+                background: region === REGION_PROMPT_KEY ? T.brown : T.cream,
+                color: region === REGION_PROMPT_KEY ? UI.onDark : T.text,
+                border: `1px solid ${region === REGION_PROMPT_KEY ? T.brown : UI.regionBorder}`,
+                borderRadius: 14,
+                padding: "8px 4px",
+                fontSize: 11,
+                cursor: "pointer",
+                fontFamily: "inherit",
+                fontWeight: region === REGION_PROMPT_KEY ? 700 : 500,
+                lineHeight: 1.1,
+              }}
+            >
+              {lang === "en" ? "All" : "全部"}
+            </button>
             {regionOptions.map((item) => (
               <button
                 key={item.key}
@@ -2634,6 +2651,7 @@ export default function App() {
       return REGION_PROMPT_KEY;
     }
   });
+  const [gpsRegion, setGpsRegion] = useState(null);
   const [allCafes, setAllCafes] = useState([]);
   const [loading, setLoading] = useState(false);
   const [selected, setSelected] = useState(null);
@@ -2869,8 +2887,7 @@ export default function App() {
     if (region === REGION_PROMPT_KEY) return [];
     return countryScopedCafes.filter((cafe) => getCafeRegionGroupKey(cafe) === region);
   }, [countryScopedCafes, region]);
-  // Always show all cafes for the country (sorted by distance in SearchPage)
-  const exploreCafes = countryScopedCafes;
+  const exploreCafes = hasRegionSelection ? regionScopedCafes : countryScopedCafes;
   const favoritesCafes = allCafes;
 
   useEffect(() => {
@@ -2914,10 +2931,10 @@ export default function App() {
         });
         if (nearest) {
           const detectedRegion = getCafeRegionGroupKey(nearest);
-          if (detectedRegion) setRegion(detectedRegion);
+          if (detectedRegion) setGpsRegion(detectedRegion);
         }
       },
-      () => { /* GPS denied — leave region as prompt, header shows country name */ },
+      () => { /* GPS denied */ },
       { enableHighAccuracy: false, timeout: 8000, maximumAge: 300000 },
     );
   }, [countryScopedCafes, hasRegionSelection]);
@@ -2976,7 +2993,9 @@ export default function App() {
 
   const headerSubtitle = tab === "map" || tab === "favorites"
     ? ""
-    : <><InlineIcon name="pin" size={12} color={UI.onDarkMuted} /> {hasRegionSelection ? regionLabel : getCountryLabel(selectedCountry, lang)}・{countryScopedCafes.filter(isOpen).length} {lang === "en" ? "cafes" : getCopy(lang, "common.countUnit")}</>;
+    : hasRegionSelection
+      ? <><InlineIcon name="pin" size={12} color={UI.onDarkMuted} /> {regionLabel}・{regionScopedCafes.filter(isOpen).length} {lang === "en" ? "cafes" : getCopy(lang, "common.countUnit")}</>
+      : <><InlineIcon name="pin" size={12} color={UI.onDarkMuted} /> {gpsRegion ? getRegionLabel(REGION_GROUPS.find((g) => g.key === gpsRegion), lang) : getCountryLabel(selectedCountry, lang)}・{countryScopedCafes.filter(isOpen).length} {lang === "en" ? "cafes" : getCopy(lang, "common.countUnit")}</>;
 
   return (
     <>
