@@ -1987,7 +1987,7 @@ const LocateController = ({ request, onStart, onSuccess, onError }) => {
   return null;
 };
 
-const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setMapQuery, lang }) => {
+const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setMapQuery, lang, region }) => {
   const [userPos, setUserPos] = useState(null);
   const [geoTarget, setGeoTarget] = useState(null);
   const [searchTarget, setSearchTarget] = useState(null);
@@ -2013,6 +2013,24 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
       return lat <= visibleBounds.north && lat >= visibleBounds.south && lng <= visibleBounds.east && lng >= visibleBounds.west;
     });
   }, [allMapCafes, visibleBounds]);
+
+  const [regionSeq, setRegionSeq] = useState(0);
+  const prevRegionRef = useRef(region);
+  useEffect(() => {
+    if (region !== prevRegionRef.current) {
+      prevRegionRef.current = region;
+      setRegionSeq(s => s + 1);
+    }
+  }, [region]);
+
+  const regionCenter = useMemo(() => {
+    if (!region || region === REGION_PROMPT_KEY) return null;
+    const rc = allMapCafes.filter(c => getCafeRegionGroupKey(c) === region);
+    if (rc.length === 0) return null;
+    let latSum = 0, lngSum = 0;
+    rc.forEach(c => { latSum += parseFloat(c.latitude); lngSum += parseFloat(c.longitude); });
+    return [latSum / rc.length, lngSum / rc.length];
+  }, [region, allMapCafes]);
 
   const requestUserLocation = useCallback(async ({ silent = false, zoom = 15, mode = "manual" } = {}) => {
     if (!navigator.geolocation) {
@@ -2251,6 +2269,7 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
           <SaveMapView onMove={setMapView} onBoundsChange={setVisibleBounds} />
           {flyTarget && <FlyTo center={flyTarget} offsetY={120} />}
           {(!mapQuery || locateRequest.mode === "manual") && <FlyToBySignal center={userPos} seq={locateRequest.seq} zoom={locateRequest.zoom} />}
+          {regionCenter && !flyTarget && <FlyToBySignal center={regionCenter} seq={regionSeq} zoom={13} />}
           {userPos && <Marker position={userPos} icon={userIcon} ref={userMarkerRef}>
             <Popup><span style={{ ...TYPE.control }}><InlineIcon name="pin" size={13} color={T.brown} /> {getCopy(lang, "map.yourLocation")}</span></Popup>
           </Marker>}
@@ -3021,7 +3040,7 @@ export default function App() {
     if (selected) return <DetailPage cafe={selected} onBack={() => setSelected(null)} fav={favoriteLookup.has(selected.id)} onFav={toggleFav} onReport={handleReportAndUpdateMap} emptyCafeIds={emptyCafeIds} onFilterTag={handleDetailTagFilter} canManageCafe={isAdminUser} onHideCafe={handleHideCafe} lang={lang} />;
     switch (tab) {
       case "search": return <SearchPage cafes={exploreCafes} loading={loading} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} emptyCafeIds={emptyCafeIds} filters={homeFilters} setFilters={setHomeFilters} lang={lang} onRelocate={() => requestGpsRegion(true)} />;
-      case "map": return <MapPage cafes={countryScopedCafes} onSelect={setSelected} mapView={mapView} setMapView={setMapView} mapQuery={mapQuery} setMapQuery={setMapQuery} loading={loading} lang={lang} />;
+      case "map": return <MapPage cafes={countryScopedCafes} region={region} onSelect={setSelected} mapView={mapView} setMapView={setMapView} mapQuery={mapQuery} setMapQuery={setMapQuery} loading={loading} lang={lang} />;
       case "favorites": return <FavoritesPage cafes={favoritesCafes} favs={favoriteLookup} onSelect={setSelected} onFav={toggleFav} onExplore={() => setTab("search")} lang={lang} />;
       default: return null;
     }
