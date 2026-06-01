@@ -1585,7 +1585,19 @@ const SearchPage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, on
           <input className="search-input" aria-label={searchPlaceholder} value={q} onChange={e => setQ(e.target.value)} placeholder={searchPlaceholder}
             style={SEARCH_INPUT_STYLE} />
         </div>
-        <div style={{ display: "flex", gap: SPACE.chipGap, overflowX: "auto", paddingBottom: SPACE.chipGap + 1, margin: "0 -1px", padding: "0 1px" }}>
+        <div style={{
+          display: "flex",
+          gap: SPACE.chipGap,
+          overflowX: "auto",
+          paddingTop: 0,
+          paddingBottom: SPACE.chipGap + 2,
+          paddingLeft: 1,
+          paddingRight: 1,
+          marginTop: 0,
+          marginBottom: 10,
+          marginLeft: -1,
+          marginRight: -1,
+        }}>
           {[{ key: "all", title: getCopy(lang, "common.all") }, ...filterPresets].map((preset) => {
             const active = preset.key === "all" ? !activePresetKey && activeFilterCount === 0 : activePresetKey === preset.key;
             return (
