@@ -2027,9 +2027,14 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
     if (!region || region === REGION_PROMPT_KEY) return null;
     const rc = allMapCafes.filter(c => getCafeRegionGroupKey(c) === region);
     if (rc.length === 0) return null;
-    let latSum = 0, lngSum = 0;
-    rc.forEach(c => { latSum += parseFloat(c.latitude); lngSum += parseFloat(c.longitude); });
-    return [latSum / rc.length, lngSum / rc.length];
+    
+    // Use median to avoid outliers (e.g. bad coordinates) pulling the map away
+    const lats = rc.map(c => parseFloat(c.latitude)).filter(v => !isNaN(v)).sort((a, b) => a - b);
+    const lngs = rc.map(c => parseFloat(c.longitude)).filter(v => !isNaN(v)).sort((a, b) => a - b);
+    
+    if (lats.length === 0 || lngs.length === 0) return null;
+    const mid = Math.floor(lats.length / 2);
+    return [lats[mid], lngs[mid]];
   }, [region, allMapCafes]);
 
   const requestUserLocation = useCallback(async ({ silent = false, zoom = 15, mode = "manual" } = {}) => {
