@@ -950,6 +950,7 @@ const SettingsPanel = ({
   countryOptions,
   setCountry,
   region,
+  gpsRegion,
   regionOptions,
   setRegion,
   onClose,
