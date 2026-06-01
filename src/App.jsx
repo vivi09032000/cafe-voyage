@@ -1249,6 +1249,25 @@ const SettingsPanel = ({
             >
               {lang === "en" ? "All" : "全部"}
             </button>
+            {gpsRegion && (
+              <button
+                onClick={() => { setRegion(gpsRegion); onClose(); }}
+                style={{
+                  background: region === gpsRegion ? T.brown : T.cream,
+                  color: region === gpsRegion ? UI.onDark : T.text,
+                  border: `1px solid ${region === gpsRegion ? T.brown : UI.regionBorder}`,
+                  borderRadius: 14,
+                  padding: "8px 4px",
+                  fontSize: 11,
+                  cursor: "pointer",
+                  fontFamily: "inherit",
+                  fontWeight: region === gpsRegion ? 700 : 500,
+                  lineHeight: 1.1,
+                }}
+              >
+                📍 {lang === "en" ? "Near Me" : "我的位置"}
+              </button>
+            )}
             {regionOptions.map((item) => (
               <button
                 key={item.key}
@@ -2910,9 +2929,9 @@ export default function App() {
 
   // ── GPS auto-detect region ──
   const gpsAutoDetectedRef = useRef(false);
+  const initialNoRegionRef = useRef(!hasRegionSelection);
   useEffect(() => {
     if (gpsAutoDetectedRef.current) return;
-    if (hasRegionSelection) return; // user already chose a region (from localStorage)
     if (countryScopedCafes.length === 0) return; // cafes not loaded yet
     if (!navigator.geolocation) return;
     gpsAutoDetectedRef.current = true;
@@ -2931,13 +2950,16 @@ export default function App() {
         });
         if (nearest) {
           const detectedRegion = getCafeRegionGroupKey(nearest);
-          if (detectedRegion) setGpsRegion(detectedRegion);
+          if (detectedRegion) {
+            setGpsRegion(detectedRegion);
+            if (initialNoRegionRef.current) setRegion(detectedRegion);
+          }
         }
       },
       () => { /* GPS denied */ },
       { enableHighAccuracy: false, timeout: 8000, maximumAge: 300000 },
     );
-  }, [countryScopedCafes, hasRegionSelection]);
+  }, [countryScopedCafes]);
 
   const handleCountryChange = (nextCountry) => {
     setCountry(nextCountry);
