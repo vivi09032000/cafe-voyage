@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, useRef, useMemo } from "react";
+import { useTranslation } from "./useTranslation";
 import { MapContainer, TileLayer, Marker, Popup, useMap, useMapEvents } from "react-leaflet";
 import { createClient } from "@supabase/supabase-js";
 import L from "leaflet";
@@ -1566,6 +1567,7 @@ const SearchPage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, on
   const total = allSorted.length;
   const start = (page - 1) * PER_PAGE;
   const sorted = allSorted.slice(start, start + PER_PAGE);
+  const { translatedCafes, isTranslating } = useTranslation(sorted, lang);
 
   useEffect(() => { setPage(1); }, [q, activePresetKey]);
   useEffect(() => {
@@ -1694,11 +1696,18 @@ const SearchPage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, on
             ? getCopy(lang, "nearby.totalPaged", { sort: userLocation ? getCopy(lang, "nearby.distanceSort") : locationLoading ? getCopy(lang, "nearby.locating") : getCopy(lang, "nearby.allowLocation"), count: total, start: start + 1, end: Math.min(start + PER_PAGE, total) })
             : getCopy(lang, "nearby.total", { sort: userLocation ? getCopy(lang, "nearby.distanceSort") : locationLoading ? getCopy(lang, "nearby.locating") : getCopy(lang, "nearby.allowLocation"), count: total })}
         </div>
+        
+        {isTranslating && (
+          <div style={{ textAlign: "center", padding: "8px 0 16px", color: T.brown, ...TYPE.meta, fontWeight: 600 }}>
+            ✨ Translating to English...
+          </div>
+        )}
+
         {loading ? (
           <div style={{ textAlign: "center", padding: "60px 0", color: T.sub }}><Icon name="coffee" size={34} strokeWidth={1.9} style={{ color: T.brown, marginBottom: 10 }} /><div>{getCopy(lang, "common.loadingCafes")}</div></div>
         ) : (
           <>
-            {sorted.map((c) => (
+            {translatedCafes.map((c) => (
               <div key={c.id} style={{ display: "flex", alignItems: "flex-start", gap: SPACE.chipGap + 1 }}>
                 {userLocation && (
                   <div style={{ minWidth: 46, minHeight: 24, borderRadius: 14, background: T.beige, color: T.sub, display: "flex", alignItems: "center", justifyContent: "center", ...TYPE.nav, fontWeight: 720, flexShrink: 0, marginTop: 14, padding: "3px 6px", textAlign: "center" }}>
@@ -1708,7 +1717,7 @@ const SearchPage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, on
                 <div style={{ flex: 1 }}><CafeCard cafe={c} onClick={() => onSelect(c)} fav={favs.has(c.id)} onFav={onFav} emptyCafeIds={emptyCafeIds} lang={lang} /></div>
               </div>
             ))}
-            {sorted.length === 0 && (
+            {translatedCafes.length === 0 && (
               <div style={{ textAlign: "center", padding: "42px 18px", color: T.sub }}>
                 <Icon name="coffee" size={32} strokeWidth={1.9} style={{ color: T.brown, marginBottom: 10 }} />
                 <div style={{ ...TYPE.sectionTitle, color: T.text, marginBottom: 6 }}>{getCopy(lang, "home.noResultsTitle")}</div>
@@ -1726,6 +1735,7 @@ const SearchPage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, on
 // ── Page: Favorites ──
 const FavoritesPage = ({ cafes, favs, onSelect, onFav, onExplore, lang }) => {
   const list = cafes.filter(isOpen).filter(c => favs.has(c.id));
+  const { translatedCafes, isTranslating } = useTranslation(list, lang);
   return (
     <div style={{ display: "flex", flexDirection: "column", flex: 1, minHeight: 0, overflow: "hidden" }}>
       {/* 固定區 */}
@@ -1739,7 +1749,14 @@ const FavoritesPage = ({ cafes, favs, onSelect, onFav, onExplore, lang }) => {
       {/* 滾動區 */}
       <div style={{ flex: 1, overflowY: "auto", padding: "0 16px 16px" }}>
         <div style={{ fontSize: 12, color: T.sub, margin: "10px 0" }}>{getCopy(lang, "favorites.savedCount", { count: list.length })}</div>
-        {list.length === 0 ? (
+        
+        {isTranslating && (
+          <div style={{ textAlign: "center", padding: "8px 0 16px", color: T.brown, ...TYPE.meta, fontWeight: 600 }}>
+            ✨ Translating to English...
+          </div>
+        )}
+
+        {translatedCafes.length === 0 ? (
           <div style={{ textAlign: "center", padding: "54px 8px", color: T.sub }}>
             <div
               style={{
@@ -1782,7 +1799,7 @@ const FavoritesPage = ({ cafes, favs, onSelect, onFav, onExplore, lang }) => {
               </button>
             </div>
           </div>
-        ) : list.map(c => <CafeCard key={c.id} cafe={c} onClick={() => onSelect(c)} fav={true} onFav={onFav} emptyCafeIds={new Set()} lang={lang} />)}
+        ) : translatedCafes.map(c => <CafeCard key={c.id} cafe={c} onClick={() => onSelect(c)} fav={true} onFav={onFav} emptyCafeIds={new Set()} lang={lang} />)}
       </div>
     </div>
   );
