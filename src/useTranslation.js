@@ -50,7 +50,8 @@ export function useTranslation(cafes, lang) {
           const name = (c.name || "").replace(/\n/g, " ").trim() || "—";
           const address = (c.address || "").replace(/\n/g, " ").trim() || "—";
           const mrt = (c.mrt || "").replace(/\n/g, " ").trim() || "—";
-          return [name, address, mrt].join(SEP);
+          const openTime = (c.open_time || "").replace(/\n/g, " ").trim() || "—";
+          return [name, address, mrt, openTime].join(SEP);
         }).join(BLOCK_SEP);
 
         const response = await fetch(TRANSLATE_API + encodeURIComponent(textToTranslate));
@@ -75,11 +76,13 @@ export function useTranslation(cafes, lang) {
           const tName = (parts[0] || "").trim();
           const tAddress = (parts[1] || "").trim();
           const tMrt = (parts[2] || "").trim();
+          const tOpenTime = (parts[3] || "").trim();
 
           translationCache.set(c.id, {
             name: (tName && tName !== "—" && tName !== "-") ? tName : c.name,
             address: (tAddress && tAddress !== "—" && tAddress !== "-") ? tAddress : c.address,
             mrt: (tMrt && tMrt !== "—" && tMrt !== "-") ? tMrt : (c.mrt || ""),
+            open_time: (tOpenTime && tOpenTime !== "—" && tOpenTime !== "-") ? tOpenTime : (c.open_time || ""),
           });
         });
 
