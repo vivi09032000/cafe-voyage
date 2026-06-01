@@ -543,6 +543,16 @@ const withGeoErrorDetails = (lang, base, error) => {
   return lang === "en" ? `${base} (${label}, code ${code})` : `${base}（${label}，code ${code}）`;
 };
 
+const getLocationPermissionState = async () => {
+  if (!navigator.permissions?.query) return null;
+  try {
+    const result = await navigator.permissions.query({ name: "geolocation" });
+    return result.state;
+  } catch {
+    return null;
+  }
+};
+
 const getCountryLabel = (country, lang) => country?.labels?.[lang] || country?.labels?.zh || "";
 const getRegionLabel = (regionGroup, lang) => regionGroup?.labels?.[lang] || regionGroup?.labels?.zh || "";
 
@@ -950,7 +960,6 @@ const SettingsPanel = ({
   countryOptions,
   setCountry,
   region,
-  gpsRegion,
   regionOptions,
   setRegion,
   onClose,
@@ -1233,40 +1242,23 @@ const SettingsPanel = ({
             )}
           </div>
           <div style={{ display: "grid", gridTemplateColumns: country === "vietnam" ? "repeat(2, minmax(0, 1fr))" : "repeat(4, minmax(0, 1fr))", gap: 7 }}>
-            <button
-              onClick={() => { setRegion(REGION_PROMPT_KEY); onClose(); }}
-              style={{
-                background: region === REGION_PROMPT_KEY ? T.brown : T.cream,
-                color: region === REGION_PROMPT_KEY ? UI.onDark : T.text,
-                border: `1px solid ${region === REGION_PROMPT_KEY ? T.brown : UI.regionBorder}`,
-                borderRadius: 14,
-                padding: "8px 4px",
-                fontSize: 11,
-                cursor: "pointer",
-                fontFamily: "inherit",
-                fontWeight: region === REGION_PROMPT_KEY ? 700 : 500,
-                lineHeight: 1.1,
-              }}
-            >
-              {lang === "en" ? "All" : "全部"}
-            </button>
-            {gpsRegion && (
+            {country !== "taiwan" && (
               <button
-                onClick={() => { setRegion(gpsRegion); onClose(); }}
+                onClick={() => { setRegion(REGION_PROMPT_KEY); onClose(); }}
                 style={{
-                  background: region === gpsRegion ? T.brown : T.cream,
-                  color: region === gpsRegion ? UI.onDark : T.text,
-                  border: `1px solid ${region === gpsRegion ? T.brown : UI.regionBorder}`,
+                  background: region === REGION_PROMPT_KEY ? T.brown : T.cream,
+                  color: region === REGION_PROMPT_KEY ? UI.onDark : T.text,
+                  border: `1px solid ${region === REGION_PROMPT_KEY ? T.brown : UI.regionBorder}`,
                   borderRadius: 14,
                   padding: "8px 4px",
                   fontSize: 11,
                   cursor: "pointer",
                   fontFamily: "inherit",
-                  fontWeight: region === gpsRegion ? 700 : 500,
+                  fontWeight: region === REGION_PROMPT_KEY ? 700 : 500,
                   lineHeight: 1.1,
                 }}
               >
-                📍 {lang === "en" ? "Near Me" : "我的位置"}
+                {lang === "en" ? "All" : "全部"}
               </button>
             )}
             {regionOptions.map((item) => (
@@ -1523,10 +1515,19 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav, emptyCafeIds, filte
     setPage(1);
   };
 
-  const requestSortLocation = useCallback(() => {
+  const requestSortLocation = useCallback(async () => {
     setLocationError("");
     if (!navigator.geolocation) {
       setLocationError(getCopy(lang, "nearby.browserNoLocation"));
+      return;
+    }
+    if (window.isSecureContext === false) {
+      setLocationError(getCopy(lang, "map.httpsRequired"));
+      return;
+    }
+    const permissionState = await getLocationPermissionState();
+    if (permissionState === "denied") {
+      setLocationError(getCopy(lang, "nearby.allowPermission"));
       return;
     }
 
@@ -1724,7 +1725,10 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav, emptyCafeIds, filte
               : getCopy(lang, "nearby.total", { sort: userLocation ? getCopy(lang, "nearby.distanceSort") : locationLoading ? getCopy(lang, "nearby.locating") : getCopy(lang, "nearby.allowLocation"), count: total })}
           </span>
           <button
-            onClick={onRelocate}
+            onClick={() => {
+              requestSortLocation();
+              onRelocate?.();
+            }}
             style={{ background: "none", border: "none", color: T.brown, ...TYPE.meta, fontWeight: 700, cursor: "pointer", display: "flex", alignItems: "center", gap: 4 }}
           >
             <Icon name="pin" size={12} /> {lang === "en" ? "Relocate" : "重新定位"}
@@ -1987,7 +1991,7 @@ const LocateController = ({ request, onStart, onSuccess, onError }) => {
   return null;
 };
 
-const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setMapQuery, lang, region }) => {
+const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setMapQuery, lang, region, onVisibleCafeCountChange }) => {
   const [userPos, setUserPos] = useState(null);
   const [geoTarget, setGeoTarget] = useState(null);
   const [searchTarget, setSearchTarget] = useState(null);
@@ -2013,6 +2017,10 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
       return lat <= visibleBounds.north && lat >= visibleBounds.south && lng <= visibleBounds.east && lng >= visibleBounds.west;
     });
   }, [allMapCafes, visibleBounds]);
+
+  useEffect(() => {
+    onVisibleCafeCountChange?.(visibleMapCafes.length);
+  }, [onVisibleCafeCountChange, visibleMapCafes.length]);
 
   const [regionSeq, setRegionSeq] = useState(0);
   const prevRegionRef = useRef(region);
@@ -2040,6 +2048,15 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
   const requestUserLocation = useCallback(async ({ silent = false, zoom = 15, mode = "manual" } = {}) => {
     if (!navigator.geolocation) {
       if (!silent) setLocateError(getCopy(lang, "map.locateUnsupported"));
+      return;
+    }
+    if (window.isSecureContext === false) {
+      if (!silent) setLocateError(getCopy(lang, "map.httpsRequired"));
+      return;
+    }
+    const permissionState = await getLocationPermissionState();
+    if (permissionState === "denied") {
+      if (!silent) setLocateError(getCopy(lang, "map.allowPermission"));
       return;
     }
 
@@ -2726,6 +2743,7 @@ export default function App() {
   const [emptyCafeIds, setEmptyCafeIds] = useState(new Set());
   const [mapView, setMapView] = useState({ center: null, zoom: null });
   const [mapQuery, setMapQuery] = useState("");
+  const [mapVisibleCafeCount, setMapVisibleCafeCount] = useState(null);
   const isAdminUser = authUser?.email === ADMIN_EMAIL;
   const fetchAllCafes = useCallback(async () => {
     let cacheLoaded = false;
@@ -3008,12 +3026,18 @@ export default function App() {
     setCountry(nextCountry);
     setRegion(REGION_PROMPT_KEY);
     setMapView({ center: null, zoom: null });
+    setMapVisibleCafeCount(null);
     setMapQuery("");
     setSelected(null);
   };
-  const handleRegionChange = (nextRegion) => { setRegion(nextRegion); setSelected(null); };
+  const handleRegionChange = (nextRegion) => {
+    setRegion(nextRegion);
+    setMapVisibleCafeCount(null);
+    setSelected(null);
+  };
   const handleTabChange = (nextTab) => {
     if (nextTab === tab) return;
+    if (nextTab === "map") setMapVisibleCafeCount(null);
     setTabHistory(prev => [...prev, tab]);
     setTab(nextTab);
   };
@@ -3050,20 +3074,27 @@ export default function App() {
     if (selected) return <DetailPage cafe={selected} onBack={() => setSelected(null)} fav={favoriteLookup.has(selected.id)} onFav={toggleFav} onReport={handleReportAndUpdateMap} emptyCafeIds={emptyCafeIds} onFilterTag={handleDetailTagFilter} canManageCafe={isAdminUser} onHideCafe={handleHideCafe} lang={lang} />;
     switch (tab) {
       case "search": return <SearchPage cafes={exploreCafes} loading={loading} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} emptyCafeIds={emptyCafeIds} filters={homeFilters} setFilters={setHomeFilters} lang={lang} onRelocate={() => requestGpsRegion(true)} />;
-      case "map": return <MapPage cafes={countryScopedCafes} region={region} onSelect={setSelected} mapView={mapView} setMapView={setMapView} mapQuery={mapQuery} setMapQuery={setMapQuery} loading={loading} lang={lang} />;
+      case "map": return <MapPage cafes={countryScopedCafes} region={region} onSelect={setSelected} mapView={mapView} setMapView={setMapView} mapQuery={mapQuery} setMapQuery={setMapQuery} loading={loading} lang={lang} onVisibleCafeCountChange={setMapVisibleCafeCount} />;
       case "favorites": return <FavoritesPage cafes={favoritesCafes} favs={favoriteLookup} onSelect={setSelected} onFav={toggleFav} onExplore={() => setTab("search")} lang={lang} />;
       default: return null;
     }
   };
 
+  const selectedRegionOpenCount = hasRegionSelection
+    ? regionScopedCafes.filter(isOpen).length
+    : null;
+  const mapHeaderCount = mapVisibleCafeCount ?? (hasRegionSelection ? selectedRegionOpenCount : countryScopedCafes.filter(isOpen).length);
+  const mapHeaderLabel = hasRegionSelection ? regionLabel : getCountryLabel(selectedCountry, lang);
   const unselectedHeaderCount = gpsRegion
     ? countryScopedCafes.filter((c) => getCafeRegionGroupKey(c) === gpsRegion && isOpen(c)).length
     : countryScopedCafes.filter(isOpen).length;
 
-  const headerSubtitle = tab === "map" || tab === "favorites"
+  const headerSubtitle = tab === "map"
+    ? <><InlineIcon name="pin" size={12} color={UI.onDarkMuted} /> {mapHeaderLabel}・{mapHeaderCount} {lang === "en" ? "cafes" : getCopy(lang, "common.countUnit")}</>
+    : tab === "favorites"
     ? ""
     : hasRegionSelection
-      ? <><InlineIcon name="pin" size={12} color={UI.onDarkMuted} /> {regionLabel}・{regionScopedCafes.filter(isOpen).length} {lang === "en" ? "cafes" : getCopy(lang, "common.countUnit")}</>
+      ? <><InlineIcon name="pin" size={12} color={UI.onDarkMuted} /> {regionLabel}・{selectedRegionOpenCount} {lang === "en" ? "cafes" : getCopy(lang, "common.countUnit")}</>
       : <><InlineIcon name="pin" size={12} color={UI.onDarkMuted} /> {gpsRegion ? getRegionLabel(REGION_GROUPS.find((g) => g.key === gpsRegion), lang) : getCountryLabel(selectedCountry, lang)}・{unselectedHeaderCount} {lang === "en" ? "cafes" : getCopy(lang, "common.countUnit")}</>;
 
   return (
