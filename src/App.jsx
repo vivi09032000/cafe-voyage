@@ -2239,7 +2239,12 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
   return (
     <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", overflow: "hidden" }}>
       <div style={{ display: "flex", justifyContent: "flex-end", padding: "10px 16px 6px" }}>
-        <div style={{ ...TYPE.meta, color: T.sub }}>{loading ? getCopy(lang, "common.loadingMap") : `${visibleMapCafes.length} ${lang === "en" ? "cafes" : "間咖啡廳"}`}</div>
+        <div style={{ ...TYPE.meta, color: T.sub }}>
+          {loading 
+            ? getCopy(lang, "common.loadingMap") 
+            : `${region && region !== REGION_PROMPT_KEY ? getRegionLabel(REGION_GROUPS.find(g => g.key === region), lang) + "・" : ""}${visibleMapCafes.length} ${lang === "en" ? "cafes" : "間咖啡廳"}`
+          }
+        </div>
       </div>
 
       {/* Search */}
