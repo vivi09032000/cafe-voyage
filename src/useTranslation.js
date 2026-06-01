@@ -2,8 +2,12 @@ import { useState, useEffect, useRef } from 'react';
 
 const TRANSLATE_API = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=zh-TW&tl=en&dt=t&q=";
 
+// Field separator — Google Translate preserves ||| as-is
+const SEP = " ||| ";
+// Block separator between cafes — double newline
+const BLOCK_SEP = "\n\n";
+
 // Global cache to prevent re-translating the same cafes during the session
-// Store translations keyed by cafe.id
 const translationCache = new Map();
 
 export function useTranslation(cafes, lang) {
@@ -40,38 +44,42 @@ export function useTranslation(cafes, lang) {
       setIsTranslating(true);
       
       try {
-        // Combine all missing data into one big string separated by \n\n
+        // Build text: each cafe is one line with fields separated by |||
+        // Between cafes we use double newline
         const textToTranslate = missing.map(c => {
-          const name = (c.name || " ").replace(/\n/g, " ");
-          const address = (c.address || " ").replace(/\n/g, " ");
-          const limitedTime = (c.limited_time || " ").replace(/\n/g, " ");
-          const mrt = (c.mrt || "-").replace(/\n/g, " ");
-          return `${name}\n${address}\n${limitedTime}\n${mrt}`;
-        }).join("\n\n");
+          const name = (c.name || "").replace(/\n/g, " ").trim() || "—";
+          const address = (c.address || "").replace(/\n/g, " ").trim() || "—";
+          const mrt = (c.mrt || "").replace(/\n/g, " ").trim() || "—";
+          return [name, address, mrt].join(SEP);
+        }).join(BLOCK_SEP);
 
         const response = await fetch(TRANSLATE_API + encodeURIComponent(textToTranslate));
         if (!response.ok) throw new Error("Translation request failed");
         
         const data = await response.json();
         
-        // Google Translate returns an array of chunks
+        // Google Translate returns an array of sentence chunks — join them all
         let fullTranslatedText = "";
         if (data && data[0]) {
           fullTranslatedText = data[0].map(item => item[0]).join("");
         }
 
-        // Split by \n\n to get the blocks
+        // Split by double-newline to get per-cafe blocks
         const translatedBlocks = fullTranslatedText.split(/\n\s*\n/);
         
         missing.forEach((c, index) => {
-          const block = translatedBlocks[index] || "";
-          const lines = block.split("\n").map(l => l.trim());
+          const block = (translatedBlocks[index] || "").replace(/\n/g, " ").trim();
+          // Split by ||| (with flexible whitespace around it)
+          const parts = block.split(/\s*\|\|\|\s*/);
           
+          const tName = (parts[0] || "").trim();
+          const tAddress = (parts[1] || "").trim();
+          const tMrt = (parts[2] || "").trim();
+
           translationCache.set(c.id, {
-            name: lines[0] || c.name,
-            address: lines[1] || c.address,
-            limited_time: lines[2] || c.limited_time,
-            mrt: (lines[3] && lines[3] !== "-") ? lines[3] : (c.mrt || "")
+            name: (tName && tName !== "—" && tName !== "-") ? tName : c.name,
+            address: (tAddress && tAddress !== "—" && tAddress !== "-") ? tAddress : c.address,
+            mrt: (tMrt && tMrt !== "—" && tMrt !== "-") ? tMrt : (c.mrt || ""),
           });
         });
 
