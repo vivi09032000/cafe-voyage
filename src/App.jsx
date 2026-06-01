@@ -1495,7 +1495,7 @@ const CafeCard = ({ cafe, onClick, fav, onFav, emptyCafeIds, lang }) => (
 );
 
 
-const SearchPage = ({ cafes, loading, onSelect, favs, onFav, emptyCafeIds, filters, setFilters, lang }) => {
+const SearchPage = ({ cafes, loading, onSelect, favs, onFav, emptyCafeIds, filters, setFilters, lang, onRelocate }) => {
   const [q, setQ] = useState("");
   const [page, setPage] = useState(1);
   const [filtersOpen, setFiltersOpen] = useState(false);
@@ -1717,10 +1717,18 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav, emptyCafeIds, filte
       {/* 滾動區 */}
       <div style={{ flex: 1, overflowY: "auto", padding: `0 ${SPACE.pageX}px ${SPACE.pageX}px` }}>
 
-        <div style={{ ...TYPE.meta, color: T.sub, margin: `${SPACE.groupGap}px 0` }}>
-          {total > PER_PAGE
-            ? getCopy(lang, "nearby.totalPaged", { sort: userLocation ? getCopy(lang, "nearby.distanceSort") : locationLoading ? getCopy(lang, "nearby.locating") : getCopy(lang, "nearby.allowLocation"), count: total, start: start + 1, end: Math.min(start + PER_PAGE, total) })
-            : getCopy(lang, "nearby.total", { sort: userLocation ? getCopy(lang, "nearby.distanceSort") : locationLoading ? getCopy(lang, "nearby.locating") : getCopy(lang, "nearby.allowLocation"), count: total })}
+        <div style={{ ...TYPE.meta, color: T.sub, margin: `${SPACE.groupGap}px 0`, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <span>
+            {total > PER_PAGE
+              ? getCopy(lang, "nearby.totalPaged", { sort: userLocation ? getCopy(lang, "nearby.distanceSort") : locationLoading ? getCopy(lang, "nearby.locating") : getCopy(lang, "nearby.allowLocation"), count: total, start: start + 1, end: Math.min(start + PER_PAGE, total) })
+              : getCopy(lang, "nearby.total", { sort: userLocation ? getCopy(lang, "nearby.distanceSort") : locationLoading ? getCopy(lang, "nearby.locating") : getCopy(lang, "nearby.allowLocation"), count: total })}
+          </span>
+          <button
+            onClick={onRelocate}
+            style={{ background: "none", border: "none", color: T.brown, ...TYPE.meta, fontWeight: 700, cursor: "pointer", display: "flex", alignItems: "center", gap: 4 }}
+          >
+            <Icon name="pin" size={12} /> {lang === "en" ? "Relocate" : "重新定位"}
+          </button>
         </div>
         
         {isTranslating && (
@@ -2929,13 +2937,8 @@ export default function App() {
   }, [availableRegions, region]);
 
   // ── GPS auto-detect region ──
-  const gpsAutoDetectedRef = useRef(false);
-  const initialNoRegionRef = useRef(!hasRegionSelection);
-  useEffect(() => {
-    if (gpsAutoDetectedRef.current) return;
-    if (countryScopedCafes.length === 0) return; // cafes not loaded yet
+  const requestGpsRegion = useCallback((forceSetRegion = false) => {
     if (!navigator.geolocation) return;
-    gpsAutoDetectedRef.current = true;
     navigator.geolocation.getCurrentPosition(
       (pos) => {
         const userLat = pos.coords.latitude;
@@ -2953,7 +2956,7 @@ export default function App() {
           const detectedRegion = getCafeRegionGroupKey(nearest);
           if (detectedRegion) {
             setGpsRegion(detectedRegion);
-            if (initialNoRegionRef.current) setRegion(detectedRegion);
+            if (forceSetRegion) setRegion(detectedRegion);
           }
         }
       },
@@ -2961,6 +2964,16 @@ export default function App() {
       { enableHighAccuracy: false, timeout: 8000, maximumAge: 300000 },
     );
   }, [countryScopedCafes]);
+
+  const gpsAutoDetectedRef = useRef(false);
+  const initialNoRegionRef = useRef(!hasRegionSelection);
+  useEffect(() => {
+    if (gpsAutoDetectedRef.current) return;
+    if (countryScopedCafes.length === 0) return; // cafes not loaded yet
+    if (!navigator.geolocation) return;
+    gpsAutoDetectedRef.current = true;
+    requestGpsRegion(initialNoRegionRef.current);
+  }, [countryScopedCafes, requestGpsRegion]);
 
   const handleCountryChange = (nextCountry) => {
     setCountry(nextCountry);
@@ -3007,7 +3020,7 @@ export default function App() {
   const renderPage = () => {
     if (selected) return <DetailPage cafe={selected} onBack={() => setSelected(null)} fav={favoriteLookup.has(selected.id)} onFav={toggleFav} onReport={handleReportAndUpdateMap} emptyCafeIds={emptyCafeIds} onFilterTag={handleDetailTagFilter} canManageCafe={isAdminUser} onHideCafe={handleHideCafe} lang={lang} />;
     switch (tab) {
-      case "search": return <SearchPage cafes={exploreCafes} loading={loading} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} emptyCafeIds={emptyCafeIds} filters={homeFilters} setFilters={setHomeFilters} lang={lang} />;
+      case "search": return <SearchPage cafes={exploreCafes} loading={loading} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} emptyCafeIds={emptyCafeIds} filters={homeFilters} setFilters={setHomeFilters} lang={lang} onRelocate={() => requestGpsRegion(true)} />;
       case "map": return <MapPage cafes={countryScopedCafes} onSelect={setSelected} mapView={mapView} setMapView={setMapView} mapQuery={mapQuery} setMapQuery={setMapQuery} loading={loading} lang={lang} />;
       case "favorites": return <FavoritesPage cafes={favoritesCafes} favs={favoriteLookup} onSelect={setSelected} onFav={toggleFav} onExplore={() => setTab("search")} lang={lang} />;
       default: return null;
