@@ -1458,7 +1458,7 @@ const CafeCard = ({ cafe, onClick, fav, onFav, emptyCafeIds, lang }) => (
 );
 
 
-const SearchPage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, onSelect, favs, onFav, emptyCafeIds, filters, setFilters, lang }) => {
+const SearchPage = ({ cafes, loading, onSelect, favs, onFav, emptyCafeIds, filters, setFilters, lang }) => {
   const [q, setQ] = useState("");
   const [page, setPage] = useState(1);
   const [filtersOpen, setFiltersOpen] = useState(false);
@@ -1679,30 +1679,7 @@ const SearchPage = ({ cafes, loading, hasRegionSelection, onOpenRegionPicker, on
 
       {/* 滾動區 */}
       <div style={{ flex: 1, overflowY: "auto", padding: `0 ${SPACE.pageX}px ${SPACE.pageX}px` }}>
-        {!hasRegionSelection && (
-          <div style={{ margin: `${SPACE.cardGap}px 0`, background: UI.surface, border: `1px solid ${UI.line}`, borderRadius: 14, padding: `${SPACE.cardPad}px ${SPACE.cardPad}px 12px` }}>
-            <div style={{ ...TYPE.sectionTitle, color: T.text, marginBottom: 6 }}>{getCopy(lang, "home.chooseCity")}</div>
-            <div style={{ ...TYPE.body, color: T.sub, marginBottom: 10 }}>
-              {getCopy(lang, "home.chooseCityHint")}
-            </div>
-            <button
-              className="soft-press"
-              onClick={onOpenRegionPicker}
-              style={{
-                background: T.brown,
-                color: UI.onDark,
-                border: "none",
-                borderRadius: 10,
-                padding: "10px 14px",
-                ...TYPE.control,
-                cursor: "pointer",
-                fontFamily: "inherit",
-              }}
-            >
-              {getCopy(lang, "home.chooseCityAction")}
-            </button>
-          </div>
-        )}
+
         <div style={{ ...TYPE.meta, color: T.sub, margin: `${SPACE.groupGap}px 0` }}>
           {total > PER_PAGE
             ? getCopy(lang, "nearby.totalPaged", { sort: userLocation ? getCopy(lang, "nearby.distanceSort") : locationLoading ? getCopy(lang, "nearby.locating") : getCopy(lang, "nearby.allowLocation"), count: total, start: start + 1, end: Math.min(start + PER_PAGE, total) })
@@ -2892,7 +2869,8 @@ export default function App() {
     if (region === REGION_PROMPT_KEY) return [];
     return countryScopedCafes.filter((cafe) => getCafeRegionGroupKey(cafe) === region);
   }, [countryScopedCafes, region]);
-  const exploreCafes = hasRegionSelection ? regionScopedCafes : countryScopedCafes;
+  // Always show all cafes for the country (sorted by distance in SearchPage)
+  const exploreCafes = countryScopedCafes;
   const favoritesCafes = allCafes;
 
   useEffect(() => {
@@ -2912,6 +2890,37 @@ export default function App() {
     if (availableRegions.length !== 1) return;
     setRegion(availableRegions[0].key);
   }, [availableRegions, region]);
+
+  // ── GPS auto-detect region ──
+  const gpsAutoDetectedRef = useRef(false);
+  useEffect(() => {
+    if (gpsAutoDetectedRef.current) return;
+    if (hasRegionSelection) return; // user already chose a region (from localStorage)
+    if (countryScopedCafes.length === 0) return; // cafes not loaded yet
+    if (!navigator.geolocation) return;
+    gpsAutoDetectedRef.current = true;
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        const userLat = pos.coords.latitude;
+        const userLng = pos.coords.longitude;
+        let nearest = null;
+        let minDist = Infinity;
+        countryScopedCafes.forEach((c) => {
+          const lat = parseFloat(c.latitude);
+          const lng = parseFloat(c.longitude);
+          if (!lat || !lng) return;
+          const d = (lat - userLat) ** 2 + (lng - userLng) ** 2;
+          if (d < minDist) { minDist = d; nearest = c; }
+        });
+        if (nearest) {
+          const detectedRegion = getCafeRegionGroupKey(nearest);
+          if (detectedRegion) setRegion(detectedRegion);
+        }
+      },
+      () => { /* GPS denied — leave region as prompt, header shows country name */ },
+      { enableHighAccuracy: false, timeout: 8000, maximumAge: 300000 },
+    );
+  }, [countryScopedCafes, hasRegionSelection]);
 
   const handleCountryChange = (nextCountry) => {
     setCountry(nextCountry);
@@ -2958,7 +2967,7 @@ export default function App() {
   const renderPage = () => {
     if (selected) return <DetailPage cafe={selected} onBack={() => setSelected(null)} fav={favoriteLookup.has(selected.id)} onFav={toggleFav} onReport={handleReportAndUpdateMap} emptyCafeIds={emptyCafeIds} onFilterTag={handleDetailTagFilter} canManageCafe={isAdminUser} onHideCafe={handleHideCafe} lang={lang} />;
     switch (tab) {
-      case "search": return <SearchPage cafes={exploreCafes} loading={loading} hasRegionSelection={hasRegionSelection} onOpenRegionPicker={() => setMenuOpen(true)} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} emptyCafeIds={emptyCafeIds} filters={homeFilters} setFilters={setHomeFilters} lang={lang} />;
+      case "search": return <SearchPage cafes={exploreCafes} loading={loading} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} emptyCafeIds={emptyCafeIds} filters={homeFilters} setFilters={setHomeFilters} lang={lang} />;
       case "map": return <MapPage cafes={countryScopedCafes} onSelect={setSelected} mapView={mapView} setMapView={setMapView} mapQuery={mapQuery} setMapQuery={setMapQuery} loading={loading} lang={lang} />;
       case "favorites": return <FavoritesPage cafes={favoritesCafes} favs={favoriteLookup} onSelect={setSelected} onFav={toggleFav} onExplore={() => setTab("search")} lang={lang} />;
       default: return null;
@@ -2967,9 +2976,7 @@ export default function App() {
 
   const headerSubtitle = tab === "map" || tab === "favorites"
     ? ""
-    : hasRegionSelection
-      ? <><InlineIcon name="pin" size={12} color={UI.onDarkMuted} /> {regionLabel}・{regionScopedCafes.filter(isOpen).length} {lang === "en" ? "cafes" : getCopy(lang, "common.countUnit")}</>
-      : <><InlineIcon name="pin" size={12} color={UI.onDarkMuted} /> {getCountryLabel(selectedCountry, lang)}・{getCopy(lang, "common.cityPrompt")}</>;
+    : <><InlineIcon name="pin" size={12} color={UI.onDarkMuted} /> {hasRegionSelection ? regionLabel : getCountryLabel(selectedCountry, lang)}・{countryScopedCafes.filter(isOpen).length} {lang === "en" ? "cafes" : getCopy(lang, "common.countUnit")}</>;
 
   return (
     <>
