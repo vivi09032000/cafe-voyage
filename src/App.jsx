@@ -53,6 +53,45 @@ async function submitCrowdReport(cafeId, status) {
   });
 }
 
+const fetchUserFavoriteIds = async () => {
+  const { data, error } = await supabase
+    .from("user_favorites")
+    .select("cafe_id");
+  if (error) throw error;
+  return new Set((data || []).map((item) => String(item.cafe_id)));
+};
+
+const syncUserFavorites = async (userId, favoriteIds) => {
+  const ids = [...favoriteIds].map(String);
+  if (ids.length === 0) return;
+  const { error } = await supabase
+    .from("user_favorites")
+    .upsert(
+      ids.map((cafeId) => ({ user_id: userId, cafe_id: cafeId })),
+      { onConflict: "user_id,cafe_id" },
+    );
+  if (error) throw error;
+};
+
+const saveUserFavorite = async (userId, cafeId) => {
+  const { error } = await supabase
+    .from("user_favorites")
+    .upsert(
+      { user_id: userId, cafe_id: String(cafeId) },
+      { onConflict: "user_id,cafe_id" },
+    );
+  if (error) throw error;
+};
+
+const deleteUserFavorite = async (userId, cafeId) => {
+  const { error } = await supabase
+    .from("user_favorites")
+    .delete()
+    .eq("user_id", userId)
+    .eq("cafe_id", String(cafeId));
+  if (error) throw error;
+};
+
 const T = {
   brown: "#5C3D2E", darkBrown: "#3E2723", cream: "#FAF6F0",
   beige: "#E8DDD0", green: "#2D4A3E", gold: "#C9A84C",
@@ -336,6 +375,7 @@ const COPY = {
       signedOut: "已登出。",
       signOutFailed: "登出失敗，請稍後再試。",
       adminOnly: "只有管理帳號可以隱藏店家。",
+      favoriteSyncFailed: "收藏同步失敗，請稍後再試。",
     },
     timeAgo: {
       justNow: "今天 {time}・剛剛",
@@ -500,6 +540,7 @@ const COPY = {
       signedOut: "Signed out.",
       signOutFailed: "Sign-out failed. Please try again.",
       adminOnly: "Only the admin account can hide cafes.",
+      favoriteSyncFailed: "Favorite sync failed. Please try again.",
     },
     timeAgo: {
       justNow: "Today {time} · Just now",
@@ -2740,6 +2781,7 @@ export default function App() {
       return new Set();
     }
   });
+  const favsRef = useRef(favs);
   const [emptyCafeIds, setEmptyCafeIds] = useState(new Set());
   const [mapView, setMapView] = useState({ center: null, zoom: null });
   const [mapQuery, setMapQuery] = useState("");
@@ -2798,8 +2840,32 @@ export default function App() {
   }, []);
 
   useEffect(() => {
+    favsRef.current = favs;
     localStorage.setItem("cafe-voyage:favs", JSON.stringify([...favs]));
   }, [favs]);
+
+  useEffect(() => {
+    if (!authUser?.id) return;
+    let active = true;
+
+    const mergeFavorites = async () => {
+      try {
+        const remoteFavs = await fetchUserFavoriteIds();
+        if (!active) return;
+        const merged = new Set([...remoteFavs, ...favsRef.current]);
+        setFavs(merged);
+        await syncUserFavorites(authUser.id, merged);
+      } catch (error) {
+        if (!active) return;
+        setAuthError(error.message || getCopy(lang, "auth.favoriteSyncFailed"));
+      }
+    };
+
+    mergeFavorites();
+    return () => {
+      active = false;
+    };
+  }, [authUser?.id, lang]);
 
   useEffect(() => {
     let active = true;
@@ -2929,7 +2995,33 @@ export default function App() {
     setSelected(null);
   }, [fetchAllCafes, lang]);
 
-  const toggleFav = (id) => setFavs(prev => { const key = String(id); const s = new Set(prev); s.has(key) ? s.delete(key) : s.add(key); return s; });
+  const toggleFav = useCallback((id) => {
+    const key = String(id);
+    const shouldSave = !favsRef.current.has(key);
+
+    setFavs(prev => {
+      const next = new Set(prev);
+      shouldSave ? next.add(key) : next.delete(key);
+      favsRef.current = next;
+      return next;
+    });
+
+    if (!authUser?.id) return;
+
+    const persist = shouldSave
+      ? saveUserFavorite(authUser.id, key)
+      : deleteUserFavorite(authUser.id, key);
+
+    persist.catch((error) => {
+      setAuthError(error.message || getCopy(lang, "auth.favoriteSyncFailed"));
+      setFavs(prev => {
+        const rollback = new Set(prev);
+        shouldSave ? rollback.delete(key) : rollback.add(key);
+        favsRef.current = rollback;
+        return rollback;
+      });
+    });
+  }, [authUser?.id, lang]);
   const favoriteLookup = useMemo(() => ({ has: (id) => favs.has(String(id)) }), [favs]);
   const availableCountries = useMemo(() => {
     const existing = new Set(allCafes.map((cafe) => getCafeCountryKey(cafe)));
