@@ -176,6 +176,7 @@ const REGION_PROMPT_KEY = "prompt";
 const REGION_STORAGE_KEY = "cafe-voyage:region";
 const COUNTRY_STORAGE_KEY = "cafe-voyage:country";
 const LANGUAGE_STORAGE_KEY = "cafe-voyage:lang";
+const FAVORITES_MIGRATION_KEY = "cafe-voyage:favs-cloud-migrated";
 const MAP_CACHE_KEY = "cafe-voyage:map-cafes:v2";
 const MAP_CACHE_TTL = 1000 * 60 * 60 * 12;
 const SEARCH_INPUT_STYLE = {
@@ -2850,11 +2851,34 @@ export default function App() {
 
     const mergeFavorites = async () => {
       try {
+        const migrationKey = `${FAVORITES_MIGRATION_KEY}:${authUser.id}`;
+        const localFavs = new Set(favsRef.current);
         const remoteFavs = await fetchUserFavoriteIds();
         if (!active) return;
-        const merged = new Set([...remoteFavs, ...favsRef.current]);
+        const hasMigratedLocalFavorites = (() => {
+          try {
+            return localStorage.getItem(migrationKey) === "1";
+          } catch {
+            return false;
+          }
+        })();
+
+        if (remoteFavs.size > 0 || hasMigratedLocalFavorites || localFavs.size === 0) {
+          favsRef.current = remoteFavs;
+          setFavs(remoteFavs);
+          try {
+            localStorage.setItem(migrationKey, "1");
+          } catch {}
+          return;
+        }
+
+        const merged = new Set([...remoteFavs, ...localFavs]);
+        favsRef.current = merged;
         setFavs(merged);
         await syncUserFavorites(authUser.id, merged);
+        try {
+          localStorage.setItem(migrationKey, "1");
+        } catch {}
       } catch (error) {
         if (!active) return;
         setAuthError(error.message || getCopy(lang, "auth.favoriteSyncFailed"));
