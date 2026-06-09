@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Cafe Voyage">
+  <rect width="512" height="512" fill="#5C3D2E"/>
+  <circle cx="256" cy="256" r="208" fill="#FAF6F0"/>
+  <path d="M154 208h206v78c0 72-46 118-103 118s-103-46-103-118v-78Z" fill="#5C3D2E"/>
+  <path d="M360 238h24c31 0 56 25 56 56s-25 56-56 56h-24v-40h21c10 0 18-8 18-18s-8-18-18-18h-21v-36Z" fill="#5C3D2E"/>
+  <path d="M148 420h236" stroke="#5C3D2E" stroke-width="30" stroke-linecap="round"/>
+  <path d="M204 164c-12-18 10-30 0-48M260 164c-12-18 10-30 0-48M316 164c-12-18 10-30 0-48" stroke="#5C3D2E" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="216" cy="286" r="18" fill="#FAF6F0" opacity=".3"/>
+  <circle cx="286" cy="286" r="18" fill="#FAF6F0" opacity=".3"/>
+</svg>
