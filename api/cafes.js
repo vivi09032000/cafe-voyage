@@ -188,6 +188,26 @@ function normalizeAddress(value) {
     .replace(/[()（）［］【】「」『』'"`~!@#$%^&*+=:;,.?/\\|<>_\-•・．。]/g, "");
 }
 
+function extractRoadName(address) {
+  return normalizeAddress(address).match(/([\u3400-\u9fff]{1,12}(?:大道|路|街))/)?.[1] || "";
+}
+
+function extractDoorToken(address) {
+  return normalizeAddress(address).match(/\d+(?:-\d+)?號/)?.[0] || "";
+}
+
+function hasSimilarAddress(a, b) {
+  const aa = normalizeAddress(a);
+  const bb = normalizeAddress(b);
+  if (!aa || !bb) return false;
+  if (aa === bb) return true;
+  const aRoad = extractRoadName(a);
+  const bRoad = extractRoadName(b);
+  const aDoor = extractDoorToken(a);
+  const bDoor = extractDoorToken(b);
+  return Boolean(aRoad && bRoad && aRoad === bRoad && aDoor && bDoor && aDoor === bDoor);
+}
+
 function hasSimilarName(a, b) {
   const aa = simplifyCafeName(a);
   const bb = simplifyCafeName(b);
@@ -199,9 +219,7 @@ function isDuplicateCafe(source, candidate) {
   if (source.google_place_id && candidate.google_place_id && source.google_place_id === candidate.google_place_id) {
     return true;
   }
-  const sourceAddress = normalizeAddress(source.address);
-  const candidateAddress = normalizeAddress(candidate.address);
-  if (!sourceAddress || !candidateAddress || sourceAddress !== candidateAddress) return false;
+  if (!hasSimilarAddress(source.address, candidate.address)) return false;
   return hasSimilarName(source.name, candidate.name);
 }
 

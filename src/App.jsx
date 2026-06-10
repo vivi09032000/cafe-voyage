@@ -625,6 +625,19 @@ const getCafeDedupeKey = (cafe) => {
 const simplifyCafeDedupeName = (value = "") => normalizeCafeDedupeText(value)
   .replace(/咖啡館|咖啡店|咖啡|珈琲|cafe|coffee|coffeebar|coffeeroasters?|roastery|roaster|espresso|甜點|早午餐|brunch|bakery/gi, "");
 const normalizeCafeDedupeAddress = (value = "") => normalizeCafeDedupeText(value).replace(/^\d{3,5}/, "");
+const extractCafeRoadName = (value = "") => normalizeCafeDedupeAddress(value).match(/([\u3400-\u9fff]{1,12}(?:大道|路|街))/)?.[1] || "";
+const extractCafeDoorToken = (value = "") => normalizeCafeDedupeAddress(value).match(/\d+(?:-\d+)?號/)?.[0] || "";
+const hasSimilarCafeDedupeAddress = (a, b) => {
+  const aa = normalizeCafeDedupeAddress(a);
+  const bb = normalizeCafeDedupeAddress(b);
+  if (!aa || !bb) return false;
+  if (aa === bb) return true;
+  const aRoad = extractCafeRoadName(a);
+  const bRoad = extractCafeRoadName(b);
+  const aDoor = extractCafeDoorToken(a);
+  const bDoor = extractCafeDoorToken(b);
+  return Boolean(aRoad && bRoad && aRoad === bRoad && aDoor && bDoor && aDoor === bDoor);
+};
 const hasSimilarCafeDedupeName = (a, b) => {
   const aa = simplifyCafeDedupeName(a);
   const bb = simplifyCafeDedupeName(b);
@@ -632,9 +645,7 @@ const hasSimilarCafeDedupeName = (a, b) => {
 };
 const isDuplicateCafeDisplay = (a, b) => {
   if (a.google_place_id && b.google_place_id && a.google_place_id === b.google_place_id) return true;
-  const aa = normalizeCafeDedupeAddress(a.address);
-  const bb = normalizeCafeDedupeAddress(b.address);
-  return Boolean(aa && bb && aa === bb && hasSimilarCafeDedupeName(a.name, b.name));
+  return Boolean(hasSimilarCafeDedupeAddress(a.address, b.address) && hasSimilarCafeDedupeName(a.name, b.name));
 };
 
 const getCafeCountryKey = (cafe) => {
