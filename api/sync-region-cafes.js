@@ -196,6 +196,22 @@ async function fetchSyncRecord(cityKey, regionQuery) {
   return rows?.[0] || null;
 }
 
+async function fetchRecentSyncRecord(regionQuery) {
+  const url = new URL(`${SUPABASE_URL}/rest/v1/region_google_syncs`);
+  url.searchParams.set("select", "id,city_key,last_synced_at,last_status");
+  url.searchParams.set("country_code", "eq.TW");
+  url.searchParams.set("region_query", `eq.${regionQuery}`);
+  url.searchParams.set("last_status", "eq.ok");
+  url.searchParams.set("order", "last_synced_at.desc");
+  url.searchParams.set("limit", "1");
+  const rows = await fetchJson(url, { headers: serviceHeaders() });
+  return rows?.[0] || null;
+}
+
+function isFreshSyncRecord(record) {
+  return Boolean(record?.last_synced_at && Date.now() - new Date(record.last_synced_at).getTime() < SYNC_TTL_MS);
+}
+
 async function fetchTodaySyncCount() {
   const start = new Date();
   start.setHours(0, 0, 0, 0);
@@ -352,6 +368,30 @@ export default async function handler(req, res) {
   const startedAt = new Date().toISOString();
 
   try {
+    const requestedCityRecord = await fetchSyncRecord(cityKey, regionQuery);
+    if (isFreshSyncRecord(requestedCityRecord)) {
+      return send(res, 200, {
+        ok: true,
+        skipped: true,
+        reason: "recently_synced",
+        cityKey,
+        requestedCityKey: cityKey,
+        lastSyncedAt: requestedCityRecord.last_synced_at,
+      });
+    }
+
+    const recentRegionRecord = await fetchRecentSyncRecord(regionQuery);
+    if (isFreshSyncRecord(recentRegionRecord)) {
+      return send(res, 200, {
+        ok: true,
+        skipped: true,
+        reason: "recently_synced",
+        cityKey: recentRegionRecord.city_key || cityKey,
+        requestedCityKey: cityKey,
+        lastSyncedAt: recentRegionRecord.last_synced_at,
+      });
+    }
+
     const todaySyncCount = await fetchTodaySyncCount();
     if (todaySyncCount >= DAILY_REGION_LIMIT) {
       return send(res, 200, {
@@ -364,18 +404,6 @@ export default async function handler(req, res) {
 
     const googlePlaces = await searchGooglePlaces(cityKey, regionQuery);
     const effectiveCityKey = inferCityKeyFromPlaces(googlePlaces) || cityKey;
-
-    const existingRecord = await fetchSyncRecord(effectiveCityKey, regionQuery);
-    if (existingRecord?.last_synced_at && Date.now() - new Date(existingRecord.last_synced_at).getTime() < SYNC_TTL_MS) {
-      return send(res, 200, {
-        ok: true,
-        skipped: true,
-        reason: "recently_synced",
-        cityKey: effectiveCityKey,
-        requestedCityKey: cityKey,
-        lastSyncedAt: existingRecord.last_synced_at,
-      });
-    }
 
     await upsertSyncRecord({
       country_code: "TW",

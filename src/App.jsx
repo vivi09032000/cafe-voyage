@@ -2879,7 +2879,7 @@ export default function App() {
   const [mapQuery, setMapQuery] = useState("");
   const [mapVisibleCafeCount, setMapVisibleCafeCount] = useState(null);
   const isAdminUser = authUser?.email === ADMIN_EMAIL;
-  const fetchAllCafes = useCallback(async ({ force = false } = {}) => {
+  const fetchAllCafes = useCallback(async ({ force = false, silent = false } = {}) => {
     let cacheLoaded = false;
     try {
       const raw = force ? null : localStorage.getItem(MAP_CACHE_KEY);
@@ -2894,7 +2894,7 @@ export default function App() {
       console.error(e);
     }
 
-    setLoading(!cacheLoaded);
+    setLoading(!cacheLoaded && !silent);
 
     try {
       const [taiwanRes, hoiAnRes] = await Promise.all([
@@ -2917,12 +2917,16 @@ export default function App() {
     } catch (e) {
       console.error(e);
     } finally {
-      setLoading(false);
+      if (!silent) setLoading(false);
     }
   }, []);
 
+  const syncedRegionKeysRef = useRef(new Set());
   const triggerRegionCafeSync = useCallback(async (cityKey, regionQuery) => {
     if (!cityKey || cityKey === REGION_PROMPT_KEY || !regionQuery) return;
+    const syncKey = `${cityKey}:${regionQuery}`;
+    if (syncedRegionKeysRef.current.has(syncKey)) return;
+    syncedRegionKeysRef.current.add(syncKey);
     try {
       const response = await fetch(
         `/api/sync-region-cafes?city=${encodeURIComponent(cityKey)}&region=${encodeURIComponent(regionQuery)}`,
@@ -2931,9 +2935,10 @@ export default function App() {
       const result = await response.json();
       if (result?.newCafesInserted > 0) {
         localStorage.removeItem(MAP_CACHE_KEY);
-        await fetchAllCafes({ force: true });
+        await fetchAllCafes({ force: true, silent: true });
       }
     } catch (error) {
+      syncedRegionKeysRef.current.delete(syncKey);
       console.error(error);
     }
   }, [fetchAllCafes]);
