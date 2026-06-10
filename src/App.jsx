@@ -1548,8 +1548,9 @@ const CafeCard = ({ cafe, onClick, fav, onFav, emptyCafeIds, lang }) => (
 );
 
 
-const SearchPage = ({ cafes, loading, onSelect, favs, onFav, emptyCafeIds, filters, setFilters, lang, region, onRelocate, onRegionSync }) => {
-  const [q, setQ] = useState("");
+const SearchPage = ({ cafes, loading, onSelect, favs, onFav, emptyCafeIds, filters, setFilters, lang, region, searchQuery, setSearchQuery, onRelocate, onRegionSync }) => {
+  const q = searchQuery;
+  const setQ = setSearchQuery;
   const [page, setPage] = useState(1);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [userLocation, setUserLocation] = useState(null);
@@ -2814,6 +2815,7 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [selected, setSelected] = useState(null);
   const [homeFilters, setHomeFilters] = useState(DEFAULT_HOME_FILTERS);
+  const [searchQuery, setSearchQuery] = useState("");
   const [favs, setFavs] = useState(() => {
     try {
       const raw = localStorage.getItem("cafe-voyage:favs");
@@ -3248,7 +3250,7 @@ export default function App() {
   const renderPage = () => {
     if (selected) return <DetailPage cafe={selected} onBack={() => setSelected(null)} fav={favoriteLookup.has(selected.id)} onFav={toggleFav} onReport={handleReportAndUpdateMap} emptyCafeIds={emptyCafeIds} onFilterTag={handleDetailTagFilter} canManageCafe={isAdminUser} onHideCafe={handleHideCafe} lang={lang} />;
     switch (tab) {
-      case "search": return <SearchPage cafes={exploreCafes} loading={loading} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} emptyCafeIds={emptyCafeIds} filters={homeFilters} setFilters={setHomeFilters} lang={lang} region={region} onRelocate={() => requestGpsRegion(true)} onRegionSync={triggerRegionCafeSync} />;
+      case "search": return <SearchPage cafes={exploreCafes} loading={loading} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} emptyCafeIds={emptyCafeIds} filters={homeFilters} setFilters={setHomeFilters} lang={lang} region={region} searchQuery={searchQuery} setSearchQuery={setSearchQuery} onRelocate={() => requestGpsRegion(true)} onRegionSync={triggerRegionCafeSync} />;
       case "map": return <MapPage cafes={countryScopedCafes} region={region} onSelect={setSelected} mapView={mapView} setMapView={setMapView} mapQuery={mapQuery} setMapQuery={setMapQuery} loading={loading} lang={lang} onVisibleCafeCountChange={setMapVisibleCafeCount} onRegionSync={triggerRegionCafeSync} />;
       case "favorites": return <FavoritesPage cafes={favoritesCafes} favs={favoriteLookup} onSelect={setSelected} onFav={toggleFav} onExplore={() => setTab("search")} lang={lang} />;
       default: return null;
