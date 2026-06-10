@@ -194,6 +194,7 @@ const SEARCH_INPUT_STYLE = {
 };
 const REGION_PATTERN = /(台北市|新北市|桃園市|台中市|臺中市|台南市|臺南市|高雄市|基隆市|新竹市|新竹縣|苗栗縣|彰化縣|南投縣|雲林縣|嘉義市|嘉義縣|屏東縣|宜蘭縣|花蓮縣|台東縣|臺東縣)/;
 const REGION_SYNC_QUERY_PATTERN = /([\u3400-\u9fff]{1,4}(?:區|鄉|鎮|市))/u;
+const DISTRICT_PATTERN = /([\u3400-\u9fff]{1,4}(?:區|鄉|鎮|市))/u;
 const LANGUAGE_OPTIONS = [
   { key: "zh", label: "中文" },
   { key: "en", label: "English" },
@@ -609,6 +610,7 @@ const normalizeRegionLabel = (label = "") => label
 const findRegionGroup = (regionLabel = "") =>
   REGION_GROUPS.find((group) => group.members.includes(regionLabel)) || null;
 const extractRegionSyncQuery = (value = "") => value.match(REGION_SYNC_QUERY_PATTERN)?.[1] || "";
+const extractDistrictFromAddress = (value = "") => value.match(DISTRICT_PATTERN)?.[1] || "";
 const normalizeCafeDedupeText = (value = "") => String(value)
   .toLowerCase()
   .replace(/臺/g, "台")
@@ -1616,16 +1618,6 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav, emptyCafeIds, filte
     setPage(1);
   };
 
-  useEffect(() => {
-    const syncQuery = extractRegionSyncQuery(q);
-    if (!syncQuery || !region || region === REGION_PROMPT_KEY || lastRegionSyncRef.current === syncQuery) return;
-    const timer = setTimeout(() => {
-      lastRegionSyncRef.current = syncQuery;
-      onRegionSync?.(region, syncQuery);
-    }, 900);
-    return () => clearTimeout(timer);
-  }, [onRegionSync, q, region]);
-
   const requestSortLocation = useCallback(async () => {
     setLocationError("");
     if (!navigator.geolocation) {
@@ -1714,6 +1706,20 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav, emptyCafeIds, filte
       if (preset?.score) return preset.score(b) - preset.score(a);
       return b._workScore - a._workScore;
     });
+
+  const firstSortedCafe = allSorted[0] || null;
+
+  useEffect(() => {
+    const syncQuery = extractRegionSyncQuery(q) || extractDistrictFromAddress(firstSortedCafe?.address || "");
+    const syncCityKey = region && region !== REGION_PROMPT_KEY ? region : getCafeRegionGroupKey(firstSortedCafe || {}) || "taipei";
+    const syncKey = `${syncCityKey}:${syncQuery}`;
+    if (!syncQuery || lastRegionSyncRef.current === syncKey) return;
+    const timer = setTimeout(() => {
+      lastRegionSyncRef.current = syncKey;
+      onRegionSync?.(syncCityKey, syncQuery);
+    }, 900);
+    return () => clearTimeout(timer);
+  }, [firstSortedCafe, onRegionSync, q, region]);
 
   const total = allSorted.length;
   const start = (page - 1) * PER_PAGE;
@@ -2146,14 +2152,16 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
   }, [region]);
 
   useEffect(() => {
-    const syncQuery = extractRegionSyncQuery(mapQuery);
-    if (!syncQuery || !region || region === REGION_PROMPT_KEY || lastRegionSyncRef.current === syncQuery) return;
+    const syncQuery = extractRegionSyncQuery(mapQuery) || extractDistrictFromAddress(searchMatches[0]?.address || "");
+    const syncCityKey = region && region !== REGION_PROMPT_KEY ? region : getCafeRegionGroupKey(searchMatches[0] || {}) || "taipei";
+    const syncKey = `${syncCityKey}:${syncQuery}`;
+    if (!syncQuery || lastRegionSyncRef.current === syncKey) return;
     const timer = setTimeout(() => {
-      lastRegionSyncRef.current = syncQuery;
-      onRegionSync?.(region, syncQuery);
+      lastRegionSyncRef.current = syncKey;
+      onRegionSync?.(syncCityKey, syncQuery);
     }, 900);
     return () => clearTimeout(timer);
-  }, [mapQuery, onRegionSync, region]);
+  }, [mapQuery, onRegionSync, region, searchMatches]);
 
   const regionCenter = useMemo(() => {
     if (!region || region === REGION_PROMPT_KEY) return null;
