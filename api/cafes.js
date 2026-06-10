@@ -168,11 +168,16 @@ function applyCafeOverrides(cafes, overrideMap) {
     .map(({ _sortPenalty, _sortIndex, ...cafe }) => cafe);
 }
 
-async function fetchCustomCafes(cityKey) {
+async function fetchCustomCafes({ cityKey, countryCode } = {}) {
   const url = new URL(`${SUPABASE_URL}/rest/v1/custom_cafes`);
   url.searchParams.set("select", "id,slug,name,city,wifi,seat,quiet,tasty,cheap,music,url,address,latitude,longitude,limited_time,socket,standing_desk,mrt,open_time,country_code,country_name,city_key,city_label");
   url.searchParams.set("is_published", "eq.true");
-  url.searchParams.set("city_key", `eq.${cityKey}`);
+  if (cityKey) {
+    url.searchParams.set("city_key", `eq.${cityKey}`);
+  }
+  if (countryCode) {
+    url.searchParams.set("country_code", `eq.${countryCode}`);
+  }
   const response = await fetch(url, {
     headers: {
       apikey: SUPABASE_KEY,
@@ -216,7 +221,7 @@ export default async function handler(req, res) {
   if (CUSTOM_CITY_ALIASES[normalizedCity]) {
     let data = [];
     try {
-      data = await fetchCustomCafes(CUSTOM_CITY_ALIASES[normalizedCity]);
+      data = await fetchCustomCafes({ cityKey: CUSTOM_CITY_ALIASES[normalizedCity] });
     } catch (error) {
       console.error(error);
     }
@@ -249,6 +254,17 @@ export default async function handler(req, res) {
     const overrideMap = await fetchCafeOverrides("cafenomad", "TW", normalizedCity || undefined);
     if (overrideMap.size > 0) {
       data = applyCafeOverrides(data, overrideMap);
+    }
+  } catch (error) {
+    console.error(error);
+  }
+  try {
+    const customCafes = await fetchCustomCafes({
+      cityKey: normalizedCity || undefined,
+      countryCode: "TW",
+    });
+    if (customCafes.length > 0) {
+      data = [...data, ...customCafes];
     }
   } catch (error) {
     console.error(error);

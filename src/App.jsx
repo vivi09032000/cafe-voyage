@@ -193,6 +193,7 @@ const SEARCH_INPUT_STYLE = {
   boxShadow: UI.shadowSoft,
 };
 const REGION_PATTERN = /(台北市|新北市|桃園市|台中市|臺中市|台南市|臺南市|高雄市|基隆市|新竹市|新竹縣|苗栗縣|彰化縣|南投縣|雲林縣|嘉義市|嘉義縣|屏東縣|宜蘭縣|花蓮縣|台東縣|臺東縣)/;
+const REGION_SYNC_QUERY_PATTERN = /([\u3400-\u9fff]{1,4}(?:區|鄉|鎮|市))/u;
 const LANGUAGE_OPTIONS = [
   { key: "zh", label: "中文" },
   { key: "en", label: "English" },
@@ -284,6 +285,7 @@ const COPY = {
       cheap: "價格實惠",
       music: "舒服氛圍",
       empty: "目前人少",
+      excludeTempClosed: "排除暫停歇業",
       sections: {
         workspace: "工作環境",
         atmosphere: "網路與氛圍",
@@ -449,6 +451,7 @@ const COPY = {
       cheap: "Budget-friendly",
       music: "Good ambiance",
       empty: "Quiet now",
+      excludeTempClosed: "Hide temporarily closed",
       sections: {
         workspace: "Work setup",
         atmosphere: "Network & vibe",
@@ -605,6 +608,7 @@ const normalizeRegionLabel = (label = "") => label
 
 const findRegionGroup = (regionLabel = "") =>
   REGION_GROUPS.find((group) => group.members.includes(regionLabel)) || null;
+const extractRegionSyncQuery = (value = "") => value.match(REGION_SYNC_QUERY_PATTERN)?.[1] || "";
 
 const getCafeCountryKey = (cafe) => {
   if (cafe.city === "hoi_an_vn" || /Vietnam|Việt Nam|Hội An|Hoi An/.test(cafe.address || "")) return "vietnam";
@@ -623,6 +627,16 @@ const getCafeRegionGroupKey = (cafe) => findRegionGroup(getCafeRegion(cafe))?.ke
 // ── helpers ──
 const CLOSED_KW = ["暫停營業", "已歇業", "停業", "結束營業"];
 const isOpen = (c) => !CLOSED_KW.some(kw => c.name.includes(kw));
+const isTemporarilyClosed = (cafe) => cafe.google_business_status === "CLOSED_TEMPORARILY";
+const getGoogleMapsUrl = (cafe) => {
+  const query = encodeURIComponent(cafe.name || cafe.address || "");
+  const lat = Number(cafe.latitude);
+  const lng = Number(cafe.longitude);
+  if (query && Number.isFinite(lat) && Number.isFinite(lng)) {
+    return `https://www.google.com/maps/search/${query}/@${lat},${lng},19z`;
+  }
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${cafe.name || ""} ${cafe.address || ""}`.trim())}`;
+};
 const scoreBar = (val, max = 5) => {
   if (!val || val === 0) return null;
   const pct = (val / max) * 100;
@@ -801,7 +815,7 @@ const socketTag = (v, lang, onSocketClick) => {
 };
 
 const temporaryClosureTag = (cafe, lang) => {
-  if (cafe.google_business_status === "CLOSED_TEMPORARILY") {
+  if (isTemporarilyClosed(cafe)) {
     return <Tag label={getCopy(lang, "tags.tempClosed")} type="amber" icon="pause" />;
   }
   return null;
@@ -826,6 +840,7 @@ const DEFAULT_HOME_FILTERS = {
   cheap: false,
   music: false,
   empty: false,
+  excludeTempClosed: false,
 };
 const FILTER_PRESET_DEFS = [
   {
@@ -860,6 +875,7 @@ const getFilterLabels = (lang) => ({
   cheap: getCopy(lang, "filters.cheap"),
   music: getCopy(lang, "filters.music"),
   empty: getCopy(lang, "filters.empty"),
+  excludeTempClosed: getCopy(lang, "filters.excludeTempClosed"),
 });
 
 const getFilterPresets = (lang) => FILTER_PRESET_DEFS.map((preset) => ({
@@ -913,6 +929,7 @@ const FilterSection = ({ filters, toggle, lang }) => (
         title: getCopy(lang, "filters.sections.live"),
         items: [
           { key: "empty", label: getCopy(lang, "filters.empty"), icon: "status" },
+          { key: "excludeTempClosed", label: getCopy(lang, "filters.excludeTempClosed"), icon: "pause" },
         ],
       },
     ].map((section, index) => (
@@ -1531,7 +1548,7 @@ const CafeCard = ({ cafe, onClick, fav, onFav, emptyCafeIds, lang }) => (
 );
 
 
-const SearchPage = ({ cafes, loading, onSelect, favs, onFav, emptyCafeIds, filters, setFilters, lang, onRelocate }) => {
+const SearchPage = ({ cafes, loading, onSelect, favs, onFav, emptyCafeIds, filters, setFilters, lang, region, onRelocate, onRegionSync }) => {
   const [q, setQ] = useState("");
   const [page, setPage] = useState(1);
   const [filtersOpen, setFiltersOpen] = useState(false);
@@ -1541,6 +1558,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav, emptyCafeIds, filte
   const [activePresetKey, setActivePresetKey] = useState(null);
   const requestedLocation = useRef(false);
   const nearbyLocateTimerRef = useRef(null);
+  const lastRegionSyncRef = useRef("");
   const filterLabels = getFilterLabels(lang);
   const filterPresets = getFilterPresets(lang);
   const searchPlaceholder = getCopy(lang, "searchPlaceholder");
@@ -1558,6 +1576,16 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav, emptyCafeIds, filte
     setActivePresetKey(null);
     setPage(1);
   };
+
+  useEffect(() => {
+    const syncQuery = extractRegionSyncQuery(q);
+    if (!syncQuery || !region || region === REGION_PROMPT_KEY || lastRegionSyncRef.current === syncQuery) return;
+    const timer = setTimeout(() => {
+      lastRegionSyncRef.current = syncQuery;
+      onRegionSync?.(region, syncQuery);
+    }, 900);
+    return () => clearTimeout(timer);
+  }, [onRegionSync, q, region]);
 
   const requestSortLocation = useCallback(async () => {
     setLocationError("");
@@ -1636,6 +1664,7 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav, emptyCafeIds, filte
     .filter(c => !filters.cheap || c.cheap >= 4)
     .filter(c => !filters.music || c.music >= 4)
     .filter(c => !filters.empty || emptyCafeIds.has(c.id))
+    .filter(c => !filters.excludeTempClosed || !isTemporarilyClosed(c))
     .map((c) => ({ ...c, _workScore: workScore(c), _distanceKm: distanceKm(userLocation, c) }))
     .sort((a, b) => {
       if (userLocation) {
@@ -2035,7 +2064,7 @@ const LocateController = ({ request, onStart, onSuccess, onError }) => {
   return null;
 };
 
-const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setMapQuery, lang, region, onVisibleCafeCountChange }) => {
+const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setMapQuery, lang, region, onVisibleCafeCountChange, onRegionSync }) => {
   const [userPos, setUserPos] = useState(null);
   const [geoTarget, setGeoTarget] = useState(null);
   const [searchTarget, setSearchTarget] = useState(null);
@@ -2051,6 +2080,7 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
   const searchMarkerRef = useRef(null);
   const hasAutoLocatedRef = useRef(false);
   const lastSearchQueryRef = useRef("");
+  const lastRegionSyncRef = useRef("");
   const mapLocateTimerRef = useRef(null);
   const allMapCafes = useMemo(() => cafes.filter(isOpen).filter(c => c.latitude && c.longitude), [cafes]);
   const visibleMapCafes = useMemo(() => {
@@ -2074,6 +2104,16 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
       setRegionSeq(s => s + 1);
     }
   }, [region]);
+
+  useEffect(() => {
+    const syncQuery = extractRegionSyncQuery(mapQuery);
+    if (!syncQuery || !region || region === REGION_PROMPT_KEY || lastRegionSyncRef.current === syncQuery) return;
+    const timer = setTimeout(() => {
+      lastRegionSyncRef.current = syncQuery;
+      onRegionSync?.(region, syncQuery);
+    }, 900);
+    return () => clearTimeout(timer);
+  }, [mapQuery, onRegionSync, region]);
 
   const regionCenter = useMemo(() => {
     if (!region || region === REGION_PROMPT_KEY) return null;
@@ -2693,7 +2733,7 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
 
         {cafe.address && (
           <a
-            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${cafe.name} ${cafe.address}`)}`}
+            href={getGoogleMapsUrl(cafe)}
             target="_blank"
             rel="noreferrer"
             className="soft-press"
@@ -2790,11 +2830,11 @@ export default function App() {
   const [mapQuery, setMapQuery] = useState("");
   const [mapVisibleCafeCount, setMapVisibleCafeCount] = useState(null);
   const isAdminUser = authUser?.email === ADMIN_EMAIL;
-  const fetchAllCafes = useCallback(async () => {
+  const fetchAllCafes = useCallback(async ({ force = false } = {}) => {
     let cacheLoaded = false;
     try {
-      const raw = localStorage.getItem(MAP_CACHE_KEY);
-      if (raw) {
+      const raw = force ? null : localStorage.getItem(MAP_CACHE_KEY);
+      if (!force && raw) {
         const cached = JSON.parse(raw);
         if (cached?.timestamp && Array.isArray(cached?.data) && Date.now() - cached.timestamp < MAP_CACHE_TTL) {
           setAllCafes(cached.data);
@@ -2831,6 +2871,23 @@ export default function App() {
       setLoading(false);
     }
   }, []);
+
+  const triggerRegionCafeSync = useCallback(async (cityKey, regionQuery) => {
+    if (!cityKey || cityKey === REGION_PROMPT_KEY || !regionQuery) return;
+    try {
+      const response = await fetch(
+        `/api/sync-region-cafes?city=${encodeURIComponent(cityKey)}&region=${encodeURIComponent(regionQuery)}`,
+        { method: "POST" },
+      );
+      const result = await response.json();
+      if (result?.newCafesInserted > 0) {
+        localStorage.removeItem(MAP_CACHE_KEY);
+        await fetchAllCafes({ force: true });
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }, [fetchAllCafes]);
 
   useEffect(() => {
     if (allCafes.length > 0 || loading) return;
@@ -3191,8 +3248,8 @@ export default function App() {
   const renderPage = () => {
     if (selected) return <DetailPage cafe={selected} onBack={() => setSelected(null)} fav={favoriteLookup.has(selected.id)} onFav={toggleFav} onReport={handleReportAndUpdateMap} emptyCafeIds={emptyCafeIds} onFilterTag={handleDetailTagFilter} canManageCafe={isAdminUser} onHideCafe={handleHideCafe} lang={lang} />;
     switch (tab) {
-      case "search": return <SearchPage cafes={exploreCafes} loading={loading} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} emptyCafeIds={emptyCafeIds} filters={homeFilters} setFilters={setHomeFilters} lang={lang} onRelocate={() => requestGpsRegion(true)} />;
-      case "map": return <MapPage cafes={countryScopedCafes} region={region} onSelect={setSelected} mapView={mapView} setMapView={setMapView} mapQuery={mapQuery} setMapQuery={setMapQuery} loading={loading} lang={lang} onVisibleCafeCountChange={setMapVisibleCafeCount} />;
+      case "search": return <SearchPage cafes={exploreCafes} loading={loading} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} emptyCafeIds={emptyCafeIds} filters={homeFilters} setFilters={setHomeFilters} lang={lang} region={region} onRelocate={() => requestGpsRegion(true)} onRegionSync={triggerRegionCafeSync} />;
+      case "map": return <MapPage cafes={countryScopedCafes} region={region} onSelect={setSelected} mapView={mapView} setMapView={setMapView} mapQuery={mapQuery} setMapQuery={setMapQuery} loading={loading} lang={lang} onVisibleCafeCountChange={setMapVisibleCafeCount} onRegionSync={triggerRegionCafeSync} />;
       case "favorites": return <FavoritesPage cafes={favoritesCafes} favs={favoriteLookup} onSelect={setSelected} onFav={toggleFav} onExplore={() => setTab("search")} lang={lang} />;
       default: return null;
     }

@@ -1,0 +1,806 @@
+{
+  "area": "xinzhuang",
+  "checkedAt": "2026-06-10T10:54:16.056Z",
+  "googleQuery": "新莊區 咖啡店",
+  "googleResultsChecked": 20,
+  "cafeNomadAreaCount": 42,
+  "likelyNewCandidateCount": 15,
+  "candidates": [
+    {
+      "id": "ChIJFYNB826pQjQRepwWln5qyJk",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "242新北市新莊區興漢里新興街27巷2號",
+      "location": {
+        "latitude": 25.0374201,
+        "longitude": 121.4505434
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=11081223975061593210&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "何止(營業資訊請詳閱IG貼文)",
+        "languageCode": "zh-TW"
+      }
+    },
+    {
+      "id": "ChIJM15cbnWoQjQRF4ztgo-Gj04",
+      "types": [
+        "restaurant",
+        "bistro",
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "242新北市新莊區全安里中正路363號",
+      "location": {
+        "latitude": 25.034691199999997,
+        "longitude": 121.4467313
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=5660891207563054103&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "布納咖啡館 新莊館",
+        "languageCode": "zh-TW"
+      }
+    },
+    {
+      "id": "ChIJi6ln8MepQjQRVXv_1GZ14jI",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "242新北市新莊區文聖里中正路192號",
+      "location": {
+        "latitude": 25.035681999999998,
+        "longitude": 121.4496096
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=3666622131153632085&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "CAFE!N 硬咖啡 新莊中正門市",
+        "languageCode": "zh-TW"
+      }
+    },
+    {
+      "id": "ChIJ7ZTBhRWpQjQRoW4E-ESLjMM",
+      "types": [
+        "cafe",
+        "coffee_stand",
+        "coffee_roastery",
+        "wholesaler",
+        "food_store",
+        "supplier",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "242新北市新莊區昌平里中原路191號",
+      "location": {
+        "latitude": 25.0541266,
+        "longitude": 121.4522853
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=14090790462470516385&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "獨咖啡（新莊旗艦店）",
+        "languageCode": "zh-TW"
+      }
+    },
+    {
+      "id": "ChIJ9cx_bACpQjQRnZ59F0sD_L8",
+      "types": [
+        "coffee_shop",
+        "cafe",
+        "food_store",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "242新北市新莊區中和里中港路307號",
+      "location": {
+        "latitude": 25.044529299999997,
+        "longitude": 121.45260350000001
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=13833935776426860189&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "丰錞咖啡所 Fortune Studio",
+        "languageCode": "zh-TW"
+      }
+    },
+    {
+      "id": "ChIJ8XV6QpCoQjQRtR1jSGhpRKs",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "242新北市新莊區福興里五工路66號1樓",
+      "location": {
+        "latitude": 25.063651999999998,
+        "longitude": 121.4583793
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=12341104775513972149&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "D'or Cafe",
+        "languageCode": "zh-TW"
+      }
+    },
+    {
+      "id": "ChIJw30l07epQjQRcfv6zkDCcHM",
+      "types": [
+        "cafe",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "24244新北市新莊區文聖里建中街48巷7號1樓",
+      "location": {
+        "latitude": 25.037677,
+        "longitude": 121.44831579999999
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=8318362095359556465&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "怪獸天團珈琲所",
+        "languageCode": "zh-TW"
+      }
+    },
+    {
+      "id": "ChIJBwoXYK2nQjQRm5Q161ikRXA",
+      "types": [
+        "coffee_shop",
+        "cafe",
+        "food_store",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "242新北市新莊區後港里建安街40巷22號",
+      "location": {
+        "latitude": 25.0253639,
+        "longitude": 121.427533
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=8090053007451198619&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "Laifu coffee 來福咖啡//自家烘焙、咖啡豆批發、整模蛋糕4天前訂、不接待12歲以下兒童//",
+        "languageCode": "zh-TW"
+      }
+    },
+    {
+      "id": "ChIJNwnZPnSoQjQRFj4nujn01EQ",
+      "types": [
+        "coffee_shop",
+        "cafe",
+        "food_store",
+        "store",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "242新北市新莊區文聖里中興街14號",
+      "location": {
+        "latitude": 25.036313099999997,
+        "longitude": 121.44934699999999
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=4959857618415205910&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "白昼夢喫茶 Hakuchumu Kissa （原好食紀）",
+        "languageCode": "zh-TW"
+      }
+    },
+    {
+      "id": "ChIJ46deaQCpQjQRT8m3IXzCCBI",
+      "types": [
+        "coffee_shop",
+        "cafe",
+        "food_store",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "242新北市新莊區恆安里明中街1號",
+      "location": {
+        "latitude": 25.0379701,
+        "longitude": 121.4586228
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=1299502330893814095&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "就是咖啡 #不限時間#可充電#空間分租#美甲#金工",
+        "languageCode": "zh-TW"
+      }
+    },
+    {
+      "id": "ChIJAWjdEX-pQjQRmSeSOI-IDKU",
+      "types": [
+        "coffee_shop",
+        "cafe",
+        "food_store",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "242新北市新莊區榮和里中華路一段92號",
+      "location": {
+        "latitude": 25.0395161,
+        "longitude": 121.4523246
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=11893030864689440665&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "不二弄咖啡-新莊中華店",
+        "languageCode": "zh-TW"
+      }
+    },
+    {
+      "id": "ChIJLZz7PQCpQjQRqN7iaZPhREQ",
+      "types": [
+        "coffee_shop",
+        "cafe",
+        "food_store",
+        "store",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "242新北市新莊區全安里中正路347巷30號",
+      "location": {
+        "latitude": 25.0340477,
+        "longitude": 121.44700410000002
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=4919304716248342184&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "Du.studio甜點工作室",
+        "languageCode": "zh-TW"
+      }
+    },
+    {
+      "id": "ChIJc2nmbgCnQjQRSGmX84inJsM",
+      "types": [
+        "coffee_shop",
+        "cafe",
+        "food_store",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "242新北市新莊區富民里民安路23號",
+      "location": {
+        "latitude": 25.0278271,
+        "longitude": 121.4231533
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=14062111093155129672&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "欸，來喝咖啡呀！coffeetogetherrr",
+        "languageCode": "zh-TW"
+      }
+    },
+    {
+      "id": "ChIJKRmOAPkbaDQRiRx6YarYo0A",
+      "types": [
+        "dessert_shop",
+        "cake_shop",
+        "confectionery",
+        "bakery",
+        "cafe",
+        "wholesaler",
+        "manufacturer",
+        "food_store",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "242新北市新莊區後港里後港一路28巷2弄1號之1",
+      "location": {
+        "latitude": 25.025879699999997,
+        "longitude": 121.42533379999998
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=4657804665922657417&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "森茗甜點Dessert&Coffee",
+        "languageCode": "zh-TW"
+      }
+    },
+    {
+      "id": "ChIJqX7_dACpQjQRFLdo9yFJPXc",
+      "types": [
+        "coffee_shop",
+        "cafe",
+        "food_store",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "242新北市新莊區文聖里中興街5號",
+      "location": {
+        "latitude": 25.0358509,
+        "longitude": 121.44915419999998
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=8592104074326357780&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "擼貓 Whiskers and Tails Catfé",
+        "languageCode": "zh-TW"
+      }
+    }
+  ],
+  "allGoogleResults": [
+    {
+      "id": "ChIJFYNB826pQjQRepwWln5qyJk",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "242新北市新莊區興漢里新興街27巷2號",
+      "location": {
+        "latitude": 25.0374201,
+        "longitude": 121.4505434
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=11081223975061593210&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "何止(營業資訊請詳閱IG貼文)",
+        "languageCode": "zh-TW"
+      }
+    },
+    {
+      "id": "ChIJM15cbnWoQjQRF4ztgo-Gj04",
+      "types": [
+        "restaurant",
+        "bistro",
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "242新北市新莊區全安里中正路363號",
+      "location": {
+        "latitude": 25.034691199999997,
+        "longitude": 121.4467313
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=5660891207563054103&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "布納咖啡館 新莊館",
+        "languageCode": "zh-TW"
+      }
+    },
+    {
+      "id": "ChIJi6ln8MepQjQRVXv_1GZ14jI",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "242新北市新莊區文聖里中正路192號",
+      "location": {
+        "latitude": 25.035681999999998,
+        "longitude": 121.4496096
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=3666622131153632085&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "CAFE!N 硬咖啡 新莊中正門市",
+        "languageCode": "zh-TW"
+      }
+    },
+    {
+      "id": "ChIJ7ZTBhRWpQjQRoW4E-ESLjMM",
+      "types": [
+        "cafe",
+        "coffee_stand",
+        "coffee_roastery",
+        "wholesaler",
+        "food_store",
+        "supplier",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "242新北市新莊區昌平里中原路191號",
+      "location": {
+        "latitude": 25.0541266,
+        "longitude": 121.4522853
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=14090790462470516385&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "獨咖啡（新莊旗艦店）",
+        "languageCode": "zh-TW"
+      }
+    },
+    {
+      "id": "ChIJ9cx_bACpQjQRnZ59F0sD_L8",
+      "types": [
+        "coffee_shop",
+        "cafe",
+        "food_store",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "242新北市新莊區中和里中港路307號",
+      "location": {
+        "latitude": 25.044529299999997,
+        "longitude": 121.45260350000001
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=13833935776426860189&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "丰錞咖啡所 Fortune Studio",
+        "languageCode": "zh-TW"
+      }
+    },
+    {
+      "id": "ChIJ8XV6QpCoQjQRtR1jSGhpRKs",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "242新北市新莊區福興里五工路66號1樓",
+      "location": {
+        "latitude": 25.063651999999998,
+        "longitude": 121.4583793
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=12341104775513972149&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "D'or Cafe",
+        "languageCode": "zh-TW"
+      }
+    },
+    {
+      "id": "ChIJ49rRv-inQjQRDtswO3VAMAI",
+      "types": [
+        "coffee_shop",
+        "cafe",
+        "food_store",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "242新北市新莊區福營里中正路593號2樓",
+      "location": {
+        "latitude": 25.032058,
+        "longitude": 121.43294379999999
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=157696859206376206&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "工寓咖啡 café industry(不提供當日訂位，公休日及內用須知請至ig確認)",
+        "languageCode": "zh-TW"
+      }
+    },
+    {
+      "id": "ChIJA-Xzi0apQjQRyElcpLqAeAs",
+      "types": [
+        "cafe",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "24254新北市新莊區中原里中港路723號",
+      "location": {
+        "latitude": 25.057703999999998,
+        "longitude": 121.45031999999999
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=826552070732270024&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "May i COFFEE you ? 美艾咖啡",
+        "languageCode": "zh-TW"
+      }
+    },
+    {
+      "id": "ChIJjz_6Ud-nQjQRH_YobhyMYQ8",
+      "types": [
+        "cafe",
+        "coffee_roastery",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "242新北市新莊區立言里公園一路109號",
+      "location": {
+        "latitude": 25.038151499999998,
+        "longitude": 121.4449423
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=1108321037045003807&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "i3東咖啡-新莊",
+        "languageCode": "zh-TW"
+      }
+    },
+    {
+      "id": "ChIJqeoEYQqpQjQRv-P2ORCBq6Y",
+      "types": [
+        "coffee_shop",
+        "cafe",
+        "food_store",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "24245新北市新莊區自強里中港路309巷3號",
+      "location": {
+        "latitude": 25.0445609,
+        "longitude": 121.45241879999998
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=12009834738005500863&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "艸堂珈琲 自家烘焙咖啡",
+        "languageCode": "zh-TW"
+      }
+    },
+    {
+      "id": "ChIJ7ar0rXmoQjQR5svXrViivXU",
+      "types": [
+        "cafe",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "242新北市新莊區中泰里中和街60巷17號",
+      "location": {
+        "latitude": 25.0448982,
+        "longitude": 121.4487285
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=8484115774793305062&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "星河咖啡 自家烘焙（平日18:30後，無內用）",
+        "languageCode": "zh-TW"
+      }
+    },
+    {
+      "id": "ChIJw30l07epQjQRcfv6zkDCcHM",
+      "types": [
+        "cafe",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "24244新北市新莊區文聖里建中街48巷7號1樓",
+      "location": {
+        "latitude": 25.037677,
+        "longitude": 121.44831579999999
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=8318362095359556465&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "怪獸天團珈琲所",
+        "languageCode": "zh-TW"
+      }
+    },
+    {
+      "id": "ChIJBwoXYK2nQjQRm5Q161ikRXA",
+      "types": [
+        "coffee_shop",
+        "cafe",
+        "food_store",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "242新北市新莊區後港里建安街40巷22號",
+      "location": {
+        "latitude": 25.0253639,
+        "longitude": 121.427533
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=8090053007451198619&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "Laifu coffee 來福咖啡//自家烘焙、咖啡豆批發、整模蛋糕4天前訂、不接待12歲以下兒童//",
+        "languageCode": "zh-TW"
+      }
+    },
+    {
+      "id": "ChIJNwnZPnSoQjQRFj4nujn01EQ",
+      "types": [
+        "coffee_shop",
+        "cafe",
+        "food_store",
+        "store",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "242新北市新莊區文聖里中興街14號",
+      "location": {
+        "latitude": 25.036313099999997,
+        "longitude": 121.44934699999999
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=4959857618415205910&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "白昼夢喫茶 Hakuchumu Kissa （原好食紀）",
+        "languageCode": "zh-TW"
+      }
+    },
+    {
+      "id": "ChIJ46deaQCpQjQRT8m3IXzCCBI",
+      "types": [
+        "coffee_shop",
+        "cafe",
+        "food_store",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "242新北市新莊區恆安里明中街1號",
+      "location": {
+        "latitude": 25.0379701,
+        "longitude": 121.4586228
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=1299502330893814095&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "就是咖啡 #不限時間#可充電#空間分租#美甲#金工",
+        "languageCode": "zh-TW"
+      }
+    },
+    {
+      "id": "ChIJAWjdEX-pQjQRmSeSOI-IDKU",
+      "types": [
+        "coffee_shop",
+        "cafe",
+        "food_store",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "242新北市新莊區榮和里中華路一段92號",
+      "location": {
+        "latitude": 25.0395161,
+        "longitude": 121.4523246
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=11893030864689440665&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "不二弄咖啡-新莊中華店",
+        "languageCode": "zh-TW"
+      }
+    },
+    {
+      "id": "ChIJLZz7PQCpQjQRqN7iaZPhREQ",
+      "types": [
+        "coffee_shop",
+        "cafe",
+        "food_store",
+        "store",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "242新北市新莊區全安里中正路347巷30號",
+      "location": {
+        "latitude": 25.0340477,
+        "longitude": 121.44700410000002
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=4919304716248342184&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "Du.studio甜點工作室",
+        "languageCode": "zh-TW"
+      }
+    },
+    {
+      "id": "ChIJc2nmbgCnQjQRSGmX84inJsM",
+      "types": [
+        "coffee_shop",
+        "cafe",
+        "food_store",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "242新北市新莊區富民里民安路23號",
+      "location": {
+        "latitude": 25.0278271,
+        "longitude": 121.4231533
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=14062111093155129672&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "欸，來喝咖啡呀！coffeetogetherrr",
+        "languageCode": "zh-TW"
+      }
+    },
+    {
+      "id": "ChIJKRmOAPkbaDQRiRx6YarYo0A",
+      "types": [
+        "dessert_shop",
+        "cake_shop",
+        "confectionery",
+        "bakery",
+        "cafe",
+        "wholesaler",
+        "manufacturer",
+        "food_store",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "242新北市新莊區後港里後港一路28巷2弄1號之1",
+      "location": {
+        "latitude": 25.025879699999997,
+        "longitude": 121.42533379999998
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=4657804665922657417&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "森茗甜點Dessert&Coffee",
+        "languageCode": "zh-TW"
+      }
+    },
+    {
+      "id": "ChIJqX7_dACpQjQRFLdo9yFJPXc",
+      "types": [
+        "coffee_shop",
+        "cafe",
+        "food_store",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "242新北市新莊區文聖里中興街5號",
+      "location": {
+        "latitude": 25.0358509,
+        "longitude": 121.44915419999998
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=8592104074326357780&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "擼貓 Whiskers and Tails Catfé",
+        "languageCode": "zh-TW"
+      }
+    }
+  ]
+}
