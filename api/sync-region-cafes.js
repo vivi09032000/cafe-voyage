@@ -26,6 +26,30 @@ const CITY_LABELS = {
   taitung: "台東",
 };
 
+const ADDRESS_CITY_TO_CITY_KEY = {
+  "台北市": "taipei",
+  "新北市": "taipei",
+  "桃園市": "taoyuan",
+  "台中市": "taichung",
+  "台南市": "tainan",
+  "高雄市": "kaohsiung",
+  "基隆市": "keelung",
+  "新竹市": "hsinchu",
+  "新竹縣": "hsinchu",
+  "苗栗縣": "miaoli",
+  "彰化縣": "changhua",
+  "南投縣": "nantou",
+  "雲林縣": "yunlin",
+  "嘉義市": "chiayi",
+  "嘉義縣": "chiayi",
+  "屏東縣": "pingtung",
+  "宜蘭縣": "yilan",
+  "花蓮縣": "hualien",
+  "台東縣": "taitung",
+};
+
+const ADDRESS_CITY_PATTERN = /(台北市|臺北市|新北市|桃園市|台中市|臺中市|台南市|臺南市|高雄市|基隆市|新竹市|新竹縣|苗栗縣|彰化縣|南投縣|雲林縣|嘉義市|嘉義縣|屏東縣|宜蘭縣|花蓮縣|台東縣|臺東縣)/;
+
 const CITY_CENTERS = {
   taipei: { latitude: 25.036, longitude: 121.45 },
   taichung: { latitude: 24.1477, longitude: 120.6736 },
@@ -113,6 +137,20 @@ function hashString(value) {
 function createSlug(cityKey, regionQuery, place) {
   const seed = place.id || `${place.displayName?.text || ""}-${place.formattedAddress || ""}`;
   return `${cityKey}-${hashString(`${regionQuery}:${seed}`)}`;
+}
+
+function getCityKeyFromAddress(address) {
+  const city = String(address || "").match(ADDRESS_CITY_PATTERN)?.[1]?.replace(/臺/g, "台") || "";
+  return ADDRESS_CITY_TO_CITY_KEY[city] || "";
+}
+
+function inferCityKeyFromPlaces(places) {
+  const counts = new Map();
+  for (const place of places) {
+    const key = getCityKeyFromAddress(place.formattedAddress);
+    if (key) counts.set(key, (counts.get(key) || 0) + 1);
+  }
+  return [...counts.entries()].sort((a, b) => b[1] - a[1])[0]?.[0] || "";
 }
 
 function serviceHeaders(extra = {}) {
@@ -314,16 +352,6 @@ export default async function handler(req, res) {
   const startedAt = new Date().toISOString();
 
   try {
-    const existingRecord = await fetchSyncRecord(cityKey, regionQuery);
-    if (existingRecord?.last_synced_at && Date.now() - new Date(existingRecord.last_synced_at).getTime() < SYNC_TTL_MS) {
-      return send(res, 200, {
-        ok: true,
-        skipped: true,
-        reason: "recently_synced",
-        lastSyncedAt: existingRecord.last_synced_at,
-      });
-    }
-
     const todaySyncCount = await fetchTodaySyncCount();
     if (todaySyncCount >= DAILY_REGION_LIMIT) {
       return send(res, 200, {
@@ -334,30 +362,44 @@ export default async function handler(req, res) {
       });
     }
 
+    const googlePlaces = await searchGooglePlaces(cityKey, regionQuery);
+    const effectiveCityKey = inferCityKeyFromPlaces(googlePlaces) || cityKey;
+
+    const existingRecord = await fetchSyncRecord(effectiveCityKey, regionQuery);
+    if (existingRecord?.last_synced_at && Date.now() - new Date(existingRecord.last_synced_at).getTime() < SYNC_TTL_MS) {
+      return send(res, 200, {
+        ok: true,
+        skipped: true,
+        reason: "recently_synced",
+        cityKey: effectiveCityKey,
+        requestedCityKey: cityKey,
+        lastSyncedAt: existingRecord.last_synced_at,
+      });
+    }
+
     await upsertSyncRecord({
       country_code: "TW",
-      city_key: cityKey,
+      city_key: effectiveCityKey,
       region_query: regionQuery,
       last_status: "running",
       last_error: "",
     });
 
-    const [cafeNomadCafes, customCafes, googlePlaces] = await Promise.all([
-      fetchCafeNomadCity(cityKey),
-      fetchCustomCafes(cityKey),
-      searchGooglePlaces(cityKey, regionQuery),
+    const [cafeNomadCafes, customCafes] = await Promise.all([
+      fetchCafeNomadCity(effectiveCityKey),
+      fetchCustomCafes(effectiveCityKey),
     ]);
     const existingCafes = [...cafeNomadCafes, ...customCafes];
     const candidatePlaces = googlePlaces
       .filter((place) => place.businessStatus !== "CLOSED_PERMANENTLY")
       .filter((place) => String(place.formattedAddress || "").includes(regionQuery))
       .filter((place) => !existingCafes.some((cafe) => isLikelySameCafe(place, cafe)));
-    const rows = candidatePlaces.map((place) => toCustomCafeRow(cityKey, regionQuery, place));
+    const rows = candidatePlaces.map((place) => toCustomCafeRow(effectiveCityKey, regionQuery, place));
 
     await upsertCustomCafes(rows);
     await upsertSyncRecord({
       country_code: "TW",
-      city_key: cityKey,
+      city_key: effectiveCityKey,
       region_query: regionQuery,
       last_synced_at: startedAt,
       last_status: "ok",
@@ -369,7 +411,8 @@ export default async function handler(req, res) {
     return send(res, 200, {
       ok: true,
       skipped: false,
-      cityKey,
+      cityKey: effectiveCityKey,
+      requestedCityKey: cityKey,
       regionQuery,
       placesChecked: googlePlaces.length,
       newCafesInserted: rows.length,
