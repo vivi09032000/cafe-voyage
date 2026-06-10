@@ -2202,6 +2202,11 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
     }
   }, [region]);
 
+  const searchMatches = useMemo(() => {
+    if (!mapQuery) return [];
+    return allMapCafes.filter(c => c.name.includes(mapQuery) || c.address.includes(mapQuery) || (c.mrt && c.mrt.includes(mapQuery)));
+  }, [allMapCafes, mapQuery]);
+
   useEffect(() => {
     const syncQuery = extractRegionSyncQuery(mapQuery) || extractDistrictFromAddress(searchMatches[0]?.address || "");
     const syncCityKey = region && region !== REGION_PROMPT_KEY ? region : getCafeRegionGroupKey(searchMatches[0] || {}) || "taipei";
@@ -2329,11 +2334,6 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
       setSearchPopupCafeId(null);
     }
   }, [mapQuery]);
-
-  const searchMatches = useMemo(() => {
-    if (!mapQuery) return [];
-    return allMapCafes.filter(c => c.name.includes(mapQuery) || c.address.includes(mapQuery) || (c.mrt && c.mrt.includes(mapQuery)));
-  }, [allMapCafes, mapQuery]);
 
   // Geocode fallback: when no cafe matches, query Nominatim
   useEffect(() => {
