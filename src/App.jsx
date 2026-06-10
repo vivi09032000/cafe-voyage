@@ -622,6 +622,20 @@ const getCafeDedupeKey = (cafe) => {
   if (name && address) return `name-address:${name}:${address}`;
   return `id:${cafe.id || `${name}:${address}`}`;
 };
+const simplifyCafeDedupeName = (value = "") => normalizeCafeDedupeText(value)
+  .replace(/咖啡館|咖啡店|咖啡|珈琲|cafe|coffee|coffeebar|coffeeroasters?|roastery|roaster|espresso|甜點|早午餐|brunch|bakery/gi, "");
+const normalizeCafeDedupeAddress = (value = "") => normalizeCafeDedupeText(value).replace(/^\d{3,5}/, "");
+const hasSimilarCafeDedupeName = (a, b) => {
+  const aa = simplifyCafeDedupeName(a);
+  const bb = simplifyCafeDedupeName(b);
+  return Boolean(aa && bb && (aa === bb || aa.includes(bb) || bb.includes(aa)));
+};
+const isDuplicateCafeDisplay = (a, b) => {
+  if (a.google_place_id && b.google_place_id && a.google_place_id === b.google_place_id) return true;
+  const aa = normalizeCafeDedupeAddress(a.address);
+  const bb = normalizeCafeDedupeAddress(b.address);
+  return Boolean(aa && bb && aa === bb && hasSimilarCafeDedupeName(a.name, b.name));
+};
 
 const getCafeCountryKey = (cafe) => {
   if (cafe.city === "hoi_an_vn" || /Vietnam|Việt Nam|Hội An|Hoi An/.test(cafe.address || "")) return "vietnam";
@@ -2873,7 +2887,7 @@ export default function App() {
       const merged = [];
       data.forEach((cafe) => {
         const dedupeKey = getCafeDedupeKey(cafe);
-        if (seen.has(dedupeKey)) return;
+        if (seen.has(dedupeKey) || merged.some((existingCafe) => isDuplicateCafeDisplay(existingCafe, cafe))) return;
         seen.add(dedupeKey);
         merged.push(cafe);
       });

@@ -168,6 +168,48 @@ function applyCafeOverrides(cafes, overrideMap) {
     .map(({ _sortPenalty, _sortIndex, ...cafe }) => cafe);
 }
 
+function normalizeText(value) {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/臺/g, "台")
+    .replace(/[()（）［］【】「」『』'"`~!@#$%^&*+=:;,.?/\\|<>_\-\s•・．。]/g, "");
+}
+
+function simplifyCafeName(value) {
+  return normalizeText(value)
+    .replace(/咖啡館|咖啡店|咖啡|珈琲|cafe|coffee|coffeebar|coffeeroasters?|roastery|roaster|espresso|甜點|早午餐|brunch|bakery/gi, "");
+}
+
+function normalizeAddress(value) {
+  return String(value || "")
+    .replace(/臺/g, "台")
+    .replace(/\s+/g, "")
+    .replace(/^\d{3,5}/, "")
+    .replace(/[()（）［］【】「」『』'"`~!@#$%^&*+=:;,.?/\\|<>_\-•・．。]/g, "");
+}
+
+function hasSimilarName(a, b) {
+  const aa = simplifyCafeName(a);
+  const bb = simplifyCafeName(b);
+  if (!aa || !bb) return false;
+  return aa === bb || aa.includes(bb) || bb.includes(aa);
+}
+
+function isDuplicateCafe(source, candidate) {
+  if (source.google_place_id && candidate.google_place_id && source.google_place_id === candidate.google_place_id) {
+    return true;
+  }
+  const sourceAddress = normalizeAddress(source.address);
+  const candidateAddress = normalizeAddress(candidate.address);
+  if (!sourceAddress || !candidateAddress || sourceAddress !== candidateAddress) return false;
+  return hasSimilarName(source.name, candidate.name);
+}
+
+function filterDuplicateCustomCafes(sourceCafes, customCafes) {
+  if (!customCafes.length || !sourceCafes.length) return customCafes;
+  return customCafes.filter((customCafe) => !sourceCafes.some((sourceCafe) => isDuplicateCafe(sourceCafe, customCafe)));
+}
+
 async function fetchCustomCafes({ cityKey, countryCode } = {}) {
   const url = new URL(`${SUPABASE_URL}/rest/v1/custom_cafes`);
   url.searchParams.set("select", "id,slug,name,city,wifi,seat,quiet,tasty,cheap,music,url,address,latitude,longitude,limited_time,socket,standing_desk,mrt,open_time,country_code,country_name,city_key,city_label,google_place_id");
@@ -264,8 +306,9 @@ export default async function handler(req, res) {
       cityKey: normalizedCity || undefined,
       countryCode: "TW",
     });
-    if (customCafes.length > 0) {
-      data = [...data, ...customCafes];
+    const uniqueCustomCafes = filterDuplicateCustomCafes(data, customCafes);
+    if (uniqueCustomCafes.length > 0) {
+      data = [...data, ...uniqueCustomCafes];
     }
   } catch (error) {
     console.error(error);
