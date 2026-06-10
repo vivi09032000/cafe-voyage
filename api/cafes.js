@@ -2,6 +2,7 @@ import { readFile } from "node:fs/promises";
 
 const SUPABASE_URL = "https://dmymcnmsyhppwstpwmal.supabase.co";
 const SUPABASE_KEY = "sb_publishable_2mlstxr8qtRrybaIyBIB8Q_oS_Im60Q";
+const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || "";
 const CUSTOM_CITY_ALIASES = {
   "hoi-an-vn": "hoi_an",
   "hoi_an_vn": "hoi_an",
@@ -15,6 +16,15 @@ async function readHoiAnFallback() {
 }
 
 let taipeiReviewCache = null;
+
+const SCORE_KEYS = ["wifi", "seat", "quiet", "tasty", "cheap", "music"];
+const supabaseReadHeaders = () => {
+  const key = SUPABASE_SERVICE_ROLE_KEY || SUPABASE_KEY;
+  return {
+    apikey: key,
+    Authorization: `Bearer ${key}`,
+  };
+};
 
 async function readTaipeiClosureReview() {
   if (taipeiReviewCache) return taipeiReviewCache;
@@ -230,7 +240,7 @@ function filterDuplicateCustomCafes(sourceCafes, customCafes) {
 
 async function fetchCustomCafes({ cityKey, countryCode } = {}) {
   const url = new URL(`${SUPABASE_URL}/rest/v1/custom_cafes`);
-  url.searchParams.set("select", "id,slug,name,city,wifi,seat,quiet,tasty,cheap,music,url,address,latitude,longitude,limited_time,socket,standing_desk,mrt,open_time,country_code,country_name,city_key,city_label,google_place_id");
+  url.searchParams.set("select", "id,slug,name,city,wifi,seat,quiet,tasty,cheap,music,url,address,latitude,longitude,limited_time,socket,standing_desk,mrt,open_time,country_code,country_name,city_key,city_label,google_place_id,source");
   url.searchParams.set("is_published", "eq.true");
   if (cityKey) {
     url.searchParams.set("city_key", `eq.${cityKey}`);
@@ -272,7 +282,73 @@ async function fetchCustomCafes({ cityKey, countryCode } = {}) {
     city_key: row.city_key || "",
     city_label: row.city_label || "",
     google_place_id: row.google_place_id || "",
+    source: row.source || "",
   }));
+}
+
+async function fetchCafeScoreAverages() {
+  const url = new URL(`${SUPABASE_URL}/rest/v1/cafe_score_reports`);
+  url.searchParams.set("select", "cafe_id,wifi,seat,quiet,tasty,cheap,music");
+  const response = await fetch(url, { headers: supabaseReadHeaders() });
+  if (!response.ok) throw new Error(`cafe_score_reports request failed: ${response.status}`);
+  const rows = await response.json();
+  const totals = new Map();
+
+  for (const row of rows) {
+    const cafeId = row.cafe_id;
+    if (!cafeId) continue;
+    const current = totals.get(cafeId) || {
+      count: 0,
+      wifi: 0,
+      seat: 0,
+      quiet: 0,
+      tasty: 0,
+      cheap: 0,
+      music: 0,
+    };
+    current.count += 1;
+    for (const key of SCORE_KEYS) {
+      current[key] += Number(row[key] || 0);
+    }
+    totals.set(cafeId, current);
+  }
+
+  const averages = new Map();
+  for (const [cafeId, total] of totals.entries()) {
+    const average = { count: total.count };
+    for (const key of SCORE_KEYS) {
+      average[key] = Math.round((total[key] / total.count) * 10) / 10;
+    }
+    averages.set(cafeId, average);
+  }
+  return averages;
+}
+
+function applyCafeScoreAverages(cafes, scoreMap) {
+  if (!scoreMap || scoreMap.size === 0) return cafes;
+  return cafes.map((cafe) => {
+    const average = scoreMap.get(String(cafe.id));
+    if (!average) return cafe;
+    return {
+      ...cafe,
+      wifi: average.wifi,
+      seat: average.seat,
+      quiet: average.quiet,
+      tasty: average.tasty,
+      cheap: average.cheap,
+      music: average.music,
+      score_report_count: average.count,
+    };
+  });
+}
+
+async function applyScoreReports(cafes) {
+  try {
+    return applyCafeScoreAverages(cafes, await fetchCafeScoreAverages());
+  } catch (error) {
+    console.error(error);
+    return cafes;
+  }
 }
 
 export default async function handler(req, res) {
@@ -289,6 +365,7 @@ export default async function handler(req, res) {
     if (!Array.isArray(data) || data.length === 0) {
       data = await readHoiAnFallback();
     }
+    data = await applyScoreReports(data);
     res.setHeader("Access-Control-Allow-Origin", "*");
     return res.json(data);
   }
@@ -331,6 +408,7 @@ export default async function handler(req, res) {
   } catch (error) {
     console.error(error);
   }
+  data = await applyScoreReports(data);
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.json(data);
 }

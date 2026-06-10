@@ -53,6 +53,22 @@ async function submitCrowdReport(cafeId, status) {
   });
 }
 
+async function submitCafeScoreReport(cafe, scores) {
+  const response = await fetch("/api/cafe-score-reports", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      cafe_id: cafe.id,
+      cafe_name: cafe.name,
+      cafe_source: cafe.source || "",
+      ...scores,
+    }),
+  });
+  const result = await response.json();
+  if (!result?.ok) throw new Error(result?.error || "score_report_failed");
+  return result;
+}
+
 const fetchUserFavoriteIds = async () => {
   const { data, error } = await supabase
     .from("user_favorites")
@@ -396,6 +412,14 @@ const COPY = {
       update: "更新狀態",
       current: "現在狀況",
     },
+    scoreReport: {
+      title: "幫這家補上環境評分",
+      hint: "這是新補進來的店，還沒有足夠分數。",
+      submit: "送出評分",
+      submitting: "送出中...",
+      thanks: "已收到，會用來更新平均分數。",
+      failed: "送出失敗，請稍後再試。",
+    },
     detail: {
       back: "返回上一頁",
       openStoreLink: "開啟店家連結",
@@ -561,6 +585,14 @@ const COPY = {
       thanks: "Thanks, got it!",
       update: "Update",
       current: "Current status",
+    },
+    scoreReport: {
+      title: "Add cafe scores",
+      hint: "This new cafe does not have enough scores yet.",
+      submit: "Submit scores",
+      submitting: "Submitting...",
+      thanks: "Thanks. This will update the average scores.",
+      failed: "Couldn't submit scores. Please try again.",
     },
     detail: {
       back: "Back",
@@ -2675,8 +2707,109 @@ const CrowdReport = ({ cafeId, onReport, lang }) => {
   );
 };
 
+const DEFAULT_SCORE_REPORT = {
+  wifi: 3,
+  quiet: 3,
+  tasty: 3,
+  seat: 3,
+  cheap: 3,
+  music: 3,
+};
+
+const CafeScoreReport = ({ cafe, onSubmitted, lang }) => {
+  const [scores, setScores] = useState(DEFAULT_SCORE_REPORT);
+  const [busy, setBusy] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+  const scoreItems = [
+    ["wifi", getCopy(lang, "detail.wifi"), getCopy(lang, "detail.stable")],
+    ["quiet", getCopy(lang, "detail.quiet"), getCopy(lang, "detail.level")],
+    ["tasty", getCopy(lang, "detail.coffee"), getCopy(lang, "detail.tasty")],
+    ["seat", getCopy(lang, "detail.seat"), getCopy(lang, "detail.seatsAvailable")],
+    ["cheap", getCopy(lang, "detail.price"), getCopy(lang, "detail.cheap")],
+    ["music", getCopy(lang, "detail.vibe"), getCopy(lang, "detail.music")],
+  ];
+
+  useEffect(() => {
+    setScores(DEFAULT_SCORE_REPORT);
+    setBusy(false);
+    setSubmitted(false);
+    setError("");
+  }, [cafe.id]);
+
+  const updateScore = (key, value) => {
+    setScores((current) => ({ ...current, [key]: Number(value) }));
+  };
+
+  const handleSubmit = async () => {
+    if (busy) return;
+    setBusy(true);
+    setError("");
+    try {
+      await submitCafeScoreReport(cafe, scores);
+      setSubmitted(true);
+      onSubmitted?.(cafe.id, scores);
+    } catch (submitError) {
+      setError(submitError.message || getCopy(lang, "scoreReport.failed"));
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  return (
+    <div style={{ background: UI.paper, borderRadius: 16, border: `1px solid ${UI.line}`, padding: SPACE.pageX, marginBottom: SPACE.pageX, boxShadow: UI.shadow }}>
+      <div style={{ ...TYPE.sectionTitle, marginBottom: 4, color: T.text }}>{getCopy(lang, "scoreReport.title")}</div>
+      <div style={{ ...TYPE.caption, color: T.sub, marginBottom: SPACE.cardGap }}>{getCopy(lang, "scoreReport.hint")}</div>
+      <div style={{ display: "grid", gap: 10, marginBottom: SPACE.cardGap }}>
+        {scoreItems.map(([key, label, subLabel]) => (
+          <label key={key} style={{ display: "grid", gridTemplateColumns: "80px 1fr 34px", gap: 10, alignItems: "center" }}>
+            <span style={{ minWidth: 0 }}>
+              <span style={{ ...TYPE.control, display: "block", color: T.text }}>{label}</span>
+              <span style={{ ...TYPE.caption, display: "block", color: T.sub, marginTop: 2 }}>{subLabel}</span>
+            </span>
+            <input
+              type="range"
+              min="1"
+              max="5"
+              step="0.5"
+              value={scores[key]}
+              onChange={(event) => updateScore(key, event.target.value)}
+              style={{ width: "100%", accentColor: T.brown }}
+            />
+            <span style={{ ...TYPE.control, color: T.text, textAlign: "right", fontVariantNumeric: "tabular-nums" }}>{scores[key].toFixed(1)}</span>
+          </label>
+        ))}
+      </div>
+      {submitted ? (
+        <div className="success-pop" style={{ ...TYPE.body, color: T.green }}><InlineIcon name="checkCircle" size={14} color={T.green} /> {getCopy(lang, "scoreReport.thanks")}</div>
+      ) : (
+        <button
+          type="button"
+          className="soft-press"
+          onClick={handleSubmit}
+          disabled={busy}
+          style={{
+            width: "100%",
+            background: T.brown,
+            color: UI.onDark,
+            border: "none",
+            borderRadius: 12,
+            padding: "11px 12px",
+            cursor: busy ? "default" : "pointer",
+            fontFamily: "inherit",
+            ...TYPE.control,
+          }}
+        >
+          {busy ? getCopy(lang, "scoreReport.submitting") : getCopy(lang, "scoreReport.submit")}
+        </button>
+      )}
+      {error && <div style={{ ...TYPE.caption, color: UI.danger, marginTop: 8 }}>{getCopy(lang, "scoreReport.failed")}</div>}
+    </div>
+  );
+};
+
 // ── Page: Detail ──
-const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilterTag, canManageCafe, onHideCafe, lang }) => {
+const DetailPage = ({ cafe, onBack, fav, onFav, onReport, onScoreReport, emptyCafeIds, onFilterTag, canManageCafe, onHideCafe, lang }) => {
   const touchStartX = useRef(0);
   const touchStartY = useRef(0);
   const swipeActive = useRef(false);
@@ -2736,6 +2869,8 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
     if (!onFilterTag) return undefined;
     return () => onFilterTag(filterKey, cafe);
   };
+  const hasScores = Number(cafe.wifi || 0) > 0;
+  const canReportScores = !hasScores || cafe.source === "google_places_demo";
 
   return (
     <div
@@ -2788,7 +2923,7 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
 
         <CrowdReport cafeId={cafe.id} onReport={onReport} lang={lang} />
 
-        {cafe.wifi > 0 && (
+        {hasScores && (
           <div style={{ background: UI.paper, borderRadius: 16, border: `1px solid ${UI.line}`, padding: SPACE.pageX, marginBottom: SPACE.pageX, boxShadow: UI.shadow }}>
             <div style={{ ...TYPE.sectionTitle, marginBottom: SPACE.cardGap, color: T.text }}>{getCopy(lang, "detail.scores")}</div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: SPACE.chipGap + 1 }}>
@@ -2829,6 +2964,7 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, emptyCafeIds, onFilter
             </div>
           </div>
         )}
+        {canReportScores && <CafeScoreReport cafe={cafe} onSubmitted={onScoreReport} lang={lang} />}
 
         {cafe.address && (
           <a
@@ -3338,6 +3474,26 @@ export default function App() {
     }
   };
 
+  const handleScoreReport = useCallback((cafeId, scores) => {
+    const scorePatch = {
+      ...scores,
+      score_report_count: 1,
+    };
+    setAllCafes((cafes) => cafes.map((cafe) => (
+      String(cafe.id) === String(cafeId)
+        ? { ...cafe, ...scorePatch }
+        : cafe
+    )));
+    setSelected((current) => (
+      current && String(current.id) === String(cafeId)
+        ? { ...current, ...scorePatch }
+        : current
+    ));
+    try {
+      localStorage.removeItem(MAP_CACHE_KEY);
+    } catch {}
+  }, []);
+
   const handleDetailTagFilter = useCallback((filterKey, cafe) => {
     if (!filterKey || !cafe) return;
     const cafeCountry = getCafeCountryKey(cafe);
@@ -3351,7 +3507,7 @@ export default function App() {
   }, []);
 
   const renderPage = () => {
-    if (selected) return <DetailPage cafe={selected} onBack={() => setSelected(null)} fav={favoriteLookup.has(selected.id)} onFav={toggleFav} onReport={handleReportAndUpdateMap} emptyCafeIds={emptyCafeIds} onFilterTag={handleDetailTagFilter} canManageCafe={isAdminUser} onHideCafe={handleHideCafe} lang={lang} />;
+    if (selected) return <DetailPage cafe={selected} onBack={() => setSelected(null)} fav={favoriteLookup.has(selected.id)} onFav={toggleFav} onReport={handleReportAndUpdateMap} onScoreReport={handleScoreReport} emptyCafeIds={emptyCafeIds} onFilterTag={handleDetailTagFilter} canManageCafe={isAdminUser} onHideCafe={handleHideCafe} lang={lang} />;
     switch (tab) {
       case "search": return <SearchPage cafes={exploreCafes} loading={loading} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} emptyCafeIds={emptyCafeIds} filters={homeFilters} setFilters={setHomeFilters} lang={lang} region={region} searchQuery={searchQuery} setSearchQuery={setSearchQuery} onRelocate={() => requestGpsRegion(true)} onRegionSync={triggerRegionCafeSync} />;
       case "map": return <MapPage cafes={countryScopedCafes} region={region} onSelect={setSelected} mapView={mapView} setMapView={setMapView} mapQuery={mapQuery} setMapQuery={setMapQuery} loading={loading} lang={lang} onVisibleCafeCountChange={setMapVisibleCafeCount} onRegionSync={triggerRegionCafeSync} />;
