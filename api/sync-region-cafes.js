@@ -6,6 +6,7 @@ const GOOGLE_PLACES_API_KEY = process.env.GOOGLE_PLACES_API_KEY || "";
 const SYNC_TTL_MS = 1000 * 60 * 60 * 24 * 7;
 const DAILY_REGION_LIMIT = 20;
 const MAX_RESULTS = 20;
+const ADDRESS_CITY_PATTERN = /(台北市|新北市|桃園市|台中市|臺中市|台南市|臺南市|高雄市|基隆市|新竹市|新竹縣|苗栗縣|彰化縣|南投縣|雲林縣|嘉義市|嘉義縣|屏東縣|宜蘭縣|花蓮縣|台東縣|臺東縣)/;
 
 const CITY_LABELS = {
   taipei: "台北",
@@ -241,10 +242,12 @@ async function searchGooglePlaces(cityKey, regionQuery) {
 function toCustomCafeRow(cityKey, regionQuery, place) {
   const name = place.displayName?.text || "";
   const mapsUrl = place.googleMapsUri || "";
+  const address = place.formattedAddress || "";
+  const actualCity = address.match(ADDRESS_CITY_PATTERN)?.[1]?.replace(/臺/g, "台") || cityKey;
   return {
     slug: createSlug(cityKey, regionQuery, place),
     name,
-    city: cityKey,
+    city: actualCity,
     country_code: "TW",
     country_name: "Taiwan",
     city_key: cityKey,
@@ -256,7 +259,7 @@ function toCustomCafeRow(cityKey, regionQuery, place) {
     cheap: 0,
     music: 0,
     url: mapsUrl,
-    address: place.formattedAddress || "",
+    address,
     latitude: place.location?.latitude ?? null,
     longitude: place.location?.longitude ?? null,
     limited_time: "",
