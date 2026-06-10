@@ -14,15 +14,18 @@ export function useTranslation(cafes, lang) {
   const [translatedCafes, setTranslatedCafes] = useState(cafes);
   const [isTranslating, setIsTranslating] = useState(false);
   const currentBatchRef = useRef("");
+  const cafeSignature = cafes?.map(c => c.id).join(",") || "";
 
   useEffect(() => {
     if (!cafes || cafes.length === 0) {
       setTranslatedCafes(cafes);
+      setIsTranslating(false);
       return;
     }
 
     if (lang !== "en") {
       setTranslatedCafes(cafes);
+      setIsTranslating(false);
       return;
     }
 
@@ -97,7 +100,7 @@ export function useTranslation(cafes, lang) {
     };
 
     translateBatch();
-  }, [cafes, lang]);
+  }, [cafeSignature, lang]);
 
   return { translatedCafes, isTranslating };
 }

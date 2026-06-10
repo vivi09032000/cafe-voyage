@@ -1365,6 +1365,7 @@ const BottomNav = ({ active, onChange, lang }) => (
         return (
           <button
             key={key}
+            type="button"
             className="soft-press nav-item"
             aria-label={label}
             onClick={() => onChange(key)}
@@ -1383,6 +1384,7 @@ const BottomNav = ({ active, onChange, lang }) => (
               minHeight: 48,
               fontFamily: "inherit",
               transition: "background 160ms ease, color 160ms ease",
+              touchAction: "manipulation",
             }}
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill={heart && on ? c : "none"} stroke={c} strokeWidth="2" strokeLinecap="round">
@@ -2052,7 +2054,7 @@ const MapPage = ({ cafes, loading, onSelect, mapView, setMapView, mapQuery, setM
   const mapLocateTimerRef = useRef(null);
   const allMapCafes = useMemo(() => cafes.filter(isOpen).filter(c => c.latitude && c.longitude), [cafes]);
   const visibleMapCafes = useMemo(() => {
-    if (!visibleBounds) return allMapCafes;
+    if (!visibleBounds) return [];
     return allMapCafes.filter((cafe) => {
       const lat = parseFloat(cafe.latitude);
       const lng = parseFloat(cafe.longitude);
