@@ -177,7 +177,7 @@ const REGION_STORAGE_KEY = "cafe-voyage:region";
 const COUNTRY_STORAGE_KEY = "cafe-voyage:country";
 const LANGUAGE_STORAGE_KEY = "cafe-voyage:lang";
 const FAVORITES_MIGRATION_KEY = "cafe-voyage:favs-cloud-migrated";
-const MAP_CACHE_KEY = "cafe-voyage:map-cafes:v2";
+const MAP_CACHE_KEY = "cafe-voyage:map-cafes:v3";
 const MAP_CACHE_TTL = 1000 * 60 * 60 * 12;
 const SEARCH_INPUT_STYLE = {
   width: "100%",
