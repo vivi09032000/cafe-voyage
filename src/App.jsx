@@ -878,8 +878,9 @@ const DEFAULT_HOME_FILTERS = {
   cheap: false,
   music: false,
   empty: false,
-  excludeTempClosed: false,
+  excludeTempClosed: true,
 };
+const VISIBLE_HOME_FILTER_KEYS = ["noLimit", "socket", "standing", "wifi", "quiet", "tasty", "cheap", "music", "empty"];
 const FILTER_PRESET_DEFS = [
   {
     key: "focus",
@@ -967,7 +968,6 @@ const FilterSection = ({ filters, toggle, lang }) => (
         title: getCopy(lang, "filters.sections.live"),
         items: [
           { key: "empty", label: getCopy(lang, "filters.empty"), icon: "status" },
-          { key: "excludeTempClosed", label: getCopy(lang, "filters.excludeTempClosed"), icon: "pause" },
         ],
       },
     ].map((section, index) => (
@@ -1688,8 +1688,9 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav, emptyCafeIds, filte
     attemptLocate({ enableHighAccuracy: false, timeout: 12000, maximumAge: 300000 });
   }, [lang]);
 
-  const activeFilterCount = Object.values(filters).filter(Boolean).length;
-  const activeFilterLabels = Object.entries(filters).filter(([, value]) => value).map(([key]) => filterLabels[key]);
+  const activeFilterEntries = VISIBLE_HOME_FILTER_KEYS.filter((key) => filters[key]).map((key) => [key, filterLabels[key]]);
+  const activeFilterCount = activeFilterEntries.length;
+  const activeFilterLabels = activeFilterEntries.map(([, label]) => label);
 
   const allSorted = cafes
     .filter(isOpen)
