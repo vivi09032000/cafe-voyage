@@ -49,6 +49,49 @@ const ADDRESS_CITY_TO_CITY_KEY = {
 };
 
 const ADDRESS_CITY_PATTERN = /(台北市|臺北市|新北市|桃園市|台中市|臺中市|台南市|臺南市|高雄市|基隆市|新竹市|新竹縣|苗栗縣|彰化縣|南投縣|雲林縣|嘉義市|嘉義縣|屏東縣|宜蘭縣|花蓮縣|台東縣|臺東縣)/;
+const REGION_QUERY_ALIASES = {
+  中正: "中正區",
+  大同: "大同區",
+  中山: "中山區",
+  松山: "松山區",
+  大安: "大安區",
+  萬華: "萬華區",
+  信義: "信義區",
+  士林: "士林區",
+  北投: "北投區",
+  內湖: "內湖區",
+  南港: "南港區",
+  文山: "文山區",
+  板橋: "板橋區",
+  三重: "三重區",
+  中和: "中和區",
+  永和: "永和區",
+  新莊: "新莊區",
+  新店: "新店區",
+  土城: "土城區",
+  蘆洲: "蘆洲區",
+  汐止: "汐止區",
+  樹林: "樹林區",
+  淡水: "淡水區",
+  三峽: "三峽區",
+  林口: "林口區",
+  五股: "五股區",
+  泰山: "泰山區",
+  瑞芳: "瑞芳區",
+  鶯歌: "鶯歌區",
+  深坑: "深坑區",
+  八里: "八里區",
+  金山: "金山區",
+  萬里: "萬里區",
+  三芝: "三芝區",
+  石門: "石門區",
+  坪林: "坪林區",
+  平溪: "平溪區",
+  雙溪: "雙溪區",
+  貢寮: "貢寮區",
+  石碇: "石碇區",
+  烏來: "烏來區",
+};
 
 const CITY_CENTERS = {
   taipei: { latitude: 25.036, longitude: 121.45 },
@@ -80,6 +123,13 @@ function sanitizeRegion(value) {
     .trim()
     .replace(/[^\p{Script=Han}a-zA-Z0-9\s-]/gu, "")
     .slice(0, 24);
+}
+
+function normalizeRegionQuery(value) {
+  const region = sanitizeRegion(value);
+  if (/(區|鄉|鎮|市)$/.test(region)) return region;
+  const compact = region.replace(/\s+/g, "").replace(/臺/g, "台");
+  return REGION_QUERY_ALIASES[compact] || region;
 }
 
 function normalize(value) {
@@ -348,7 +398,7 @@ export default async function handler(req, res) {
   }
 
   const cityKey = String(req.query.city || "taipei").toLowerCase();
-  const regionQuery = sanitizeRegion(req.query.region || "");
+  const regionQuery = normalizeRegionQuery(req.query.region || "");
 
   if (!CITY_LABELS[cityKey]) {
     return send(res, 400, { ok: false, skipped: true, reason: "unsupported_city" });

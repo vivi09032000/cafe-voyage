@@ -195,6 +195,49 @@ const SEARCH_INPUT_STYLE = {
 const REGION_PATTERN = /(台北市|新北市|桃園市|台中市|臺中市|台南市|臺南市|高雄市|基隆市|新竹市|新竹縣|苗栗縣|彰化縣|南投縣|雲林縣|嘉義市|嘉義縣|屏東縣|宜蘭縣|花蓮縣|台東縣|臺東縣)/;
 const REGION_SYNC_QUERY_PATTERN = /([\u3400-\u9fff]{1,4}(?:區|鄉|鎮|市))/u;
 const DISTRICT_PATTERN = /([\u3400-\u9fff]{1,4}(?:區|鄉|鎮|市))/u;
+const REGION_SYNC_ALIASES = {
+  中正: "中正區",
+  大同: "大同區",
+  中山: "中山區",
+  松山: "松山區",
+  大安: "大安區",
+  萬華: "萬華區",
+  信義: "信義區",
+  士林: "士林區",
+  北投: "北投區",
+  內湖: "內湖區",
+  南港: "南港區",
+  文山: "文山區",
+  板橋: "板橋區",
+  三重: "三重區",
+  中和: "中和區",
+  永和: "永和區",
+  新莊: "新莊區",
+  新店: "新店區",
+  土城: "土城區",
+  蘆洲: "蘆洲區",
+  汐止: "汐止區",
+  樹林: "樹林區",
+  淡水: "淡水區",
+  三峽: "三峽區",
+  林口: "林口區",
+  五股: "五股區",
+  泰山: "泰山區",
+  瑞芳: "瑞芳區",
+  鶯歌: "鶯歌區",
+  深坑: "深坑區",
+  八里: "八里區",
+  金山: "金山區",
+  萬里: "萬里區",
+  三芝: "三芝區",
+  石門: "石門區",
+  坪林: "坪林區",
+  平溪: "平溪區",
+  雙溪: "雙溪區",
+  貢寮: "貢寮區",
+  石碇: "石碇區",
+  烏來: "烏來區",
+};
 const LANGUAGE_OPTIONS = [
   { key: "zh", label: "中文" },
   { key: "en", label: "English" },
@@ -609,7 +652,15 @@ const normalizeRegionLabel = (label = "") => label
 
 const findRegionGroup = (regionLabel = "") =>
   REGION_GROUPS.find((group) => group.members.includes(regionLabel)) || null;
-const extractRegionSyncQuery = (value = "") => value.match(REGION_SYNC_QUERY_PATTERN)?.[1] || "";
+const extractRegionSyncQuery = (value = "") => {
+  const directMatch = value.match(REGION_SYNC_QUERY_PATTERN)?.[1];
+  if (directMatch) return directMatch;
+  const compact = String(value || "").replace(/\s+/g, "").replace(/臺/g, "台");
+  const alias = Object.keys(REGION_SYNC_ALIASES)
+    .sort((a, b) => b.length - a.length)
+    .find((key) => compact.includes(key));
+  return alias ? REGION_SYNC_ALIASES[alias] : "";
+};
 const extractDistrictFromAddress = (value = "") => value.match(DISTRICT_PATTERN)?.[1] || "";
 const normalizeCafeDedupeText = (value = "") => String(value)
   .toLowerCase()
