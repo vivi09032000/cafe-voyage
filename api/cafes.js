@@ -189,7 +189,7 @@ function normalizeAddress(value) {
 }
 
 function extractRoadName(address) {
-  return normalizeAddress(address).match(/([\u3400-\u9fff]{1,12}(?:大道|路|街))/)?.[1] || "";
+  return normalizeAddress(address).match(/([^市縣區鄉鎮里村]{1,8}(?:大道|路|街))/)?.[1] || "";
 }
 
 function extractDoorToken(address) {

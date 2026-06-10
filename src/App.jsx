@@ -625,7 +625,7 @@ const getCafeDedupeKey = (cafe) => {
 const simplifyCafeDedupeName = (value = "") => normalizeCafeDedupeText(value)
   .replace(/咖啡館|咖啡店|咖啡|珈琲|cafe|coffee|coffeebar|coffeeroasters?|roastery|roaster|espresso|甜點|早午餐|brunch|bakery/gi, "");
 const normalizeCafeDedupeAddress = (value = "") => normalizeCafeDedupeText(value).replace(/^\d{3,5}/, "");
-const extractCafeRoadName = (value = "") => normalizeCafeDedupeAddress(value).match(/([\u3400-\u9fff]{1,12}(?:大道|路|街))/)?.[1] || "";
+const extractCafeRoadName = (value = "") => normalizeCafeDedupeAddress(value).match(/([^市縣區鄉鎮里村]{1,8}(?:大道|路|街))/)?.[1] || "";
 const extractCafeDoorToken = (value = "") => normalizeCafeDedupeAddress(value).match(/\d+(?:-\d+)?號/)?.[0] || "";
 const hasSimilarCafeDedupeAddress = (a, b) => {
   const aa = normalizeCafeDedupeAddress(a);
