@@ -170,7 +170,7 @@ function applyCafeOverrides(cafes, overrideMap) {
 
 async function fetchCustomCafes({ cityKey, countryCode } = {}) {
   const url = new URL(`${SUPABASE_URL}/rest/v1/custom_cafes`);
-  url.searchParams.set("select", "id,slug,name,city,wifi,seat,quiet,tasty,cheap,music,url,address,latitude,longitude,limited_time,socket,standing_desk,mrt,open_time,country_code,country_name,city_key,city_label");
+  url.searchParams.set("select", "id,slug,name,city,wifi,seat,quiet,tasty,cheap,music,url,address,latitude,longitude,limited_time,socket,standing_desk,mrt,open_time,country_code,country_name,city_key,city_label,google_place_id");
   url.searchParams.set("is_published", "eq.true");
   if (cityKey) {
     url.searchParams.set("city_key", `eq.${cityKey}`);
@@ -211,6 +211,7 @@ async function fetchCustomCafes({ cityKey, countryCode } = {}) {
     country_name: row.country_name || "",
     city_key: row.city_key || "",
     city_label: row.city_label || "",
+    google_place_id: row.google_place_id || "",
   }));
 }
 

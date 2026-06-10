@@ -609,6 +609,19 @@ const normalizeRegionLabel = (label = "") => label
 const findRegionGroup = (regionLabel = "") =>
   REGION_GROUPS.find((group) => group.members.includes(regionLabel)) || null;
 const extractRegionSyncQuery = (value = "") => value.match(REGION_SYNC_QUERY_PATTERN)?.[1] || "";
+const normalizeCafeDedupeText = (value = "") => String(value)
+  .toLowerCase()
+  .replace(/臺/g, "台")
+  .replace(/\s+/g, "")
+  .replace(/[()（）［］【】「」『』'"`~!@#$%^&*+=:;,.?/\\|<>_\-]/g, "");
+
+const getCafeDedupeKey = (cafe) => {
+  if (cafe.google_place_id) return `place:${cafe.google_place_id}`;
+  const name = normalizeCafeDedupeText(cafe.name);
+  const address = normalizeCafeDedupeText(cafe.address).replace(/^\d{3,5}/, "");
+  if (name && address) return `name-address:${name}:${address}`;
+  return `id:${cafe.id || `${name}:${address}`}`;
+};
 
 const getCafeCountryKey = (cafe) => {
   if (cafe.city === "hoi_an_vn" || /Vietnam|Việt Nam|Hội An|Hoi An/.test(cafe.address || "")) return "vietnam";
@@ -2859,7 +2872,7 @@ export default function App() {
       const seen = new Set();
       const merged = [];
       data.forEach((cafe) => {
-        const dedupeKey = cafe.id || `${cafe.name}-${cafe.address}`;
+        const dedupeKey = getCafeDedupeKey(cafe);
         if (seen.has(dedupeKey)) return;
         seen.add(dedupeKey);
         merged.push(cafe);

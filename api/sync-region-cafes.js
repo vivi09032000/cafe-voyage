@@ -134,9 +134,9 @@ function hashString(value) {
   return hash.toString(36);
 }
 
-function createSlug(cityKey, regionQuery, place) {
+function createSlug(cityKey, place) {
   const seed = place.id || `${place.displayName?.text || ""}-${place.formattedAddress || ""}`;
-  return `${cityKey}-${hashString(`${regionQuery}:${seed}`)}`;
+  return `${cityKey}-${hashString(seed)}`;
 }
 
 function getCityKeyFromAddress(address) {
@@ -281,7 +281,7 @@ function toCustomCafeRow(cityKey, regionQuery, place) {
   const mapsUrl = place.googleMapsUri || "";
   const address = place.formattedAddress || "";
   return {
-    slug: createSlug(cityKey, regionQuery, place),
+    slug: createSlug(cityKey, place),
     name,
     city: cityKey,
     country_code: "TW",
