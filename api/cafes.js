@@ -240,7 +240,7 @@ function filterDuplicateCustomCafes(sourceCafes, customCafes) {
 
 async function fetchCustomCafes({ cityKey, countryCode } = {}) {
   const url = new URL(`${SUPABASE_URL}/rest/v1/custom_cafes`);
-  url.searchParams.set("select", "id,slug,name,city,wifi,seat,quiet,tasty,cheap,music,url,address,latitude,longitude,limited_time,socket,standing_desk,mrt,open_time,country_code,country_name,city_key,city_label,google_place_id,source");
+  url.searchParams.set("select", "id,slug,name,city,wifi,seat,quiet,tasty,cheap,music,url,address,latitude,longitude,limited_time,socket,standing_desk,mrt,open_time,country_code,country_name,city_key,city_label,google_place_id,source,source_url");
   url.searchParams.set("is_published", "eq.true");
   if (cityKey) {
     url.searchParams.set("city_key", `eq.${cityKey}`);
@@ -268,7 +268,7 @@ async function fetchCustomCafes({ cityKey, countryCode } = {}) {
     tasty: Number(row.tasty || 0),
     cheap: Number(row.cheap || 0),
     music: Number(row.music || 0),
-    url: row.url || "",
+    url: row.url && !/google\.[^/]+\/maps|maps\.google\./i.test(row.url) ? row.url : "",
     address: row.address || "",
     latitude: row.latitude != null ? String(row.latitude) : "",
     longitude: row.longitude != null ? String(row.longitude) : "",
@@ -283,15 +283,27 @@ async function fetchCustomCafes({ cityKey, countryCode } = {}) {
     city_label: row.city_label || "",
     google_place_id: row.google_place_id || "",
     source: row.source || "",
+    source_url: row.source_url || (/google\.[^/]+\/maps|maps\.google\./i.test(row.url || "") ? row.url : ""),
   }));
 }
 
-async function fetchCafeScoreAverages() {
-  const url = new URL(`${SUPABASE_URL}/rest/v1/cafe_score_reports`);
-  url.searchParams.set("select", "cafe_id,wifi,seat,quiet,tasty,cheap,music");
-  const response = await fetch(url, { headers: supabaseReadHeaders() });
-  if (!response.ok) throw new Error(`cafe_score_reports request failed: ${response.status}`);
-  const rows = await response.json();
+function createInList(values) {
+  return values.map((value) => `"${String(value).replace(/"/g, '\\"')}"`).join(",");
+}
+
+async function fetchCafeScoreAverages(cafeIds) {
+  const ids = [...new Set(cafeIds.map(String).filter(Boolean))];
+  if (ids.length === 0) return new Map();
+  const rows = [];
+  for (let i = 0; i < ids.length; i += 100) {
+    const chunk = ids.slice(i, i + 100);
+    const url = new URL(`${SUPABASE_URL}/rest/v1/cafe_score_reports`);
+    url.searchParams.set("select", "cafe_id,wifi,seat,quiet,tasty,cheap,music");
+    url.searchParams.set("cafe_id", `in.(${createInList(chunk)})`);
+    const response = await fetch(url, { headers: supabaseReadHeaders() });
+    if (!response.ok) throw new Error(`cafe_score_reports request failed: ${response.status}`);
+    rows.push(...await response.json());
+  }
   const totals = new Map();
 
   for (const row of rows) {
@@ -344,7 +356,10 @@ function applyCafeScoreAverages(cafes, scoreMap) {
 
 async function applyScoreReports(cafes) {
   try {
-    return applyCafeScoreAverages(cafes, await fetchCafeScoreAverages());
+    const scoreableCafeIds = cafes
+      .filter((cafe) => cafe.source || cafe.city_key === "hoi_an")
+      .map((cafe) => cafe.id);
+    return applyCafeScoreAverages(cafes, await fetchCafeScoreAverages(scoreableCafeIds));
   } catch (error) {
     console.error(error);
     return cafes;

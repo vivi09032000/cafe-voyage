@@ -751,7 +751,11 @@ const getCafeRegionGroupKey = (cafe) => findRegionGroup(getCafeRegion(cafe))?.ke
 const CLOSED_KW = ["暫停營業", "已歇業", "停業", "結束營業"];
 const isOpen = (c) => !CLOSED_KW.some(kw => c.name.includes(kw));
 const isTemporarilyClosed = (cafe) => cafe.google_business_status === "CLOSED_TEMPORARILY";
+const isGoogleMapsLink = (url = "") => /google\.[^/]+\/maps|maps\.google\./i.test(url);
+const getCafeStoreUrl = (cafe) => cafe.url && !isGoogleMapsLink(cafe.url) ? cafe.url : "";
 const getGoogleMapsUrl = (cafe) => {
+  if (cafe.source_url && isGoogleMapsLink(cafe.source_url)) return cafe.source_url;
+  if (cafe.url && isGoogleMapsLink(cafe.url)) return cafe.url;
   const query = encodeURIComponent(cafe.name || cafe.address || "");
   const lat = Number(cafe.latitude);
   const lng = Number(cafe.longitude);
@@ -1927,9 +1931,13 @@ const SearchPage = ({ cafes, loading, onSelect, favs, onFav, emptyCafeIds, filte
               : getCopy(lang, "nearby.total", { sort: userLocation ? getCopy(lang, "nearby.distanceSort") : locationLoading ? getCopy(lang, "nearby.locating") : getCopy(lang, "nearby.allowLocation"), count: total })}
           </span>
           <button
-            onClick={() => {
+            onClick={async () => {
               requestSortLocation();
-              onRelocate?.();
+              try {
+                await onRelocate?.();
+              } catch (error) {
+                setLocationError(withGeoErrorDetails(lang, getCopy(lang, "nearby.locateFailed"), error));
+              }
             }}
             style={{ background: "none", border: "none", color: T.brown, ...TYPE.meta, fontWeight: 700, cursor: "pointer", display: "flex", alignItems: "center", gap: 4 }}
           >
@@ -2871,6 +2879,7 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, onScoreReport, emptyCa
   };
   const hasScores = Number(cafe.wifi || 0) > 0;
   const canReportScores = !hasScores || cafe.source === "google_places_demo";
+  const storeUrl = getCafeStoreUrl(cafe);
 
   return (
     <div
@@ -2901,8 +2910,8 @@ const DetailPage = ({ cafe, onBack, fav, onFav, onReport, onScoreReport, emptyCa
           <div style={{ ...TYPE.detailTitle, color: T.text }}>
             {cafe.name}
           </div>
-          {cafe.url && (
-            <a aria-label={getCopy(lang, "detail.openStoreLink")} href={cafe.url} target="_blank" rel="noreferrer" style={{ color: T.sub, lineHeight: 1, textDecoration: "none", display: "inline-flex" }}>
+          {storeUrl && (
+            <a aria-label={getCopy(lang, "detail.openStoreLink")} href={storeUrl} target="_blank" rel="noreferrer" style={{ color: T.sub, lineHeight: 1, textDecoration: "none", display: "inline-flex" }}>
               <Icon name="external" size={16} strokeWidth={2.1} />
             </a>
           )}
@@ -3401,31 +3410,36 @@ export default function App() {
 
   // ── GPS auto-detect region ──
   const requestGpsRegion = useCallback((forceSetRegion = false) => {
-    if (!navigator.geolocation) return;
-    navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        const userLat = pos.coords.latitude;
-        const userLng = pos.coords.longitude;
-        let nearest = null;
-        let minDist = Infinity;
-        countryScopedCafes.forEach((c) => {
-          const lat = parseFloat(c.latitude);
-          const lng = parseFloat(c.longitude);
-          if (!lat || !lng) return;
-          const d = (lat - userLat) ** 2 + (lng - userLng) ** 2;
-          if (d < minDist) { minDist = d; nearest = c; }
-        });
-        if (nearest) {
-          const detectedRegion = getCafeRegionGroupKey(nearest);
-          if (detectedRegion) {
-            setGpsRegion(detectedRegion);
-            if (forceSetRegion) setRegion(detectedRegion);
+    if (!navigator.geolocation) return Promise.reject({ code: 0 });
+    return new Promise((resolve, reject) => {
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          const userLat = pos.coords.latitude;
+          const userLng = pos.coords.longitude;
+          let nearest = null;
+          let minDist = Infinity;
+          countryScopedCafes.forEach((c) => {
+            const lat = parseFloat(c.latitude);
+            const lng = parseFloat(c.longitude);
+            if (!lat || !lng) return;
+            const d = (lat - userLat) ** 2 + (lng - userLng) ** 2;
+            if (d < minDist) { minDist = d; nearest = c; }
+          });
+          if (nearest) {
+            const detectedRegion = getCafeRegionGroupKey(nearest);
+            if (detectedRegion) {
+              setGpsRegion(detectedRegion);
+              if (forceSetRegion) setRegion(detectedRegion);
+              resolve(detectedRegion);
+              return;
+            }
           }
-        }
-      },
-      () => { /* GPS denied */ },
-      { enableHighAccuracy: false, timeout: 8000, maximumAge: 300000 },
-    );
+          reject({ code: 2 });
+        },
+        reject,
+        { enableHighAccuracy: false, timeout: 12000, maximumAge: 300000 },
+      );
+    });
   }, [countryScopedCafes]);
 
   const gpsAutoDetectedRef = useRef(false);
@@ -3435,7 +3449,7 @@ export default function App() {
     if (countryScopedCafes.length === 0) return; // cafes not loaded yet
     if (!navigator.geolocation) return;
     gpsAutoDetectedRef.current = true;
-    requestGpsRegion(initialNoRegionRef.current);
+    requestGpsRegion(initialNoRegionRef.current).catch(() => {});
   }, [countryScopedCafes, requestGpsRegion]);
 
   const handleCountryChange = (nextCountry) => {

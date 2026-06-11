@@ -318,6 +318,7 @@ async function searchGooglePlaces(cityKey, regionQuery) {
         "places.location",
         "places.businessStatus",
         "places.googleMapsUri",
+        "places.websiteUri",
       ].join(","),
     },
     body: JSON.stringify({
@@ -345,6 +346,7 @@ async function searchGooglePlaces(cityKey, regionQuery) {
 function toCustomCafeRow(cityKey, regionQuery, place) {
   const name = place.displayName?.text || "";
   const mapsUrl = place.googleMapsUri || "";
+  const websiteUrl = place.websiteUri || "";
   const address = place.formattedAddress || "";
   return {
     slug: createSlug(cityKey, place),
@@ -360,7 +362,7 @@ function toCustomCafeRow(cityKey, regionQuery, place) {
     tasty: 0,
     cheap: 0,
     music: 0,
-    url: mapsUrl,
+    url: websiteUrl,
     address,
     latitude: place.location?.latitude ?? null,
     longitude: place.location?.longitude ?? null,
