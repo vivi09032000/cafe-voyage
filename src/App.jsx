@@ -3523,8 +3523,8 @@ export default function App() {
   const renderPage = () => {
     if (selected) return <DetailPage cafe={selected} onBack={() => setSelected(null)} fav={favoriteLookup.has(selected.id)} onFav={toggleFav} onReport={handleReportAndUpdateMap} onScoreReport={handleScoreReport} emptyCafeIds={emptyCafeIds} onFilterTag={handleDetailTagFilter} canManageCafe={isAdminUser} onHideCafe={handleHideCafe} lang={lang} />;
     switch (tab) {
-      case "search": return <SearchPage cafes={exploreCafes} loading={loading} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} emptyCafeIds={emptyCafeIds} filters={homeFilters} setFilters={setHomeFilters} lang={lang} region={region} searchQuery={searchQuery} setSearchQuery={setSearchQuery} onRelocate={() => requestGpsRegion(true)} onRegionSync={triggerRegionCafeSync} />;
-      case "map": return <MapPage cafes={countryScopedCafes} region={region} onSelect={setSelected} mapView={mapView} setMapView={setMapView} mapQuery={mapQuery} setMapQuery={setMapQuery} loading={loading} lang={lang} onVisibleCafeCountChange={setMapVisibleCafeCount} onRegionSync={triggerRegionCafeSync} />;
+      case "search": return <SearchPage cafes={exploreCafes} loading={loading} onSelect={setSelected} favs={favoriteLookup} onFav={toggleFav} emptyCafeIds={emptyCafeIds} filters={homeFilters} setFilters={setHomeFilters} lang={lang} region={region} searchQuery={searchQuery} setSearchQuery={setSearchQuery} onRelocate={() => requestGpsRegion(true)} />;
+      case "map": return <MapPage cafes={countryScopedCafes} region={region} onSelect={setSelected} mapView={mapView} setMapView={setMapView} mapQuery={mapQuery} setMapQuery={setMapQuery} loading={loading} lang={lang} onVisibleCafeCountChange={setMapVisibleCafeCount} />;
       case "favorites": return <FavoritesPage cafes={favoritesCafes} favs={favoriteLookup} onSelect={setSelected} onFav={toggleFav} onExplore={() => setTab("search")} lang={lang} />;
       default: return null;
     }
