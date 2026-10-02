@@ -34,9 +34,6 @@ export default async function handler(req, res) {
   }
 
   const body = readBody(req);
-  // 隱藏欄位：真人看不到，機器人常會填，填了就假裝成功直接丟掉。
-  if (clean(body.website, 200)) return send(res, 200, { ok: true });
-
   const category = clean(body.category, 40);
   if (!CATEGORIES.has(category)) return send(res, 400, { ok: false, error: "invalid_category" });
 

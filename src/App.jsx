@@ -1231,7 +1231,6 @@ const FeedbackForm = ({ lang, country, region, onBack }) => {
   const [category, setCategory] = useState("suggestion");
   const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");
-  const [website, setWebsite] = useState("");
   const [busy, setBusy] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
@@ -1255,7 +1254,7 @@ const FeedbackForm = ({ lang, country, region, onBack }) => {
     setBusy(true);
     setError("");
     try {
-      await submitFeedback({ category, message: message.trim(), email: email.trim(), website, lang, country, region });
+      await submitFeedback({ category, message: message.trim(), email: email.trim(), lang, country, region });
       setSubmitted(true);
     } catch (submitError) {
       setError(getCopy(lang, submitError.message === "invalid_email" ? "feedback.invalidEmail" : "feedback.failed"));
@@ -1337,8 +1336,6 @@ const FeedbackForm = ({ lang, country, region, onBack }) => {
             <input type="email" value={email} onChange={(event) => setEmail(event.target.value)} autoComplete="email" style={fieldStyle} />
           </label>
 
-          {/* 防機器人的隱藏欄位，真人看不到 */}
-          <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" value={website} onChange={(event) => setWebsite(event.target.value)} style={{ position: "absolute", left: -9999, width: 1, height: 1, opacity: 0 }} />
 
           <button
             type="submit"
