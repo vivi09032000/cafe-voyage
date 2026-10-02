@@ -332,7 +332,7 @@ const COPY = {
       aboutSubtitle: "找工作、放空、約會都剛好的咖啡廳地圖",
       feedbackTitle: "意見回饋",
       feedbackSubtitle: "建議或錯誤回報",
-      supportTitle: "Buy me a coffee",
+      supportTitle: "請我喝咖啡",
       supportSubtitle: "支持 Cafe Voyage",
       switchCountry: "切換國家選單",
     },
@@ -1224,6 +1224,8 @@ const Header = ({ title = "Cafe Voyage", cityLabel, subtitle, onOpenMenu, lang }
   );
 };
 
+const SUPPORT_URL = "https://portaly.cc/heyvvn/support";
+
 const FEEDBACK_CATEGORIES = ["suggestion", "bug", "new_cafe", "other"];
 const FEEDBACK_MAX = 2000;
 
@@ -1388,7 +1390,7 @@ const SettingsPanel = ({
     {
       title: getCopy(lang, "settings.supportTitle"),
       subtitle: getCopy(lang, "settings.supportSubtitle"),
-      href: null,
+      href: SUPPORT_URL,
     },
   ];
 
