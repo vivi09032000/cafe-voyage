@@ -733,6 +733,45 @@ const isDuplicateCafeDisplay = (a, b) => {
   return Boolean(hasSimilarCafeDedupeAddress(a.address, b.address) && hasSimilarCafeDedupeName(a.name, b.name));
 };
 
+// 與逐一呼叫 isDuplicateCafeDisplay 結果相同，但只比對同地址或同路名門牌的店，
+// 避免數千間店兩兩比對（約 500 萬次）卡住主執行緒好幾秒。
+const dedupeCafes = (cafes) => {
+  const seen = new Set();
+  const byPlaceId = new Set();
+  const byAddress = new Map();
+  const byRoadDoor = new Map();
+  const merged = [];
+  const addTo = (map, key, entry) => {
+    const list = map.get(key);
+    if (list) list.push(entry); else map.set(key, [entry]);
+  };
+  const nameMatches = (list, name) => Boolean(name && list?.some((entry) => (
+    entry.name && (entry.name === name || entry.name.includes(name) || name.includes(entry.name))
+  )));
+
+  cafes.forEach((cafe) => {
+    const dedupeKey = getCafeDedupeKey(cafe);
+    if (seen.has(dedupeKey)) return;
+    if (cafe.google_place_id && byPlaceId.has(cafe.google_place_id)) return;
+    const address = normalizeCafeDedupeAddress(cafe.address);
+    const road = extractCafeRoadName(cafe.address);
+    const door = extractCafeDoorToken(cafe.address);
+    const roadDoor = road && door ? `${road}|${door}` : "";
+    const name = simplifyCafeDedupeName(cafe.name);
+    if (address && (nameMatches(byAddress.get(address), name) || (roadDoor && nameMatches(byRoadDoor.get(roadDoor), name)))) return;
+
+    seen.add(dedupeKey);
+    merged.push(cafe);
+    if (cafe.google_place_id) byPlaceId.add(cafe.google_place_id);
+    if (address) {
+      const entry = { name };
+      addTo(byAddress, address, entry);
+      if (roadDoor) addTo(byRoadDoor, roadDoor, entry);
+    }
+  });
+  return merged;
+};
+
 const getCafeCountryKey = (cafe) => {
   if (cafe.city === "hoi_an_vn" || /Vietnam|Việt Nam|Hội An|Hoi An/.test(cafe.address || "")) return "vietnam";
   return "taiwan";
@@ -3098,15 +3137,7 @@ export default function App() {
         fetch("/api/cafes?city=hoi-an-vn"),
       ]);
       const [taiwanData, hoiAnData] = await Promise.all([taiwanRes.json(), hoiAnRes.json()]);
-      const data = [...taiwanData, ...hoiAnData];
-      const seen = new Set();
-      const merged = [];
-      data.forEach((cafe) => {
-        const dedupeKey = getCafeDedupeKey(cafe);
-        if (seen.has(dedupeKey) || merged.some((existingCafe) => isDuplicateCafeDisplay(existingCafe, cafe))) return;
-        seen.add(dedupeKey);
-        merged.push(cafe);
-      });
+      const merged = dedupeCafes([...taiwanData, ...hoiAnData]);
 
       setAllCafes(merged);
       localStorage.setItem(MAP_CACHE_KEY, JSON.stringify({ timestamp: Date.now(), data: merged }));
