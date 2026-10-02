@@ -366,6 +366,33 @@ async function applyScoreReports(cafes) {
   }
 }
 
+async function readCafenomadSnapshot() {
+  const raw = await readFile(new URL("../data/cafenomad-snapshot.json", import.meta.url), "utf8");
+  return JSON.parse(raw);
+}
+
+// cafenomad.tw 會擋掉部分雲端機房 IP 並回傳 HTML，這時退回內建快照，避免整支 API 500。
+async function fetchCafenomad(endpoint, city) {
+  try {
+    const response = await fetch(endpoint, {
+      headers: {
+        Accept: "application/json",
+        "User-Agent": "Mozilla/5.0 (compatible; CafeVoyage/1.0)",
+      },
+    });
+    const type = response.headers.get("content-type") || "";
+    if (response.ok && type.includes("json")) {
+      const data = await response.json();
+      if (Array.isArray(data)) return data;
+    }
+    console.error(`cafenomad unexpected response: ${response.status} ${type}`);
+  } catch (error) {
+    console.error(error);
+  }
+  const snapshot = await readCafenomadSnapshot();
+  return city ? snapshot.filter((cafe) => cafe.city === city) : snapshot;
+}
+
 export default async function handler(req, res) {
   const { city } = req.query;
   const normalizedCity = String(city || "").toLowerCase();
@@ -388,8 +415,7 @@ export default async function handler(req, res) {
   const endpoint = city
     ? `https://cafenomad.tw/api/v1.2/cafes/${city}`
     : 'https://cafenomad.tw/api/v1.2/cafes';
-  const response = await fetch(endpoint);
-  let data = await response.json();
+  let data = await fetchCafenomad(endpoint, city);
   let applied = false;
   try {
     const statusMap = await fetchCafeStatusReviews(normalizedCity || undefined);
