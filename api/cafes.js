@@ -8,10 +8,22 @@ const CUSTOM_CITY_ALIASES = {
   "hoi_an_vn": "hoi_an",
   "hoi-an": "hoi_an",
   "hoi_an": "hoi_an",
+  "chiang-mai-th": "chiang_mai",
+  "chiang_mai_th": "chiang_mai",
+  "chiang-mai": "chiang_mai",
+  "chiang_mai": "chiang_mai",
 };
 
-async function readHoiAnFallback() {
-  const raw = await readFile(new URL("../data/hoi-an-cafes.json", import.meta.url), "utf8");
+// readFile(new URL("字面路徑", import.meta.url)) 要寫在同一個呼叫裡，Vercel 打包時才追得到這些檔案。
+async function readCustomCityFallback(cityKey) {
+  let raw;
+  if (cityKey === "hoi_an") {
+    raw = await readFile(new URL("../data/hoi-an-cafes.json", import.meta.url), "utf8");
+  } else if (cityKey === "chiang_mai") {
+    raw = await readFile(new URL("../data/chiang-mai-cafes.json", import.meta.url), "utf8");
+  } else {
+    return [];
+  }
   return JSON.parse(raw);
 }
 
@@ -401,14 +413,15 @@ export default async function handler(req, res) {
   const normalizedCity = String(city || "").toLowerCase();
 
   if (CUSTOM_CITY_ALIASES[normalizedCity]) {
+    const cityKey = CUSTOM_CITY_ALIASES[normalizedCity];
     let data = [];
     try {
-      data = await fetchCustomCafes({ cityKey: CUSTOM_CITY_ALIASES[normalizedCity] });
+      data = await fetchCustomCafes({ cityKey });
     } catch (error) {
       console.error(error);
     }
     if (!Array.isArray(data) || data.length === 0) {
-      data = await readHoiAnFallback();
+      data = await readCustomCityFallback(cityKey);
     }
     data = await applyScoreReports(data);
     res.setHeader("Access-Control-Allow-Origin", "*");

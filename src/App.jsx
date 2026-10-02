@@ -261,7 +261,7 @@ const LANGUAGE_OPTIONS = [
 const COUNTRY_OPTIONS = [
   { key: "taiwan", labels: { zh: "台灣", en: "Taiwan" }, code: "TW" },
   { key: "vietnam", labels: { zh: "越南", en: "Vietnam" }, code: "VN" },
-  { key: "thailand", labels: { zh: "泰國", en: "Thailand" }, code: "TH", comingSoon: true },
+  { key: "thailand", labels: { zh: "泰國", en: "Thailand" }, code: "TH" },
   { key: "japan", labels: { zh: "日本", en: "Japan" }, code: "JP", comingSoon: true },
 ];
 const REGION_GROUPS = [
@@ -282,6 +282,7 @@ const REGION_GROUPS = [
   { key: "hualien", labels: { zh: "花蓮", en: "Hualien" }, country: "taiwan", members: ["花蓮縣"] },
   { key: "taitung", labels: { zh: "台東", en: "Taitung" }, country: "taiwan", members: ["台東縣"] },
   { key: "hoi_an", labels: { zh: "會安", en: "Hoi An" }, country: "vietnam", members: ["Hội An", "Hoi An", "會安"] },
+  { key: "chiang_mai", labels: { zh: "清邁", en: "Chiang Mai" }, country: "thailand", members: ["Chiang Mai", "清邁"] },
 ];
 
 const COPY = {
@@ -773,12 +774,14 @@ const dedupeCafes = (cafes) => {
 };
 
 const getCafeCountryKey = (cafe) => {
+  if (cafe.city === "chiang_mai_th" || cafe.city_key === "chiang_mai") return "thailand";
   if (cafe.city === "hoi_an_vn" || /Vietnam|Việt Nam|Hội An|Hoi An/.test(cafe.address || "")) return "vietnam";
   return "taiwan";
 };
 
 const getCafeRegion = (cafe) => {
   if (getCafeCountryKey(cafe) === "vietnam") return "Hội An";
+  if (getCafeCountryKey(cafe) === "thailand") return "Chiang Mai";
   const match = (cafe.address || "").match(REGION_PATTERN);
   if (match) return normalizeRegionLabel(match[0]);
   return "";
@@ -1466,7 +1469,7 @@ const SettingsPanel = ({
               </div>
             )}
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: country === "vietnam" ? "repeat(2, minmax(0, 1fr))" : "repeat(4, minmax(0, 1fr))", gap: 7 }}>
+          <div style={{ display: "grid", gridTemplateColumns: country !== "taiwan" ? "repeat(2, minmax(0, 1fr))" : "repeat(4, minmax(0, 1fr))", gap: 7 }}>
             {country !== "taiwan" && (
               <button
                 onClick={() => { setRegion(REGION_PROMPT_KEY); onClose(); }}
@@ -3132,12 +3135,13 @@ export default function App() {
     setLoading(!cacheLoaded && !silent);
 
     try {
-      const [taiwanRes, hoiAnRes] = await Promise.all([
+      const [taiwanRes, hoiAnRes, chiangMaiRes] = await Promise.all([
         fetch("/api/cafes"),
         fetch("/api/cafes?city=hoi-an-vn"),
+        fetch("/api/cafes?city=chiang-mai-th"),
       ]);
-      const [taiwanData, hoiAnData] = await Promise.all([taiwanRes.json(), hoiAnRes.json()]);
-      const merged = dedupeCafes([...taiwanData, ...hoiAnData]);
+      const [taiwanData, hoiAnData, chiangMaiData] = await Promise.all([taiwanRes.json(), hoiAnRes.json(), chiangMaiRes.json()]);
+      const merged = dedupeCafes([...taiwanData, ...hoiAnData, ...chiangMaiData]);
 
       setAllCafes(merged);
       localStorage.setItem(MAP_CACHE_KEY, JSON.stringify({ timestamp: Date.now(), data: merged }));
@@ -3325,10 +3329,13 @@ export default function App() {
       throw new Error(getCopy(lang, "auth.adminOnly"));
     }
 
-    const countryCode = getCafeCountryKey(cafe) === "vietnam" ? "VN" : "TW";
-    const cityKey = getCafeCountryKey(cafe) === "vietnam"
+    const cafeCountry = getCafeCountryKey(cafe);
+    const countryCode = COUNTRY_OPTIONS.find((item) => item.key === cafeCountry)?.code || "TW";
+    const cityKey = cafeCountry === "vietnam"
       ? (cafe.city_key || "hoi_an")
-      : (getCafeRegionGroupKey(cafe) || "");
+      : cafeCountry === "thailand"
+        ? (cafe.city_key || "chiang_mai")
+        : (getCafeRegionGroupKey(cafe) || "");
 
     const response = await fetch(`${SUPABASE_URL}/rest/v1/cafe_overrides?on_conflict=cafe_source,cafe_source_id`, {
       method: "POST",
