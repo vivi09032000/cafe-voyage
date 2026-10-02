@@ -419,10 +419,22 @@ export default async function handler(req, res) {
   const endpoint = city
     ? `https://cafenomad.tw/api/v1.2/cafes/${city}`
     : 'https://cafenomad.tw/api/v1.2/cafes';
-  let data = await fetchCafenomad(endpoint, city);
+  // 這幾個查詢彼此獨立，同時發出；allSettled 讓單一失敗不會拖垮其他結果。
+  const [cafenomadResult, statusResult, overrideResult, customResult] = await Promise.allSettled([
+    fetchCafenomad(endpoint, city),
+    fetchCafeStatusReviews(normalizedCity || undefined),
+    fetchCafeOverrides("cafenomad", "TW", normalizedCity || undefined),
+    fetchCustomCafes({
+      cityKey: normalizedCity || undefined,
+      countryCode: "TW",
+    }),
+  ]);
+  if (cafenomadResult.status === "rejected") throw cafenomadResult.reason;
+  let data = cafenomadResult.value;
   let applied = false;
   try {
-    const statusMap = await fetchCafeStatusReviews(normalizedCity || undefined);
+    if (statusResult.status === "rejected") throw statusResult.reason;
+    const statusMap = statusResult.value;
     if (statusMap.size > 0) {
       data = applyStatusReviewMap(data, statusMap);
       applied = true;
@@ -434,7 +446,8 @@ export default async function handler(req, res) {
     data = await applyTaipeiClosureReview(data, normalizedCity);
   }
   try {
-    const overrideMap = await fetchCafeOverrides("cafenomad", "TW", normalizedCity || undefined);
+    if (overrideResult.status === "rejected") throw overrideResult.reason;
+    const overrideMap = overrideResult.value;
     if (overrideMap.size > 0) {
       data = applyCafeOverrides(data, overrideMap);
     }
@@ -442,10 +455,8 @@ export default async function handler(req, res) {
     console.error(error);
   }
   try {
-    const customCafes = await fetchCustomCafes({
-      cityKey: normalizedCity || undefined,
-      countryCode: "TW",
-    });
+    if (customResult.status === "rejected") throw customResult.reason;
+    const customCafes = customResult.value;
     const uniqueCustomCafes = filterDuplicateCustomCafes(data, customCafes);
     if (uniqueCustomCafes.length > 0) {
       data = [...data, ...uniqueCustomCafes];
