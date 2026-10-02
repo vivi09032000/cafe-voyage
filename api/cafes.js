@@ -15,6 +15,9 @@ async function readHoiAnFallback() {
   return JSON.parse(raw);
 }
 
+// 讓 Vercel CDN 快取 10 分鐘，過期後先回舊資料、背景再重抓，避免每位訪客都等後端跑完。
+const CDN_CACHE_CONTROL = "public, s-maxage=600, stale-while-revalidate=86400";
+
 let taipeiReviewCache = null;
 
 const SCORE_KEYS = ["wifi", "seat", "quiet", "tasty", "cheap", "music"];
@@ -409,6 +412,7 @@ export default async function handler(req, res) {
     }
     data = await applyScoreReports(data);
     res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Cache-Control", CDN_CACHE_CONTROL);
     return res.json(data);
   }
 
@@ -451,5 +455,6 @@ export default async function handler(req, res) {
   }
   data = await applyScoreReports(data);
   res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Cache-Control', CDN_CACHE_CONTROL);
   res.json(data);
 }
