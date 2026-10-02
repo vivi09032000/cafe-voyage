@@ -53,6 +53,16 @@ async function submitCrowdReport(cafeId, status) {
   });
 }
 
+async function submitFeedback(payload) {
+  const response = await fetch("/api/feedback", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ ...payload, page_url: window.location.href }),
+  });
+  const result = await response.json().catch(() => null);
+  if (!response.ok || !result?.ok) throw new Error(result?.error || "save_failed");
+}
+
 async function submitCafeScoreReport(cafe, scores) {
   const response = await fetch("/api/cafe-score-reports", {
     method: "POST",
@@ -421,6 +431,22 @@ const COPY = {
       thanks: "已收到，會用來更新平均分數。",
       failed: "送出失敗，請稍後再試。",
     },
+    feedback: {
+      title: "意見回饋",
+      hint: "想要的功能、遇到的問題、推薦的店都歡迎告訴我們。",
+      back: "返回設定",
+      category: "類型",
+      categories: { suggestion: "建議", bug: "錯誤回報", new_cafe: "推薦店家", other: "其他" },
+      message: "想說的話",
+      messagePlaceholder: "例如：哪裡不好用、哪間店資訊有誤…",
+      email: "Email（選填，方便我們回覆你）",
+      submit: "送出",
+      submitting: "送出中...",
+      thanks: "收到了，謝謝你的回饋！",
+      another: "再寫一則",
+      failed: "送出失敗，請稍後再試。",
+      invalidEmail: "Email 格式看起來不太對。",
+    },
     detail: {
       back: "返回上一頁",
       openStoreLink: "開啟店家連結",
@@ -594,6 +620,22 @@ const COPY = {
       submitting: "Submitting...",
       thanks: "Thanks. This will update the average scores.",
       failed: "Couldn't submit scores. Please try again.",
+    },
+    feedback: {
+      title: "Feedback",
+      hint: "Feature ideas, problems, or cafes we should add are all welcome.",
+      back: "Back to settings",
+      category: "Type",
+      categories: { suggestion: "Suggestion", bug: "Bug report", new_cafe: "Recommend a cafe", other: "Other" },
+      message: "Message",
+      messagePlaceholder: "e.g. something hard to use, or a cafe with wrong info…",
+      email: "Email (optional, so we can reply)",
+      submit: "Send",
+      submitting: "Sending...",
+      thanks: "Got it, thanks for the feedback!",
+      another: "Send another",
+      failed: "Couldn't send. Please try again.",
+      invalidEmail: "That email doesn't look right.",
     },
     detail: {
       back: "Back",
@@ -1182,6 +1224,137 @@ const Header = ({ title = "Cafe Voyage", cityLabel, subtitle, onOpenMenu, lang }
   );
 };
 
+const FEEDBACK_CATEGORIES = ["suggestion", "bug", "new_cafe", "other"];
+const FEEDBACK_MAX = 2000;
+
+const FeedbackForm = ({ lang, country, region, onBack }) => {
+  const [category, setCategory] = useState("suggestion");
+  const [message, setMessage] = useState("");
+  const [email, setEmail] = useState("");
+  const [website, setWebsite] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+  const fieldStyle = {
+    width: "100%",
+    boxSizing: "border-box",
+    border: `1px solid ${UI.line}`,
+    borderRadius: 12,
+    background: UI.paper,
+    color: T.text,
+    padding: "10px 12px",
+    fontFamily: "inherit",
+    fontSize: 16,
+    outline: "none",
+  };
+  const labelStyle = { ...TYPE.control, display: "block", color: T.text, marginBottom: 6 };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (busy || !message.trim()) return;
+    setBusy(true);
+    setError("");
+    try {
+      await submitFeedback({ category, message: message.trim(), email: email.trim(), website, lang, country, region });
+      setSubmitted(true);
+    } catch (submitError) {
+      setError(getCopy(lang, submitError.message === "invalid_email" ? "feedback.invalidEmail" : "feedback.failed"));
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const resetForm = () => {
+    setMessage("");
+    setSubmitted(false);
+    setError("");
+  };
+
+  return (
+    <div style={{ padding: "0 18px 18px" }}>
+      <button
+        type="button"
+        onClick={onBack}
+        style={{ background: "none", border: "none", padding: "2px 0", marginBottom: 10, color: T.brown, cursor: "pointer", fontFamily: "inherit", ...TYPE.meta, fontWeight: 700 }}
+      >
+        ‹ {getCopy(lang, "feedback.back")}
+      </button>
+      <div style={{ ...TYPE.sectionTitle, color: T.text, marginBottom: 4 }}>{getCopy(lang, "feedback.title")}</div>
+      <div style={{ ...TYPE.caption, color: UI.muted, marginBottom: 14 }}>{getCopy(lang, "feedback.hint")}</div>
+
+      {submitted ? (
+        <div>
+          <div className="success-pop" style={{ ...TYPE.body, color: T.green, marginBottom: 12 }}>
+            <InlineIcon name="checkCircle" size={14} color={T.green} /> {getCopy(lang, "feedback.thanks")}
+          </div>
+          <button
+            type="button"
+            className="soft-press"
+            onClick={resetForm}
+            style={{ background: "none", border: `1px solid ${UI.line}`, borderRadius: 12, padding: "9px 12px", color: T.brown, cursor: "pointer", fontFamily: "inherit", ...TYPE.control }}
+          >
+            {getCopy(lang, "feedback.another")}
+          </button>
+        </div>
+      ) : (
+        <form onSubmit={handleSubmit}>
+          <span style={labelStyle}>{getCopy(lang, "feedback.category")}</span>
+          <div role="radiogroup" aria-label={getCopy(lang, "feedback.category")} style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 14 }}>
+            {FEEDBACK_CATEGORIES.map((key) => {
+              const active = category === key;
+              return (
+                <button
+                  key={key}
+                  type="button"
+                  role="radio"
+                  aria-checked={active}
+                  className="soft-press"
+                  onClick={() => setCategory(key)}
+                  style={{ border: `1px solid ${active ? T.brown : UI.line}`, background: active ? T.brown : UI.paper, color: active ? UI.onDark : T.sub, borderRadius: 999, padding: "6px 11px", cursor: "pointer", fontFamily: "inherit", ...TYPE.meta, fontWeight: 700 }}
+                >
+                  {getCopy(lang, `feedback.categories.${key}`)}
+                </button>
+              );
+            })}
+          </div>
+
+          <label style={{ display: "block", marginBottom: 14 }}>
+            <span style={labelStyle}>{getCopy(lang, "feedback.message")}</span>
+            <textarea
+              required
+              value={message}
+              maxLength={FEEDBACK_MAX}
+              onChange={(event) => setMessage(event.target.value)}
+              placeholder={getCopy(lang, "feedback.messagePlaceholder")}
+              rows={5}
+              style={{ ...fieldStyle, resize: "vertical", minHeight: 110, lineHeight: 1.5 }}
+            />
+            <span style={{ ...TYPE.caption, display: "block", textAlign: "right", color: UI.muted, marginTop: 4 }}>{message.length}/{FEEDBACK_MAX}</span>
+          </label>
+
+          <label style={{ display: "block", marginBottom: 16 }}>
+            <span style={labelStyle}>{getCopy(lang, "feedback.email")}</span>
+            <input type="email" value={email} onChange={(event) => setEmail(event.target.value)} autoComplete="email" style={fieldStyle} />
+          </label>
+
+          {/* 防機器人的隱藏欄位，真人看不到 */}
+          <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" value={website} onChange={(event) => setWebsite(event.target.value)} style={{ position: "absolute", left: -9999, width: 1, height: 1, opacity: 0 }} />
+
+          <button
+            type="submit"
+            className="soft-press"
+            disabled={busy || !message.trim()}
+            style={{ width: "100%", background: T.brown, color: UI.onDark, border: "none", borderRadius: 12, padding: "11px 12px", cursor: busy || !message.trim() ? "default" : "pointer", opacity: message.trim() ? 1 : 0.55, fontFamily: "inherit", ...TYPE.control }}
+          >
+            {busy ? getCopy(lang, "feedback.submitting") : getCopy(lang, "feedback.submit")}
+          </button>
+          {error && <div role="alert" style={{ ...TYPE.caption, color: UI.danger, marginTop: 8 }}>{error}</div>}
+        </form>
+      )}
+    </div>
+  );
+};
+
 const SettingsPanel = ({
   open,
   country,
@@ -1202,6 +1375,7 @@ const SettingsPanel = ({
 }) => {
   if (!open) return null;
   const [countryMenuOpen, setCountryMenuOpen] = useState(false);
+  const [feedbackOpen, setFeedbackOpen] = useState(false);
   const menuLinks = [
     {
       title: getCopy(lang, "settings.aboutTitle"),
@@ -1212,6 +1386,7 @@ const SettingsPanel = ({
       title: getCopy(lang, "settings.feedbackTitle"),
       subtitle: getCopy(lang, "settings.feedbackSubtitle"),
       href: null,
+      onClick: () => setFeedbackOpen(true),
     },
     {
       title: getCopy(lang, "settings.supportTitle"),
@@ -1227,10 +1402,13 @@ const SettingsPanel = ({
   }));
 
   useEffect(() => {
-    if (!open) setCountryMenuOpen(false);
+    if (!open) {
+      setCountryMenuOpen(false);
+      setFeedbackOpen(false);
+    }
   }, [open]);
 
-  const SectionRow = ({ title, subtitle, href }) => {
+  const SectionRow = ({ title, subtitle, href, onClick }) => {
     const sharedStyle = {
       width: "100%",
       background: "none",
@@ -1243,7 +1421,7 @@ const SettingsPanel = ({
       gap: 10,
       textAlign: "left",
       textDecoration: "none",
-      cursor: href ? "pointer" : "default",
+      cursor: href || onClick ? "pointer" : "default",
       fontFamily: "inherit",
       color: T.text,
     };
@@ -1254,7 +1432,7 @@ const SettingsPanel = ({
           <div style={{ ...TYPE.body, fontWeight: 680, color: T.text, marginBottom: subtitle ? 1 : 0, letterSpacing: "-0.01em" }}>{title}</div>
           {subtitle && <div style={{ ...TYPE.caption, color: UI.muted }}>{subtitle}</div>}
         </div>
-        <div style={{ fontSize: 15, color: UI.subtle, flexShrink: 0, paddingTop: 1 }}>{href ? "›" : ""}</div>
+        <div style={{ fontSize: 15, color: UI.subtle, flexShrink: 0, paddingTop: 1 }}>{href || onClick ? "›" : ""}</div>
       </>
     );
 
@@ -1263,6 +1441,14 @@ const SettingsPanel = ({
         <a href={href} target="_blank" rel="noreferrer" style={sharedStyle}>
           {content}
         </a>
+      );
+    }
+
+    if (onClick) {
+      return (
+        <button type="button" onClick={onClick} style={sharedStyle}>
+          {content}
+        </button>
       );
     }
 
@@ -1297,226 +1483,232 @@ const SettingsPanel = ({
             ×
           </button>
         </div>
+        {feedbackOpen ? (
+          <FeedbackForm lang={lang} country={country} region={region} onBack={() => setFeedbackOpen(false)} />
+        ) : (
+          <>
 
-        <div style={{ background: UI.panel, border: `1px solid ${UI.cardBorder}`, borderRadius: 16, padding: 12, margin: "0 16px 10px" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
-            <div
-              style={{
-                width: 40,
-                height: 40,
-                borderRadius: "50%",
-                background: UI.avatarGradient,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: 18,
-                flexShrink: 0,
-              }}
-            >
-              <Icon name={user ? "coffee" : "user"} size={19} strokeWidth={2.2} style={{ color: T.brown }} />
+            <div style={{ background: UI.panel, border: `1px solid ${UI.cardBorder}`, borderRadius: 16, padding: 12, margin: "0 16px 10px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
+                <div
+                  style={{
+                    width: 40,
+                    height: 40,
+                    borderRadius: "50%",
+                    background: UI.avatarGradient,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: 18,
+                    flexShrink: 0,
+                  }}
+                >
+                  <Icon name={user ? "coffee" : "user"} size={19} strokeWidth={2.2} style={{ color: T.brown }} />
+                </div>
+                <div>
+                  <div style={{ ...TYPE.cardTitle, color: T.text }}>
+                    {user ? getCopy(lang, "settings.loggedIn") : getCopy(lang, "settings.notLoggedIn")}
+                  </div>
+                  <div style={{ ...TYPE.caption, color: UI.muted, marginTop: 2 }}>
+                    {user ? (user.email || getCopy(lang, "settings.connectedGoogle")) : getCopy(lang, "settings.syncFavorites")}
+                  </div>
+                </div>
+              </div>
+
+              {user ? (
+                <button
+                  onClick={onSignOut}
+                  disabled={authBusy}
+                  style={{
+                    width: "100%",
+                    background: T.brown,
+                    color: UI.onDark,
+                    border: "none",
+                    borderRadius: 14,
+                    padding: "11px 12px",
+                    textAlign: "center",
+                    ...TYPE.control,
+                    cursor: authBusy ? "default" : "pointer",
+                    fontFamily: "inherit",
+                    opacity: authBusy ? 0.7 : 1,
+                    letterSpacing: "-0.01em",
+                  }}
+                >
+                  {authBusy ? getCopy(lang, "settings.signOutBusy") : getCopy(lang, "settings.signOut")}
+                </button>
+              ) : (
+                <button
+                  onClick={onGoogleSignIn}
+                  disabled={authBusy}
+                  style={{
+                    width: "100%",
+                    background: T.brown,
+                    color: UI.onDark,
+                    border: "none",
+                    borderRadius: 14,
+                    padding: "11px 12px",
+                    textAlign: "center",
+                    ...TYPE.control,
+                    cursor: authBusy ? "default" : "pointer",
+                    fontFamily: "inherit",
+                    opacity: authBusy ? 0.7 : 1,
+                    letterSpacing: "-0.01em",
+                  }}
+                >
+                  {authBusy ? getCopy(lang, "settings.signInBusy") : getCopy(lang, "settings.signIn")}
+                </button>
+              )}
+
+              {authMessage && <div style={{ ...TYPE.caption, color: T.green, marginTop: 6 }}>{authMessage}</div>}
+              {authError && <div style={{ ...TYPE.caption, color: UI.danger, marginTop: 6 }}>{authError}</div>}
             </div>
-            <div>
-              <div style={{ ...TYPE.cardTitle, color: T.text }}>
-                {user ? getCopy(lang, "settings.loggedIn") : getCopy(lang, "settings.notLoggedIn")}
+
+            <div style={{ background: UI.panel, border: `1px solid ${UI.cardBorder}`, borderRadius: 16, padding: 12, margin: "0 16px 10px" }}>
+              <div style={{ ...TYPE.caption, color: UI.muted, marginBottom: 8 }}>{getCopy(lang, "common.language")}</div>
+              <div style={{ display: "flex", gap: 7, marginBottom: 12 }}>
+                {LANGUAGE_OPTIONS.map((option) => (
+                  <button
+                    key={option.key}
+                    onClick={() => setLang(option.key)}
+                    style={{
+                      background: lang === option.key ? T.brown : T.cream,
+                      color: lang === option.key ? UI.onDark : T.text,
+                      border: `1px solid ${lang === option.key ? T.brown : UI.regionBorder}`,
+                      borderRadius: 14,
+                      padding: "8px 10px",
+                      fontSize: 11,
+                      cursor: "pointer",
+                      fontFamily: "inherit",
+                      fontWeight: lang === option.key ? 700 : 500,
+                      lineHeight: 1.1,
+                      flex: 1,
+                    }}
+                  >
+                    {option.label}
+                  </button>
+                ))}
               </div>
-              <div style={{ ...TYPE.caption, color: UI.muted, marginTop: 2 }}>
-                {user ? (user.email || getCopy(lang, "settings.connectedGoogle")) : getCopy(lang, "settings.syncFavorites")}
+
+              <div style={{ ...TYPE.caption, color: UI.muted, marginBottom: 8 }}>{getCopy(lang, "common.region")}</div>
+              <div style={{ border: `1px solid ${UI.scoreTrack}`, borderRadius: 14, overflow: "hidden", marginBottom: 10, background: UI.surface }}>
+                <button
+                  aria-label={getCopy(lang, "settings.switchCountry")}
+                  onClick={() => setCountryMenuOpen((openState) => !openState)}
+                  style={{
+                    width: "100%",
+                    background: "none",
+                    border: "none",
+                    borderBottom: countryMenuOpen ? `1px solid ${UI.hairline}` : "none",
+                    padding: "12px 12px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    gap: 8,
+                    cursor: "pointer",
+                    fontFamily: "inherit",
+                    color: T.text,
+                  }}
+                >
+                  <span style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, fontWeight: 650 }}>
+                    <CountryMark code={selectedCountry.code} />
+                    <span>{getCountryLabel(selectedCountry, lang)}</span>
+                  </span>
+                  <Icon name={countryMenuOpen ? "chevronUp" : "chevronDown"} size={14} strokeWidth={2.2} style={{ color: T.sub }} />
+                </button>
+                {countryMenuOpen && (
+                  <div>
+                    {countryMenuItems.map((item) => {
+                      const isSelected = item.key === country;
+                      return (
+                        <button
+                          key={item.key}
+                          onClick={() => {
+                            if (!item.enabled) return;
+                            setCountry(item.key);
+                            setCountryMenuOpen(false);
+                          }}
+                          disabled={!item.enabled}
+                          style={{
+                            width: "100%",
+                            background: isSelected ? UI.selectedTint : "none",
+                            border: "none",
+                            borderBottom: `1px solid ${UI.selectedHairline}`,
+                            padding: "12px 12px",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "space-between",
+                            gap: 8,
+                            cursor: item.enabled ? "pointer" : "default",
+                            fontFamily: "inherit",
+                            color: item.enabled ? T.text : T.sub,
+                            opacity: item.enabled ? 1 : 0.72,
+                          }}
+                        >
+                          <span style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, fontWeight: 600 }}>
+                            <CountryMark code={item.code} />
+                            <span>{getCountryLabel(item, lang)}</span>
+                          </span>
+                          {item.comingSoon ? (
+                            <span style={{ fontSize: 10, color: T.sub, background: T.beige, padding: "3px 7px", borderRadius: 999 }}>{getCopy(lang, "common.comingSoon")}</span>
+                          ) : isSelected ? (
+                            <span style={{ width: 9, height: 9, borderRadius: "50%", background: T.brown, display: "inline-block" }} />
+                          ) : null}
+                        </button>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+              <div style={{ display: "grid", gridTemplateColumns: country !== "taiwan" ? "repeat(2, minmax(0, 1fr))" : "repeat(4, minmax(0, 1fr))", gap: 7 }}>
+                {country !== "taiwan" && (
+                  <button
+                    onClick={() => { setRegion(REGION_PROMPT_KEY); onClose(); }}
+                    style={{
+                      background: region === REGION_PROMPT_KEY ? T.brown : T.cream,
+                      color: region === REGION_PROMPT_KEY ? UI.onDark : T.text,
+                      border: `1px solid ${region === REGION_PROMPT_KEY ? T.brown : UI.regionBorder}`,
+                      borderRadius: 14,
+                      padding: "8px 4px",
+                      fontSize: 11,
+                      cursor: "pointer",
+                      fontFamily: "inherit",
+                      fontWeight: region === REGION_PROMPT_KEY ? 700 : 500,
+                      lineHeight: 1.1,
+                    }}
+                  >
+                    {lang === "en" ? "All" : "全部"}
+                  </button>
+                )}
+                {regionOptions.map((item) => (
+                  <button
+                    key={item.key}
+                    onClick={() => { setRegion(item.key); onClose(); }}
+                    style={{
+                      background: region === item.key ? T.brown : T.cream,
+                      color: region === item.key ? UI.onDark : T.text,
+                      border: `1px solid ${region === item.key ? T.brown : UI.regionBorder}`,
+                      borderRadius: 14,
+                      padding: "8px 4px",
+                      fontSize: 11,
+                      cursor: "pointer",
+                      fontFamily: "inherit",
+                      fontWeight: region === item.key ? 700 : 500,
+                      lineHeight: 1.1,
+                    }}
+                  >
+                    {getRegionLabel(REGION_GROUPS.find((group) => group.key === item.key), lang)}
+                  </button>
+                ))}
               </div>
             </div>
-          </div>
 
-          {user ? (
-            <button
-              onClick={onSignOut}
-              disabled={authBusy}
-              style={{
-                width: "100%",
-                background: T.brown,
-                color: UI.onDark,
-                border: "none",
-                borderRadius: 14,
-                padding: "11px 12px",
-                textAlign: "center",
-                ...TYPE.control,
-                cursor: authBusy ? "default" : "pointer",
-                fontFamily: "inherit",
-                opacity: authBusy ? 0.7 : 1,
-                letterSpacing: "-0.01em",
-              }}
-            >
-              {authBusy ? getCopy(lang, "settings.signOutBusy") : getCopy(lang, "settings.signOut")}
-            </button>
-          ) : (
-            <button
-              onClick={onGoogleSignIn}
-              disabled={authBusy}
-              style={{
-                width: "100%",
-                background: T.brown,
-                color: UI.onDark,
-                border: "none",
-                borderRadius: 14,
-                padding: "11px 12px",
-                textAlign: "center",
-                ...TYPE.control,
-                cursor: authBusy ? "default" : "pointer",
-                fontFamily: "inherit",
-                opacity: authBusy ? 0.7 : 1,
-                letterSpacing: "-0.01em",
-              }}
-            >
-              {authBusy ? getCopy(lang, "settings.signInBusy") : getCopy(lang, "settings.signIn")}
-            </button>
-          )}
-
-          {authMessage && <div style={{ ...TYPE.caption, color: T.green, marginTop: 6 }}>{authMessage}</div>}
-          {authError && <div style={{ ...TYPE.caption, color: UI.danger, marginTop: 6 }}>{authError}</div>}
-        </div>
-
-        <div style={{ background: UI.panel, border: `1px solid ${UI.cardBorder}`, borderRadius: 16, padding: 12, margin: "0 16px 10px" }}>
-          <div style={{ ...TYPE.caption, color: UI.muted, marginBottom: 8 }}>{getCopy(lang, "common.language")}</div>
-          <div style={{ display: "flex", gap: 7, marginBottom: 12 }}>
-            {LANGUAGE_OPTIONS.map((option) => (
-              <button
-                key={option.key}
-                onClick={() => setLang(option.key)}
-                style={{
-                  background: lang === option.key ? T.brown : T.cream,
-                  color: lang === option.key ? UI.onDark : T.text,
-                  border: `1px solid ${lang === option.key ? T.brown : UI.regionBorder}`,
-                  borderRadius: 14,
-                  padding: "8px 10px",
-                  fontSize: 11,
-                  cursor: "pointer",
-                  fontFamily: "inherit",
-                  fontWeight: lang === option.key ? 700 : 500,
-                  lineHeight: 1.1,
-                  flex: 1,
-                }}
-              >
-                {option.label}
-              </button>
-            ))}
-          </div>
-
-          <div style={{ ...TYPE.caption, color: UI.muted, marginBottom: 8 }}>{getCopy(lang, "common.region")}</div>
-          <div style={{ border: `1px solid ${UI.scoreTrack}`, borderRadius: 14, overflow: "hidden", marginBottom: 10, background: UI.surface }}>
-            <button
-              aria-label={getCopy(lang, "settings.switchCountry")}
-              onClick={() => setCountryMenuOpen((openState) => !openState)}
-              style={{
-                width: "100%",
-                background: "none",
-                border: "none",
-                borderBottom: countryMenuOpen ? `1px solid ${UI.hairline}` : "none",
-                padding: "12px 12px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                gap: 8,
-                cursor: "pointer",
-                fontFamily: "inherit",
-                color: T.text,
-              }}
-            >
-              <span style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, fontWeight: 650 }}>
-                <CountryMark code={selectedCountry.code} />
-                <span>{getCountryLabel(selectedCountry, lang)}</span>
-              </span>
-              <Icon name={countryMenuOpen ? "chevronUp" : "chevronDown"} size={14} strokeWidth={2.2} style={{ color: T.sub }} />
-            </button>
-            {countryMenuOpen && (
-              <div>
-                {countryMenuItems.map((item) => {
-                  const isSelected = item.key === country;
-                  return (
-                    <button
-                      key={item.key}
-                      onClick={() => {
-                        if (!item.enabled) return;
-                        setCountry(item.key);
-                        setCountryMenuOpen(false);
-                      }}
-                      disabled={!item.enabled}
-                      style={{
-                        width: "100%",
-                        background: isSelected ? UI.selectedTint : "none",
-                        border: "none",
-                        borderBottom: `1px solid ${UI.selectedHairline}`,
-                        padding: "12px 12px",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                        gap: 8,
-                        cursor: item.enabled ? "pointer" : "default",
-                        fontFamily: "inherit",
-                        color: item.enabled ? T.text : T.sub,
-                        opacity: item.enabled ? 1 : 0.72,
-                      }}
-                    >
-                      <span style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, fontWeight: 600 }}>
-                        <CountryMark code={item.code} />
-                        <span>{getCountryLabel(item, lang)}</span>
-                      </span>
-                      {item.comingSoon ? (
-                        <span style={{ fontSize: 10, color: T.sub, background: T.beige, padding: "3px 7px", borderRadius: 999 }}>{getCopy(lang, "common.comingSoon")}</span>
-                      ) : isSelected ? (
-                        <span style={{ width: 9, height: 9, borderRadius: "50%", background: T.brown, display: "inline-block" }} />
-                      ) : null}
-                    </button>
-                  );
-                })}
-              </div>
-            )}
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: country !== "taiwan" ? "repeat(2, minmax(0, 1fr))" : "repeat(4, minmax(0, 1fr))", gap: 7 }}>
-            {country !== "taiwan" && (
-              <button
-                onClick={() => { setRegion(REGION_PROMPT_KEY); onClose(); }}
-                style={{
-                  background: region === REGION_PROMPT_KEY ? T.brown : T.cream,
-                  color: region === REGION_PROMPT_KEY ? UI.onDark : T.text,
-                  border: `1px solid ${region === REGION_PROMPT_KEY ? T.brown : UI.regionBorder}`,
-                  borderRadius: 14,
-                  padding: "8px 4px",
-                  fontSize: 11,
-                  cursor: "pointer",
-                  fontFamily: "inherit",
-                  fontWeight: region === REGION_PROMPT_KEY ? 700 : 500,
-                  lineHeight: 1.1,
-                }}
-              >
-                {lang === "en" ? "All" : "全部"}
-              </button>
-            )}
-            {regionOptions.map((item) => (
-              <button
-                key={item.key}
-                onClick={() => { setRegion(item.key); onClose(); }}
-                style={{
-                  background: region === item.key ? T.brown : T.cream,
-                  color: region === item.key ? UI.onDark : T.text,
-                  border: `1px solid ${region === item.key ? T.brown : UI.regionBorder}`,
-                  borderRadius: 14,
-                  padding: "8px 4px",
-                  fontSize: 11,
-                  cursor: "pointer",
-                  fontFamily: "inherit",
-                  fontWeight: region === item.key ? 700 : 500,
-                  lineHeight: 1.1,
-                }}
-              >
-                {getRegionLabel(REGION_GROUPS.find((group) => group.key === item.key), lang)}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <div style={{ padding: "0 16px calc(16px + env(safe-area-inset-bottom, 0px))" }}>
-          {menuLinks.map((item) => (
-            <SectionRow key={item.title} {...item} />
-          ))}
-        </div>
+            <div style={{ padding: "0 16px calc(16px + env(safe-area-inset-bottom, 0px))" }}>
+              {menuLinks.map((item) => (
+                <SectionRow key={item.title} {...item} />
+              ))}
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
